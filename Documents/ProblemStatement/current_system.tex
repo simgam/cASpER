@@ -1,0 +1,118 @@
+
+	
+	\subsection{Scenari}
+	\begin{tabular}{|l|p{8cm}|p{1cm}|p{1.1cm}}
+		\hline
+		\textbf{Nome scenario}  & \textbf{SC 1: Ricerca Blob} \\ \hline
+		\textbf{Istanze di attori partecipanti}  & \textbf{Manuel: Sviluppatore} \\ \hline
+		\textbf{Flusso di eventi} & \begin{enumerate}
+			\item Manuel, sviluppatore del codice vuole ricercare all’interno del codice Java potenziali code smells di tipo "Blob".
+			\item All’interno di intelliJ, nella sezione dedicata ai packages, con il tasto destro Manuel seleziona tra i plug-ings “Ascetic”, e nella sottovoce sceglie “Blob”.
+			\item Dopo la selezione della voce e un elaborazione, viene visualizzata a schermo una finestra contenente una radar map con i 5 termini maggiormente presenti e a più alta probabilità di smell, oltre ad una tabella riepilogativa.
+			\item Siccome per questa tipologia di smell non c'è meccanismo di auto-fix, Manuel inizia ad intervenire sul codice in maniera manuale.
+		\end{enumerate}\\ \hline
+	\end{tabular}
+
+	\vspace{1cm}
+		
+		
+	\noindent\begin{tabular}{|l|p{8cm}|p{1cm}|p{1.1cm}|}
+		\hline
+		\textbf{Nome scenario}  & \textbf{SC 2: Ricerca Promiscuous Package} \\ \hline
+		\textbf{Istanze di attori partecipanti}  & \textbf{Manuel: Sviluppatore} \\ \hline
+		\textbf{Flusso di eventi}  & \begin{enumerate}
+	 \item Manuel, sviluppatore del codice vuole ricercare all’interno del codice Java potenziali code smells di tipo "Promiscuous Package".
+	 \item  All’interno di intelliJ, nella sezione dedicata ai packages, con il tasto destro Manuel seleziona tra i plug-ings “Ascetic”, e nella sottovoce sceglie “Promiscuous Package”. 
+		\item Dopo la selezione della voce e un elaborazione, viene visualizzata a schermo una finestra contenente una radar map con i 5 termini maggiormente presenti e a più alta probabilità di smell, oltre ad una tabella riepilogativa.
+		\item Fatto tesoro del risultato mostrato, Manuel inizia il fixing manuale del problema, data l'assenza di automatismi di fixing.
+		\end{enumerate} \\ \hline
+	\end{tabular}
+
+	\vspace{0.5cm}
+		
+	\begin{tabular}{|l|p{8cm}|p{1cm}|p{1.1cm}|}
+		\hline
+		\textbf{Nome scenario}  & \textbf{SC 3: Ricerca Misplaced Class} \\ \hline
+		\textbf{Istanze di attori partecipanti}  & \textbf{Manuel: Sviluppatore} \\ \hline
+		\textbf{Flusso di eventi}  & \begin{enumerate}
+		\item Manuel, sviluppatore del codice vuole ricercare all’interno del codice Java potenziali code smells di tipo Misplaced Class. 
+		\item All’interno di intelliJ, nella sezione dedicata ai packages, con il tasto destro Manuel seleziona tra i plug-ings “Ascetic”, e nella sottovoce sceglie “Misplaced Class”. 
+		\item Dopo la selezione della voce e un elaborazione, viene visualizzata a schermo una finestra,in cui si possono notare tre radar map che mostrano i topic del package attuale (in alto a sinistra), del package invidiato (in alto a destra) e del potenziale candidato a Misplaced Class (in basso a destra); nella parte bassa della schermata è presente anche una tabella contenente tutti i potenziali candidati individuati. Manuel seleziona la voce "Perform Refactoring" e una nuova finestra viene mostrata all’utente.
+		\item  La nuova finestra avrà e due nuove radar map (per un totale di 5),che rappresentano una previsione rispettivamente dei topic implementati dal package attuale post-refactoring e i topic del package invidiato dopo il refactoring. Selezionando il bottone "Refactor Code" verrà applicata l’operazione suggerita alla classe affetta dallo smell che viene spostata nel package invidiato.
+		\item La schermata si chiude con un avviso che il fix è stato applicato.
+		\end{enumerate} \\ \hline
+	\end{tabular}
+	\vspace{0.5cm}
+		
+		\begin{tabular}{|l|p{8cm}|p{1cm}|p{1.1cm}|}
+			\hline
+			\textbf{Nome scenario}  & \textbf{SC 4: Ricerca FeaturesEnvy} \\ \hline
+			\textbf{Istanze di attori partecipanti}  & \textbf{Manuel: Sviluppatore} \\ \hline
+			\textbf{Flusso di eventi}  & \begin{enumerate}
+				\item Manuel, sviluppatore del codice vuole ricercare all’interno del codice Java potenziali code smells di tipo Feature Envy. 
+				\item All’interno di intelliJ, nella sezione dedicata ai packages, con il tasto destro Manuel seleziona tra i plug-ings “Ascetic”, e nella sottovoce sceglie “Feature Envy”.
+				\item Dopo la selezione della voce e un elaborazione, viene visualizzata a schermo una finestra, si possono notare le tre radar map che mostrano i topic della classe attuale, della classe invidiata, e del potenziale candidato a Feature Envy. In più sarà presente anche una tabella contenente tutti i potenziali candidati individuati, selezionando la voce Perform Refactoring, una nuova finestra viene mostrata all’utente.
+				\item  La nuova finestra avrà e due nuove radar map,che rappresentano rispettivamente i topic implementati dalla classe attuale dopo il refactoring e i topic della classe invidiata dopo il refactoring, selezionando il bottone Refactor Code verrà, quindi, applicata l’operazione suggerita, e quindi, il metodo affetto dallo smell sarà spostato nella classe invidiata.
+				\item La schermata si chiude con un avviso che il fix è stato applicato.
+				\item Manuel clicca su Refactor e dopo una breve elaborazione la finestra del plug-in si chiude e lo smell è stato fixato.\end{enumerate} \\ \hline
+		\end{tabular}
+
+	\newpage
+	
+		\subsection{Requisiti Funzionali}
+		\paragraph{RF 1 - Ricerca code smell} 
+		\begin{quote}Il sistema ricerca i code smell all'interno del codice java.	\begin{description}
+				\item [RF 1.1:]Il sistema permette l'analisi di code smell di tipo Blob,
+				\item [RF 1.2:]Il sistema permette l'analisi di code smell di tipo Misplaced Class
+				\item [RF 1.3:]Il sistema permette l'analisi di code smell di tipo Feature Envy
+				\item [RF 1.4:]Il sistema permette l'analisi di code smell di tipo Promiscuos Package
+		\end{description}\end{quote}
+	
+		
+		
+		\paragraph{RF 2 - Correzione} 
+		\begin{quote}Il sistema mostra una possibile soluzione al code smell.\begin{description}
+				\item [RF 2.1:] Il sistema permette di corregere code smell di tipo Feature Envy.
+				\item [RF 2.2:] Il sistema permette di corregere code smell di tipo Misplaced Class.
+		\end{description}\end{quote}
+		
+		
+		\paragraph{RF 3 - Refactoring} 
+		\begin{quote}Il sistema permette allo sviluppatore di risolvere il code smell con degli automatismi del software.\begin{description}
+				\item [RF 3.1:] Il sistema permette di risolvere code smell di tipo Feature Envy.
+				\item [RF 3.2:] Il sistema permette di risolvere code smell di tipo Misplaced Class.
+		\end{description}\end{quote}
+		
+	
+			\paragraph{RF 4 - Metriche di Qualità} 
+		\begin{quote}Il sistema permette di calcolare metriche di qualità.\begin{description}
+				\item [RF 4.1:] Il sistema permette di calcolare metriche di qualità per i metodi.
+				\item [RF 4.2:] Il sistema permette di calcolare metriche di qualità per le classi.
+				\item [RF 4.3:] Il sistema permette di calcolare metriche di qualità per i package.
+		\end{description}\end{quote}
+	
+			\paragraph{RF 5 - Estrazione dei Topic} 
+		\begin{quote}Il sistema consente di estrarre i topic implementati.\end{quote}
+			
+
+		\subsection{Requisiti Non Funzionali}
+
+\begin{list}{-}{}
+	
+	\item \textbf{RNF 1-Performance}\newline 
+	Il sistema è concepito come utilizzabile da singolo utente, con un'interazione diretta, il tempo di risposta varia in base all'analisi proposta.
+	 \newline 
+	\item \textbf{RNF 2-Robustezza}
+	\newline  Il sistema allo stato attuale non soddisfa il requisito di robustezza.
+	\item \textbf{RNF 3-Sicurezza}
+	\newline Il sistema si presenta sufficientemente sicuro in quanto il suo ambiente d'azione è locale, quindi non vi è la necessità di protezione da minacce esterne.
+	\item \textbf{RNF 4-Usabilità}\newline 
+	Il sistema presenta bassi criteri di usabilità, data una scarna e poco intuitiva GUI.
+	\newline 
+	\item \textbf{RNF 5-Manutenibilità}\newline 
+	Il sistema non presenta alcun tipo di documentazione pregressa, oltre ad adottare scelte implementative poco adatte a tale scopo.
+	\newline  
+	\item \textbf{RNF 6-Implementazione}
+	\newline Il sistema è realizzato interamente in linguaggio Java, sia parte back-end che front-end. 
+\end{list}
+	

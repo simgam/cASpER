@@ -1,0 +1,12 @@
+I componenti "off-the shelf" che useremo sono elencati di seguito, per i dettagli implementativi e, i motivi delle scelte si rimanda alla sezione API-Engineer e Trade-Off.
+\\
+\begin{itemize}
+\item \textbf{IntelliJ GUI} : La GUI che realizzeremo si appoggerà su API di Sistema a mezzo API di IntelliJ.
+\item \textbf{PSI (Program Structure Interface)} :
+\begin{itemize} 
+	\item \textbf{Code Manipulation API} : Il modulo di Refactor tramite queste API fornite da IntelliJ, effettua l'Extract e il Move per l'elaborazione delle smells sulle classi o sui package.
+	\item \textbf{Compiler Services} : Il codice preso in esame dovrà sottoporsi al test di compilazione in modo tale da verificarne la correttezza lessicale, semantica e sintattica.
+\end{itemize}
+
+\item \textbf{JFreeChart (DiagramAPI)} : Libreria Java che offre servizi grafici (grafici a barre, Istogrammi,  a torta, grafico a radar). Nel nostro caso sarà utilizzato per rappresentare le RadarMap che rappresenteranno le topic implementate dalle varie componenti analizzate.
+\end{itemize}

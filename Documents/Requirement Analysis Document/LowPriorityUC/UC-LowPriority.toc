@@ -1,0 +1,28 @@
+\babel@toc {italian}{}
+\babel@toc {italian}{}
+\contentsline {section}{\numberline {1}Introduction}{3}
+\contentsline {subsection}{\numberline {1.1}Purpose of the system}{3}
+\contentsline {subsection}{\numberline {1.2}Scope of the system}{3}
+\contentsline {subsection}{\numberline {1.3}Objectives and success criteria of the project}{3}
+\contentsline {subsection}{\numberline {1.4}Definitions, acronyms, and abbreviations}{3}
+\contentsline {subsection}{\numberline {1.5}References}{3}
+\contentsline {subsection}{\numberline {1.6}Overview}{3}
+\contentsline {section}{\numberline {2}Current system}{3}
+\contentsline {section}{\numberline {3}Proposed system}{3}
+\contentsline {subsection}{\numberline {3.1}Overview}{3}
+\contentsline {subsection}{\numberline {3.2}Non-functional requirements}{3}
+\contentsline {subsubsection}{\numberline {3.2.1}Usability}{3}
+\contentsline {subsubsection}{\numberline {3.2.2}Reliability}{3}
+\contentsline {subsubsection}{\numberline {3.2.3}Performance}{3}
+\contentsline {subsubsection}{\numberline {3.2.4}Supportability}{3}
+\contentsline {subsubsection}{\numberline {3.2.5}Implementation}{3}
+\contentsline {subsubsection}{\numberline {3.2.6}Interface}{3}
+\contentsline {subsubsection}{\numberline {3.2.7}Packaging}{3}
+\contentsline {subsubsection}{\numberline {3.2.8}Legal}{3}
+\contentsline {subsection}{\numberline {3.3}System models}{3}
+\contentsline {subsubsection}{\numberline {3.3.1}Scenarios}{3}
+\contentsline {subsubsection}{\numberline {3.3.2}Use case model}{3}
+\contentsline {subsubsection}{\numberline {3.3.3}Analysis object model}{5}
+\contentsline {subsubsection}{\numberline {3.3.4}Dynamic model}{5}
+\contentsline {subsubsection}{\numberline {3.3.5}User}{5}
+\contentsline {section}{\numberline {4}Glossary}{5}

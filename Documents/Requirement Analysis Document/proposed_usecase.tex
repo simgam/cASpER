@@ -1,0 +1,263 @@
+
+		\begin{tabular}{|l|p{13cm}|}
+			\hline
+			\textbf{Use case name}  & \textbf{UC 1- Analisi e ricerca smell} \\ \hline
+			\textbf{Participating actors}  & \textbf{Sviluppatore} \\ \hline
+			\textbf{Entry condition}  & L'utente avvia con successo Intellij.\\  \hline
+			\textbf{Flow of events}  &  
+			\begin{tabular}{p{6cm}p{6cm}p{6cm}}
+				\centering \textbf{UTENTE} & \centering \textbf{SISTEMA} & \\
+				\textbf{1.}\hspace{0.3cm}L’utente nella sezione plugin di intelliJ,  sceglie di effettuare una ricerca  di “code smells” indicando il luogo e il tipo di "code smell", nel codice presente nel progetto aperto attualmente su intelliJ. La mancanza di parametri specificati, implica una ricerca globale su tutto il progetto. \\ \\ &
+				\textbf{2.}\hspace{0.3cm}Il sistema, in base ai parametri specificati dall'utente, effettua una ricerca sul codice.
+				Dopo una breve elaborazione, viene mostrata una finestra di riepilogo all’utente.
+				In tale schermata sono presenti metriche, topic e una tabella che permette di filtrare i   risultati. \\ \\
+				\textbf{3.}\hspace{0.3cm}L'utente prende visione del risultato dell'analisi tramite una tabella e varie RadarMap riportanti i 5 termini più frequenti. La tabella riporta per ogni smell identificato: una parte dedicata per effettuare refactoring o ignorare smell, la locazione,  le metriche di qualità calcolate(LOC, WNC, RFC, CBO, LCOM, NOA, NOM, NOPA, NOP) e il tipo di smell. Si può quindi selezionare l'elemento che si vuole esaminare e prendere visione del codice del progetto. \\ \\ &
+				
+			\end{tabular}\\ \hline
+			
+			\textbf{Exit condition}  &L’utente visualizza il codice affetto da smell\\ \hline
+			\textbf{Exception condition}  & Nel passo 1, in caso di codice java non corretto dal punto di vista sintattico, semantico o lessicale si verifica lo UC 1.1. \\ \hline
+			\textbf{Quality requirements}  & 
+					\begin{itemize}
+						\item Tempo di elaborazione massimo: 3 minuti.
+						\item Il sistema è in grado di rilevare se il codice è java.
+					\end{itemize}
+			\\ \hline 
+		\end{tabular}
+	
+	
+		\begin{tabular}{|l|p{13cm}|}
+			\hline
+			\textbf{Use case name}  & \textbf{UC 1.1 - Analisi codice non compilabile} \\ \hline
+			\textbf{Participating actors}  & \textbf{Sviluppatore} \\ \hline
+			\textbf{Entry condition}  & L'utente avvia l'analisi del codice.\\ \hline 			
+			\textbf{Flow of events}  & 
+			\begin{tabular}{p{6cm}p{6cm}p{6cm}}
+				\centering\textbf{UTENTE}  & \centering\textbf{SISTEMA} &\\ \\
+				\textbf{1.}\hspace{0.3cm}L'utente attende l'elaborazioni richieste dal sistema.\\ 
+				&\textbf{2.}\hspace{0.3cm}Il sistema tenta di analizzare il codice ma, trovando testo non compilabile, annulla l'operazione e mostra un messaggio di errore.\\
+				\textbf{3.}\hspace{0.3cm}L'utente prende visione del messaggio che indica il fallimento dell'operazione. \\	\\		
+			\end{tabular}\\ \hline		
+			\textbf{Exit condition}  & Il sistema termina l'esecuzione senza effettuare alcuna modifica\\ \hline 			
+			\textbf{Exception condition} & \\ \hline
+			\textbf{Priority}  & Alta \\ \hline 	
+			\textbf{Quality requirements}  & 
+			\begin{itemize}
+				\item Tempo di elaborazione massimo: 3 minuti.
+			\end{itemize}
+			
+			\\ \hline 
+		\end{tabular}
+		
+		\vspace{2cm}
+		
+		
+		%USE CASE 2.1 - "CORREZIONE CODE SMELL SOLO FE"
+		
+		\begin{tabular}{|l|p{13cm}|}
+			\hline
+			\textbf{Use case name}  & \textbf{UC 2.1 - Correzione Code smell - Feature Envy} \\ \hline
+			\textbf{Participating actors}  & \textbf{Sviluppatore} \\ \hline
+			\textbf{Entry condition}  & L’utente ha visualizzato il codice affetto da smell  \\  \hline
+			\textbf{Flow of events}  &  
+			\begin{tabular}{p{6cm}p{6cm}p{6cm}}
+				\centering \textbf{UTENTE} & \centering \textbf{SISTEMA} & \\
+				\textbf{1.}\hspace{0.3cm}L’utente, dopo aver preso visione dei risultati dati del caso UC1.0 sceglie i parametri su cui intervenire per lo smells di tipo “Feature Envy” e avvia gli automatismi per la correzione automatica premendo il tasto “Refactor”.
+				\\ \\ &
+				\textbf{2.}\hspace{0.3cm}Il sistema, mostra una schermata di riepilogo con delle sezioni mostranti una proposta di correzione   confrontata con la situazione precedente all’analisi, e un tasto per apportare tali modifiche. \\ \\
+				
+				\textbf{3.}\hspace{0.3cm}L’utente, può scegliere di accettare tali modifiche consigliate dal sistema cliccando il tasto "Applica modifiche". Se lo sviluppatore non volesse correggere automaticamente il codice può   selezionare fra le   apposite voci di ignorare lo smell selezionato (Caso eccezione UC-2.5)   aggiungere un promemoria (caso eccezione UC-2.6) oppure entrambe (Caso eccezione   UC-2.7). L'utente sceglie di applicare la soluzione proposta dal sistema.
+				\\ \\ &
+				\textbf{4.}\hspace{0.3cm}Il sistema, applica la soluzione che precedentemente ha mostrato all'utente. \\ \\
+				
+				\textbf{5.}\hspace{0.3cm}L'utente prende visione di tutte le modifiche effettuate dal sistema. \\ \\
+				
+			\end{tabular}\\ \hline
+			
+			\textbf{Exit condition}  &La finestra del plug-in si chiude.\\ \hline
+			\textbf{Exception condition}  & Se nel passo 3 l'utente non volesse correggere automaticamente il codice, può:
+			\begin{itemize} \item Ignorare il code smell (UC- 2.5)
+				\item Aggiungere un promemoria (UC-2.6)
+				\item Promemoria code smell e aggiunta eccezioni (UC- 2.7) 
+			\end{itemize}
+			\\ \hline
+			\textbf{Quality requirements}  & Tempo di elaborazione massimo: 3 minuti.
+			\\ \hline 
+		\end{tabular}
+		
+		%USE CASE 2.2 - "CORREZIONE CODE SMELL SOLO MC"
+		
+		\begin{tabular}{|l|p{13cm}|}
+			\hline
+			\textbf{Use case name}  & \textbf{UC 2.2 - Correzione Code smell - Misplaced Class} \\ \hline
+			\textbf{Participating actors}  & \textbf{Sviluppatore} \\ \hline
+			\textbf{Entry condition}  & L’utente ha visualizzato il codice affetto da smell  \\  \hline
+			\textbf{Flow of events}  &  
+			\begin{tabular}{p{6cm}p{6cm}p{6cm}}
+				\centering \textbf{UTENTE} & \centering \textbf{SISTEMA} & \\
+				\textbf{1.}\hspace{0.3cm}L’utente, dopo aver preso visione dei risultati dati del caso UC1.0 sceglie i parametri su cui intervenire per lo smells di tipo “Misplaced Class” e avvia gli automatismi per la correzione automatica premendo il tasto “Refactor”.
+				\\ \\ &
+				\textbf{2.}\hspace{0.3cm}Il sistema, mostra una schermata di riepilogo con delle sezioni mostranti una proposta di correzione   confrontata con la situazione precedente all’analisi, e un tasto per apportare tali modifiche. \\ \\
+				
+				\textbf{3.}\hspace{0.3cm}L’utente, può scegliere di accettare tali modifiche consigliate dal sistema cliccando il tasto "Applica modifiche". Se lo sviluppatore non volesse correggere automaticamente il codice può   selezionare fra le   apposite voci di ignorare lo smell selezionato (Caso eccezione UC-2.5)   aggiungere un promemoria (caso eccezione UC-2.6) oppure entrambe (Caso eccezione   UC-2.7). L'utente sceglie di applicare la soluzione proposta dal sistema.
+				\\ \\ &
+				\textbf{4.}\hspace{0.3cm}Il sistema, applica la soluzione che precedentemente ha mostrato all'utente. \\ \\
+				
+				\textbf{5.}\hspace{0.3cm}L'utente prende visione di tutte le modifiche effettuate dal sistema. \\ \\
+				
+			\end{tabular}\\ \hline
+			
+			\textbf{Exit condition}  &La finestra del plug-in si chiude.\\ \hline
+			\textbf{Exception condition}  & Se nel passo 3 l'utente non volesse correggere automaticamente il codice, può:
+			\begin{itemize} \item Ignorare il code smell (UC- 2.5)
+				\item Aggiungere un promemoria (UC-2.6)
+				\item Promemoria code smell e aggiunta eccezioni (UC- 2.7) 
+			\end{itemize}
+			\\ \hline
+			\textbf{Quality requirements}  & Tempo di elaborazione massimo: 3 minuti.
+			\\ \hline 
+		\end{tabular}
+		
+		
+		\vspace{2cm}
+		%USE CASE 2.3 - "CORREZIONE CODE SMELL BLOB"
+		
+		\begin{tabular}{|l|p{13cm}|}
+			\hline
+			\textbf{Use case name}  & \textbf{UC 2.3 - Correzione Code smell - Blob} \\ \hline
+			\textbf{Participating actors}  & \textbf{Sviluppatore} \\ \hline
+			\textbf{Entry condition}  & L’utente ha visualizzato il codice affetto da smell  \\  \hline
+			\textbf{Flow of events}  &  
+			\begin{tabular}{p{6cm}p{6cm}p{6cm}}
+				\centering \textbf{UTENTE} & \centering \textbf{SISTEMA} & \\
+				\textbf{1.}\hspace{0.3cm}L’utente, dopo aver preso visione dei risultati dati del caso UC1.0 seleziona “Blob” come parametro su cui intervenire.
+				\\ \\ &
+				\textbf{2.}\hspace{0.3cm}Il sistema, mostra una nuova schermata di riepilogo con delle sezioni mostranti delle frecce per scegliere come “estrarre” gli smells e dei grafici riguardanti un confronto tra la situazione precedente all’analisi e un tasto per apportare tali modifiche. \\ \\
+				
+				\textbf{3.}\hspace{0.3cm}L'utente puo' selezionare come e dove estrarre gli smells tramite un interfaccia guidata, al termine di tale selezione, clicca sul tasto “applica” per apportare le modifiche oppure, se lo sviluppatore non volesse correggere il codice può selezionare fra le apposite voci di ignorare lo smell selezionato (Caso eccezione UC-2.5) aggiungere un promemoria (caso eccezione UC-2.6) oppure entrambe (Caso eccezione   UC-2.7). L'utente sceglie di applicare la soluzione proposta dal sistema.
+				\\ \\ &
+				\textbf{4.}\hspace{0.3cm}Il sistema, applica la soluzione che precedentemente ha mostrato all'utente. \\ \\
+				
+				\textbf{5.}\hspace{0.3cm}L'utente prende visione di tutte le modifiche effettuate dal sistema. \\ \\
+				
+			\end{tabular}\\ \hline
+			
+			\textbf{Exit condition}  &La finestra del plug-in si chiude.\\ \hline
+			\textbf{Exception condition}  & Se nel passo 3 l'utente non volesse correggere automaticamente il codice, può:
+			\begin{itemize} \item Ignorare il code smell (UC- 2.5)
+				\item Aggiungere un promemoria (UC-2.6)
+				\item Promemoria code smell e aggiunta eccezioni (UC- 2.7) 
+			\end{itemize}
+			\\ \hline
+			\textbf{Quality requirements}  & Tempo di elaborazione massimo: 3 minuti.
+			\\ \hline 
+		\end{tabular}
+		
+		
+		\vspace{2cm}
+		%USE CASE 2.2 - "CORREZIONE CODE SMELL SOLO Blob"
+		
+		\begin{tabular}{|l|p{13cm}|}
+			\hline
+			\textbf{Use case name}  & \textbf{UC 2.4 - Correzione Code smell - Promiscuous Package} \\ \hline
+			\textbf{Participating actors}  & \textbf{Sviluppatore} \\ \hline
+			\textbf{Entry condition}  & L’utente ha visualizzato il codice affetto da smell  \\  \hline
+			\textbf{Flow of events}  &  
+			\begin{tabular}{p{6cm}p{6cm}p{6cm}}
+				\centering \textbf{UTENTE} & \centering \textbf{SISTEMA} & \\
+				\textbf{1.}\hspace{0.3cm}L’utente, dopo aver preso visione dei risultati dati del caso UC1.0 seleziona “Promiscuous Package” come parametro su cui intervenire.
+				\\ \\ &
+				\textbf{2.}\hspace{0.3cm}Il sistema, mostra una nuova schermata di riepilogo con delle sezioni mostranti delle frecce per scegliere come “estrarre” gli smells e dei grafici riguardanti un confronto tra la situazione precedente all’analisi e un tasto per apportare tali modifiche. \\ \\
+				
+				\textbf{3.}\hspace{0.3cm}L'utente puo' selezionare come e dove estrarre gli smells tramite un interfaccia guidata, al termine di tale selezione, clicca sul tasto “applica” per apportare le modifiche oppure, se lo sviluppatore non volesse correggere il codice può selezionare fra le apposite voci di ignorare lo smell selezionato (Caso eccezione UC-2.5) aggiungere un promemoria (caso eccezione UC-2.6) oppure entrambe (Caso eccezione   UC-2.7). L'utente sceglie di applicare la soluzione proposta dal sistema.
+				\\ \\ & 
+				\textbf{4.}\hspace{0.3cm}Il sistema, applica la soluzione che precedentemente ha mostrato all'utente. \\ \\
+				
+				\textbf{5.}\hspace{0.3cm}L'utente prende visione di tutte le modifiche effettuate dal sistema. \\ \\
+				
+			\end{tabular}\\ \hline
+			
+			\textbf{Exit condition}  &La finestra del plug-in si chiude.\\ \hline
+			\textbf{Exception condition}  & Se nel passo 3 l'utente non volesse correggere automaticamente il codice, può:
+			\begin{itemize} \item Ignorare il code smell (UC- 2.5)
+				\item Aggiungere un promemoria (UC-2.6)
+				\item Promemoria code smell e aggiunta eccezioni (UC- 2.7) 
+			\end{itemize}
+			\\ \hline
+			\textbf{Quality requirements}  & Tempo di elaborazione massimo: 3 minuti.
+			\\ \hline 
+		\end{tabular}		
+		
+		\vspace{2cm}
+		%USE CASE 2.1 - "IGNORA CODE SMELL"
+		\begin{tabular}{|l|p{13cm}|}
+			\hline
+			\textbf{Use case name}  & \textbf{UC 2.5- Ignora code smell} \\ \hline
+			\textbf{Participating actors}  & \textbf{Sviluppatore} \\ \hline
+			\textbf{Entry condition}  & L'utente ha deciso di ignorare il code smell  \\  \hline
+			\textbf{Flow of events}  &  
+			\begin{tabular}{p{6cm}p{6cm}p{6cm}}
+				\centering \textbf{UTENTE} & \centering \textbf{SISTEMA} & \\
+				
+				\textbf{1.}\hspace{0.3cm}L’utente, dopo aver preso visione dei risultati dati del caso UC1.0 sceglie i parametri ed individua gli smells che vuole aggiungere ad un elenco di risultati da ignorare ( che siano essi falsi positivi o rigettati per scelta del programmatore)  \\ \\ &
+				
+				\textbf{2.}\hspace{0.3cm}Il sistema dopo l’aggiunta alla “lista da ignorare” non mostrerà più i casi da ignorare tra i risultati di analisi a meno di modifiche al codice manuali, nel qual caso verrano eliminati da quest’elenco nella analisi successiva. Il sistema, applica le modifiche scelte dall'utente. \\ \\
+				
+				\textbf{3.}\hspace{0.3cm}L'utente prende visione della "lista da ignorare" contente tutti gli smell scelti. \\ \\
+				
+			\end{tabular}\\ \hline
+			
+			\textbf{Exit condition}  &La finestra del plug-in si chiude\\ \hline
+			\textbf{Exception condition}  & \\ \hline
+			\textbf{Quality requirements}  & Tempo di elaborazione massimo: 1 minuto.
+			\\ \hline 
+		\end{tabular}
+		
+		\vspace{"2cm}
+		
+		% USE CASE 2.2 -  "PROMEMORIA CODE SMELL" 
+		\begin{tabular}{|l|p{13cm}|}
+			\hline
+			\textbf{Use case name}  & \textbf{UC 2.6- Promemoria code smell} \\ \hline
+			\textbf{Participating actors}  & \textbf{Sviluppatore} \\ \hline
+			\textbf{Entry condition}  & L'utente ha deciso di avere un promemoria dello smell \\  \hline
+			\textbf{Flow of events}  &  
+			\begin{tabular}{p{6cm}p{6cm}p{6cm}}
+				\centering \textbf{UTENTE} & \centering \textbf{SISTEMA} & \\
+				\textbf{1.}\hspace{0.3cm}L’utente dopo l’analisi del caso UC 1.0, seleziona i propri parametri e seleziona la voce  “aggiungi promemoria”  \\ \\ &
+				\textbf{2.}\hspace{0.3cm}Il sistema aggiunge la parte di codice al “To do list” di intelliJ, ovvero aggiunge dei piccoli promemoria che compariranno in una finestra dedicata con la funzione di ricordare allo sviluppatore in quale parte del code deve effettuare delle correzioni. \\ \\
+				\textbf{3.}\hspace{0.3cm}L’utente prende visione delle modifiche effettuate dal sistema.  \\ \\ 
+				
+			\end{tabular}\\ \hline
+			
+			\textbf{Exit condition}  & La finestra del plug-in si chiude\\ \hline
+			\textbf{Exception condition}  & \\ \hline
+			\textbf{Quality requirements}  & Tempo di elaborazione massimo: 1 minuto.
+			\\ \hline 
+		\end{tabular}
+		
+		
+		\vspace{2cm}
+		
+		%USE CASE 2.3- "PROMEMORIA CODE SMELL E AGGIUNTA ECCEZIONI"
+		
+		\begin{tabular}{|l|p{13cm}|}
+			\hline
+			\textbf{Use case name}  & \textbf{UC 2.7- Promemoria code smell e aggiunta alle eccezioni} \\ \hline
+			\textbf{Participating actors}  & \textbf{Sviluppatore} \\ \hline
+			\textbf{Entry condition}  & L'utente sceglie il promemoria e aggiunta eccezioni  \\  \hline
+			\textbf{Flow of events}  &  
+			\begin{tabular}{p{6cm}p{6cm}p{6cm}}
+				\centering \textbf{UTENTE} & \centering \textbf{SISTEMA} & \\
+				\textbf{1.}\hspace{0.3cm}L'utente, dopo aver preso visione dei risultati dati del caso UC1.0 sceglie i parametri ed individua gli smells che vuole aggiungere ad un elenco di risultati da ignorare ( che siano essi falsi positivi o rigettati per scelta del programmatore) e seleziona, inoltre,  la voce “aggiungi promemoria”  \\ \\ &
+				\textbf{2.}\hspace{0.3cm}Il sistema  dopo l’aggiunta alla “lista da ignorare” non mostrerà più i casi da ignorare ma aggiunge le parti di codice al “To do list” di intelliJ \\ \\
+				
+				\textbf{3.}\hspace{0.3cm}L'utente prende visione delle modifiche effettuate dal sistema. \\ \\
+				
+			\end{tabular}\\ \hline
+			
+			\textbf{Exit condition}  &La finestra del plug-in si chiude\\ \hline
+			\textbf{Exception condition}  & \\ \hline
+			\textbf{Quality requirements}  & Tempo di elaborazione massimo: 1 minuto
+			\\ \hline 
+		\end{tabular}

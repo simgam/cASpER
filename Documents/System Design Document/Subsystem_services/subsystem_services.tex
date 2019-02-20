@@ -1,0 +1,44 @@
+
+\centering
+
+\begin{tabular}{|l|l|l|l|}
+	\hline
+	\textbf{\Large Name} & \textbf{\Large Servizi offerti} & \textbf{\Large Servizi richiesti} &\textbf{\Large Dipendenze} \rule[-1cm]{0mm}{2cm} \\ \hline
+	
+	\textbf{Analisi} & Smell Detectors API & Persistence API & \\&& Beans API &  \rule[-0.5cm]{0mm}{0cm}   
+	\rule[-0.5cm]{0mm}{0cm}
+	\\ \hline
+	\textbf{Refactoring} & Refactoring API & PSI API & \rule{0mm}{0.5cm}    
+	\rule[-0.5cm]{0mm}{0cm}
+	\\ \hline
+	\textbf{GUI} & & GUI API & \rule{0mm}{0.5cm}\\&& Diagram API & \\&& Metric API & \\&& Topic API & \\&& Smell Detectors API &
+	\\&& Parsing API & \\&& Refactoring API & \rule[-0.5cm]{0mm}{0cm}
+	\\ \hline
+	\textbf{Code Parser} & Parsing API & Beans API & \rule{0mm}{0.5cm} \\&& PSI API & 
+	\rule[-0.5cm]{0mm}{0cm}
+	\\ \hline
+	\textbf{Quality Metrics} & Metric API & Beans API &  \rule{0mm}{0.5cm} \rule[-0.5cm]{0mm}{0cm}
+	\\ \hline
+	\textbf{Topics} & Topic API & Beans API & \rule{0mm}{0.5cm} \rule[-0.5cm]{0mm}{0cm}
+	\\ \hline
+	\textbf{Storage} & Beans API &  & Project Structured File\rule{0mm}{0.5cm} \rule[-0.5cm]{0mm}{0cm}
+	\\ \hline
+	\textbf{Project Structured File} &  &  & \rule{0mm}{0.5cm} \rule[-0.5cm]{0mm}{0cm}
+	\\ \hline
+	
+\end{tabular}
+
+\flushleft
+
+\begin{itemize}
+	\item \textbf{Beans API} : Permette la gestione dei Beans, fornendo così una rappresentazione ulteriormente strutturata del codice in analisi.
+	\item \textbf{Smell Detectors API} : Analizza testualmente il codice strutturato in Bean, individuando i vari tipi di code smell (Feature envy, Misplaced class, Blob, Promiscue package).
+	\item \textbf{Parsing API} : Esegue l'operazione di avvio dell'analisi con il conseguente riempimento del file. 
+ 	\item \textbf{Refactoring API} : Esegue l'operazione di refactoring del codice analizzato in seguito alla generezione di una possibile soluzione, da parte del sistema o dell'utente dove concesso. 	
+	\item \textbf{Metric API} : Implementeremo una meccanica di calcolo e rilevamento di varie metriche qualitative utili all'analisi della porzione di codice designata.
+	\item \textbf{Topic API} : Implementeremo una meccanica di rilevamento di topic quali termini più ricorrenti utili all'analisi della porzione di codice designata.
+	
+\end{itemize}
+
+
+

@@ -1,0 +1,22 @@
+Le condizioni limite riguardano solo ed esclusivamente il caso in cui il sistema dovesse andare in crash, poiché i casi relativi all'accensione ed allo spegnimento dipendono dall'avvio e dall'arresto di IntelliJ.   
+\subsubsection{Crash Sistema} 
+Il caso di crash del sistema (dovuto a qualche malfunzionamento del plug-in) viene gestito in modo tale che il sistema mostri i log all'utente e successivamente ne effettui la distruzione insieme alla cache . Così facendo l'utente è costretto a rieffettuare le operazioni precedenti al crash.  
+ 
+\begin{tabular} {|l|p{11cm}|} 
+  
+ \hline 
+ \textbf{ID} & \textbf{CRASH} \\ \hline   
+\textbf{Participating actors}  & Sviluppatore \\ \hline 
+ \textbf{Entry Condition} & Lo Sviluppatore sta utilizzando ASCETIC su IntelliJ \\ \hline 
+ \textbf{Flow of events} &  
+  \begin{tabular}{p{5cm} p{5cm} p{5cm}} 
+   \centering \textbf{UTENTE} & \centering \textbf{SISTEMA}  & \\ 
+   \textbf{1.}\hspace{0.3cm}L'utente, durante l'utilizzo del plug-in, riscontra un crash del sistema dovuto ad un errore casuale. & &  \\ 
+   & \textbf{2.} \hspace{0.3cm}Il sistema mostra un messaggio d'errore. Successivamente, alla ripresa del normale funzionamento, mostra i log degli errori riscontrati  dopodiché procede all'invalidazione delle cache. & \\ 
+   \textbf{3.}\hspace{0.3cm}L'utente prende visione delle notifiche del sistema e si appresta ad utilizzare di nuovo il plug-in, avendo cura di rieffettuare le operazioni precedenti al crash non soggette a salvataggio. & &  
+  \end{tabular} 
+ \\ \hline 
+ \textbf{Exit condition} & Il sistema riprende a funzionare correttamente e sono state invalidate le cache. \\ \hline 
+ \textbf{Exception condition} & \\ \hline 
+ \textbf{Quality requirements} & \\ \hline  
+\end{tabular}

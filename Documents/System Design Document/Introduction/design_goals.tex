@@ -1,0 +1,109 @@
+L'operazione di reengineering del plug-in ASCETIC dovrà tenere conto di un'alta manutenibilità, in modo che l'utente possa inserire con facilità nuove funzioni di analisi e correzione.
+\\
+Il reengineering apporterà anche modifiche sul piano dell'usabilità, con un'interfaccia gradevole e intuitiva.
+\\
+Il plug-in dovrà effettuare le operazioni richieste in tempi accettabili, con bassi consumi di memoria e in assenza di output errati.
+\\
+Inoltre i casi di crash o blocchi dovrà essere ridotta al minimo e in caso di errori dovrà essere in grado di segnalare il problema e mostrare all'utente istruzioni per un'eventuale risoluzione.
+\\
+Il sistema continuerà ad essere implementato completamente in Java e continuerà ad avere un modesto livello di sicurezza, poiché l’esecuzione viene svolta completamente in locale e non memorizza dati sensibili degli utenti.
+\\
+Di seguito verranno elencati i criteri di qualità ricavati dai requisiti non funzionali.
+
+\subsubsection{Performance Criteria}
+
+		\begin{tabular}{|p{3cm}|p{13cm}|}
+		\hline
+		
+		\vfill \centering \textbf{Tempi di risposta} \vfill & \vfill Il sistema deve essere reattivo, ma gran parte di questo dipende dalla mole di dati da elaborare e dalle prestazioni del dispositivo usato.\vfill \\ \hline 			
+		\vfill \centering \textbf{Throughput} \vfill & \vfill Il sistema tiene conto del tempo impiegato per una singola istruzione piuttosto che del numero di correzioni effettuabili in parallelo\vfill \\
+		\hline
+		\vfill \centering \textbf{Memoria} \vfill & \vfill Il sistema memorizza i dati persistenti in file distinti su memoria locale. E' implementata una meccanica di caching volta ad accelerare il recupero dei dati, che derivano dall'analisi testuale del codice, la quale è computazionalmente onerosa. \vfill \\
+		\hline
+		
+		\end{tabular}
+	
+\subsubsection{Dependability Criteria}
+
+		\begin{tabular}{|p{3cm}|p{13cm}|}
+			\hline
+			
+			\vfill \centering \textbf{Robustezza} \vfill & \vfill Il sistema restituisce sempre un output che rispecchia le aspettative dell'utente. Cioè, nel caso in cui è possibile restituire una soluzione valida, il sistema la esegue. Nel caso in cui si verifichi un errore oppure non sia possibile restituire una soluzione valida, il sistema notificherà l'insuccesso all'utente. \vfill \\ 
+			\hline 			
+			\vfill \centering \textbf{Affidabilità} \vfill & \vfill Il sistema non deve essere soggetto a frequenti casi di crash. In caso ciò accada il sistema deve essere in grado di notificare all'utente di eventuali input errati. \vfill \\
+			\hline
+			\vfill \centering \textbf{Disponibilità} \vfill & \vfill Il sistema è disponibile all'uso dell'utente in qualsiasi momento dall'avvio dell'ambiente di sviluppo IntelliJ. \vfill \\
+			\hline
+			\vfill \centering \textbf{Tolleranza all'errore} \vfill & \vfill Il sistema è in grado di riconoscere un possibile disservizio e gestirlo notificando l'errore all'utente e salvando i progressi fatti fino al guasto. \vfill \\ 
+			\hline 			
+			\vfill \centering \textbf{Sicurezza} \vfill & \vfill Il sistema è usufruibile da qualsiasi utente che utilizza il plug-in perché non vengono memorizzati dati sensibili. Gli unici dati memorizzati sono parti di codice da rielaborare. \vfill \\
+			\hline
+			
+		\end{tabular}
+
+\subsubsection{Cost Criteria}
+
+		\begin{tabular}{|p{3cm}|p{13cm}|}
+			\hline
+			
+			\vfill \centering \textbf{Costi di sviluppo} \vfill & \vfill È stimato un costo complessivo di 4800 ore per la progettazione e lo sviluppo del sistema (80 ore per ogni membro del team). \vfill \\
+			\hline 			
+			\vfill \centering \textbf{Costi di amministrazione} \vfill & \vfill È stimato un costo complessivo di 40 ore per l'amministrazione del sistema (40 ore per ogni PM del team). \vfill \\
+			\hline
+			
+		\end{tabular}
+
+\subsubsection{Maintenance Criteria}
+
+		\begin{tabular}{|p{3cm}|p{13cm}|}
+			\hline
+			
+			\vfill \centering \textbf{Estensibilità} \vfill & \vfill Il sistema è progettato in modo tale da poter essere esteso con altre funzionalità oppure ampliare la tipologia di smell che possono essere analizzati/corretti con le funzionalità già presenti. \vfill \\
+			\hline 			
+			\vfill \centering \textbf{Modificabilità} \vfill & \vfill Il codice è stato scritto secondo paradigmi ingegneristici. Il tutto è stato scritto seguendo una specifica suddivisione in moduli, i quali rendono la struttura leggibile e intuitivamente modificabile. \vfill \\
+			\hline
+			\vfill \centering \textbf{Adattabilità} \vfill & \vfill Il plug-in funziona su qualsiasi sistema operativo purché sia provvisto dell'applicativo IntelliJ IDEA. Non sarà possibile utilizzarlo su IDE diversi da questo (Eclipse, Visual Studio, NetBeans,...). \vfill \\
+			\hline
+			\vfill \centering \textbf{Leggibilità} \vfill & \vfill Il sistema sarà fornito di una documentazione esauriente che avvalora la leggibilità della struttura del codice. \vfill \\
+			\hline 			
+			\vfill \centering \textbf{Portabilità} \vfill & \vfill La portabilità è garantita dalla scelta implementativa adoperata, giacché Java è per sua natura un linguaggio votato alla portabilità. \vfill \\
+			\hline
+			\vfill \centering \textbf{Tracciabilità dei requisiti} \vfill & \vfill La tracciabilità dei requisiti sarà possibile, si può retrocedere al requisito associato ad ogni parte del progetto. La tracciabilità sarà garantita dalla fase di progettazione fino al testing. \vfill \\
+			\hline
+			
+		\end{tabular}
+
+\subsubsection{End user Criteria}
+
+		\begin{tabular}{|p{3cm}|p{13cm}|}
+			\hline
+			 			
+			\vfill \centering \textbf{Utilità} \vfill & \vfill Il sistema si rivela utile poiché in assenza di questo l'utente avrebbe impiegato sforzi e tempi maggiori, oltre ai possibili errori di distrazione che a un occhio umano potrebbero sfuggire. \vfill \\
+			\hline
+			\vfill \centering \textbf{Usabilità} \vfill & \vfill L'interazione fra il sistema e l'utente sarà molto semplice anche senza la consultazione della documentazione associata. L'interfaccia risulterà intuitiva e gradevole da usare, sia per novizi che per esperti. \vfill \\
+			\hline
+			
+		\end{tabular}
+	
+\subsubsection{Trade-off}
+	
+		\begin{tabular}{|p{3cm}|p{13cm}|}
+			\hline
+			
+			\textbf{Trade-off} & \\
+			\hline
+			
+			\vfill \centering Manutenibilità \\ vs \\ Performance \vfill  & \vfill Il reenginering del sistema da priorità alla manutenibilità suddividendo il codice del progetto in più moduli coerenti con le proprie finalità. Questa preferenza favorisce la leggibilità del codice per future operazioni di manutenzione, ma può gravare sensibilmente sulle performance. \vfill \\
+			\hline
+			\vfill \centering Performance \\ vs \\ Memoria \vfill  & \vfill Il reenginering del sistema da priorità alla performance. L'algoritmo di analisi viene eseguito una sola volta all'avvio del software per poi memorizzare i risultati in memoria primaria e secondaria tramite una meccanica di caching. Solo in caso di modifiche al codice verrà rieseguito l'algoritmo di analisi per aggiornare la cache e se queste sono effettuate su i file originali verrà rieseguito il caching anche sulla memoria persistente.  \vfill \\
+			\hline
+			\vfill \centering Performance \\ vs \\ Sicurezza \vfill  & \vfill Il reenginering del sistema da priorità alle performance a discapito della sicurezza, poiché l'obiettivo del plug-in è quello di ridurre i tempi di lavoro dei vari utenti nella risoluzione di code smell. La sicurezza viene trascurata perché non vengono manipolati dati sensibili. \vfill \\
+			\hline
+			\vfill \centering Manutenibilità \\ vs \\ Sicurezza \vfill & \vfill Il reenginering del sistema da priorità alla manutenibilità del plug-in. In questo modo l'utente può ampliare l'elenco di smell e aggiungere nuove funzionalità. Siccome sarà possibile mettere mano al codice, il livello di sicurezza può essere messo a rischio. \vfill \\
+			\hline
+			\vfill \centering Usabilità \\ vs \\ Sviluppo rapido \vfill & \vfill Il reenginering del sistema da priorità all'usabilità del plug-in, realizzando una nuova e intuitiva interfaccia con la quale l'utente può interagire in modo rapido. Tuttavia i costi in termine di tempo di sviluppo aumentano. \vfill \\
+			\hline
+			\vfill \centering Robustezza \\ vs \\ Portabilità \vfill & \vfill Il reenginering del sistema da priorità alla robustezza del plug-in, il quale dovrà restituire in ogni caso l'output sperato dall'utente. Il sistema è compatibile solo con l'ambiente di sviluppo IntelliJ IDEA.\vfill \\
+			\hline
+			
+		\end{tabular}

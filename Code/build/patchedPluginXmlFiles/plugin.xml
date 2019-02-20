@@ -1,0 +1,27 @@
+<idea-plugin>
+  <version>1.0-SNAPSHOT</version>
+  <change-notes>
+      Add change notes here.&lt;br&gt;
+      &lt;em&gt;most HTML tags may be used&lt;/em&gt;</change-notes>
+  <idea-version since-build="181.4892" until-build="181.*"/>
+  <id>it.unisa.ascetic</id>
+  <name>Ascetic</name>
+  <vendor email="support@ascengers.it" url="http://www.ascengers.com">Ascengers</vendor>
+  <description>
+    Automated Code Smell Detection and Correction&lt;br&gt;
+    </description>
+  <extensions defaultExtensionNs="com.intellij"/>
+  <actions>
+    <action id="it.unisa.ascetic.actions.BeginAction" class="it.unisa.ascetic.actions.BeginAction" text="Ascetic - Analyze Project">
+      <add-to-group group-id="ToolsMenu" anchor="first"/>
+    </action>
+  </actions>
+  <application-components>
+    <component>
+      <implementation-class>it.unisa.ascetic.actions.AsceticStartup</implementation-class>
+    </component>
+    <component>
+      <implementation-class>it.unisa.ascetic.actions.FileChangeHandler</implementation-class>
+    </component>
+  </application-components>
+</idea-plugin>

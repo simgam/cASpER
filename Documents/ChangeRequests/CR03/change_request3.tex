@@ -1,0 +1,179 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Academic Title Page
+% LaTeX Template
+% Version 2.0 (17/7/17)
+%
+% This template was downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% WikiBooks (LaTeX - Title Creation) with modifications by:
+% Vel (vel@latextemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+% 
+% Instructions for using this template:
+% This title page is capable of being compiled as is. This is not useful for 
+% including it in another document. To do this, you have two options: 
+%
+% 1) Copy/paste everything between \begin{document} and \end{document} 
+% starting at \begin{titlepage} and paste this into another LaTeX file where you 
+% want your title page.
+% OR
+% 2) Remove everything outside the \begin{titlepage} and \end{titlepage}, rename
+% this file and move it to the same directory as the LaTeX file you wish to add it to. 
+% Then add \input{./<new filename>.tex} to your LaTeX file where you want your
+% title page.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[11pt]{article}
+
+\usepackage[italian]{babel}
+
+\usepackage[utf8]{inputenc} % Required for inputting international characters
+\usepackage[T1]{fontenc} % Output font encoding for international characters
+
+\usepackage{mathpazo} % Palatino font
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{tabularx}
+\usepackage{geometry}
+
+\geometry{legalpaper, margin=2.5cm}
+
+\newcommand{\doctitle}{Change Request}
+\newcommand{\docversion}{1.0}
+
+\begin{document}
+	
+	%----------------------------------------------------------------------------------------
+	%	TITLE PAGE
+	%----------------------------------------------------------------------------------------
+	
+	\begin{titlepage} % Suppresses displaying the page number on the title page and the subsequent page counts as page 1
+		\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for horizontal lines, change thickness here
+		
+		\center % Centre everything on the page
+		
+		%------------------------------------------------
+		%	Headings
+		%------------------------------------------------
+		
+		\textsc{\LARGE Università degli Studi di Salerno}\\
+		\textsc{\large Corso di Ingegneria del Software}\\[1.5cm] % Main heading such as the name of your university/college
+		
+		%------------------------------------------------
+		%	Title
+		%------------------------------------------------
+		
+		\HRule\\[0.4cm]
+		
+		{\huge\bfseries ASCETIC}\\ % Title of your document
+		\vspace{0.2cm}
+		{\large\bfseries Automated Code Smell Identification and Correction}\\[0.2cm] % Title of your document
+		
+		\HRule\\[1.5cm]
+		
+		\textsc{\Large \doctitle}\\[0.3cm] % Major heading such as course name
+		
+		%\textsc{\large Version \docversion}\\[0.5cm] % Minor heading such as course title
+		
+		
+		%------------------------------------------------
+		%	Logo
+		%------------------------------------------------
+		
+		\vfill\vfill
+		
+		\includegraphics[width=0.5\textwidth]{../logo_temp.jpg}\\[1cm] % Include a department/university logo - this will require the graphicx package
+		
+		%------------------------------------------------
+		%	Date
+		%------------------------------------------------
+		
+		\vfill\vfill\vfill % Position the date 3/4 down the remaining page
+		
+		{\large\today} % Date, change the \today to a set date if you want to be precise
+		
+	
+		
+		%----------------------------------------------------------------------------------------
+		
+		\vfill % Push the date up 1/4 of the remaining page
+		
+	\end{titlepage}
+	
+	%----------------------------------------------------------------------------------------
+	
+	\pagestyle{fancy}
+	\rhead{ASCETIC}
+	%\lhead{\doctitle~v.~\docversion}
+	\renewcommand{\headrulewidth}{0pt}
+	
+	
+	\textbf{Coordinatore Progetto:}
+	\begin{table}[h]
+		\centering
+		\begin{tabularx}{0.9\textwidth}{|X|X|}
+			\hline
+			\textbf{Nome}     & \textbf{Matricola} \\ \hline
+			Manuel De Stefano &  0522500633\\ \hline
+		\end{tabularx}
+	\end{table}
+
+	\vspace{0.5cm}
+	
+	\textbf{Partecipanti:}
+	\begin{table}[h]
+		\centering
+		\begin{tabularx}{0.9\textwidth}{|X|X|}
+			\hline
+			\textbf{Nome}     & \textbf{Matricola} \\ \hline
+			Amoriello Nicola &  0512104742\\ \hline
+			Di Dario Dario &  0512104758\\ \hline
+			Gambardella Michele Simone &  0512104502\\ \hline
+			Iovane Francesco &  0512104550\\ \hline
+			Pascucci Domenico &  0512102950\\ \hline
+			Patierno Sara &  0512103460\\ \hline
+		\end{tabularx}
+	\end{table}
+
+	\textbf{Revision History:}
+	\begin{table}[h]
+		\centering
+		\begin{tabularx}{0.9\textwidth}{|p{2cm}|l|X|p{3cm}|}
+			\hline
+			\textbf{Data} & \textbf{Versione} & \textbf{Descrizione} & \textbf{Autore} \\ \hline
+			10/10/2018 & 1.0  & Prima Stesura & Manuel De Stefano \\ \hline
+		\end{tabularx}
+	\end{table}
+
+
+	\textbf{Change Request:}
+	\begin{table}[h!]
+		\centering
+		\begin{tabularx}{0.9\textwidth}{|p{3cm}|p{2cm}|X|l|}
+			\hline
+			\textbf{Numero Change Request} & \textbf{Data Richiesta} & \textbf{Richiesta da} & \textbf{Priorità} \\ \hline
+			CR-03 & 10/10/2018 & Manuel De Stefano & \textbf{Alta} \\ \hline
+		\end{tabularx}
+	\end{table}
+
+
+	
+	\section{Descrizione}
+		Si richiede la modifica delle interfacce di alcuni sottosistemi, in particolare il sottosistema \textit{codeSmellDetection}, il sottosistema \textit{parser} e il sottosistema \textit{refactoring}, applicando design pattern specifici. 
+		Per ulteriori dettagli si rimanda al documento di change impact analysis e al documento di object design.
+	\section{Scopo}
+		Lo scopo è quello di applicare design patterns, come lo \textit{Strategy Pattern}, a vari sottosistemi, modificandone meno possiblile le interfacce, con il fine di favorire il riuso del codice e di migliorare la manutenibilità.
+		
+	\section{Conseguenze se non accettata}
+		Tale modifica non va ad impattare le funzionalità del software. Tuttavia, questa manutenzione adattiva è necessaria per favorire le evoluzioni successive.
+	
+\end{document}

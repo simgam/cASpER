@@ -1,0 +1,347 @@
+\documentclass[11pt]{article}
+
+\usepackage[italian]{babel}
+
+\usepackage[utf8]{inputenc} % Required for inputting international characters
+\usepackage[T1]{fontenc} % Output font encoding for international characters
+
+\usepackage{mathpazo} % Palatino font
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{tabularx}
+\usepackage{geometry}
+
+\geometry{legalpaper, margin=2.5cm}
+
+\newcommand{\doctitle}{Requirement Analysis Document}
+\newcommand{\docversion}{1.0}
+
+\begin{document}
+	
+	%----------------------------------------------------------------------------------------
+	%	TITLE PAGE
+	%----------------------------------------------------------------------------------------
+	
+	\begin{titlepage} % Suppresses displaying the page number on the title page and the subsequent page counts as page 1
+		\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for horizontal lines, change thickness here
+		
+		\center % Centre everything on the page
+		
+		%------------------------------------------------
+		%	Headings
+		%------------------------------------------------
+		
+		\textsc{\LARGE Università degli Studi di Salerno}\\
+		\textsc{\large Corso di Ingegneria del Software}\\[1.5cm] % Main heading such as the name of your university/college
+		
+		%------------------------------------------------
+		%	Title
+		%------------------------------------------------
+		
+		\HRule\\[0.4cm]
+		
+		{\huge\bfseries ASCETIC}\\ % Title of your document
+		\vspace{0.2cm}
+		{\large\bfseries Automated Code Smell Identification and Correction}\\[0.2cm] % Title of your document
+		
+		\HRule\\[1.5cm]
+		
+		\textsc{\Large \doctitle}\\[0.3cm] % Major heading such as course name
+		
+		\textsc{\large Version \docversion}\\[0.5cm] % Minor heading such as course title
+		
+		
+		%------------------------------------------------
+		%	Logo
+		%------------------------------------------------
+		
+		\vfill\vfill
+		
+		\includegraphics[width=0.5\textwidth]{logo_temp.jpg}\\[1cm] % Include a department/university logo - this will require the graphicx package
+		
+		%------------------------------------------------
+		%	Date
+		%------------------------------------------------
+		
+		\vfill\vfill\vfill % Position the date 3/4 down the remaining page
+		
+		{\large\today} % Date, change the \today to a set date if you want to be precise
+		
+		
+		
+		%----------------------------------------------------------------------------------------
+		
+		\vfill % Push the date up 1/4 of the remaining page
+		
+	\end{titlepage}
+	
+	%----------------------------------------------------------------------------------------
+	
+	\pagestyle{fancy}
+	\rhead{ASCETIC}
+	\lhead{\doctitle~v.~\docversion}
+	\renewcommand{\headrulewidth}{0pt}	
+	
+	\textbf{Coordinatore Progetto:}
+	\begin{table}[h]
+		\centering
+		\begin{tabularx}{0.9\textwidth}{|X|X|}
+			\hline
+			\textbf{Nome}     & \textbf{Matricola} \\ \hline
+			Manuel De Stefano &  0522500633\\ \hline
+		\end{tabularx}
+	\end{table}
+	
+	\vspace{0.5cm}
+	
+	\textbf{Partecipanti:}
+	\begin{table}[h]
+		\centering
+		\begin{tabularx}{0.9\textwidth}{|X|X|}
+			\hline
+			\textbf{Nome}     & \textbf{Matricola} \\ \hline
+			Amoriello Nicola &  0512104742\\ \hline
+			Di Dario Dario &  0512104758\\ \hline
+			Gambardella Michele Simone &  0512104502\\ \hline
+			Iovane Francesco &  0512104550\\ \hline
+			Pascucci Domenico &  0512102950\\ \hline
+			Patierno Sara &  0512103460\\ \hline
+		\end{tabularx}
+	\end{table}
+	
+	\textbf{Revision History:}
+	\begin{table}[h]
+		\centering
+		\begin{tabularx}{0.9\textwidth}{|p{2cm}|l|X|p{3cm}|}
+			\hline
+			\textbf{Data} & \textbf{Versione} & \textbf{Descrizione} & \textbf{Autore} \\ \hline
+			26/10/2018 & 1.0 & Prima stesura & Tutto il Team \\ \hline
+		\end{tabularx}
+	\end{table}
+	
+	\vfill
+	\newpage
+	
+	\tableofcontents
+	\newpage
+	
+	\section{Introduction}	   
+	   	\input{IntroduzioneRAD.tex}
+	   	
+	\section{Current system}
+	
+		\input{requisiti_current.tex}
+		\subsection{Use Case Model}		
+			
+			\begin{figure}[h!]
+				\includegraphics[width=\columnwidth]{UseCaseDiagramCurrent.jpg}
+				\caption{UCD1-Analisi e Correzione}
+			\end{figure}
+		
+			\input{current_use_case.tex}
+		
+		\subsection{Static Analysis Model}
+		
+			\includegraphics[width=\columnwidth]{classDiagram.png}
+			
+			
+		\flushleft	\input{descrizione_oggetti_attuali.tex}
+			
+			\vspace{0.5cm}
+			
+			\flushleft Gli oggetti presenti nella tabella soprastante sono stati individuati a seguito dell'analisi dinamica sotto riportata.  
+			
+			\vspace{0.5cm}
+			\newpage				
+		\subsection{Dynamic Analysis Model}
+		
+		
+	
+		
+			\subsubsection{Sequence Diagram}
+			
+				\begin{figure}[h!]
+					\includegraphics[width=\columnwidth]{AnalisiCurrentProposed.png}
+					\caption{SD1-Analisi}
+				\end{figure}
+		
+				\begin{figure}[h!]
+					\includegraphics[width=\columnwidth]{Feature_Envy.png}
+					\caption{SD2.1-Correzione Feature Envy}
+				\end{figure}
+			
+				\begin{figure}[h!]
+					\includegraphics[width=\columnwidth]{SD_Misplaced_Classes.png}
+					\caption{SD2.2-Correzione Misplaced Class}
+				\end{figure}
+			\newpage
+			\subsubsection{Activity Diagram}
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[scale=2]{ActivityDiagramCurrent.png}
+					\caption{AD1-Analisi e Correzione}
+				\end{figure}
+		
+	\newpage
+	
+	\section{Proposed system}
+		
+	    \input{requisiti_proposed.tex}
+	    
+	    \subsection{Use Case Model}	
+	    
+	    \begin{figure}[h!]
+	    	\includegraphics[width=\columnwidth]{UseCaseDiagramProposed.jpg}
+	    	\caption{UCD1-Analisi e Correzione}
+	    \end{figure}
+    	
+	    \input{proposed_usecase.tex}
+	    \vspace{1cm}
+	    \input{UC-LowPriority.tex}
+	    
+	    
+	    \subsection{Static Analysis Model}
+	    
+	    		\includegraphics[width=\columnwidth]{classDiagram.png}
+	    	
+	    		\input{descrizione_oggetti_proposti.tex}
+	    		
+	    		\vspace{0.5cm}
+				
+				Gli oggetti presenti nella tabella soprastante sono stati individuati a seguito dell'analisi dinamica sotto riportata. 
+				    		
+	    		\vspace{0.5cm}
+	    \subsection{Dynamic Analysis Model}
+	    
+	    	
+	    	
+    	\subsubsection{Sequence Diagram}
+    	
+    		\includegraphics[width=\columnwidth]{AnalisiCurrentProposed.png}
+    		\centering{SD1-Analisi e ricerca smell}
+    	    		    	
+    		\includegraphics[width=\columnwidth]{Feature_Envy.png}
+    		\centering{SD2.1-Correzione Code smell "Feature Envy"}
+    		
+    		\includegraphics[width=\columnwidth]{SD_Misplaced_Classes.png}
+    		\centering{SD2.2-Correzione Code smell "Misplaced Class"}
+    	
+    		\includegraphics[width=\columnwidth]{Ignore.png}
+    		\centering{SD2.5-Ignora code smell}
+    	
+    		\includegraphics[width=\columnwidth]{Reminder.png}
+    		\centering{SD2.6-Promemoria code smell}
+    	
+    		\includegraphics[width=\columnwidth]{LP_Statistics.png}
+    		\centering{SD2.7-Statistiche classe/package}
+    	
+    		\includegraphics[width=\columnwidth]{LP_RevisionN.png}
+    		\centering{SD2.9-Numero di modifiche e revisioni}
+    	
+    		\includegraphics[width=\columnwidth]{LP_RiskAnalysis.png}
+    		\centering{SD2.10-Analisi rischi}
+	 
+	  \flushleft
+		\subsubsection{Activity Diagram}
+		
+			\includegraphics[width=\columnwidth]{ActivityDiagramProposed.jpg}
+			\centering{AD1-Analisi, Correzione e Casi Opzionali di "Misplaced Class" e "Feature Envy"}
+			\\
+			\vspace{0.5cm}
+			\includegraphics[width=\columnwidth]{ActivityDiagramProposedSwap.jpg}
+			\centering{AD2-Analisi, Correzione e Casi Opzionali di "Blob" e "Promiscuous Package"}
+			
+	  \flushleft
+		\subsubsection{New interface mockups}
+		
+			\includegraphics[width=\columnwidth]{mock-up_analisi1.jpg}
+			\centering{MU1.1-Analisi}
+			
+			\flushleft
+			L'utente, nel passo 1, seleziona nella tabella lo smell desiderato e visualizza automaticamente le 3 RadarMaps e la porzione di codice collegate. Prima della selezione i pulsanti risultano disabilitati.
+			\\ \vspace{0.2cm}
+			Tale schermata è collegata alla selezione nella tabella di code smell di tipo "Feature Envy" e "Misplaced Class". Nel caso di "Blob" e "Promiscuous Package" i pulsanti "Ignore" e "Remind" rimangono disabilitati e si viene rimandati a MU4.1 e successivi.
+			\\\vspace{0.5cm}
+			L'utente, nel passo 2, selezionando il pulsante "Refactoring" richiede la proposta di soluzione allo smell selezionato.\\ \vspace{0.5cm}
+		
+			\includegraphics[width=\columnwidth]{mock-up_refactoring.jpg}
+			\centering{MU1.2-Refactoring "Feature Envy" e "Misplaced Class"}
+		
+			\flushleft
+			L'utente, nel passo 1, selezionando il pulsante "Apply" richiede l'applicazione della proposta di soluzione.\vspace{0.5cm}
+		
+			\centering
+			\includegraphics[scale=0.9]{pop-up_successo.jpg}\\
+			\centering{MU1.3-Pop-up di successo}
+			\vspace{0.5cm}
+			
+			\includegraphics[width=\columnwidth]{mock-up_analisi2.jpg}
+			\centering{MU2.1-Analisi}
+			
+			\flushleft
+			L'utente, nel passo 1, seleziona nella tabella lo smell desiderato e visualizza automaticamente le 3 RadarMaps e la porzione di codice collegate.\\ \vspace{0.2cm}
+			L'utente, nel passo 2, selezionando il pulsante "Ignore" richiede di ignorare lo smell selezionato.\vspace{0.5cm}
+			
+			\centering	
+			\includegraphics[scale=0.9]{pop_up_ignore.jpg}\\
+			\centering{MU2.2-Pop-up ignora}
+			
+			\includegraphics[width=\columnwidth]{mock-up_analisi3.jpg}
+			\centering{MU3.1-Analisi}
+			
+			\flushleft
+			L'utente, nel passo 1, seleziona nella tabella lo smell desiderato e visualizza automaticamente le 3 RadarMaps e la porzione di codice collegate.\\ \vspace{0.2cm}
+			L'utente, nel passo 2, selezionando il pulsante "Remind" richiede di ricordare lo smell selezionato ed aggiungerlo alla lista "to do".\vspace{0.5cm}
+			
+			\centering	
+			\includegraphics[scale=0.9]{pop-up_remind.jpg}\\
+			\centering{MU3.2-Pop-up remind}
+			
+			\includegraphics[width=\columnwidth]{mock-up_refactoring2_1.jpg}
+			\centering{MU4.1-Refactoring "Blob" e "Promiscuous Package"}
+			
+			\flushleft
+			L'utente, nel passo 1, selezionando una o più riga nella tabella e successivamente (tramite passo 2) premendo su apposito pulsante si effettua lo spostamento degli elementi selezionati nell'altra tabella. Tale operazione può essere effettuata anche sulla tabella di destra con la stessa logica.\vspace{0.2cm}
+			\\L'utente, nel passo 3, selezionando il pulsante "Apply" richiede l'applicazione della proposta di soluzione.\vspace{0.3cm}
+			
+			*=identifica una operazione opzionale che può quindi essere anche non effettuata.
+			\vspace{0.5cm}
+			
+			\centering	
+			\includegraphics[scale=0.9]{pop-up_successo.jpg}\\
+			\centering{MU4.2-Pop-up di successo}	
+			
+			\includegraphics[width=\columnwidth]{mock-up_refactoring2_2.jpg}
+			\centering{MU5.1-Refactoring seconda schermata}
+			
+			\flushleft
+			L'utente, nel passo 1, selezionando una o più riga nella tabella e successivamente (tramite passo 2) premendo su apposito pulsante si effettua lo spostamento degli elementi selezionati nell'altra tabella. Tale operazione può essere effettuata anche sulla tabella di destra con la stessa logica.\vspace{0.2cm}
+			\\L'utente, nel passo 3, selezionando il pulsante "Ignore" richiede di ignorare lo smell selezionato.\vspace{0.3cm}
+			
+			*=identifica una operazione opzionale che può quindi essere anche non effettuata.
+			\vspace{0.5cm}
+			
+			\centering	
+			\includegraphics[scale=0.9]{pop_up_ignore.jpg}\\
+			\centering{MU5.2-Pop-up ignora}
+			
+			\includegraphics[width=\columnwidth]{mock-up_refactoring2_3.jpg}
+			\centering{MU6.1-Refactoring seconda schermata}
+			
+			\flushleft
+			L'utente, nel passo 1, selezionando una o più riga nella tabella e successivamente (tramite passo 2) premendo su apposito pulsante si effettua lo spostamento degli elementi selezionati nell'altra tabella. Tale operazione può essere effettuata anche sulla tabella di destra con la stessa logica.
+			\\L'utente, nel passo 3, selezionando il pulsante "Remind"  richiede di ricordare lo smell selezionato ed aggiungerlo alla lista "to do".\vspace{0.2cm}
+			
+			*=identifica una operazione opzionale che può quindi essere anche non effettuata.
+			\vspace{0.5cm}
+			
+			\centering	
+			\includegraphics[scale=0.9]{pop-up_remind.jpg}\\
+			\centering{MU6.2-Pop-up remind}
+						
+		\flushleft	
+		\section{Glossary}
+		\input{Glossario.tex}
+		
+	
+\end{document}

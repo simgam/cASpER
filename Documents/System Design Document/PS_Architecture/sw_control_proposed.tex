@@ -1,0 +1,6 @@
+
+
+
+All'avvio del plug-in, un thread di controllo inizia la sua attività di analisi dell'intero progetto, creando, nel caso in cui sia stato effettuato il primo avvio, la cache. Per avvii successivi del plug-in, la cache viene aggiornata dal thread.
+\\
+Il controllo del flusso è gestito da classi di tipo controller poiché il sistema è basato su architettura MVC. Il sistema utilizzerà un controllo di flusso event-driven perché le azioni saranno innestate da eventi tramite interazioni dell'utente con l'interfaccia grafica (button, menù, ...). Quindi la gestione del flusso converge tutta su un'entità controller, la quale smisterà le differenti azioni al componente adatto a svolgerle.

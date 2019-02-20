@@ -1,0 +1,126 @@
+\begin{list}{-}{}
+	\item{I seguenti requisiti funzionali, appartenenti al Current Envirorment, non sono stati modificati:}	
+\end{list}
+\begin{quote}	
+	\begin{description}		
+		\item[RF 1:]				
+		\begin{list}{}{}
+			\begin{quote}
+				\item{RF 1.1}
+			\end{quote}					
+		\end{list}
+		
+		\item[RF 2:]				
+		\begin{list}{}{}
+			\begin{quote}
+				\item{RF 2.1}
+				\item{RF 2.2}		
+			\end{quote}					
+		\end{list}
+		
+		\item[RF 3:]				
+		\begin{list}{}{}
+			\begin{quote}
+				\item{RF 3.1}
+				\item{RF 3.2}		
+			\end{quote}	
+		\end{list}
+		\item[RF 4:]	
+		\begin{list}{}{}
+			\begin{quote}
+				\item{RF 4.1}
+				\item{RF 4.2}		
+			\end{quote}	
+		\end{list}
+		\item[RF 5]	
+		\begin{list}{}{}
+		\end{list}
+		\item[RF 6]	
+		\begin{list}{}{}
+		\end{list}
+		
+	
+	\end{description}
+\end{quote}
+
+\begin{list}{-}{}
+	\item \textbf{RF 2 - Correzione} 
+	\begin{quote}Il sistema consente la creazione di una possibile soluzione ai quattro principalei tipi di code smell.\end{quote}
+	\begin{quote}
+		\begin{description}    		 	
+			\item [RF 2.3:]Il sistema fornisce una possibile soluzione al code smell di tipo Blob. 
+			
+				\begin{description}
+					\item[RF 2.3.1:] Il sistema permette di modificare la possibile soluzione al Blob attraverso l'operazione che consente lo spostamento dei metodi applicata alle due classi proposte nell'operazione di "Extract class".		
+				\end{description}
+			
+			\item[RF 2.4:] Il sistema fornisce una possibile soluzione al code smell di tipo Promiscuous Package.  
+			
+				\begin{description}
+					\item[RF 2.4.1:] Il sistema permette di modificare la possibile soluzione al Promiscuous Package attraverso l'operazione di spostamento delle classi applicata ai package proposti nell'operazione di "Extract package".	
+				\end{description}
+			
+			\item[RF 2.5:] Il sistema permette di segnalare come falso positivo una componente indicata come difettosa dal correttore automatico.
+			
+		\end{description}
+	\end{quote}
+	\item \textbf{RF 3 - Refactoring:} 
+	\begin{quote}Il sistema consente la creazione di una possibile soluzione ai quattro principali tipi di code smell.\end{quote}
+	\begin{quote}
+		\begin{description}
+			\item[RF 3.3:]Il sistema permette allo sviluppatore di risolvere il code smell di tipo Blob.
+			
+				\begin{description}
+					\item[RF 3.3.1:]Il sistema permette di risolvere il code smell di tipo Blob attraverso l'uso dell'operazione di "Extract class".
+					\newline		
+				\end{description}
+					
+			\item[RF 3.4:]Il sistema permette allo sviluppatore di risolvere il code smell di tipo Promiscuous Package.
+			
+				\begin{description}
+					\item[RF 3.4.1:]Il sistema permette di risolvere il code smell di tipo Promiscuous Package attraverso l'uso dell'operazione di "Extract package".
+					\newline		
+				\end{description}
+			
+		\end{description}
+	\end{quote}
+	\item \textbf{RF 7 - To Do:} 
+	\begin{quote}
+	\begin{description}
+		\item[RF 7.1:]Il sistema consente, all'avvio del programma, di mostrare all'utente un promemoria per un'eventuale correzione manuale.
+	\end{description}
+	
+		\begin{description}
+			\item [RF 7.2: ]Il sistema consente di aggiungere un nuovo promemoria.
+		\end{description}	
+	\end{quote}
+	
+	\item	\textbf{RF 8 -  Statistiche di accoppiamento:}
+	\newline Il sistema consente di visualizzare le statistiche riguardanti classi e package precedentemente analizzati.
+	
+	\item	\textbf{RF 9 - Numero modifiche e Revisioni:}
+	\newline Il sistema permette di tener traccia del numero di volte che è stato modificato un componente.
+	
+	\item	\textbf{RF 10 - Analisi rischi:}
+	\newline Il sistema consente di visualizzare una stima di pericolosità che potrebbe occorrere nel caso in cui si decide di fare un Refactor.
+\end{list}		
+
+\subsection{Requisiti Non Funzionali}
+\begin{list}{-}{}
+	
+	\item \textbf{RNF 1 - Performance}
+	\newline Il sistema deve garantire brevi tempi di risposta, in particolare nelle operazioni di analisi del codice.  
+	\item \textbf{RNF 2 - Robustezza}
+	\newline Il sistema è in grado di funzionare correttamente anche in situazioni anomale o in caso di uso scorretto, notificando l'utente della situazione erronea rilevata, ma senza terminare la propria esecuzione. 
+	\item \textbf{RNF 3 - Sicurezza}
+	\newline Il sistema si presenta sufficientemente sicuro in quanto il suo ambiente d'azione è locale, quindi non vi è la necessità di protezione da minacce esterne.
+	\item \textbf{RNF 4 - Usabilità}
+	\newline Il sistema risulta essere di facile utilizzo. L'interfaccia grafica risulta essere intuitiva, agevolando il lavoro dello sviluppatore. 
+	\item \textbf{RNF 5 - Manutenibilità}
+	\newline Il sistema presenta un elevato grado di manutenibilità, in particolare, favorisce l'aggiunta di nuove funzionalità.
+	\item \textbf{RNF 6 - Implementazione}
+	\newline Il sistema è realizzato interamente in linguaggio Java, sia parte back-end che front-end. 
+	\item \textbf{RNF 7 - Affidabilità}
+	\newline Il sistema assicura un'alta affidabilità, riducendo al minimo i casi di arresto anomalo del sistema.
+\end{list}
+

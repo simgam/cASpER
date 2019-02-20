@@ -1,0 +1,16 @@
+package it.unisa.ascetic.gui.radarMap;
+
+
+import it.unisa.ascetic.storage.beans.*;
+import org.jfree.chart.ChartPanel;
+
+import javax.swing.*;
+import java.util.TreeMap;
+
+public interface RadarMapUtils {
+    ChartPanel createRadarMapFromPackageBean(PackageBean aPackage, String mapTitle);
+    ChartPanel createRadarMapFromClassBean(ClassBean aClass, String mapTitle);
+    ChartPanel createRadarMapFromMethodBean(MethodBean aMethod, String mapTitle);
+
+    JPanel getRadarMapPanel(TreeMap<String, Integer> belongingClassTopicsFinali, String newCurrentClassTopic);
+}

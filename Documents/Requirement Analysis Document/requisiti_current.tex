@@ -1,0 +1,74 @@
+	\subsection{Requisiti Funzionali}
+		\paragraph{RF 1 - Ricerca code smell}  
+		\begin{quote}Il sistema ricerca i code smell all'interno del codice java.	
+			\begin{description}
+				\item [RF 1.1:]Il sistema permette l'analisi di code smell di tipo Blob,
+				\item [RF 1.2:]Il sistema permette l'analisi di code smell di tipo Misplaced Class
+				\item [RF 1.3:]Il sistema permette l'analisi di code smell di tipo Feature Envy
+				\item [RF 1.4:]Il sistema permette l'analisi di code smell di tipo Promiscuos Package
+			\end{description}
+		\end{quote}
+		
+		
+		
+		\paragraph{RF 2 - Correzione} 
+		\begin{quote}Il sistema mostra una possibile soluzione al code smell.
+			\begin{description}
+				\item [RF 2.1:] Il sistema permette di corregere code smell di tipo Feature Envy.
+				\item [RF 2.2:] Il sistema permette di corregere code smell di tipo Misplaced Class.
+			\end{description}
+		\end{quote}
+		
+		
+		\paragraph{RF 3 - Refactoring} 
+		\begin{quote}Il sistema permette allo sviluppatore di risolvere il code smell con degli automatismi del software.
+			\begin{description}
+				\item [RF 3.1:] Il sistema permette di risolvere code smell di tipo Feature Envy.
+				\item [RF 3.2:] Il sistema permette di risolvere code smell di tipo Misplaced Class.
+			\end{description}
+		\end{quote}
+		
+		
+		\paragraph{RF 4 - Metriche di Qualità} 
+		\begin{quote}Il sistema permette di calcolare metriche di qualità.
+			\begin{description}
+				\item [RF 4.1:] Il sistema permette di calcolare metriche di qualità per i metodi.
+				\item [RF 4.2:] Il sistema permette di calcolare metriche di qualità per le classi.
+				\item [RF 4.3:] Il sistema permette di calcolare metriche di qualità per i package.
+			\end{description}
+		\end{quote}
+		
+		\paragraph{RF 5 - Estrazione dei Topic} 
+		\begin{quote}Il sistema consente di estrarre i topic implementati.
+		\end{quote}
+	
+		\paragraph{RF 6 - Verifica Correzione}
+		\begin{quote}Il sistema consente di verificare la correttezza del codice.
+		\end{quote}  
+	
+			
+	\subsection{Requisiti Non Funzionali}
+	
+		\begin{list}{-}{}
+			
+			\item \textbf{RNF 1 - Performance}\newline 
+			Il sistema è concepito come utilizzabile da singolo utente, con un'interazione diretta, il tempo di risposta varia in base all'analisi proposta.
+			\newline 
+			\item \textbf{RNF 2 - Robustezza}
+			\newline  Il sistema allo stato attuale non soddisfa il requisito di robustezza.
+			\newline
+			\item \textbf{RNF 3 - Sicurezza}
+			\newline Il sistema si presenta sufficientemente sicuro in quanto il suo ambiente d'azione è locale, quindi non vi è la necessità di protezione da minacce esterne.
+			\newline 
+			\item \textbf{RNF 4 - Usabilità}
+			\newline Il sistema presenta bassi criteri di usabilità, data una scarna e poco intuitiva GUI.
+			\newline 
+			\item \textbf{RNF 5 - Manutenibilità}\newline 
+			Il sistema non presenta alcun tipo di documentazione pregressa, oltre ad adottare scelte implementative poco adatte a tale scopo.
+			\newline  
+			\item \textbf{RNF 6 - Implementazione}
+			\newline Il sistema è realizzato interamente in linguaggio Java, sia parte back-end che front-end.
+			\newline 
+			\item \textbf{RNF 7 - Affidabilità}
+			\newline  Il sistema allo stato attuale non rispetta il requisito di affidabilità.
+	  \end{list}

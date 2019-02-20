@@ -1,0 +1,23 @@
+	   
+	   	\subsection{Scope of the system}
+	   		Durante il ciclo di vita di un software i cambiamenti sono inevitabili.\\
+	   		La manutenzione, che sia per correggere bug o per aggiungere nuove funzionalità, porta a un graduale deperimento del codice, il quale non inficia la correttezza del programma ma porta a debolezze di progettazione: i cosiddetti code smell.\\
+	   		Anche uno sviluppatore navigato e ben attento a queste problematiche può cadere in errore, a causa di tempistiche strette o codice ripreso da altri developer.\\
+	   	    ASCETIC nasce per permettere a utenti, esperti e non, di refactorizzare il codice in maniera comoda e intelligente.\\
+	   		Il plug-in, sviluppato per l'IDE intelliJ IDEA, consente di analizzare il progetto, rilevando 4 possibili tipologie di smell(Blob, Promiscuous Package, Feature Envy, Missplaced Class) e di effettuare un eventuale correzione automatica.
+	   		
+	   	\subsection{Overview}
+	   		ASCETIC (Inizialmente TACOR) è un'opera di reengineering, la quale ha l'obiettivo di migliorare le funzionalità già offerte dal precedente plug-in, offrirne delle nuove ed effettuare un restyling dell'interfaccia grafica per rendere migliore l'esperienza d'uso. ASCETIC si rivolge ad un pubblico composto principalmente da sviluppatori Java che utilizzano l'IDE IntelliJ IDEA e si pone l'obiettivo di facilitare l'aggiustamento del codice sorgente. Lo sviluppatore ha la possibilità di: 
+	   		\begin{itemize}
+	   			\item Applicare la correzione automatica proposta dal sistema dei Code Smell rilevati durante la fase d'analisi. E' possibile applicare tale soluzione a tutti gli elementi rilevati oppure ad uno specifico insieme selezionato dall'utente.
+	   			\item Porre determinati Smell, scelti ad hoc dallo sviluppatore, come "falsi positivi", cosicché il sistema ignori quella determinata sezione di codice fino a nuova modifica. 
+	   			\item Utilizzare la funzione "Reminder", la quale fornisce un comodo promemoria così da poter affrontare manualmente la correzione dello smell selezionato. 
+	   		
+	   		\end{itemize}
+	   	
+	   	
+	   	\subsection{Definitions, acronyms, and abbreviations}
+	   	
+	   	Code Smell : Sezioni di codice scritte in maniera non ottimale, presentanti debolezze di progettazione che riducono la qualità del codice, non compromettendone il funzionamento.
+	    \newline
+	   	\\ASCETIC : acronimo per Automated Code Smell Identification and Correction. 
