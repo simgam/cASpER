@@ -3,8 +3,9 @@
     <counts>
       <entry action="$SelectAll" count="1" />
       <entry action="EditorPaste" count="1" />
+      <entry action="OpenFile" count="1" />
       <entry action="ShowSettings" count="1" />
-      <entry action="it.unisa.ascetic.actions.BeginAction" count="1" />
+      <entry action="it.unisa.ascetic.actions.BeginAction" count="2" />
     </counts>
   </component>
   <component name="FeatureUsageStatistics" first-run="1549716958085" have-been-shown="false" show-in-other="true" show-in-compilation="true">
@@ -96,6 +97,7 @@
   </component>
   <component name="MainMenuCollector">
     <counts>
+      <entry path="File -&gt; Open..." count="1" />
       <entry path="File -&gt; Settings..." count="1" />
     </counts>
   </component>
@@ -108,7 +110,7 @@
   <component name="UsageTrigger">
     <counts>
       <entry feature="ide.settings.Color Scheme" count="1" />
-      <entry feature="ideaapp.started" count="2" />
+      <entry feature="ideaapp.started" count="3" />
       <entry feature="welcome.screen.WelcomeScreen.ImportProject" count="1" />
       <entry feature="welcome.screen.WelcomeScreen.OpenProject" count="1" />
     </counts>

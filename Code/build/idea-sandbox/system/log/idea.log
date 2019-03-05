@@ -656,3 +656,375 @@ Max  duration:    31ms (it was 'Stop action update (class com.intellij.execution
 2019-02-09 13:59:19,416 [  29199]   INFO - plication.impl.ApplicationImpl - Global instance threads created counter = 7; ProcessIOExecutorService threads: 3 
 2019-02-09 13:59:19,418 [  29201]   INFO -        #com.intellij.idea.Main - ------------------------------------------------------ IDE SHUTDOWN ------------------------------------------------------ 
 2019-02-09 13:59:19,420 [  29203]   INFO - org.jetbrains.io.BuiltInServer - web server stopped 
+2019-03-05 14:38:33,398 [      0]   INFO -        #com.intellij.idea.Main - ------------------------------------------------------ IDE STARTED ------------------------------------------------------ 
+2019-03-05 14:38:33,519 [    121]   INFO -        #com.intellij.idea.Main - IDE: IntelliJ IDEA (build #IC-181.4892.42, 08 May 2018 08:33) 
+2019-03-05 14:38:33,519 [    121]   INFO -        #com.intellij.idea.Main - OS: Windows 10 (10.0, amd64) 
+2019-03-05 14:38:33,519 [    121]   INFO -        #com.intellij.idea.Main - JRE: 1.8.0_152-release-1136-b38 (JetBrains s.r.o) 
+2019-03-05 14:38:33,519 [    121]   INFO -        #com.intellij.idea.Main - JVM: 25.152-b38 (OpenJDK 64-Bit Server VM) 
+2019-03-05 14:38:33,521 [    123]   INFO -        #com.intellij.idea.Main - JVM Args: -Didea.classpath.index.enabled=false -Didea.config.path=C:\Users\Simone\Desktop\Ascetic\Code\build\idea-sandbox\config -Didea.is.internal=true -Didea.platform.prefix=Idea -Didea.plugins.path=C:\Users\Simone\Desktop\Ascetic\Code\build\idea-sandbox\plugins -Didea.required.plugins.id=it.unisa.ascetic -Didea.system.path=C:\Users\Simone\Desktop\Ascetic\Code\build\idea-sandbox\system -XX:MaxPermSize=250m -Xms256m -Xmx512m -Dfile.encoding=windows-1252 -Duser.country=IT -Duser.language=it -Duser.variant -ea 
+2019-03-05 14:38:33,522 [    124]   INFO -        #com.intellij.idea.Main - ext: C:\Users\Simone\.gradle\caches\modules-2\files-2.1\com.jetbrains\jbre\jbrex8u152b1136.38_windows_x64\jre\lib\ext: [access-bridge-64.jar, cldrdata.jar, dnsns.jar, jaccess.jar, jfxrt.jar, localedata.jar, meta-index, nashorn.jar, sunec.jar, sunjce_provider.jar, sunmscapi.jar, sunpkcs11.jar, zipfs.jar] 
+2019-03-05 14:38:33,522 [    124]   INFO -        #com.intellij.idea.Main - JNU charset: Cp1252 
+2019-03-05 14:38:33,609 [    211]   INFO -        #com.intellij.idea.Main - JNA library (64-bit) loaded in 87 ms 
+2019-03-05 14:38:33,615 [    217]   INFO - penapi.util.io.win32.IdeaWin32 - Native filesystem for Windows is operational 
+2019-03-05 14:38:33,693 [    295]   INFO -     #com.intellij.util.ui.JBUI - User scale factor: 1.0 
+2019-03-05 14:38:33,693 [    295]   INFO -     #com.intellij.util.ui.JBUI - System scale factor: 1.0 (JRE-managed HiDPI) 
+2019-03-05 14:38:34,458 [   1060]   INFO - .intellij.idea.IdeaApplication - CPU cores: 8; ForkJoinPool.commonPool: java.util.concurrent.ForkJoinPool@ae77353[Running, parallelism = 7, size = 0, active = 0, running = 0, steals = 0, tasks = 0, submissions = 0]; factory: com.intellij.concurrency.IdeaForkJoinWorkerThreadFactory@706063af 
+2019-03-05 14:38:35,194 [   1796]   INFO - llij.ide.plugins.PluginManager - Cannot find optional descriptor duplicates-groovy.xml 
+2019-03-05 14:38:35,785 [   2387]   INFO - llij.ide.plugins.PluginManager - 35 plugins initialized in 1074 ms 
+2019-03-05 14:38:35,818 [   2420]   INFO - llij.ide.plugins.PluginManager - Loaded bundled plugins: Android Support (10.3.0), Ant Support (1.0), Bytecode Viewer (0.1), CVS Integration (11), Copyright (8.1), Coverage (181.4892.42), Eclipse Integration (3.0), EditorConfig (181.4892.42), Git Integration (8.1), GitHub (181.4892.42), Gradle (181.4892.42), Groovy (9.0), I18n for Java (181.4892.42), IDEA CORE (181.4892.42), IntelliLang (8.0), JUnit (1.0), Java Bytecode Decompiler (181.4892.42), Java Stream Debugger (181.4892.42), JavaFX (1.0), Kotlin (1.2.31-release-IJ2018.1-1), Maven Integration (181.4892.42), Mercurial Integration (10.0), Plugin DevKit (1.0), Properties Support (181.4892.42), Settings Repository (181.4892.42), Smali Support (1.0), Subversion Integration (1.1), Task Management (1.0), Terminal (0.1), TestNG-J (8.0), UI Designer (181.4892.42), XPathView + XSLT Support (4), XSLT-Debugger (1.4), YAML (181.4892.42) 
+2019-03-05 14:38:35,818 [   2420]   INFO - llij.ide.plugins.PluginManager - Loaded custom plugins: Ascetic (1.0-SNAPSHOT) 
+2019-03-05 14:38:41,815 [   8417]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=435; buffer=10; max=435 
+2019-03-05 14:38:41,913 [   8515]   INFO - pl.local.NativeFileWatcherImpl - Starting file watcher: C:\Users\Simone\.gradle\caches\modules-2\files-2.1\com.jetbrains.intellij.idea\ideaIC\2018.1.3\86a2c993435af646f55998a85dacfe162b5b56dc\ideaIC-2018.1.3\bin\win\fsnotifier64.exe 
+2019-03-05 14:38:41,981 [   8583]   INFO - pl.local.NativeFileWatcherImpl - Native file watcher is operational. 
+2019-03-05 14:38:43,054 [   9656]   INFO - pi.util.registry.RegistryState - Registry values changed by user: 
+2019-03-05 14:38:43,054 [   9656]   INFO - pi.util.registry.RegistryState -   java.completion.argument.hints.internal = false 
+2019-03-05 14:38:44,320 [  10922]   WARN - nSystem.impl.ActionManagerImpl - keymap "Xcode" not found [Plugin: Git4Idea] 
+2019-03-05 14:38:46,148 [  12750]   WARN - nSystem.impl.ActionManagerImpl - keymap "Xcode" not found [Plugin: hg4idea] 
+2019-03-05 14:38:47,036 [  13638]   INFO - .openapi.application.Preloader - Finished preloading com.intellij.ide.ui.OptionsTopHitProvider$Activity@245f7108 
+2019-03-05 14:38:47,598 [  14200]   INFO - til.net.ssl.CertificateManager - Default SSL context initialized 
+2019-03-05 14:38:47,644 [  14246]   INFO - rains.ide.BuiltInServerManager - built-in server started, port 63343 
+2019-03-05 14:38:47,758 [  14360]   INFO - gs.impl.UpdateCheckerComponent - channel: release 
+2019-03-05 14:38:48,400 [  15002]   INFO - il.indexing.FileBasedIndexImpl - Index exts enumerated:526, number of extensions:44 
+2019-03-05 14:38:48,411 [  15013]   INFO - il.indexing.FileBasedIndexImpl - Index scheduled:10 
+2019-03-05 14:38:48,488 [  15090]   INFO - tellij.psi.stubs.StubIndexImpl - All stub exts enumerated:63, number of extensions:49 
+2019-03-05 14:38:48,490 [  15092]   INFO - tellij.psi.stubs.StubIndexImpl - stub exts update scheduled:1 
+2019-03-05 14:38:49,083 [  15685]   INFO - plication.impl.ApplicationImpl - 91 application components initialized in 14380ms 
+2019-03-05 14:38:49,433 [  16035]   INFO - .intellij.idea.IdeaApplication - App initialization took 17152 ms 
+2019-03-05 14:38:49,435 [  16037]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.kotlin loaded 342 classes 
+2019-03-05 14:38:49,435 [  16037]   INFO - llij.ide.plugins.PluginManager - org.intellij.groovy loaded 174 classes 
+2019-03-05 14:38:49,435 [  16037]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.android loaded 132 classes 
+2019-03-05 14:38:49,435 [  16037]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.idea.maven loaded 55 classes 
+2019-03-05 14:38:49,435 [  16037]   INFO - llij.ide.plugins.PluginManager - CVS loaded 42 classes 
+2019-03-05 14:38:49,436 [  16038]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.settingsRepository loaded 31 classes 
+2019-03-05 14:38:49,436 [  16038]   INFO - llij.ide.plugins.PluginManager - com.intellij.uiDesigner loaded 24 classes 
+2019-03-05 14:38:49,436 [  16038]   INFO - llij.ide.plugins.PluginManager - Git4Idea loaded 22 classes 
+2019-03-05 14:38:49,436 [  16038]   INFO - llij.ide.plugins.PluginManager - hg4idea loaded 21 classes 
+2019-03-05 14:38:49,436 [  16038]   INFO - llij.ide.plugins.PluginManager - Subversion loaded 19 classes 
+2019-03-05 14:38:49,436 [  16038]   INFO - llij.ide.plugins.PluginManager - com.intellij.properties loaded 18 classes 
+2019-03-05 14:38:49,437 [  16039]   INFO - llij.ide.plugins.PluginManager - com.intellij.tasks loaded 15 classes 
+2019-03-05 14:38:49,437 [  16039]   INFO - llij.ide.plugins.PluginManager - XPathView loaded 14 classes 
+2019-03-05 14:38:49,437 [  16039]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.plugins.yaml loaded 12 classes 
+2019-03-05 14:38:49,437 [  16039]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.plugins.github loaded 12 classes 
+2019-03-05 14:38:49,437 [  16039]   INFO - llij.ide.plugins.PluginManager - it.unisa.ascetic loaded 11 classes 
+2019-03-05 14:38:49,437 [  16039]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.plugins.javaFX loaded 11 classes 
+2019-03-05 14:38:49,437 [  16039]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.plugins.gradle loaded 10 classes 
+2019-03-05 14:38:49,438 [  16040]   INFO - llij.ide.plugins.PluginManager - AntSupport loaded 7 classes 
+2019-03-05 14:38:49,438 [  16040]   INFO - llij.ide.plugins.PluginManager - DevKit loaded 6 classes 
+2019-03-05 14:38:49,438 [  16040]   INFO - llij.ide.plugins.PluginManager - com.intellij.copyright loaded 3 classes 
+2019-03-05 14:38:49,438 [  16040]   INFO - llij.ide.plugins.PluginManager - com.android.tools.idea.smali loaded 3 classes 
+2019-03-05 14:38:49,438 [  16040]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.idea.eclipse loaded 2 classes 
+2019-03-05 14:38:49,438 [  16040]   INFO - llij.ide.plugins.PluginManager - ByteCodeViewer loaded 2 classes 
+2019-03-05 14:38:49,439 [  16041]   INFO - llij.ide.plugins.PluginManager - Coverage loaded 1 classes 
+2019-03-05 14:38:50,369 [  16971]   INFO - pl$FileIndexDataInitialization - Initialization done:1957 
+2019-03-05 14:38:50,478 [  17080]   INFO - exImpl$StubIndexInitialization - Initialization done:109 
+2019-03-05 14:38:51,317 [  17919]   INFO - .openapi.application.Preloader - Finished preloading com.intellij.openapi.actionSystem.impl.ActionPreloader@5a7869f9 
+2019-03-05 14:38:51,665 [  18267]   INFO - com.intellij.ide.ui.UISettings - Loaded: fontSize=12, fontScale=1.0; restored: fontSize=12, fontScale=1.0 
+2019-03-05 14:38:53,171 [  19773]   INFO - .openapi.application.Preloader - Finished preloading com.intellij.ide.ui.search.SearchableOptionPreloader@656f1a5c 
+2019-03-05 14:38:53,465 [  20067]   INFO - .openapi.application.Preloader - Finished preloading com.intellij.codeInsight.completion.CompletionPreloader@41975988 
+2019-03-05 14:38:53,473 [  20075]   INFO - .openapi.application.Preloader - Finished preloading com.intellij.ide.actions.GotoClassPresentationUpdater@5ecdc1d9 
+2019-03-05 14:38:56,027 [  22629]   INFO - ellij.project.impl.ProjectImpl - 154 project components initialized in 5767 ms 
+2019-03-05 14:38:56,302 [  22904]   INFO - le.impl.ModuleManagerComponent - 1 module(s) loaded in 272 ms 
+2019-03-05 14:38:56,577 [  23179]   INFO - j.ide.script.IdeStartupScripts - 0 startup script(s) found 
+2019-03-05 14:38:57,456 [  24058]   INFO - CompilerBackwardReferenceIndex - backward reference index version differ due to: class java.io.FileNotFoundException 
+2019-03-05 14:38:57,595 [  24197]   INFO - ntellij.internal.IconsLoadTime - IMG load time: ide_startup=34,89ms, average=0,55ms, median=1,05ms; number of icons: 64 
+2019-03-05 14:38:57,752 [  24354]   INFO - penapi.project.DumbServiceImpl - Running dumb mode task: com.intellij.util.indexing.UnindexedFilesUpdater@7e041e42 
+2019-03-05 14:38:57,790 [  24392]   INFO - .diagnostic.PerformanceWatcher - Pushing properties took 34ms; general responsiveness: ok; EDT responsiveness: ok 
+2019-03-05 14:38:58,154 [  24756]   INFO - rojectCodeStyleSettingsManager - Initialized from default code style settings. 
+2019-03-05 14:38:58,503 [  25105]   INFO - .diagnostic.PerformanceWatcher - Indexable file iteration took 711ms; general responsiveness: ok; EDT responsiveness: ok 
+2019-03-05 14:38:58,871 [  25473]   INFO - penapi.project.DumbServiceImpl - Running dumb mode task: initial refresh 
+2019-03-05 14:38:58,917 [  25519]   INFO - penapi.project.DumbServiceImpl - updateFinished 
+2019-03-05 14:38:58,932 [  25534]   INFO - g.FileBasedIndexProjectHandler - Has changed files: false; project=Project 'D:\Documenti\UNISA\Ascetic\ProgettiTest' ProgettiTest 
+2019-03-05 14:38:59,770 [  26372]   INFO - j.ide.ui.OptionsTopHitProvider - 556 ms spent to cache options in project 
+2019-03-05 14:39:00,126 [  26728]   INFO - tartup.impl.StartupManagerImpl - OpenFilesActivity run in 2521ms under project opening modal progress 
+2019-03-05 14:39:00,210 [  26812]   INFO - ge.ExternalProjectsDataStorage - Loaded external projects data in 8 millis 
+2019-03-05 14:39:00,279 [  26881]   INFO - .diagnostic.PerformanceWatcher - Post-startup activities under progress took 2719ms; general responsiveness: ok; EDT responsiveness: 1/3 sluggish, 1/3 very slow 
+2019-03-05 14:39:00,442 [  27044]   INFO - ntellij.internal.IconsLoadTime - IMG load time: total=45,93ms, average=0,46ms, median=0,55ms; number of icons: 100 
+2019-03-05 14:39:01,059 [  27661]   INFO - j.ide.ui.OptionsTopHitProvider - 180 ms spent to cache options in application 
+2019-03-05 14:39:01,112 [  27714]   INFO -       ScriptTemplatesProviders - [kts] loading script definitions [] using cp:  
+2019-03-05 14:39:01,222 [  27824]   INFO -       ScriptTemplatesProviders - [kts] loading script definitions [] using cp:  
+2019-03-05 14:39:01,289 [  27891]   INFO - tartup.impl.StartupManagerImpl - D:/Documenti/UNISA/Ascetic/ProgettiTest/.idea case-sensitivity: expected=false actual=false 
+2019-03-05 14:39:01,311 [  27913]   INFO - pl.projectlevelman.NewMappings - VCS Root: [] - [<Project>] 
+2019-03-05 14:39:01,625 [  28227]   INFO - penapi.project.DumbServiceImpl - Running dumb mode task: com.android.tools.idea.res.ResourceFolderRepositoryFileCacheImpl$PruneTask@4a870071 
+2019-03-05 14:39:01,671 [  28273]   INFO - tor.impl.FileEditorManagerImpl - Project opening took 11581 ms 
+2019-03-05 14:39:01,671 [  28273]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.kotlin loaded 2611 classes 
+2019-03-05 14:39:01,671 [  28273]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.android loaded 1396 classes 
+2019-03-05 14:39:01,671 [  28273]   INFO - llij.ide.plugins.PluginManager - org.intellij.groovy loaded 604 classes 
+2019-03-05 14:39:01,671 [  28273]   INFO - llij.ide.plugins.PluginManager - com.intellij.uiDesigner loaded 244 classes 
+2019-03-05 14:39:01,671 [  28273]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.idea.maven loaded 212 classes 
+2019-03-05 14:39:01,671 [  28273]   INFO - llij.ide.plugins.PluginManager - Git4Idea loaded 127 classes 
+2019-03-05 14:39:01,672 [  28274]   INFO - llij.ide.plugins.PluginManager - XPathView loaded 108 classes 
+2019-03-05 14:39:01,672 [  28274]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.debugger.streams loaded 107 classes 
+2019-03-05 14:39:01,672 [  28274]   INFO - llij.ide.plugins.PluginManager - com.intellij.tasks loaded 104 classes 
+2019-03-05 14:39:01,672 [  28274]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.plugins.gradle loaded 86 classes 
+2019-03-05 14:39:01,672 [  28274]   INFO - llij.ide.plugins.PluginManager - hg4idea loaded 86 classes 
+2019-03-05 14:39:01,672 [  28274]   INFO - llij.ide.plugins.PluginManager - CVS loaded 79 classes 
+2019-03-05 14:39:01,672 [  28274]   INFO - llij.ide.plugins.PluginManager - Subversion loaded 64 classes 
+2019-03-05 14:39:01,672 [  28274]   INFO - llij.ide.plugins.PluginManager - org.intellij.intelliLang loaded 59 classes 
+2019-03-05 14:39:01,672 [  28274]   INFO - llij.ide.plugins.PluginManager - com.intellij.properties loaded 58 classes 
+2019-03-05 14:39:01,672 [  28274]   INFO - llij.ide.plugins.PluginManager - DevKit loaded 55 classes 
+2019-03-05 14:39:01,672 [  28274]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.settingsRepository loaded 37 classes 
+2019-03-05 14:39:01,672 [  28274]   INFO - llij.ide.plugins.PluginManager - Coverage loaded 36 classes 
+2019-03-05 14:39:01,672 [  28274]   INFO - llij.ide.plugins.PluginManager - AntSupport loaded 31 classes 
+2019-03-05 14:39:01,672 [  28274]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.plugins.javaFX loaded 29 classes 
+2019-03-05 14:39:01,672 [  28274]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.plugins.github loaded 23 classes 
+2019-03-05 14:39:01,672 [  28274]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.plugins.yaml loaded 18 classes 
+2019-03-05 14:39:01,672 [  28274]   INFO - llij.ide.plugins.PluginManager - TestNG-J loaded 16 classes 
+2019-03-05 14:39:01,672 [  28274]   INFO - llij.ide.plugins.PluginManager - org.editorconfig.editorconfigjetbrains loaded 16 classes 
+2019-03-05 14:39:01,672 [  28274]   INFO - llij.ide.plugins.PluginManager - JUnit loaded 14 classes 
+2019-03-05 14:39:01,672 [  28274]   INFO - llij.ide.plugins.PluginManager - it.unisa.ascetic loaded 11 classes 
+2019-03-05 14:39:01,672 [  28274]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.plugins.terminal loaded 11 classes 
+2019-03-05 14:39:01,672 [  28274]   INFO - llij.ide.plugins.PluginManager - com.intellij.java-i18n loaded 9 classes 
+2019-03-05 14:39:01,672 [  28274]   INFO - llij.ide.plugins.PluginManager - com.intellij.copyright loaded 8 classes 
+2019-03-05 14:39:01,672 [  28274]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.java.decompiler loaded 7 classes 
+2019-03-05 14:39:01,672 [  28274]   INFO - llij.ide.plugins.PluginManager - com.android.tools.idea.smali loaded 5 classes 
+2019-03-05 14:39:01,672 [  28274]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.idea.eclipse loaded 5 classes 
+2019-03-05 14:39:01,672 [  28274]   INFO - llij.ide.plugins.PluginManager - XSLT-Debugger loaded 2 classes 
+2019-03-05 14:39:01,672 [  28274]   INFO - llij.ide.plugins.PluginManager - ByteCodeViewer loaded 2 classes 
+2019-03-05 14:39:01,725 [  28327]   INFO - penapi.project.DumbServiceImpl - Running dumb mode task: com.android.tools.idea.res.ResourceFolderRepositoryFileCacheImpl$ManageLruProjectFilesTask@5153fccc 
+2019-03-05 14:39:01,819 [  28421]   INFO - penapi.project.DumbServiceImpl - updateFinished 
+2019-03-05 14:39:01,821 [  28423]   INFO - g.FileBasedIndexProjectHandler - Has changed files: false; project=Project 'D:\Documenti\UNISA\Ascetic\ProgettiTest' ProgettiTest 
+2019-03-05 14:39:01,857 [  28459]   INFO - penapi.project.DumbServiceImpl - Running dumb mode task: com.android.tools.idea.res.ResourceFolderRegistry$PopulateCachesTask@19ec7e78 
+2019-03-05 14:39:01,981 [  28583]   INFO - penapi.project.DumbServiceImpl - updateFinished 
+2019-03-05 14:39:01,981 [  28583]   INFO - g.FileBasedIndexProjectHandler - Has changed files: false; project=Project 'D:\Documenti\UNISA\Ascetic\ProgettiTest' ProgettiTest 
+2019-03-05 14:39:02,294 [  28896]   INFO - CompilerWorkspaceConfiguration - Available processors: 8 
+2019-03-05 14:39:13,854 [  40456]   INFO - ellij.project.impl.ProjectImpl - 20 project components initialized in 30 ms 
+2019-03-05 14:39:47,901 [  74503]   INFO - .script.IdeScriptEngineManager - javax.script.ScriptEngineManager initialized in 31 ms 
+2019-03-05 14:40:06,336 [  92938]  ERROR - llij.ide.plugins.PluginManager - -1 
+java.lang.ArrayIndexOutOfBoundsException: -1
+	at java.util.Vector.elementData(Vector.java:734)
+	at java.util.Vector.elementAt(Vector.java:477)
+	at javax.swing.table.DefaultTableModel.getValueAt(DefaultTableModel.java:648)
+	at javax.swing.JTable.getValueAt(JTable.java:2717)
+	at it.unisa.ascetic.gui.BlobWizard$2.actionPerformed(BlobWizard.java:295)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2348)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:252)
+	at java.awt.Component.processMouseEvent(Component.java:6548)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3325)
+	at java.awt.Component.processEvent(Component.java:6313)
+	at java.awt.Container.processEvent(Container.java:2237)
+	at java.awt.Component.dispatchEventImpl(Component.java:4903)
+	at java.awt.Container.dispatchEventImpl(Container.java:2295)
+	at java.awt.Component.dispatchEvent(Component.java:4725)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4889)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4526)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4467)
+	at java.awt.Container.dispatchEventImpl(Container.java:2281)
+	at java.awt.Window.dispatchEventImpl(Window.java:2746)
+	at java.awt.Component.dispatchEvent(Component.java:4725)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:764)
+	at java.awt.EventQueue.access$500(EventQueue.java:98)
+	at java.awt.EventQueue$3.run(EventQueue.java:715)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:80)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:90)
+	at java.awt.EventQueue$4.run(EventQueue.java:737)
+	at java.awt.EventQueue$4.run(EventQueue.java:735)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:80)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:734)
+	at com.intellij.ide.IdeEventQueue.defaultDispatchEvent(IdeEventQueue.java:779)
+	at com.intellij.ide.IdeEventQueue._dispatchEvent(IdeEventQueue.java:716)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent(IdeEventQueue.java:395)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:109)
+	at java.awt.WaitDispatchSupport$2.run(WaitDispatchSupport.java:190)
+	at java.awt.WaitDispatchSupport$4.run(WaitDispatchSupport.java:235)
+	at java.awt.WaitDispatchSupport$4.run(WaitDispatchSupport.java:233)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.awt.WaitDispatchSupport.enter(WaitDispatchSupport.java:233)
+	at java.awt.Dialog.show(Dialog.java:1077)
+	at com.intellij.openapi.ui.impl.DialogWrapperPeerImpl$MyDialog.show(DialogWrapperPeerImpl.java:694)
+	at com.intellij.openapi.ui.impl.DialogWrapperPeerImpl.show(DialogWrapperPeerImpl.java:426)
+	at com.intellij.openapi.ui.DialogWrapper.invokeShow(DialogWrapper.java:1688)
+	at com.intellij.openapi.ui.DialogWrapper.show(DialogWrapper.java:1637)
+	at it.unisa.ascetic.gui.BlobPage$1.doAction(BlobPage.java:174)
+	at com.intellij.openapi.ui.DialogWrapper$DialogWrapperAction.actionPerformed(DialogWrapper.java:1828)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2348)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:252)
+	at java.awt.Component.processMouseEvent(Component.java:6548)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3325)
+	at java.awt.Component.processEvent(Component.java:6313)
+	at java.awt.Container.processEvent(Container.java:2237)
+	at java.awt.Component.dispatchEventImpl(Component.java:4903)
+	at java.awt.Container.dispatchEventImpl(Container.java:2295)
+	at java.awt.Component.dispatchEvent(Component.java:4725)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4889)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4526)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4467)
+	at java.awt.Container.dispatchEventImpl(Container.java:2281)
+	at java.awt.Window.dispatchEventImpl(Window.java:2746)
+	at java.awt.Component.dispatchEvent(Component.java:4725)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:764)
+	at java.awt.EventQueue.access$500(EventQueue.java:98)
+	at java.awt.EventQueue$3.run(EventQueue.java:715)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:80)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:90)
+	at java.awt.EventQueue$4.run(EventQueue.java:737)
+	at java.awt.EventQueue$4.run(EventQueue.java:735)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:80)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:734)
+	at com.intellij.ide.IdeEventQueue.defaultDispatchEvent(IdeEventQueue.java:779)
+	at com.intellij.ide.IdeEventQueue._dispatchEvent(IdeEventQueue.java:716)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent(IdeEventQueue.java:395)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:109)
+	at java.awt.WaitDispatchSupport$2.run(WaitDispatchSupport.java:190)
+	at java.awt.WaitDispatchSupport$4.run(WaitDispatchSupport.java:235)
+	at java.awt.WaitDispatchSupport$4.run(WaitDispatchSupport.java:233)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.awt.WaitDispatchSupport.enter(WaitDispatchSupport.java:233)
+	at java.awt.Dialog.show(Dialog.java:1077)
+	at com.intellij.openapi.ui.impl.DialogWrapperPeerImpl$MyDialog.show(DialogWrapperPeerImpl.java:694)
+	at com.intellij.openapi.ui.impl.DialogWrapperPeerImpl.show(DialogWrapperPeerImpl.java:426)
+	at com.intellij.openapi.ui.DialogWrapper.invokeShow(DialogWrapper.java:1688)
+	at com.intellij.openapi.ui.DialogWrapper.show(DialogWrapper.java:1637)
+	at it.unisa.ascetic.gui.CheckProjectPage$3.doAction(CheckProjectPage.java:142)
+	at com.intellij.openapi.ui.DialogWrapper$DialogWrapperAction.actionPerformed(DialogWrapper.java:1828)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2348)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:252)
+	at java.awt.Component.processMouseEvent(Component.java:6548)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3325)
+	at java.awt.Component.processEvent(Component.java:6313)
+	at java.awt.Container.processEvent(Container.java:2237)
+	at java.awt.Component.dispatchEventImpl(Component.java:4903)
+	at java.awt.Container.dispatchEventImpl(Container.java:2295)
+	at java.awt.Component.dispatchEvent(Component.java:4725)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4889)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4526)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4467)
+	at java.awt.Container.dispatchEventImpl(Container.java:2281)
+	at java.awt.Window.dispatchEventImpl(Window.java:2746)
+	at java.awt.Component.dispatchEvent(Component.java:4725)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:764)
+	at java.awt.EventQueue.access$500(EventQueue.java:98)
+	at java.awt.EventQueue$3.run(EventQueue.java:715)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:80)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:90)
+	at java.awt.EventQueue$4.run(EventQueue.java:737)
+	at java.awt.EventQueue$4.run(EventQueue.java:735)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:80)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:734)
+	at com.intellij.ide.IdeEventQueue.defaultDispatchEvent(IdeEventQueue.java:779)
+	at com.intellij.ide.IdeEventQueue._dispatchEvent(IdeEventQueue.java:716)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent(IdeEventQueue.java:395)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:109)
+	at java.awt.WaitDispatchSupport$2.run(WaitDispatchSupport.java:190)
+	at java.awt.WaitDispatchSupport$4.run(WaitDispatchSupport.java:235)
+	at java.awt.WaitDispatchSupport$4.run(WaitDispatchSupport.java:233)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.awt.WaitDispatchSupport.enter(WaitDispatchSupport.java:233)
+	at java.awt.Dialog.show(Dialog.java:1077)
+	at com.intellij.openapi.ui.impl.DialogWrapperPeerImpl$MyDialog.show(DialogWrapperPeerImpl.java:694)
+	at com.intellij.openapi.ui.impl.DialogWrapperPeerImpl.show(DialogWrapperPeerImpl.java:426)
+	at com.intellij.openapi.ui.DialogWrapper.invokeShow(DialogWrapper.java:1688)
+	at com.intellij.openapi.ui.DialogWrapper.show(DialogWrapper.java:1637)
+	at it.unisa.ascetic.actions.BeginAction.actionPerformed(BeginAction.java:72)
+	at com.intellij.openapi.actionSystem.ex.ActionUtil$1.run(ActionUtil.java:220)
+	at com.intellij.openapi.actionSystem.ex.ActionUtil.performActionDumbAware(ActionUtil.java:237)
+	at com.intellij.openapi.actionSystem.impl.ActionMenuItem$ActionTransmitter.lambda$actionPerformed$0(ActionMenuItem.java:301)
+	at com.intellij.openapi.wm.impl.FocusManagerImpl.runOnOwnContext(FocusManagerImpl.java:307)
+	at com.intellij.openapi.wm.impl.IdeFocusManagerImpl.runOnOwnContext(IdeFocusManagerImpl.java:104)
+	at com.intellij.openapi.actionSystem.impl.ActionMenuItem$ActionTransmitter.actionPerformed(ActionMenuItem.java:291)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
+	at com.intellij.openapi.actionSystem.impl.ActionMenuItem.lambda$fireActionPerformed$0(ActionMenuItem.java:111)
+	at com.intellij.openapi.application.TransactionGuardImpl.runSyncTransaction(TransactionGuardImpl.java:88)
+	at com.intellij.openapi.application.TransactionGuardImpl.lambda$submitTransaction$1(TransactionGuardImpl.java:111)
+	at com.intellij.openapi.application.TransactionGuardImpl.submitTransaction(TransactionGuardImpl.java:120)
+	at com.intellij.openapi.application.TransactionGuard.submitTransaction(TransactionGuard.java:122)
+	at com.intellij.openapi.actionSystem.impl.ActionMenuItem.fireActionPerformed(ActionMenuItem.java:111)
+	at com.intellij.ui.plaf.beg.BegMenuItemUI.doClick(BegMenuItemUI.java:528)
+	at com.intellij.ui.plaf.beg.BegMenuItemUI.access$300(BegMenuItemUI.java:48)
+	at com.intellij.ui.plaf.beg.BegMenuItemUI$MyMouseInputHandler.mouseReleased(BegMenuItemUI.java:548)
+	at java.awt.Component.processMouseEvent(Component.java:6548)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3325)
+	at java.awt.Component.processEvent(Component.java:6313)
+	at java.awt.Container.processEvent(Container.java:2237)
+	at java.awt.Component.dispatchEventImpl(Component.java:4903)
+	at java.awt.Container.dispatchEventImpl(Container.java:2295)
+	at java.awt.Component.dispatchEvent(Component.java:4725)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4889)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4526)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4467)
+	at java.awt.Container.dispatchEventImpl(Container.java:2281)
+	at java.awt.Window.dispatchEventImpl(Window.java:2746)
+	at java.awt.Component.dispatchEvent(Component.java:4725)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:764)
+	at java.awt.EventQueue.access$500(EventQueue.java:98)
+	at java.awt.EventQueue$3.run(EventQueue.java:715)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:80)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:90)
+	at java.awt.EventQueue$4.run(EventQueue.java:737)
+	at java.awt.EventQueue$4.run(EventQueue.java:735)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:80)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:734)
+	at com.intellij.ide.IdeEventQueue.defaultDispatchEvent(IdeEventQueue.java:779)
+	at com.intellij.ide.IdeEventQueue._dispatchEvent(IdeEventQueue.java:716)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent(IdeEventQueue.java:395)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+2019-03-05 14:40:06,339 [  92941]  ERROR - llij.ide.plugins.PluginManager - IntelliJ IDEA 2018.1.3  Build #IC-181.4892.42 
+2019-03-05 14:40:06,339 [  92941]  ERROR - llij.ide.plugins.PluginManager - JDK: 1.8.0_152-release 
+2019-03-05 14:40:06,339 [  92941]  ERROR - llij.ide.plugins.PluginManager - VM: OpenJDK 64-Bit Server VM 
+2019-03-05 14:40:06,339 [  92941]  ERROR - llij.ide.plugins.PluginManager - Vendor: JetBrains s.r.o 
+2019-03-05 14:40:06,339 [  92941]  ERROR - llij.ide.plugins.PluginManager - OS: Windows 10 
+2019-03-05 14:40:06,339 [  92941]  ERROR - llij.ide.plugins.PluginManager - Last Action: it.unisa.ascetic.actions.BeginAction 
+2019-03-05 14:40:24,319 [ 110921]  ERROR - llij.ide.plugins.PluginManager - null 
+java.lang.ArrayIndexOutOfBoundsException
+2019-03-05 14:40:24,319 [ 110921]  ERROR - llij.ide.plugins.PluginManager - IntelliJ IDEA 2018.1.3  Build #IC-181.4892.42 
+2019-03-05 14:40:24,319 [ 110921]  ERROR - llij.ide.plugins.PluginManager - JDK: 1.8.0_152-release 
+2019-03-05 14:40:24,319 [ 110921]  ERROR - llij.ide.plugins.PluginManager - VM: OpenJDK 64-Bit Server VM 
+2019-03-05 14:40:24,319 [ 110921]  ERROR - llij.ide.plugins.PluginManager - Vendor: JetBrains s.r.o 
+2019-03-05 14:40:24,319 [ 110921]  ERROR - llij.ide.plugins.PluginManager - OS: Windows 10 
+2019-03-05 14:40:24,319 [ 110921]  ERROR - llij.ide.plugins.PluginManager - Last Action: it.unisa.ascetic.actions.BeginAction 
+2019-03-05 14:41:35,152 [ 181754]   INFO - stubs.SerializationManagerImpl - START StubSerializationManager SHUTDOWN 
+2019-03-05 14:41:35,152 [ 181754]   INFO - stubs.SerializationManagerImpl - END StubSerializationManager SHUTDOWN 
+2019-03-05 14:41:35,152 [ 181754]   INFO - il.indexing.FileBasedIndexImpl - START INDEX SHUTDOWN 
+2019-03-05 14:41:35,181 [ 181783]   INFO - il.indexing.FileBasedIndexImpl - END INDEX SHUTDOWN 
+2019-03-05 14:41:35,183 [ 181785]   INFO - org.jetbrains.io.BuiltInServer - web server stopped 
+2019-03-05 14:41:35,225 [ 181827]   INFO - Types.impl.FileTypeManagerImpl - FileTypeManager: 0 auto-detected files
+Elapsed time on auto-detect: 0 ms 
+2019-03-05 14:41:35,232 [ 181834]   INFO - pl.local.NativeFileWatcherImpl - Watcher terminated with exit code 0 
+2019-03-05 14:41:35,236 [ 181838]   INFO - newvfs.persistent.PersistentFS - VFS dispose started 
+2019-03-05 14:41:35,354 [ 181956]   INFO - newvfs.persistent.PersistentFS - VFS dispose completed 
+2019-03-05 14:41:35,357 [ 181959]   INFO - plication.impl.ApplicationImpl - Write action Statistics:
+Event number:     27
+Total time spent: 794ms
+Average duration: 29ms
+Median  duration: 12ms
+Max  duration:    302ms (it was 'write action (class com.intellij.configurationStore.FileBasedStorageKt$doWrite$$inlined$runUndoTransparentWriteAction$1$1)') 
+2019-03-05 14:41:35,358 [ 181960]   INFO - plication.impl.ApplicationImpl - AnAction.update() Statistics:
+Event number:     7840
+Total time spent: 223ms
+Average duration: 0ms
+Median  duration: 0ms
+Max  duration:    44ms (it was 'Stop action update (class com.intellij.execution.actions.StopAction)') 
+2019-03-05 14:41:35,358 [ 181960]   INFO - plication.impl.ApplicationImpl - Global instance threads created counter = 12; ProcessIOExecutorService threads: 3 
+2019-03-05 14:41:35,361 [ 181963]   INFO -        #com.intellij.idea.Main - ------------------------------------------------------ IDE SHUTDOWN ------------------------------------------------------ 
+2019-03-05 14:41:35,364 [ 181966]   INFO - org.jetbrains.io.BuiltInServer - web server stopped 
