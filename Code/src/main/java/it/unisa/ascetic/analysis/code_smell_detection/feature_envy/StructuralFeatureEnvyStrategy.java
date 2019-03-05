@@ -20,45 +20,6 @@ public class StructuralFeatureEnvyStrategy implements MethodSmellDetectionStrate
         this.systemPackages = systemPackages;
     }
 
-    /*public boolean isSmelly(MethodBean pMethod) {
-        SortedMap<ClassBean, Double> similaritiesWithMethod = new TreeMap<ClassBean, Double>();
-        CosineSimilarity cosineSimilarity = new CosineSimilarity();
-        ArrayList<ClassBean> candidateEnviedClasses = MisplacedComponentsUtilities.getCandidates(pMethod, systemPackages);
-
-        for (ClassBean classBean : candidateEnviedClasses) {
-            Logger.getGlobal().info(classBean.getFullQualifiedName());
-        }
-
-        String[] document1 = new String[2];
-        document1[0] = "method";
-        document1[1] = pMethod.getTextContent();
-
-        for (ClassBean classBean : candidateEnviedClasses) {
-
-            String[] document2 = new String[2];
-            document2[0] = "class";
-            document2[1] = classBean.getTextContent();
-
-            try {
-                similaritiesWithMethod.put(classBean, cosineSimilarity.computeSimilarity(document1, document2));
-            } catch (IOException e) {
-                return false;
-            }
-        }
-
-        if (!similaritiesWithMethod.entrySet().iterator().hasNext()) {
-            return false;
-        }
-
-        Map.Entry<ClassBean, Double> firstRankedClass = similaritiesWithMethod.entrySet().iterator().next();
-        Logger.getGlobal().info("First ranked class: " + firstRankedClass);
-
-        if (!firstRankedClass.getKey().getFullQualifiedName().equals(pMethod.getBelongingClass().getFullQualifiedName())) {
-            return false;
-        }
-
-    }*/
-
     public boolean isSmelly(MethodBean pMethod) {
         ArrayList<ClassBean> classes = new ArrayList<ClassBean>();
         ClassBean actualClass = null;
