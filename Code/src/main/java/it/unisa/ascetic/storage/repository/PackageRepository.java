@@ -3,6 +3,11 @@ package it.unisa.ascetic.storage.repository;
 import it.unisa.ascetic.analysis.code_smell.CodeSmell;
 import it.unisa.ascetic.analysis.code_smell.PromiscuousPackageCodeSmell;
 import it.unisa.ascetic.storage.beans.*;
+import it.unisa.ascetic.storage.beans.ClassBean;
+import it.unisa.ascetic.storage.beans.ClassListProxy;
+import it.unisa.ascetic.storage.beans.InstanceVariableBean;
+import it.unisa.ascetic.storage.beans.MethodBean;
+import it.unisa.ascetic.storage.beans.PackageBean;
 import it.unisa.ascetic.storage.sqlite_jdbc_driver_connection.SQLiteConnector;
 
 import java.sql.*;
@@ -103,8 +108,12 @@ public class PackageRepository implements PackageBeanRepository {
             stat.setString(2, toAdd.getTextContent());
             stat.setString(3, toAdd.getBelongingPackage().getFullQualifiedName());
             stat.setInt(4, toAdd.getLOC());
-            if(toAdd.getSuperclass()!=null){stat.setString(5, toAdd.getSuperclass());}
-            else{stat.setString(5, "");};
+            if (toAdd.getSuperclass() != null) {
+                stat.setString(5, toAdd.getSuperclass());
+            } else {
+                stat.setString(5, "");
+            }
+            ;
             stat.setInt(6, toAdd.getEntityClassUsage());
             stat.setString(7, toAdd.getPathToFile());
             stat.executeUpdate();
@@ -143,8 +152,12 @@ public class PackageRepository implements PackageBeanRepository {
             stat = (PreparedStatement) con.prepareStatement(sql);
             stat.setString(1, toAdd.getFullQualifiedName());
             stat.setString(2, toAdd.getTextContent());
-            if(toAdd.getReturnType()!=null){stat.setString(3, toAdd.getReturnType().getFullQualifiedName());}
-            else {stat.setString(3, "");};
+            if (toAdd.getReturnType() != null) {
+                stat.setString(3, toAdd.getReturnType().getFullQualifiedName());
+            } else {
+                stat.setString(3, "");
+            }
+            ;
             stat.setBoolean(4, toAdd.getStaticMethod());
             stat.setBoolean(5, toAdd.getDefaultCostructor());
             stat.setString(6, toAdd.getBelongingClass().getFullQualifiedName());
@@ -237,13 +250,17 @@ public class PackageRepository implements PackageBeanRepository {
             stat.setString(2, aPackage.getFullQualifiedName());
             stat.executeUpdate();
 
-            CodeSmell smell = aPackage.getAffectedSmell();
-            if (smell != null) {
-                sql = "INSERT OR REPLACE INTO Package_SmellType (packageBeanFullQualifiedName,codeSmellFullQualifiedName) VALUE (?,?);";
+            List<CodeSmell> list = aPackage.getAffectedSmell();
+            if (list != null) {
+                sql = "INSERT OR REPLACE INTO Package_SmellType (packageBeanFullQualifiedName,codeSmellFullQualifiedName,algorithmUsed,indice) VALUES (?,?,?,?);";
                 stat = (PreparedStatement) con.prepareStatement(sql);
-                stat.setString(1, aPackage.getFullQualifiedName());
-                stat.setString(2, smell.getSmellName());
-                stat.executeUpdate();
+                for (CodeSmell smell : list) {
+                    stat.setString(1, aPackage.getFullQualifiedName());
+                    stat.setString(2, smell.getSmellName());
+                    stat.setString(3, smell.getAlgoritmsUsed());
+                    stat.setString(4, String.valueOf(aPackage.getSimilarity()));
+                    stat.executeUpdate();
+                }
             }
 
             con.commit();
@@ -315,20 +332,22 @@ public class PackageRepository implements PackageBeanRepository {
             String sql = sqlCriterion.toSQLquery();
             Statement selection = con.createStatement();
             res = selection.executeQuery(sql);
-            PackageBean pack = null;
+            PackageBean p = null;
             while (res.next()) {
-                pack = new PackageBean.Builder(res.getString("fullQualifiedName"), res.getString("textContent"))
+                p = new PackageBean.Builder(res.getString("fullQualifiedName"), res.getString("textContent"))
                         .setClassList(new ClassListProxy(res.getString("fullQualifiedName")))
                         .build();
 
-                packages.add(pack);
+                packages.add(p);
             }
 
-            for (PackageBean p : packages) {
-                sql = "SELECT fullQualifiedName, detectionStrategy FROM Package_SmellType INNER JOIN CodeSmell ON codeSmellFullQualifiedName=CodeSmell.fullQualifiedName WHERE packageBeanFullQualifiedName='" + pack.getFullQualifiedName()+ "'";
+            for (PackageBean pack : packages) {
+                sql = "SELECT packageBeanFullQualifiedName, algorithmUsed, indice FROM Package_SmellType WHERE packageBeanFullQualifiedName='" + pack.getFullQualifiedName() + "'";
                 res = selection.executeQuery(sql);
                 while (res.next()) {
-                    p.addSmell(new PromiscuousPackageCodeSmell(null));
+                    CodeSmell pp = new PromiscuousPackageCodeSmell(null, res.getString("algorithmUsed"));
+                    pack.setSimilarity(Double.parseDouble(res.getString("indice")));
+                    pack.addSmell(pp);
                 }
             }
 

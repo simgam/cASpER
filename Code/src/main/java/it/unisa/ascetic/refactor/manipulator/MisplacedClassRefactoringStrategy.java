@@ -28,7 +28,7 @@ public class MisplacedClassRefactoringStrategy implements RefactoringStrategy {
      * @param classToMove
      */
     public MisplacedClassRefactoringStrategy(ClassBean classToMove, PackageBean destinationPackage, Project project) {  //Aggiunto il parametro project
-        logger.info("Oggetto MC_STGY creaton\n");
+        logger.severe("Oggetto MC_STGY creaton\n");
         this.classToMove = classToMove;
         this.fromPackage = classToMove.getBelongingPackage();
         this.toPackage = destinationPackage;
@@ -47,7 +47,7 @@ public class MisplacedClassRefactoringStrategy implements RefactoringStrategy {
      * @throws MisplacedClassException
      */
     private void moveClass() throws MisplacedClassException {
-        logger.info("inizio lo spostamento");
+        logger.severe("inizio lo spostamento");
         PsiPackage destinaPackage = JavaPsiFacade.getInstance(project).findPackage(toPackage.getFullQualifiedName());
 
 

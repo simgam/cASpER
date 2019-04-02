@@ -1,11 +1,12 @@
 <application>
   <component name="ActionsCollector">
     <counts>
+      <entry action="$Delete" count="1" />
       <entry action="$SelectAll" count="1" />
       <entry action="EditorPaste" count="1" />
       <entry action="OpenFile" count="1" />
       <entry action="ShowSettings" count="1" />
-      <entry action="it.unisa.ascetic.actions.BeginAction" count="3" />
+      <entry action="it.unisa.ascetic.actions.BeginAction" count="57" />
     </counts>
   </component>
   <component name="FeatureUsageStatistics" first-run="1549716958085" have-been-shown="false" show-in-other="true" show-in-compilation="true">
@@ -64,7 +65,7 @@
     <feature id="editing.completion.postfix" count="0" last-shown="0" last-used="0" shown-count="0" />
     <feature id="refactoring.introduceVariable.incompleteStatement" count="0" last-shown="0" last-used="0" shown-count="0" />
     <feature id="dir.diff" count="0" last-shown="0" last-used="0" shown-count="0" />
-    <feature id="editing.select.word" count="0" last-shown="0" last-used="0" shown-count="0" />
+    <feature id="editing.select.word" count="6" last-shown="0" last-used="1553770368722" shown-count="0" />
     <feature id="editing.add.carets.using.double.ctrl" count="0" last-shown="0" last-used="0" shown-count="0" />
     <feature id="codeassists.quickjavadoc.lookup" count="0" last-shown="0" last-used="0" shown-count="0" />
     <feature id="ui.scheme.quickswitch" count="0" last-shown="0" last-used="0" shown-count="0" />
@@ -99,23 +100,28 @@
     <counts>
       <entry path="File -&gt; Open..." count="1" />
       <entry path="File -&gt; Settings..." count="1" />
+      <entry path="Run -&gt; Run" count="2" />
     </counts>
   </component>
   <component name="ShortcutsCollector">
     <counts>
       <entry shortcut="Ctrl+A" count="1" />
       <entry shortcut="Ctrl+V" count="1" />
+      <entry shortcut="Enter" count="1" />
     </counts>
   </component>
   <component name="ToolbarClicksCollector">
     <counts>
+      <entry action="com.intellij.diagnostic.IdeErrorsDialog$BackAction@IdeErrorsBack" count="1" />
+      <entry action="com.intellij.diagnostic.IdeErrorsDialog$ForwardAction@IdeErrorsForward" count="2" />
       <entry action="com.intellij.ui.AnActionButton$AnActionButtonWrapper@ToolbarDecorator" count="3" />
     </counts>
   </component>
   <component name="UsageTrigger">
     <counts>
       <entry feature="ide.settings.Color Scheme" count="1" />
-      <entry feature="ideaapp.started" count="5" />
+      <entry feature="ideaapp.started" count="79" />
+      <entry feature="terminal.win" count="1" />
       <entry feature="welcome.screen.WelcomeScreen.ImportProject" count="1" />
       <entry feature="welcome.screen.WelcomeScreen.OpenProject" count="1" />
     </counts>

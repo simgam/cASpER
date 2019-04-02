@@ -10,6 +10,7 @@ import it.unisa.ascetic.structuralMetrics.CKMetrics;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.regex.Pattern;
 
 
 public class StructuralFeatureEnvyStrategy implements MethodSmellDetectionStrategy {
@@ -20,97 +21,89 @@ public class StructuralFeatureEnvyStrategy implements MethodSmellDetectionStrate
         this.systemPackages = systemPackages;
     }
 
-    /*public boolean isSmelly(MethodBean pMethod) {
-        SortedMap<ClassBean, Double> similaritiesWithMethod = new TreeMap<ClassBean, Double>();
-        CosineSimilarity cosineSimilarity = new CosineSimilarity();
-        ArrayList<ClassBean> candidateEnviedClasses = MisplacedComponentsUtilities.getCandidates(pMethod, systemPackages);
-
-        for (ClassBean classBean : candidateEnviedClasses) {
-            Logger.getGlobal().info(classBean.getFullQualifiedName());
-        }
-
-        String[] document1 = new String[2];
-        document1[0] = "method";
-        document1[1] = pMethod.getTextContent();
-
-        for (ClassBean classBean : candidateEnviedClasses) {
-
-            String[] document2 = new String[2];
-            document2[0] = "class";
-            document2[1] = classBean.getTextContent();
-
-            try {
-                similaritiesWithMethod.put(classBean, cosineSimilarity.computeSimilarity(document1, document2));
-            } catch (IOException e) {
-                return false;
-            }
-        }
-
-        if (!similaritiesWithMethod.entrySet().iterator().hasNext()) {
-            return false;
-        }
-
-        Map.Entry<ClassBean, Double> firstRankedClass = similaritiesWithMethod.entrySet().iterator().next();
-        Logger.getGlobal().info("First ranked class: " + firstRankedClass);
-
-        if (!firstRankedClass.getKey().getFullQualifiedName().equals(pMethod.getBelongingClass().getFullQualifiedName())) {
-            return false;
-        }
-
-    }*/
-
     public boolean isSmelly(MethodBean pMethod) {
-        ArrayList<ClassBean> classes = new ArrayList<ClassBean>();
-        ClassBean actualClass = null;
 
-        if (pMethod.getBelongingClass() != null) {
-            for (PackageBean packageBean : systemPackages) {
-                for (ClassBean classBean : packageBean.getClassList()) {
+        if (!isGetter(pMethod) && !isSetter(pMethod) && !(pMethod.getFullQualifiedName().toLowerCase()).contains("main") && !isConstructor(pMethod)) {
 
-                    if (classBean.getFullQualifiedName().equals(pMethod.getBelongingClass().getFullQualifiedName())) {
-                        actualClass = classBean;
-                    } else {
-                        classes.add(classBean);
+            ArrayList<ClassBean> classes = new ArrayList<ClassBean>();
+            ClassBean actualClass = null;
+
+            if (pMethod.getBelongingClass() != null) {
+                for (PackageBean packageBean : systemPackages) {
+                    for (ClassBean classBean : packageBean.getClassList()) {
+
+                        if (classBean.getFullQualifiedName().equals(pMethod.getBelongingClass().getFullQualifiedName())) {
+                            actualClass = classBean;
+                        } else {
+                            classes.add(classBean);
+                        }
                     }
                 }
             }
+
+            double numberOfDependenciesWithActualClass = CKMetrics.getNumberOfDependencies(pMethod, actualClass);
+
+            ArrayList<ClassBean> dependenciesWithMethod = new ArrayList<ClassBean>();
+
+            ClassBean comparableClassBean = null;
+            for (ClassBean classBean : classes) {
+
+                double numberOfDependenciesWithCandidateEnviedClass = CKMetrics.getNumberOfDependencies(pMethod, classBean);
+
+                comparableClassBean = new ClassBean.Builder(classBean.getFullQualifiedName(), classBean.getTextContent())
+                        .setInstanceVariables(classBean.instanceVariables)
+                        .setMethods(classBean.methods)
+                        .setImports(classBean.getImports())
+                        .setLOC(classBean.getLOC())
+                        .setSuperclass(classBean.getSuperclass())
+                        .setBelongingPackage(classBean.getBelongingPackage())
+                        .setPathToFile(classBean.getPathToFile())
+                        .setSimilarity(numberOfDependenciesWithCandidateEnviedClass)
+                        .build();
+
+                dependenciesWithMethod.add(comparableClassBean);
+
+            }
+
+            BeanComparator comparator = new BeanComparator();
+            Collections.sort(dependenciesWithMethod, comparator);
+
+            ClassBean firstRankedClass = dependenciesWithMethod.get(dependenciesWithMethod.size() - 1);
+
+            if (numberOfDependenciesWithActualClass <= firstRankedClass.getSimilarity()) {
+                pMethod.setEnviedClass(firstRankedClass);
+                return true;
+            } else {
+                return false;
+            }
         }
-
-        double numberOfDependenciesWithActualClass = CKMetrics.getNumberOfDependencies(pMethod, actualClass);
-
-        ArrayList<ClassBean> dependenciesWithMethod = new ArrayList<ClassBean>();
-
-        ClassBean comparableClassBean = null;
-        for (ClassBean classBean : classes) {
-
-            double numberOfDependenciesWithCandidateEnviedClass = CKMetrics.getNumberOfDependencies(pMethod, classBean);
-
-            comparableClassBean = new ClassBean.Builder(classBean.getFullQualifiedName(), classBean.getTextContent())
-                    .setInstanceVariables(classBean.instanceVariables)
-                    .setMethods(classBean.methods)
-                    .setImports(classBean.getImports())
-                    .setLOC(classBean.getLOC())
-                    .setSuperclass(classBean.getSuperclass())
-                    .setBelongingPackage(classBean.getBelongingPackage())
-                    .setPathToFile(classBean.getPathToFile())
-                    .setSimilarity(numberOfDependenciesWithCandidateEnviedClass)
-                    .build();
-
-            dependenciesWithMethod.add(comparableClassBean);
-
-        }
-
-        BeanComparator comparator = new BeanComparator();
-        Collections.sort(dependenciesWithMethod, comparator);
-
-        ClassBean firstRankedClass = dependenciesWithMethod.get(dependenciesWithMethod.size() - 1);
-
-        if (numberOfDependenciesWithActualClass <= firstRankedClass.getSimilarity()) {
-            pMethod.setEnviedClass(firstRankedClass);
-            return true;
-        } else {
-            return false;
-        }
+        return false;
     }
 
+    private boolean isGetter(MethodBean pMethodBean) {
+        if ((pMethodBean.getFullQualifiedName().toLowerCase()).contains("get") && pMethodBean.getParameters().isEmpty() &&
+                !((ClassBean) pMethodBean.getReturnType()).getFullQualifiedName().equalsIgnoreCase("void")) {
+            return true;
+        }
+        return false;
+    }
+
+    private boolean isSetter(MethodBean pMethodBean) {
+        if ((pMethodBean.getFullQualifiedName().toLowerCase()).contains("set") && pMethodBean.getParameters().size() == 1 &&
+                ((ClassBean) pMethodBean.getReturnType()).getFullQualifiedName().equalsIgnoreCase("void")) {
+            return true;
+        }
+        return false;
+    }
+
+    private boolean isConstructor(MethodBean pMethodBean) {
+        String[] fullClass = ((ClassBean) pMethodBean.getBelongingClass()).getFullQualifiedName().split(Pattern.quote("."));
+        String[] fullMethod = pMethodBean.getFullQualifiedName().split(Pattern.quote("."));
+
+        if (fullMethod[fullMethod.length-1].equalsIgnoreCase(fullClass[fullClass.length-1]) &&
+                ((ClassBean) pMethodBean.getReturnType()).getFullQualifiedName().equalsIgnoreCase("void")) {
+            return true;
+        }
+        return false;
+    }
 }

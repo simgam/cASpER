@@ -260,7 +260,10 @@ public class ClassBean implements ComparableBean, Comparable {
      * @param smell smell da aggiungere
      */
     public void addSmell(CodeSmell smell) {
-        if (affectedSmell != null) affectedSmell.add(smell);
+        if (affectedSmell != null) {
+            smell.setIndex(this.similarity);
+            affectedSmell.add(smell);
+        }
     }
 
     /**
@@ -276,7 +279,7 @@ public class ClassBean implements ComparableBean, Comparable {
     /**
      * setter
      *
-     * @return similarity della classe
+     * @param similarity della classe
      */
     public void setSimilarity(double similarity) {
         this.similarity = similarity;

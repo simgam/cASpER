@@ -8,6 +8,8 @@ import it.unisa.ascetic.storage.beans.PackageBean;
 
 import java.io.IOException;
 import java.util.*;
+import java.util.logging.Logger;
+import java.util.regex.Pattern;
 
 /*
 
@@ -27,124 +29,83 @@ public class TextualFeatureEnvyStrategy implements MethodSmellDetectionStrategy 
     }
 
     public boolean isSmelly(MethodBean pMethod) {
-        SortedMap<ClassBean, Double> similaritiesWithMethod = new TreeMap<ClassBean, Double>();
-        CosineSimilarity cosineSimilarity = new CosineSimilarity();
-        ArrayList<ClassBean> candidateEnviedClasses = MisplacedComponentsUtilities.getCandidates(pMethod, systemPackages);
 
-        String[] document1 = new String[2];
-        document1[0] = "method";
-        document1[1] = pMethod.getTextContent();
+        if (!isGetter(pMethod) && !isSetter(pMethod) && !(pMethod.getFullQualifiedName().toLowerCase()).contains("main") && !isConstructor(pMethod)) {
 
-        for (ClassBean classBean : candidateEnviedClasses) {
+            SortedMap<ClassBean, Double> similaritiesWithMethod = new TreeMap<ClassBean, Double>();
+            CosineSimilarity cosineSimilarity = new CosineSimilarity();
+            ArrayList<ClassBean> candidateEnviedClasses = MisplacedComponentsUtilities.getCandidates(pMethod, systemPackages);
 
-            String[] document2 = new String[2];
-            document2[0] = "class";
-            document2[1] = classBean.getTextContent();
+            String[] document1 = new String[2];
+            document1[0] = "method";
+            document1[1] = pMethod.getTextContent();
 
-            try {
-                similaritiesWithMethod.put(classBean, cosineSimilarity.computeSimilarity(document1, document2));
+            for (ClassBean classBean : candidateEnviedClasses) {
 
-            } catch (IOException e) {
+                String[] document2 = new String[2];
+                document2[0] = "class";
+                document2[1] = classBean.getTextContent();
+
+                try {
+                    similaritiesWithMethod.put(classBean, cosineSimilarity.computeSimilarity(document1, document2));
+
+                } catch (IOException e) {
+                    e.getMessage();
+                    return false;
+                }
+            }
+
+            if (!similaritiesWithMethod.entrySet().iterator().hasNext()) {
                 return false;
             }
-        }
 
-        if (!similaritiesWithMethod.entrySet().iterator().hasNext()) {
-            return false;
-        }
+            Set<ClassBean> list = similaritiesWithMethod.keySet();
+            ClassBean firstRankedClass = list.iterator().next();
 
-        Set<ClassBean> list = similaritiesWithMethod.keySet();
-        ClassBean firstRankedClass = list.iterator().next();
+            for (ClassBean classBean : list) {
+                if (classBean.getSimilarity() > firstRankedClass.getSimilarity()) {
+                    firstRankedClass = classBean;
+                }
+            }
 
-        for (ClassBean classBean : list) {
-            if (classBean.getSimilarity() > firstRankedClass.getSimilarity()) {
-                firstRankedClass = classBean;
+            if (firstRankedClass.getFullQualifiedName().equals(pMethod.getBelongingClass().getFullQualifiedName())) {
+                return false;
+            } else {
+                pMethod.setEnviedClass(firstRankedClass);
+                pMethod.setIndex(firstRankedClass.getSimilarity());
+                Logger logger = Logger.getLogger("global");
+                logger.severe("Found FE:" + pMethod.getFullQualifiedName() + " Envied Class:" + firstRankedClass.getFullQualifiedName());
+                return true;
             }
         }
-
-        if (firstRankedClass.getFullQualifiedName().equals(pMethod.getBelongingClass().getFullQualifiedName())) {
-            return false;
-        } else {
-            pMethod.setEnviedClass(firstRankedClass);
-            System.out.println("Found FE:"+pMethod.getFullQualifiedName()+" Envied Class:"+firstRankedClass.getFullQualifiedName());
-            return true;
-        }
+        return false;
     }
 
-    /*public ClassBean getEnviedClass(MethodBean pMethod) {
-        List<ClassBean> similaritiesWithMethod = new ArrayList<ClassBean>();
-        CosineSimilarity cosineSimilarity = new CosineSimilarity();
-        ClassBean actualClass = null;
-
-        String[] document1 = new String[2];
-        document1[0] = "method";
-        document1[1] = pMethod.getTextContent();
-        try {
-            for (PackageBean packageBean : systemPackages) {
-                for (ClassBean classBean : packageBean.getClassList()) {
-                    if (classBean.getFullQualifiedName().equals(pMethod.getBelongingClass().getFullQualifiedName())) {
-
-                        String[] actualClassDocument = new String[2];
-                        actualClassDocument[0] = "class";
-                        actualClassDocument[1] = classBean.getTextContent();
-
-                        actualClass = new ClassBean.Builder(classBean.getFullQualifiedName(), classBean.getTextContent())
-                                .setInstanceVariables(classBean.instanceVariables)
-                                .setMethods(classBean.methods)
-                                .setImports(classBean.getImports())
-                                .setLOC(classBean.getLOC())
-                                .setSuperclass(classBean.getSuperclass())
-                                .setBelongingPackage(classBean.getBelongingPackage())
-                                .setPathToFile(classBean.getPathToFile())
-                                .setSimilarity(cosineSimilarity.computeSimilarity(document1, actualClassDocument))
-                                .build();
-
-                        if (actualClass.getSimilarity() >= 0.4)
-                            return actualClass;
-
-                    }
-                }
-            }
-        } catch (IOException e) {
+    private boolean isGetter(MethodBean pMethodBean) {
+        if ((pMethodBean.getFullQualifiedName().toLowerCase()).contains("get") && pMethodBean.getParameters().isEmpty() &&
+                !((ClassBean) pMethodBean.getReturnType()).getFullQualifiedName().equalsIgnoreCase("void")) {
+            return true;
         }
-        if (actualClass.getSimilarity() < 0.25) {
-            ArrayList<ClassBean> candidateEnviedClasses = MisplacedComponentsUtilities.getCandidates(pMethod, systemPackages);
-            ClassBean comparableClassBean = null;
-            try {
-                for (ClassBean classBean : candidateEnviedClasses) {
+        return false;
+    }
 
-                    String[] document2 = new String[2];
-                    document2[0] = "class";
-                    document2[1] = classBean.getTextContent();
-
-                    comparableClassBean = new ClassBean.Builder(classBean.getFullQualifiedName(), classBean.getTextContent())
-                            .setInstanceVariables(classBean.instanceVariables)
-                            .setMethods(classBean.methods)
-                            .setImports(classBean.getImports())
-                            .setLOC(classBean.getLOC())
-                            .setSuperclass(classBean.getSuperclass())
-                            .setBelongingPackage(classBean.getBelongingPackage())
-                            .setPathToFile(classBean.getPathToFile())
-                            .setSimilarity(cosineSimilarity.computeSimilarity(document1, document2))
-                            .build();
-
-                    similaritiesWithMethod.add(comparableClassBean);
-
-                }
-            } catch (IOException e) {
-            }
-            if (similaritiesWithMethod.isEmpty()) {
-                return null;
-            }
-
-            BeanComparator comparator = new BeanComparator();
-            Collections.sort(similaritiesWithMethod, comparator);
-            ClassBean firstRankedClass = similaritiesWithMethod.get(similaritiesWithMethod.size() - 1);
-
-            return firstRankedClass;
+    private boolean isSetter(MethodBean pMethodBean) {
+        if ((pMethodBean.getFullQualifiedName().toLowerCase()).contains("set") && pMethodBean.getParameters().size() == 1 &&
+                ((ClassBean) pMethodBean.getReturnType()).getFullQualifiedName().equalsIgnoreCase("void")) {
+            return true;
         }
+        return false;
+    }
 
-        return actualClass;
-    }*/
+    private boolean isConstructor(MethodBean pMethodBean) {
+        String[] fullClass = ((ClassBean) pMethodBean.getBelongingClass()).getFullQualifiedName().split(Pattern.quote("."));
+        String[] fullMethod = pMethodBean.getFullQualifiedName().split(Pattern.quote("."));
+
+        if (fullMethod[fullMethod.length-1].equalsIgnoreCase(fullClass[fullClass.length-1]) &&
+                ((ClassBean) pMethodBean.getReturnType()).getFullQualifiedName().equalsIgnoreCase("void")) {
+            return true;
+        }
+        return false;
+    }
 
 }

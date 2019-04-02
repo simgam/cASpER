@@ -119,7 +119,6 @@ public class FileUtility {
 
 		else {
 			if (!srcPath.exists()) {
-				System.out.println("File or directory does not exist.");
 				System.exit(0);
 			}
 			else {
@@ -138,7 +137,7 @@ public class FileUtility {
 				out.close();
 			}
 		}
-		System.out.println("Directory copied.");
+
 	}
 
 	public static boolean DelDir(File dir) {

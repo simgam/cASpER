@@ -3,6 +3,7 @@ package it.unisa.ascetic.storage.beans;
 import it.unisa.ascetic.analysis.code_smell.CodeSmell;
 import it.unisa.ascetic.analysis.code_smell_detection.comparator.ComparableBean;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -13,8 +14,8 @@ public class PackageBean implements ComparableBean, Comparable {
 
     private String fullQualifiedName; // obbligatorio full qualified name del package
     private String textContent; // obbligatorio contenuto testuale del package
-    public ClassBeanList classes = null; // lista delle classi appartenenti al metodo
-    private CodeSmell affectedSmell = null; // smell dal quale è affetto il package, se esistente
+    public ClassBeanList classes; // lista delle classi appartenenti al metodo
+    private List<CodeSmell> affectedSmell; // lista di smell di cui è affetto il package
     private double similarity;
 
     /**
@@ -26,7 +27,11 @@ public class PackageBean implements ComparableBean, Comparable {
         fullQualifiedName = builder._fullQualifiedName;
         textContent = builder._textContent;
         classes = builder._classes;
-        affectedSmell = builder._affectedSmell;
+        if (builder._affectedSmell != null) {
+            affectedSmell = builder._affectedSmell;
+        } else {
+            affectedSmell = new ArrayList<CodeSmell>();
+        }
     }
 
     /**
@@ -90,17 +95,29 @@ public class PackageBean implements ComparableBean, Comparable {
      *
      * @return smell di cui è affetto il package
      */
-    public CodeSmell getAffectedSmell() {
+    public List<CodeSmell> getAffectedSmell() {
         return affectedSmell;
     }
 
     /**
-     * aggiunge lo smell al package
+     * aggiunge uno smell alla lista degli smell dai quali è affetto il package
      *
      * @param smell smell da aggiungere
      */
     public void addSmell(CodeSmell smell) {
-        affectedSmell = smell;
+        if (affectedSmell != null) {
+            smell.setIndex(this.similarity);
+            this.affectedSmell.add(smell);
+        }
+    }
+
+    /**
+     * rimuove uno smell dalla lista degli smell dai quali è affetto il package
+     *
+     * @param smell smell da rimuovere
+     */
+    public void removeSmell(CodeSmell smell) {
+        if (affectedSmell != null) affectedSmell.remove(smell);
     }
 
     /**
@@ -160,7 +177,7 @@ public class PackageBean implements ComparableBean, Comparable {
         private String _fullQualifiedName; // obbligatorio
         private String _textContent; // obbligatorio
         private ClassBeanList _classes;
-        private CodeSmell _affectedSmell;
+        private List<CodeSmell> _affectedSmell;
         private double _similarity;
 
         /**
@@ -173,6 +190,17 @@ public class PackageBean implements ComparableBean, Comparable {
             _classes = classes;
             return this;
         }
+
+        /**
+         * setta la lista degli smell dai quali è affetto il package
+         *
+         * @return builder
+         */
+        public Builder setAffectedSmell() {
+            _affectedSmell = new ArrayList<CodeSmell>();
+            return this;
+        }
+
 
         /**
          * setter

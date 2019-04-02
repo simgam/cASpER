@@ -14,9 +14,10 @@ public class FeatureEnvyCodeSmell extends MethodLevelCodeSmell {
      *
      * @param detectionStrategy Strategy associato al rilevamento di smell che
      *                          riguardano i metodi. Il nome viene istanziato nella classe padre
+     * @param algoritmsUsed     Stringa che rappresenta il tipo di algoritmo che ha rilevato tale smell
      */
-    public FeatureEnvyCodeSmell(MethodSmellDetectionStrategy detectionStrategy) {
-        super(FEATURE_ENVY, detectionStrategy);
+    public FeatureEnvyCodeSmell(MethodSmellDetectionStrategy detectionStrategy, String algoritmsUsed) {
+        super(FEATURE_ENVY, detectionStrategy, algoritmsUsed);
     }
 
     /**

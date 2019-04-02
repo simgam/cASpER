@@ -15,6 +15,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
+import javax.swing.border.TitledBorder;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -48,7 +49,7 @@ public class BlobPage extends DialogWrapper {
 
     private boolean errorOccured;               //serve per determinare se qualcosa è andato storto
 
-    public BlobPage(Project project, ClassBean classBeanBlob) {
+    public BlobPage(ClassBean classBeanBlob, Project project) {
         super(true);
         this.classBeanBlob = classBeanBlob;
         this.project = project;
@@ -90,6 +91,7 @@ public class BlobPage extends DialogWrapper {
         remindButton.setEnabled(false);
 
         //SETTO TESTO NELLA TEXT AREA
+        area.setBorder(new TitledBorder("Text content"));
         area.append(classBeanBlob.getTextContent());
 
         //SETTO LA TABELLA PER LE METRICHE
@@ -109,6 +111,7 @@ public class BlobPage extends DialogWrapper {
 
         DefaultTableModel model = new DefaultTableModel(tableHeaders, 0);
         model.addRow(tableElemet);
+
         table.setModel(model);
 
         //SETTO I LAYOUT DEI PANEL
@@ -130,6 +133,7 @@ public class BlobPage extends DialogWrapper {
 
         panelRadarMapMaster.add(panelRadarMap, BorderLayout.CENTER);
 
+        panelMetric.setBorder(new TitledBorder("Metrics"));
         panelMetric.add(new JBScrollPane(table));
         table.setFillsViewportHeight(true);
         panelGrid2.add(panelMetric, BorderLayout.CENTER);

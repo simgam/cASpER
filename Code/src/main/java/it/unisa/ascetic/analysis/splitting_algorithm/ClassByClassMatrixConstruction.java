@@ -64,8 +64,7 @@ public class ClassByClassMatrixConstruction {
 					}
 					ICPmatrix[j][i] = ICPmatrix[i][j];
 				}
-			}		
-			System.out.println("Calcolate le ICP...");
+			}
 			for (int i = 0; i<CCBCmatrix.length; i++){
 				for (int j=i+1; j<CCBCmatrix.length; j++){
 					if (i != j){
@@ -78,7 +77,6 @@ public class ClassByClassMatrixConstruction {
 					CCBCmatrix[j][i] = CCBCmatrix[i][j];
 				}
 			}
-			System.out.println("Calcolate le CCBC...");		
 			//Prepare the stopwords List
 			FileInputStream fs = new FileInputStream(stopwordList);
 			InputStreamReader isr=new InputStreamReader(fs);
@@ -92,7 +90,6 @@ public class ClassByClassMatrixConstruction {
 			}
 			CCBCmatrixFile.createNewFile();
 			ICPmatrixFile.createNewFile();
-			System.out.println("Creati i file...");		
 			PrintWriter pwCCBC = new PrintWriter(CCBCmatrixFile);
 			PrintWriter pwICP = new PrintWriter(ICPmatrixFile);
 			for (int i = 0; i<ICPmatrix.length; i++){
@@ -106,7 +103,6 @@ public class ClassByClassMatrixConstruction {
 				}
 			}
 			pwICP.close();
-			System.out.println("Scritto ICP...");	
 			for (int i = 0; i<CCBCmatrix.length; i++){
 				if (i>0)
 					pwCCBC.println();
@@ -118,7 +114,6 @@ public class ClassByClassMatrixConstruction {
 				}
 			}
 			pwCCBC.close();
-			System.out.println("Scritto CCBC...");
 		} else {
 			ICPmatrix = readMatrixFromFile(ICPmatrixFile, ICPmatrix.length);
 			CCBCmatrix = readMatrixFromFile(CCBCmatrixFile, CCBCmatrix.length);

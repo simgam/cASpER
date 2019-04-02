@@ -4,7 +4,6 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.ComboBox;
 import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.ui.Messages;
-import com.intellij.ui.components.JBScrollPane;
 import it.unisa.ascetic.gui.radarMap.RadarMapUtils;
 import it.unisa.ascetic.gui.radarMap.RadarMapUtilsAdapter;
 import it.unisa.ascetic.refactor.manipulator.BlobRefatoringStrategy;
@@ -30,14 +29,12 @@ public class BlobWizard extends DialogWrapper {
     private ClassBean classeDestra, classeSinistra;
     private JComboBox<String> comboBox, comboBox2;
     private JTable metric;
-    private JPanel main, vecchio;
+    private JPanel main, vecchio, sinistra, destra, radar_1, viste = null, panel_25, panel_26;
     private JTable table1, table2;
     private RadarMapUtils radar;
     private List<JPanel> list;
     private ClassBean blobClassBean;
-    private JPanel sinistra, destra;
     private List<ClassBean> splitting;
-    private JPanel viste, panel_25, panel_26;
     private Project project;
     private boolean errorOccured;
 
@@ -65,8 +62,8 @@ public class BlobWizard extends DialogWrapper {
                 try {
                     //splittedClasses = (List<ClassBean>) new SplitClasses().split(classBeanBlob,0.1);
 
-                    RefactoringStrategy refactoringStrategy = new BlobRefatoringStrategy(blobClassBean, splitting,project);
-                    RefactoringManager refactoringManager =  new RefactoringManager(refactoringStrategy);
+                    RefactoringStrategy refactoringStrategy = new BlobRefatoringStrategy(blobClassBean, splitting, project);
+                    RefactoringManager refactoringManager = new RefactoringManager(refactoringStrategy);
                     refactoringManager.executeRefactor();
                 } catch (Exception e) {
                     errorOccured = true;
@@ -74,12 +71,12 @@ public class BlobWizard extends DialogWrapper {
                     e.printStackTrace();
                 }
 
-                if(errorOccured){
-                    Messages.showMessageDialog(message,"Oh!No!",Messages.getErrorIcon());
+                if (errorOccured) {
+                    Messages.showMessageDialog(message, "Oh!No!", Messages.getErrorIcon());
                 } else {
                     close(0);
                     message = "Blob Corrected, check new classes generated name";
-                    Messages.showMessageDialog(message,"Success !",Messages.getInformationIcon());
+                    Messages.showMessageDialog(message, "Success !", Messages.getInformationIcon());
                 }
             }
         };
@@ -92,7 +89,7 @@ public class BlobWizard extends DialogWrapper {
     protected JComponent createCenterPanel() {
 
         main = new JPanel();
-        main.setPreferredSize(new Dimension(900, 800));
+        main.setPreferredSize(new Dimension(1100, 800));
         radar = new RadarMapUtilsAdapter();
 
         JPanel panel_5 = new JPanel();
@@ -117,14 +114,9 @@ public class BlobWizard extends DialogWrapper {
         panel_5.add(panel_22);
         panel_22.setLayout(new BorderLayout(0, 0));
 
-        JPanel radar_1 = new JPanel();
+        radar_1 = new JPanel();
         panel_22.add(radar_1);
         radar_1.setLayout(new BorderLayout(0, 0));
-
-        viste = new JPanel();
-        viste.setLayout(new GridLayout(0, 4, 0, 0));
-        JScrollPane viewTableScroll = new JBScrollPane(viste);
-        radar_1.add(viewTableScroll, BorderLayout.CENTER);
 
         JPanel panel_58 = new JPanel();
         radar_1.add(panel_58, BorderLayout.SOUTH);
@@ -137,6 +129,7 @@ public class BlobWizard extends DialogWrapper {
         panel_58.add(panel_25);
 
         comboBox = new ComboBox<>();
+        comboBox.setSize(100, comboBox.getPreferredSize().height);
         panel_25.add(comboBox);
 
         JPanel panel_28 = new JPanel();
@@ -149,6 +142,7 @@ public class BlobWizard extends DialogWrapper {
         panel_58.add(panel_26);
 
         comboBox2 = new ComboBox<>();
+        comboBox2.setSize(100, comboBox.getPreferredSize().height);
         panel_26.add(comboBox2);
 
         JPanel panel_29 = new JPanel();
@@ -273,11 +267,11 @@ public class BlobWizard extends DialogWrapper {
         createView();
         if (!splitting.isEmpty()) {
             classeSinistra = splitting.get(0);
-            change1(splitting.get(0));
-            createTable1(splitting.get(0));
+            change1(classeSinistra, 1);
+            createTable1(classeSinistra);
             classeDestra = splitting.get(1);
-            change2(splitting.get(1));
-            createTable2(splitting.get(1));
+            change2(classeDestra, 1);
+            createTable2(classeDestra);
         }
 
         metriche();
@@ -290,29 +284,41 @@ public class BlobWizard extends DialogWrapper {
             @Override
             public void actionPerformed(ActionEvent ev) {
                 if (!classeSinistra.getMethodList().isEmpty()) {
-
                     if (!classeSinistra.getFullQualifiedName().equals(classeDestra.getFullQualifiedName())) {
-                        String full = (String) table1.getValueAt(table1.getSelectedRow(), 0);
+                        try {
+                            String full = (String) table1.getValueAt(table1.getSelectedRow(), 0);
 
-                        int i = 0;
-                        while (i < classeSinistra.getMethodList().size() && !classeSinistra.getMethodList().get(i).getFullQualifiedName().equals(full)) {
-                            i++;
+                            int i = 0;
+                            while (i < classeSinistra.getMethodList().size() && !classeSinistra.getMethodList().get(i).getFullQualifiedName().equals(full)) {
+                                i++;
+                            }
+
+                            if (i < classeSinistra.getMethodList().size()) {
+
+                                MethodBean bean = classeSinistra.getMethodList().get(i);
+                                bean.setBelongingClass(classeDestra);
+                                classeDestra.getMethodList().add(bean);
+                                classeSinistra.getMethodList().remove(bean);
+                                createTable1(classeSinistra);
+                                createTable2(classeDestra);
+                                radar_1.remove(viste);
+                                radar_1.repaint();
+                                createView();
+                                metriche();
+                                scelta1((String) comboBox.getSelectedItem(), 0);
+
+                            } else {
+                                String message = "Error";
+                                Messages.showMessageDialog(message, "Oh no", Messages.getErrorIcon());
+                            }
+                        } catch (ArrayIndexOutOfBoundsException ex) {
+                            String message = "Seleziona un elemento";
+                            Messages.showMessageDialog(message, "Warning", Messages.getWarningIcon());
                         }
-
-                        if (i < classeSinistra.getMethodList().size()) {
-
-                            MethodBean bean = classeSinistra.getMethodList().get(i);
-                            bean.setBelongingClass(classeDestra);
-                            classeDestra.getMethodList().add(bean);
-                            classeSinistra.getMethodList().remove(bean);
-                            createTable1(classeSinistra);
-                            createTable2(classeDestra);
-                            metriche();
-                            createView();
-                        } else {
-                            String message = "Error";
-                            Messages.showMessageDialog(message, "Oh no", Messages.getErrorIcon());
-                        }
+                        ;
+                    } else {
+                        String message = "Non puoi spostare un metodo nella classe in cui \u00E8 gi\u00E0 presente";
+                        Messages.showMessageDialog(message, "Error", Messages.getErrorIcon());
                     }
                 }
             }
@@ -322,30 +328,42 @@ public class BlobWizard extends DialogWrapper {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (!classeDestra.getMethodList().isEmpty()) {
-
                     if (!classeDestra.getFullQualifiedName().equals(classeSinistra.getFullQualifiedName())) {
-                        String full = (String) table2.getValueAt(table2.getSelectedRow(), 0);
+                        try {
+                            String full = (String) table2.getValueAt(table2.getSelectedRow(), 0);
 
-                        int i = 0;
-                        while (i < classeDestra.getMethodList().size() && !classeDestra.getMethodList().get(i).getFullQualifiedName().equals(full)) {
-                            i++;
+                            int i = 0;
+                            while (i < classeDestra.getMethodList().size() && !classeDestra.getMethodList().get(i).getFullQualifiedName().equals(full)) {
+                                i++;
+                            }
+
+                            if (i < classeDestra.getMethodList().size()) {
+
+                                MethodBean bean = classeDestra.getMethodList().get(i);
+                                bean.setBelongingClass(classeSinistra);
+                                classeSinistra.getMethodList().add(bean);
+                                classeDestra.getMethodList().remove(bean);
+                                createTable1(classeSinistra);
+                                createTable2(classeDestra);
+                                radar_1.remove(viste);
+                                radar_1.repaint();
+                                createView();
+                                metriche();
+                                scelta2((String) comboBox2.getSelectedItem(), 0);
+
+                            } else {
+                                String message = "Error";
+                                Messages.showMessageDialog(message, "Oh no", Messages.getErrorIcon());
+                            }
+
+                        } catch (ArrayIndexOutOfBoundsException ex) {
+                            String message = "Seleziona un elemento";
+                            Messages.showMessageDialog(message, "Warning", Messages.getWarningIcon());
                         }
-
-                        if (i < classeDestra.getMethodList().size()) {
-
-                            MethodBean bean = classeDestra.getMethodList().get(i);
-                            bean.setBelongingClass(classeDestra);
-                            classeSinistra.getMethodList().add(bean);
-                            classeDestra.getMethodList().remove(bean);
-                            classeDestra = splitting.get(i);
-                            createTable1(classeSinistra);
-                            createTable2(classeDestra);
-                            metriche();
-                            createView();
-                        } else {
-                            String message = "Error";
-                            Messages.showMessageDialog(message, "Oh no", Messages.getErrorIcon());
-                        }
+                        ;
+                    } else {
+                        String message = "Non puoi spostare un metodo nella classe in cui \u00E8 gi\u00E0 presente";
+                        Messages.showMessageDialog(message, "Error", Messages.getErrorIcon());
                     }
                 }
             }
@@ -356,20 +374,7 @@ public class BlobWizard extends DialogWrapper {
             public void actionPerformed(ActionEvent action) {
                 JComboBox cb = (JComboBox) action.getSource();
                 String selection = (String) cb.getSelectedItem();
-                if (selection != null) {
-                    ((DefaultTableModel) table1.getModel()).setRowCount(0);
-                    ClassBean ricerca;
-                    if (selection.equalsIgnoreCase(blobClassBean.getFullQualifiedName())) {
-                        ricerca = blobClassBean;
-                    } else {
-                        int i = 0;
-                        while (i < splitting.size() && !selection.equalsIgnoreCase(splitting.get(i).getFullQualifiedName())) {
-                            i++;
-                        }
-                        ricerca = splitting.get(i);
-                    }
-                    change1(ricerca);
-                }
+                scelta1(selection, 1);
             }
         });
 
@@ -378,32 +383,54 @@ public class BlobWizard extends DialogWrapper {
             public void actionPerformed(ActionEvent action2) {
                 JComboBox cb2 = (JComboBox) action2.getSource();
                 String selection = (String) cb2.getSelectedItem();
-                if (selection != null) {
-                    ((DefaultTableModel) table2.getModel()).setRowCount(0);
-                    ClassBean ricerca2;
-                    if (selection.equalsIgnoreCase(blobClassBean.getFullQualifiedName())) {
-                        ricerca2 = blobClassBean;
-                    } else {
-                        int i = 0;
-                        while (i < splitting.size() && !selection.equalsIgnoreCase(splitting.get(i).getFullQualifiedName())) {
-                            i++;
-                        }
-                        ricerca2 = splitting.get(i);
-                    }
-                    change2(ricerca2);
-                }
+                scelta2(selection, 1);
             }
         });
 
         return main;
     }
 
+    public void scelta1(String selection, int val) {
+        if (selection != null) {
+            ((DefaultTableModel) table1.getModel()).setRowCount(0);
+            ClassBean ricerca;
+            if (selection.equalsIgnoreCase(blobClassBean.getFullQualifiedName())) {
+                ricerca = blobClassBean;
+            } else {
+                int i = 0;
+                while (i < splitting.size() && !selection.equalsIgnoreCase(splitting.get(i).getFullQualifiedName())) {
+                    i++;
+                }
+                ricerca = splitting.get(i);
+            }
+            change1(ricerca, val);
+        }
+    }
+
+    public void scelta2(String selection, int val) {
+        if (selection != null) {
+            ((DefaultTableModel) table2.getModel()).setRowCount(0);
+            ClassBean ricerca2;
+            if (selection.equalsIgnoreCase(blobClassBean.getFullQualifiedName())) {
+                ricerca2 = blobClassBean;
+            } else {
+                int i = 0;
+                while (i < splitting.size() && !selection.equalsIgnoreCase(splitting.get(i).getFullQualifiedName())) {
+                    i++;
+                }
+                ricerca2 = splitting.get(i);
+            }
+            change2(ricerca2, val);
+        }
+    }
+
     private void createView() {
 
+        viste = new JPanel();
+        viste.setLayout(new GridLayout(0, 4, 0, 0));
         JPanel aggiunta;
-        viste.removeAll();
         if (splitting != null) {
-            int index=1;
+            int index = 1;
             for (ClassBean classe : splitting) {
                 String classShortName = "Class_" + (index);
                 StringBuilder classTextContent = new StringBuilder();
@@ -411,12 +438,12 @@ public class BlobWizard extends DialogWrapper {
                 classTextContent.append(classShortName);
                 classTextContent.append(" {");
 
-                for(InstanceVariableBean instanceVariableBean : classe.getInstanceVariablesList()){
+                for (InstanceVariableBean instanceVariableBean : classe.getInstanceVariablesList()) {
                     classTextContent.append(instanceVariableBean.getFullQualifiedName());
                     classTextContent.append("\n");
                 }
 
-                for(MethodBean methodBean : classe.getMethodList()){
+                for (MethodBean methodBean : classe.getMethodList()) {
                     classTextContent.append(methodBean.getTextContent());
                     classTextContent.append("\n");
                 }
@@ -430,33 +457,39 @@ public class BlobWizard extends DialogWrapper {
                 index++;
             }
         }
+        viste.repaint();
+        radar_1.add(viste, BorderLayout.CENTER);
+        radar_1.repaint();
     }
 
-    private void change1(ClassBean cs) {
+    private void change1(ClassBean cs, int val) {
 
         classeSinistra = cs;
         comboBox.removeAllItems();
         comboBox.addItem(cs.getFullQualifiedName());
-        for (ClassBean cl1 : splitting) {
-            if (!cs.getFullQualifiedName().equals(cl1.getFullQualifiedName()))
-                comboBox.addItem(cl1.getFullQualifiedName());
+        if (val == 1) {
+            for (ClassBean cl1 : splitting) {
+                if (!cs.getFullQualifiedName().equals(cl1.getFullQualifiedName()))
+                    comboBox.addItem(cl1.getFullQualifiedName());
+            }
+            comboBox.repaint();
+            createTable1(cs);
         }
-
-        comboBox.repaint();
-        createTable1(cs);
     }
 
-    private void change2(ClassBean cd) {
+    private void change2(ClassBean cd, int val) {
 
         classeDestra = cd;
         comboBox2.removeAllItems();
         comboBox2.addItem(cd.getFullQualifiedName());
-        for (ClassBean cl2 : splitting) {
-            if (!cl2.getFullQualifiedName().equals(cd.getFullQualifiedName()))
-                comboBox2.addItem(cl2.getFullQualifiedName());
+        if (val == 1) {
+            for (ClassBean cl2 : splitting) {
+                if (!cl2.getFullQualifiedName().equals(cd.getFullQualifiedName()))
+                    comboBox2.addItem(cl2.getFullQualifiedName());
+            }
+            comboBox2.repaint();
+            createTable2(cd);
         }
-        comboBox2.repaint();
-        createTable2(cd);
     }
 
     private void createTable1(ClassBean c) {

@@ -31,7 +31,7 @@ public class MethodMover {
                 append(throwsList).
                 append(body.replaceAll("    ", "\t"));
         String s = stringBuilder.toString();
-        logger.info("\n\n************************Metodo Generato***************************\n"
+        logger.severe("\n\n************************Metodo Generato***************************\n"
                 + s + "\n\n*****************************************************************");
         return s;
     }
@@ -49,10 +49,10 @@ public class MethodMover {
         PsiMethod newMethod = elementFactory.createMethodFromText(methodToWrite, writePlace);
         if (replace) {
             actualPsiMethod.replace(newMethod);
-            logger.info(newMethod.getName() + " sostituito correttamente in " + writePlace.getName());
+            logger.severe(newMethod.getName() + " sostituito correttamente in " + writePlace.getName());
         } else {
             writePlace.add(newMethod);
-            logger.info(newMethod.getName() + " aggiunto correttamente in " + writePlace.getName());
+            logger.severe(newMethod.getName() + " aggiunto correttamente in " + writePlace.getName());
         }
     }
 }

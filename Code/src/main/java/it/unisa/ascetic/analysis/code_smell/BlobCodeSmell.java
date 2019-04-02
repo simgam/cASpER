@@ -13,9 +13,10 @@ public class BlobCodeSmell extends ClassLevelCodeSmell {
      *
      * @param detectionStrategy Strategy associato al rilevamento di smell che
      *                          riguardano le classi. Il nome viene istanziato nella classe padre
+     * @param algoritmsUsed     Stringa che rappresenta il tipo di algoritmo che ha rilevato tale smell
      */
-    public BlobCodeSmell(ClassSmellDetectionStrategy detectionStrategy) {
-        super(BLOB, detectionStrategy);
+    public BlobCodeSmell(ClassSmellDetectionStrategy detectionStrategy, String algoritmsUsed) {
+        super(BLOB, detectionStrategy, algoritmsUsed);
     }
 
     /**
@@ -31,4 +32,5 @@ public class BlobCodeSmell extends ClassLevelCodeSmell {
         }
         return false;
     }
+
 }

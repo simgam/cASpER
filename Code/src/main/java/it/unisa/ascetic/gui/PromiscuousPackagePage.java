@@ -49,7 +49,7 @@ public class PromiscuousPackagePage extends DialogWrapper {
 
     private boolean errorOccured;               //serve per verificare se qualche cosa è andata storta
 
-    public PromiscuousPackagePage(Project project, PackageBean packageBeanPP) {
+    public PromiscuousPackagePage(PackageBean packageBeanPP, Project project) {
         super(true);
         this.packageBeanPP = packageBeanPP;
         this.project = project;

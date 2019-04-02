@@ -80,7 +80,9 @@ public class DBCreation{
                 "CREATE TABLE IF NOT EXISTS Package_SmellType ("
                         + "packageBeanFullQualifiedName VARCHAR(255) NOT NULL, "
                         + "codeSmellFullQualifiedName VARCHAR(255) NOT NULL, "
-                        + "PRIMARY KEY(packageBeanFullQualifiedName,codeSmellFullQualifiedName),"
+                        + "algorithmUsed VARCHAR(255), "
+                        + "indice INTEGER(5), "
+                        + "PRIMARY KEY(packageBeanFullQualifiedName,codeSmellFullQualifiedName,algorithmUsed),"
                         + "FOREIGN KEY (packageBeanFullQualifiedName) REFERENCES PackageBean (fullQualifiedName) ON DELETE CASCADE ON UPDATE CASCADE,"
                         + "FOREIGN KEY (codeSmellFullQualifiedName) REFERENCES CodeSmell (fullQualifiedName) ON DELETE CASCADE ON UPDATE CASCADE"
                         + ");");
@@ -89,7 +91,9 @@ public class DBCreation{
                         + "classBeanFullQualifiedName VARCHAR(255) NOT NULL, "
                         + "codeSmellFullQualifiedName VARCHAR(255) NOT NULL , "
                         + "fqn_envied_package VARCHAR(255), "
-                        + "PRIMARY KEY(classBeanFullQualifiedName,codeSmellFullQualifiedName),"
+                        + "algorithmUsed VARCHAR(255), "
+                        + "indice INTEGER(5), "
+                        + "PRIMARY KEY(classBeanFullQualifiedName,codeSmellFullQualifiedName,algorithmUsed),"
                         + "FOREIGN KEY (classBeanFullQualifiedName) REFERENCES ClassBean (fullQualifiedName) ON DELETE CASCADE ON UPDATE CASCADE,"
                         + "FOREIGN KEY (codeSmellFullQualifiedName) REFERENCES CodeSmell (fullQualifiedName) ON DELETE CASCADE ON UPDATE CASCADE"
                         + ");");
@@ -98,7 +102,9 @@ public class DBCreation{
                         + "methodBeanFullQualifiedName VARCHAR(255) NOT NULL, "
                         + "codeSmellFullQualifiedName VARCHAR(255) NOT NULL, "
                         + "fqn_envied_class VARCHAR(255), "
-                        + "PRIMARY KEY(methodBeanFullQualifiedName,codeSmellFullQualifiedName),"
+                        + "algorithmUsed VARCHAR(255), "
+                        + "indice INTEGER(5), "
+                        + "PRIMARY KEY(methodBeanFullQualifiedName,codeSmellFullQualifiedName,algorithmUsed),"
                         + "FOREIGN KEY (methodBeanFullQualifiedName) REFERENCES MethodBean (fullQualifiedName) ON DELETE CASCADE ON UPDATE CASCADE,"
                         + "FOREIGN KEY (codeSmellFullQualifiedName) REFERENCES CodeSmell (fullQualifiedName) ON DELETE CASCADE ON UPDATE CASCADE"
                         + ");");

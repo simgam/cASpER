@@ -142,11 +142,13 @@ public class MethodRepository implements MethodBeanRepository {
                     List<CodeSmell> listSmell = new ArrayList<CodeSmell>();
                     listSmell = aMethod.getAffectedSmell();
                     for (CodeSmell smell : listSmell) {
-                        sql = "INSERT OR REPLACE INTO Metodo_SmellType (methodBeanFullQualifiedName,codeSmellFullQualifiedName,fqn_envied_class) VALUES (?,?,?);";
+                        sql = "INSERT OR REPLACE INTO Metodo_SmellType (methodBeanFullQualifiedName,codeSmellFullQualifiedName,fqn_envied_class,algorithmUsed,indice) VALUES (?,?,?,?,?);";
                         stat = (PreparedStatement) con.prepareStatement(sql);
                         stat.setString(1, aMethod.getFullQualifiedName());
                         stat.setString(2, smell.getSmellName());
                         stat.setString(3, enviedClass);
+                        stat.setString(4, smell.getAlgoritmsUsed());
+                        stat.setString(5, String.valueOf(smell.getIndex()));
                         stat.executeUpdate();
                     }
                 }
@@ -261,11 +263,13 @@ public class MethodRepository implements MethodBeanRepository {
                 while (res.next()) {
                     method.addParameters(res.getString("parameterClassFullQualifiedName"), new ClassBean.Builder(res.getString("typeParameter"), "").build());
                 }
-                sql = "SELECT fqn_envied_class FROM Metodo_SmellType INNER JOIN CodeSmell ON codeSmellFullQualifiedName=CodeSmell.fullQualifiedName WHERE methodBeanFullQualifiedName='" + method.getFullQualifiedName() + "'";
+                sql = "SELECT methodBeanFullQualifiedName, fqn_envied_class, algorithmUsed, indice FROM Metodo_SmellType WHERE methodBeanFullQualifiedName='" + method.getFullQualifiedName() + "'";
                 res = selection.executeQuery(sql);
                 String envied = null;
                 while (res.next()) {
-                    method.addSmell(new FeatureEnvyCodeSmell(null));
+                    CodeSmell f = new FeatureEnvyCodeSmell(null,res.getString("algorithmUsed"));
+                    method.setIndex(Double.parseDouble(res.getString("indice")));
+                    method.addSmell(f);
                     if (!res.getString("fqn_envied_class").equals(""))
                         envied = res.getString("fqn_envied_class");
                 }

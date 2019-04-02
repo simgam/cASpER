@@ -21,16 +21,20 @@ public abstract class CodeSmell<T> {
 
     protected String smellName;
     protected CodeSmellDetectionStrategy detectionStrategy;
+    protected String algoritmsUsed;
+    protected double index;
 
     /**
      * Costruttore
      *
      * @param name              Stringa che rappresenta il nome del code smell istanziato
      * @param detectionStrategy Strategy associato al code smell, da utilizzare per il refactoring
+     * @param algoritmsUsed     Stringa che rappresenta il tipo di algoritmo che ha rilevato tale smell
      */
-    public CodeSmell(String name, CodeSmellDetectionStrategy detectionStrategy) {
+    public CodeSmell(String name, CodeSmellDetectionStrategy detectionStrategy, String algoritmsUsed) {
         this.smellName = name;
         this.detectionStrategy = detectionStrategy;
+        this.algoritmsUsed = algoritmsUsed;
     }
 
     /**
@@ -58,4 +62,32 @@ public abstract class CodeSmell<T> {
     public String getSmellName() {
         return smellName;
     }
+
+    /**
+     * getter
+     *
+     * @return stringa corrispondente al tipo di algoritmo usato
+     */
+    public String getAlgoritmsUsed() {
+        return algoritmsUsed;
+    }
+
+    /**
+     * getter
+     *
+     * @return double corrispondente all'index dell'algoritmo usato
+     */
+    public double getIndex() {
+        return index;
+    }
+
+    /**
+     * setter
+     *
+     * @param double corrispondente all'index dell'algoritmo usato
+     */
+    public void setIndex(double index) {
+        this.index = index;
+    }
+
 }

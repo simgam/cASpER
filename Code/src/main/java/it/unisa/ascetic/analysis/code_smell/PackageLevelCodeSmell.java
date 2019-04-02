@@ -9,14 +9,16 @@ import it.unisa.ascetic.storage.beans.PackageBean;
  */
 
 public abstract class PackageLevelCodeSmell extends CodeSmell<PackageBean> {
+
     /**
      * Costruttore
      *
      * @param name              rappresenta nome dello smell
      * @param detectionStrategy Strategy associato agli smell che riguardano i package
+     * @param algoritmsUsed     Stringa che rappresenta il tipo di algoritmo che ha rilevato tale smell
      */
-    public PackageLevelCodeSmell(String name, PackageSmellDetectionStrategy detectionStrategy) {
-        super(name, detectionStrategy);
+    public PackageLevelCodeSmell(String name, PackageSmellDetectionStrategy detectionStrategy, String algoritmsUsed) {
+        super(name, detectionStrategy, algoritmsUsed);
     }
 
     /**

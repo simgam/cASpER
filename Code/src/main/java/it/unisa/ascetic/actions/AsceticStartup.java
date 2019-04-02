@@ -18,7 +18,7 @@ public class AsceticStartup implements ApplicationComponent {
         dir.append(System.getProperty("user.home"));
         dir.append(File.separator);
         dir.append(".ascetic");
-        System.out.println(dir.toString());
+
         // Lists all files in folder
         File folder = new File(dir.toString());
         File fList[] = folder.listFiles();

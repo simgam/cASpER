@@ -42,7 +42,7 @@ public class FeatureEnvyRefactoringStrategy implements RefactoringStrategy {
      * @param project      progetto di analisi
      */
     public FeatureEnvyRefactoringStrategy(MethodBean methodToMove, Project project) {
-        //logger.info("oggetto FE_STGY creato");
+        //logger.severe("oggetto FE_STGY creato");
         this.project = project;
         psiMethod = PsiUtil.getPsi(methodToMove, project);
         psiSourceClass = PsiUtil.getPsi(methodToMove.getBelongingClass(), project);
@@ -93,7 +93,7 @@ public class FeatureEnvyRefactoringStrategy implements RefactoringStrategy {
                         if ((x || y) && !(x && y))//questo è uno XOR, VERO se e solo se gli ingressi sono diversi tra di loro.
                             return 0;
                         variabileDaTrasformare = field.getName();
-                        logger.info("selezionata la strategia VARIABILE D'ISTANZA");
+                        logger.severe("selezionata la strategia VARIABILE D'ISTANZA");
                         return 1;
                     }
                 }
@@ -104,12 +104,12 @@ public class FeatureEnvyRefactoringStrategy implements RefactoringStrategy {
             for (PsiParameter parametro : parameters) {
                 if (parametro.getType().getInternalCanonicalText().equals(psiDestinationClass.getQualifiedName())) {
                     variabileDaTrasformare = parametro.getName();
-                    logger.info("selezionata la strategia PARAMETRI");
+                    logger.severe("selezionata la strategia PARAMETRI");
                     return 2;
                 }
             }
         }
-        logger.info("selezionata la strategia NESSUNA");
+        logger.severe("selezionata la strategia NESSUNA");
         return 0;
     }
 

@@ -14,9 +14,10 @@ public abstract class ClassLevelCodeSmell extends CodeSmell<ClassBean> {
      *
      * @param name              rappresenta nome dello mell
      * @param detectionStrategy Strategy associato ai code smell che interessano le classi
+     * @param algoritmsUsed     Stringa che rappresenta il tipo di algoritmo che ha rilevato tale smell
      */
-    public ClassLevelCodeSmell(String name, ClassSmellDetectionStrategy detectionStrategy) {
-        super(name, detectionStrategy);
+    public ClassLevelCodeSmell(String name, ClassSmellDetectionStrategy detectionStrategy, String algoritmsUsed) {
+        super(name, detectionStrategy, algoritmsUsed);
     }
 
     /**

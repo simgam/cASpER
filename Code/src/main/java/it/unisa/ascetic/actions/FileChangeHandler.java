@@ -77,7 +77,7 @@ public class FileChangeHandler implements ApplicationComponent, BulkFileListener
             writer = new PrintWriter(new BufferedWriter(new FileWriter(modificationFile, true)));
             writer.append(filename + "," + operation + "\n");
             writer.close();
-            logger.info("Written " + filename + "," + operation + "\n");
+            logger.severe("Written " + filename + "," + operation + "\n");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -88,7 +88,7 @@ public class FileChangeHandler implements ApplicationComponent, BulkFileListener
         Matcher pathMatcher = pathPattern.matcher(eventString);
         if (pathMatcher.find()) {
             String path = pathMatcher.group(0);
-            //System.out.println(path);
+
             String fullQualifiedName = path.substring(5, path.indexOf(".java"))
                     .replace('/', '.')
                     .replace("]", "");
@@ -105,7 +105,7 @@ public class FileChangeHandler implements ApplicationComponent, BulkFileListener
         Matcher pathMatcher = pathPattern.matcher(eventString);
         if (pathMatcher.find()) {
             String path = pathMatcher.group(0);
-            //System.out.println(path);
+
             String fullQualifiedName = path.substring(5, path.indexOf(".java"))
                     .replace('/', '.')
                     .replace("]", "");
@@ -119,14 +119,14 @@ public class FileChangeHandler implements ApplicationComponent, BulkFileListener
     }
 
     private void writeCreateToFileIfNotExists(String eventString) {
-        //System.out.println(eventString);
+
         StringBuilder fullQualifiedName = new StringBuilder();
 
         Pattern pathPattern = Pattern.compile("[\\/\\\\]src[\\/\\\\].+]");
         Matcher pathMatcher = pathPattern.matcher(eventString);
         if (pathMatcher.find()) {
             String path = pathMatcher.group(0);
-            //System.out.println(path.replace('/','.'));
+
             fullQualifiedName.append(path.substring(5)
                     .replace('/', '.')
                     .replace("]", ""));
@@ -164,7 +164,7 @@ public class FileChangeHandler implements ApplicationComponent, BulkFileListener
     }
 
     private boolean isAJavaFile(String eventString) {
-        logger.info("Is a java file");
+        logger.severe("Is a java file");
         return eventString.contains(".java");
     }
 

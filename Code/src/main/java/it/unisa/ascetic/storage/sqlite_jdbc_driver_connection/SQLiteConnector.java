@@ -6,6 +6,7 @@ import java.io.File;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.logging.Logger;
 
 /**
  * oggetto che istanzia la connessione col database
@@ -49,7 +50,8 @@ public class SQLiteConnector {
                 conn.setAutoCommit(false);
             }
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            Logger logger= Logger.getLogger("global");
+            logger.severe(e.getMessage());
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }

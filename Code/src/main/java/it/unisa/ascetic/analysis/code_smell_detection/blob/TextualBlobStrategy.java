@@ -9,6 +9,7 @@ import it.unisa.ascetic.structuralMetrics.CKMetrics;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.logging.Logger;
 
 /*
 
@@ -26,14 +27,15 @@ public class TextualBlobStrategy implements ClassSmellDetectionStrategy {
         ComponentMutation componentMutation = new ComponentMutation();
 
         String mutatedClass = componentMutation.alterClass(pClass);
-        double smellynessIndex =0;
+        double smellynessIndex = 0;
         try {
             smellynessIndex=smellyness.computeSmellyness(mutatedClass);
-            System.out.println("DBG->"+pClass.getFullQualifiedName()+"smelliness index = "+smellynessIndex);
-            if (smellynessIndex > 0.55)
+            pClass.setSimilarity(smellynessIndex);
+            if (smellynessIndex > 0.5)
                 return true;
 
         } catch (IOException e) {
+            e.getMessage();
             return false;
         }
 

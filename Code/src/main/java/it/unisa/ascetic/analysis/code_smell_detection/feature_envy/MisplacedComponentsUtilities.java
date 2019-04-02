@@ -27,7 +27,8 @@ public class MisplacedComponentsUtilities {
             document2[1] = packageBean.getTextContent();
 
             try {
-                if (cosineSimilarity.computeSimilarity(document1, document2) > 0.6) {
+                pClass.setSimilarity(cosineSimilarity.computeSimilarity(document1, document2));
+                if (pClass.getSimilarity() > 0.5) {
                     candidates.add(packageBean);
                 }
             } catch (IOException e) {
@@ -56,10 +57,9 @@ public class MisplacedComponentsUtilities {
 
                 try {
                     double cosine = cosineSimilarity.computeSimilarity(document1, document2);
-
-                    if (cosine > 0.6) {
+                    classBean.setSimilarity(cosine);
+                    if (cosine > 0.5) {
                         candidates.add(classBean);
-                        classBean.setSimilarity(cosine);
                     }
                 } catch (IOException e) {
                     e.printStackTrace();

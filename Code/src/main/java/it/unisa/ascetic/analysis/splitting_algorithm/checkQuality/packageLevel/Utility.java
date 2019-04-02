@@ -91,8 +91,6 @@ public class Utility {
 
 			if (!srcPath.exists()) {
 
-				System.out.println("File or directory does not exist.");
-
 				System.exit(0);
 
 			}
@@ -121,8 +119,6 @@ public class Utility {
 			}
 
 		}
-
-		System.out.println("Directory copied.");
 
 	}
 	

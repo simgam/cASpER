@@ -13,15 +13,16 @@ import org.apache.lucene.store.LockObtainFailedException;
 
 import java.io.*;
 import java.util.*;
+import java.util.logging.Logger;
 import java.util.regex.Pattern;
-
 
 public class MethodByMethodMatrixConstruction {
 
     private String asceticDirectoryPath;
     private File matrixFolder;
     private File stopwordList;
-
+    private static Logger logger= Logger.getLogger("global");
+    
     public MethodByMethodMatrixConstruction() {
         asceticDirectoryPath = System.getProperty("user.home") + "/.ascetic";
         matrixFolder = new File(asceticDirectoryPath+"/matrix");
@@ -29,7 +30,7 @@ public class MethodByMethodMatrixConstruction {
     }
 
     public double[][] buildMethodByMethodMatrix(double pWccm, double pWssm, double pWcsm, double pThreshold, ClassBean pToSplit) throws Exception{
-		System.out.println("Matrix: " + matrixFolder.getAbsolutePath());
+		logger.severe("Matrix: " + matrixFolder.getAbsolutePath());
 		if (!stopwordList.exists()){
 			stopwordList.createNewFile();
 			getPrintWriterStopWord(stopwordList);
@@ -68,7 +69,7 @@ public class MethodByMethodMatrixConstruction {
 		Collections.sort(vectorOfMethods);
 
 		for (MethodBean m:vectorOfMethods){
-			System.out.println(m.getFullQualifiedName());
+			logger.severe(m.getFullQualifiedName());
 		}
 
 		if (!CCMmatrixFile.exists() || !CSMmatrixFile.exists() || !SSMmatrixFile.exists()) {
@@ -163,14 +164,7 @@ public class MethodByMethodMatrixConstruction {
 			}
 		}
 
-		System.out.println("Method by Method Matrix");
-
-		for(int i = 0; i<methodByMethodMatrix.length;i++){
-			for (int j = 0;j<methodByMethodMatrix[i].length;j++){
-				System.out.print("["+methodByMethodMatrix[i][j]+"]");
-			}
-			System.out.println();
-		}
+		logger.severe("Method by Method Matrix");
 
 		return methodByMethodMatrix;
 	}

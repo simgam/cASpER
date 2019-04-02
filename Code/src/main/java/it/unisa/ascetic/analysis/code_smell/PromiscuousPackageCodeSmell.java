@@ -13,9 +13,10 @@ public class PromiscuousPackageCodeSmell extends PackageLevelCodeSmell {
      *
      * @param detectionStrategy Strategy associato al rilevamento di smell che
      *                          riguardano i package. Il nome viene istanziato nella classe padre
+     * @param algoritmsUsed     Stringa che rappresenta il tipo di algoritmo che ha rilevato tale smell
      */
-    public PromiscuousPackageCodeSmell(PackageSmellDetectionStrategy detectionStrategy) {
-        super(PROMISCUOUS_PACKAGE, detectionStrategy);
+    public PromiscuousPackageCodeSmell(PackageSmellDetectionStrategy detectionStrategy, String algoritmsUsed) {
+        super(PROMISCUOUS_PACKAGE, detectionStrategy, algoritmsUsed);
     }
 
     /**

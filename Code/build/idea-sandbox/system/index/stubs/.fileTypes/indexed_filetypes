@@ -1,10 +1,10 @@
-1551794003330
-KJSM￿binary stub builder:com.intellij.psi.impl.compiled.ClassFileStubBuilder,-1395695519￿1551794003329
-Properties￿stub:com.intellij.lang.properties.parsing.PropertiesElementTypes$1,0￿1551794003328
-CLASS￿binary stub builder:com.intellij.psi.impl.compiled.ClassFileStubBuilder,-1395695519￿1551794003327
-HTML￿stub:com.intellij.psi.tree.IStubFileElementType,0￿1551794003326
-Kotlin￿stub:org.jetbrains.kotlin.psi.stubs.elements.KtFileElementType,125￿1551794003325
-kotlin_builtins￿binary stub builder:com.intellij.psi.impl.compiled.ClassFileStubBuilder,-1395695519￿1551794003324
-XML￿binary stub builder:com.intellij.util.xml.stubs.builder.DomStubBuilder,1804543718￿1551794003323
-Groovy￿stub:org.jetbrains.plugins.groovy.lang.psi.stubs.elements.GrStubFileElementType,38￿1551794003322
-JAVA￿stub:com.intellij.psi.impl.source.JavaFileElementType,41￿1551794003321
+1551989827934
+Groovy￿stub:org.jetbrains.plugins.groovy.lang.psi.stubs.elements.GrStubFileElementType,38￿1551989827933
+KJSM￿binary stub builder:com.intellij.psi.impl.compiled.ClassFileStubBuilder,-1395695519￿1551989827932
+Properties￿stub:com.intellij.lang.properties.parsing.PropertiesElementTypes$1,0￿1551989827931
+HTML￿stub:com.intellij.psi.tree.IStubFileElementType,0￿1551989827930
+Kotlin￿stub:org.jetbrains.kotlin.psi.stubs.elements.KtFileElementType,125￿1551989827929
+JAVA￿stub:com.intellij.psi.impl.source.JavaFileElementType,41￿1551989827928
+CLASS￿binary stub builder:com.intellij.psi.impl.compiled.ClassFileStubBuilder,-1395695519￿1551989827927
+XML￿binary stub builder:com.intellij.util.xml.stubs.builder.DomStubBuilder,1804543718￿1551989827926
+kotlin_builtins￿binary stub builder:com.intellij.psi.impl.compiled.ClassFileStubBuilder,-1395695519￿1551989827925

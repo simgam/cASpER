@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
+import java.util.logging.Logger;
 
 /**
  * repository addetta al salvataggio delle classi nel db
@@ -214,11 +215,13 @@ public class ClassRepository implements ClassBeanRepository {
             if (aClass.getAffectedSmell() != null) {
                 listSmell = aClass.getAffectedSmell();
                 for (CodeSmell smell : listSmell) {
-                    sql = "INSERT OR REPLACE INTO Classe_SmellType (classBeanFullQualifiedName,codeSmellFullQualifiedName,fqn_envied_package) VALUES (?,?,?);";
+                    sql = "INSERT OR REPLACE INTO Classe_SmellType (classBeanFullQualifiedName,codeSmellFullQualifiedName,fqn_envied_package,algorithmUsed,indice) VALUES (?,?,?,?,?);";
                     stat = (PreparedStatement) con.prepareStatement(sql);
                     stat.setString(1, aClass.getFullQualifiedName());
                     stat.setString(2, smell.getSmellName());
                     stat.setString(3, enviedClass);
+                    stat.setString(4, smell.getAlgoritmsUsed());
+                    stat.setString(5, String.valueOf(smell.getIndex()));
                     stat.executeUpdate();
                 }
             }
@@ -293,11 +296,11 @@ public class ClassRepository implements ClassBeanRepository {
 
             Statement selection = con.createStatement();
             res = selection.executeQuery(sql);
-            ClassBean classe = null;
+            ClassBean c = null;
 
             while (res.next()) {
                 if (res.getString("superclass").equals("")) {
-                                classe = new ClassBean.Builder(res.getString("CfullQualifiedName"), res.getString("CtextContent"))
+                                c = new ClassBean.Builder(res.getString("CfullQualifiedName"), res.getString("CtextContent"))
                                         .setInstanceVariables(new InstanceVariableListProxy(res.getString("CfullQualifiedName")))
                                         .setMethods(new MethodListProxy(res.getString("CfullQualifiedName")))
                                         .setImports(new ArrayList<String>())
@@ -310,7 +313,7 @@ public class ClassRepository implements ClassBeanRepository {
                                         .setAffectedSmell()
                                         .build();
                 } else {
-                    classe = new ClassBean.Builder(res.getString("CfullQualifiedName"), res.getString("CtextContent"))
+                    c = new ClassBean.Builder(res.getString("CfullQualifiedName"), res.getString("CtextContent"))
                             .setInstanceVariables(new InstanceVariableListProxy(res.getString("CfullQualifiedName")))
                             .setMethods(new MethodListProxy(res.getString("CfullQualifiedName")))
                             .setImports(new ArrayList<String>())
@@ -323,22 +326,26 @@ public class ClassRepository implements ClassBeanRepository {
                             .setAffectedSmell()
                             .build();
                 }
-                classes.add(classe);
+                classes.add(c);
             }
 
-            for (ClassBean c : classes) {
-                sql = "SELECT * FROM Classe_SmellType INNER JOIN CodeSmell ON codeSmellFullQualifiedName=CodeSmell.fullQualifiedName WHERE classBeanFullQualifiedName='" + classe.getFullQualifiedName() + "'";
+            for (ClassBean classe : classes) {
+                sql = "SELECT codeSmellFullQualifiedName, fqn_envied_package, algorithmUsed, indice FROM Classe_SmellType WHERE classBeanFullQualifiedName='" + classe.getFullQualifiedName() + "'";
                 res = selection.executeQuery(sql);
                 while (res.next()) {
-                    if (res.getString("fullQualifiedName").equals(CodeSmell.MISPLACED_CLASS)){
-                        c.addSmell(new MisplacedClassCodeSmell(null));
+                    if (res.getString("codeSmellFullQualifiedName").equals(CodeSmell.MISPLACED_CLASS)){
+                        CodeSmell m = new MisplacedClassCodeSmell(null,res.getString("algorithmUsed"));
+                        classe.setSimilarity(Double.parseDouble(res.getString("indice")));
+                        classe.addSmell(m);
                         if(res.getString("fqn_envied_package") != null){
                             PackageBean enviedPackage = new PackageBean.Builder(res.getString("fqn_envied_package"),"").build();
-                            c.setEnviedPackage(enviedPackage);
+                            classe.setEnviedPackage(enviedPackage);
                         }
 
-                    } else if(res.getString("fullQualifiedName").equalsIgnoreCase(CodeSmell.BLOB)) {
-                         c.addSmell(new BlobCodeSmell(null));
+                    } else if(res.getString("codeSmellFullQualifiedName").equalsIgnoreCase(CodeSmell.BLOB)) {
+                        CodeSmell b = new BlobCodeSmell(null,res.getString("algorithmUsed"));
+                        classe.setSimilarity(Double.parseDouble(res.getString("indice")));
+                        classe.addSmell(b);
                     }
                 }
             }

@@ -392,6 +392,7 @@ public class CKMetrics {
 
 
         for (MethodBean methodClass1 : pClass1.getMethodList()) {
+            if(methodClass1.getMethodsCalls()!=null)
             for (MethodBean call : methodClass1.getMethodsCalls()) {
                 for (MethodBean methodClass2 : pClass2.getMethodList()) {
                     if (call.getFullQualifiedName().equals(methodClass2.getFullQualifiedName()))
@@ -401,8 +402,8 @@ public class CKMetrics {
         }
 
         for (MethodBean methodClass2 : pClass2.getMethodList()) {
+            if(methodClass2.getMethodsCalls()!=null)
             for (MethodBean call : methodClass2.getMethodsCalls()) {
-
                 for (MethodBean methodClass1 : pClass1.getMethodList()) {
                     if (call.getFullQualifiedName().equals(methodClass1.getFullQualifiedName()))
                         return true;

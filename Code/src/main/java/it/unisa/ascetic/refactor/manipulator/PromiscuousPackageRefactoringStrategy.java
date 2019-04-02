@@ -36,7 +36,7 @@ public class PromiscuousPackageRefactoringStrategy implements RefactoringStrateg
      * @param project           Progetto nel quale sono presenti i PackageBean
      */
     public PromiscuousPackageRefactoringStrategy(PackageBean packageBeanSource, Collection<PackageBean> newPackages, Project project) {
-        logger.info("oggetto PP_STGY creato\n");
+        logger.severe("oggetto PP_STGY creato\n");
 
         this.packageBeanSource = packageBeanSource;
         this.newPackages = (List<PackageBean>) newPackages;

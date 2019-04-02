@@ -3,6 +3,7 @@ package it.unisa.ascetic.gui;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.ui.Messages;
+import com.intellij.ui.components.JBScrollPane;
 import com.intellij.ui.table.JBTable;
 import com.intellij.util.ui.JBUI;
 import it.unisa.ascetic.gui.radarMap.RadarMapUtils;
@@ -44,7 +45,6 @@ public class FeatureEnvyPage extends DialogWrapper {
         this.project = project;
         this.radarMapGenerator = new RadarMapUtilsAdapter();
         init();
-        //this.setOKButtonText("FOTTUTO");
         setTitle("FEATURE ENVY ANALYSIS");
     }
 
@@ -96,13 +96,15 @@ public class FeatureEnvyPage extends DialogWrapper {
 
 
         level2Panel = new JPanel();
-        level2Panel.setLayout(new BoxLayout(level2Panel,BoxLayout.X_AXIS));
+        JPanel p = new JPanel();
+        level2Panel.setLayout(new GridLayout(0,2));
         centerPanel.add(level2Panel);
 
         JTextArea textContentArea = new JTextArea();
-        textContentArea.setBorder(new TitledBorder("Text Content"));
+        p.setBorder(new TitledBorder("Text Content"));
+        p.add(new JBScrollPane(textContentArea));
         textContentArea.setText(featureEnvyBean.getTextContent());
-        level2Panel.add(textContentArea);
+        level2Panel.add(p);
 
         level2Panel.add(Box.createHorizontalGlue());
 

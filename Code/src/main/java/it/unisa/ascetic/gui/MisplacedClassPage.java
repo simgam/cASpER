@@ -96,13 +96,15 @@ public class MisplacedClassPage extends DialogWrapper {
 
 
         level2Panel = new JPanel();
-        level2Panel.setLayout(new BoxLayout(level2Panel,BoxLayout.X_AXIS));
+        JPanel p = new JPanel();
+        level2Panel.setLayout(new GridLayout(0,2));
         centerPanel.add(level2Panel);
 
         JTextArea textContentArea = new JTextArea();
-        textContentArea.setBorder(new TitledBorder("Text Content"));
+        p.setBorder(new TitledBorder("Text Content"));
+        p.add(new JBScrollPane(textContentArea));
         textContentArea.setText(misplacedClassBean.getTextContent());
-        level2Panel.add(new JBScrollPane(textContentArea));
+        level2Panel.add(p);
 
         level2Panel.add(Box.createHorizontalGlue());
 

@@ -28,8 +28,8 @@ public class TextualPromiscuousPackageStrategy implements PackageSmellDetectionS
         double smellynessIndex = 0;
         try {
             smellynessIndex = smellyness.computeSmellyness(mutatedPackage);
-
-            if (smellynessIndex > 0.6)
+            pPackage.setSimilarity(smellynessIndex);
+            if (smellynessIndex > 0.5)
                 return true;
 
         } catch (IOException e) {

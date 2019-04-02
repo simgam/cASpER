@@ -1,4 +1,5 @@
 package it.unisa.ascetic.actions;
+
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.application.ApplicationManager;
@@ -14,8 +15,10 @@ import it.unisa.ascetic.storage.beans.MethodBean;
 import it.unisa.ascetic.storage.beans.PackageBean;
 import it.unisa.ascetic.storage.repository.*;
 import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 public class BeginAction extends AnAction {
 
@@ -23,16 +26,15 @@ public class BeginAction extends AnAction {
     @Override
     public void actionPerformed(@NotNull AnActionEvent anActionEvent) {
 
-        System.out.println("BEGIN");
-        PackageBeanRepository pacrepo = new PackageRepository();
-        ClassBeanRepository classrepo = new ClassRepository();
-        MethodBeanRepository metrepo = new MethodRepository();
-        InstanceVariableBeanRepository insrepo = new InstanceVariableRepository();
+        PackageBeanRepository packRepo = new PackageRepository();
+        ClassBeanRepository classRepo = new ClassRepository();
+        MethodBeanRepository methodRepo = new MethodRepository();
+        InstanceVariableBeanRepository instanceRepo = new InstanceVariableRepository();
         
 
         Project currentProject=anActionEvent.getProject();
         PsiParser parser = new PsiParser(currentProject);
-        parser.setRepository(pacrepo,classrepo,metrepo,insrepo);
+        parser.setRepository(packRepo,classRepo,methodRepo,instanceRepo);
         errorHappened = false;
 
         ProgressManager.getInstance().runProcessWithProgressSynchronously(() -> {
@@ -46,30 +48,32 @@ public class BeginAction extends AnAction {
                     parser.parse();
                 } catch (ParsingException e) {
                     errorHappened = true;
+                    e.printStackTrace();
                 } catch (RepositoryException e) {
                     errorHappened = true;
+                    e.printStackTrace();
                 }
             });
 
         }, "Ascetic - Code Smell Detection", false, anActionEvent.getProject());
 
         if(!errorHappened) {
-            List<PackageBean> smellList = new ArrayList<>();
-            List<ClassBean> classList = new ArrayList<>();
-            List<ClassBean> classList2 = new ArrayList<>();
-            List<MethodBean> methodList = new ArrayList<>();
+            List<PackageBean> promiscuousList = new ArrayList<>();
+            List<ClassBean> blobList = new ArrayList<>();
+            List<ClassBean> misplacedList = new ArrayList<>();
+            List<MethodBean> featureList = new ArrayList<>();
 
             try {
-                smellList = pacrepo.select(new SQLPromiscuousSelection());
-                classList = classrepo.select(new SQLBlobSelection());
-                classList2 = classrepo.select(new SQLMisplacedSelection());
-                methodList = metrepo.select(new SQLFeatureSelection());
+                promiscuousList = packRepo.select(new SQLPromiscuousSelection());
+                blobList = classRepo.select(new SQLBlobSelection());
+                misplacedList = classRepo.select(new SQLMisplacedSelection());
+                featureList = methodRepo.select(new SQLFeatureSelection());
 
             } catch (RepositoryException e) {
                 e.printStackTrace();
             }
-            CheckProjectPage frank = new CheckProjectPage(currentProject, smellList, classList, classList2, methodList);
-            frank.show();
+            CheckProjectPage frame = new CheckProjectPage(currentProject, promiscuousList, blobList, misplacedList, featureList, "all");
+            frame.show();
         } else {
             Messages.showMessageDialog(anActionEvent.getProject(),"Sorry, an error has occurred. Prease try again or contact support","OH ! No! ",Messages.getErrorIcon());
         }

@@ -14,9 +14,10 @@ public class MisplacedClassCodeSmell extends ClassLevelCodeSmell {
      *
      * @param detectionStrategy Strategy associato al rilevamento di smell che
      *                          riguardano le classi. Il nome viene istanziato nella classe padre
+     * @param algoritmsUsed     Stringa che rappresenta il tipo di algoritmo che ha rilevato tale smell
      */
-    public MisplacedClassCodeSmell(ClassSmellDetectionStrategy detectionStrategy) {
-        super(MISPLACED_CLASS, detectionStrategy);
+    public MisplacedClassCodeSmell(ClassSmellDetectionStrategy detectionStrategy, String algoritmsUsed) {
+        super(MISPLACED_CLASS, detectionStrategy, algoritmsUsed);
     }
 
     /**

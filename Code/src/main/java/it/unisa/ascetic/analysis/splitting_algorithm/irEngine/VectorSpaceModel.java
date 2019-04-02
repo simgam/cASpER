@@ -1,9 +1,12 @@
 package it.unisa.ascetic.analysis.splitting_algorithm.irEngine;
 
 import java.util.*;
-
+import java.util.logging.Logger;
 
 public class VectorSpaceModel implements IREngine {
+
+	private static Logger logger= Logger.getLogger("global");
+
 	/* The documents name */
 	Map<String, Map<Integer, Double>> documentsList;
 
@@ -62,8 +65,6 @@ public class VectorSpaceModel implements IREngine {
 			
 			String badWords = conf.getProperties("BadWords");
 			String[] badWordsArray = badWords.split(",");
-
-			System.out.println("DIMENSIONEEEEEEEEEEE" + badWordsArray.length);
 			
 			badWordsCollection = new Vector<String>();
 			/*
@@ -71,7 +72,7 @@ public class VectorSpaceModel implements IREngine {
 			 */
 			for (String badWord : badWordsArray) {
 				badWordsCollection.add(badWord);
-				System.out.println(badWord);
+				logger.severe(badWord);
 			}
 			
 			
@@ -144,11 +145,11 @@ public class VectorSpaceModel implements IREngine {
 			 */
 			document = normalize(document);
 
-			System.out.println("Documenti normalizzati!");
+			logger.severe("Documenti normalizzati!");
 			
 			//document[1] = steamer.stemString(document[1]);
 
-			System.out.println("Documenti stemmati!");
+			logger.severe("Documenti stemmati!");
 			
 			/*
 			 * Extract the terms from current documents, the method returns the
@@ -157,14 +158,14 @@ public class VectorSpaceModel implements IREngine {
 			 */
 			terms = extractTerms(document);
 
-			System.out.println("Termini Estratti!");
+			logger.severe("Termini Estratti!");
 			
 			/*
 			 * count the occurrence for everyone words in this document
 			 */
 			occurrence = countOccurrence(terms, document[1]);
 
-			System.out.println("Occorrenze Contate");
+			logger.severe("Occorrenze Contate");
 			
 			/*
 			 * Insert the current document in to matrix
@@ -192,8 +193,8 @@ public class VectorSpaceModel implements IREngine {
 	private double getCosine(Map<Integer, Double> vector1,
 			Map<Integer, Double> vector2) {
 		
-		System.out.println(vector1);
-		System.out.println(vector2);
+		logger.severe(vector1+"");
+		logger.severe(vector2+"");
 		
 		double numerator = 0, denominatorPart1 = 0, denominatorPart2 = 0;
 
@@ -211,7 +212,7 @@ public class VectorSpaceModel implements IREngine {
 		if (denominatorPart1 * denominatorPart2 == 0)
 			return 0;
 		double similarity = numerator / (denominatorPart1 * denominatorPart2);
-		System.out.println(numerator);
+		logger.severe(numerator+"");
 		if (similarity > 1.0)
 			similarity = 1.0;
 		return similarity;

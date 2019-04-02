@@ -262,7 +262,7 @@ public class PromiscuousPackageWizard extends DialogWrapper {
             public void actionPerformed(ActionEvent e) {
                 if (table1.getSelectedRow()!= 0) {
                     String full = (String) table1.getValueAt(table1.getSelectedRow(), 0);
-                    System.out.println(full);
+
                     if (!packageSinistra.getFullQualifiedName().equals(packageDestra.getFullQualifiedName())) {
                         int i = 0;
                         while (i < packageSinistra.getClassList().size() && !packageSinistra.getClassList().get(i).equals(full)) {
@@ -272,7 +272,7 @@ public class PromiscuousPackageWizard extends DialogWrapper {
                         //bean.setBelongingClass(packageDestra);
                         packageDestra.getClassList().add(bean);
                         packageSinistra.getClassList().remove(bean);
-                        System.out.println(bean.getFullQualifiedName());
+
                     }
                 }
                 change1(packageSinistra);

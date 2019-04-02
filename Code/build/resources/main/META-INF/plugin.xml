@@ -11,6 +11,9 @@
     Automated Code Smell Detection and Correction&lt;br&gt;
     </description>
   <extensions defaultExtensionNs="com.intellij"/>
+  <extensions defaultExtensionNs="com.intellij">
+    <checkinHandlerFactory implementation="main.extension.CommitFactory"/>
+  </extensions>
   <actions>
     <action id="it.unisa.ascetic.actions.BeginAction" class="it.unisa.ascetic.actions.BeginAction" text="Ascetic - Analyze Project">
       <add-to-group group-id="ToolsMenu" anchor="first"/>

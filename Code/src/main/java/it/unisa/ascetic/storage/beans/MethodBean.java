@@ -24,6 +24,7 @@ public class MethodBean implements Comparable {
     private boolean isDefaultCostructor;// boolean che stabilisce se il costruttore utilizzato è quello di default
     private List<CodeSmell> affectedSmell; // lista di smell dai quali è affetto il metodo
     private String visibility; //visibilità del metodo
+    private double index; //indice generato dagli algoritmi si analisi
 
     /**
      * costruttore
@@ -204,7 +205,6 @@ public class MethodBean implements Comparable {
 
     /**
      * setter
-     *
      */
     public void setEnviedClass(ClassBean enviedClass) {
         this.enviedClass = enviedClass;
@@ -243,7 +243,9 @@ public class MethodBean implements Comparable {
      * @param smell smell da aggiungere
      */
     public void addSmell(CodeSmell smell) {
-        if (affectedSmell != null) this.affectedSmell.add(smell);
+        if (affectedSmell != null) {
+            smell.setIndex(this.index);
+            this.affectedSmell.add(smell);};
     }
 
     /**
@@ -262,6 +264,24 @@ public class MethodBean implements Comparable {
      */
     public String getVisibility() {
         return visibility;
+    }
+
+    /**
+     * getter
+     *
+     * @return visibility del metodo
+     */
+    public double getIndex() {
+        return index;
+    }
+
+    /**
+     * setter
+     *
+     * @param indice generato durante l'analisi
+     */
+    public void setIndex(double index) {
+        this.index = index;
     }
 
     /**

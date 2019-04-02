@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Properties;
+import java.util.logging.Logger;
 
 public class ConfigLoader {
 	private static Properties config = null;
@@ -25,7 +26,8 @@ public class ConfigLoader {
 	 * software per far si che le modifiche abbiano effetto.
 	 */
 	public ConfigLoader() {
-		System.out.println("PATH DOVE INSERIRE IL FILE DI CONFIGURAZIONE: " + file_config_path);
+		Logger logger = Logger.getLogger("global");
+		logger.severe("PATH DOVE INSERIRE IL FILE DI CONFIGURAZIONE: " + file_config_path);
 
 		if (ConfigLoader.config == null) {
 			this.loadConfig();
