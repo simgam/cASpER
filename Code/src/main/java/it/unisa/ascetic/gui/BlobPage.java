@@ -35,7 +35,6 @@ public class BlobPage extends DialogWrapper {
 
     private JTextArea area;                     //area di testo dove viene mostrato in dettaglio il codice del CodeSmell selezionato
 
-
     private JPanel contentPanel;                //panel che raggruppa tutti gli elementi
     private JPanel panelRadarMapMaster;         //panel che ingloba la radar map
     private JPanel panelRadarMap;
@@ -78,20 +77,22 @@ public class BlobPage extends DialogWrapper {
         area = new JTextArea();                 //text area dove viene visualizzato il codice in esame
         table = new JBTable();                  //tabella dove sono presenti gli smell da prendere in esame
 
-        //INIZIALIZZO I BUTTON
-        ignoreButton = new JButton();           //bottone ignore
-        remindButton = new JButton();           //bottone remind
-
-        //SETTO IL TESTO NEI BUTTON
-        ignoreButton.setText("Ignore");
-        remindButton.setText("Remind");
-
-        //SETTO A "NON UTILIZZABILI" I BUTTON A CUI NON CORRISPONDONO NESSUNA FUNZIONE IMPLEMENTATA
-        ignoreButton.setEnabled(false);
-        remindButton.setEnabled(false);
+//        //INIZIALIZZO I BUTTON
+//        ignoreButton = new JButton();           //bottone ignore
+//        remindButton = new JButton();           //bottone remind
+//
+//        //SETTO IL TESTO NEI BUTTON
+//        ignoreButton.setText("Ignore");
+//        remindButton.setText("Remind");
+//
+//        //SETTO A "NON UTILIZZABILI" I BUTTON A CUI NON CORRISPONDONO NESSUNA FUNZIONE IMPLEMENTATA
+//        ignoreButton.setEnabled(false);
+//        remindButton.setEnabled(false);
 
         //SETTO TESTO NELLA TEXT AREA
-        area.setBorder(new TitledBorder("Text content"));
+        JPanel app = new JPanel();
+        app.setLayout(new BorderLayout(0, 0));
+        app.setBorder(new TitledBorder("Text content"));
         area.append(classBeanBlob.getTextContent());
 
         //SETTO LA TABELLA PER LE METRICHE
@@ -120,12 +121,11 @@ public class BlobPage extends DialogWrapper {
         panelWest.setLayout(new GridLayout(2, 1));
         panelEast.setLayout(new BorderLayout());
         panelMetric.setLayout((new BorderLayout()));
-        contentPanel.setLayout(new BorderLayout());
+        contentPanel.setLayout(new BoxLayout(contentPanel, BoxLayout.X_AXIS));
 
-
-        //AGGIUNGO COMPONENTI AI VARI PANEL
-        panelButton.add(ignoreButton);
-        panelButton.add(remindButton);
+//        //AGGIUNGO COMPONENTI AI VARI PANEL
+//        panelButton.add(ignoreButton);
+//        panelButton.add(remindButton);
 
         panelGrid2 = new JPanel();
         panelGrid2.setLayout(new BorderLayout());
@@ -142,11 +142,12 @@ public class BlobPage extends DialogWrapper {
         panelWest.add(panelRadarMapMaster);
         panelWest.add(panelGrid2);
 
-        contentPanel.add(panelWest, BorderLayout.CENTER);
-        contentPanel.add(new JBScrollPane(area), BorderLayout.EAST);
+        contentPanel.add(panelWest);
+        JScrollPane scroll = new JScrollPane(area);
+        app.add(scroll, BorderLayout.CENTER);
+        contentPanel.add(app);
 
         contentPanel.setPreferredSize(new Dimension(900, 800));
-
 
         return contentPanel;
     }

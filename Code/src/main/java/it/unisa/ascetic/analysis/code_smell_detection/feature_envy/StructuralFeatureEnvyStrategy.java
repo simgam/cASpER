@@ -44,11 +44,12 @@ public class StructuralFeatureEnvyStrategy implements MethodSmellDetectionStrate
             double numberOfDependenciesWithActualClass = CKMetrics.getNumberOfDependencies(pMethod, actualClass);
 
             ArrayList<ClassBean> dependenciesWithMethod = new ArrayList<ClassBean>();
+            double numberOfDependenciesWithCandidateEnviedClass = 0.0;
 
             ClassBean comparableClassBean = null;
             for (ClassBean classBean : classes) {
 
-                double numberOfDependenciesWithCandidateEnviedClass = CKMetrics.getNumberOfDependencies(pMethod, classBean);
+                numberOfDependenciesWithCandidateEnviedClass = CKMetrics.getNumberOfDependencies(pMethod, classBean);
 
                 comparableClassBean = new ClassBean.Builder(classBean.getFullQualifiedName(), classBean.getTextContent())
                         .setInstanceVariables(classBean.instanceVariables)
@@ -70,11 +71,10 @@ public class StructuralFeatureEnvyStrategy implements MethodSmellDetectionStrate
 
             ClassBean firstRankedClass = dependenciesWithMethod.get(dependenciesWithMethod.size() - 1);
 
-            if (numberOfDependenciesWithActualClass <= firstRankedClass.getSimilarity()) {
+            if (numberOfDependenciesWithActualClass <= firstRankedClass.getSimilarity() && firstRankedClass.getSimilarity()!=0) {
                 pMethod.setEnviedClass(firstRankedClass);
+                pMethod.setIndex(firstRankedClass.getSimilarity());
                 return true;
-            } else {
-                return false;
             }
         }
         return false;
@@ -100,7 +100,7 @@ public class StructuralFeatureEnvyStrategy implements MethodSmellDetectionStrate
         String[] fullClass = ((ClassBean) pMethodBean.getBelongingClass()).getFullQualifiedName().split(Pattern.quote("."));
         String[] fullMethod = pMethodBean.getFullQualifiedName().split(Pattern.quote("."));
 
-        if (fullMethod[fullMethod.length-1].equalsIgnoreCase(fullClass[fullClass.length-1]) &&
+        if (fullMethod[fullMethod.length - 1].equalsIgnoreCase(fullClass[fullClass.length - 1]) &&
                 ((ClassBean) pMethodBean.getReturnType()).getFullQualifiedName().equalsIgnoreCase("void")) {
             return true;
         }

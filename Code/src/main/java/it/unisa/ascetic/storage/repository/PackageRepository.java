@@ -266,8 +266,7 @@ public class PackageRepository implements PackageBeanRepository {
             con.commit();
             stat.close();
             SQLiteConnector.releaseConnection(con);
-        } catch (
-                SQLException e) {
+        } catch (SQLException e) {
             try {
                 con.rollback();
             } catch (SQLException ex) {

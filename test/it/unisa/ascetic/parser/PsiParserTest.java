@@ -56,7 +56,6 @@ public class PsiParserTest extends LightCodeInsightFixtureTestCase {
 
     public void testMethodCalls(){
         PsiParser parser = new PsiParser(myFixture.getProject());
-        parser.setRepository(new PackageRepository(),new ClassRepository(),new MethodRepository(),new InstanceVariableRepository());
         PsiJavaFile file = (PsiJavaFile)myFixture.configureByFiles("ParserDataTest/bCustomer.java","ParserDataTest/bPhone.java")[0];
         PsiPackage pkg= myFixture.getJavaFacade().findPackage(file.getPackageName());
 

@@ -48,6 +48,7 @@ public class ClassBean implements ComparableBean, Comparable {
         } else {
             affectedSmell = new ArrayList<>();
         }
+        similarity = builder._similarity;
     }
 
     /**

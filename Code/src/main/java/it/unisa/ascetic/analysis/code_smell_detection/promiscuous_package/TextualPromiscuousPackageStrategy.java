@@ -20,6 +20,12 @@ Questo smell è caratterizzato da insiemi di classi semanticamente diverse dalle
 
 public class TextualPromiscuousPackageStrategy implements PackageSmellDetectionStrategy {
 
+    private double soglia;
+
+    public TextualPromiscuousPackageStrategy(double soglia) {
+        this.soglia = soglia;
+    }
+
     public boolean isSmelly(PackageBean pPackage) {
         SmellynessMetric smellyness = new SmellynessMetric();
         ComponentMutation componentMutation = new ComponentMutation();
@@ -29,7 +35,7 @@ public class TextualPromiscuousPackageStrategy implements PackageSmellDetectionS
         try {
             smellynessIndex = smellyness.computeSmellyness(mutatedPackage);
             pPackage.setSimilarity(smellynessIndex);
-            if (smellynessIndex > 0.5)
+            if (smellynessIndex > soglia)
                 return true;
 
         } catch (IOException e) {
@@ -39,24 +45,24 @@ public class TextualPromiscuousPackageStrategy implements PackageSmellDetectionS
         return false;
     }
 
-    public double getPromiscuousPackageProbability(PackageBean pPackage) {
-        SmellynessMetric smellyness = new SmellynessMetric();
-        ComponentMutation componentMutation = new ComponentMutation();
-
-        String mutatedPackage = componentMutation.alterPackage(pPackage);
-
-        try {
-            double similarity = smellyness.computeSmellyness(mutatedPackage);
-
-            if (CKMetrics.getNumberOfClasses(pPackage) < 20) {
-                similarity -= ((similarity * 75) / 100);
-            }
-
-            return smellyness.computeSmellyness(mutatedPackage);
-
-        } catch (IOException e) {
-            return 0.0;
-        }
-    }
+//    public double getPromiscuousPackageProbability(PackageBean pPackage) {
+//        SmellynessMetric smellyness = new SmellynessMetric();
+//        ComponentMutation componentMutation = new ComponentMutation();
+//
+//        String mutatedPackage = componentMutation.alterPackage(pPackage);
+//
+//        try {
+//            double similarity = smellyness.computeSmellyness(mutatedPackage);
+//
+//            if (CKMetrics.getNumberOfClasses(pPackage) < 20) {
+//                similarity -= ((similarity * 75) / 100);
+//            }
+//
+//            return smellyness.computeSmellyness(mutatedPackage);
+//
+//        } catch (IOException e) {
+//            return 0.0;
+//        }
+//    }
 
 }

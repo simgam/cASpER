@@ -1,4 +1,4 @@
-package src.main.java.it.unisa.ascetic.actions;
+package it.unisa.ascetic.actions;
 
 import com.intellij.openapi.extensions.ExtensionPointName;
 import com.intellij.openapi.project.Project;
@@ -16,8 +16,11 @@ import org.jetbrains.annotations.NotNull;
  * use {@link VcsCheckinHandlerFactory} implementations instead, define through EP "com.intellij.checkinHandlerFactory"
  * they would automatically would be registered in {@link com.intellij.openapi.vcs.AbstractVcs#activate()}
  * and unregistered in {@link com.intellij.openapi.vcs.AbstractVcs#deactivate()}
+ *
+ * @author lesya
  */
 public abstract class CheckinHandlerFactory implements BaseCheckinHandlerFactory {
+
     public static final ExtensionPointName<CheckinHandlerFactory> EP_NAME = ExtensionPointName.create("com.intellij.checkinHandlerFactory");
 
     /**
@@ -29,7 +32,7 @@ public abstract class CheckinHandlerFactory implements BaseCheckinHandlerFactory
      */
     @Override
     @NotNull
-    public abstract CheckinHandler createHandler(@NotNull CheckinProjectPanel panel, @NotNull CommitContext commitContext);
+    public abstract CheckinHandler createHandler(@NotNull CheckinProjectPanel var1, @NotNull CommitContext var2);
 
     @Override
     public BeforeCheckinDialogHandler createSystemReadyHandler(@NotNull Project project) {

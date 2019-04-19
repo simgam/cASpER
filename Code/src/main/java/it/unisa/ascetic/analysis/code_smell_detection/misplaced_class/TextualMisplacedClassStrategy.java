@@ -1,14 +1,15 @@
 package it.unisa.ascetic.analysis.code_smell_detection.misplaced_class;
 
-import it.unisa.ascetic.analysis.code_smell_detection.comparator.BeanComparator;
 import it.unisa.ascetic.analysis.code_smell_detection.similarityComputation.CosineSimilarity;
 import it.unisa.ascetic.analysis.code_smell_detection.strategy.ClassSmellDetectionStrategy;
 import it.unisa.ascetic.storage.beans.ClassBean;
 import it.unisa.ascetic.storage.beans.PackageBean;
 
 import java.io.IOException;
-import java.util.*;
+import java.util.List;
 import java.util.Map.Entry;
+import java.util.SortedMap;
+import java.util.TreeMap;
 
 /*
 
@@ -20,9 +21,11 @@ Il refactoring da applicare è il Move Class capace di spostare la classe in un 
 public class TextualMisplacedClassStrategy implements ClassSmellDetectionStrategy {
 
     private List<PackageBean> systemPackages;
+    private double soglia;
 
-    public TextualMisplacedClassStrategy(List<PackageBean> systemPackages) {
+    public TextualMisplacedClassStrategy(List<PackageBean> systemPackages, double soglia) {
         this.systemPackages = systemPackages;
+        this.soglia = soglia;
     }
 
     public boolean isSmelly(ClassBean pClass) {
@@ -50,7 +53,13 @@ public class TextualMisplacedClassStrategy implements ClassSmellDetectionStrateg
             return false;
         }
         pClass.setEnviedPackage(firstRankedPackage.getKey());
-        firstRankedPackage.getKey().setSimilarity(firstRankedPackage.getKey().getSimilarity());
+
+        if (firstRankedPackage.getValue() < soglia && soglia<=0.5) {
+            pClass.setSimilarity(soglia);
+        } else {
+            pClass.setSimilarity(firstRankedPackage.getValue());
+        }
+
         return true;
     }
 

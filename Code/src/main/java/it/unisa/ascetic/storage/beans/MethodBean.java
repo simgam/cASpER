@@ -48,6 +48,7 @@ public class MethodBean implements Comparable {
             affectedSmell = new ArrayList<>();
         }
         visibility = builder._visibility;
+        index = builder._index;
     }
 
     /**
@@ -361,6 +362,7 @@ public class MethodBean implements Comparable {
         private boolean _isDefaultCostructor;
         private List<CodeSmell> _affectedSmell;
         private String _visibility;
+        private double _index;
 
         /**
          * setter
@@ -467,6 +469,16 @@ public class MethodBean implements Comparable {
          */
         public Builder setVisibility(String visibility) {
             _visibility = visibility;
+            return this;
+        }
+
+        /**
+         * setta l'indice di somiglianza del metodo
+         *
+         * @return builder
+         */
+        public Builder setIndex(double index) {
+            _index = index;
             return this;
         }
 

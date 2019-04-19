@@ -1,5 +1,6 @@
-package src.main.java.it.unisa.ascetic.actions;
+package it.unisa.ascetic.actions;
 
+import com.intellij.ide.plugins.cl.PluginClassLoader;
 import com.intellij.openapi.Disposable;
 import com.intellij.openapi.options.UnnamedConfigurable;
 import com.intellij.openapi.vcs.CheckinProjectPanel;
@@ -14,6 +15,17 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
+import static com.intellij.util.ObjectUtils.tryCast;
+
+/**
+ * A callback which can be used to extend the user interface of the Checkin Project/Checkin File
+ * dialogs and to perform actions before commit, on successful commit and on failed commit.
+ *
+ * @author lesya
+ * @see BaseCheckinHandlerFactory#createHandler(CheckinProjectPanel, CommitContext)
+ * @see CodeAnalysisBeforeCheckinHandler
+ * @see CheckinMetaHandler
+ */
 public abstract class CheckinHandler {
     /**
      * Return this handler if your handler shouldn't be created (for instance, your VCS is not active).
@@ -37,11 +49,11 @@ public abstract class CheckinHandler {
         return null;
     }
 
-    /*@ApiStatus.Experimental
+    @ApiStatus.Experimental
     @Nullable
     public UnnamedConfigurable getBeforeCheckinSettings() {
         return tryCast(getBeforeCheckinConfigurationPanel(), UnnamedConfigurable.class);
-    }*/
+    }
 
     /**
      * Returns the panel which is inserted in the "After Check In" group box of the Checkin Project

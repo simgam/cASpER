@@ -4,12 +4,9 @@ import it.unisa.ascetic.analysis.code_smell_detection.ComponentMutation;
 import it.unisa.ascetic.analysis.code_smell_detection.smellynessMetricProcessing.SmellynessMetric;
 import it.unisa.ascetic.analysis.code_smell_detection.strategy.ClassSmellDetectionStrategy;
 import it.unisa.ascetic.storage.beans.ClassBean;
-import it.unisa.ascetic.storage.beans.PackageBean;
 import it.unisa.ascetic.structuralMetrics.CKMetrics;
 
 import java.io.IOException;
-import java.util.List;
-import java.util.logging.Logger;
 
 /*
 
@@ -22,6 +19,12 @@ Le classi Blob sono caratterizzate da una dispersione semantica dei contenuti.
 
 public class TextualBlobStrategy implements ClassSmellDetectionStrategy {
 
+    private double soglia;
+
+    public TextualBlobStrategy(double soglia) {
+        this.soglia = soglia;
+    }
+
     public boolean isSmelly(ClassBean pClass) {
         SmellynessMetric smellyness = new SmellynessMetric();
         ComponentMutation componentMutation = new ComponentMutation();
@@ -29,9 +32,9 @@ public class TextualBlobStrategy implements ClassSmellDetectionStrategy {
         String mutatedClass = componentMutation.alterClass(pClass);
         double smellynessIndex = 0;
         try {
-            smellynessIndex=smellyness.computeSmellyness(mutatedClass);
+            smellynessIndex = smellyness.computeSmellyness(mutatedClass);
             pClass.setSimilarity(smellynessIndex);
-            if (smellynessIndex > 0.5)
+            if (smellynessIndex > soglia)
                 return true;
 
         } catch (IOException e) {
@@ -42,24 +45,24 @@ public class TextualBlobStrategy implements ClassSmellDetectionStrategy {
         return false;
     }
 
-    public double getBlobProbability(ClassBean pClass) {
-        SmellynessMetric smellyness = new SmellynessMetric();
-        ComponentMutation componentMutation = new ComponentMutation();
-
-        String mutatedClass = componentMutation.alterClass(pClass);
-
-        try {
-            double similarity = smellyness.computeSmellyness(mutatedClass);
-
-            if (CKMetrics.getLOC(pClass) < 500) {
-                similarity -= ((similarity * 85) / 100);
-            }
-
-            return similarity;
-
-        } catch (IOException e) {
-            return 0.0;
-        }
-    }
+//    public double getBlobProbability(ClassBean pClass) {
+//        SmellynessMetric smellyness = new SmellynessMetric();
+//        ComponentMutation componentMutation = new ComponentMutation();
+//
+//        String mutatedClass = componentMutation.alterClass(pClass);
+//
+//        try {
+//            double similarity = smellyness.computeSmellyness(mutatedClass);
+//
+//            if (CKMetrics.getLOC(pClass) < 500) {
+//                similarity -= ((similarity * 85) / 100);
+//            }
+//
+//            return similarity;
+//
+//        } catch (IOException e) {
+//            return 0.0;
+//        }
+//    }
 
 }

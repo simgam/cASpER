@@ -32,6 +32,7 @@ public class PackageBean implements ComparableBean, Comparable {
         } else {
             affectedSmell = new ArrayList<CodeSmell>();
         }
+        similarity = builder._similarity;
     }
 
     /**

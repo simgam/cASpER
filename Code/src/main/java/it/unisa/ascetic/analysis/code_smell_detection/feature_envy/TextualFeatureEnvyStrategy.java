@@ -23,9 +23,11 @@ Un metodo è affetto da questo smell quando è molto più simile ai concetti imp
 public class TextualFeatureEnvyStrategy implements MethodSmellDetectionStrategy {
 
     private List<PackageBean> systemPackages;
+    private double soglia;
 
-    public TextualFeatureEnvyStrategy(List<PackageBean> systemPackages) {
+    public TextualFeatureEnvyStrategy(List<PackageBean> systemPackages, double soglia) {
         this.systemPackages = systemPackages;
+        this.soglia = soglia;
     }
 
     public boolean isSmelly(MethodBean pMethod) {
@@ -34,7 +36,7 @@ public class TextualFeatureEnvyStrategy implements MethodSmellDetectionStrategy 
 
             SortedMap<ClassBean, Double> similaritiesWithMethod = new TreeMap<ClassBean, Double>();
             CosineSimilarity cosineSimilarity = new CosineSimilarity();
-            ArrayList<ClassBean> candidateEnviedClasses = MisplacedComponentsUtilities.getCandidates(pMethod, systemPackages);
+            ArrayList<ClassBean> candidateEnviedClasses = MisplacedComponentsUtilities.getCandidates(pMethod, systemPackages, soglia);
 
             String[] document1 = new String[2];
             document1[0] = "method";
@@ -101,7 +103,7 @@ public class TextualFeatureEnvyStrategy implements MethodSmellDetectionStrategy 
         String[] fullClass = ((ClassBean) pMethodBean.getBelongingClass()).getFullQualifiedName().split(Pattern.quote("."));
         String[] fullMethod = pMethodBean.getFullQualifiedName().split(Pattern.quote("."));
 
-        if (fullMethod[fullMethod.length-1].equalsIgnoreCase(fullClass[fullClass.length-1]) &&
+        if (fullMethod[fullMethod.length - 1].equalsIgnoreCase(fullClass[fullClass.length - 1]) &&
                 ((ClassBean) pMethodBean.getReturnType()).getFullQualifiedName().equalsIgnoreCase("void")) {
             return true;
         }

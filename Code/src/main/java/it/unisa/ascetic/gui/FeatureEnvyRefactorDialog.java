@@ -1,12 +1,9 @@
 package it.unisa.ascetic.gui;
 
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.DialogWrapper;
 import it.unisa.ascetic.gui.radarMap.RadarMapUtilsAdapter;
 import it.unisa.ascetic.storage.beans.MethodBean;
-import it.unisa.ascetic.storage.beans.MethodBeanList;
 import it.unisa.ascetic.storage.beans.MethodList;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jfree.chart.ChartPanel;
 
@@ -14,7 +11,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.*;
 import java.util.List;
 
 import static java.lang.System.exit;
@@ -54,7 +50,7 @@ public class FeatureEnvyRefactorDialog extends DialogWrapper {
 
         refactoringPanel = new JPanel();
         refactoringPanel.setLayout(new BorderLayout());
-        refactoringPanel.setPreferredSize(new Dimension(900,800));
+        refactoringPanel.setPreferredSize(new Dimension(900, 800));
 
         // radarmaps
        /* radarmaps = new JPanel();
@@ -63,8 +59,8 @@ public class FeatureEnvyRefactorDialog extends DialogWrapper {
             oldcurrentclass = radars.createRadarMapFromClassBean(aBean.getBelongingClass(), "Old Current Class");
             oldenviedclass = radars.createRadarMapFromClassBean(aBean.getEnviedClass(), "Old Envied Class");
 */
-            // applicare soluzione refactor
-      //      newcurrentclass = radars.createRadarMapFromClassBean(, "New Current Class");
+        // applicare soluzione refactor
+        //      newcurrentclass = radars.createRadarMapFromClassBean(, "New Current Class");
         //    newenviedclass = radars.createRadarMapFromClassBean(, "New Envied Class");
         //}
 
@@ -79,13 +75,13 @@ public class FeatureEnvyRefactorDialog extends DialogWrapper {
         class ApplyRefactorListener implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent e) {
-               exit(0); // messaggio di effettuato refactoring
+                exit(0); // messaggio di effettuato refactoring
             }
         }
 
         applyButton = new JButton("Apply");
 
- //       cancelButton = new JButton("Cancel");
+        //       cancelButton = new JButton("Cancel");
 
         group = new ButtonGroup();
         group.add(applyButton);
@@ -99,11 +95,11 @@ public class FeatureEnvyRefactorDialog extends DialogWrapper {
 
         // area testo per codice
         codice = new JTextArea();
+        codice.setEditable(false);
 
-
-        refactoringPanel.add(radarmaps,BorderLayout.WEST);
-        refactoringPanel.add(codice,BorderLayout.EAST);
-        refactoringPanel.add(buttons,BorderLayout.PAGE_END);
+        refactoringPanel.add(radarmaps, BorderLayout.WEST);
+        refactoringPanel.add(codice, BorderLayout.EAST);
+        refactoringPanel.add(buttons, BorderLayout.PAGE_END);
 
 
         return refactoringPanel;

@@ -12,6 +12,10 @@ import java.util.regex.Pattern;
 
 public class CKMetrics {
 
+    public static int getELOC(ClassBean cb){
+        return cb.getTextContent().split("\r\n|\r|\n").length;
+    }
+
     public static int getLOC(ClassBean cb) {
         return cb.getLOC();
     }
@@ -153,7 +157,7 @@ public class CKMetrics {
         for (ClassBean c : System) {
             if (c.getFullQualifiedName().equals(cb.getSuperclass())) {
                 Vector<MethodBean> subClassMethods = new Vector<MethodBean>(cb.getMethodList());
-                Vector<MethodBean> superClassMethods = new Vector<MethodBean>( c.getMethodList());
+                Vector<MethodBean> superClassMethods = new Vector<MethodBean>(c.getMethodList());
                 for (MethodBean m : subClassMethods) {
                     if (!superClassMethods.contains(m)) {
                         NOA++;
@@ -377,7 +381,7 @@ public class CKMetrics {
     public static double getNumberOfDependencies(MethodBean pMethod, ClassBean pClass) {
         double dependencies = 0.0;
 
-        if (pClass != null&&pMethod.getMethodsCalls()!=null) {
+        if (pClass != null && pMethod.getMethodsCalls() != null) {
             for (MethodBean call : pMethod.getMethodsCalls()) {
                 for (MethodBean classMethod : pClass.getMethodList()) {
                     if (call.getFullQualifiedName().equals(classMethod.getFullQualifiedName()))
@@ -390,26 +394,16 @@ public class CKMetrics {
 
     private static boolean existsDependence(ClassBean pClass1, ClassBean pClass2) {
 
-
         for (MethodBean methodClass1 : pClass1.getMethodList()) {
-            if(methodClass1.getMethodsCalls()!=null)
-            for (MethodBean call : methodClass1.getMethodsCalls()) {
-                for (MethodBean methodClass2 : pClass2.getMethodList()) {
-                    if (call.getFullQualifiedName().equals(methodClass2.getFullQualifiedName()))
-                        return true;
-                }
+            for (MethodBean methodClass2 : pClass2.getMethodList()) {
+                if (methodClass2.getMethodsCalls() != null)
+                    for (MethodBean call : methodClass2.getMethodsCalls()) {
+                        if (methodClass1.getFullQualifiedName().equalsIgnoreCase(call.getFullQualifiedName()))
+                            return true;
+                    }
             }
         }
 
-        for (MethodBean methodClass2 : pClass2.getMethodList()) {
-            if(methodClass2.getMethodsCalls()!=null)
-            for (MethodBean call : methodClass2.getMethodsCalls()) {
-                for (MethodBean methodClass1 : pClass1.getMethodList()) {
-                    if (call.getFullQualifiedName().equals(methodClass1.getFullQualifiedName()))
-                        return true;
-                }
-            }
-        }
         return false;
     }
 

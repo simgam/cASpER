@@ -1,15 +1,12 @@
 package it.unisa.ascetic.gui;
 
-import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.ui.components.JBScrollPane;
 import com.intellij.ui.table.JBTable;
-import it.unisa.ascetic.analysis.splitting_algorithm.SplitPackages;
 import it.unisa.ascetic.gui.radarMap.RadarMapUtils;
 import it.unisa.ascetic.gui.radarMap.RadarMapUtilsAdapter;
-import it.unisa.ascetic.storage.beans.ClassBean;
 import it.unisa.ascetic.storage.beans.PackageBean;
 import it.unisa.ascetic.structuralMetrics.CKMetrics;
 import org.jetbrains.annotations.NotNull;
@@ -19,7 +16,6 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.List;
 import java.util.Vector;
 
@@ -77,6 +73,7 @@ public class PromiscuousPackagePage extends DialogWrapper {
         //INIZIALIZZO LA TABELLA E LA TEXT AREA
         area = new JTextArea();                 //text area dove viene visualizzato il codice in esame
         table = new JBTable();                  //tabella dove sono presenti gli smell da prendere in esame
+        area.setEditable(false);
 
         //INIZIALIZZO I BUTTON
         ignoreButton = new JButton();           //bottone ignore
@@ -92,7 +89,6 @@ public class PromiscuousPackagePage extends DialogWrapper {
 
         //SETTO TESTO NELLA TEXT AREA
         area.append(packageBeanPP.getTextContent());
-
 
 
         //SETTO LA TABELLA PER LE METRICHE
@@ -154,7 +150,7 @@ public class PromiscuousPackagePage extends DialogWrapper {
             @Override
             protected void doAction(ActionEvent actionEvent) {
 
-                Messages.showMessageDialog("Promiscuous Package Reafctoring coming soon","Attention !",Messages.getInformationIcon());
+                Messages.showMessageDialog("Promiscuous Package Reafctoring coming soon", "Attention !", Messages.getInformationIcon());
                 /*String message;
 
                 ProgressManager.getInstance().runProcessWithProgressSynchronously(()->{

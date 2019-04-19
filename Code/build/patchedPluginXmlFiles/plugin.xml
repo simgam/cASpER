@@ -10,14 +10,15 @@
   <description>
     Automated Code Smell Detection and Correction&lt;br&gt;
     </description>
-  <extensions defaultExtensionNs="com.intellij"/>
   <extensions defaultExtensionNs="com.intellij">
-    <checkinHandlerFactory implementation="main.extension.CommitFactory"/>
+    <checkinHandlerFactory implementation="it.unisa.ascetic.actions.CommitFactory"/>
   </extensions>
   <actions>
-    <action id="it.unisa.ascetic.actions.BeginAction" class="it.unisa.ascetic.actions.BeginAction" text="Ascetic - Analyze Project">
+    <group id="org.jetbrains.tutorials.actions.GroupedActions" text="Ascetic - Analyze Project" popup="true">
       <add-to-group group-id="ToolsMenu" anchor="first"/>
-    </action>
+      <action id="it.unisa.ascetic.actions.BeginAction" class="it.unisa.ascetic.actions.BeginAction" text="Start"/>
+      <action id="it.unisa.ascetic.actions.ConfigureAction" class="it.unisa.ascetic.actions.ConfigureAction" text="Configure"/>
+    </group>
   </actions>
   <application-components>
     <component>

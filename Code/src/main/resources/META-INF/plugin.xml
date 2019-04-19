@@ -7,27 +7,20 @@
     Automated Code Smell Detection and Correction<br>
     ]]></description>
 
-    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
-         on how to target different products -->
-    <!-- uncomment to enable plugin in all products
-    <depends>com.intellij.modules.lang</depends>
-    -->
-
     <extensions defaultExtensionNs="com.intellij">
-        <!-- Add your extensions here -->
-    </extensions>
-
-    <extensions defaultExtensionNs="com.intellij">
-        <checkinHandlerFactory implementation="main.extension.CommitFactory"/>
+        <checkinHandlerFactory implementation="it.unisa.ascetic.actions.CommitFactory"/>
     </extensions>
 
     <actions>
-        <!-- Add your actions here -->
-        <action id="it.unisa.ascetic.actions.BeginAction" class="it.unisa.ascetic.actions.BeginAction"
-                text="Ascetic - Analyze Project">
+        <group id="org.jetbrains.tutorials.actions.GroupedActions" text="Ascetic - Analyze Project" popup="true">
             <add-to-group group-id="ToolsMenu" anchor="first"/>
-        </action>
+            <action id="it.unisa.ascetic.actions.BeginAction" class="it.unisa.ascetic.actions.BeginAction"
+                    text="Start"/>
+            <action id="it.unisa.ascetic.actions.ConfigureAction" class="it.unisa.ascetic.actions.ConfigureAction"
+                    text="Configure"/>
+        </group>
     </actions>
+
 
     <application-components>
         <!-- Add your application components here -->

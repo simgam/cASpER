@@ -29,14 +29,14 @@ public class StructuralMisplacedClassStrategy implements ClassSmellDetectionStra
             } else {
                 packages.add(packageBean);
             }
-    }
+        }
 
         double numberOfDependenciesWithActualPackage = CKMetrics.getNumberOfDependencies(pClass, actualPackage);
 
         ArrayList<PackageBean> dependenciesWithClass = new ArrayList<PackageBean>();
 
         PackageBean comparablePackageBean = null;
-        double numberOfDependenciesWithCandidateEnviedPackage;
+        double numberOfDependenciesWithCandidateEnviedPackage = 0.0;
 
         for (PackageBean packageBean : packages) {
 
@@ -56,8 +56,9 @@ public class StructuralMisplacedClassStrategy implements ClassSmellDetectionStra
 
         PackageBean firstRankedPackage = dependenciesWithClass.get(dependenciesWithClass.size() - 1);
         pClass.setSimilarity(numberOfDependenciesWithActualPackage);
-        if (numberOfDependenciesWithActualPackage <= firstRankedPackage.getSimilarity()) {
+        if (numberOfDependenciesWithActualPackage <= firstRankedPackage.getSimilarity() && firstRankedPackage.getSimilarity()!=0) {
             pClass.setEnviedPackage(firstRankedPackage);
+            pClass.setSimilarity(firstRankedPackage.getSimilarity());
             return true;
         } else {
             return false;

@@ -52,8 +52,8 @@ public class MethodRepository implements MethodBeanRepository {
             stat.setString(7, aMethod.getVisibility());
             stat.executeUpdate();
 
+            List<InstanceVariableBean> list = new ArrayList<InstanceVariableBean>();
             if (aMethod.getInstanceVariableList() != null) {
-                List<InstanceVariableBean> list = new ArrayList<InstanceVariableBean>();
                 list = aMethod.getInstanceVariableList();
                 for (InstanceVariableBean instance : list) {
                     sql = "INSERT OR REPLACE INTO Instance_Variable_Used(methodBeanFullQualifiedName,instanceVariableBeanFullQualifiedName) VALUES (?,?)";
@@ -123,7 +123,7 @@ public class MethodRepository implements MethodBeanRepository {
             stat.setString(7, aMethod.getFullQualifiedName());
             stat.executeUpdate();
 
-            if (aMethod.getMethodsCalls() != null) {
+            if (aMethod.getMethodsCalls() != null && aMethod.getMethodsCalls().size()>0) {
                 List<MethodBean> listCalls = new ArrayList<MethodBean>();
                 listCalls = aMethod.getMethodsCalls();
                 for (MethodBean method : listCalls) {
@@ -156,7 +156,6 @@ public class MethodRepository implements MethodBeanRepository {
             con.commit();
             stat.close();
             SQLiteConnector.releaseConnection(con);
-
 
         } catch (SQLException e) {
             try {

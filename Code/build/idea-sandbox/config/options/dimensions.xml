@@ -1,13 +1,25 @@
 <application>
   <component name="DimensionService">
     <location key="FileChooserDialogImpl.0.0.1920.1080" x="743" y="157" />
-    <location key="WELCOME_SCREEN.0.0.1920.1080" x="963" y="437" />
+    <location key="WELCOME_SCREEN.0.0.1920.1080" x="962" y="437" />
     <location key="com.intellij.ide.util.TipDialog.0.0.1920.1080" x="660" y="346" />
-    <location key="SettingsEditor.0.0.1920.1080" x="438" y="166" />
+    <location key="SettingsEditor.0.0.1920.1080" x="459" y="234" />
     <location key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog.0.0.1920.1080" x="811" y="404" />
     <location key="#com.intellij.openapi.projectRoots.ui.ProjectJdksEditor.0.0.1920.1080" x="540" y="169" />
-    <location key="IdeErrosDialog.0.0.1920.1080" x="550" y="301" />
+    <location key="IdeErrosDialog.0.0.1920.1080" x="331" y="103" />
     <location key="Github.CreateGistDialog.0.0.1920.1080" x="845" y="404" />
     <location key="#Project_Structure.0.0.1920.1080" x="440" y="89" />
+    <location key="GitCloneDialog.0.0.1920.1080" x="1278" y="319" />
+    <location key="NewModule_or_Project.wizard.0.0.1920.1080" x="1082" y="153" />
+    <location key="Github.ShareDialog.0.0.1920.1080" x="1232" y="388" />
+    <location key="Github.UntrackedFilesDialog.0.0.1920.1080" x="1234" y="225" />
+    <location key="CommitChangelistDialog2.0.0.1920.1080" x="462" y="56" />
+    <location key="new project wizard.0.0.1920.1080" x="604" y="139" />
+    <location key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate.0.0.1920.1080" x="727" y="404" />
+    <location key="refactoring.ChangeSignatureDialog.0.0.1920.1080" x="701" y="132" />
+    <location key="find.popup.0.0.1920.1080" x="742" y="125" />
+    <size key="GitCloneDialog.0.0.1920.1080" width="473" height="338" />
+    <size key="IdeErrosDialog.0.0.1920.1080" width="1497" height="831" />
+    <size key="find.popup.0.0.1920.1080" width="535" height="748" />
   </component>
 </application>
