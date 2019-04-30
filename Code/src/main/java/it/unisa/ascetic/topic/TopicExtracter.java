@@ -325,40 +325,6 @@ public class TopicExtracter {
             for(String splitted :splittedString){
                 noCamelCaseWords.add(splitted);
             }
-
-			/*String term="";
-			char[] word=s.toCharArray();
-			int i=0;
-			while(i<word.length) {
-				term+=word[i];
-				if((i+1)==word.length){
-					if(term.length()!=1)
-						noCamelCaseWords.add(term);
-					break;
-				}
-
-				if((Character.isLowerCase(word[i]))&&(Character.isUpperCase(word[i+1]))) {
-					if(term.length()!=1)
-						noCamelCaseWords.add(term);
-
-					term="";
-
-				 } else if(word[i+1]=='_') {
-					 if(term.length()!=1)
-							noCamelCaseWords.add(term);
-					 term="";
-					 i++;
-				} else if((Character.isUpperCase(word[i]))&&(Character.isUpperCase(word[i+1]))&&(i+2!=s.length()) &&(Character.isLowerCase(word[i+2]))){
-					if(term.length()!=1)
-						noCamelCaseWords.add(term);
-					term="";
-				} else if((i+1)==word.length){
-					if(term.length()!=1)
-						noCamelCaseWords.add(term);
-					term="";
-				}
-				i++;
-			}*/
         }
         return noCamelCaseWords;
     }

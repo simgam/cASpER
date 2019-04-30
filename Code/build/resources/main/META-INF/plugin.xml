@@ -16,8 +16,8 @@
   <actions>
     <group id="org.jetbrains.tutorials.actions.GroupedActions" text="Ascetic - Analyze Project" popup="true">
       <add-to-group group-id="ToolsMenu" anchor="first"/>
-      <action id="it.unisa.ascetic.actions.BeginAction" class="it.unisa.ascetic.actions.BeginAction" text="Start"/>
-      <action id="it.unisa.ascetic.actions.ConfigureAction" class="it.unisa.ascetic.actions.ConfigureAction" text="Configure"/>
+      <action id="it.unisa.ascetic.actions.BeginAction" class="it.unisa.ascetic.actions.BeginAction" text="Run plug-in"/>
+      <action id="it.unisa.ascetic.actions.ConfigureAction" class="it.unisa.ascetic.actions.ConfigureAction" text="Configure threshold"/>
     </group>
   </actions>
   <application-components>

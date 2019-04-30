@@ -10,6 +10,7 @@ import it.unisa.ascetic.storage.beans.MethodBean;
 import it.unisa.ascetic.storage.beans.PackageBean;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import src.main.java.it.unisa.ascetic.gui.StyleText;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -37,7 +38,7 @@ public class CheckProjectPage extends DialogWrapper {
     private List<ClassBean> misplacedClassList;
     private List<ClassBean> blobList;
     private JPanel pannello;
-    private JTextArea codeVisual;
+    private JTextPane codeVisual;
     private JTable table;
     private DecimalFormat df = new DecimalFormat("0.000");
     private DecimalFormat df2 = new DecimalFormat("0");
@@ -57,7 +58,7 @@ public class CheckProjectPage extends DialogWrapper {
     private JSlider coseno;
     private JPanel smell;
     private JPanel featurePanel;
-    private JPanel missPanel;
+    private JPanel misPanel;
     private JPanel blobPanel;
     private JPanel promiscuousPanel;
     private HashMap<String, JCheckBox> codeSmell = new HashMap<String, JCheckBox>();
@@ -67,17 +68,10 @@ public class CheckProjectPage extends DialogWrapper {
     private JPanel algorithm4;
     private HashMap<String, JCheckBox> algoritmi = new HashMap<String, JCheckBox>();
 
-    private double maxS = 0.0;
+    private int maxS = 0;
     private String algorithm;
     private double sogliaCoseno;
     private int sogliaDipendenze;
-
-    public CheckProjectPage() {
-        super(true);
-        setResizable(false);
-        init();
-        setTitle("CODE SMELL ANALYSIS");
-    }
 
     public CheckProjectPage(Project currentProj, List<PackageBean> promiscuous, List<ClassBean> blob, List<ClassBean> misplaced, List<MethodBean> feature, double sogliaCoseno, int sogliaDipendenze, String algorithm) {
         super(true);
@@ -89,6 +83,7 @@ public class CheckProjectPage extends DialogWrapper {
         this.algorithm = algorithm;
         this.sogliaCoseno = sogliaCoseno;
         this.sogliaDipendenze = sogliaDipendenze;
+        setResizable(false);
         init();
         setTitle("CODE SMELL ANALYSIS");
     }
@@ -100,7 +95,7 @@ public class CheckProjectPage extends DialogWrapper {
         contentPanel = new JPanel(); //pannello principale
         contentPanel.setLayout(new BorderLayout(0, 0));
         smellVisual = new JPanel(); //pannello per visualizzare lista di smell
-        codeVisual = new JTextArea(); //pannello per visualizzare il codice dello smell
+        codeVisual = new JTextPane(); //pannello per visualizzare il codice dello smell
 
         smellVisual.setPreferredSize(new Dimension(350, 800));
 
@@ -144,15 +139,15 @@ public class CheckProjectPage extends DialogWrapper {
         algorithm1.add(algoritmi.get("structuralF"));
 
         //Misplaced class
-        missPanel = new JPanel();
-        missPanel.setBorder(new EmptyBorder(0, 0, 10, 0));
-        smell.add(missPanel);
-        missPanel.setLayout(new GridLayout(0, 2, 0, 0));
+        misPanel = new JPanel();
+        misPanel.setBorder(new EmptyBorder(0, 0, 10, 0));
+        smell.add(misPanel);
+        misPanel.setLayout(new GridLayout(0, 2, 0, 0));
 
         codeSmell.put("Misplaced Class", new JCheckBox("Misplaced Class"));
-        missPanel.add(codeSmell.get("Misplaced Class"));
+        misPanel.add(codeSmell.get("Misplaced Class"));
         algorithm2 = new JPanel();
-        missPanel.add(algorithm2);
+        misPanel.add(algorithm2);
         algorithm2.setLayout(new GridLayout(0, 1, 0, 0));
         algoritmi.put("textualM", new JCheckBox("Textual"));
         algorithm2.add(algoritmi.get("textualM"));
@@ -174,6 +169,7 @@ public class CheckProjectPage extends DialogWrapper {
         algorithm3.add(algoritmi.get("textualB"));
         algoritmi.put("structuralB", new JCheckBox("Structural"));
         algorithm3.add(algoritmi.get("structuralB"));
+        algorithm3.add(new JLabel("*non utilizza le dipendenze  "));
 
         //Promiscuous pakcage
         promiscuousPanel = new JPanel();
@@ -181,7 +177,7 @@ public class CheckProjectPage extends DialogWrapper {
         smell.add(promiscuousPanel);
         promiscuousPanel.setLayout(new GridLayout(0, 2, 0, 0));
 
-        codeSmell.put("Promiscuous Package", new JCheckBox("Promiscuous Package"));
+        codeSmell.put("Promiscuous Package", new JCheckBox("Promiscuous Package  "));
         promiscuousPanel.add(codeSmell.get("Promiscuous Package"));
         algorithm4 = new JPanel();
         promiscuousPanel.add(algorithm4);
@@ -220,6 +216,11 @@ public class CheckProjectPage extends DialogWrapper {
                 if ((s.contains("textual") && algorithm.contains("Textual")) || (s.contains("structural") && algorithm.contains("Structural"))) {
                     c.setSelected(true);
                 }
+            }
+
+            if (s.equalsIgnoreCase("structuralp")) {
+                c.setEnabled(false);
+                c.setSelected(false);
             }
         }
 
@@ -268,7 +269,6 @@ public class CheckProjectPage extends DialogWrapper {
         valore1 = new JTextField();
         valore1.setText(String.valueOf(((double) coseno.getValue()) / 100));
         val1.add(valore1);
-        valore1.setToolTipText("Non viene usata per il Misplaced class");
         valore1.setColumns(10);
 
         valore1.addActionListener(new ActionListener() {
@@ -295,7 +295,7 @@ public class CheckProjectPage extends DialogWrapper {
                         ;
                     }
                 } catch (NumberFormatException e) {
-                    JOptionPane.showMessageDialog(null, "Inserire valori decimali con \".\" [" + sogliaCoseno + "-1]", "", JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Inserire valori decimali con \".\" [" + sogliaCoseno + "-1]", "Errore", JOptionPane.WARNING_MESSAGE);
                 }
             }
         });
@@ -488,8 +488,8 @@ public class CheckProjectPage extends DialogWrapper {
             this.table = table;
         }
 
-        soglia2.setText("dipendency >= [" + "0" + "-" + (int) maxS + "]");
-        dipendenze.setMaximum((int) maxS);
+        soglia2.setText("dipendenze >= [" + "0" + "-" + maxS + "]");
+        dipendenze.setMaximum(maxS);
         this.table.setModel(model);
         table.setDefaultEditor(Object.class, null);
     }
@@ -502,7 +502,7 @@ public class CheckProjectPage extends DialogWrapper {
         Vector<String> tableItem;
         String used;
 
-        double cos = 0.0;
+        double cos = 0.0, indice = 0.0;
         int dip = 0;
         boolean controllo = false;
         int i = 0;
@@ -511,56 +511,77 @@ public class CheckProjectPage extends DialogWrapper {
             if (smell.getSmellName().equalsIgnoreCase(codeSmell)) {
                 used = smell.getAlgoritmsUsed();
                 tableItem = new Vector<String>();
+                if (algoritmi.get("textual" + codeSmell.substring(0, 1)).isSelected()) {
+                    if (used.equalsIgnoreCase("textual") && Double.parseDouble(valore1.getText()) <= smell.getIndex()) {
 
-                if (used.equalsIgnoreCase("textual") && Double.parseDouble(valore1.getText()) <= smell.getIndex()) {
-                    if (algoritmi.get("textual" + codeSmell.substring(0, 1)).isSelected()) {
                         complessita++;
+                        indice = Double.parseDouble(valore1.getText());
                         cos = smell.getIndex();
                         if (cos <= sogliaCoseno) {
                             basso = true;
-                        };
+                        }
+                        ;
                         if (cos >= 0.75) {
                             alto++;
-                        };
-                    } else {
-                        controllo = true;
+                        }
+                        ;
                     }
                 } else {
-                    if (used.equalsIgnoreCase("structural") && Double.parseDouble(valore2.getText()) <= smell.getIndex()) {
-                        if (algoritmi.get("structural" + codeSmell.substring(0, 1)).isSelected()) {
-                            complessita += 2;
-                            dip = (int) smell.getIndex();
-                            if (dip <= sogliaDipendenze) {
-                                basso = true;
-                            };
-                            if (dip >= (int) (maxS - (maxS * 0.25))) {
-                                alto++;
-                            };
-                            if (dip >= maxS) {
-                                maxS = dip;
-                            };
-                        } else {
-                            controllo = true;
+                    controllo = true;
+                }
+
+                if (algoritmi.get("structural" + codeSmell.substring(0, 1)).isSelected()) {
+                    if (used.equalsIgnoreCase("structural") && Double.parseDouble(valore2.getText()) <= smell.getIndex() && !smell.getSmellName().equalsIgnoreCase("blob")) {
+
+                        complessita += 2;
+                        indice = Double.parseDouble(valore2.getText());
+                        dip = (int) smell.getIndex();
+                        if (dip <= sogliaDipendenze) {
+                            basso = true;
+                        }
+                        ;
+                        if (dip >= (int) (maxS - (maxS * 0.25))) {
+                            alto++;
+                        }
+                        ;
+                        if (dip >= maxS) {
+                            maxS = dip;
+                        }
+                        ;
+                    } else {
+                        if (smell.getSmellName().equalsIgnoreCase("blob") && smell.getAlgoritmsUsed().equalsIgnoreCase("structural")) {
+                            alto++;
+                            if (!basso) basso = true;
                         }
                     }
+                } else {
+                    controllo = true;
                 }
+
 
                 if (i + 1 >= list.size() || !list.get(i + 1).getSmellName().equalsIgnoreCase(smell.getSmellName())) {
 
-                    if ((cos != 0.0 || dip != 0) && ((Double.parseDouble(valore1.getText()) <= smell.getIndex() || algoritmi.get("textual" + codeSmell.substring(0, 1)).isSelected()) ||
-                            (Double.parseDouble(valore2.getText()) <= smell.getIndex() || algoritmi.get("structural" + codeSmell.substring(0, 1)).isSelected()))) {
+                    if (((cos != 0.0 || dip != 0) && ((indice <= smell.getIndex() && algoritmi.get("textual" + codeSmell.substring(0, 1)).isSelected()) ||
+                            (indice <= smell.getIndex() && algoritmi.get("structural" + codeSmell.substring(0, 1)).isSelected()))) ||
+                            (smell.getSmellName().equalsIgnoreCase("Blob") && smell.getAlgoritmsUsed().equalsIgnoreCase("structural") && algoritmi.get("structural" + codeSmell.substring(0, 1)).isSelected())) {
                         tableItem.add(bean);
                         tableItem.add(smell.getSmellName());
                         if (cos == 0.0) {
                             tableItem.add("---");
                         } else {
                             tableItem.add(df.format(cos));
-                        };
+                        }
+                        ;
                         if (dip == 0) {
-                            tableItem.add("---");
+                            if (!controllo && alto>0 && smell.getSmellName().equalsIgnoreCase("Blob")) {
+                                tableItem.add("yes");
+                            } else {
+                                tableItem.add("---");
+                            } ;
                         } else {
                             tableItem.add(df2.format(dip));
-                        };
+                        }
+                        ;
                         tableItem.add(prioritySmell(controllo, complessita, basso, alto));
                         model.addRow(tableItem);
                         cos = 0.0;
@@ -570,6 +591,7 @@ public class CheckProjectPage extends DialogWrapper {
                         basso = false;
                         controllo = false;
                     }
+                    indice = 0.0;
                 }
             }
             i++;
@@ -578,7 +600,7 @@ public class CheckProjectPage extends DialogWrapper {
 
     private String prioritySmell(boolean controllo, int complessita, boolean basso, int alto) {
 
-        if (complessita <= 2 && !controllo && alto<1) {
+        if (complessita <= 2 && !controllo && alto < 1) {
             return "bassa";
         } else {
             if (!basso) {
@@ -601,38 +623,42 @@ public class CheckProjectPage extends DialogWrapper {
         try {
             whatToReturn = (String) table.getValueAt(table.getSelectedRow(), 0);
             whereToSearch = (String) table.getValueAt(table.getSelectedRow(), 1);
+            String textContent = null;
 
             if (whereToSearch.equalsIgnoreCase("blob")) {
                 for (ClassBean c : blobList) {
                     if (c.getFullQualifiedName().equalsIgnoreCase(whatToReturn)) {
-                        codeVisual.append(c.getTextContent());
+                        textContent = c.getTextContent();
+                    }
+                }
+            } else {
+                if (whereToSearch.equalsIgnoreCase("feature envy")) {
+                    for (MethodBean m : featureEnvyList) {
+                        if (m.getFullQualifiedName().equalsIgnoreCase(whatToReturn)) {
+                            textContent = m.getTextContent();
+                        }
+                    }
+                } else {
+                    if (whereToSearch.equalsIgnoreCase("promiscuous package")) {
+                        for (PackageBean p : promiscuousPackageList) {
+                            if (p.getFullQualifiedName().equalsIgnoreCase(whatToReturn)) {
+                                textContent = p.getTextContent();
+                            }
+                        }
+                    } else {
+                        if (whereToSearch.equalsIgnoreCase("misplaced class")) {
+                            for (ClassBean c : misplacedClassList) {
+                                if (c.getFullQualifiedName().equalsIgnoreCase(whatToReturn)) {
+                                    textContent = c.getTextContent();
+                                }
+                            }
+                        }
                     }
                 }
             }
 
-            if (whereToSearch.equalsIgnoreCase("feature envy")) {
-                for (MethodBean m : featureEnvyList) {
-                    if (m.getFullQualifiedName().equalsIgnoreCase(whatToReturn)) {
-                        codeVisual.setText(m.getTextContent());
-                    }
-                }
-            }
-
-            if (whereToSearch.equalsIgnoreCase("promiscuous package")) {
-                for (PackageBean p : promiscuousPackageList) {
-                    if (p.getFullQualifiedName().equalsIgnoreCase(whatToReturn)) {
-                        codeVisual.setText(p.getTextContent());
-                    }
-                }
-            }
-
-            if (whereToSearch.equalsIgnoreCase("misplaced class")) {
-                for (ClassBean c : misplacedClassList) {
-                    if (c.getFullQualifiedName().equalsIgnoreCase(whatToReturn)) {
-                        codeVisual.setText(c.getTextContent());
-                    }
-                }
-            }
+            StyleText generator = new StyleText();
+            codeVisual.setStyledDocument(generator.createDocument(textContent));
         } catch (ArrayIndexOutOfBoundsException ex) {
         }
     }

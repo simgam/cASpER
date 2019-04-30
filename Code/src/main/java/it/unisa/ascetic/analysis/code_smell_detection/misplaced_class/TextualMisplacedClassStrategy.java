@@ -49,7 +49,7 @@ public class TextualMisplacedClassStrategy implements ClassSmellDetectionStrateg
         }
         Entry<PackageBean, Double> firstRankedPackage = similaritiesWithClass.entrySet().iterator().next();
 
-        if (firstRankedPackage.getKey().getFullQualifiedName().equals(pClass.getBelongingPackage().getFullQualifiedName())) {
+        if (firstRankedPackage.getKey().getFullQualifiedName().equals(pClass.getBelongingPackage().getFullQualifiedName()) || (firstRankedPackage.getValue() < soglia && soglia>0.5)) {
             return false;
         }
         pClass.setEnviedPackage(firstRankedPackage.getKey());

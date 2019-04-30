@@ -1,7 +1,8 @@
 <application>
   <component name="PropertiesComponent">
-    <property name="CommitChangeListDialog.DETAILS_SPLITTER_PROPORTION_2" value="0.8376812" />
-    <property name="android-component-compatibility-check" value="1555458660599" />
+    <property name="CommitChangeListDialog.DETAILS_SPLITTER_PROPORTION_2" value="0.8594203" />
+    <property name="CommitChangeListDialog.SPLITTER_PROPORTION_2" value="0.7125" />
+    <property name="android-component-compatibility-check" value="1556063630538" />
     <property name="com.intellij.diagnostic.IdeErrorsDialogactiveTab" value="0" />
     <property name="com.intellij.openapi.roots.ui.configuration.TabbedModuleEditor.selectedEditor" value="Sources" />
     <property name="create.project.preferred.importer" value="Existing Sources" />

@@ -26,6 +26,13 @@ public interface ClassBeanRepository extends Repository<ClassBean> {
     public void remove(ClassBean aClass) throws RepositoryException;
 
     /**
+     * pulisce tabella code smell della classe
+     *
+     * @throws RepositoryException
+     */
+    public void delete() throws RepositoryException;
+
+    /**
      * aggiorna i dati di una classe
      *
      * @param aClass classe aggiornata da reinserire

@@ -11,8 +11,10 @@ import it.unisa.ascetic.storage.beans.PackageBean;
 import it.unisa.ascetic.structuralMetrics.CKMetrics;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import src.main.java.it.unisa.ascetic.gui.StyleText;
 
 import javax.swing.*;
+import javax.swing.border.TitledBorder;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -26,11 +28,7 @@ public class PromiscuousPackagePage extends DialogWrapper {
     private Project project;
     private List<PackageBean> splittedPackages;    //lista di package splittate
 
-    private JButton ignoreButton;               //button che permette di segnalare come falsi positivi gli smell selezionati
-    private JButton remindButton;               //button che permette di inserire un reminder nella locazione degli smell selezionati
-
-    private JTextArea area;                     //area di testo dove viene mostrato in dettaglio il codice del CodeSmell selezionato
-
+    private JTextPane area;                     //area di testo dove viene mostrato in dettaglio il codice del CodeSmell selezionato
 
     private JPanel contentPanel;                //panel che raggruppa tutti gli elementi
     private JPanel panelRadarMapMaster;         //panel che ingloba la radar map
@@ -49,6 +47,7 @@ public class PromiscuousPackagePage extends DialogWrapper {
         super(true);
         this.packageBeanPP = packageBeanPP;
         this.project = project;
+        setResizable(false);
         init();
         setTitle("PROMISCUOUS PACKAGE PAGE");
     }
@@ -71,25 +70,13 @@ public class PromiscuousPackagePage extends DialogWrapper {
 
 
         //INIZIALIZZO LA TABELLA E LA TEXT AREA
-        area = new JTextArea();                 //text area dove viene visualizzato il codice in esame
+        area = new JTextPane();                 //text area dove viene visualizzato il codice in esame
         table = new JBTable();                  //tabella dove sono presenti gli smell da prendere in esame
         area.setEditable(false);
 
-        //INIZIALIZZO I BUTTON
-        ignoreButton = new JButton();           //bottone ignore
-        remindButton = new JButton();           //bottone remind
-
-        //SETTO IL TESTO NEI BUTTON
-        ignoreButton.setText("Ignore");
-        remindButton.setText("Remind");
-
-        //SETTO A "NON UTILIZZABILI" I BUTTON A CUI NON CORRISPONDONO NESSUNA FUNZIONE IMPLEMENTATA
-        ignoreButton.setEnabled(false);
-        remindButton.setEnabled(false);
-
         //SETTO TESTO NELLA TEXT AREA
-        area.append(packageBeanPP.getTextContent());
-
+        StyleText generator = new StyleText();
+        area.setStyledDocument(generator.createDocument(packageBeanPP.getTextContent()));
 
         //SETTO LA TABELLA PER LE METRICHE
         table = new JBTable();
@@ -112,20 +99,15 @@ public class PromiscuousPackagePage extends DialogWrapper {
         panelWest.setLayout(new GridLayout(2, 1));
         panelEast.setLayout(new BorderLayout());
         panelMetric.setLayout((new BorderLayout()));
-        contentPanel.setLayout(new BorderLayout());
-
-        //AGGIUNGO COMPONENTI AI VARI PANEL
-
-        panelButton.add(ignoreButton);
-        panelButton.add(remindButton);
+        contentPanel.setLayout(new GridLayout(0, 2, 0, 0));
 
         panelGrid2 = new JPanel();
         panelGrid2.setLayout(new BorderLayout());
 
-
         panelRadarMapMaster.add(panelRadarMap, BorderLayout.CENTER);
 
         panelMetric.add(new JBScrollPane(table));
+        panelMetric.setBorder(new TitledBorder("Metrics"));
         table.setFillsViewportHeight(true);
         panelGrid2.add(panelMetric, BorderLayout.CENTER);
         panelGrid2.add(panelButton, BorderLayout.SOUTH);
@@ -134,10 +116,13 @@ public class PromiscuousPackagePage extends DialogWrapper {
         panelWest.add(panelGrid2);
 
         contentPanel.add(panelWest, BorderLayout.CENTER);
-        contentPanel.add(new JBScrollPane(area), BorderLayout.EAST);
+        JPanel textPanel= new JPanel();
+        textPanel.setLayout(new BorderLayout(0, 0));
+        textPanel.setBorder(new TitledBorder("Text Content"));
+        textPanel.add(new JBScrollPane(area), BorderLayout.CENTER);
+        contentPanel.add(textPanel, BorderLayout.EAST);
 
-        contentPanel.setPreferredSize(new Dimension(900, 800));
-
+        contentPanel.setPreferredSize(new Dimension(1050, 800));
 
         return contentPanel;
     }
@@ -150,7 +135,7 @@ public class PromiscuousPackagePage extends DialogWrapper {
             @Override
             protected void doAction(ActionEvent actionEvent) {
 
-                Messages.showMessageDialog("Promiscuous Package Reafctoring coming soon", "Attention !", Messages.getInformationIcon());
+                Messages.showMessageDialog("Promiscuous Package Refactoring coming soon", "Attention !", Messages.getInformationIcon());
                 /*String message;
 
                 ProgressManager.getInstance().runProcessWithProgressSynchronously(()->{

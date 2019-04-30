@@ -93,6 +93,10 @@ public class CKMetrics {
         return imports.size();
     }
 
+    /**
+     *  Lack of Cohesion in Methods
+     *  Una metrica che misura la coesione
+     */
     public static int getLCOM(ClassBean cb) {
 
         int share = 0;

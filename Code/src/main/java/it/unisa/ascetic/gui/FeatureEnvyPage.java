@@ -2,8 +2,6 @@ package it.unisa.ascetic.gui;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.DialogWrapper;
-import com.intellij.openapi.ui.Messages;
-import com.intellij.ui.components.JBScrollPane;
 import com.intellij.ui.table.JBTable;
 import com.intellij.util.ui.JBUI;
 import it.unisa.ascetic.gui.radarMap.RadarMapUtils;
@@ -13,6 +11,7 @@ import it.unisa.ascetic.structuralMetrics.CKMetrics;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jfree.chart.ChartPanel;
+import src.main.java.it.unisa.ascetic.gui.StyleText;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
@@ -39,11 +38,12 @@ public class FeatureEnvyPage extends DialogWrapper {
         super(canBeParent);
     }
 
-    public FeatureEnvyPage(MethodBean featureEnvyBean, Project project){
+    public FeatureEnvyPage(MethodBean featureEnvyBean, Project project) {
         super(true);
         this.featureEnvyBean = featureEnvyBean;
         this.project = project;
         this.radarMapGenerator = new RadarMapUtilsAdapter();
+        setResizable(false);
         init();
         setTitle("FEATURE ENVY ANALYSIS");
     }
@@ -55,7 +55,7 @@ public class FeatureEnvyPage extends DialogWrapper {
         centerPanel = new JPanel();
         centerPanel.setBorder(JBUI.Borders.empty(5));
         centerPanel.setLayout(new BoxLayout(centerPanel, BoxLayout.Y_AXIS));
-        centerPanel.setPreferredSize(new Dimension(900,800));
+        centerPanel.setPreferredSize(new Dimension(1050, 800));
 
         //radarmap containre init
         radarmapContainer = new JPanel();
@@ -63,8 +63,8 @@ public class FeatureEnvyPage extends DialogWrapper {
         radarmapContainer.setLayout(new BoxLayout(radarmapContainer, BoxLayout.X_AXIS));
 
 
-        Dimension radarmapPreferredSize = new Dimension(100,300);
-        JPanel methodRadarmap = radarMapGenerator.createRadarMapFromMethodBean(featureEnvyBean,featureEnvyBean.getFullQualifiedName());
+        Dimension radarmapPreferredSize = new Dimension(100, 300);
+        JPanel methodRadarmap = radarMapGenerator.createRadarMapFromMethodBean(featureEnvyBean, featureEnvyBean.getFullQualifiedName());
         methodRadarmap.setPreferredSize(radarmapPreferredSize);
         methodRadarmapContainer = new JPanel();
         methodRadarmapContainer.setLayout(new BorderLayout());
@@ -92,24 +92,23 @@ public class FeatureEnvyPage extends DialogWrapper {
         enviedClassRadarmapContainer.setPreferredSize(radarmapPreferredSize);
         radarmapContainer.add(enviedClassRadarmapContainer);
 
-        centerPanel.add(Box.createRigidArea(new Dimension(0,50)));
+        centerPanel.add(Box.createRigidArea(new Dimension(0, 50)));
 
 
         level2Panel = new JPanel();
         JPanel p = new JPanel();
-        level2Panel.setLayout(new BoxLayout(level2Panel,BoxLayout.X_AXIS));
+        level2Panel.setLayout(new GridLayout(0, 2, 0, 0));
         centerPanel.add(level2Panel);
 
-        JTextArea textContentArea = new JTextArea();
+        JTextPane textContentArea = new JTextPane();
         textContentArea.setEditable(false);
         p.setBorder(new TitledBorder("Text Content"));
         JScrollPane scroll = new JScrollPane(textContentArea);
         p.setLayout(new BorderLayout(0, 0));
         p.add(scroll, BorderLayout.CENTER);
-        textContentArea.setText(featureEnvyBean.getTextContent());
+        StyleText generator = new StyleText();
+        textContentArea.setStyledDocument(generator.createDocument(featureEnvyBean.getTextContent()));
         level2Panel.add(p);
-
-        level2Panel.add(Box.createHorizontalGlue());
 
         tableContainer = new JPanel();
         tableContainer.setLayout(new BorderLayout());
@@ -121,13 +120,13 @@ public class FeatureEnvyPage extends DialogWrapper {
     private void createTable() {
         table = new JBTable();
 
-        String[] columnsNames = {"Method","LOC","McCabeComplexity"};
-        DefaultTableModel tableModel = new DefaultTableModel(columnsNames,0);
+        String[] columnsNames = {"Method", "LOC", "McCabeComplexity"};
+        DefaultTableModel tableModel = new DefaultTableModel(columnsNames, 0);
 
         Vector<String> row = new Vector<>();
         row.add(featureEnvyBean.getFullQualifiedName());
-        row.add(CKMetrics.getLOC(featureEnvyBean)+"");
-        row.add(CKMetrics.getMcCabeCycloComplexity(featureEnvyBean)+"");
+        row.add(CKMetrics.getLOC(featureEnvyBean) + "");
+        row.add(CKMetrics.getMcCabeCycloComplexity(featureEnvyBean) + "");
         tableModel.addRow(row);
 
         table.setModel(tableModel);

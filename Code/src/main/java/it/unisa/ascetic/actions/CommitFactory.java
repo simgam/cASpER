@@ -4,8 +4,9 @@ import com.intellij.openapi.vcs.CheckinProjectPanel;
 import com.intellij.openapi.vcs.changes.CommitContext;
 import com.intellij.openapi.vcs.checkin.CheckinHandler;
 import com.intellij.openapi.vcs.checkin.CheckinHandlerFactory;
-import it.unisa.ascetic.actions.BeginAction;
 import org.jetbrains.annotations.NotNull;
+
+import javax.swing.*;
 
 public class CommitFactory extends CheckinHandlerFactory {
 
@@ -20,8 +21,10 @@ public class CommitFactory extends CheckinHandlerFactory {
                 SystemStart start = new SystemStart();
                 start.form(panel.getProject());
 
-                return super.beforeCheckin();
+                int valore = JOptionPane.showConfirmDialog(null, "Vuoi effettuare il commit?", "Commit", JOptionPane.YES_NO_OPTION);
+                if (valore == 0)return super.beforeCheckin();
 
+                return ReturnResult.CANCEL;
             }
         };
         return checkinHandler;

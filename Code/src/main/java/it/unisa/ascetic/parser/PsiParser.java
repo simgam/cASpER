@@ -13,9 +13,6 @@ import it.unisa.ascetic.analysis.code_smell_detection.misplaced_class.Structural
 import it.unisa.ascetic.analysis.code_smell_detection.misplaced_class.TextualMisplacedClassStrategy;
 import it.unisa.ascetic.analysis.code_smell_detection.promiscuous_package.StructuralPromiscuousPackageStrategy;
 import it.unisa.ascetic.analysis.code_smell_detection.promiscuous_package.TextualPromiscuousPackageStrategy;
-import it.unisa.ascetic.storage.beans.ClassBean;
-import it.unisa.ascetic.storage.beans.MethodBean;
-import it.unisa.ascetic.storage.beans.PackageBean;
 import it.unisa.ascetic.storage.repository.*;
 import it.unisa.ascetic.storage.beans.*;
 import it.unisa.ascetic.storage.sqlite_jdbc_driver_connection.SQLiteConnector;
@@ -50,7 +47,7 @@ public class PsiParser implements Parser {
     }
 
     @Override
-    public void parse(double soglia) throws ParsingException, RepositoryException {
+    public void parse() throws ParsingException, RepositoryException {
         logger.severe("Eseguo il metodo parse");
         if (packageBeanRepository == null || classBeanRepository == null || methodBeanRepository == null || instanceVariableBeanRepository == null) {
             throw new RepositoryException("Repository non inizializzate!");
@@ -68,8 +65,6 @@ public class PsiParser implements Parser {
             projectPackages.add(parsedPackageBean);
         }
 
-        //MethodRepository repo = new MethodRepository();
-
         for (PackageBean p : projectPackages) {
             for (ClassBean c : p.getClassList()) {
                 for (MethodBean m : c.getMethodList()) {
@@ -78,7 +73,7 @@ public class PsiParser implements Parser {
             }
         }
 
-        analizeProject(soglia);
+        analizeProject();
     }
 
 
@@ -173,10 +168,42 @@ public class PsiParser implements Parser {
     /**
      * @throws RepositoryException
      */
-    private void analizeProject(double soglia) throws RepositoryException {
+    private void analizeProject() throws RepositoryException {
+        HashMap<String, Double> coseno = new HashMap<String, Double>();
+        HashMap<String, Integer> dipendence = new HashMap<String, Integer>();
+
+        ArrayList<String> smell = new ArrayList<String>();
+        smell.add("Feature");
+        smell.add("Misplaced");
+        smell.add("Blob");
+        smell.add("Promiscuous");
+        try {
+            FileReader f = new FileReader(System.getProperty("user.home") + File.separator + ".ascetic" + File.separator + "threshold.txt");
+            BufferedReader b = new BufferedReader(f);
+
+            String[] list = null;
+            double sogliaCoseno;
+            int sogliaDip;
+            for (String s : smell) {
+                list = b.readLine().split(",");
+                coseno.put("coseno" + s, Double.parseDouble(list[0]));
+                if (!s.equalsIgnoreCase("promiscuous")) {
+                    dipendence.put("dip" + s, Integer.parseInt(list[1]));
+                    if (s.equalsIgnoreCase("blob")) {
+                        dipendence.put("dip" + s + "2", Integer.parseInt(list[2]));
+                        dipendence.put("dip" + s + "3", Integer.parseInt(list[3]));
+                    }
+                }
+            }
+            ;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        classBeanRepository.delete();
 
         for (PackageBean packageBean : projectPackages) {
-            TextualPromiscuousPackageStrategy textualPromiscuousPackageStrategy = new TextualPromiscuousPackageStrategy(soglia);
+            TextualPromiscuousPackageStrategy textualPromiscuousPackageStrategy = new TextualPromiscuousPackageStrategy(coseno.get("cosenoPromiscuous"));
             PromiscuousPackageCodeSmell tPromiscuousPackagecodeSmell = new PromiscuousPackageCodeSmell(textualPromiscuousPackageStrategy, "Textual");
             if (packageBean.isAffected(tPromiscuousPackagecodeSmell)) {
                 packageBeanRepository.update(packageBean);
@@ -191,17 +218,18 @@ public class PsiParser implements Parser {
 
             for (ClassBean classBean : packageBean.getClassList()) {
 
-                TextualBlobStrategy textualBlobStrategy = new TextualBlobStrategy(soglia);
+                TextualBlobStrategy textualBlobStrategy = new TextualBlobStrategy(coseno.get("cosenoBlob"));
                 BlobCodeSmell tBlobCodeSmell = new BlobCodeSmell(textualBlobStrategy, "Textual");
-                TextualMisplacedClassStrategy textualMisplacedClassStrategy = new TextualMisplacedClassStrategy(projectPackages, soglia);
+                TextualMisplacedClassStrategy textualMisplacedClassStrategy = new TextualMisplacedClassStrategy(projectPackages, coseno.get("cosenoMisplaced"));
                 MisplacedClassCodeSmell tMisplacedClassCodeSmell = new MisplacedClassCodeSmell(textualMisplacedClassStrategy, "Textual");
 
                 if (classBean.isAffected(tBlobCodeSmell) || classBean.isAffected(tMisplacedClassCodeSmell)) {
                     classBeanRepository.update(classBean);
                 }
                 classBean.setSimilarity(0);
+                classBean.setEnviedPackage(null);
 
-                StructuralBlobStrategy structuralBlobStrategy = new StructuralBlobStrategy();
+                StructuralBlobStrategy structuralBlobStrategy = new StructuralBlobStrategy(dipendence.get("dipBlob"), dipendence.get("dipBlob2"), dipendence.get("dipBlob3"));
                 BlobCodeSmell sBlobCodeSmell = new BlobCodeSmell(structuralBlobStrategy, "Structural");
                 StructuralMisplacedClassStrategy structuralMisplacedClassStrategy = new StructuralMisplacedClassStrategy(projectPackages);
                 MisplacedClassCodeSmell sMisplacedClassCodeSmell = new MisplacedClassCodeSmell(structuralMisplacedClassStrategy, "Structural");
@@ -209,15 +237,17 @@ public class PsiParser implements Parser {
                     classBeanRepository.update(classBean);
                 }
                 classBean.setSimilarity(0);
+                classBean.setEnviedPackage(null);
 
                 for (MethodBean methodBean : classBean.getMethodList()) {
 
-                    TextualFeatureEnvyStrategy textualFeatureEnvyStrategy = new TextualFeatureEnvyStrategy(projectPackages, soglia);
+                    TextualFeatureEnvyStrategy textualFeatureEnvyStrategy = new TextualFeatureEnvyStrategy(projectPackages, coseno.get("cosenoFeature"));
                     FeatureEnvyCodeSmell tFeatureEnvyCodeSmell = new FeatureEnvyCodeSmell(textualFeatureEnvyStrategy, "Textual");
                     if (methodBean.isAffected(tFeatureEnvyCodeSmell)) {
                         methodBeanRepository.update(methodBean);
                     }
                     methodBean.setIndex(0);
+                    methodBean.setEnviedClass(null);
 
                     StructuralFeatureEnvyStrategy structuralFeatureEnvyStrategy = new StructuralFeatureEnvyStrategy(projectPackages);
                     FeatureEnvyCodeSmell sFeatureEnvyCodeSmell = new FeatureEnvyCodeSmell(structuralFeatureEnvyStrategy, "Structural");
@@ -225,9 +255,8 @@ public class PsiParser implements Parser {
                         methodBeanRepository.update(methodBean);
                     }
                     methodBean.setIndex(0);
-
+                    methodBean.setEnviedClass(null);
                 }
-
             }
         }
     }

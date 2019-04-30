@@ -275,6 +275,39 @@ public class ClassRepository implements ClassBeanRepository {
     }
 
     /**
+     * pulisce tabella code smell della classe
+     *
+     * @throws RepositoryException
+     */
+    @Override
+    public void delete() throws RepositoryException {
+        try {
+            con = SQLiteConnector.connect();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        String sql = "DELETE FROM Classe_SmellType";
+
+        try {
+
+            stat = (PreparedStatement) con.prepareStatement(sql);
+            stat.executeUpdate();
+            con.commit();
+            stat.close();
+            SQLiteConnector.releaseConnection(con);
+
+        } catch (SQLException e) {
+            try {
+                con.rollback();
+            } catch (SQLException ex) {
+                throw new RepositoryException(ex.getMessage());
+            }
+            throw new RepositoryException(e.getMessage());
+        }
+        ;
+    }
+
+    /**
      * seleziona una lista di classi dal db
      *
      * @param criterion generica query per la selezione dal db

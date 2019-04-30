@@ -6,6 +6,7 @@ import it.unisa.ascetic.storage.beans.PackageBean;
 public class StructuralPromiscuousPackageStrategy implements PackageSmellDetectionStrategy {
 
     public boolean isSmelly(PackageBean pPackage) {
+
         return false;
     }
 }

@@ -70,35 +70,21 @@ public class Utility {
 	public void copyDirectory(File srcPath, File dstPath) throws IOException {
 
 		if (srcPath.isDirectory()) {
-
 			if (!dstPath.exists()) {
-
 				dstPath.mkdir();
-
 			}
 
 			String files[] = srcPath.list();
-
 			for (int i = 0; i < files.length; i++) {
 				copyDirectory(new File(srcPath, files[i]), new File(dstPath,
 						files[i]));
-
 			}
-
 		}
-
 		else {
-
 			if (!srcPath.exists()) {
-
 				System.exit(0);
-
 			}
-
-			else
-
-			{
-
+			else{
 				InputStream in = new FileInputStream(srcPath);
 				OutputStream out = new FileOutputStream(dstPath);
 				// Transfer bytes from in to out
@@ -107,19 +93,12 @@ public class Utility {
 				int len;
 
 				while ((len = in.read(buf)) > 0) {
-
 					out.write(buf, 0, len);
-
 				}
-
 				in.close();
-
 				out.close();
-
 			}
-
 		}
-
 	}
 	
 	public static boolean DelDir(File dir)
@@ -145,7 +124,7 @@ public class Utility {
             out.write(pContent);
             out.close();
         } catch (IOException e) {
-            System.err.println("Error: " + e.getMessage());
+            e.printStackTrace();
         }
     }
 	

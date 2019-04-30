@@ -5,41 +5,72 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
+import it.unisa.ascetic.gui.CheckProjectPage;
 import it.unisa.ascetic.parser.ParsingException;
 import it.unisa.ascetic.parser.PsiParser;
-import it.unisa.ascetic.gui.CheckProjectPage;
 import it.unisa.ascetic.storage.beans.ClassBean;
 import it.unisa.ascetic.storage.beans.MethodBean;
 import it.unisa.ascetic.storage.beans.PackageBean;
 import it.unisa.ascetic.storage.repository.*;
-//import it.unisa.ascetic.storage.repository.*;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+
+//import it.unisa.ascetic.storage.repository.*;
 
 public class SystemStart {
 
     boolean errorHappened;
-    private double coseno;
-    private int dipendenze;
     private String algoritmo;
+    private HashMap<String, Double> coseno;
+    private HashMap<String, Integer> dipendence;
+    private static ArrayList<String> smell;
+    private double minC = 0.5;
+    private int minD = 0;
 
     public SystemStart() {
+
+        coseno = new HashMap<String, Double>();
+        dipendence = new HashMap<String, Integer>();
+
+        smell = new ArrayList<String>();
+        smell.add("Feature");
+        smell.add("Misplaced");
+        smell.add("Blob");
+        smell.add("Promiscuous");
         try {
             FileReader f = new FileReader(System.getProperty("user.home") + File.separator + ".ascetic" + File.separator + "threshold.txt");
             BufferedReader b = new BufferedReader(f);
-            String[] list = b.readLine().split(",");
 
-            this.coseno = Double.parseDouble(list[0]);
-            this.dipendenze = Integer.parseInt(list[1]);
+            String[] list = null;
+            double sogliaCoseno;
+            int sogliaDip;
+            for(String s : smell){
+                list = b.readLine().split(",");
+
+                sogliaCoseno = Double.parseDouble(list[0]);
+                if (sogliaCoseno < minC) {
+                    minC = sogliaCoseno;
+                }
+                coseno.put("coseno" + s, sogliaCoseno);
+
+                sogliaDip = Integer.parseInt(list[1]);
+                if (sogliaDip < minD) {
+                    minD = sogliaDip;
+                }
+                dipendence.put("dip" + s, sogliaDip);
+            }
+            ;
             this.algoritmo = list[2];
-        }catch(Exception e){
-            e.printStackTrace();
-            this.coseno = 0.5;
-            this.dipendenze = 0;
+        } catch (Exception e) {
+            for(String s : smell){
+                coseno.put("coseno" + s, 0.5);
+                dipendence.put("dip" + s, 0);
+            }
             this.algoritmo = "All";
         }
     }
@@ -62,12 +93,7 @@ public class SystemStart {
 
             ApplicationManager.getApplication().runReadAction(() -> {
                 try {
-                    if (coseno <= 0.5) {
-                        parser.parse(coseno);
-                    } else {
-                        parser.parse(0.5);
-                    }
-                    ;
+                    parser.parse();
                 } catch (ParsingException e) {
                     errorHappened = true;
                     e.printStackTrace();
@@ -94,8 +120,8 @@ public class SystemStart {
             } catch (RepositoryException e) {
                 e.printStackTrace();
             }
-                CheckProjectPage frame = new CheckProjectPage(currentProject, promiscuousList, blobList, misplacedList, featureList, coseno, dipendenze, algoritmo);
-                frame.show();
+            CheckProjectPage frame = new CheckProjectPage(currentProject, promiscuousList, blobList, misplacedList, featureList, minC, minD, algoritmo);
+            frame.show();
         } else {
             Messages.showMessageDialog(currentProject, "Sorry, an error has occurred. Prease try again or contact support", "OH ! No! ", Messages.getErrorIcon());
         }
