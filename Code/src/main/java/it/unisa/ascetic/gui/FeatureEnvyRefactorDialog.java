@@ -35,6 +35,7 @@ public class FeatureEnvyRefactorDialog extends DialogWrapper {
 
     public FeatureEnvyRefactorDialog() {
         super(true);
+        setResizable(false);
         init();
         setTitle("REFACTORING CODE SMELL");
     }
@@ -50,26 +51,7 @@ public class FeatureEnvyRefactorDialog extends DialogWrapper {
 
         refactoringPanel = new JPanel();
         refactoringPanel.setLayout(new BorderLayout());
-        refactoringPanel.setPreferredSize(new Dimension(900, 800));
-
-        // radarmaps
-       /* radarmaps = new JPanel();
-        radarmaps.setLayout(new GridLayout(2,2));
-        for(MethodBean aBean : listMethod) {
-            oldcurrentclass = radars.createRadarMapFromClassBean(aBean.getBelongingClass(), "Old Current Class");
-            oldenviedclass = radars.createRadarMapFromClassBean(aBean.getEnviedClass(), "Old Envied Class");
-*/
-        // applicare soluzione refactor
-        //      newcurrentclass = radars.createRadarMapFromClassBean(, "New Current Class");
-        //    newenviedclass = radars.createRadarMapFromClassBean(, "New Envied Class");
-        //}
-
-      /*  radarmaps.add(newcurrentclass);
-        radarmaps.add(newenviedclass);
-        radarmaps.add(oldcurrentclass);
-        radarmaps.add(oldenviedclass);
-        radarmaps.setPreferredSize(new Dimension(400,400)); //prova
-*/
+        refactoringPanel.setPreferredSize(new Dimension(900, 900));
 
         // buttons
         class ApplyRefactorListener implements ActionListener {
@@ -80,8 +62,6 @@ public class FeatureEnvyRefactorDialog extends DialogWrapper {
         }
 
         applyButton = new JButton("Apply");
-
-        //       cancelButton = new JButton("Cancel");
 
         group = new ButtonGroup();
         group.add(applyButton);

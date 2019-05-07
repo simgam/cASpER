@@ -28,6 +28,7 @@ public class FeatureEnvyCodeSmell extends MethodLevelCodeSmell {
      */
     public boolean affects(MethodBean aMethod) {
         if (detectionStrategy.isSmelly(aMethod)) {
+            this.setIndex(detectionStrategy.getThresold(aMethod));
             aMethod.addSmell(this);
             return true;
         }

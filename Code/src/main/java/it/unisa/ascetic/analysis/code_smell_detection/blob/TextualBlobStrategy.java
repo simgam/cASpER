@@ -4,9 +4,9 @@ import it.unisa.ascetic.analysis.code_smell_detection.ComponentMutation;
 import it.unisa.ascetic.analysis.code_smell_detection.smellynessMetricProcessing.SmellynessMetric;
 import it.unisa.ascetic.analysis.code_smell_detection.strategy.ClassSmellDetectionStrategy;
 import it.unisa.ascetic.storage.beans.ClassBean;
-import it.unisa.ascetic.structuralMetrics.CKMetrics;
 
 import java.io.IOException;
+import java.util.HashMap;
 
 /*
 
@@ -33,7 +33,6 @@ public class TextualBlobStrategy implements ClassSmellDetectionStrategy {
         double smellynessIndex = 0;
         try {
             smellynessIndex = smellyness.computeSmellyness(mutatedClass);
-            pClass.setSimilarity(smellynessIndex);
             if (smellynessIndex > soglia)
                 return true;
 
@@ -45,24 +44,20 @@ public class TextualBlobStrategy implements ClassSmellDetectionStrategy {
         return false;
     }
 
-//    public double getBlobProbability(ClassBean pClass) {
-//        SmellynessMetric smellyness = new SmellynessMetric();
-//        ComponentMutation componentMutation = new ComponentMutation();
-//
-//        String mutatedClass = componentMutation.alterClass(pClass);
-//
-//        try {
-//            double similarity = smellyness.computeSmellyness(mutatedClass);
-//
-//            if (CKMetrics.getLOC(pClass) < 500) {
-//                similarity -= ((similarity * 85) / 100);
-//            }
-//
-//            return similarity;
-//
-//        } catch (IOException e) {
-//            return 0.0;
-//        }
-//    }
+    public HashMap<String, Double> getThresold(ClassBean pClass) {
+        SmellynessMetric smellyness = new SmellynessMetric();
+        ComponentMutation componentMutation = new ComponentMutation();
+        HashMap<String, Double> list = new HashMap<String, Double>();
+
+        String mutatedClass = componentMutation.alterClass(pClass);
+
+        try {
+            list.put("coseno", smellyness.computeSmellyness(mutatedClass));
+            return list;
+
+        } catch (IOException e) {
+            return list;
+        }
+    }
 
 }

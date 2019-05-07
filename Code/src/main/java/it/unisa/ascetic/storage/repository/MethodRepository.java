@@ -1,16 +1,16 @@
 package it.unisa.ascetic.storage.repository;
 
 import it.unisa.ascetic.analysis.code_smell.CodeSmell;
-import it.unisa.ascetic.analysis.code_smell.FeatureEnvyCodeSmell;
-import it.unisa.ascetic.analysis.code_smell_detection.strategy.CodeSmellDetectionStrategy;
-import it.unisa.ascetic.storage.beans.*;
+import it.unisa.ascetic.storage.beans.CalledMethodsListProxy;
+import it.unisa.ascetic.storage.beans.ClassBean;
+import it.unisa.ascetic.storage.beans.InstanceVariableBean;
+import it.unisa.ascetic.storage.beans.MethodBean;
+import it.unisa.ascetic.storage.beans.UsedInstanceVariableListProxy;
 import it.unisa.ascetic.storage.sqlite_jdbc_driver_connection.SQLiteConnector;
+import it.unisa.ascetic.analysis.code_smell.FeatureEnvyCodeSmell;
 
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * repository dedicata ai metodi
@@ -123,9 +123,8 @@ public class MethodRepository implements MethodBeanRepository {
             stat.setString(7, aMethod.getFullQualifiedName());
             stat.executeUpdate();
 
-            if (aMethod.getMethodsCalls() != null && aMethod.getMethodsCalls().size()>0) {
-                List<MethodBean> listCalls = new ArrayList<MethodBean>();
-                listCalls = aMethod.getMethodsCalls();
+            if (aMethod.getMethodsCalls() != null && aMethod.getMethodsCalls().size() > 0) {
+                List<MethodBean> listCalls = aMethod.getMethodsCalls();
                 for (MethodBean method : listCalls) {
                     sql = "INSERT OR REPLACE INTO Methods_Calls(methodCallerFullQualifiedName,methodCalledFullQualifiedName) VALUES (?,?)";
                     stat = (PreparedStatement) con.prepareStatement(sql);
@@ -135,24 +134,40 @@ public class MethodRepository implements MethodBeanRepository {
                 }
             }
             String enviedClass = null;
-            if (aMethod.getEnviedClass() != null) {
-                enviedClass = aMethod.getEnviedClass().getFullQualifiedName();
+            if (aMethod.getEnviedClass() != null) enviedClass = aMethod.getEnviedClass().getFullQualifiedName();
 
-                if (aMethod.getAffectedSmell() != null) {
-                    List<CodeSmell> listSmell = new ArrayList<CodeSmell>();
-                    listSmell = aMethod.getAffectedSmell();
-                    for (CodeSmell smell : listSmell) {
-                        sql = "INSERT OR REPLACE INTO Metodo_SmellType (methodBeanFullQualifiedName,codeSmellFullQualifiedName,fqn_envied_class,algorithmUsed,indice) VALUES (?,?,?,?,?);";
-                        stat = (PreparedStatement) con.prepareStatement(sql);
-                        stat.setString(1, aMethod.getFullQualifiedName());
-                        stat.setString(2, smell.getSmellName());
-                        stat.setString(3, enviedClass);
-                        stat.setString(4, smell.getAlgoritmsUsed());
-                        stat.setString(5, String.valueOf(smell.getIndex()));
+            List<CodeSmell> list = aMethod.getAffectedSmell();
+            if (list != null) {
+                sql = "INSERT OR REPLACE INTO Index_CodeSmell (indexId,indice,name) VALUES (?,?,?);";
+                String sql2 = "INSERT OR REPLACE INTO Metodo_SmellType (methodBeanFullQualifiedName,codeSmellFullQualifiedName,fqn_envied_class,algorithmUsed,indice) VALUES (?,?,?,?,?);";
+
+                String key = null;
+                HashMap<String, Double> index = null;
+                for (CodeSmell smell : list) {
+                    key = smell.getSmellName() + "-" + aMethod.getFullQualifiedName();
+                    stat = (PreparedStatement) con.prepareStatement(sql);
+
+                    index = smell.getIndex();
+                    for (String s : index.keySet()) {
+                        stat.setString(1, key);
+                        stat.setString(2, String.valueOf(index.get(s)));
+                        stat.setString(3, s);
+
                         stat.executeUpdate();
                     }
+
+                    stat = (PreparedStatement) con.prepareStatement(sql2);
+
+                    stat.setString(1, aMethod.getFullQualifiedName());
+                    stat.setString(2, smell.getSmellName());
+                    stat.setString(3, enviedClass);
+                    stat.setString(4, smell.getAlgoritmsUsed());
+                    stat.setString(5, key);
+                    stat.executeUpdate();
+
                 }
             }
+
             con.commit();
             stat.close();
             SQLiteConnector.releaseConnection(con);
@@ -219,41 +234,32 @@ public class MethodRepository implements MethodBeanRepository {
         final SQLiteCriterion sqlCriterion = (SQLiteCriterion) criterion; //oggetto che istanzia la query per la selezione
 
         try {
+            String key = null;
             String sql = sqlCriterion.toSQLquery();
             Statement selection = con.createStatement();
             res = selection.executeQuery(sql);
-            MethodBean m = null;
+            MethodBean.Builder m = null;
             HashMap<String, ClassBean> hash = null;
+
             while (res.next()) {
                 hash = new HashMap<String, ClassBean>();
-                if (res.getString("return_type").equals("")) {
-                                m = new MethodBean.Builder(res.getString("MfullQualifiedName"), res.getString("MtextContent"))
-                                        .setReturnType(null)
-                                        .setParameters(hash)
-                                        .setInstanceVariableList(new UsedInstanceVariableListProxy(res.getString("MfullQualifiedName")))
-                                        .setMethodsCalls(new CalledMethodsListProxy(res.getString("MfullQualifiedName")))
-                                        .setBelongingClass(new ClassBean.Builder(res.getString("belongingClass"), res.getString("ClassBean.textContent")).build())
-                                        .setEnviedClass(null)
-                                        .setStaticMethod(res.getBoolean("staticMethod"))
-                                        .setDefaultCostructor(res.getBoolean("isDefaultConstructor"))
-                                        .setAffectedSmell()
-                                        .setVisibility(res.getString("visibility"))
-                                        .build();
-                } else {
-                    m = new MethodBean.Builder(res.getString("MfullQualifiedName"), res.getString("MtextContent"))
-                            .setReturnType(new ClassBean.Builder(res.getString("return_type"), "").build())
-                            .setParameters(hash)
-                            .setInstanceVariableList(new UsedInstanceVariableListProxy(res.getString("MfullQualifiedName")))
-                            .setMethodsCalls(new CalledMethodsListProxy(res.getString("MfullQualifiedName")))
-                            .setBelongingClass(new ClassBean.Builder(res.getString("belongingClass"), res.getString("CtextContent")).build())
-                            .setEnviedClass(null)
-                            .setStaticMethod(res.getBoolean("staticMethod"))
-                            .setDefaultCostructor(res.getBoolean("isDefaultConstructor"))
-                            .setAffectedSmell()
-                            .setVisibility(res.getString("visibility"))
-                            .build();
+
+                m = new MethodBean.Builder(res.getString("MfullQualifiedName"), res.getString("MtextContent"))
+                        .setParameters(hash)
+                        .setInstanceVariableList(new UsedInstanceVariableListProxy(res.getString("MfullQualifiedName")))
+                        .setMethodsCalls(new CalledMethodsListProxy(res.getString("MfullQualifiedName")))
+                        .setBelongingClass(new ClassBean.Builder(res.getString("belongingClass"), res.getString("CtextContent")).build())
+                        .setEnviedClass(null)
+                        .setStaticMethod(res.getBoolean("staticMethod"))
+                        .setDefaultCostructor(res.getBoolean("isDefaultConstructor"))
+                        .setAffectedSmell()
+                        .setVisibility(res.getString("visibility"));
+
+                if (!res.getString("return_type").equals("")) {
+                    m.setReturnType(new ClassBean.Builder(res.getString("return_type"), "").build());
                 }
-                methods.add(m);
+
+                methods.add(m.build());
             }
 
             for (MethodBean method : methods) {
@@ -266,21 +272,28 @@ public class MethodRepository implements MethodBeanRepository {
                 res = selection.executeQuery(sql);
                 String envied = null;
                 while (res.next()) {
-                    CodeSmell f = new FeatureEnvyCodeSmell(null,res.getString("algorithmUsed"));
-                    method.setIndex(Double.parseDouble(res.getString("indice")));
+                    CodeSmell f = new FeatureEnvyCodeSmell(null, res.getString("algorithmUsed"));
+                    if (!res.getString("fqn_envied_class").equals("")) envied = res.getString("fqn_envied_class");
                     method.addSmell(f);
-                    if (!res.getString("fqn_envied_class").equals(""))
-                        envied = res.getString("fqn_envied_class");
                 }
                 if (envied != null) method.setEnviedClass(new ClassBean.Builder(envied, "").build());
             }
 
-            for(MethodBean methodBean: methods){
-                if(methodBean.getEnviedClass() != null){
-                    String enviedClassQuery = "SELECT * FROM ClassBean WHERE fullQualifiedName = '"+methodBean.getEnviedClass().getFullQualifiedName()+"'";
+            for (MethodBean methodBean : methods) {
+                if (methodBean.getEnviedClass() != null) {
+                    String enviedClassQuery = "SELECT * FROM ClassBean WHERE fullQualifiedName = '" + methodBean.getEnviedClass().getFullQualifiedName() + "'";
                     res = selection.executeQuery(enviedClassQuery);
-                    while (res.next()){
-                        methodBean.setEnviedClass(new ClassBean.Builder(res.getString("fullQualifiedName"),res.getString("textContent")).build());
+                    while (res.next()) {
+                        methodBean.setEnviedClass(new ClassBean.Builder(res.getString("fullQualifiedName"), res.getString("textContent")).build());
+                    }
+                }
+
+                for(CodeSmell smell : methodBean.getAffectedSmell()){
+                    key = smell.getSmellName() + "-" + methodBean.getFullQualifiedName();
+                    sql = "SELECT indice, name FROM Index_CodeSmell WHERE indexId='" + key + "'";
+                    res = selection.executeQuery(sql);
+                    while (res.next()) {
+                        smell.addIndex(res.getString("name"), Double.parseDouble(res.getString("indice")));
                     }
                 }
             }

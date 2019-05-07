@@ -122,7 +122,7 @@ public class PromiscuousPackagePage extends DialogWrapper {
         textPanel.add(new JBScrollPane(area), BorderLayout.CENTER);
         contentPanel.add(textPanel, BorderLayout.EAST);
 
-        contentPanel.setPreferredSize(new Dimension(1050, 800));
+        contentPanel.setPreferredSize(new Dimension(1050, 900));
 
         return contentPanel;
     }

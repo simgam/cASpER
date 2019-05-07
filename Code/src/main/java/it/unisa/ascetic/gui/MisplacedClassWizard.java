@@ -50,6 +50,7 @@ public class MisplacedClassWizard extends DialogWrapper {
         this.smellClass = smellClass;
         this.project=project;
         this.errorOccurred = false;
+        setResizable(false);
         init();
         setTitle("MISPLACED CLASS REFACTORING");
     }
@@ -78,7 +79,7 @@ public class MisplacedClassWizard extends DialogWrapper {
         radarmaps.add(oldenviedpackage);
         radarmaps.add(newcurrentpackage);
         radarmaps.add(newenviedpackage);
-        radarmaps.setPreferredSize(new Dimension(800,800));
+        radarmaps.setPreferredSize(new Dimension(800,900));
 
         contentPanel.setLayout(new BorderLayout());
         contentPanel.setSize(900, 800);

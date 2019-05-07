@@ -17,6 +17,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
+import javax.swing.border.TitledBorder;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -46,6 +49,7 @@ public class BlobWizard extends DialogWrapper {
         classeDestra = splitting.get(1);
         this.project = project;
         this.errorOccured = false;
+        setResizable(false);
         init();
         setTitle("BLOB REFACTORING");
     }
@@ -60,7 +64,6 @@ public class BlobWizard extends DialogWrapper {
             @Override
             protected void doAction(ActionEvent actionEvent) {
                 try {
-                    //splittedClasses = (List<ClassBean>) new SplitClasses().split(classBeanBlob,0.1);
 
                     RefactoringStrategy refactoringStrategy = new BlobRefatoringStrategy(blobClassBean, splitting, project);
                     RefactoringManager refactoringManager = new RefactoringManager(refactoringStrategy);
@@ -89,14 +92,11 @@ public class BlobWizard extends DialogWrapper {
     protected JComponent createCenterPanel() {
 
         main = new JPanel();
-        main.setPreferredSize(new Dimension(1100, 800));
+        main.setPreferredSize(new Dimension(1250, 900));
         radar = new RadarMapUtilsAdapter();
 
         JPanel panel_5 = new JPanel();
         panel_5.setLayout(new BoxLayout(panel_5, BoxLayout.Y_AXIS));
-
-        JPanel panel_60 = new JPanel();
-        panel_5.add(panel_60);
 
         JPanel panel_23 = new JPanel();
         panel_5.add(panel_23);
@@ -115,15 +115,13 @@ public class BlobWizard extends DialogWrapper {
         panel_22.setLayout(new BorderLayout(0, 0));
 
         radar_1 = new JPanel();
-        panel_22.add(radar_1);
         radar_1.setLayout(new BorderLayout(0, 0));
+        radar_1.setBorder(new TitledBorder("Splitting class"));
+        panel_22.add(radar_1);
 
         JPanel panel_58 = new JPanel();
-        radar_1.add(panel_58, BorderLayout.SOUTH);
+        panel_22.add(panel_58, BorderLayout.SOUTH);
         panel_58.setLayout(new BoxLayout(panel_58, BoxLayout.X_AXIS));
-
-        JPanel panel_27 = new JPanel();
-        panel_58.add(panel_27);
 
         panel_25 = new JPanel();
         panel_58.add(panel_25);
@@ -132,24 +130,12 @@ public class BlobWizard extends DialogWrapper {
         comboBox.setSize(100, comboBox.getPreferredSize().height);
         panel_25.add(comboBox);
 
-        JPanel panel_28 = new JPanel();
-        panel_58.add(panel_28);
-
-        JPanel panel_30 = new JPanel();
-        panel_58.add(panel_30);
-
         panel_26 = new JPanel();
         panel_58.add(panel_26);
 
         comboBox2 = new ComboBox<>();
         comboBox2.setSize(100, comboBox.getPreferredSize().height);
         panel_26.add(comboBox2);
-
-        JPanel panel_29 = new JPanel();
-        panel_58.add(panel_29);
-
-        JPanel panel_59 = new JPanel();
-        radar_1.add(panel_59, BorderLayout.NORTH);
 
         JPanel tabelle = new JPanel();
         panel_5.add(tabelle);
@@ -166,18 +152,6 @@ public class BlobWizard extends DialogWrapper {
         JPanel panel_16 = new JPanel();
         panel_24.add(panel_16, BorderLayout.EAST);
 
-        JPanel panel_18 = new JPanel();
-        panel_16.add(panel_18);
-
-        JPanel panel_21 = new JPanel();
-        panel_16.add(panel_21);
-
-        JPanel panel_20 = new JPanel();
-        panel_16.add(panel_20);
-
-        JPanel panel_19 = new JPanel();
-        panel_16.add(panel_19);
-
         vecchio = new JPanel();
         panel_24.add(vecchio, BorderLayout.CENTER);
         vecchio.setLayout(new BorderLayout(0, 0));
@@ -190,10 +164,8 @@ public class BlobWizard extends DialogWrapper {
         metric.setDefaultEditor(Object.class, null);
         JScrollPane tableScrollPaneV = new JScrollPane(metric);
         tableScrollPaneV.setPreferredSize(new Dimension(300, 0));
+        panel_17.setBorder(new TitledBorder("Metrics"));
         panel_17.add(tableScrollPaneV);
-
-        JPanel panel_11 = new JPanel();
-        panel_14.add(panel_11);
 
         JPanel panel_31 = new JPanel();
         panel_31.setLayout(new BorderLayout(0, 0));
@@ -277,6 +249,7 @@ public class BlobWizard extends DialogWrapper {
         metriche();
 
         sinistra = new JPanel();
+        vecchio.setBorder(new TitledBorder(blobClassBean.getFullQualifiedName()));
         sinistra = radar.createRadarMapFromClassBean(blobClassBean, "OLD CLASS");
         vecchio.add(sinistra, BorderLayout.CENTER);
 
@@ -427,8 +400,14 @@ public class BlobWizard extends DialogWrapper {
     private void createView() {
 
         viste = new JPanel();
-        viste.setLayout(new GridLayout(0, 4, 0, 0));
+        if (splitting.size() > 5) {
+            viste.setLayout(new GridLayout(0, 5, 0, 0));
+        } else {
+            viste.setLayout(new GridLayout(0, splitting.size(), 0, 0));
+        }
+        ;
         JPanel aggiunta;
+
         if (splitting != null) {
             int index = 1;
             for (ClassBean classe : splitting) {
@@ -505,11 +484,9 @@ public class BlobWizard extends DialogWrapper {
                 tableItem.add(method.getFullQualifiedName());
                 tableItem.add(method.getBelongingClass().getFullQualifiedName());
                 model.addRow(tableItem);
-
             }
         }
         this.table1.setModel(model);
-
     }
 
     private void createTable2(ClassBean c) {
@@ -525,11 +502,9 @@ public class BlobWizard extends DialogWrapper {
                 tableItem.add(method.getFullQualifiedName());
                 tableItem.add(method.getBelongingClass().getFullQualifiedName());
                 model2.addRow(tableItem);
-
             }
         }
         this.table2.setModel(model2);
-
     }
 
     private void metriche() {

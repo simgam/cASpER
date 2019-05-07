@@ -5,6 +5,7 @@ import it.unisa.ascetic.storage.beans.ClassBean;
 import it.unisa.ascetic.storage.beans.MethodBean;
 import it.unisa.ascetic.structuralMetrics.CKMetrics;
 
+import java.util.HashMap;
 import java.util.regex.Pattern;
 
 public class StructuralBlobStrategy implements ClassSmellDetectionStrategy {
@@ -92,5 +93,14 @@ public class StructuralBlobStrategy implements ClassSmellDetectionStrategy {
             return true;
         }
         return false;
+    }
+
+    public HashMap<String, Double> getThresold(ClassBean pClass) {
+        HashMap<String, Double> list = new HashMap<String, Double>();
+
+        list.put("featureSum", (double) (CKMetrics.getWMC(pClass) + CKMetrics.getNOA(pClass)));
+        list.put("LCOM", (double) (CKMetrics.getLCOM(pClass)));
+        list.put("ELOC", (double) (CKMetrics.getELOC(pClass)));
+        return list;
     }
 }

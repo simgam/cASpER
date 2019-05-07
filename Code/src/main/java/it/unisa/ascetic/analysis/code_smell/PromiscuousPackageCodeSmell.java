@@ -27,6 +27,7 @@ public class PromiscuousPackageCodeSmell extends PackageLevelCodeSmell {
      */
     public boolean affects(PackageBean aPackage) {
         if (detectionStrategy.isSmelly(aPackage)) {
+            this.setIndex(detectionStrategy.getThresold(aPackage));
             aPackage.addSmell(this);
             return true;
         }

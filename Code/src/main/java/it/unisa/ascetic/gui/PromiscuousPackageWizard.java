@@ -39,6 +39,7 @@ public class PromiscuousPackageWizard extends DialogWrapper {
         super(true);
         this.packageBean = packageBean;
         this.splitting = splitting;
+        setResizable(false);
         init();
         setTitle("PROMISCUOUS PACKAGE REFACTORING");
     }
@@ -62,7 +63,7 @@ public class PromiscuousPackageWizard extends DialogWrapper {
     protected JComponent createCenterPanel() {
 
         main = new JPanel();
-        main.setPreferredSize(new Dimension(900, 800));
+        main.setPreferredSize(new Dimension(900, 900));
         radar = new RadarMapUtilsAdapter();
 
         JPanel panel_5 = new JPanel();

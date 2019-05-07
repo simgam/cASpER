@@ -57,7 +57,7 @@ public class MisplacedClassPage extends DialogWrapper {
         centerPanel = new JPanel();
         centerPanel.setBorder(JBUI.Borders.empty(5));
         centerPanel.setLayout(new BoxLayout(centerPanel, BoxLayout.Y_AXIS));
-        centerPanel.setPreferredSize(new Dimension(1050,800));
+        centerPanel.setPreferredSize(new Dimension(1050,900));
 
         //radarmap containre init
         radarmapContainer = new JPanel();

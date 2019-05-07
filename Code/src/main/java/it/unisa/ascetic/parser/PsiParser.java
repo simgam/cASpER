@@ -201,18 +201,24 @@ public class PsiParser implements Parser {
         }
 
         classBeanRepository.delete();
+        boolean affectedbean = false;
 
         for (PackageBean packageBean : projectPackages) {
             TextualPromiscuousPackageStrategy textualPromiscuousPackageStrategy = new TextualPromiscuousPackageStrategy(coseno.get("cosenoPromiscuous"));
             PromiscuousPackageCodeSmell tPromiscuousPackagecodeSmell = new PromiscuousPackageCodeSmell(textualPromiscuousPackageStrategy, "Textual");
             if (packageBean.isAffected(tPromiscuousPackagecodeSmell)) {
-                packageBeanRepository.update(packageBean);
+                affectedbean = true;
             }
             packageBean.setSimilarity(0);
             StructuralPromiscuousPackageStrategy structuralPromiscuousPackageStrategy = new StructuralPromiscuousPackageStrategy();
             PromiscuousPackageCodeSmell sPromiscuousPackagecodeSmell = new PromiscuousPackageCodeSmell(structuralPromiscuousPackageStrategy, "Structural");
             if (packageBean.isAffected(sPromiscuousPackagecodeSmell)) {
+                affectedbean = true;
+            }
+
+            if (affectedbean) {
                 packageBeanRepository.update(packageBean);
+                affectedbean = false;
             }
             packageBean.setSimilarity(0);
 
@@ -222,20 +228,23 @@ public class PsiParser implements Parser {
                 BlobCodeSmell tBlobCodeSmell = new BlobCodeSmell(textualBlobStrategy, "Textual");
                 TextualMisplacedClassStrategy textualMisplacedClassStrategy = new TextualMisplacedClassStrategy(projectPackages, coseno.get("cosenoMisplaced"));
                 MisplacedClassCodeSmell tMisplacedClassCodeSmell = new MisplacedClassCodeSmell(textualMisplacedClassStrategy, "Textual");
-
                 if (classBean.isAffected(tBlobCodeSmell) || classBean.isAffected(tMisplacedClassCodeSmell)) {
-                    classBeanRepository.update(classBean);
+                    affectedbean = true;
                 }
-                classBean.setSimilarity(0);
-                classBean.setEnviedPackage(null);
 
                 StructuralBlobStrategy structuralBlobStrategy = new StructuralBlobStrategy(dipendence.get("dipBlob"), dipendence.get("dipBlob2"), dipendence.get("dipBlob3"));
                 BlobCodeSmell sBlobCodeSmell = new BlobCodeSmell(structuralBlobStrategy, "Structural");
                 StructuralMisplacedClassStrategy structuralMisplacedClassStrategy = new StructuralMisplacedClassStrategy(projectPackages);
                 MisplacedClassCodeSmell sMisplacedClassCodeSmell = new MisplacedClassCodeSmell(structuralMisplacedClassStrategy, "Structural");
                 if (classBean.isAffected(sBlobCodeSmell) || classBean.isAffected(sMisplacedClassCodeSmell)) {
-                    classBeanRepository.update(classBean);
+                    affectedbean = true;
                 }
+
+                if (affectedbean) {
+                    classBeanRepository.update(classBean);
+                    affectedbean = false;
+                }
+
                 classBean.setSimilarity(0);
                 classBean.setEnviedPackage(null);
 
@@ -244,16 +253,20 @@ public class PsiParser implements Parser {
                     TextualFeatureEnvyStrategy textualFeatureEnvyStrategy = new TextualFeatureEnvyStrategy(projectPackages, coseno.get("cosenoFeature"));
                     FeatureEnvyCodeSmell tFeatureEnvyCodeSmell = new FeatureEnvyCodeSmell(textualFeatureEnvyStrategy, "Textual");
                     if (methodBean.isAffected(tFeatureEnvyCodeSmell)) {
-                        methodBeanRepository.update(methodBean);
+                        affectedbean = true;
                     }
-                    methodBean.setIndex(0);
-                    methodBean.setEnviedClass(null);
 
                     StructuralFeatureEnvyStrategy structuralFeatureEnvyStrategy = new StructuralFeatureEnvyStrategy(projectPackages);
                     FeatureEnvyCodeSmell sFeatureEnvyCodeSmell = new FeatureEnvyCodeSmell(structuralFeatureEnvyStrategy, "Structural");
                     if (methodBean.isAffected(sFeatureEnvyCodeSmell)) {
-                        methodBeanRepository.update(methodBean);
+                        affectedbean = true;
                     }
+
+                    if (affectedbean) {
+                        methodBeanRepository.update(methodBean);
+                        affectedbean = false;
+                    }
+
                     methodBean.setIndex(0);
                     methodBean.setEnviedClass(null);
                 }

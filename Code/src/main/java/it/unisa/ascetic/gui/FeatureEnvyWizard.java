@@ -48,6 +48,7 @@ public class FeatureEnvyWizard extends DialogWrapper {
     public FeatureEnvyWizard(MethodBean smellMethod, Project project)
     {
         super(true);
+        setResizable(false);
         this.smellMethod = smellMethod;
         this.project=project;
         this.errorOccurred = false;

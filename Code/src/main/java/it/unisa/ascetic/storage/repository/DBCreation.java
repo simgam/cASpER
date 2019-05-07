@@ -76,15 +76,23 @@ public class DBCreation{
                         + "FOREIGN KEY (methodBeanFullQualifiedName) REFERENCES MethodBean (fullQualifiedName) ON DELETE CASCADE ON UPDATE CASCADE,"
                         + "FOREIGN KEY (instanceVariableBeanFullQualifiedName) REFERENCES InstanceVariableBean (fullQualifiedName) ON DELETE CASCADE ON UPDATE CASCADE"
                         + ");");
+        sql.append(//Index_CodeSmell
+                "CREATE TABLE IF NOT EXISTS Index_CodeSmell ("
+                        + "indexId VARCHAR(255), "
+                        + "indice INTEGER(5), "
+                        + "name VARCHAR(255), "
+                        + "PRIMARY KEY(indexId,indice)"
+                        + ");");
         sql.append(//Package_CodeSmell
                 "CREATE TABLE IF NOT EXISTS Package_SmellType ("
                         + "packageBeanFullQualifiedName VARCHAR(255) NOT NULL, "
                         + "codeSmellFullQualifiedName VARCHAR(255) NOT NULL, "
                         + "algorithmUsed VARCHAR(255), "
-                        + "indice INTEGER(5), "
+                        + "indice VARCHAR(255), "
                         + "PRIMARY KEY(packageBeanFullQualifiedName,codeSmellFullQualifiedName,algorithmUsed),"
                         + "FOREIGN KEY (packageBeanFullQualifiedName) REFERENCES PackageBean (fullQualifiedName) ON DELETE CASCADE ON UPDATE CASCADE,"
-                        + "FOREIGN KEY (codeSmellFullQualifiedName) REFERENCES CodeSmell (fullQualifiedName) ON DELETE CASCADE ON UPDATE CASCADE"
+                        + "FOREIGN KEY (codeSmellFullQualifiedName) REFERENCES CodeSmell (fullQualifiedName) ON DELETE CASCADE ON UPDATE CASCADE,"
+                        + "FOREIGN KEY (indice) REFERENCES Index_CodeSmell (indexId) ON DELETE CASCADE ON UPDATE CASCADE"
                         + ");");
         sql.append(//Classe_CodeSmell
                 "CREATE TABLE IF NOT EXISTS Classe_SmellType ("
@@ -92,10 +100,11 @@ public class DBCreation{
                         + "codeSmellFullQualifiedName VARCHAR(255) NOT NULL , "
                         + "fqn_envied_package VARCHAR(255), "
                         + "algorithmUsed VARCHAR(255), "
-                        + "indice INTEGER(5), "
+                        + "indice VARCHAR(255), "
                         + "PRIMARY KEY(classBeanFullQualifiedName,codeSmellFullQualifiedName,algorithmUsed),"
                         + "FOREIGN KEY (classBeanFullQualifiedName) REFERENCES ClassBean (fullQualifiedName) ON DELETE CASCADE ON UPDATE CASCADE,"
-                        + "FOREIGN KEY (codeSmellFullQualifiedName) REFERENCES CodeSmell (fullQualifiedName) ON DELETE CASCADE ON UPDATE CASCADE"
+                        + "FOREIGN KEY (codeSmellFullQualifiedName) REFERENCES CodeSmell (fullQualifiedName) ON DELETE CASCADE ON UPDATE CASCADE,"
+                        + "FOREIGN KEY (indice) REFERENCES Index_CodeSmell (indexId) ON DELETE CASCADE ON UPDATE CASCADE"
                         + ");");
         sql.append(//Metodo_CodeSmell
                 "CREATE TABLE IF NOT EXISTS Metodo_SmellType ("
@@ -103,10 +112,11 @@ public class DBCreation{
                         + "codeSmellFullQualifiedName VARCHAR(255) NOT NULL, "
                         + "fqn_envied_class VARCHAR(255), "
                         + "algorithmUsed VARCHAR(255), "
-                        + "indice INTEGER(5), "
+                        + "indice VARCHAR(255), "
                         + "PRIMARY KEY(methodBeanFullQualifiedName,codeSmellFullQualifiedName,algorithmUsed),"
                         + "FOREIGN KEY (methodBeanFullQualifiedName) REFERENCES MethodBean (fullQualifiedName) ON DELETE CASCADE ON UPDATE CASCADE,"
-                        + "FOREIGN KEY (codeSmellFullQualifiedName) REFERENCES CodeSmell (fullQualifiedName) ON DELETE CASCADE ON UPDATE CASCADE"
+                        + "FOREIGN KEY (codeSmellFullQualifiedName) REFERENCES CodeSmell (fullQualifiedName) ON DELETE CASCADE ON UPDATE CASCADE,"
+                        + "FOREIGN KEY (indice) REFERENCES Index_CodeSmell (indexId) ON DELETE CASCADE ON UPDATE CASCADE"
                         + ");");
         sql.append(//Methods_Calls
                 "CREATE TABLE IF NOT EXISTS Methods_Calls ("

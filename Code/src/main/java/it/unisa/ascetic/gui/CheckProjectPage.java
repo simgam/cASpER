@@ -24,6 +24,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Vector;
@@ -47,8 +48,8 @@ public class CheckProjectPage extends DialogWrapper {
     private JPanel panel;
     private JPanel textual;
     private JPanel structural;
-    private JTextField valore1;
-    private JTextField valore2;
+    private JTextField valCoseno;
+    private ArrayList<JTextField> valDipendenza;
     private JLabel soglia2;
 
     private JPanel centerPanel;
@@ -57,24 +58,36 @@ public class CheckProjectPage extends DialogWrapper {
     private JSlider dipendenze;
     private JSlider coseno;
     private JPanel smell;
+
+    private ArrayList<JPanel> smellPanel;
     private JPanel featurePanel;
     private JPanel misPanel;
     private JPanel blobPanel;
     private JPanel promiscuousPanel;
     private HashMap<String, JCheckBox> codeSmell = new HashMap<String, JCheckBox>();
-    private JPanel algorithm1;
-    private JPanel algorithm2;
-    private JPanel algorithm3;
-    private JPanel algorithm4;
     private HashMap<String, JCheckBox> algoritmi = new HashMap<String, JCheckBox>();
+    private HashMap<String, Integer> threshold = new HashMap<String, Integer>();
+    private ArrayList<JPanel> algo;
 
+    private static ArrayList<String> smellName;
+    private static ArrayList<String> blobThresholdName;
     private int maxS = 0;
     private String algorithm;
     private double sogliaCoseno;
-    private int sogliaDipendenze;
+    private ArrayList<Integer> sogliaDipendenze;
 
-    public CheckProjectPage(Project currentProj, List<PackageBean> promiscuous, List<ClassBean> blob, List<ClassBean> misplaced, List<MethodBean> feature, double sogliaCoseno, int sogliaDipendenze, String algorithm) {
+    public CheckProjectPage(Project currentProj, List<PackageBean> promiscuous, List<ClassBean> blob, List<ClassBean> misplaced, List<MethodBean> feature, double sogliaCoseno, ArrayList<Integer> sogliaDipendenze, String algorithm) {
         super(true);
+        smellName = new ArrayList<String>();
+        smellName.add("Feature Envy");
+        smellName.add("Misplaced Class");
+        smellName.add("Blob");
+        smellName.add("Promiscuous Package");
+        blobThresholdName = new ArrayList<String>();
+        blobThresholdName.add("LCOM");
+        blobThresholdName.add("FeatureSUM");
+        blobThresholdName.add("ELOC");
+
         this.currentProject = currentProj;
         this.promiscuousPackageList = promiscuous;
         this.featureEnvyList = feature;
@@ -92,6 +105,13 @@ public class CheckProjectPage extends DialogWrapper {
     @Override
     protected JComponent createCenterPanel() {
 
+        threshold = new HashMap<String, Integer>();
+        int i = 0;
+        while (i < blobThresholdName.size()) {
+            threshold.put(blobThresholdName.get(i), sogliaDipendenze.get(i + 1));
+            i++;
+        }
+
         contentPanel = new JPanel(); //pannello principale
         contentPanel.setLayout(new BorderLayout(0, 0));
         smellVisual = new JPanel(); //pannello per visualizzare lista di smell
@@ -107,7 +127,7 @@ public class CheckProjectPage extends DialogWrapper {
         //fine roba della combobox
 
         contentPanel.setLayout(new GridLayout(0, 2));//layout pannello principale
-        contentPanel.setPreferredSize(new Dimension(1200, 800));
+        contentPanel.setPreferredSize(new Dimension(1250, 900));
         smellVisual.setLayout(new BorderLayout(0, 0));
         smellVisual.add(panel, BorderLayout.NORTH);
 
@@ -123,69 +143,24 @@ public class CheckProjectPage extends DialogWrapper {
         nuovo.add(smell);
         smell.setLayout(new BoxLayout(smell, BoxLayout.Y_AXIS));
 
-        //feature envy
-        featurePanel = new JPanel();
-        featurePanel.setBorder(new EmptyBorder(0, 0, 10, 0));
-        smell.add(featurePanel);
-        featurePanel.setLayout(new GridLayout(0, 2, 0, 0));
-        codeSmell.put("Feature Envy", new JCheckBox("Feature Envy"));
-        featurePanel.add(codeSmell.get("Feature Envy"));
-        algorithm1 = new JPanel();
-        featurePanel.add(algorithm1);
-        algorithm1.setLayout(new GridLayout(0, 1, 0, 0));
-        algoritmi.put("textualF", new JCheckBox("Textual"));
-        algorithm1.add(algoritmi.get("textualF"));
-        algoritmi.put("structuralF", new JCheckBox("Structural"));
-        algorithm1.add(algoritmi.get("structuralF"));
-
-        //Misplaced class
-        misPanel = new JPanel();
-        misPanel.setBorder(new EmptyBorder(0, 0, 10, 0));
-        smell.add(misPanel);
-        misPanel.setLayout(new GridLayout(0, 2, 0, 0));
-
-        codeSmell.put("Misplaced Class", new JCheckBox("Misplaced Class"));
-        misPanel.add(codeSmell.get("Misplaced Class"));
-        algorithm2 = new JPanel();
-        misPanel.add(algorithm2);
-        algorithm2.setLayout(new GridLayout(0, 1, 0, 0));
-        algoritmi.put("textualM", new JCheckBox("Textual"));
-        algorithm2.add(algoritmi.get("textualM"));
-        algoritmi.put("structuralM", new JCheckBox("Structural"));
-        algorithm2.add(algoritmi.get("structuralM"));
-
-        //Blob
-        blobPanel = new JPanel();
-        blobPanel.setBorder(new EmptyBorder(0, 0, 10, 0));
-        smell.add(blobPanel);
-        blobPanel.setLayout(new GridLayout(0, 2, 0, 0));
-
-        codeSmell.put("Blob", new JCheckBox("Blob"));
-        blobPanel.add(codeSmell.get("Blob"));
-        algorithm3 = new JPanel();
-        blobPanel.add(algorithm3);
-        algorithm3.setLayout(new GridLayout(0, 1, 0, 0));
-        algoritmi.put("textualB", new JCheckBox("Textual"));
-        algorithm3.add(algoritmi.get("textualB"));
-        algoritmi.put("structuralB", new JCheckBox("Structural"));
-        algorithm3.add(algoritmi.get("structuralB"));
-        algorithm3.add(new JLabel("*non utilizza le dipendenze  "));
-
-        //Promiscuous pakcage
-        promiscuousPanel = new JPanel();
-        promiscuousPanel.setBorder(new EmptyBorder(0, 0, 10, 0));
-        smell.add(promiscuousPanel);
-        promiscuousPanel.setLayout(new GridLayout(0, 2, 0, 0));
-
-        codeSmell.put("Promiscuous Package", new JCheckBox("Promiscuous Package  "));
-        promiscuousPanel.add(codeSmell.get("Promiscuous Package"));
-        algorithm4 = new JPanel();
-        promiscuousPanel.add(algorithm4);
-        algorithm4.setLayout(new GridLayout(0, 1, 0, 0));
-        algoritmi.put("textualP", new JCheckBox("Textual"));
-        algorithm4.add(algoritmi.get("textualP"));
-        algoritmi.put("structuralP", new JCheckBox("Structural"));
-        algorithm4.add(algoritmi.get("structuralP"));
+        algo = new ArrayList<JPanel>();
+        smellPanel = new ArrayList<JPanel>();
+        for (i = 0; i < 4; i++) {
+            smellPanel.add(new JPanel());
+            smellPanel.get(i).setBorder(new EmptyBorder(0, 0, 10, 0));
+            smellPanel.get(i).setLayout(new GridLayout(0, 2, 0, 0));
+            smell.add(smellPanel.get(i));
+            codeSmell.put(smellName.get(i), new JCheckBox(smellName.get(i)));
+            smellPanel.get(i).add(codeSmell.get(smellName.get(i)));
+            algo.add(new JPanel());
+            smellPanel.get(i).add(algo.get(i));
+            algo.get(i).setLayout(new GridLayout(0, 1, 0, 0));
+            algoritmi.put("textual" + smellName.get(i).substring(0, 1), new JCheckBox("Textual"));
+            algo.get(i).add(algoritmi.get("textual" + smellName.get(i).substring(0, 1)));
+            algoritmi.put("structural" + smellName.get(i).substring(0, 1), new JCheckBox("Structural"));
+            algo.get(i).add(algoritmi.get("structural" + smellName.get(i).substring(0, 1)));
+            if (i == 2) algo.get(i).add(new JLabel("*non utilizza le dipendenze  "));
+        }
 
         for (JCheckBox c : codeSmell.values()) {
             c.setSelected(true);
@@ -226,7 +201,7 @@ public class CheckProjectPage extends DialogWrapper {
 
         slider = new JPanel();
         nuovo.add(slider);
-        slider.setLayout(new GridLayout(2, 1, 0, 0));
+        slider.setLayout(new BoxLayout(slider, BoxLayout.Y_AXIS));
 
         textual = new JPanel();
         textual.setBorder(new TitledBorder("Textual"));
@@ -238,15 +213,12 @@ public class CheckProjectPage extends DialogWrapper {
         JPanel s = new JPanel();
         JLabel soglia1 = new JLabel();
         soglia1.setText("similarity >= [" + sogliaCoseno + "-1]");
-        JPanel val1 = new JPanel();
         textual.add(s);
         s.add(soglia1);
-        textual.add(val1);
 
         coseno = new JSlider();
         coseno.setForeground(Color.WHITE);
         coseno.setFont(new Font("Arial", Font.PLAIN, 12));
-        coseno.setToolTipText("");
         coseno.setPaintTicks(true);
         coseno.setMinorTickSpacing(10);
         if (sogliaCoseno <= 0.5) {
@@ -260,18 +232,18 @@ public class CheckProjectPage extends DialogWrapper {
 
         coseno.addChangeListener(new ChangeListener() {
             public void stateChanged(ChangeEvent event) {
-                valore1.setText(String.valueOf(((double) coseno.getValue()) / 100));
+                valCoseno.setText(String.valueOf(((double) coseno.getValue()) / 100));
                 createTable();
                 table.repaint();
             }
         });
 
-        valore1 = new JTextField();
-        valore1.setText(String.valueOf(((double) coseno.getValue()) / 100));
-        val1.add(valore1);
-        valore1.setColumns(10);
+        valCoseno = new JTextField();
+        valCoseno.setText(String.valueOf(((double) coseno.getValue()) / 100));
+        s.add(valCoseno);
+        valCoseno.setColumns(5);
 
-        valore1.addActionListener(new ActionListener() {
+        valCoseno.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent c) {
 
                 try {
@@ -282,14 +254,14 @@ public class CheckProjectPage extends DialogWrapper {
                     } else {
                         if (valore < 0.0) {
                             coseno.setValue(0);
-                            valore1.setText(0.0 + "");
+                            valCoseno.setText(0.0 + "");
                         } else {
                             if (valore > 1.0) {
                                 coseno.setValue(100);
-                                valore1.setText(1.0 + "");
+                                valCoseno.setText(1.0 + "");
                             } else {
                                 coseno.setValue((int) valore);
-                                valore1.setText(valore + "");
+                                valCoseno.setText(valore + "");
                             }
                         }
                         ;
@@ -309,16 +281,13 @@ public class CheckProjectPage extends DialogWrapper {
         structural.add(bar2);
         JPanel s2 = new JPanel();
         soglia2 = new JLabel();
-        JPanel val2 = new JPanel();
         structural.add(s2);
         s2.add(soglia2);
-        structural.add(val2);
 
         dipendenze = new JSlider();
         dipendenze.setForeground(Color.WHITE);
         dipendenze.setFont(new Font("Arial", Font.PLAIN, 12));
-        dipendenze.setToolTipText("");
-        dipendenze.setValue(sogliaDipendenze);
+        dipendenze.setValue(sogliaDipendenze.get(0));
         dipendenze.setPaintTicks(true);
         dipendenze.setMinorTickSpacing(1);
         dipendenze.setMinimum(0);
@@ -327,7 +296,7 @@ public class CheckProjectPage extends DialogWrapper {
         dipendenze.addChangeListener(new ChangeListener() {
             public void stateChanged(ChangeEvent event) {
                 try {
-                    valore2.setText(String.valueOf(dipendenze.getValue()));
+                    valDipendenza.get(0).setText(String.valueOf(dipendenze.getValue()));
                     createTable();
                     table.repaint();
                 } catch (NumberFormatException e) {
@@ -336,20 +305,76 @@ public class CheckProjectPage extends DialogWrapper {
             }
         });
 
-        valore2 = new JTextField();
-        valore2.setText(String.valueOf(dipendenze.getValue()));
-        val2.add(valore2);
-        valore2.setColumns(10);
-
-        valore2.addActionListener(new ActionListener() {
+        valDipendenza = new ArrayList<JTextField>();
+        valDipendenza.add(new JTextField());
+        s2.add(valDipendenza.get(0));
+        valDipendenza.get(0).addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent c) {
                 JTextField t = (JTextField) c.getSource();
                 dipendenze.setValue(Integer.parseInt(t.getText()));
             }
         });
 
-        pannello.add(centerPanel);
+        JPanel livello, blobThreshold = new JPanel();
+        blobThreshold.setBorder(new TitledBorder("Blob"));
+        structural.add(blobThreshold);
+        blobThreshold.setLayout(new BoxLayout(blobThreshold, BoxLayout.Y_AXIS));
+        JLabel scritta;
+        for (i = 0; i < 4; i++) {
+            if (i != 0) {
+                valDipendenza.add(new JTextField());
+                valDipendenza.get(i).setText(df2.format(threshold.get(blobThresholdName.get(i - 1))));
 
+                livello = new JPanel();
+                livello.setLayout(new GridLayout(2, 2, 0, 0));
+                scritta = new JLabel(blobThresholdName.get(i - 1));
+                scritta.setHorizontalAlignment(SwingConstants.CENTER);
+                livello.add(scritta);
+                livello.add(valDipendenza.get(i));
+                scritta = new JLabel("valore min=" + df2.format(threshold.get(blobThresholdName.get(i - 1))));
+                scritta.setHorizontalAlignment(SwingConstants.RIGHT);
+                livello.add(scritta);
+                blobThreshold.add(livello);
+            }
+            valDipendenza.get(i).setText(String.valueOf(sogliaDipendenze.get(i)));
+            valDipendenza.get(i).setColumns(5);
+        }
+
+        valDipendenza.get(1).addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent c) {
+                JTextField f = (JTextField) c.getSource();
+                if (Integer.parseInt(f.getText()) < threshold.get(blobThresholdName.get(0))) {
+                    f.setText("350");
+                    JOptionPane.showMessageDialog(null, "Soglia minima consentita " + df2.format(threshold.get(blobThresholdName.get(0))));
+                }
+                createTable();
+                table.repaint();
+            }
+        });
+        valDipendenza.get(2).addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent c) {
+                JTextField f = (JTextField) c.getSource();
+                if (Integer.parseInt(f.getText()) < threshold.get(blobThresholdName.get(1))) {
+                    f.setText("20");
+                    JOptionPane.showMessageDialog(null, "Soglia minima consentita " + df2.format(threshold.get(blobThresholdName.get(1))));
+                }
+                createTable();
+                table.repaint();
+            }
+        });
+        valDipendenza.get(3).addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent c) {
+                JTextField f = (JTextField) c.getSource();
+                if (Integer.parseInt(f.getText()) < threshold.get(blobThresholdName.get(2))) {
+                    f.setText("500");
+                    JOptionPane.showMessageDialog(null, "Soglia minima consentita " + df2.format(threshold.get(blobThresholdName.get(2))));
+                }
+                createTable();
+                table.repaint();
+            }
+        });
+
+        pannello.add(centerPanel);
         createTable();
 
         table.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
@@ -492,6 +517,7 @@ public class CheckProjectPage extends DialogWrapper {
         dipendenze.setMaximum(maxS);
         this.table.setModel(model);
         table.setDefaultEditor(Object.class, null);
+
     }
 
     private void gestione(List<CodeSmell> list, String codeSmell, String bean) {
@@ -508,15 +534,18 @@ public class CheckProjectPage extends DialogWrapper {
         int i = 0;
 
         for (CodeSmell smell : list) {
+
             if (smell.getSmellName().equalsIgnoreCase(codeSmell)) {
                 used = smell.getAlgoritmsUsed();
                 tableItem = new Vector<String>();
-                if (algoritmi.get("textual" + codeSmell.substring(0, 1)).isSelected()) {
-                    if (used.equalsIgnoreCase("textual") && Double.parseDouble(valore1.getText()) <= smell.getIndex()) {
+
+                HashMap<String, Double> listThreschold = smell.getIndex();
+                if (algoritmi.get("textual" + codeSmell.substring(0, 1)).isSelected() && listThreschold.get("coseno") != null) {
+                    if (used.equalsIgnoreCase("textual") && Double.parseDouble(valCoseno.getText()) <= listThreschold.get("coseno")) {
 
                         complessita++;
-                        indice = Double.parseDouble(valore1.getText());
-                        cos = smell.getIndex();
+                        indice = Double.parseDouble(valCoseno.getText());
+                        cos = listThreschold.get("coseno");
                         if (cos <= sogliaCoseno) {
                             basso = true;
                         }
@@ -525,18 +554,21 @@ public class CheckProjectPage extends DialogWrapper {
                             alto++;
                         }
                         ;
+                    } else {
+                        controllo = true;
                     }
                 } else {
                     controllo = true;
                 }
 
-                if (algoritmi.get("structural" + codeSmell.substring(0, 1)).isSelected()) {
-                    if (used.equalsIgnoreCase("structural") && Double.parseDouble(valore2.getText()) <= smell.getIndex() && !smell.getSmellName().equalsIgnoreCase("blob")) {
+                if (algoritmi.get("structural" + codeSmell.substring(0, 1)).isSelected() && listThreschold.get("dipendenza") != null) {
+                    if (used.equalsIgnoreCase("structural") && Double.parseDouble(valDipendenza.get(0).getText()) <= listThreschold.get("dipendenza")) {
 
                         complessita += 2;
-                        indice = Double.parseDouble(valore2.getText());
-                        dip = (int) smell.getIndex();
-                        if (dip <= sogliaDipendenze) {
+                        indice = Double.parseDouble(valDipendenza.get(0).getText());
+                        dip = listThreschold.get("dipendenza").intValue();
+
+                        if (dip <= sogliaDipendenze.get(0)) {
                             basso = true;
                         }
                         ;
@@ -548,22 +580,31 @@ public class CheckProjectPage extends DialogWrapper {
                             maxS = dip;
                         }
                         ;
-                    } else {
-                        if (smell.getSmellName().equalsIgnoreCase("blob") && smell.getAlgoritmsUsed().equalsIgnoreCase("structural")) {
-                            alto++;
-                            if (!basso) basso = true;
-                        }
                     }
                 } else {
-                    controllo = true;
+                    if (smell.getSmellName().equalsIgnoreCase("blob") && algoritmi.get("structural" + codeSmell.substring(0, 1)).isSelected() && used.equalsIgnoreCase("structural")) {
+                        Double lcom = Double.parseDouble(valDipendenza.get(1).getText());
+                        Double fsum = Double.parseDouble(valDipendenza.get(2).getText());
+                        Double eloc = Double.parseDouble(valDipendenza.get(3).getText());
+                        if (lcom <= listThreschold.get("LCOM") && fsum <= listThreschold.get("featureSum") && eloc <= listThreschold.get("ELOC")) {
+                            complessita += 2;
+                            alto++;
+                            if (lcom >= listThreschold.get("LCOM") || fsum >= listThreschold.get("featureSum") || eloc >= listThreschold.get("ELOC")) {
+                                basso = true;
+                            }
+                        }
+                    } else {
+                        controllo = true;
+                    }
                 }
 
 
                 if (i + 1 >= list.size() || !list.get(i + 1).getSmellName().equalsIgnoreCase(smell.getSmellName())) {
 
-                    if (((cos != 0.0 || dip != 0) && ((indice <= smell.getIndex() && algoritmi.get("textual" + codeSmell.substring(0, 1)).isSelected()) ||
-                            (indice <= smell.getIndex() && algoritmi.get("structural" + codeSmell.substring(0, 1)).isSelected()))) ||
-                            (smell.getSmellName().equalsIgnoreCase("Blob") && smell.getAlgoritmsUsed().equalsIgnoreCase("structural") && algoritmi.get("structural" + codeSmell.substring(0, 1)).isSelected())) {
+                    if (((cos != 0.0 || dip != 0) && ((listThreschold.get("coseno") != null && indice <= listThreschold.get("coseno") && algoritmi.get("textual" + codeSmell.substring(0, 1)).isSelected()) ||
+                            (listThreschold.get("dipendenza") != null && indice <= listThreschold.get("dipendenza") && algoritmi.get("structural" + codeSmell.substring(0, 1)).isSelected()))) ||
+                            (smell.getSmellName().equalsIgnoreCase("Blob") && smell.getAlgoritmsUsed().equalsIgnoreCase("structural") && algoritmi.get("structural" + codeSmell.substring(0, 1)).isSelected() &&
+                                    Double.parseDouble(valDipendenza.get(1).getText()) <= listThreschold.get("LCOM") && Double.parseDouble(valDipendenza.get(2).getText()) <= listThreschold.get("featureSum") && Double.parseDouble(valDipendenza.get(3).getText()) <= listThreschold.get("ELOC"))) {
                         tableItem.add(bean);
                         tableItem.add(smell.getSmellName());
                         if (cos == 0.0) {
@@ -573,11 +614,13 @@ public class CheckProjectPage extends DialogWrapper {
                         }
                         ;
                         if (dip == 0) {
-                            if (!controllo && alto>0 && smell.getSmellName().equalsIgnoreCase("Blob")) {
-                                tableItem.add("yes");
+                            if (smell.getSmellName().equalsIgnoreCase("Blob") && algoritmi.get("structural" + codeSmell.substring(0, 1)).isSelected() && alto > 0) {
+                                HashMap<String, Double> soglie = smell.getIndex();
+                                tableItem.add(df2.format(soglie.get("LCOM")) + "-" + df2.format(soglie.get("featureSum")) + "-" + df2.format(soglie.get("ELOC")));
                             } else {
                                 tableItem.add("---");
-                            } ;
+                            }
+                            ;
                         } else {
                             tableItem.add(df2.format(dip));
                         }
@@ -596,6 +639,7 @@ public class CheckProjectPage extends DialogWrapper {
             }
             i++;
         }
+
     }
 
     private String prioritySmell(boolean controllo, int complessita, boolean basso, int alto) {

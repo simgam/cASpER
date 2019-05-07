@@ -8,7 +8,6 @@ import it.unisa.ascetic.storage.beans.PackageBean;
 
 import java.io.IOException;
 import java.util.*;
-import java.util.logging.Logger;
 import java.util.regex.Pattern;
 
 /*
@@ -74,9 +73,6 @@ public class TextualFeatureEnvyStrategy implements MethodSmellDetectionStrategy 
                 return false;
             } else {
                 pMethod.setEnviedClass(firstRankedClass);
-                pMethod.setIndex(firstRankedClass.getSimilarity());
-                Logger logger = Logger.getLogger("global");
-                logger.severe("Found FE:" + pMethod.getFullQualifiedName() + " Envied Class:" + firstRankedClass.getFullQualifiedName());
                 return true;
             }
         }
@@ -108,6 +104,25 @@ public class TextualFeatureEnvyStrategy implements MethodSmellDetectionStrategy 
             return true;
         }
         return false;
+    }
+
+    public HashMap<String, Double> getThresold(MethodBean pMethod) {
+        HashMap<String, Double> list = new HashMap<String, Double>();
+
+        String[] document1 = new String[2];
+        document1[0] = "method";
+        document1[1] = pMethod.getTextContent();
+
+        String[] document2 = new String[2];
+        document2[0] = "class";
+        document2[1] = pMethod.getEnviedClass().getTextContent();
+        try {
+            CosineSimilarity cosineSimilarity = new CosineSimilarity();
+            list.put("coseno", cosineSimilarity.computeSimilarity(document1, document2));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return list;
     }
 
 }

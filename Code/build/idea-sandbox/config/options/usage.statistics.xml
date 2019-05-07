@@ -10,7 +10,7 @@
       <entry action="CodeCompletion" count="8" />
       <entry action="CopyElement" count="1" />
       <entry action="DialogOkAction Invio" count="15" />
-      <entry action="EditorBackSpace" count="147" />
+      <entry action="EditorBackSpace" count="159" />
       <entry action="EditorChooseLookupItem" count="2" />
       <entry action="EditorCopy" count="11" />
       <entry action="EditorDelete" count="27" />
@@ -40,8 +40,8 @@
       <entry action="SynchronizeCurrentFile" count="4" />
       <entry action="Vcs.Checkout.CVS" count="1" />
       <entry action="Vcs.Checkout.Git" count="6" />
-      <entry action="it.unisa.ascetic.actions.BeginAction" count="203" />
-      <entry action="it.unisa.ascetic.actions.ConfigureAction" count="103" />
+      <entry action="it.unisa.ascetic.actions.BeginAction" count="233" />
+      <entry action="it.unisa.ascetic.actions.ConfigureAction" count="109" />
       <entry action="tasks.goto" count="3" />
     </counts>
   </component>
@@ -154,7 +154,7 @@
   </component>
   <component name="ShortcutsCollector">
     <counts>
-      <entry shortcut="Backspace" count="100" />
+      <entry shortcut="Backspace" count="112" />
       <entry shortcut="Ctrl+A" count="6" />
       <entry shortcut="Ctrl+Alt+L" count="2" />
       <entry shortcut="Ctrl+Alt+S" count="5" />
@@ -169,7 +169,7 @@
       <entry shortcut="Ctrl+Z" count="1" />
       <entry shortcut="Delete" count="38" />
       <entry shortcut="Down" count="2" />
-      <entry shortcut="Enter" count="12" />
+      <entry shortcut="Enter" count="14" />
       <entry shortcut="Escape" count="2" />
       <entry shortcut="F5" count="1" />
       <entry shortcut="Left" count="25" />
@@ -194,7 +194,7 @@
       <entry feature="ide.settings.Color Scheme" count="1" />
       <entry feature="ide.settings.Git" count="2" />
       <entry feature="ide.settings.GitHub" count="1" />
-      <entry feature="ideaapp.started" count="268" />
+      <entry feature="ideaapp.started" count="289" />
       <entry feature="terminal.win" count="30" />
       <entry feature="welcome.screen.WelcomeScreen.ImportProject" count="1" />
       <entry feature="welcome.screen.WelcomeScreen.OpenProject" count="1" />

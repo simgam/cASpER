@@ -4,16 +4,19 @@ import it.unisa.ascetic.analysis.code_smell.BlobCodeSmell;
 import it.unisa.ascetic.analysis.code_smell.CodeSmell;
 import it.unisa.ascetic.analysis.code_smell.MisplacedClassCodeSmell;
 import it.unisa.ascetic.storage.beans.*;
+import it.unisa.ascetic.storage.beans.ClassBean;
+import it.unisa.ascetic.storage.beans.InstanceVariableBean;
+import it.unisa.ascetic.storage.beans.InstanceVariableListProxy;
+import it.unisa.ascetic.storage.beans.MethodBean;
+import it.unisa.ascetic.storage.beans.MethodListProxy;
+import it.unisa.ascetic.storage.beans.PackageBean;
 import it.unisa.ascetic.storage.sqlite_jdbc_driver_connection.SQLiteConnector;
-import org.omg.IOP.CodeSets;
-import org.sqlite.core.Codes;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
-import java.util.logging.Logger;
 
 /**
  * repository addetta al salvataggio delle classi nel db
@@ -211,24 +214,43 @@ public class ClassRepository implements ClassBeanRepository {
 
             String enviedClass = null;
             if (aClass.getEnviedPackage() != null) enviedClass = aClass.getEnviedPackage().getFullQualifiedName();
-            List<CodeSmell> listSmell = new ArrayList<CodeSmell>();
-            if (aClass.getAffectedSmell() != null) {
-                listSmell = aClass.getAffectedSmell();
-                for (CodeSmell smell : listSmell) {
-                    sql = "INSERT OR REPLACE INTO Classe_SmellType (classBeanFullQualifiedName,codeSmellFullQualifiedName,fqn_envied_package,algorithmUsed,indice) VALUES (?,?,?,?,?);";
+
+            List<CodeSmell> list = aClass.getAffectedSmell();
+            if (list != null) {
+                sql = "INSERT OR REPLACE INTO Index_CodeSmell (indexId,indice,name) VALUES (?,?,?);";
+                String sql2 = "INSERT OR REPLACE INTO Classe_SmellType (classBeanFullQualifiedName,codeSmellFullQualifiedName,fqn_envied_package,algorithmUsed,indice) VALUES (?,?,?,?,?);";
+
+                String key = null;
+                HashMap<String, Double> index = null;
+                for (CodeSmell smell : list) {
+                    key = smell.getSmellName() + "-" +aClass.getFullQualifiedName();
                     stat = (PreparedStatement) con.prepareStatement(sql);
+
+                    index = smell.getIndex();
+                    for (String s : index.keySet()) {
+                        stat.setString(1, key);
+                        stat.setString(2, String.valueOf(index.get(s)));
+                        stat.setString(3, s);
+
+                        stat.executeUpdate();
+                    }
+
+                    stat = (PreparedStatement) con.prepareStatement(sql2);
+
                     stat.setString(1, aClass.getFullQualifiedName());
                     stat.setString(2, smell.getSmellName());
                     stat.setString(3, enviedClass);
                     stat.setString(4, smell.getAlgoritmsUsed());
-                    stat.setString(5, String.valueOf(smell.getIndex()));
+                    stat.setString(5, key);
                     stat.executeUpdate();
+
                 }
             }
 
             con.commit();
             stat.close();
             SQLiteConnector.releaseConnection(con);
+
         } catch (SQLException e) {
             try {
                 con.rollback();
@@ -325,71 +347,68 @@ public class ClassRepository implements ClassBeanRepository {
         final SQLiteCriterion sqlCriterion = (SQLiteCriterion) criterion; // oggetto contenente la query da eseguire
 
         try {
+            String key = null;
             String sql = sqlCriterion.toSQLquery();
 
             Statement selection = con.createStatement();
             res = selection.executeQuery(sql);
-            ClassBean c = null;
+            ClassBean.Builder c = null;
 
             while (res.next()) {
-                if (res.getString("superclass").equals("")) {
-                                c = new ClassBean.Builder(res.getString("CfullQualifiedName"), res.getString("CtextContent"))
-                                        .setInstanceVariables(new InstanceVariableListProxy(res.getString("CfullQualifiedName")))
-                                        .setMethods(new MethodListProxy(res.getString("CfullQualifiedName")))
-                                        .setImports(new ArrayList<String>())
-                                        .setLOC(Integer.parseInt(res.getString("LOC")))
-                                        .setSuperclass(null)
-                                        .setBelongingPackage(new PackageBean.Builder(res.getString("belongingPackage"), res.getString("PtextContent")).build())
-                                        .setEnviedPackage(null)
-                                        .setEntityClassUsage(Integer.parseInt(res.getString("entityClassUsage")))
-                                        .setPathToFile(res.getString("pathToFile"))
-                                        .setAffectedSmell()
-                                        .build();
-                } else {
-                    c = new ClassBean.Builder(res.getString("CfullQualifiedName"), res.getString("CtextContent"))
-                            .setInstanceVariables(new InstanceVariableListProxy(res.getString("CfullQualifiedName")))
-                            .setMethods(new MethodListProxy(res.getString("CfullQualifiedName")))
-                            .setImports(new ArrayList<String>())
-                            .setLOC(Integer.parseInt(res.getString("LOC")))
-                            .setSuperclass(res.getString("superclass"))
-                            .setBelongingPackage(new PackageBean.Builder(res.getString("belongingPackage"), res.getString("PtextContent")).build())
-                            .setEnviedPackage(null)
-                            .setEntityClassUsage(Integer.parseInt(res.getString("entityClassUsage")))
-                            .setPathToFile(res.getString("pathToFile"))
-                            .setAffectedSmell()
-                            .build();
+                c = new ClassBean.Builder(res.getString("CfullQualifiedName"), res.getString("CtextContent"))
+                        .setInstanceVariables(new InstanceVariableListProxy(res.getString("CfullQualifiedName")))
+                        .setMethods(new MethodListProxy(res.getString("CfullQualifiedName")))
+                        .setImports(new ArrayList<String>())
+                        .setLOC(Integer.parseInt(res.getString("LOC")))
+                        .setBelongingPackage(new PackageBean.Builder(res.getString("belongingPackage"), res.getString("PtextContent")).build())
+                        .setEnviedPackage(null)
+                        .setEntityClassUsage(Integer.parseInt(res.getString("entityClassUsage")))
+                        .setPathToFile(res.getString("pathToFile"))
+                        .setAffectedSmell();
+
+                if (!res.getString("superclass").equals("")) {
+                    c.setSuperclass(res.getString("superclass"));
                 }
-                classes.add(c);
+
+                classes.add(c.build());
             }
 
             for (ClassBean classe : classes) {
                 sql = "SELECT codeSmellFullQualifiedName, fqn_envied_package, algorithmUsed, indice FROM Classe_SmellType WHERE classBeanFullQualifiedName='" + classe.getFullQualifiedName() + "'";
                 res = selection.executeQuery(sql);
                 while (res.next()) {
-                    if (res.getString("codeSmellFullQualifiedName").equals(CodeSmell.MISPLACED_CLASS)){
-                        CodeSmell m = new MisplacedClassCodeSmell(null,res.getString("algorithmUsed"));
-                        classe.setSimilarity(Double.parseDouble(res.getString("indice")));
-                        classe.addSmell(m);
-                        if(res.getString("fqn_envied_package") != null){
-                            PackageBean enviedPackage = new PackageBean.Builder(res.getString("fqn_envied_package"),"").build();
+                    CodeSmell smell = null;
+                    if (res.getString("codeSmellFullQualifiedName").equals(CodeSmell.MISPLACED_CLASS)) {
+                        smell = new MisplacedClassCodeSmell(null, res.getString("algorithmUsed"));
+                        if (res.getString("fqn_envied_package") != null) {
+                            PackageBean enviedPackage = new PackageBean.Builder(res.getString("fqn_envied_package"), "").build();
                             classe.setEnviedPackage(enviedPackage);
                         }
-
-                    } else if(res.getString("codeSmellFullQualifiedName").equalsIgnoreCase(CodeSmell.BLOB)) {
-                        CodeSmell b = new BlobCodeSmell(null,res.getString("algorithmUsed"));
-                        classe.setSimilarity(Double.parseDouble(res.getString("indice")));
-                        classe.addSmell(b);
+                    } else if (res.getString("codeSmellFullQualifiedName").equalsIgnoreCase(CodeSmell.BLOB)) {
+                        smell = new BlobCodeSmell(null, res.getString("algorithmUsed"));
                     }
+
+                    classe.addSmell(smell);
                 }
             }
 
-            for(ClassBean classBean: classes){
-                if(classBean.getEnviedPackage() != null){
-                    String enviedPackageQuery = "SELECT * FROM PackageBean WHERE fullQualifiedName = '"+classBean.getEnviedPackage().getFullQualifiedName()+"'";
+            for (ClassBean classBean : classes) {
+                if (classBean.getEnviedPackage() != null) {
+                    String enviedPackageQuery = "SELECT * FROM PackageBean WHERE fullQualifiedName = '" + classBean.getEnviedPackage().getFullQualifiedName() + "'";
                     res = selection.executeQuery(enviedPackageQuery);
-                    while (res.next()){
-                        classBean.setEnviedPackage(new PackageBean.Builder(res.getString("fullQualifiedName"),res.getString("textContent")).build());
+                    while (res.next()) {
+                        classBean.setEnviedPackage(new PackageBean.Builder(res.getString("fullQualifiedName"), res.getString("textContent")).build());
                     }
+                }
+
+                for(CodeSmell smell : classBean.getAffectedSmell()){
+                    key = smell.getSmellName() + "-" + classBean.getFullQualifiedName();
+                    sql = "SELECT indice, name FROM Index_CodeSmell WHERE indexId='" + key + "'";
+                    res = selection.executeQuery(sql);
+                    while (res.next()) {
+                        smell.addIndex(res.getString("name"), Double.parseDouble(res.getString("indice")));
+                    }
+
                 }
             }
 

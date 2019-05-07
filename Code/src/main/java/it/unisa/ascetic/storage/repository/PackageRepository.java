@@ -11,10 +11,7 @@ import it.unisa.ascetic.storage.beans.PackageBean;
 import it.unisa.ascetic.storage.sqlite_jdbc_driver_connection.SQLiteConnector;
 
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * repository dedicata ai package
@@ -252,21 +249,40 @@ public class PackageRepository implements PackageBeanRepository {
 
             List<CodeSmell> list = aPackage.getAffectedSmell();
             if (list != null) {
-                sql = "INSERT OR REPLACE INTO Package_SmellType (packageBeanFullQualifiedName,codeSmellFullQualifiedName,algorithmUsed,indice) VALUES (?,?,?,?);";
-                stat = (PreparedStatement) con.prepareStatement(sql);
+                sql = "INSERT OR REPLACE INTO Index_CodeSmell (indexId,indice,name) VALUES (?,?,?);";
+                String sql2 = "INSERT OR REPLACE INTO Package_SmellType (packageBeanFullQualifiedName,codeSmellFullQualifiedName,algorithmUsed,indice) VALUES (?,?,?,?);";
+
+                String key = null;
+                HashMap<String, Double> index = null;
                 for (CodeSmell smell : list) {
+                    key = smell.getSmellName() + "-" + aPackage.getFullQualifiedName();
+                    stat = (PreparedStatement) con.prepareStatement(sql);
+
+                    index = smell.getIndex();
+                    for (String s : index.keySet()) {
+                        stat.setString(1, key);
+                        stat.setString(2, String.valueOf(index.get(s)));
+                        stat.setString(3, s);
+
+                        stat.executeUpdate();
+                    }
+
+                    stat = (PreparedStatement) con.prepareStatement(sql2);
+
                     stat.setString(1, aPackage.getFullQualifiedName());
                     stat.setString(2, smell.getSmellName());
                     stat.setString(3, smell.getAlgoritmsUsed());
-                    stat.setString(4, String.valueOf(aPackage.getSimilarity()));
+                    stat.setString(4, key);
                     stat.executeUpdate();
+
                 }
             }
-
             con.commit();
             stat.close();
             SQLiteConnector.releaseConnection(con);
-        } catch (SQLException e) {
+
+        } catch (
+                SQLException e) {
             try {
                 con.rollback();
             } catch (SQLException ex) {
@@ -328,6 +344,7 @@ public class PackageRepository implements PackageBeanRepository {
         final List<PackageBean> packages = new ArrayList<PackageBean>();
         final SQLiteCriterion sqlCriterion = (SQLiteCriterion) criterion;//oggetto che istanzia la query per la selezione
         try {
+            String key = null;
             String sql = sqlCriterion.toSQLquery();
             Statement selection = con.createStatement();
             res = selection.executeQuery(sql);
@@ -344,9 +361,19 @@ public class PackageRepository implements PackageBeanRepository {
                 sql = "SELECT packageBeanFullQualifiedName, algorithmUsed, indice FROM Package_SmellType WHERE packageBeanFullQualifiedName='" + pack.getFullQualifiedName() + "'";
                 res = selection.executeQuery(sql);
                 while (res.next()) {
-                    CodeSmell pp = new PromiscuousPackageCodeSmell(null, res.getString("algorithmUsed"));
-                    pack.setSimilarity(Double.parseDouble(res.getString("indice")));
-                    pack.addSmell(pp);
+                    CodeSmell smell = new PromiscuousPackageCodeSmell(null, res.getString("algorithmUsed"));
+                    pack.addSmell(smell);
+                }
+            }
+
+            for (PackageBean pack : packages) {
+                for (CodeSmell smell : pack.getAffectedSmell()) {
+                    key = smell.getSmellName() + "-" + pack.getFullQualifiedName();
+                    sql = "SELECT indice, name FROM Index_CodeSmell WHERE indexId='" + key + "'";
+                    res = selection.executeQuery(sql);
+                    while (res.next()) {
+                        smell.addIndex(res.getString("name"), Double.parseDouble(res.getString("indice")));
+                    }
                 }
             }
 

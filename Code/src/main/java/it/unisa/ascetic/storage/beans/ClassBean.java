@@ -24,7 +24,7 @@ public class ClassBean implements ComparableBean, Comparable {
     private int entityClassUsage; // numero di getter e setter presenti nella classe
     private String pathToFile; // path del file della classe
     private List<CodeSmell> affectedSmell; // lista di code smell presenti nella classe
-    private double similarity;
+    private double similarity; //somiglianza generata durante l'analisi con altre classi
 
     /**
      * Costruttore
@@ -262,7 +262,6 @@ public class ClassBean implements ComparableBean, Comparable {
      */
     public void addSmell(CodeSmell smell) {
         if (affectedSmell != null) {
-            smell.setIndex(this.similarity);
             affectedSmell.add(smell);
         }
     }

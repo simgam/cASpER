@@ -9,6 +9,7 @@ import it.unisa.ascetic.structuralMetrics.CKMetrics;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.regex.Pattern;
 
@@ -71,9 +72,8 @@ public class StructuralFeatureEnvyStrategy implements MethodSmellDetectionStrate
 
             ClassBean firstRankedClass = dependenciesWithMethod.get(dependenciesWithMethod.size() - 1);
 
-            if (numberOfDependenciesWithActualClass <= firstRankedClass.getSimilarity() && firstRankedClass.getSimilarity()!=0) {
+            if (numberOfDependenciesWithActualClass <= firstRankedClass.getSimilarity() && firstRankedClass.getSimilarity() != 0) {
                 pMethod.setEnviedClass(firstRankedClass);
-                pMethod.setIndex(firstRankedClass.getSimilarity());
                 return true;
             }
         }
@@ -105,5 +105,12 @@ public class StructuralFeatureEnvyStrategy implements MethodSmellDetectionStrate
             return true;
         }
         return false;
+    }
+
+    public HashMap<String, Double> getThresold(MethodBean pMethod) {
+        HashMap<String, Double> list = new HashMap<String, Double>();
+        list.put("dipendenza", CKMetrics.getNumberOfDependencies(pMethod, pMethod.getEnviedClass()));
+
+        return list;
     }
 }

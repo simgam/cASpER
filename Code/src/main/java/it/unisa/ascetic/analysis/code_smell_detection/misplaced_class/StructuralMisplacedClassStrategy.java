@@ -8,6 +8,7 @@ import it.unisa.ascetic.structuralMetrics.CKMetrics;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 
 
@@ -56,13 +57,18 @@ public class StructuralMisplacedClassStrategy implements ClassSmellDetectionStra
 
         PackageBean firstRankedPackage = dependenciesWithClass.get(dependenciesWithClass.size() - 1);
         pClass.setSimilarity(numberOfDependenciesWithActualPackage);
-        if (numberOfDependenciesWithActualPackage <= firstRankedPackage.getSimilarity() && firstRankedPackage.getSimilarity()!=0) {
+        if (numberOfDependenciesWithActualPackage <= firstRankedPackage.getSimilarity() && firstRankedPackage.getSimilarity() != 0) {
             pClass.setEnviedPackage(firstRankedPackage);
-            pClass.setSimilarity(firstRankedPackage.getSimilarity());
             return true;
         } else {
             return false;
         }
     }
 
+    public HashMap<String, Double> getThresold(ClassBean pClass) {
+        HashMap<String, Double> list = new HashMap<String, Double>();
+        list.put("dipendenza", CKMetrics.getNumberOfDependencies(pClass, pClass.getEnviedPackage()));
+
+        return list;
+    }
 }

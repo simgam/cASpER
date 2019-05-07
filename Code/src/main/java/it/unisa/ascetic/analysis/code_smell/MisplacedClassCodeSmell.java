@@ -6,7 +6,6 @@ import it.unisa.ascetic.storage.beans.ClassBean;
 /**
  * Classe concreta che istanzia lo smell "Misplaced Class"
  */
-
 public class MisplacedClassCodeSmell extends ClassLevelCodeSmell {
 
     /**
@@ -28,6 +27,7 @@ public class MisplacedClassCodeSmell extends ClassLevelCodeSmell {
      */
     public boolean affects(ClassBean aClass) {
         if (detectionStrategy.isSmelly(aClass)) {
+            this.setIndex(detectionStrategy.getThresold(aClass));
             aClass.addSmell(this);
             return true;
         }

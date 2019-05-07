@@ -16,7 +16,7 @@ public class PackageBean implements ComparableBean, Comparable {
     private String textContent; // obbligatorio contenuto testuale del package
     public ClassBeanList classes; // lista delle classi appartenenti al metodo
     private List<CodeSmell> affectedSmell; // lista di smell di cui è affetto il package
-    private double similarity;
+    private double similarity; //somiglianza generata durante l'analisi con altri package
 
     /**
      * costruttore
@@ -107,7 +107,6 @@ public class PackageBean implements ComparableBean, Comparable {
      */
     public void addSmell(CodeSmell smell) {
         if (affectedSmell != null) {
-            smell.setIndex(this.similarity);
             this.affectedSmell.add(smell);
         }
     }

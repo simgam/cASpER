@@ -6,6 +6,7 @@ import it.unisa.ascetic.storage.beans.ClassBean;
 import it.unisa.ascetic.storage.beans.PackageBean;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map.Entry;
 import java.util.SortedMap;
@@ -49,18 +50,37 @@ public class TextualMisplacedClassStrategy implements ClassSmellDetectionStrateg
         }
         Entry<PackageBean, Double> firstRankedPackage = similaritiesWithClass.entrySet().iterator().next();
 
-        if (firstRankedPackage.getKey().getFullQualifiedName().equals(pClass.getBelongingPackage().getFullQualifiedName()) || (firstRankedPackage.getValue() < soglia && soglia>0.5)) {
+        if (firstRankedPackage.getKey().getFullQualifiedName().equals(pClass.getBelongingPackage().getFullQualifiedName()) || (firstRankedPackage.getValue() < soglia && soglia > 0.5)) {
             return false;
         }
         pClass.setEnviedPackage(firstRankedPackage.getKey());
 
-        if (firstRankedPackage.getValue() < soglia && soglia<=0.5) {
+        if (firstRankedPackage.getValue() < soglia && soglia <= 0.5) {
             pClass.setSimilarity(soglia);
         } else {
             pClass.setSimilarity(firstRankedPackage.getValue());
         }
 
         return true;
+    }
+
+    public HashMap<String, Double> getThresold(ClassBean pClass) {
+        HashMap<String, Double> list = new HashMap<String, Double>();
+
+        String[] document1 = new String[2];
+        document1[0] = "class";
+        document1[1] = pClass.getTextContent();
+
+        String[] document2 = new String[2];
+        document2[0] = "package";
+        document2[1] = pClass.getEnviedPackage().getTextContent();
+        try {
+            CosineSimilarity cosineSimilarity = new CosineSimilarity();
+            list.put("coseno", cosineSimilarity.computeSimilarity(document1, document2));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return list;
     }
 
 }

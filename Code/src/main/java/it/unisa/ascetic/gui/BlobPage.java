@@ -30,9 +30,7 @@ public class BlobPage extends DialogWrapper {
     private List<ClassBean> splittedClasses;    //lista di classi splittate
 
     private Project project;
-
     private JTextPane area;                     //area di testo dove viene mostrato in dettaglio il codice del CodeSmell selezionato
-
     private JPanel contentPanel;                //panel che raggruppa tutti gli elementi
     private JPanel panelRadarMapMaster;         //panel che ingloba la radar map
     private JPanel panelRadarMap;
@@ -41,7 +39,6 @@ public class BlobPage extends DialogWrapper {
     private JPanel panelWest;                   //panel che raggruppa gli elementi a sinistra
     private JPanel panelEast;                   //panel che raggruppa gli elementi a destra
     private JPanel panelGrid2;                  //panel inserito nella seconda cella del gridLayout
-
     private JBTable table;                      //tabella dove sono visualizzati i codeSmell
 
     private boolean errorOccured;               //serve per determinare se qualcosa è andato storto
@@ -131,7 +128,7 @@ public class BlobPage extends DialogWrapper {
         app.add(scroll, BorderLayout.CENTER);
         contentPanel.add(app);
 
-        contentPanel.setPreferredSize(new Dimension(1050, 800));
+        contentPanel.setPreferredSize(new Dimension(1050, 900));
 
         return contentPanel;
     }
@@ -146,19 +143,23 @@ public class BlobPage extends DialogWrapper {
             @Override
             protected void doAction(ActionEvent actionEvent) {
 
+                message = "Something went wrong in computing solution";
                 ProgressManager.getInstance().runProcessWithProgressSynchronously(() -> {
                     try {
                         splittedClasses = (List<ClassBean>) new SplitClasses().split(classBeanBlob, 0.09);
+
+                        if (splittedClasses.size() == 1) {
+                            message += "\nIt is not possible to split the class without introducing new smell";
+                            errorOccured = true;
+                        }
                     } catch (Exception e) {
-                        errorOccured = false;
+                        errorOccured = true;
                     }
                 }, "Blob", false, project);
 
                 if (errorOccured) {
-                    message = "Something went wrong in computing solution";
                     Messages.showMessageDialog(message, "Oh!No!", Messages.getErrorIcon());
                 } else {
-
                     BlobWizard blobWizardMock = new BlobWizard(classBeanBlob, splittedClasses, project);
                     blobWizardMock.show();
                     close(0);

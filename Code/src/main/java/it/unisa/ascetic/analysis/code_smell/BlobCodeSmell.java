@@ -27,6 +27,7 @@ public class BlobCodeSmell extends ClassLevelCodeSmell {
      */
     public boolean affects(ClassBean aClass) {
         if (detectionStrategy.isSmelly(aClass)) {
+            this.setIndex(detectionStrategy.getThresold(aClass));
             aClass.addSmell(this);
             return true;
         }

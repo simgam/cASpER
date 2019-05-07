@@ -2,6 +2,8 @@ package it.unisa.ascetic.analysis.code_smell;
 
 import it.unisa.ascetic.analysis.code_smell_detection.strategy.CodeSmellDetectionStrategy;
 
+import java.util.HashMap;
+
 /**
  * Classe astratta dell'oggetto CodeSmell, necessario per tenere traccia nel database dei code smell
  * individuati durante l'analisi del codice
@@ -22,7 +24,7 @@ public abstract class CodeSmell<T> {
     protected String smellName;
     protected CodeSmellDetectionStrategy detectionStrategy;
     protected String algoritmsUsed;
-    protected double index;
+    protected HashMap<String, Double> index;
 
     /**
      * Costruttore
@@ -35,6 +37,7 @@ public abstract class CodeSmell<T> {
         this.smellName = name;
         this.detectionStrategy = detectionStrategy;
         this.algoritmsUsed = algoritmsUsed;
+        index = new HashMap<String, Double>();
     }
 
     /**
@@ -75,18 +78,37 @@ public abstract class CodeSmell<T> {
     /**
      * getter
      *
-     * @return double corrispondente all'index dell'algoritmo usato
+     * @return HashMap<String, Double> lista di double corrispondente agli indici ottenuti dall'algoritmo usato
      */
-    public double getIndex() {
+    public HashMap<String, Double> getIndex() {
         return index;
     }
 
     /**
      * setter
      *
-     * @param double corrispondente all'index dell'algoritmo usato
+     * @param String key corrispondente all'indice da inserire
+     * @param double index corrispondente all'indice ottenute dall'algoritmo usato
      */
-    public void setIndex(double index) {
+    public void addIndex(String key, double indice) {
+        index.put(key, indice);
+    }
+
+    /**
+     * setter
+     *
+     * @param String key corrispondente all'indice da eliminare
+     */
+    public void removeIndex(String key) {
+        index.remove(key);
+    }
+
+    /**
+     * setter
+     *
+     * @param HashMap<String, Double>  lista di double corrispondente agli indici da settare
+     */
+    public void setIndex(HashMap<String, Double>  index) {
         this.index = index;
     }
 
