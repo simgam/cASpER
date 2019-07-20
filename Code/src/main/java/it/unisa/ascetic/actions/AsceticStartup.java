@@ -5,14 +5,13 @@ import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 
-public class AsceticStartup implements ApplicationComponent {
+public class AsceticStartup {
 
     @NotNull
     public String getComponentName() {
         return "Ascetic";
     }
 
-    @Override
     public void initComponent() {
         StringBuilder dir = new StringBuilder();
         dir.append(System.getProperty("user.home"));

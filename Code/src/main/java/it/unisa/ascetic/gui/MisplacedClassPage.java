@@ -142,7 +142,6 @@ public class MisplacedClassPage extends DialogWrapper {
         tableContainer.add(new JScrollPane(table));
         tableContainer.setBorder(new TitledBorder("Metrics"));
         table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
-        //table.setFillsViewportHeight(true);
     }
 
     @NotNull
@@ -155,7 +154,6 @@ public class MisplacedClassPage extends DialogWrapper {
                 MisplacedClassWizard misplacedClassWizard = new MisplacedClassWizard(misplacedClassBean, project);
                 misplacedClassWizard.show();
                 close(0);
-                //Messages.showMessageDialog("AVVIA REFACTORING PANEL","HA",Messages.getInformationIcon());
             }
         };
 

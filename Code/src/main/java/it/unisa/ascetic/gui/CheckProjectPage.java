@@ -23,6 +23,9 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -459,6 +462,12 @@ public class CheckProjectPage extends DialogWrapper {
                 } catch (ArrayIndexOutOfBoundsException ex) {
                     String message = "Seleziona un elemento";
                     Messages.showMessageDialog(message, "Warning", Messages.getWarningIcon());
+                }
+
+                File f = new File(System.getProperty("user.home") + File.separator + ".ascetic" + File.separator + "refactoring.txt");
+                if (f.exists()) {
+                    f.delete();
+                    close(0);
                 }
             }
         };

@@ -66,9 +66,7 @@ public class SystemStart {
                         algoritmo = list[4];
                     }
                 }
-                ;
             }
-            ;
         } catch (Exception e) {
             try {
                 FileWriter f = new FileWriter(System.getProperty("user.home") + File.separator + ".ascetic" + File.separator + "threshold.txt");
@@ -82,7 +80,6 @@ public class SystemStart {
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
-            ;
             minC = 0.5;
             sogliaStructural.add(0);
             sogliaStructural.add(350);

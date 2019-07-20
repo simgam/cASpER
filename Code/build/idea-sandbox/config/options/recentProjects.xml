@@ -2,67 +2,54 @@
   <component name="RecentProjectsManager">
     <option name="recentPaths">
       <list>
-        <option value="$USER_HOME$/Desktop/prova/ProgettiTest" />
-        <option value="D:/Documenti/FSstore" />
-        <option value="$USER_HOME$/Desktop/p/ProgettiTest" />
-        <option value="D:/Documenti/UNISA/Ascetic/ProgettiTest" />
+        <option value="$USER_HOME$/Desktop/TestAscetic/ProgettiTest" />
+        <option value="$USER_HOME$/Desktop/TestAscetic" />
+        <option value="$USER_HOME$/Desktop/test per algo" />
       </list>
     </option>
     <option name="openPaths">
       <list>
-        <option value="$USER_HOME$/Desktop/prova/ProgettiTest" />
+        <option value="$USER_HOME$/Desktop/TestAscetic/ProgettiTest" />
       </list>
     </option>
-    <option name="lastPath" value="$USER_HOME$/Desktop/prova/ProgettiTest" />
+    <option name="lastPath" value="$USER_HOME$/Desktop/TestAscetic/ProgettiTest" />
     <option name="pid" value="" />
     <option name="additionalInfo">
       <map>
-        <entry key="$USER_HOME$/Desktop/p/ProgettiTest">
+        <entry key="$USER_HOME$/Desktop/TestAscetic">
           <value>
             <RecentProjectMetaInfo>
               <option name="build" value="IC-181.4892.42" />
               <option name="productionCode" value="IC" />
               <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
-              <option name="projectOpenTimestamp" value="1554241675491" />
-              <option name="buildTimestamp" value="1525762671601" />
+              <option name="projectOpenTimestamp" value="1563569027376" />
+              <option name="buildTimestamp" value="1525762652849" />
             </RecentProjectMetaInfo>
           </value>
         </entry>
-        <entry key="$USER_HOME$/Desktop/prova/ProgettiTest">
+        <entry key="$USER_HOME$/Desktop/TestAscetic/ProgettiTest">
           <value>
             <RecentProjectMetaInfo>
               <option name="build" value="IC-181.4892.42" />
               <option name="productionCode" value="IC" />
               <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
-              <option name="projectOpenTimestamp" value="1557244085693" />
-              <option name="buildTimestamp" value="1525762657339" />
+              <option name="projectOpenTimestamp" value="1563654096939" />
+              <option name="buildTimestamp" value="1525762631715" />
             </RecentProjectMetaInfo>
           </value>
         </entry>
-        <entry key="D:/Documenti/FSstore">
+        <entry key="$USER_HOME$/Desktop/test per algo">
           <value>
             <RecentProjectMetaInfo>
               <option name="build" value="IC-181.4892.42" />
               <option name="productionCode" value="IC" />
               <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
-              <option name="projectOpenTimestamp" value="1555172292133" />
-              <option name="buildTimestamp" value="1525762626229" />
-            </RecentProjectMetaInfo>
-          </value>
-        </entry>
-        <entry key="D:/Documenti/UNISA/Ascetic/ProgettiTest">
-          <value>
-            <RecentProjectMetaInfo>
-              <option name="build" value="IC-181.4892.42" />
-              <option name="productionCode" value="IC" />
-              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
-              <option name="projectOpenTimestamp" value="1554235654896" />
-              <option name="buildTimestamp" value="1525762671601" />
+              <option name="projectOpenTimestamp" value="1563568942848" />
+              <option name="buildTimestamp" value="1525762652849" />
             </RecentProjectMetaInfo>
           </value>
         </entry>
       </map>
     </option>
-    <option name="lastProjectLocation" value="D:/Documenti" />
   </component>
 </application>

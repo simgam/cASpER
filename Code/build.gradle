@@ -13,6 +13,8 @@ repositories {
 }
 
 dependencies {
+    // https://mvnrepository.com/artifact/org.jfree/jcommon
+    compile group: 'org.jfree', name: 'jcommon', version: '1.0.17'
     // https://mvnrepository.com/artifact/org.apache.lucene/lucene-core
     compile group: 'org.apache.lucene', name: 'lucene-core', version: '7.6.0'
     // https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc

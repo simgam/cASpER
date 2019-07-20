@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conversion>
+  <applied-converters>
+    <converter id="android-module-to-java-module" />
+    <converter id="android-proguard-options" />
+    <converter id="android-sdk-library" />
+    <converter id="groovy-modules-to-facets" />
+    <converter id="groovy-script-run-configurations" />
+    <converter id="junit-to-android-junit-configurations" />
+  </applied-converters>
+  <project-files>
+    <file path="C:\Users\Simone\Desktop\TestAscetic\.idea\misc.xml" timestamp="1563568680038" />
+    <file path="C:\Users\Simone\Desktop\TestAscetic\.idea\vcs.xml" timestamp="1563568701491" />
+    <file path="C:\Users\Simone\Desktop\TestAscetic\.idea\workspace.xml" timestamp="1563569027362" />
+  </project-files>
+</conversion>
+

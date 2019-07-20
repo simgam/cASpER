@@ -1,5 +1,6 @@
 package it.unisa.ascetic.gui;
 
+import com.intellij.openapi.ui.ComboBox;
 import com.intellij.openapi.ui.DialogWrapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -20,19 +21,20 @@ public class ConfigureThreshold extends DialogWrapper {
 
     private JComboBox<String> algorith;
 
+    private HashMap<String, JPanel> livelli;
     private static ArrayList<String> smell;
-    private JPanel contentPane;
-    private JPanel centerPanel;
     private JCheckBox standard;
     private HashMap<String, JSlider> sogliaT;
     private HashMap<String, JTextField> coseno;
     private HashMap<String, JTextField> dipendenze;
-    private JPanel scelta;
     private JPanel app;
 
+    private static HashMap<String, Double> cosStandard;
+    private static HashMap<String, Integer> dipendenceStandard;
     private static HashMap<String, Double> cos;
     private static HashMap<String, Integer> dipendence;
     private static String algoritmi;
+    private static JPanel slider, app2;
 
     public ConfigureThreshold() {
         super(true);
@@ -50,11 +52,37 @@ public class ConfigureThreshold extends DialogWrapper {
     @Override
     protected JComponent createCenterPanel() {
 
+        cosStandard = new HashMap<String, Double>();
+        dipendenceStandard = new HashMap<String, Integer>();
         cos = new HashMap<String, Double>();
         dipendence = new HashMap<String, Integer>();
-
+        livelli = new HashMap<String, JPanel>();
+        JPanel primo, secondo;
         JLabel textual, structural;
-        boolean set = true;
+        sogliaT = new HashMap<String, JSlider>();
+        coseno = new HashMap<String, JTextField>();
+        dipendenze = new HashMap<String, JTextField>();
+
+        cosStandard.put("cosenoFeature envy", 0.5);
+        cosStandard.put("cosenoMisplaced class", 0.0);
+        cosStandard.put("cosenoBlob", 0.5);
+        cosStandard.put("cosenoPromiscuous package", 0.5);
+        dipendenceStandard.put("dipendenzaFeature envy", 0);
+        dipendenceStandard.put("dipendenzaMisplaced class", 0);
+        dipendenceStandard.put("dipendenzaBlob", 350);
+        dipendenceStandard.put("dipendenzaBlob2", 20);
+        dipendenceStandard.put("dipendenzaBlob3", 500);
+        Boolean set = true;
+
+        JPanel contentPane = new JPanel();
+        contentPane.setPreferredSize(new Dimension(1200, 500));
+        contentPane.setLayout(new BorderLayout(0, 0));
+
+        JPanel centerPanel = new JPanel();
+
+        centerPanel.setLayout(new BoxLayout(centerPanel, BoxLayout.Y_AXIS));
+        contentPane.add(centerPanel, BorderLayout.CENTER);
+
         try {
             FileReader f = new FileReader(System.getProperty("user.home") + File.separator + ".ascetic" + File.separator + "threshold.txt");
             BufferedReader b = new BufferedReader(f);
@@ -64,136 +92,43 @@ public class ConfigureThreshold extends DialogWrapper {
                 list = b.readLine().split(",");
                 cos.put("coseno" + s, Double.parseDouble(list[0]));
                 if (!s.equalsIgnoreCase("promiscuous package")) {
-                    dipendence.put("dip" + s, Integer.parseInt(list[1]));
+                    dipendence.put("dipendenza" + s, Integer.parseInt(list[1]));
                     if (!s.equalsIgnoreCase("blob")) {
                         algoritmi = list[2];
                     } else {
-                        dipendence.put("dip" + s + "2", Integer.parseInt(list[2]));
-                        dipendence.put("dip" + s + "3", Integer.parseInt(list[3]));
+                        dipendence.put("dipendenza" + s + "2", Integer.parseInt(list[2]));
+                        dipendence.put("dipendenza" + s + "3", Integer.parseInt(list[3]));
                         algoritmi = list[4];
                     }
                 }
-                ;
+
                 if (!(Double.parseDouble(list[0]) == 0.5 || (s.equalsIgnoreCase("misplaced class") && Double.parseDouble(list[0]) == 0.0)) || !((!s.equalsIgnoreCase("blob") && Integer.parseInt(list[1]) == 0) || (s.equalsIgnoreCase("blob") && (Integer.parseInt(list[1]) == 350) && (Integer.parseInt(list[2]) == 20) && (Integer.parseInt(list[3]) == 500))) || !algoritmi.equalsIgnoreCase("all")) {
                     set = false;
                 }
-                ;
             }
         } catch (Exception e) {
-            reset();
+            reset(cosStandard, dipendenceStandard);
         }
-        contentPane = new JPanel();
-        contentPane.setPreferredSize(new Dimension(1200, 500));
-        contentPane.setLayout(new BorderLayout(0, 0));
-
-        centerPanel = new JPanel();
-
-        centerPanel.setLayout(new BoxLayout(centerPanel, BoxLayout.Y_AXIS));
-        contentPane.add(centerPanel, BorderLayout.CENTER);
-
-        JPanel livelli;
-        JPanel primo, secondo;
-        sogliaT = new HashMap<String, JSlider>();
-        coseno = new HashMap<String, JTextField>();
-        dipendenze = new HashMap<String, JTextField>();
-        JPanel slider, app2;
 
         for (String s : smell) {
-            livelli = new JPanel();
-            livelli.setLayout(new BoxLayout(livelli, BoxLayout.Y_AXIS));
+            livelli.put(s, new JPanel());
+            livelli.get(s).setLayout(new BoxLayout(livelli.get(s), BoxLayout.Y_AXIS));
             primo = new JPanel();
             secondo = new JPanel();
 
-            livelli.add(primo);
             primo.setLayout(new GridLayout(0, 2, 0, 0));
 
             textual = new JLabel("Soglia algoritmi testuale:");
             textual.setHorizontalAlignment(SwingConstants.CENTER);
             primo.add(textual);
-
             app = new JPanel();
-            slider = new JPanel();
-            slider.setLayout(new BoxLayout(slider, BoxLayout.X_AXIS));
-            app2 = new JPanel();
-            app.setLayout(new GridLayout(0, 2, 0, 0));
-            slider.add(new JLabel("Coseno ="));
-            sogliaT.put("soglia" + s, new JSlider());
-            sogliaT.get("soglia" + s).setForeground(Color.WHITE);
-            sogliaT.get("soglia" + s).setFont(new Font("Arial", Font.PLAIN, 12));
-            sogliaT.get("soglia" + s).setToolTipText("");
-            sogliaT.get("soglia" + s).setPaintTicks(true);
-            sogliaT.get("soglia" + s).setValue((int) (cos.get("coseno" + s) * 100));
-            sogliaT.get("soglia" + s).setMinorTickSpacing(10);
-            sogliaT.get("soglia" + s).setMinimum(0);
-            slider.add(sogliaT.get("soglia" + s));
-            app.add(slider);
 
-            coseno.put("coseno" + s, new JTextField());
-            coseno.get("coseno" + s).setText(cos.get("coseno" + s) + "");
-            if (s.equalsIgnoreCase("misplaced class")) {
-                coseno.get("coseno" + s).setToolTipText("Tale soglia verra' successivamente riportata nell'intervallo [0-1]");
-            }
-            coseno.get("coseno" + s).setColumns(10);
-            app2.add(coseno.get("coseno" + s));
-            app.add(app2);
+            addFieldTextual("coseno" + s);
             primo.add(app);
-            livelli.add(primo);
-
-            sogliaT.get("soglia" + s).addChangeListener(new ChangeListener() {
-                public void stateChanged(ChangeEvent event) {
-                    JSlider t = (JSlider) event.getSource();
-                    String corrente = null;
-                    Iterator<String> list = sogliaT.keySet().iterator();
-                    while (list.hasNext() && !sogliaT.get(corrente = list.next()).equals(t)) {
-                    }
-                    corrente = corrente.replace("soglia", "coseno");
-                    coseno.get(corrente).setText(String.valueOf(((double) t.getValue()) / 100));
-                    standard.setSelected(false);
-                    cos.put(corrente, (double) t.getValue() / 100);
-                }
-            });
-            coseno.get("coseno" + s).setToolTipText("Inserire valore tra [0-1]");
-            coseno.get("coseno" + s).addActionListener(new ActionListener() {
-                public void actionPerformed(ActionEvent c) {
-                    try {
-                        JTextField t = (JTextField) c.getSource();
-                        double valore = Double.parseDouble(t.getText());
-                        Iterator<String> list = coseno.keySet().iterator();
-                        String corrente = null;
-                        while (list.hasNext() && !coseno.get(corrente = list.next()).equals(t)) {
-                        }
-                        corrente = corrente.replace("coseno", "");
-
-                        if (valore >= 0.0 && valore <= 1.0) {
-                            sogliaT.get("soglia" + corrente).setValue((int) (valore * 100));
-                        } else {
-                            if (valore < 0.0) {
-                                sogliaT.get("soglia" + corrente).setValue(0);
-                                t.setText(0.0 + "");
-                            } else {
-                                if (valore > 1.0) {
-                                    sogliaT.get("soglia" + corrente).setValue(100);
-                                    t.setText(1.0 + "");
-                                } else {
-                                    sogliaT.get("soglia" + corrente).setValue((int) valore);
-                                    t.setText(valore + "");
-                                }
-                            }
-                            ;
-                        }
-                        if (valore != 0.5 || (corrente.equalsIgnoreCase("misplaced class") && valore != 0.0)) {
-                            standard.setSelected(false);
-                        }
-                        ;
-                        cos.put(corrente, Double.parseDouble(coseno.get("coseno" + corrente).getText()));
-                    } catch (NumberFormatException e) {
-                        JOptionPane.showMessageDialog(null, "Inserire valori decimali con \".\" [0-1]", "", JOptionPane.WARNING_MESSAGE);
-                    }
-                }
-            });
+            livelli.get(s).add(primo);
 
             if (!s.equalsIgnoreCase("promiscuous package")) {
-                livelli.add(secondo);
+                livelli.get(s).add(secondo);
 
                 secondo.setLayout(new GridLayout(0, 2, 0, 0));
 
@@ -207,24 +142,24 @@ public class ConfigureThreshold extends DialogWrapper {
                 } else {
                     app.add(new JLabel("LCOM ="));
                 }
-                addFieldStructural(s);
+                addFieldStructural("dipendenza" + s);
 
                 if (s.equalsIgnoreCase("Blob")) {
                     app.add(new JLabel("FeatureSum ="));
-                    addFieldStructural(s + "2");
+                    addFieldStructural("dipendenza" + s + "2");
                     app.add(new JLabel("ELOC ="));
-                    addFieldStructural(s + "3");
+                    addFieldStructural("dipendenza" + s + "3");
                 }
                 secondo.add(app);
             }
 
-            livelli.setBorder(new TitledBorder(s));
-            centerPanel.add(livelli);
+            livelli.get(s).setBorder(new TitledBorder(s));
+            centerPanel.add(livelli.get(s));
         }
 
-        scelta = new JPanel();
+        JPanel scelta = new JPanel();
         app = new JPanel();
-        algorith = new JComboBox<String>();
+        algorith = new ComboBox<>();
         algorith.addItem("All");
         algorith.addItem("Textual");
         algorith.addItem("Structural");
@@ -249,33 +184,22 @@ public class ConfigureThreshold extends DialogWrapper {
             }
         });
 
-        standard.setSelected(set);
         standard.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent a) {
-                for (JSlider slider : sogliaT.values()) {
-                    slider.setEnabled(true);
-                    slider.setValue(50);
+
+                if (!standard.isSelected()) {
+                    reset(cos, dipendence);
+                    standard.setSelected(false);
+                } else {
+                    stato();
+                    reset(cosStandard, dipendenceStandard);
+                    standard.setSelected(true);
                 }
-                for (JTextField c : coseno.values()) {
-                    c.setEnabled(true);
-                    c.setText("0.5");
-                }
-                for (JTextField d : dipendenze.values()) {
-                    d.setEnabled(true);
-                    d.setText("0");
-                }
-                sogliaT.get("sogliaMisplaced class").setValue(0);
-                coseno.get("cosenoMisplaced class").setText("0");
-                dipendenze.get("dipendenzaBlob").setText("350");
-                dipendenze.get("dipendenzaBlob2").setText("20");
-                dipendenze.get("dipendenzaBlob3").setText("500");
-                algorith.setSelectedIndex(0);
-                standard.setSelected(true);
-                reset();
             }
         });
 
+        standard.setSelected(set);
         sotto.add(standard);
         contentPane.add(sotto, BorderLayout.SOUTH);
 
@@ -299,7 +223,7 @@ public class ConfigureThreshold extends DialogWrapper {
             @Override
             protected void doAction(ActionEvent actionEvent) {
                 try {
-                    FileReader f = new FileReader(System.getProperty("user.home") + File.separator + ".ascetic" + File.separator + "threshold.txt");
+                    new FileReader(System.getProperty("user.home") + File.separator + ".ascetic" + File.separator + "threshold.txt");
                 } catch (Exception e) {
                     scrivi();
                 } finally {
@@ -310,41 +234,134 @@ public class ConfigureThreshold extends DialogWrapper {
         return new Action[]{okAction, exitAction};
     }
 
-    private void reset() {
-        for (String s : smell) {
-            if (!s.equalsIgnoreCase("misplaced class")) {
-                cos.put("coseno" + s, 0.5);
+    private void reset(HashMap<String, Double> valoriCos, HashMap<String, Integer> valoriDip) {
+        for (String k : sogliaT.keySet()) {
+            sogliaT.get(k).setVisible(true);
+            if (k.equals("sogliaMisplaced class")) {
+                sogliaT.get(k).setValue((int) (valoriCos.get(k) * 100));
             } else {
-                cos.put("coseno" + s, 0.0);
-            }
-            if (!s.equalsIgnoreCase("blob")) {
-                dipendence.put("dip" + s, 0);
-            } else {
-                dipendence.put("dip" + s, 350);
+                sogliaT.get(k).setValue((int) (valoriCos.get(k) * 100));
             }
         }
-        dipendence.put("dipBlob2", 20);
-        dipendence.put("dipBlob3", 500);
+        for (String k : coseno.keySet()) {
+            coseno.get(k).setVisible(true);
+            if (k.equals("cosenoMisplaced class")) {
+                coseno.get(k).setText(valoriCos.get(k) + "");
+            } else {
+                coseno.get(k).setText(valoriCos.get(k) + "");
+            }
+        }
+        for (String k : dipendenze.keySet()) {
+            dipendenze.get(k).setVisible(true);
+            if (k.contains("dipendenzaBlob")) {
+                dipendenze.get("dipendenzaBlob").setText(valoriDip.get("dipendenzaBlob") + "");
+                dipendenze.get("dipendenzaBlob2").setText(valoriDip.get("dipendenzaBlob2") + "");
+                dipendenze.get("dipendenzaBlob3").setText(valoriDip.get("dipendenzaBlob3") + "");
+            } else {
+                dipendenze.get(k).setText(valoriDip.get(k) + "");
+            }
+        }
+
+        algorith.setSelectedIndex(0);
         algoritmi = "All";
     }
 
+    private void addFieldTextual(String name) {
+        slider = new JPanel();
+        slider.setLayout(new BoxLayout(slider, BoxLayout.X_AXIS));
+        app2 = new JPanel();
+        app.setLayout(new GridLayout(0, 2, 0, 0));
+        slider.add(new JLabel("Coseno ="));
+        sogliaT.put(name, new JSlider());
+        sogliaT.get(name).setForeground(Color.WHITE);
+        sogliaT.get(name).setFont(new Font("Arial", Font.PLAIN, 12));
+        sogliaT.get(name).setToolTipText("");
+        sogliaT.get(name).setPaintTicks(true);
+        sogliaT.get(name).setValue((int) (cos.get(name) * 100));
+        sogliaT.get(name).setMinorTickSpacing(10);
+        sogliaT.get(name).setMinimum(0);
+        slider.add(sogliaT.get(name));
+        app.add(slider);
+
+        coseno.put(name, new JTextField());
+        coseno.get(name).setText(cos.get(name) + "");
+        if (name.equalsIgnoreCase("misplaced class")) {
+            coseno.get(name).setToolTipText("Tale coseno verra' successivamente riportata nell'intervallo [0-1]");
+        }
+        coseno.get(name).setColumns(10);
+        app2.add(coseno.get(name));
+        app.add(app2);
+
+        sogliaT.get(name).addChangeListener(new ChangeListener() {
+            public void stateChanged(ChangeEvent event) {
+                JSlider t = (JSlider) event.getSource();
+                String corrente = null;
+                Iterator<String> list = sogliaT.keySet().iterator();
+                while (list.hasNext() && !sogliaT.get(corrente = list.next()).equals(t)) {
+                }
+                coseno.get(corrente).setText(String.valueOf(((double) t.getValue()) / 100));
+                if (t.getValue() != cosStandard.get(corrente)) {
+                    standard.setSelected(false);
+                }
+            }
+        });
+
+        coseno.get(name).setToolTipText("Inserire valore tra [0-1]");
+        coseno.get(name).addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent c) {
+                try {
+                    JTextField t = (JTextField) c.getSource();
+                    double valore = Double.parseDouble(t.getText());
+                    Iterator<String> list = coseno.keySet().iterator();
+                    String corrente = null;
+                    while (list.hasNext() && !coseno.get(corrente = list.next()).equals(t)) {
+                    }
+
+                    if (valore >= 0.0 && valore <= 1.0) {
+                        sogliaT.get(corrente).setValue((int) (valore * 100));
+                    } else {
+                        if (valore < 0.0) {
+                            sogliaT.get(corrente).setValue(0);
+                            t.setText(0.0 + "");
+                        } else {
+                            if (valore > 1.0) {
+                                sogliaT.get(corrente).setValue(100);
+                                t.setText("1.0");
+                            } else {
+                                sogliaT.get(corrente).setValue((int) valore);
+                                t.setText(valore + "");
+                            }
+                        }
+                    }
+                    if (t.getText().equals(cosStandard.get(corrente))) {
+                        standard.setSelected(false);
+                    }
+                } catch (NumberFormatException e) {
+                    JOptionPane.showMessageDialog(null, "Inserire valori decimali con \".\" [0-1]", "", JOptionPane.WARNING_MESSAGE);
+                }
+            }
+        });
+    }
+
     private void addFieldStructural(String name) {
-        dipendenze.put("dipendenza" + name, new JTextField());
-        dipendenze.get("dipendenza" + name).setText(dipendence.get("dip" + name) + "");
-        app.add(dipendenze.get("dipendenza" + name));
-        dipendenze.get("dipendenza" + name).setColumns(10);
-        dipendenze.get("dipendenza" + name).setToolTipText("Inserire valore maggiore o uguale di 0");
-        dipendenze.get("dipendenza" + name).addActionListener(new ActionListener() {
+        dipendenze.put(name, new JTextField());
+        dipendenze.get(name).setText(dipendence.get(name) + "");
+        app.add(dipendenze.get(name));
+        dipendenze.get(name).setColumns(10);
+        dipendenze.get(name).setToolTipText("Inserire valore maggiore o uguale di 0");
+        dipendenze.get(name).addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent d) {
                 String corrente = null;
                 try {
                     JTextField t = (JTextField) d.getSource();
                     Iterator<String> list = dipendenze.keySet().iterator();
-                    while (list.hasNext() && !dipendenze.get(corrente = list.next()).equals(t)) {
+                    while (list.hasNext() && !dipendenze.get(corrente = list.next()).equals(t)) {  //per capire cosa ho cliccato
                     }
                     if (Integer.parseInt(t.getText()) >= 0) {
-                        dipendence.put(corrente, Integer.parseInt(t.getText()));
+                        if (!t.getText().equals(dipendenceStandard.get(corrente))) {
+                            standard.setSelected(false);
+                        }
                     } else {
                         JOptionPane.showMessageDialog(null, "Inserire valori intero >=0", "Errore", JOptionPane.WARNING_MESSAGE);
                         dipendenze.get(corrente).setText("0");
@@ -353,9 +370,17 @@ public class ConfigureThreshold extends DialogWrapper {
                     JOptionPane.showMessageDialog(null, "Inserire valori intero >=0", "Errore", JOptionPane.WARNING_MESSAGE);
                     dipendenze.get(corrente).setText("0");
                 }
-                standard.setSelected(false);
             }
         });
+    }
+
+    private void stato() {
+        for (String s : cos.keySet()) {
+            cos.put(s, Double.parseDouble(coseno.get(s).getText()));
+        }
+        for (String s : dipendence.keySet()) {
+            dipendence.put(s, Integer.parseInt(dipendenze.get(s).getText()));
+        }
     }
 
     private void scrivi() {
@@ -368,13 +393,13 @@ public class ConfigureThreshold extends DialogWrapper {
                 } else {
                     out.write("0" + coseno.get("coseno" + a).getText() + ",");
                 }
-                ;
+
                 if (!a.equalsIgnoreCase("promiscuous package")) {
                     out.write("0" + dipendenze.get("dipendenza" + a).getText() + ",");
                 } else {
                     out.write("0,");
                 }
-                ;
+
                 if (a.equalsIgnoreCase("blob")) {
                     out.write("0" + dipendenze.get("dipendenza" + a + "2").getText() + ",");
                     out.write("0" + dipendenze.get("dipendenza" + a + "3").getText() + ",");
@@ -393,36 +418,33 @@ public class ConfigureThreshold extends DialogWrapper {
     private void filtro(String algoritmi) {
         switch (algoritmi) {
             case "All":
-                for (JSlider slider : sogliaT.values()) {
-                    slider.setEnabled(true);
-                }
-                for (JTextField c : coseno.values()) {
-                    c.setEnabled(true);
-                }
-                for (JTextField d : dipendenze.values()) {
-                    d.setEnabled(true);
+                for (String s : livelli.keySet()) {
+                    livelli.get(s).getComponent(0).setVisible(true);
+                    if (!s.equals("Promiscuous package")) {
+                        livelli.get(s).getComponent(1).setVisible(true);
+                    } else {
+                        livelli.get(s).setVisible(true);
+                    }
                 }
                 break;
             case "Structural":
-                for (JSlider slider : sogliaT.values()) {
-                    slider.setEnabled(false);
-                }
-                for (JTextField c : coseno.values()) {
-                    c.setEnabled(false);
-                }
-                for (JTextField d : dipendenze.values()) {
-                    d.setEnabled(true);
+                for (String s : livelli.keySet()) {
+                    livelli.get(s).getComponent(0).setVisible(false);
+                    if (!s.equals("Promiscuous package")) {
+                        livelli.get(s).getComponent(1).setVisible(true);
+                    } else {
+                        livelli.get(s).setVisible(false);
+                    }
                 }
                 break;
             case "Textual":
-                for (JSlider slider : sogliaT.values()) {
-                    slider.setEnabled(true);
-                }
-                for (JTextField c : coseno.values()) {
-                    c.setEnabled(true);
-                }
-                for (JTextField d : dipendenze.values()) {
-                    d.setEnabled(false);
+                for (String s : livelli.keySet()) {
+                    livelli.get(s).getComponent(0).setVisible(true);
+                    if (!s.equals("Promiscuous package")) {
+                        livelli.get(s).getComponent(1).setVisible(false);
+                    } else {
+                        livelli.get(s).setVisible(true);
+                    }
                 }
         }
         standard.setSelected(false);
