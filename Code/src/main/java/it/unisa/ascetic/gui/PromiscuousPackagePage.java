@@ -1,10 +1,12 @@
 package it.unisa.ascetic.gui;
 
+import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.ui.components.JBScrollPane;
 import com.intellij.ui.table.JBTable;
+import it.unisa.ascetic.analysis.splitting_algorithm.SplitPackages;
 import it.unisa.ascetic.gui.radarMap.RadarMapUtils;
 import it.unisa.ascetic.gui.radarMap.RadarMapUtilsAdapter;
 import it.unisa.ascetic.storage.beans.PackageBean;
@@ -116,7 +118,7 @@ public class PromiscuousPackagePage extends DialogWrapper {
         panelWest.add(panelGrid2);
 
         contentPanel.add(panelWest, BorderLayout.CENTER);
-        JPanel textPanel= new JPanel();
+        JPanel textPanel = new JPanel();
         textPanel.setLayout(new BorderLayout(0, 0));
         textPanel.setBorder(new TitledBorder("Text Content"));
         textPanel.add(new JBScrollPane(area), BorderLayout.CENTER);
@@ -132,31 +134,33 @@ public class PromiscuousPackagePage extends DialogWrapper {
     protected Action[] createActions() {
         Action okAction = new DialogWrapperAction("REFACTOR") {
 
+            String message;
+
             @Override
             protected void doAction(ActionEvent actionEvent) {
 
-                Messages.showMessageDialog("Promiscuous Package Refactoring coming soon", "Attention !", Messages.getInformationIcon());
-                /*String message;
-
-                ProgressManager.getInstance().runProcessWithProgressSynchronously(()->{
+                //Messages.showMessageDialog("Promiscuous Package Refactoring coming soon", "Attention !", Messages.getInformationIcon());
+                message = "Something went wrong in computing solution";
+                ProgressManager.getInstance().runProcessWithProgressSynchronously(() -> {
                     try {
                         splittedPackages = (List<PackageBean>) new SplitPackages().split(packageBeanPP, 0.5);
                     } catch (Exception e) {
                         errorOccured = true;
                     }
-                },"Blob",false,project);
+                }, "Blob", false, project);
 
-                if(errorOccured){
-                    message = "Something went wrong in computing solution";
-                    Messages.showMessageDialog(message,"Oh!No!",Messages.getErrorIcon());
+                if (errorOccured) {
+                    Messages.showMessageDialog(message, "Oh!No!", Messages.getErrorIcon());
                 } else {
-                    message = "Now we should show Promiscuous Package Wizard that isn't ready yet";
-                    Messages.showMessageDialog(message,"Hei !",Messages.getInformationIcon());
-                }*/
-
-                //PromiscuousWizard promiscuousWizard = new PromiscuousWizard(packageBeanPP, splittedPackages, project);
-                //promiscuousWizard.show();
-                close(1);
+                    if (splittedPackages.size() < 2) {
+                        message = "Error during creation of solution";
+                        Messages.showMessageDialog(message, "Error", Messages.getErrorIcon());
+                    } else {
+                        PromiscuousPackageWizard promiscuousWizard = new PromiscuousPackageWizard(packageBeanPP, splittedPackages, project);
+                        promiscuousWizard.show();
+                    }
+                    close(1);
+                }
             }
         };
 

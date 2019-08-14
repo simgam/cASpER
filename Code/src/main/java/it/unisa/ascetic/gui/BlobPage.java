@@ -160,8 +160,13 @@ public class BlobPage extends DialogWrapper {
                 if (errorOccured) {
                     Messages.showMessageDialog(message, "Oh!No!", Messages.getErrorIcon());
                 } else {
-                    BlobWizard blobWizardMock = new BlobWizard(classBeanBlob, splittedClasses, project);
-                    blobWizardMock.show();
+                    if (splittedClasses.size() < 2) {
+                        message = "Error during creation of solution";
+                        Messages.showMessageDialog(message, "Error", Messages.getErrorIcon());
+                    } else {
+                        BlobWizard blobWizardMock = new BlobWizard(classBeanBlob, splittedClasses, project);
+                        blobWizardMock.show();
+                    }
                     close(0);
                 }
             }

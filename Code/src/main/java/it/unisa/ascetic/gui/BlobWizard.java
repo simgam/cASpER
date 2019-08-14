@@ -24,6 +24,10 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.List;
 import java.util.Vector;
 
@@ -80,6 +84,13 @@ public class BlobWizard extends DialogWrapper {
                     close(0);
                     message = "Blob Corrected, check new classes generated name";
                     Messages.showMessageDialog(message, "Success !", Messages.getInformationIcon());
+                    try {
+                        FileWriter f = new FileWriter(System.getProperty("user.home") + File.separator + ".ascetic" + File.separator + "refactoring.txt");
+                        BufferedWriter out = new BufferedWriter(f);
+                        out.write("success");
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         };
