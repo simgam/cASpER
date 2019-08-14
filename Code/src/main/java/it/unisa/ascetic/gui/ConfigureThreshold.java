@@ -2,6 +2,7 @@ package it.unisa.ascetic.gui;
 
 import com.intellij.openapi.ui.ComboBox;
 import com.intellij.openapi.ui.DialogWrapper;
+import com.intellij.openapi.ui.Messages;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -209,17 +210,20 @@ public class ConfigureThreshold extends DialogWrapper {
     @NotNull
     @Override
     protected Action[] createActions() {
-        Action okAction = new DialogWrapperExitAction("OK", 1) {
+        Action okAction = new DialogWrapperExitAction("APPLY", 1) {
             @Override
             protected void doAction(ActionEvent actionEvent) {
                 try {
                     scrivi();
+                } catch (Exception e) {
+                    Messages.showMessageDialog("Error during storing thresholds", "Error", Messages.getErrorIcon());
                 } finally {
+                    Messages.showMessageDialog("Configured thresholds", "Success", Messages.getInformationIcon());
                     super.doAction(actionEvent);
                 }
             }
         };
-        Action exitAction = new DialogWrapperExitAction("Cancel", 0) {
+        Action exitAction = new DialogWrapperExitAction("CANCEL", 0) {
             @Override
             protected void doAction(ActionEvent actionEvent) {
                 try {

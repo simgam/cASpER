@@ -1,36 +1,4 @@
 <application>
-  <component name="ActionsCollector">
-    <counts>
-      <entry action="$Delete" count="4" />
-      <entry action="$SelectAll" count="8" />
-      <entry action="$Undo" count="7" />
-      <entry action="ActivateProjectToolWindow" count="1" />
-      <entry action="CheckinProject" count="7" />
-      <entry action="CloseAllEditors" count="1" />
-      <entry action="CloseAllEditorsButActive" count="1" />
-      <entry action="CodeCompletion" count="8" />
-      <entry action="DialogCancelAction Esc" count="2" />
-      <entry action="DialogOkAction Invio" count="3" />
-      <entry action="EditSource" count="4" />
-      <entry action="EditorBackSpace" count="30" />
-      <entry action="EditorDelete" count="3" />
-      <entry action="EditorLeft" count="3" />
-      <entry action="EditorPaste" count="10" />
-      <entry action="EditorRight" count="16" />
-      <entry action="GotoDeclaration" count="2" />
-      <entry action="GotoFile" count="1" />
-      <entry action="NewClass" count="3" />
-      <entry action="OpenFile" count="10" />
-      <entry action="ReformatCode" count="1" />
-      <entry action="SaveAll" count="10" />
-      <entry action="SaveProjectAsTemplateAction" count="2" />
-      <entry action="ShowSettings" count="5" />
-      <entry action="Vcs.UpdateProject" count="1" />
-      <entry action="it.unisa.ascetic.actions.BeginAction" count="26" />
-      <entry action="it.unisa.ascetic.actions.ConfigureAction" count="16" />
-      <entry action="tasks.goto" count="1" />
-    </counts>
-  </component>
   <component name="FeatureUsageStatistics" first-run="1563461334272" have-been-shown="false" show-in-other="true" show-in-compilation="true">
     <feature id="editing.completion.smarttype.afternew" count="0" last-shown="0" last-used="0" shown-count="0" />
     <feature id="editing.completion.camelHumps" count="0" last-shown="0" last-used="0" shown-count="0" />
@@ -64,7 +32,7 @@
     <feature id="navigation.select.in" count="0" last-shown="0" last-used="0" shown-count="0" />
     <feature id="editing.completion.global.member.name" count="0" last-shown="0" last-used="0" shown-count="0" />
     <feature id="editing.completion.finishByExclamation" count="0" last-shown="0" last-used="0" shown-count="0" />
-    <feature id="ui.tree.speedsearch" count="1" last-shown="0" last-used="1563568510471" shown-count="0" />
+    <feature id="ui.tree.speedsearch" count="2" last-shown="0" last-used="1563749556811" shown-count="0" />
     <feature id="ui.horizontal.scrolling" count="0" last-shown="0" last-used="0" shown-count="0" />
     <feature id="refactoring.copyClass" count="0" last-shown="0" last-used="0" shown-count="0" />
     <feature id="move.element.left.right" count="0" last-shown="0" last-used="0" shown-count="0" />
@@ -117,56 +85,6 @@
       <option name="dayCount" value="0" />
       <option name="lastDate" value="0" />
     </fixesStatsTag>
-  </component>
-  <component name="MainMenuCollector">
-    <counts>
-      <entry path="File -&gt; Open..." count="10" />
-      <entry path="Tools -&gt; Save Project as Template..." count="2" />
-      <entry path="Tools -&gt; Tasks &amp; Contexts -&gt; Open Task..." count="1" />
-      <entry path="VCS -&gt; Commit" count="7" />
-      <entry path="VCS -&gt; Update Project" count="1" />
-    </counts>
-  </component>
-  <component name="ShortcutsCollector">
-    <counts>
-      <entry shortcut="Alt+1" count="1" />
-      <entry shortcut="Backspace" count="30" />
-      <entry shortcut="Ctrl+A" count="8" />
-      <entry shortcut="Ctrl+Alt+L" count="1" />
-      <entry shortcut="Ctrl+Alt+S" count="5" />
-      <entry shortcut="Ctrl+S" count="10" />
-      <entry shortcut="Ctrl+Shift+N" count="1" />
-      <entry shortcut="Ctrl+Space" count="8" />
-      <entry shortcut="Ctrl+V" count="10" />
-      <entry shortcut="Ctrl+Z" count="7" />
-      <entry shortcut="Delete" count="7" />
-      <entry shortcut="Escape" count="2" />
-      <entry shortcut="F4" count="4" />
-      <entry shortcut="Left" count="3" />
-      <entry shortcut="Right" count="16" />
-    </counts>
-  </component>
-  <component name="ToolbarClicksCollector">
-    <counts>
-      <entry action="com.intellij.ide.plugins.InstalledPluginsManagerMain$MyFilterEnabledAction@PluginManager" count="7" />
-      <entry action="com.intellij.ui.AnActionButton$AnActionButtonWrapper@ToolbarDecorator" count="1" />
-      <entry action="com.intellij.ui.CommonActionsPanel$MyActionButton@ToolbarDecorator" count="3" />
-    </counts>
-  </component>
-  <component name="UsageTrigger">
-    <counts>
-      <entry feature="StripeButton[Version Control].hidden" count="2" />
-      <entry feature="StripeButton[Version Control].shown" count="2" />
-      <entry feature="ide.settings.Color Scheme" count="1" />
-      <entry feature="ide.settings.Git" count="1" />
-      <entry feature="ide.settings.Project Structure" count="2" />
-      <entry feature="ide.settings.Version Control" count="2" />
-      <entry feature="ideaapp.started" count="40" />
-      <entry feature="project.view.pane.PackagesPane" count="2" />
-      <entry feature="project.view.pane.ProjectPane" count="2" />
-      <entry feature="project.view.pane.Scope.Project Files" count="1" />
-      <entry feature="welcome.screen.WelcomeScreen.OpenProject" count="1" />
-    </counts>
   </component>
   <component name="UsagesStatistic" show-notification="false" />
 </application>

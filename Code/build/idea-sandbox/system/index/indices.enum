@@ -91,3 +91,9 @@ java.method.parameter.types
 java.class.shortname
 java.class.fqn
 java.module.name
+json.file.root.values
+java.binary.plus.expression
+editorconfig.index.name
+org.jetbrains.kotlin.ide.konan.index.KotlinNativeMetaFileIndex
+yaml.keys.name
+org.jetbrains.kotlin.idea.stubindex.KotlinProbablyContractedFunctionShortNameIndex

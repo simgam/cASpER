@@ -1,14 +1,17 @@
 <application>
   <component name="DimensionService">
     <location key="FileChooserDialogImpl.0.0.1920.1080" x="743" y="194" />
-    <location key="WELCOME_SCREEN.0.0.1920.1080" x="963" y="437" />
+    <location key="WELCOME_SCREEN.0.0.1920.1080" x="962" y="437" />
     <location key="com.intellij.ide.util.TipDialog.0.0.1920.1080" x="660" y="346" />
-    <location key="SettingsEditor.0.0.1920.1080" x="438" y="166" />
+    <location key="SettingsEditor.0.0.1920.1080" x="675" y="123" />
     <location key="CommitChangelistDialog2.0.0.1920.1080" x="581" y="111" />
     <location key="IdeErrosDialog.0.0.1920.1080" x="550" y="301" />
     <location key="#Project_Structure.0.0.1920.1080" x="440" y="89" />
     <location key="#com.intellij.openapi.projectRoots.ui.ProjectJdksEditor.0.0.1920.1080" x="540" y="169" />
     <location key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog.0.0.1920.1080" x="811" y="404" />
     <location key="save.project.as.template.dialog.0.0.1920.1080" x="828" y="408" />
+    <location key="#Browse_JetBrains_Plugins_.0.0.1920.1080" x="541" y="176" />
+    <location key="#Custom_Plugin_Repositories.0.0.1920.1080" x="781" y="139" />
+    <location key="#com.intellij.execution.impl.EditConfigurationsDialog.0.0.1920.1080" x="674" y="177" />
   </component>
 </application>
