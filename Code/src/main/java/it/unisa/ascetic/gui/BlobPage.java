@@ -136,7 +136,7 @@ public class BlobPage extends DialogWrapper {
     @NotNull
     @Override
     protected Action[] createActions() {
-        Action okAction = new DialogWrapperAction("REFACTOR") {
+        Action okAction = new DialogWrapperAction("FIND SOLUTION") {
 
             String message;
 

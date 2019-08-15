@@ -61,7 +61,7 @@ public class BlobWizard extends DialogWrapper {
     @NotNull
     @Override
     protected Action[] createActions() {
-        Action okAction = new DialogWrapperAction("Refactoring") {
+        Action okAction = new DialogWrapperAction("REFACTORING") {
 
             String message;
 
