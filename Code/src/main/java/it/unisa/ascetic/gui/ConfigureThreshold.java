@@ -64,6 +64,18 @@ public class ConfigureThreshold extends DialogWrapper {
         coseno = new HashMap<String, JTextField>();
         dipendenze = new HashMap<String, JTextField>();
 
+        coseno.put("cosenoFeature envy", new JTextField());
+        coseno.put("cosenoMisplaced class", new JTextField());
+        coseno.put("cosenoBlob", new JTextField());
+        coseno.put("cosenoPromiscuous package", new JTextField());
+        dipendenze.put("dipendenzaFeature envy", new JTextField());
+        dipendenze.put("dipendenzaMisplaced class", new JTextField());
+        dipendenze.put("dipendenzaBlob", new JTextField());
+        dipendenze.put("dipendenzaBlob2", new JTextField());
+        dipendenze.put("dipendenzaBlob3", new JTextField());
+        dipendenze.put("dipendenzaPromiscuous package", new JTextField());
+        dipendenze.put("dipendenzaPromiscuous package2", new JTextField());
+
         cosStandard.put("cosenoFeature envy", 0.5);
         cosStandard.put("cosenoMisplaced class", 0.0);
         cosStandard.put("cosenoBlob", 0.5);
@@ -73,10 +85,16 @@ public class ConfigureThreshold extends DialogWrapper {
         dipendenceStandard.put("dipendenzaBlob", 350);
         dipendenceStandard.put("dipendenzaBlob2", 20);
         dipendenceStandard.put("dipendenzaBlob3", 500);
+        dipendenceStandard.put("dipendenzaPromiscuous package", 50);
+        dipendenceStandard.put("dipendenzaPromiscuous package2", 50);
         Boolean set = true;
-
+        algorith = new ComboBox<>();
+        algorith.addItem("All");
+        algorith.addItem("Textual");
+        algorith.addItem("Structural");
+        algorith.setSelectedIndex(0);
         JPanel contentPane = new JPanel();
-        contentPane.setPreferredSize(new Dimension(1200, 500));
+        contentPane.setPreferredSize(new Dimension(1200, 600));
         contentPane.setLayout(new BorderLayout(0, 0));
 
         JPanel centerPanel = new JPanel();
@@ -92,23 +110,30 @@ public class ConfigureThreshold extends DialogWrapper {
             for (String s : smell) {
                 list = b.readLine().split(",");
                 cos.put("coseno" + s, Double.parseDouble(list[0]));
-                if (!s.equalsIgnoreCase("promiscuous package")) {
-                    dipendence.put("dipendenza" + s, Integer.parseInt(list[1]));
-                    if (!s.equalsIgnoreCase("blob")) {
+                dipendence.put("dipendenza" + s, Integer.parseInt(list[1]));
+                if (!s.equalsIgnoreCase("Blob")) {
+                    if (!s.equalsIgnoreCase("Promiscuous package")) {
                         algoritmi = list[2];
                     } else {
                         dipendence.put("dipendenza" + s + "2", Integer.parseInt(list[2]));
-                        dipendence.put("dipendenza" + s + "3", Integer.parseInt(list[3]));
-                        algoritmi = list[4];
+                        algoritmi = list[3];
                     }
+                } else {
+                    dipendence.put("dipendenza" + s + "2", Integer.parseInt(list[2]));
+                    dipendence.put("dipendenza" + s + "3", Integer.parseInt(list[3]));
+                    algoritmi = list[4];
                 }
 
-                if (!(Double.parseDouble(list[0]) == 0.5 || (s.equalsIgnoreCase("misplaced class") && Double.parseDouble(list[0]) == 0.0)) || !((!s.equalsIgnoreCase("blob") && Integer.parseInt(list[1]) == 0) || (s.equalsIgnoreCase("blob") && (Integer.parseInt(list[1]) == 350) && (Integer.parseInt(list[2]) == 20) && (Integer.parseInt(list[3]) == 500))) || !algoritmi.equalsIgnoreCase("all")) {
+                if (!(Double.parseDouble(list[0]) == 0.5 || (s.equalsIgnoreCase("Misplaced class") && Double.parseDouble(list[0]) == 0.0)) || !((!s.equalsIgnoreCase("Blob") && Integer.parseInt(list[1]) == 0) ||
+                        (s.equalsIgnoreCase("Blob") && (Integer.parseInt(list[1]) == 350) && (Integer.parseInt(list[2]) == 20) && (Integer.parseInt(list[3]) == 500)) ||
+                        (s.equalsIgnoreCase("Promiscuous package") && (Integer.parseInt(list[1]) == 50) && (Integer.parseInt(list[2]) == 50))) ||
+                        !algoritmi.equalsIgnoreCase("all")) {
                     set = false;
                 }
             }
         } catch (Exception e) {
             reset(cosStandard, dipendenceStandard);
+            stato();
         }
 
         for (String s : smell) {
@@ -119,7 +144,7 @@ public class ConfigureThreshold extends DialogWrapper {
 
             primo.setLayout(new GridLayout(0, 2, 0, 0));
 
-            textual = new JLabel("Soglia algoritmi testuale:");
+            textual = new JLabel("Soglia algoritmo testuale:");
             textual.setHorizontalAlignment(SwingConstants.CENTER);
             primo.add(textual);
             app = new JPanel();
@@ -128,48 +153,54 @@ public class ConfigureThreshold extends DialogWrapper {
             primo.add(app);
             livelli.get(s).add(primo);
 
-            if (!s.equalsIgnoreCase("promiscuous package")) {
-                livelli.get(s).add(secondo);
+            livelli.get(s).add(secondo);
+            secondo.setLayout(new GridLayout(0, 2, 0, 0));
 
-                secondo.setLayout(new GridLayout(0, 2, 0, 0));
+            if (s.equalsIgnoreCase("feature envy") || s.equalsIgnoreCase("misplaced class")) {
+                structural = new JLabel("Soglia algoritmo strutturale:");
+            } else {
+                structural = new JLabel("Soglie algoritmo strutturale:");
+            }
+            structural.setHorizontalAlignment(SwingConstants.CENTER);
+            secondo.add(structural);
 
-                structural = new JLabel("Soglia algoritmi strutturali:");
-                structural.setHorizontalAlignment(SwingConstants.CENTER);
-                secondo.add(structural);
+            app = new JPanel();
 
-                app = new JPanel();
-                if (!s.equalsIgnoreCase("Blob")) {
+            if (!s.equalsIgnoreCase("Blob")) {
+                if (!s.equalsIgnoreCase("Promiscuous package")) {
                     app.add(new JLabel("Dipendenze ="));
                 } else {
-                    app.add(new JLabel("LCOM ="));
+                    app.add(new JLabel("MIntraC ="));
                 }
-                addFieldStructural("dipendenza" + s);
-
-                if (s.equalsIgnoreCase("Blob")) {
-                    app.add(new JLabel("FeatureSum ="));
-                    addFieldStructural("dipendenza" + s + "2");
-                    app.add(new JLabel("ELOC ="));
-                    addFieldStructural("dipendenza" + s + "3");
-                }
-                secondo.add(app);
+            } else {
+                app.add(new JLabel("LCOM ="));
             }
+            addFieldStructural("dipendenza" + s);
 
+            if (s.equalsIgnoreCase("Promiscuous package")) {
+                app.add(new JLabel("MInterC ="));
+                addFieldStructural("dipendenza" + s + "2");
+            }
+            if (s.equalsIgnoreCase("Blob")) {
+                app.add(new JLabel("FeatureSum ="));
+                addFieldStructural("dipendenza" + s + "2");
+                app.add(new JLabel("ELOC ="));
+                addFieldStructural("dipendenza" + s + "3");
+            }
+            secondo.add(app);
             livelli.get(s).setBorder(new TitledBorder(s));
             centerPanel.add(livelli.get(s));
         }
 
         JPanel scelta = new JPanel();
         app = new JPanel();
-        algorith = new ComboBox<>();
-        algorith.addItem("All");
-        algorith.addItem("Textual");
-        algorith.addItem("Structural");
-        algorith.setSelectedItem(algoritmi);
         standard = new JCheckBox("Soglie di default");
         standard.setHorizontalAlignment(SwingConstants.CENTER);
+
         filtro(algoritmi);
         app.add(new JLabel("Tipo di algoritmo da usare:"));
         app.add(algorith);
+        algorith.setSelectedItem(algoritmi);
         scelta.add(app);
         JPanel sotto = new JPanel();
         sotto.setLayout(new GridLayout(0, 2, 0, 0));
@@ -240,32 +271,18 @@ public class ConfigureThreshold extends DialogWrapper {
 
     private void reset(HashMap<String, Double> valoriCos, HashMap<String, Integer> valoriDip) {
         for (String k : sogliaT.keySet()) {
-            sogliaT.get(k).setVisible(true);
-            if (k.equals("sogliaMisplaced class")) {
-                sogliaT.get(k).setValue((int) (valoriCos.get(k) * 100));
-            } else {
-                sogliaT.get(k).setValue((int) (valoriCos.get(k) * 100));
-            }
+            sogliaT.get(k).setValue((int) (valoriCos.get(k) * 100));
         }
         for (String k : coseno.keySet()) {
-            coseno.get(k).setVisible(true);
-            if (k.equals("cosenoMisplaced class")) {
-                coseno.get(k).setText(valoriCos.get(k) + "");
-            } else {
-                coseno.get(k).setText(valoriCos.get(k) + "");
-            }
+            coseno.get(k).setText(valoriCos.get(k) + "");
         }
         for (String k : dipendenze.keySet()) {
-            dipendenze.get(k).setVisible(true);
-            if (k.contains("dipendenzaBlob")) {
-                dipendenze.get("dipendenzaBlob").setText(valoriDip.get("dipendenzaBlob") + "");
-                dipendenze.get("dipendenzaBlob2").setText(valoriDip.get("dipendenzaBlob2") + "");
-                dipendenze.get("dipendenzaBlob3").setText(valoriDip.get("dipendenzaBlob3") + "");
+            if (k.contains("Promiscuous package")) {
+                dipendenze.get(k).setText(((double) valoriDip.get(k)) / 100 + "");
             } else {
                 dipendenze.get(k).setText(valoriDip.get(k) + "");
             }
         }
-
         algorith.setSelectedIndex(0);
         algoritmi = "All";
     }
@@ -287,10 +304,9 @@ public class ConfigureThreshold extends DialogWrapper {
         slider.add(sogliaT.get(name));
         app.add(slider);
 
-        coseno.put(name, new JTextField());
         coseno.get(name).setText(cos.get(name) + "");
         if (name.equalsIgnoreCase("misplaced class")) {
-            coseno.get(name).setToolTipText("Tale coseno verra' successivamente riportata nell'intervallo [0-1]");
+            coseno.get(name).setToolTipText("Tale coseno verra' successivamente riportato nell'intervallo [0-1]");
         }
         coseno.get(name).setColumns(10);
         app2.add(coseno.get(name));
@@ -326,10 +342,12 @@ public class ConfigureThreshold extends DialogWrapper {
                     } else {
                         if (valore < 0.0) {
                             sogliaT.get(corrente).setValue(0);
+                            cos.put(corrente, 0.0);
                             t.setText(0.0 + "");
                         } else {
                             if (valore > 1.0) {
                                 sogliaT.get(corrente).setValue(100);
+                                cos.put(corrente, 1.0);
                                 t.setText("1.0");
                             } else {
                                 sogliaT.get(corrente).setValue((int) valore);
@@ -348,42 +366,54 @@ public class ConfigureThreshold extends DialogWrapper {
     }
 
     private void addFieldStructural(String name) {
-        dipendenze.put(name, new JTextField());
-        dipendenze.get(name).setText(dipendence.get(name) + "");
+        if (!name.contains("Promiscuous package")) {
+            dipendenze.get(name).setText(dipendence.get(name) + "");
+            dipendenze.get(name).setToolTipText("Inserire valore maggiore o uguale di 0");
+        } else {
+            dipendenze.get(name).setText(((double) dipendence.get(name)) / 100 + "");
+            dipendenze.get(name).setToolTipText("Inserire valori compresi tra [0;1]");
+        }
         app.add(dipendenze.get(name));
         dipendenze.get(name).setColumns(10);
-        dipendenze.get(name).setToolTipText("Inserire valore maggiore o uguale di 0");
         dipendenze.get(name).addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent d) {
                 String corrente = null;
-                try {
-                    JTextField t = (JTextField) d.getSource();
-                    Iterator<String> list = dipendenze.keySet().iterator();
-                    while (list.hasNext() && !dipendenze.get(corrente = list.next()).equals(t)) {  //per capire cosa ho cliccato
-                    }
-                    if (Integer.parseInt(t.getText()) >= 0) {
-                        if (!t.getText().equals(dipendenceStandard.get(corrente))) {
-                            standard.setSelected(false);
-                        }
-                    } else {
+
+                JTextField t = (JTextField) d.getSource();
+                Iterator<String> list = dipendenze.keySet().iterator();
+                while (list.hasNext() && !dipendenze.get(corrente = list.next()).equals(t)) {  //per capire cosa ho cliccato
+                }
+                if (!corrente.contains("Promiscuous package")) {
+                    if (Integer.parseInt(t.getText()) < 0) {
                         JOptionPane.showMessageDialog(null, "Inserire valori intero >=0", "Errore", JOptionPane.WARNING_MESSAGE);
                         dipendenze.get(corrente).setText("0");
+                        dipendence.put(corrente, 0);
                     }
-                } catch (Exception e) {
-                    JOptionPane.showMessageDialog(null, "Inserire valori intero >=0", "Errore", JOptionPane.WARNING_MESSAGE);
-                    dipendenze.get(corrente).setText("0");
+                } else {
+                    if (Double.parseDouble(t.getText()) < 0.0 || Double.parseDouble(t.getText()) > 1.0) {
+                        JOptionPane.showMessageDialog(null, "Inserire valori compresi tra [0;1]", "Errore", JOptionPane.WARNING_MESSAGE);
+                        dipendenze.get(corrente).setText("0.5");
+                        dipendence.put(corrente, 50);
+                    }
+                }
+                if (!t.getText().equals(dipendenceStandard.get(corrente))) {
+                    standard.setSelected(false);
                 }
             }
         });
     }
 
     private void stato() {
-        for (String s : cos.keySet()) {
+        for (String s : cosStandard.keySet()) {
             cos.put(s, Double.parseDouble(coseno.get(s).getText()));
         }
-        for (String s : dipendence.keySet()) {
-            dipendence.put(s, Integer.parseInt(dipendenze.get(s).getText()));
+        for (String s : dipendenceStandard.keySet()) {
+            if (s.contains("Promiscuous package")) {
+                dipendence.put(s, (int) (Double.parseDouble(dipendenze.get(s).getText()) * 100));
+            } else {
+                dipendence.put(s, Integer.parseInt(dipendenze.get(s).getText()));
+            }
         }
     }
 
@@ -398,16 +428,18 @@ public class ConfigureThreshold extends DialogWrapper {
                     out.write("0" + coseno.get("coseno" + a).getText() + ",");
                 }
 
-                if (!a.equalsIgnoreCase("promiscuous package")) {
-                    out.write("0" + dipendenze.get("dipendenza" + a).getText() + ",");
+                if (a.equalsIgnoreCase("Promiscuous package")) {
+                    out.write("0" + (int) (Double.parseDouble(dipendenze.get("dipendenza" + a).getText()) * 100) + ",");
+                    out.write("0" + (int) (Double.parseDouble(dipendenze.get("dipendenza" + a + "2").getText()) * 100) + ",");
                 } else {
-                    out.write("0,");
+                    out.write("0" + dipendenze.get("dipendenza" + a).getText() + ",");
                 }
 
                 if (a.equalsIgnoreCase("blob")) {
                     out.write("0" + dipendenze.get("dipendenza" + a + "2").getText() + ",");
                     out.write("0" + dipendenze.get("dipendenza" + a + "3").getText() + ",");
                 }
+
                 out.write(String.valueOf(algorith.getSelectedItem()));
                 out.flush();
                 out.newLine();
@@ -424,31 +456,19 @@ public class ConfigureThreshold extends DialogWrapper {
             case "All":
                 for (String s : livelli.keySet()) {
                     livelli.get(s).getComponent(0).setVisible(true);
-                    if (!s.equals("Promiscuous package")) {
-                        livelli.get(s).getComponent(1).setVisible(true);
-                    } else {
-                        livelli.get(s).setVisible(true);
-                    }
+                    livelli.get(s).getComponent(1).setVisible(true);
                 }
                 break;
             case "Structural":
                 for (String s : livelli.keySet()) {
                     livelli.get(s).getComponent(0).setVisible(false);
-                    if (!s.equals("Promiscuous package")) {
-                        livelli.get(s).getComponent(1).setVisible(true);
-                    } else {
-                        livelli.get(s).setVisible(false);
-                    }
+                    livelli.get(s).getComponent(1).setVisible(true);
                 }
                 break;
             case "Textual":
                 for (String s : livelli.keySet()) {
                     livelli.get(s).getComponent(0).setVisible(true);
-                    if (!s.equals("Promiscuous package")) {
-                        livelli.get(s).getComponent(1).setVisible(false);
-                    } else {
-                        livelli.get(s).setVisible(true);
-                    }
+                    livelli.get(s).getComponent(1).setVisible(false);
                 }
         }
         standard.setSelected(false);

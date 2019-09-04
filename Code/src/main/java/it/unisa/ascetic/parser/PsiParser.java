@@ -76,95 +76,6 @@ public class PsiParser implements Parser {
         analizeProject();
     }
 
-
-//    private void parseChanges() throws ParsingException {
-//        try {
-//            HashSet<PsiPackage> foundPackages = new HashSet<>();
-//            List<Pair<String, String>> listOfChangePairs = getFile("changes");
-//            String fileName = System.getProperty("user.home") + File.separator + ".ascetic" + File.separator + "changes.csv";
-//            File file = new File(fileName);
-//
-//            List<String> updateList = new ArrayList<>();
-//            List<String> removeList = new ArrayList<>();
-//            List<String> addList = new ArrayList<>();
-//
-//            for (Pair<String, String> pair : listOfChangePairs) {
-//                if (pair.getValue().equalsIgnoreCase("create")) {
-//                    addList.add(pair.getKey());
-//                    if (removeList.contains(pair.getKey())) {
-//                        removeList.remove(pair.getKey());
-//                    }
-//                }
-//                if (pair.getValue().equalsIgnoreCase("update")) {
-//                    updateList.add(pair.getKey());
-//                    if (removeList.contains(pair.getKey())) {
-//                        removeList.remove(pair.getKey());
-//                    }
-//                }
-//                if (pair.getValue().equalsIgnoreCase("remove")) {
-//                    removeList.add(pair.getKey());
-//                    if (addList.contains(pair.getKey())) {
-//                        addList.remove(pair.getKey());
-//                    }
-//                    if (updateList.contains(pair.getKey())) {
-//                        updateList.remove(pair.getKey());
-//                    }
-//                }
-//            }
-//
-//            //faccio le remove
-//
-//            for (String x : removeList) {
-//                ClassBean toRemove = new ClassBean.Builder(x, "").build();
-//                classBeanRepository.remove(toRemove);
-//                removeLines(file, toRemove.getFullQualifiedName() + ",delete");
-//            }
-//
-//            //faccio le add
-//            for (String x : addList) {
-//                PsiClass psiClass = JavaPsiFacade.getInstance(project).findClass(x, GlobalSearchScope.allScope(project));
-//                try {
-//                    removeLines(file, psiClass.getQualifiedName() + ",create");
-//                    PsiJavaFile javaFile = (PsiJavaFile) psiClass.getContainingClass();
-//                    PsiPackage pkg = JavaPsiFacade.getInstance(project).findPackage(javaFile.getPackageName());
-//                    foundPackages.add(pkg);
-//                } catch (NullPointerException e) {
-//                    //tutto ok, vuol dire che nel file changes ho trovato una classe di un altro progetto
-//                    e.printStackTrace();
-//                }
-//            }
-//
-//            for (PsiPackage psiPackage : foundPackages) {
-//                PackageBean packageBean = parse(psiPackage);
-//                packageBeanRepository.add(packageBean);
-//            }
-//
-//            //faccio gli update
-//            for (String x : updateList) {
-//                PsiClass psiClass = JavaPsiFacade.getInstance(project).findClass(x, GlobalSearchScope.allScope(project));
-//                try {
-//                    removeLines(file, psiClass.getQualifiedName() + ",update");
-//                    PsiJavaFile javaFile = (PsiJavaFile) psiClass.getContainingFile();
-//                    PsiPackage pkg = JavaPsiFacade.getInstance(project).findPackage(javaFile.getPackageName());
-//                    foundPackages.add(pkg);
-//                } catch (NullPointerException e) {
-//                    //same as above
-//                    e.printStackTrace();
-//                }
-//            }
-//
-//            for (PsiPackage psiPackage : foundPackages) {
-//                PackageBean packageBean = parse(psiPackage);
-//                packageBeanRepository.add(packageBean);
-//                projectPackages.add(packageBean);
-//            }
-//
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//            throw new ParsingException();
-//        }
-//    }
-
     /**
      * @throws RepositoryException
      */
@@ -187,15 +98,15 @@ public class PsiParser implements Parser {
             for (String s : smell) {
                 list = b.readLine().split(",");
                 coseno.put("coseno" + s, Double.parseDouble(list[0]));
-                if (!s.equalsIgnoreCase("promiscuous")) {
-                    dipendence.put("dip" + s, Integer.parseInt(list[1]));
-                    if (s.equalsIgnoreCase("blob")) {
-                        dipendence.put("dip" + s + "2", Integer.parseInt(list[2]));
-                        dipendence.put("dip" + s + "3", Integer.parseInt(list[3]));
-                    }
+                dipendence.put("dip" + s, Integer.parseInt(list[1]));
+                if (s.equalsIgnoreCase("promiscuous")) {
+                    dipendence.put("dip" + s + "2", Integer.parseInt(list[2]));
+                }
+                if (s.equalsIgnoreCase("blob")) {
+                    dipendence.put("dip" + s + "2", Integer.parseInt(list[2]));
+                    dipendence.put("dip" + s + "3", Integer.parseInt(list[3]));
                 }
             }
-            ;
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -203,14 +114,15 @@ public class PsiParser implements Parser {
         classBeanRepository.delete();
         boolean affectedbean = false;
 
-        for (PackageBean packageBean : projectPackages) {
+        for (
+                PackageBean packageBean : projectPackages) {
             TextualPromiscuousPackageStrategy textualPromiscuousPackageStrategy = new TextualPromiscuousPackageStrategy(coseno.get("cosenoPromiscuous"));
             PromiscuousPackageCodeSmell tPromiscuousPackagecodeSmell = new PromiscuousPackageCodeSmell(textualPromiscuousPackageStrategy, "Textual");
             if (packageBean.isAffected(tPromiscuousPackagecodeSmell)) {
                 affectedbean = true;
             }
             packageBean.setSimilarity(0);
-            StructuralPromiscuousPackageStrategy structuralPromiscuousPackageStrategy = new StructuralPromiscuousPackageStrategy();
+            StructuralPromiscuousPackageStrategy structuralPromiscuousPackageStrategy = new StructuralPromiscuousPackageStrategy(projectPackages, dipendence.get("dipPromiscuous")/100, dipendence.get("dipPromiscuous2")/100);
             PromiscuousPackageCodeSmell sPromiscuousPackagecodeSmell = new PromiscuousPackageCodeSmell(structuralPromiscuousPackageStrategy, "Structural");
             if (packageBean.isAffected(sPromiscuousPackagecodeSmell)) {
                 affectedbean = true;
@@ -234,7 +146,7 @@ public class PsiParser implements Parser {
 
                 StructuralBlobStrategy structuralBlobStrategy = new StructuralBlobStrategy(dipendence.get("dipBlob"), dipendence.get("dipBlob2"), dipendence.get("dipBlob3"));
                 BlobCodeSmell sBlobCodeSmell = new BlobCodeSmell(structuralBlobStrategy, "Structural");
-                StructuralMisplacedClassStrategy structuralMisplacedClassStrategy = new StructuralMisplacedClassStrategy(projectPackages);
+                StructuralMisplacedClassStrategy structuralMisplacedClassStrategy = new StructuralMisplacedClassStrategy(projectPackages, dipendence.get("dipMisplaced"));
                 MisplacedClassCodeSmell sMisplacedClassCodeSmell = new MisplacedClassCodeSmell(structuralMisplacedClassStrategy, "Structural");
                 if (classBean.isAffected(sBlobCodeSmell) || classBean.isAffected(sMisplacedClassCodeSmell)) {
                     affectedbean = true;
@@ -256,7 +168,7 @@ public class PsiParser implements Parser {
                         affectedbean = true;
                     }
 
-                    StructuralFeatureEnvyStrategy structuralFeatureEnvyStrategy = new StructuralFeatureEnvyStrategy(projectPackages);
+                    StructuralFeatureEnvyStrategy structuralFeatureEnvyStrategy = new StructuralFeatureEnvyStrategy(projectPackages, dipendence.get("dipFeature"));
                     FeatureEnvyCodeSmell sFeatureEnvyCodeSmell = new FeatureEnvyCodeSmell(structuralFeatureEnvyStrategy, "Structural");
                     if (methodBean.isAffected(sFeatureEnvyCodeSmell)) {
                         affectedbean = true;
@@ -272,6 +184,7 @@ public class PsiParser implements Parser {
                 }
             }
         }
+
     }
 
     public List<Pair<String, String>> getFile(String nameOfFIle) throws IOException {

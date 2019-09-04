@@ -88,12 +88,21 @@ public class BlobPage extends DialogWrapper {
         tableHeaders.add("RFC");
         tableHeaders.add("CBO");
         tableHeaders.add("LCOM");
+
+        tableHeaders.add("NOA");
+        tableHeaders.add("NOM");
+        tableHeaders.add("NOPA");
+
         Vector<String> tableElemet = new Vector<>();
         tableElemet.add(CKMetrics.getLOC(classBeanBlob) + "");
         tableElemet.add(CKMetrics.getWMC(classBeanBlob) + "");
         tableElemet.add(CKMetrics.getRFC(classBeanBlob) + "");
         tableElemet.add(CKMetrics.getCBO(classBeanBlob) + "");
         tableElemet.add(CKMetrics.getLCOM(classBeanBlob) + "");
+
+        tableElemet.add(String.valueOf(CKMetrics.getNOA(classBeanBlob)));
+        tableElemet.add(String.valueOf(CKMetrics.getNOM(classBeanBlob)));
+        tableElemet.add(String.valueOf(CKMetrics.getNOPA(classBeanBlob)));
 
         DefaultTableModel model = new DefaultTableModel(tableHeaders, 0);
         model.addRow(tableElemet);

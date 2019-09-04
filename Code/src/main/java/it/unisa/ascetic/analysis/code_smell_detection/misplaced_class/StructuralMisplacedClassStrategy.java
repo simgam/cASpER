@@ -15,9 +15,11 @@ import java.util.List;
 public class StructuralMisplacedClassStrategy implements ClassSmellDetectionStrategy {
 
     private List<PackageBean> systemPackages;
+    private int soglia;
 
-    public StructuralMisplacedClassStrategy(List<PackageBean> systemPackages) {
+    public StructuralMisplacedClassStrategy(List<PackageBean> systemPackages, int soglia) {
         this.systemPackages = systemPackages;
+        this.soglia = soglia;
     }
 
     public boolean isSmelly(ClassBean pClass) {
@@ -57,7 +59,7 @@ public class StructuralMisplacedClassStrategy implements ClassSmellDetectionStra
 
         PackageBean firstRankedPackage = dependenciesWithClass.get(dependenciesWithClass.size() - 1);
         pClass.setSimilarity(numberOfDependenciesWithActualPackage);
-        if (numberOfDependenciesWithActualPackage <= firstRankedPackage.getSimilarity() && firstRankedPackage.getSimilarity() != 0) {
+        if (numberOfDependenciesWithActualPackage <= firstRankedPackage.getSimilarity() && firstRankedPackage.getSimilarity() != 0 && firstRankedPackage.getSimilarity() >= soglia) {
             pClass.setEnviedPackage(firstRankedPackage);
             return true;
         } else {

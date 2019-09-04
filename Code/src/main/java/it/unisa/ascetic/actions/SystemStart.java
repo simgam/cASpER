@@ -51,9 +51,11 @@ public class SystemStart {
                 if (sogliaCoseno < minC) {
                     minC = sogliaCoseno;
                 }
-
-                if (!s.equalsIgnoreCase("promiscuous package")) {
-                    app = Integer.parseInt(list[1]);
+                app = Integer.parseInt(list[1]);
+                if (s.equalsIgnoreCase("promiscuous")) {
+                    sogliaStructural.add(app);
+                    sogliaStructural.add(Integer.parseInt(list[2]));
+                } else {
                     if (!s.equalsIgnoreCase("blob")) {
                         if (app < sogliaStructural.get(0)) {
                             sogliaStructural.add(0, app);
@@ -63,7 +65,6 @@ public class SystemStart {
                         sogliaStructural.add(app);
                         sogliaStructural.add(Integer.parseInt(list[2]));
                         sogliaStructural.add(Integer.parseInt(list[3]));
-                        algoritmo = list[4];
                     }
                 }
             }
@@ -74,7 +75,7 @@ public class SystemStart {
                 out.write("00.5,00,All\n" +
                         "0.0,00,All\n" +
                         "00.5,0350,020,0500,All\n" +
-                        "00.5,0,All");
+                        "00.5,050,050,All");
                 out.flush();
                 out.newLine();
             } catch (Exception ex) {
@@ -85,6 +86,8 @@ public class SystemStart {
             sogliaStructural.add(350);
             sogliaStructural.add(20);
             sogliaStructural.add(500);
+            sogliaStructural.add(50);
+            sogliaStructural.add(50);
             algoritmo = "All";
         }
     }
@@ -120,12 +123,14 @@ public class SystemStart {
         }, "Ascetic - Code Smell Detection", false, currentProject);
 
         if (!errorHappened) {
+            List<PackageBean> packageList = new ArrayList<>();
             List<PackageBean> promiscuousList = new ArrayList<>();
             List<ClassBean> blobList = new ArrayList<>();
             List<ClassBean> misplacedList = new ArrayList<>();
             List<MethodBean> featureList = new ArrayList<>();
 
             try {
+                packageList = packRepo.select(new SQLSelectionPackage());
                 promiscuousList = packRepo.select(new SQLPromiscuousSelection());
                 blobList = classRepo.select(new SQLBlobSelection());
                 misplacedList = classRepo.select(new SQLMisplacedSelection());
@@ -134,7 +139,8 @@ public class SystemStart {
             } catch (RepositoryException e) {
                 e.printStackTrace();
             }
-            CheckProjectPage frame = new CheckProjectPage(currentProject, promiscuousList, blobList, misplacedList, featureList, minC, sogliaStructural, algoritmo);
+            CheckProjectPage frame = new CheckProjectPage(currentProject, packageList, promiscuousList, blobList, misplacedList, featureList, minC, sogliaStructural, algoritmo);
+
             frame.show();
         } else {
             Messages.showMessageDialog(currentProject, "Sorry, an error has occurred. Prease try again or contact support", "OH ! No! ", Messages.getErrorIcon());

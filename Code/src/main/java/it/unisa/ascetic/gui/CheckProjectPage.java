@@ -8,6 +8,7 @@ import it.unisa.ascetic.analysis.code_smell.CodeSmell;
 import it.unisa.ascetic.storage.beans.ClassBean;
 import it.unisa.ascetic.storage.beans.MethodBean;
 import it.unisa.ascetic.storage.beans.PackageBean;
+import it.unisa.ascetic.structuralMetrics.CKMetrics;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import src.main.java.it.unisa.ascetic.gui.StyleText;
@@ -37,6 +38,7 @@ public class CheckProjectPage extends DialogWrapper {
     private DefaultTableModel model;
 
     private Project currentProject;
+    private List<PackageBean> packages;
     private List<PackageBean> promiscuousPackageList;
     private List<MethodBean> featureEnvyList;
     private List<ClassBean> misplacedClassList;
@@ -46,6 +48,7 @@ public class CheckProjectPage extends DialogWrapper {
     private JTable table;
     private DecimalFormat df = new DecimalFormat("0.000");
     private DecimalFormat df2 = new DecimalFormat("0");
+    private DecimalFormat df3 = new DecimalFormat("0.0000");
     private JPanel contentPanel;
     private JPanel smellVisual;
     private JPanel panel;
@@ -74,12 +77,13 @@ public class CheckProjectPage extends DialogWrapper {
 
     private static ArrayList<String> smellName;
     private static ArrayList<String> blobThresholdName;
+    private static ArrayList<String> promiscuousThresholdName;
     private int maxS = 0;
     private String algorithm;
     private double sogliaCoseno;
     private ArrayList<Integer> sogliaDipendenze;
 
-    public CheckProjectPage(Project currentProj, List<PackageBean> promiscuous, List<ClassBean> blob, List<ClassBean> misplaced, List<MethodBean> feature, double sogliaCoseno, ArrayList<Integer> sogliaDipendenze, String algorithm) {
+    public CheckProjectPage(Project currentProj, List<PackageBean> packages, List<PackageBean> promiscuous, List<ClassBean> blob, List<ClassBean> misplaced, List<MethodBean> feature, double sogliaCoseno, ArrayList<Integer> sogliaDipendenze, String algorithm) {
         super(true);
         smellName = new ArrayList<String>();
         smellName.add("Feature Envy");
@@ -90,8 +94,12 @@ public class CheckProjectPage extends DialogWrapper {
         blobThresholdName.add("LCOM");
         blobThresholdName.add("FeatureSUM");
         blobThresholdName.add("ELOC");
+        promiscuousThresholdName = new ArrayList<String>();
+        promiscuousThresholdName.add("MIntraC");
+        promiscuousThresholdName.add("MInterC");
 
         this.currentProject = currentProj;
+        this.packages = packages;
         this.promiscuousPackageList = promiscuous;
         this.featureEnvyList = feature;
         this.misplacedClassList = misplaced;
@@ -113,6 +121,20 @@ public class CheckProjectPage extends DialogWrapper {
         while (i < blobThresholdName.size()) {
             threshold.put(blobThresholdName.get(i), sogliaDipendenze.get(i + 1));
             i++;
+        }
+        i = 0;
+        while (i < promiscuousThresholdName.size()) {
+            threshold.put(promiscuousThresholdName.get(i), sogliaDipendenze.get(i + blobThresholdName.size() + 1));
+            i++;
+        }
+
+        for (PackageBean p : promiscuousPackageList) {
+            for (CodeSmell s : p.getAffectedSmell()) {
+                if (s.getIndex().containsKey("MIntraC") && s.getIndex().containsKey("MInterC")) {
+                    s.getIndex().put("MIntraC", CKMetrics.computeMediumIntraConnectivity(p));
+                    s.getIndex().put("MInterC", CKMetrics.computeMediumInterConnectivity(p, packages));
+                }
+            }
         }
 
         contentPanel = new JPanel(); //pannello principale
@@ -156,13 +178,16 @@ public class CheckProjectPage extends DialogWrapper {
             codeSmell.put(smellName.get(i), new JCheckBox(smellName.get(i)));
             smellPanel.get(i).add(codeSmell.get(smellName.get(i)));
             algo.add(new JPanel());
+            if (smellName.get(i).equalsIgnoreCase("blob") || smellName.get(i).equalsIgnoreCase("promiscuous package")) {
+                smellPanel.get(i).setBorder(new TitledBorder("*non utilizza le dipendenze"));
+            }
             smellPanel.get(i).add(algo.get(i));
             algo.get(i).setLayout(new GridLayout(0, 1, 0, 0));
             algoritmi.put("textual" + smellName.get(i).substring(0, 1), new JCheckBox("Textual"));
             algo.get(i).add(algoritmi.get("textual" + smellName.get(i).substring(0, 1)));
             algoritmi.put("structural" + smellName.get(i).substring(0, 1), new JCheckBox("Structural"));
             algo.get(i).add(algoritmi.get("structural" + smellName.get(i).substring(0, 1)));
-            if (i == 2) algo.get(i).add(new JLabel("*non utilizza le dipendenze  "));
+
         }
 
         for (JCheckBox c : codeSmell.values()) {
@@ -188,18 +213,14 @@ public class CheckProjectPage extends DialogWrapper {
                     table.repaint();
                 }
             });
-            if (algorithm.contains("All")) {
+            if (algorithm.equalsIgnoreCase("All")) {
                 c.setSelected(true);
             } else {
-                if ((s.contains("textual") && algorithm.contains("Textual")) || (s.contains("structural") && algorithm.contains("Structural"))) {
+                if ((s.contains("textual") && algorithm.equalsIgnoreCase("Textual")) || (s.contains("structural") && algorithm.equalsIgnoreCase("Structural"))) {
                     c.setSelected(true);
                 }
             }
 
-            if (s.equalsIgnoreCase("structuralp")) {
-                c.setEnabled(false);
-                c.setSelected(false);
-            }
         }
 
         slider = new JPanel();
@@ -215,7 +236,7 @@ public class CheckProjectPage extends DialogWrapper {
         textual.add(bar1);
         JPanel s = new JPanel();
         JLabel soglia1 = new JLabel();
-        soglia1.setText("similarity >= [" + sogliaCoseno + "-1]");
+        soglia1.setText("coseno >= [" + sogliaCoseno + ";1]");
         textual.add(s);
         s.add(soglia1);
 
@@ -225,7 +246,8 @@ public class CheckProjectPage extends DialogWrapper {
         coseno.setPaintTicks(true);
         coseno.setMinorTickSpacing(10);
         if (sogliaCoseno <= 0.5) {
-            coseno.setMinimum((int) (sogliaCoseno * 100));
+            //coseno.setMinimum((int) (sogliaCoseno * 100));
+            coseno.setMinimum((int) (0));
         } else {
             coseno.setMinimum(50);
         }
@@ -242,7 +264,7 @@ public class CheckProjectPage extends DialogWrapper {
         });
 
         valCoseno = new JTextField();
-        valCoseno.setText(String.valueOf(((double) coseno.getValue()) / 100));
+        valCoseno.setText(String.valueOf(0));
         s.add(valCoseno);
         valCoseno.setColumns(5);
 
@@ -270,7 +292,9 @@ public class CheckProjectPage extends DialogWrapper {
                         ;
                     }
                 } catch (NumberFormatException e) {
-                    JOptionPane.showMessageDialog(null, "Inserire valori decimali con \".\" [" + sogliaCoseno + "-1]", "Errore", JOptionPane.WARNING_MESSAGE);
+                    coseno.setValue((int) sogliaCoseno * 100);
+                    valCoseno.setText(sogliaCoseno + "");
+                    JOptionPane.showMessageDialog(null, "Inserire valori decimali con \".\" [" + sogliaCoseno + ";1]", "Errore", JOptionPane.WARNING_MESSAGE);
                 }
             }
         });
@@ -314,68 +338,39 @@ public class CheckProjectPage extends DialogWrapper {
         valDipendenza.get(0).addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent c) {
                 JTextField t = (JTextField) c.getSource();
-                dipendenze.setValue(Integer.parseInt(t.getText()));
+                try {
+                    if (Integer.parseInt(t.getText()) < sogliaDipendenze.get(0)) {
+                        t.setText(sogliaDipendenze.get(0) + "");
+                        dipendenze.setValue(sogliaDipendenze.get(0));
+                    } else {
+                        dipendenze.setValue(Integer.parseInt(t.getText()));
+                    }
+                } catch (NumberFormatException e) {
+                    t.setText(sogliaDipendenze.get(0) + "");
+                    valDipendenza.get(0).setText(sogliaDipendenze.get(0) + "");
+                    JOptionPane.showMessageDialog(null, "Soglia minima non rispettata");
+                }
+                ;
             }
         });
+        valDipendenza.get(0).setText(dipendenze.getValue() + "");
 
-        JPanel livello, blobThreshold = new JPanel();
+        int[] list1 = new int[3];
+        list1[0] = 350;
+        list1[1] = 20;
+        list1[2] = 500;
+        int[] list2 = new int[2];
+        list2[0] = 50;
+        list2[1] = 50;
+
+        JPanel blobThreshold = sectionMetric(0, blobThresholdName, list1);
+        JPanel promiscuousThreshold = sectionMetric(blobThresholdName.size(), promiscuousThresholdName, list2);
+
         blobThreshold.setBorder(new TitledBorder("Blob"));
+        promiscuousThreshold.setBorder(new TitledBorder("Promiscuous package"));
+
         structural.add(blobThreshold);
-        blobThreshold.setLayout(new BoxLayout(blobThreshold, BoxLayout.Y_AXIS));
-        JLabel scritta;
-        for (i = 0; i < 4; i++) {
-            if (i != 0) {
-                valDipendenza.add(new JTextField());
-                valDipendenza.get(i).setText(df2.format(threshold.get(blobThresholdName.get(i - 1))));
-
-                livello = new JPanel();
-                livello.setLayout(new GridLayout(2, 2, 0, 0));
-                scritta = new JLabel(blobThresholdName.get(i - 1));
-                scritta.setHorizontalAlignment(SwingConstants.CENTER);
-                livello.add(scritta);
-                livello.add(valDipendenza.get(i));
-                scritta = new JLabel("valore min=" + df2.format(threshold.get(blobThresholdName.get(i - 1))));
-                scritta.setHorizontalAlignment(SwingConstants.RIGHT);
-                livello.add(scritta);
-                blobThreshold.add(livello);
-            }
-            valDipendenza.get(i).setText(String.valueOf(sogliaDipendenze.get(i)));
-            valDipendenza.get(i).setColumns(5);
-        }
-
-        valDipendenza.get(1).addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent c) {
-                JTextField f = (JTextField) c.getSource();
-                if (Integer.parseInt(f.getText()) < threshold.get(blobThresholdName.get(0))) {
-                    f.setText("350");
-                    JOptionPane.showMessageDialog(null, "Soglia minima consentita " + df2.format(threshold.get(blobThresholdName.get(0))));
-                }
-                createTable();
-                table.repaint();
-            }
-        });
-        valDipendenza.get(2).addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent c) {
-                JTextField f = (JTextField) c.getSource();
-                if (Integer.parseInt(f.getText()) < threshold.get(blobThresholdName.get(1))) {
-                    f.setText("20");
-                    JOptionPane.showMessageDialog(null, "Soglia minima consentita " + df2.format(threshold.get(blobThresholdName.get(1))));
-                }
-                createTable();
-                table.repaint();
-            }
-        });
-        valDipendenza.get(3).addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent c) {
-                JTextField f = (JTextField) c.getSource();
-                if (Integer.parseInt(f.getText()) < threshold.get(blobThresholdName.get(2))) {
-                    f.setText("500");
-                    JOptionPane.showMessageDialog(null, "Soglia minima consentita " + df2.format(threshold.get(blobThresholdName.get(2))));
-                }
-                createTable();
-                table.repaint();
-            }
-        });
+        structural.add(promiscuousThreshold);
 
         pannello.add(centerPanel);
         createTable();
@@ -411,6 +406,80 @@ public class CheckProjectPage extends DialogWrapper {
         return contentPanel;
     }
 
+    private JPanel sectionMetric(int pos, ArrayList<String> ThresholdName, int[] valori) {
+
+        JPanel panelThreshold = new JPanel();
+        JPanel livello;
+        JLabel scritta, vincolo;
+        int j;
+        panelThreshold.setLayout(new BoxLayout(panelThreshold, BoxLayout.Y_AXIS));
+        for (j = 1; j <= ThresholdName.size(); j++) {
+
+            valDipendenza.add(new JTextField());
+            if (ThresholdName.get(j - 1).equalsIgnoreCase("mintrac") || ThresholdName.get(j - 1).equalsIgnoreCase("minterc")) {
+                valDipendenza.get(j + pos).setText(((double) threshold.get(ThresholdName.get(j - 1))) / 100 + "");
+            } else {
+                valDipendenza.get(j + pos).setText(df2.format(threshold.get(ThresholdName.get(j - 1))));
+            }
+
+            int finalJ = j;
+            valDipendenza.get(j + pos).addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent c) {
+                    JTextField f = (JTextField) c.getSource();
+                    try {
+                        if (ThresholdName.get(finalJ - 1).equalsIgnoreCase("mintrac") || ThresholdName.get(finalJ - 1).equalsIgnoreCase("minterc")) {
+                            if (Double.parseDouble(f.getText()) < ((double) threshold.get(ThresholdName.get(finalJ - 1))) / 100) {
+                                f.setText(((double) threshold.get(ThresholdName.get(finalJ - 1))) / 100 + "");
+                                JOptionPane.showMessageDialog(null, "Soglia minima non rispettata");
+                            } else {
+                                if (Double.parseDouble(f.getText()) > 1.0) {
+                                    f.setText("1");
+                                    JOptionPane.showMessageDialog(null, "Soglia minima non rispettata");
+                                }
+                            }
+                        } else {
+                            if (Integer.parseInt(f.getText()) < threshold.get(ThresholdName.get(finalJ - 1))) {
+                                f.setText(threshold.get(ThresholdName.get(finalJ - 1)) + "");
+                                JOptionPane.showMessageDialog(null, "Soglia minima non rispettata");
+                            }
+                        }
+                    } catch (NumberFormatException e) {
+                        if (ThresholdName.get(finalJ - 1).equalsIgnoreCase("mintrac") || ThresholdName.get(finalJ - 1).equalsIgnoreCase("minterc")) {
+                            f.setText(((double) threshold.get(ThresholdName.get(finalJ - 1))) / 100 + "");
+                        } else {
+                            f.setText(threshold.get(ThresholdName.get(finalJ - 1)) + "");
+                        }
+                        JOptionPane.showMessageDialog(null, "Formato non consentito");
+                    }
+
+                    createTable();
+                    table.repaint();
+                }
+            });
+
+            livello = new JPanel();
+            livello.setLayout(new GridLayout(2, 2, 0, 0));
+            scritta = new JLabel(ThresholdName.get(j - 1));
+            scritta.setHorizontalAlignment(SwingConstants.CENTER);
+            livello.add(scritta);
+            livello.add(valDipendenza.get(j + pos));
+            if (ThresholdName.get(j - 1).
+
+                    equalsIgnoreCase("mintrac") || ThresholdName.get(j - 1).
+
+                    equalsIgnoreCase("minterc")) {
+                vincolo = new JLabel("valore in [" + ((double) threshold.get(ThresholdName.get(finalJ - 1))) / 100 + ";1]");
+            } else {
+                vincolo = new JLabel("valore min = " + threshold.get(ThresholdName.get(j - 1)));
+            }
+            vincolo.setHorizontalAlignment(SwingConstants.CENTER);
+            livello.add(vincolo);
+            panelThreshold.add(livello);
+        }
+
+        return panelThreshold;
+    }
+
     @NotNull
     @Override
     protected Action[] createActions() {
@@ -444,7 +513,7 @@ public class CheckProjectPage extends DialogWrapper {
                     if (whereToSearch.equalsIgnoreCase("promiscuous package")) {
                         for (PackageBean p : promiscuousPackageList) {
                             if (p.getFullQualifiedName().equalsIgnoreCase(whatToReturn)) {
-                                DialogWrapper prom = new PromiscuousPackagePage(p, currentProject);
+                                DialogWrapper prom = new PromiscuousPackagePage(p, packages, currentProject);
                                 prom.show();
                             }
                         }
@@ -551,8 +620,10 @@ public class CheckProjectPage extends DialogWrapper {
                 HashMap<String, Double> listThreschold = smell.getIndex();
                 if (algoritmi.get("textual" + codeSmell.substring(0, 1)).isSelected() && listThreschold.get("coseno") != null) {
                     if (used.equalsIgnoreCase("textual") && Double.parseDouble(valCoseno.getText()) <= listThreschold.get("coseno")) {
-
                         complessita++;
+                        if (cos >= sogliaCoseno + (sogliaCoseno * 0.10)) {
+                            complessita += 2;
+                        }
                         indice = Double.parseDouble(valCoseno.getText());
                         cos = listThreschold.get("coseno");
                         if (cos <= sogliaCoseno) {
@@ -569,51 +640,64 @@ public class CheckProjectPage extends DialogWrapper {
                 } else {
                     controllo = true;
                 }
+                if (!(codeSmell.equalsIgnoreCase("Promiscuous package") || codeSmell.equalsIgnoreCase("Blob")) && used.equalsIgnoreCase("structural") && Double.parseDouble(valDipendenza.get(0).getText()) <= listThreschold.get("dipendenza")) {
 
-                if (algoritmi.get("structural" + codeSmell.substring(0, 1)).isSelected() && listThreschold.get("dipendenza") != null) {
-                    if (used.equalsIgnoreCase("structural") && Double.parseDouble(valDipendenza.get(0).getText()) <= listThreschold.get("dipendenza")) {
+                    complessita += 2;
+                    indice = Double.parseDouble(valDipendenza.get(0).getText());
+                    dip = listThreschold.get("dipendenza").intValue();
 
-                        complessita += 2;
-                        indice = Double.parseDouble(valDipendenza.get(0).getText());
-                        dip = listThreschold.get("dipendenza").intValue();
-
-                        if (dip <= sogliaDipendenze.get(0)) {
-                            basso = true;
-                        }
-                        ;
-                        if (dip >= (int) (maxS - (maxS * 0.25))) {
-                            alto++;
-                        }
-                        ;
-                        if (dip >= maxS) {
-                            maxS = dip;
-                        }
-                        ;
+                    if (dip <= sogliaDipendenze.get(0)) {
+                        basso = true;
                     }
+                    ;
+                    if (dip >= (int) (maxS - (maxS * 0.25))) {
+                        alto++;
+                    }
+                    ;
+                    if (dip >= maxS) {
+                        maxS = dip;
+                    }
+                    ;
                 } else {
                     if (smell.getSmellName().equalsIgnoreCase("blob") && algoritmi.get("structural" + codeSmell.substring(0, 1)).isSelected() && used.equalsIgnoreCase("structural")) {
                         Double lcom = Double.parseDouble(valDipendenza.get(1).getText());
                         Double fsum = Double.parseDouble(valDipendenza.get(2).getText());
                         Double eloc = Double.parseDouble(valDipendenza.get(3).getText());
-                        if (lcom <= listThreschold.get("LCOM") && fsum <= listThreschold.get("featureSum") && eloc <= listThreschold.get("ELOC")) {
+                        if (lcom <= listThreschold.get("LCOM") || fsum <= listThreschold.get("featureSum") || eloc <= listThreschold.get("ELOC")) {
                             complessita += 2;
                             alto++;
-                            if (lcom >= listThreschold.get("LCOM") || fsum >= listThreschold.get("featureSum") || eloc >= listThreschold.get("ELOC")) {
+                            if (lcom == listThreschold.get("LCOM") || fsum == listThreschold.get("featureSum") || eloc == listThreschold.get("ELOC")) {
                                 basso = true;
                             }
                         }
                     } else {
-                        controllo = true;
+                        if (smell.getSmellName().equalsIgnoreCase("promiscuous package") && algoritmi.get("structural" + codeSmell.substring(0, 1)).isSelected() && used.equalsIgnoreCase("structural")) {
+                            Double mintrac = Double.parseDouble(valDipendenza.get(4).getText());
+                            Double minterc = Double.parseDouble(valDipendenza.get(5).getText());
+                            if (mintrac <= listThreschold.get("MIntraC") || minterc <= listThreschold.get("MInterC")) {
+                                complessita += 2;
+                                alto++;
+                                if (listThreschold.get("MIntraC") >= 0.75 || listThreschold.get("MInterC") >= 0.75) {
+                                    alto++;
+                                }
+                                if (mintrac == listThreschold.get("MIntraC") && minterc == listThreschold.get("MInterC")) {
+                                    basso = true;
+                                }
+                            } else {
+                                controllo = true;
+                            }
+                        }
                     }
                 }
-
 
                 if (i + 1 >= list.size() || !list.get(i + 1).getSmellName().equalsIgnoreCase(smell.getSmellName())) {
 
                     if (((cos != 0.0 || dip != 0) && ((listThreschold.get("coseno") != null && indice <= listThreschold.get("coseno") && algoritmi.get("textual" + codeSmell.substring(0, 1)).isSelected()) ||
                             (listThreschold.get("dipendenza") != null && indice <= listThreschold.get("dipendenza") && algoritmi.get("structural" + codeSmell.substring(0, 1)).isSelected()))) ||
                             (smell.getSmellName().equalsIgnoreCase("Blob") && smell.getAlgoritmsUsed().equalsIgnoreCase("structural") && algoritmi.get("structural" + codeSmell.substring(0, 1)).isSelected() &&
-                                    Double.parseDouble(valDipendenza.get(1).getText()) <= listThreschold.get("LCOM") && Double.parseDouble(valDipendenza.get(2).getText()) <= listThreschold.get("featureSum") && Double.parseDouble(valDipendenza.get(3).getText()) <= listThreschold.get("ELOC"))) {
+                                    (Double.parseDouble(valDipendenza.get(1).getText()) <= listThreschold.get("LCOM") || Double.parseDouble(valDipendenza.get(2).getText()) <= listThreschold.get("featureSum") || Double.parseDouble(valDipendenza.get(3).getText()) <= listThreschold.get("ELOC"))) ||
+                            (smell.getSmellName().equalsIgnoreCase("Promiscuous package") && smell.getAlgoritmsUsed().equalsIgnoreCase("structural") && algoritmi.get("structural" + codeSmell.substring(0, 1)).isSelected() &&
+                                    (Double.parseDouble(valDipendenza.get(1).getText()) <= listThreschold.get("MIntraC") || Double.parseDouble(valDipendenza.get(2).getText()) <= listThreschold.get("MInterC")))) {
                         tableItem.add(bean);
                         tableItem.add(smell.getSmellName());
                         if (cos == 0.0) {
@@ -627,7 +711,12 @@ public class CheckProjectPage extends DialogWrapper {
                                 HashMap<String, Double> soglie = smell.getIndex();
                                 tableItem.add(df2.format(soglie.get("LCOM")) + "-" + df2.format(soglie.get("featureSum")) + "-" + df2.format(soglie.get("ELOC")));
                             } else {
-                                tableItem.add("---");
+                                if (smell.getSmellName().equalsIgnoreCase("Promiscuous package") && algoritmi.get("structural" + codeSmell.substring(0, 1)).isSelected() && alto > 0) {
+                                    HashMap<String, Double> soglie = smell.getIndex();
+                                    tableItem.add(df3.format(soglie.get("MIntraC")) + "-" + df3.format(soglie.get("MInterC")));
+                                } else {
+                                    tableItem.add("---");
+                                }
                             }
                             ;
                         } else {

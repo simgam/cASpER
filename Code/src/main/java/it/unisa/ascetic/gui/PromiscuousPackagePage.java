@@ -29,6 +29,7 @@ public class PromiscuousPackagePage extends DialogWrapper {
     private PackageBean packageBeanPP;            //PackageBean sul quale avviene l'analisi
     private Project project;
     private List<PackageBean> splittedPackages;    //lista di package splittate
+    private List<PackageBean> packages;
 
     private JTextPane area;                     //area di testo dove viene mostrato in dettaglio il codice del CodeSmell selezionato
 
@@ -45,9 +46,10 @@ public class PromiscuousPackagePage extends DialogWrapper {
 
     private boolean errorOccured;               //serve per verificare se qualche cosa è andata storta
 
-    public PromiscuousPackagePage(PackageBean packageBeanPP, Project project) {
+    public PromiscuousPackagePage(PackageBean packageBeanPP, List<PackageBean> packages, Project project) {
         super(true);
         this.packageBeanPP = packageBeanPP;
+        this.packages = packages;
         this.project = project;
         setResizable(false);
         init();
@@ -83,12 +85,14 @@ public class PromiscuousPackagePage extends DialogWrapper {
         //SETTO LA TABELLA PER LE METRICHE
         table = new JBTable();
         Vector<String> tableHeaders = new Vector<>();
-        tableHeaders.add("Package Name");
-        tableHeaders.add("MIC");
+        tableHeaders.add("NOC");
+        tableHeaders.add("MIntraC");
+        tableHeaders.add("MInterC");
         Vector<String> tableElemet = new Vector<>();
 
-        tableElemet.add(packageBeanPP.getFullQualifiedName());
+        tableElemet.add(CKMetrics.getNumberOfClasses(packageBeanPP) + "");
         tableElemet.add(CKMetrics.computeMediumIntraConnectivity(packageBeanPP) + "");
+        tableElemet.add(CKMetrics.computeMediumInterConnectivity(packageBeanPP, packages) + "");
 
         DefaultTableModel model = new DefaultTableModel(tableHeaders, 0);
         model.addRow(tableElemet);
@@ -147,7 +151,7 @@ public class PromiscuousPackagePage extends DialogWrapper {
                     } catch (Exception e) {
                         errorOccured = true;
                     }
-                }, "Blob", false, project);
+                }, "Promiscuous package", false, project);
 
                 if (errorOccured) {
                     Messages.showMessageDialog(message, "Oh!No!", Messages.getErrorIcon());

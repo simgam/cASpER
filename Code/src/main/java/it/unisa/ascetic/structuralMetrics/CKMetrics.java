@@ -12,7 +12,7 @@ import java.util.regex.Pattern;
 
 public class CKMetrics {
 
-    public static int getELOC(ClassBean cb){
+    public static int getELOC(ClassBean cb) {
         return cb.getTextContent().split("\r\n|\r|\n").length;
     }
 
@@ -88,14 +88,16 @@ public class CKMetrics {
 
     public static int getCBO(ClassBean cb) {
 
-        Vector<String> imports = new Vector<String>(cb.getImports());
-
-        return imports.size();
+        if (cb.getImports() != null) {
+            Vector<String> imports = new Vector<String>(cb.getImports());
+            return imports.size();
+        }
+        return 0;
     }
 
     /**
-     *  Lack of Cohesion in Methods
-     *  Una metrica che misura la coesione
+     * Lack of Cohesion in Methods
+     * Una metrica che misura la coesione
      */
     public static int getLCOM(ClassBean cb) {
 
@@ -232,26 +234,6 @@ public class CKMetrics {
         }
 
         return ((1.0 / (pPackages.size() * (pPackages.size() - 1))) * sumInterConnectivities);
-    }
-
-    public static double computeMediumIntraConnectivity(Collection<PackageBean> pClusters) {
-        double sumIntraConnectivities = 0.0;
-        for (PackageBean pack : pClusters) {
-            double packAllLinks = Math.pow(pack.getClassList().size(), 2);
-            double packIntraConnectivity = 0.0;
-            for (ClassBean eClass : pack.getClassList()) {
-                for (ClassBean current : pack.getClassList()) {
-                    if (eClass != current) {
-                        if (existsDependence(eClass, current)) {
-                            packIntraConnectivity++;
-                        }
-                    }
-                }
-            }
-            sumIntraConnectivities += packIntraConnectivity / packAllLinks;
-        }
-
-        return ((1.0 / pClusters.size()) * sumIntraConnectivities);
     }
 
     public static double computeMediumInterConnectivity(Collection<PackageBean> pClusters) {

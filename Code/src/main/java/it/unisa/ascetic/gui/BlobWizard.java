@@ -524,6 +524,7 @@ public class BlobWizard extends DialogWrapper {
         columnNames.add("LOC");
         columnNames.add("WMC");
         columnNames.add("RFC");
+        columnNames.add("CBO");
         columnNames.add("LCOM");
         columnNames.add("NOA");
         columnNames.add("NOM");
@@ -537,6 +538,7 @@ public class BlobWizard extends DialogWrapper {
         tableItem.add(String.valueOf(CKMetrics.getWMC(blobClassBean)));
         tableItem.add(String.valueOf(CKMetrics.getRFC(blobClassBean)));
         tableItem.add(String.valueOf(CKMetrics.getLCOM(blobClassBean)));
+        tableItem.add(String.valueOf(CKMetrics.getCBO(blobClassBean)));
         tableItem.add(String.valueOf(CKMetrics.getNOA(blobClassBean)));
         tableItem.add(String.valueOf(CKMetrics.getNOM(blobClassBean)));
         tableItem.add(String.valueOf(CKMetrics.getNOPA(blobClassBean)));
@@ -550,6 +552,7 @@ public class BlobWizard extends DialogWrapper {
                 tableItem.add(String.valueOf(CKMetrics.getLOC(classe)));
                 tableItem.add(String.valueOf(CKMetrics.getWMC(classe)));
                 tableItem.add(String.valueOf(CKMetrics.getRFC(classe)));
+                tableItem.add(String.valueOf(CKMetrics.getCBO(classe)));
                 tableItem.add(String.valueOf(CKMetrics.getLCOM(classe)));
                 tableItem.add(String.valueOf(CKMetrics.getNOA(classe)));
                 tableItem.add(String.valueOf(CKMetrics.getNOM(classe)));

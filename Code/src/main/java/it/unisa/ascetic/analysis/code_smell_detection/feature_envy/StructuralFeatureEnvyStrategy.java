@@ -17,9 +17,11 @@ import java.util.regex.Pattern;
 public class StructuralFeatureEnvyStrategy implements MethodSmellDetectionStrategy {
 
     private List<PackageBean> systemPackages;
+    private int soglia;
 
-    public StructuralFeatureEnvyStrategy(List<PackageBean> systemPackages) {
+    public StructuralFeatureEnvyStrategy(List<PackageBean> systemPackages, int soglia) {
         this.systemPackages = systemPackages;
+        this.soglia = soglia;
     }
 
     public boolean isSmelly(MethodBean pMethod) {
@@ -72,7 +74,7 @@ public class StructuralFeatureEnvyStrategy implements MethodSmellDetectionStrate
 
             ClassBean firstRankedClass = dependenciesWithMethod.get(dependenciesWithMethod.size() - 1);
 
-            if (numberOfDependenciesWithActualClass <= firstRankedClass.getSimilarity() && firstRankedClass.getSimilarity() != 0) {
+            if (numberOfDependenciesWithActualClass <= firstRankedClass.getSimilarity() && firstRankedClass.getSimilarity() != 0 && firstRankedClass.getSimilarity() >= soglia) {
                 pMethod.setEnviedClass(firstRankedClass);
                 return true;
             }

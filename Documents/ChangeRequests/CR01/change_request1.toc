@@ -1,4 +1,0 @@
-\babel@toc {italian}{}
-\babel@toc {italian}{}
-\contentsline {section}{\numberline {1}Prima Sezione}{3}
-\contentsline {section}{\numberline {2}Seconda Sezione}{3}
