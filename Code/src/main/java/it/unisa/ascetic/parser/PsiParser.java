@@ -4,7 +4,10 @@ import com.intellij.analysis.AnalysisScope;
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.*;
 import com.intellij.psi.util.PsiTreeUtil;
-import it.unisa.ascetic.analysis.code_smell.*;
+import it.unisa.ascetic.analysis.code_smell.BlobCodeSmell;
+import it.unisa.ascetic.analysis.code_smell.FeatureEnvyCodeSmell;
+import it.unisa.ascetic.analysis.code_smell.MisplacedClassCodeSmell;
+import it.unisa.ascetic.analysis.code_smell.PromiscuousPackageCodeSmell;
 import it.unisa.ascetic.analysis.code_smell_detection.blob.StructuralBlobStrategy;
 import it.unisa.ascetic.analysis.code_smell_detection.blob.TextualBlobStrategy;
 import it.unisa.ascetic.analysis.code_smell_detection.feature_envy.StructuralFeatureEnvyStrategy;
@@ -13,8 +16,8 @@ import it.unisa.ascetic.analysis.code_smell_detection.misplaced_class.Structural
 import it.unisa.ascetic.analysis.code_smell_detection.misplaced_class.TextualMisplacedClassStrategy;
 import it.unisa.ascetic.analysis.code_smell_detection.promiscuous_package.StructuralPromiscuousPackageStrategy;
 import it.unisa.ascetic.analysis.code_smell_detection.promiscuous_package.TextualPromiscuousPackageStrategy;
-import it.unisa.ascetic.storage.repository.*;
 import it.unisa.ascetic.storage.beans.*;
+import it.unisa.ascetic.storage.repository.*;
 import it.unisa.ascetic.storage.sqlite_jdbc_driver_connection.SQLiteConnector;
 import javafx.util.Pair;
 
@@ -35,9 +38,11 @@ public class PsiParser implements Parser {
     private static MethodBeanRepository methodBeanRepository;
     private static InstanceVariableBeanRepository instanceVariableBeanRepository;
     private final List<PackageBean> projectPackages;
+    private static String path;
 
     public PsiParser(Project project) {
         this.project = project;
+        path = project.getBasePath();
         projectPackages = new ArrayList<PackageBean>();
         packageBeanRepository = new PackageRepository();
         classBeanRepository = new ClassRepository();
@@ -48,7 +53,6 @@ public class PsiParser implements Parser {
 
     @Override
     public void parse() throws ParsingException, RepositoryException {
-        logger.severe("Eseguo il metodo parse");
         if (packageBeanRepository == null || classBeanRepository == null || methodBeanRepository == null || instanceVariableBeanRepository == null) {
             throw new RepositoryException("Repository non inizializzate!");
         }
@@ -114,15 +118,14 @@ public class PsiParser implements Parser {
         classBeanRepository.delete();
         boolean affectedbean = false;
 
-        for (
-                PackageBean packageBean : projectPackages) {
+        for (PackageBean packageBean : projectPackages) {
             TextualPromiscuousPackageStrategy textualPromiscuousPackageStrategy = new TextualPromiscuousPackageStrategy(coseno.get("cosenoPromiscuous"));
             PromiscuousPackageCodeSmell tPromiscuousPackagecodeSmell = new PromiscuousPackageCodeSmell(textualPromiscuousPackageStrategy, "Textual");
             if (packageBean.isAffected(tPromiscuousPackagecodeSmell)) {
                 affectedbean = true;
             }
             packageBean.setSimilarity(0);
-            StructuralPromiscuousPackageStrategy structuralPromiscuousPackageStrategy = new StructuralPromiscuousPackageStrategy(projectPackages, dipendence.get("dipPromiscuous")/100, dipendence.get("dipPromiscuous2")/100);
+            StructuralPromiscuousPackageStrategy structuralPromiscuousPackageStrategy = new StructuralPromiscuousPackageStrategy(projectPackages, dipendence.get("dipPromiscuous") / 100, dipendence.get("dipPromiscuous2") / 100);
             PromiscuousPackageCodeSmell sPromiscuousPackagecodeSmell = new PromiscuousPackageCodeSmell(structuralPromiscuousPackageStrategy, "Structural");
             if (packageBean.isAffected(sPromiscuousPackagecodeSmell)) {
                 affectedbean = true;
@@ -269,7 +272,7 @@ public class PsiParser implements Parser {
         PsiJavaFile file = (PsiJavaFile) psiClass.getContainingFile();
         PsiPackage psiPackage = JavaPsiFacade.getInstance(project).findPackage(file.getPackageName());
         String pkgName = psiPackage.getQualifiedName();
-        //PackageBean pezzotto
+        //PackageBean per supporto
         PackageBean packageBean = new PackageBean.Builder(pkgName, contentForPackage).build();
         // analizzo la classe
         String name = psiClass.getQualifiedName();
@@ -278,6 +281,39 @@ public class PsiParser implements Parser {
         //creo la lista delle variabili d'istanza
         ClassBean.Builder builder = new ClassBean.Builder(name, text);
         builder.setBelongingPackage(packageBean);
+
+        //ottengo il path assoluto
+        name = name.replace(".", "/");
+        String[] list = name.split("/");
+        String root = list[0];
+        File source = new File(path);
+        boolean controllo = false;
+        int j = 0, i = 0;
+        File[] all = source.listFiles();
+        File[] in;
+        while (j < all.length && !controllo) {
+            in = all[j].listFiles();
+            while (i < in.length && !controllo) {
+                if (in[i].getName().equalsIgnoreCase(root)) {
+                    controllo = true;
+                    root = path + "/" + all[j].getName();
+                }
+                i++;
+            }
+            i = 0;
+            j++;
+        }
+        if (controllo) {
+            for (j = 0; j < list.length - 1; j++) {
+                root += "/" + list[j];
+            }
+            builder.setPathToFile(root);
+        }
+
+        //controllo se presenta superclasse
+        if (psiClass.getSuperClass() != null) {
+            builder.setSuperclass(psiClass.getSuperClass().getQualifiedName());
+        }
 
         //calcolo LOC
         Pattern newLine = Pattern.compile("\n");
@@ -292,7 +328,6 @@ public class PsiParser implements Parser {
         InstanceVariableList instanceVariableList = new InstanceVariableList();
         instanceVariableList.setList(listVariabili);
         builder.setInstanceVariables(instanceVariableList);
-        //logger.severe("aggiunte le variabili d'istanza alla lista della classe\n");
 
         //creo la lista dei metodi
         ArrayList<MethodBean> listaMetodi = new ArrayList<>();
@@ -315,7 +350,6 @@ public class PsiParser implements Parser {
      * @return MethodBean
      */
     public MethodBean parse(PsiMethod psiMethod) {
-        //logger.severe("Creo un MethodBean da un PsiMethod");
         //MethodBan da Parsare
         MethodBean.Builder builder = new MethodBean.Builder(psiMethod.getContainingClass().getQualifiedName() + "." + psiMethod.getName(), psiMethod.getText());
         builder.setStaticMethod(psiMethod.getModifierList().hasExplicitModifier("static"));
@@ -331,7 +365,6 @@ public class PsiParser implements Parser {
                     list.add(parse(field));
             }
         } catch (NullPointerException npe) {
-            //logger.severe("nessuna Variabile d'istanza");
             npe.printStackTrace();
         }
         InstanceVariableList instanceVariableList = new InstanceVariableList();
@@ -382,7 +415,6 @@ public class PsiParser implements Parser {
      * @return the InstanceVariableBean corresponding to the given PsiField
      */
     public InstanceVariableBean parse(PsiField psiField) {
-        //logger.severe("Creo un InstanceVariableBean da un PsiField");
         String name = psiField.getName();
         String type = psiField.getType().getCanonicalText();
         String initialization = "";
@@ -468,7 +500,6 @@ public class PsiParser implements Parser {
         return (ArrayList) invocations;
     }
 
-
     /**
      * CODICE DI MANUEL ATTENZIONE
      * non toccare qui sennò Gesù si arrabbia
@@ -489,7 +520,7 @@ public class PsiParser implements Parser {
                             JavaPsiFacade.getInstance(project).findPackage(psiJavaFile.getPackageName());
                     if (aPackage != null) {
                         foundPackages.add(aPackage);
-                        logger.severe("found " + aPackage.getQualifiedName());//aggiungi logger
+                        //logger.severe("found " + aPackage.getQualifiedName());//aggiungi logger
                     }
                 }
             }

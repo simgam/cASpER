@@ -44,7 +44,7 @@ public class PromiscuousPackagePage extends DialogWrapper {
 
     private JBTable table;                      //tabella dove sono visualizzati i codeSmell
 
-    private boolean errorOccured;               //serve per verificare se qualche cosa è andata storta
+    private boolean errorOccured=false;               //serve per verificare se qualche cosa è andata storta
 
     public PromiscuousPackagePage(PackageBean packageBeanPP, List<PackageBean> packages, Project project) {
         super(true);
@@ -147,7 +147,7 @@ public class PromiscuousPackagePage extends DialogWrapper {
                 message = "Something went wrong in computing solution";
                 ProgressManager.getInstance().runProcessWithProgressSynchronously(() -> {
                     try {
-                        splittedPackages = (List<PackageBean>) new SplitPackages().split(packageBeanPP, 0.5);
+                        splittedPackages = (List<PackageBean>) new SplitPackages().split(packageBeanPP, 0.1);
                     } catch (Exception e) {
                         errorOccured = true;
                     }

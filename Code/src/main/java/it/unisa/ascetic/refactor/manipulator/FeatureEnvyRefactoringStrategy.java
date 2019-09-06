@@ -58,17 +58,21 @@ public class FeatureEnvyRefactoringStrategy implements RefactoringStrategy {
      */
     @Override
     public void doRefactor() throws FeatureEnvyException {
-        switch (fixtype) {
-            case 1:
-                instanceVariableFeatureEnvy();
-                break;
-            case 2:
-                parametersFeatureEnvy();
-                break;
-            case 0:
-                unfixableFE();
-            default:
-                throw new FeatureEnvyException("Invalid Fix Type");
+        try {
+            switch (fixtype) {
+                case 1:
+                    instanceVariableFeatureEnvy();
+                    break;
+                case 2:
+                    parametersFeatureEnvy();
+                    break;
+                case 0:
+                    unfixableFE();
+                default:
+                    throw new FeatureEnvyException("Invalid Fix Type");
+            }
+        } catch (Exception e) {
+            throw new FeatureEnvyException(e.getMessage());
         }
     }
 

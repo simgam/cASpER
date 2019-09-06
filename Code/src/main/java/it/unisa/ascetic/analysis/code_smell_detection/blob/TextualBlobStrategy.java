@@ -1,9 +1,11 @@
 package it.unisa.ascetic.analysis.code_smell_detection.blob;
 
+import it.unisa.ascetic.analysis.code_smell_detection.BeanDetection;
 import it.unisa.ascetic.analysis.code_smell_detection.ComponentMutation;
 import it.unisa.ascetic.analysis.code_smell_detection.smellynessMetricProcessing.SmellynessMetric;
 import it.unisa.ascetic.analysis.code_smell_detection.strategy.ClassSmellDetectionStrategy;
 import it.unisa.ascetic.storage.beans.ClassBean;
+import it.unisa.ascetic.storage.beans.MethodBean;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -26,21 +28,30 @@ public class TextualBlobStrategy implements ClassSmellDetectionStrategy {
     }
 
     public boolean isSmelly(ClassBean pClass) {
-        SmellynessMetric smellyness = new SmellynessMetric();
-        ComponentMutation componentMutation = new ComponentMutation();
-
-        String mutatedClass = componentMutation.alterClass(pClass);
-        double smellynessIndex = 0;
-        try {
-            smellynessIndex = smellyness.computeSmellyness(mutatedClass);
-            if (smellynessIndex > soglia)
-                return true;
-
-        } catch (IOException e) {
-            e.getMessage();
-            return false;
+        BeanDetection control = new BeanDetection();
+        boolean bean = true;
+        for (MethodBean method : pClass.getMethodList()) {
+            if (!control.detection(method)) {
+                bean = false;
+            }
         }
 
+        if (!bean) {
+            SmellynessMetric smellyness = new SmellynessMetric();
+            ComponentMutation componentMutation = new ComponentMutation();
+
+            String mutatedClass = componentMutation.alterClass(pClass);
+            double smellynessIndex = 0;
+            try {
+                smellynessIndex = smellyness.computeSmellyness(mutatedClass);
+                if (smellynessIndex > soglia)
+                    return true;
+
+            } catch (IOException e) {
+                e.getMessage();
+                return false;
+            }
+        }
         return false;
     }
 

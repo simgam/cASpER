@@ -6,6 +6,10 @@ import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.ui.Messages;
 import it.unisa.ascetic.gui.radarMap.RadarMapUtils;
 import it.unisa.ascetic.gui.radarMap.RadarMapUtilsAdapter;
+import it.unisa.ascetic.refactor.exceptions.BlobException;
+import it.unisa.ascetic.refactor.exceptions.FeatureEnvyException;
+import it.unisa.ascetic.refactor.exceptions.MisplacedClassException;
+import it.unisa.ascetic.refactor.exceptions.PromiscuousPackageException;
 import it.unisa.ascetic.refactor.manipulator.BlobRefatoringStrategy;
 import it.unisa.ascetic.refactor.strategy.RefactoringManager;
 import it.unisa.ascetic.refactor.strategy.RefactoringStrategy;
@@ -72,25 +76,23 @@ public class BlobWizard extends DialogWrapper {
                     RefactoringStrategy refactoringStrategy = new BlobRefatoringStrategy(blobClassBean, splitting, project);
                     RefactoringManager refactoringManager = new RefactoringManager(refactoringStrategy);
                     refactoringManager.executeRefactor();
-                } catch (Exception e) {
-                    errorOccured = true;
-                    message = e.getMessage();
-                    e.printStackTrace();
-                }
 
-                if (errorOccured) {
-                    Messages.showMessageDialog(message, "Oh!No!", Messages.getErrorIcon());
-                } else {
+                    String[] name = blobClassBean.getFullQualifiedName().replace(".", "/").split("/");
+                    File file = new File(blobClassBean.getPathToFile() + "/" + name[name.length - 1]+".java");
+                    System.out.println(file.toString());
+                    file.delete();
+
                     close(0);
                     message = "Blob Corrected, check new classes generated name";
                     Messages.showMessageDialog(message, "Success !", Messages.getInformationIcon());
-                    try {
-                        FileWriter f = new FileWriter(System.getProperty("user.home") + File.separator + ".ascetic" + File.separator + "refactoring.txt");
-                        BufferedWriter out = new BufferedWriter(f);
-                        out.write("success");
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
+                    FileWriter f = new FileWriter(System.getProperty("user.home") + File.separator + ".ascetic" + File.separator + "refactoring.txt");
+                    BufferedWriter out = new BufferedWriter(f);
+                    out.write("success");
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (Exception e) {
+                    Messages.showMessageDialog("Error during refactoring", "Error", Messages.getErrorIcon());
                 }
             }
         };

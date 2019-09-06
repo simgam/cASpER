@@ -1,5 +1,6 @@
 package it.unisa.ascetic.analysis.code_smell_detection.feature_envy;
 
+import it.unisa.ascetic.analysis.code_smell_detection.BeanDetection;
 import it.unisa.ascetic.analysis.code_smell_detection.similarityComputation.CosineSimilarity;
 import it.unisa.ascetic.analysis.code_smell_detection.strategy.MethodSmellDetectionStrategy;
 import it.unisa.ascetic.storage.beans.ClassBean;
@@ -31,7 +32,8 @@ public class TextualFeatureEnvyStrategy implements MethodSmellDetectionStrategy 
 
     public boolean isSmelly(MethodBean pMethod) {
 
-        if (!isGetter(pMethod) && !isSetter(pMethod) && !(pMethod.getFullQualifiedName().toLowerCase()).contains("main") && !isConstructor(pMethod)) {
+        BeanDetection control = new BeanDetection();
+        if (!control.detection(pMethod)) {
 
             SortedMap<ClassBean, Double> similaritiesWithMethod = new TreeMap<ClassBean, Double>();
             CosineSimilarity cosineSimilarity = new CosineSimilarity();
@@ -75,33 +77,6 @@ public class TextualFeatureEnvyStrategy implements MethodSmellDetectionStrategy 
                 pMethod.setEnviedClass(firstRankedClass);
                 return true;
             }
-        }
-        return false;
-    }
-
-    private boolean isGetter(MethodBean pMethodBean) {
-        if ((pMethodBean.getFullQualifiedName().toLowerCase()).contains("get") && pMethodBean.getParameters().isEmpty() &&
-                !((ClassBean) pMethodBean.getReturnType()).getFullQualifiedName().equalsIgnoreCase("void")) {
-            return true;
-        }
-        return false;
-    }
-
-    private boolean isSetter(MethodBean pMethodBean) {
-        if ((pMethodBean.getFullQualifiedName().toLowerCase()).contains("set") && pMethodBean.getParameters().size() == 1 &&
-                ((ClassBean) pMethodBean.getReturnType()).getFullQualifiedName().equalsIgnoreCase("void")) {
-            return true;
-        }
-        return false;
-    }
-
-    private boolean isConstructor(MethodBean pMethodBean) {
-        String[] fullClass = ((ClassBean) pMethodBean.getBelongingClass()).getFullQualifiedName().split(Pattern.quote("."));
-        String[] fullMethod = pMethodBean.getFullQualifiedName().split(Pattern.quote("."));
-
-        if (fullMethod[fullMethod.length - 1].equalsIgnoreCase(fullClass[fullClass.length - 1]) &&
-                ((ClassBean) pMethodBean.getReturnType()).getFullQualifiedName().equalsIgnoreCase("void")) {
-            return true;
         }
         return false;
     }

@@ -88,7 +88,7 @@ public class FeatureEnvyWizard extends DialogWrapper {
 
         createTextArea("Old Text Content", smellMethod.getTextContent());
         String newText = smellMethod.getEnviedClass().getTextContent();
-        newText = newText.substring(0, newText.length() - 1) + "   " + smellMethod.getTextContent() + "\n}";
+        newText = newText.substring(0, newText.lastIndexOf("}") - 1) + "\n\n   " + smellMethod.getTextContent() + "\n}";
         createTextArea("New Text Content", newText);
 
         livelli.add(radarmaps);
@@ -104,7 +104,7 @@ public class FeatureEnvyWizard extends DialogWrapper {
         textAreaContent.append(smellMethod.getFullQualifiedName());
         textAreaContent.append(" will be moved from ");
         textAreaContent.append(smellMethod.getBelongingClass().getFullQualifiedName());
-        textAreaContent.append(" to");
+        textAreaContent.append(" to ");
         textAreaContent.append(smellMethod.getEnviedClass().getFullQualifiedName());
 
         textArea.setText(textAreaContent.toString());
@@ -197,13 +197,11 @@ public class FeatureEnvyWizard extends DialogWrapper {
                 } else {
                     message = "Move method refactoring correctly executed";
                     icon = Messages.getInformationIcon();
-                    icon = Messages.getInformationIcon();
                     try {
                         FileWriter f = new FileWriter(System.getProperty("user.home") + File.separator + ".ascetic" + File.separator + "refactoring.txt");
                         BufferedWriter out = new BufferedWriter(f);
                         out.write(textAreaContent.toString());
                     } catch (IOException e) {
-                        e.printStackTrace();
                     }
                 }
 

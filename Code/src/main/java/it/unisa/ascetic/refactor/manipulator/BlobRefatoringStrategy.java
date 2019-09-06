@@ -2,6 +2,7 @@ package it.unisa.ascetic.refactor.manipulator;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.ui.Messages;
 import com.intellij.psi.*;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.refactoring.extractclass.ExtractClassProcessor;
@@ -9,6 +10,7 @@ import it.unisa.ascetic.refactor.exceptions.BlobException;
 import it.unisa.ascetic.refactor.strategy.RefactoringStrategy;
 import it.unisa.ascetic.storage.beans.*;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
@@ -29,14 +31,14 @@ public class BlobRefatoringStrategy implements RefactoringStrategy {
 
     @Override
     public void doRefactor() throws BlobException {
-        /*List<ClassBean> lista;
-        lista = splittedList;
-        for (ClassBean classBean : lista) {
-            PsiClass psiSplittedClass = PsiUtil.getPsi(classBean, project);
-            for (PsiMethod metodoSplittato : psiSplittedClass.getAllMethods()) {
-                createDelegation(metodoSplittato);
-            }
-        }*/
+//        List<ClassBean> lista;
+//        lista = splittedList;
+//        for (ClassBean classBean : lista) {
+//            PsiClass psiSplittedClass = PsiUtil.getPsi(classBean, project);
+//            for (PsiMethod metodoSplittato : psiSplittedClass.getAllMethods()) {
+//                createDelegation(metodoSplittato);
+//            }
+//        }
         //test con il processor
 
         String packageName = originalClass.getBelongingPackage().getFullQualifiedName();
@@ -45,40 +47,39 @@ public class BlobRefatoringStrategy implements RefactoringStrategy {
             List<PsiMethod> methodsToMove = new ArrayList<>();
             List<PsiField> fieldsToMove = new ArrayList<>();
             List<PsiClass> innerClasses = new ArrayList<>();
-            String classShortName = classBean.getFullQualifiedName().substring(classBean.getFullQualifiedName().lastIndexOf('.')+1);
+            String classShortName = classBean.getFullQualifiedName().substring(classBean.getFullQualifiedName().lastIndexOf('.') + 1);
 
-            ApplicationManager.getApplication().runReadAction(()->{
-                psiOriginalClass = JavaPsiFacade.getInstance(project).findClass(originalClass.getFullQualifiedName(),GlobalSearchScope.everythingScope(project));//PsiUtil.getPsi(,project);
+            ApplicationManager.getApplication().runReadAction(() -> {
+                psiOriginalClass = JavaPsiFacade.getInstance(project).findClass(originalClass.getFullQualifiedName(), GlobalSearchScope.everythingScope(project));//PsiUtil.getPsi(,project);
 
                 // creo una lista di metodi
                 for (MethodBean metodoSplittato : classBean.getMethodList()) {
-                    String methodShortName = metodoSplittato.getFullQualifiedName().substring(metodoSplittato.getFullQualifiedName().lastIndexOf('.')+1);
-                    methodsToMove.add(psiOriginalClass.findMethodsByName(methodShortName,true)[0]);
+                    String methodShortName = metodoSplittato.getFullQualifiedName().substring(metodoSplittato.getFullQualifiedName().lastIndexOf('.') + 1);
+                    methodsToMove.add(psiOriginalClass.findMethodsByName(methodShortName, true)[0]);
                 }
 
                 //creo una lista di fields
-                for(InstanceVariableBean instanceVariableBean: classBean.getInstanceVariablesList()){
-                    fieldsToMove.add(psiOriginalClass.findFieldByName(instanceVariableBean.getFullQualifiedName(),true));
+                for (InstanceVariableBean instanceVariableBean : classBean.getInstanceVariablesList()) {
+                    fieldsToMove.add(psiOriginalClass.findFieldByName(instanceVariableBean.getFullQualifiedName(), true));
                 }
 
-                for(PsiClass innerClass: psiOriginalClass.getInnerClasses()){
+                for (PsiClass innerClass : psiOriginalClass.getInnerClasses()) {
                     innerClasses.add(innerClass);
                 }
 
-
             });
+            try {
+                for(ClassBean c : splittedList){
+                    System.out.println(c.getTextContent());
+                }
 
-            processor = new ExtractClassProcessor(
-                    psiOriginalClass,
-                    fieldsToMove,
-                    methodsToMove,
-                    innerClasses,
-                    packageName,
-                    classShortName);
-
-            processor.run();
+                processor = new ExtractClassProcessor(psiOriginalClass, fieldsToMove, methodsToMove, innerClasses, packageName, classShortName);
+                processor.run();
+            } catch (NullPointerException e) {
+                e.printStackTrace();
+                throw new BlobException(e.getMessage());
+            }
         }
-
     }
 
     private void createDelegation(PsiMethod metodoSplittato) {

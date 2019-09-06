@@ -31,7 +31,9 @@ public class SplitClasses {
      * @throws Exception
      */
     public Collection<ClassBean> split(ClassBean pToSplit, double pThreshold) throws Exception {
+
         Collection<ClassBean> result = new Vector<>();
+
         Iterator<MethodBean> it = pToSplit.getMethodList().iterator();
         Vector<MethodBean> vectorMethods = new Vector<>();
         MethodBean tmpMethod = null;
@@ -47,15 +49,9 @@ public class SplitClasses {
         Vector<Integer> tmpMarkovChain = new Vector<Integer>();
         Vector<Integer> makeMethods = new Vector<Integer>();
         double[] tmpProbability = new double[methodByMethodMatrix.length];
-        logger.severe("thres: " + pThreshold);
+
         chains = new Vector<String>();
         getMarkovChains(methodByMethodMatrixFiltered, 0, tmpMarkovChain, tmpProbability, makeMethods);
-        //Placing trivial chains
-        logger.severe("CHAINS: ");
-        for (String tmpChainString : chains) {
-            logger.severe(tmpChainString);
-        }
-
 
         Vector<String> newChains = new Vector<String>();
         for (int i = 0; i < chains.size(); i++) {
@@ -64,6 +60,7 @@ public class SplitClasses {
                 //it's a trivial chain
                 double maxSimilarity = 0;
                 int indexChain = -1;
+
                 for (int j = 0; j < chains.size(); j++) {
                     if (i != j) {
                         String[] tmpChains = splitPattern.split(chains.elementAt(j));
@@ -91,6 +88,7 @@ public class SplitClasses {
                 newChains.add(chains.elementAt(i));
             }
         }
+
         if (newChains.size() > 5) {
             //Conto le trivial chains
             int count = 0;
@@ -158,7 +156,7 @@ public class SplitClasses {
             logger.severe(classBean.getFullQualifiedName());
             logger.severe("Fields:");
             for (InstanceVariableBean field : classBean.getInstanceVariablesList()) {
-                logger.severe(field+"");
+                logger.severe(field + "");
             }
             logger.severe("Methods:");
             for (MethodBean methodBean : classBean.getMethodList()) {
@@ -228,7 +226,12 @@ public class SplitClasses {
         return new ClassBean.Builder(tempName, classTextContent.toString())
                 .setInstanceVariables(instanceVariableList)
                 .setMethods(methodList)
+                .setImports(new ArrayList<String>())
+                .setLOC(0)
                 .setBelongingPackage(belongingPackage)
+                .setPathToFile("")
+                .setEntityClassUsage(0)
+                .setAffectedSmell()
                 .build();
     }
 

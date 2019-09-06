@@ -7,11 +7,12 @@
     <converter id="groovy-modules-to-facets" />
     <converter id="groovy-script-run-configurations" />
     <converter id="junit-to-android-junit-configurations" />
+    <converter id="kotlin-non-jvm-source-roots" />
   </applied-converters>
   <project-files>
-    <file path="C:\Users\Simone\Desktop\TestAscetic\.idea\misc.xml" timestamp="1563568680038" />
-    <file path="C:\Users\Simone\Desktop\TestAscetic\.idea\vcs.xml" timestamp="1563568701491" />
-    <file path="C:\Users\Simone\Desktop\TestAscetic\.idea\workspace.xml" timestamp="1563569027362" />
+    <file path="C:\Users\Simone\Desktop\TestAscetic\.idea\misc.xml" timestamp="1567703251309" />
+    <file path="C:\Users\Simone\Desktop\TestAscetic\.idea\vcs.xml" timestamp="1567703288010" />
+    <file path="C:\Users\Simone\Desktop\TestAscetic\.idea\workspace.xml" timestamp="1567703297737" />
   </project-files>
 </conversion>
 

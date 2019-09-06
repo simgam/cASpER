@@ -167,7 +167,7 @@ public class PackageRepositoryTest {
 
             List<PackageBean> systemPackage = new ArrayList<PackageBean>();
             systemPackage.add(pack);
-            pack.addSmell(new PromiscuousPackageCodeSmell(new TextualPromiscuousPackageStrategy()));
+            pack.addSmell(new PromiscuousPackageCodeSmell(new TextualPromiscuousPackageStrategy(0.5), "Testuale"));
 
             selection.close();
             SQLiteConnector.releaseConnection(con);
@@ -230,7 +230,7 @@ public class PackageRepositoryTest {
         oracolo.add(new PackageBean.Builder("package2", "contenuto")
                 .setClassList(classes2)
                 .build());
-        oracolo.get(0).addSmell(new PromiscuousPackageCodeSmell(new TextualPromiscuousPackageStrategy()));
+        oracolo.get(0).addSmell(new PromiscuousPackageCodeSmell(new TextualPromiscuousPackageStrategy(0.5), "Testuale"));
         try {
             list = repo.select(new SQLSelectionPackage());
 

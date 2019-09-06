@@ -1,4 +1,4 @@
-package main.java.it.unisa.ascetic.storage.beans;
+package it.unisa.ascetic.storage.beans;
 
 import it.unisa.ascetic.storage.repository.ClassRepository;
 import it.unisa.ascetic.storage.sqlite_jdbc_driver_connection.SQLiteConnector;

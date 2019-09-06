@@ -38,23 +38,19 @@ public class MisplacedClassRefactoringStrategy implements RefactoringStrategy {
 
     @Override
     public void doRefactor() throws MisplacedClassException {
-        moveClass();
-    }
+        try {
 
-    /**
-     * Metodo che di occupa di implementare mediante chiamate alla repository lo spostamento della classe dal package sorgente a quello di destinazione
-     *
-     * @throws MisplacedClassException
-     */
-    private void moveClass() throws MisplacedClassException {
-        logger.severe("inizio lo spostamento");
-        PsiPackage destinaPackage = JavaPsiFacade.getInstance(project).findPackage(toPackage.getFullQualifiedName());
+            logger.severe("inizio lo spostamento");
+            PsiPackage destinaPackage = JavaPsiFacade.getInstance(project).findPackage(toPackage.getFullQualifiedName());
 
 
-        PsiClass sourceClass = JavaPsiFacade.getInstance(project).findClass(classToMove.getFullQualifiedName(), GlobalSearchScope.everythingScope(project));
-        PsiPackage destinationPackage = JavaPsiFacade.getInstance(project).findPackage(toPackage.getFullQualifiedName());
+            PsiClass sourceClass = JavaPsiFacade.getInstance(project).findClass(classToMove.getFullQualifiedName(), GlobalSearchScope.everythingScope(project));
+            PsiPackage destinationPackage = JavaPsiFacade.getInstance(project).findPackage(toPackage.getFullQualifiedName());
 
-        doMoveClass(project, sourceClass, destinationPackage);
+            doMoveClass(project, sourceClass, destinationPackage);
+        } catch (Exception e) {
+            throw new MisplacedClassException(e.getMessage());
+        }
     }
 
     private void doMoveClass(Project project, PsiClass sourceClass, PsiPackage destinationPackage) {

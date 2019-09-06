@@ -68,9 +68,9 @@ public class MethodByMethodMatrixConstruction {
 
 		Collections.sort(vectorOfMethods);
 
-		for (MethodBean m:vectorOfMethods){
+		/*for (MethodBean m:vectorOfMethods){
 			logger.severe(m.getFullQualifiedName());
-		}
+		}*/
 
 		if (!CCMmatrixFile.exists() || !CSMmatrixFile.exists() || !SSMmatrixFile.exists()) {
 			matrixFolder.mkdirs();

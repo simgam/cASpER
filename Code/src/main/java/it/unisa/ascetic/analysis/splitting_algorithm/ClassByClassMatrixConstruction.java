@@ -140,14 +140,14 @@ public class ClassByClassMatrixConstruction {
         }
     }
 
-    public  double[][] filterMatrix(double[][] methodByMethodMatrix, double pThreshold){
-		for (int i=0; i<methodByMethodMatrix.length; i++){
-			for (int j=0; j<methodByMethodMatrix.length; j++){
-				if(methodByMethodMatrix[i][j]<pThreshold)
-					methodByMethodMatrix[i][j] = 0;
+    public  double[][] filterMatrix(double[][] classByClassMatrix, double pThreshold){
+		for (int i=0; i<classByClassMatrix.length; i++){
+			for (int j=0; j<classByClassMatrix.length; j++){
+				if(classByClassMatrix[i][j]<pThreshold)
+					classByClassMatrix[i][j] = 0;
 			}
 		}
-		return methodByMethodMatrix;
+		return classByClassMatrix;
 	}
 
 	public  double[][] readMatrixFromFile(File pFile, int dimension) throws IOException{

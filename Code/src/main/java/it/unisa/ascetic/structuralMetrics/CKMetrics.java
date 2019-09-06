@@ -1,10 +1,12 @@
 package it.unisa.ascetic.structuralMetrics;
 
+import it.unisa.ascetic.analysis.code_smell_detection.similarityComputation.CosineSimilarity;
 import it.unisa.ascetic.storage.beans.ClassBean;
 import it.unisa.ascetic.storage.beans.InstanceVariableBean;
 import it.unisa.ascetic.storage.beans.MethodBean;
 import it.unisa.ascetic.storage.beans.PackageBean;
 
+import java.io.IOException;
 import java.util.Collection;
 import java.util.Vector;
 import java.util.regex.Matcher;
@@ -406,4 +408,41 @@ public class CKMetrics {
         return false;
     }
 
+    public static double getCCBC(ClassBean pClass, ClassBean pClass2) {
+        Double ccbc=0.0;
+
+        double comparisons=0.0;
+        CosineSimilarity cosineSimilarity = new CosineSimilarity();
+
+        for(MethodBean methodBean: pClass.getMethodList()) {
+            for(MethodBean methodBean2: pClass2.getMethodList()) {
+
+                if(! methodBean.equals(methodBean2)) {
+                    String[] document1=new String[2];
+                    String[] document2=new String[2];
+
+                    document1[0] = methodBean.getFullQualifiedName();
+                    document1[1] = methodBean.getTextContent();
+
+                    document2[0] = methodBean2.getFullQualifiedName();
+                    document2[1] = methodBean2.getTextContent();
+
+                    try {
+                        ccbc+=cosineSimilarity.computeSimilarity(document1, document2);
+                        comparisons++;
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }
+
+        ccbc=ccbc/comparisons;
+
+        if (ccbc.isNaN()) {
+            return 0.0;
+        } else if(ccbc.isInfinite()) {
+            return 0.0;
+        } else return ccbc;
+    }
 }

@@ -197,8 +197,8 @@ public class ClassRepositoryTest {
         List<PackageBean> systemPackage = new ArrayList<PackageBean>();
         systemPackage.add(new PackageBean.Builder("package", "contenuto").setClassList(new ClassList()).build());
         systemPackage.get(0).addClassList(classe);
-        classe.addSmell(new MisplacedClassCodeSmell(new TextualMisplacedClassStrategy(systemPackage)));
-        classe.addSmell(new BlobCodeSmell(new TextualBlobStrategy()));
+        classe.addSmell(new MisplacedClassCodeSmell(new TextualMisplacedClassStrategy(systemPackage,0.5),"Textual"));
+        classe.addSmell(new BlobCodeSmell(new TextualBlobStrategy(0.5),"Textual"));
 
         ClassBean oracolo = new ClassBean.Builder("classe", "contenuto")
                 .setBelongingPackage(new PackageBean.Builder("package2", "").build())
@@ -298,8 +298,8 @@ public class ClassRepositoryTest {
 
         List<PackageBean> systemPackage = new ArrayList<PackageBean>();
         systemPackage.add(new PackageBean.Builder("package", "contenuto").setClassList(new ClassList()).build());
-        oracolo.get(0).addSmell(new MisplacedClassCodeSmell(new TextualMisplacedClassStrategy(systemPackage)));
-        oracolo.get(0).addSmell(new BlobCodeSmell(new TextualBlobStrategy()));
+        oracolo.get(0).addSmell(new MisplacedClassCodeSmell(new TextualMisplacedClassStrategy(systemPackage,0.5),"Textual"));
+        oracolo.get(0).addSmell(new BlobCodeSmell(new TextualBlobStrategy(0.5),"Textual"));
         try {
             list = repo.select(new SQLSelectionClass("package"));
 

@@ -3,6 +3,7 @@ package it.unisa.ascetic.gui;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.ui.Messages;
+import com.intellij.ui.components.JBScrollPane;
 import it.unisa.ascetic.gui.radarMap.RadarMapUtils;
 import it.unisa.ascetic.gui.radarMap.RadarMapUtilsAdapter;
 import it.unisa.ascetic.refactor.manipulator.MisplacedClassRefactoringStrategy;
@@ -38,6 +39,7 @@ public class MisplacedClassWizard extends DialogWrapper {
     private RadarMapUtils radars;
     private JPanel livelli;
     private JPanel codici;
+    private static StringBuilder textAreaContent;
     boolean errorOccurred;
 
     public MisplacedClassWizard(ClassBean smellClass, Project project) {
@@ -96,6 +98,20 @@ public class MisplacedClassWizard extends DialogWrapper {
 
         contentPanel.setLayout(new BorderLayout());
         contentPanel.add(livelli, BorderLayout.CENTER);
+
+        JTextArea textArea = new JTextArea();
+        textArea.setEditable(false);
+        textAreaContent = new StringBuilder();
+        textAreaContent.append("By clicking \"REFACTOR\" button, class ");
+        textAreaContent.append(smellClass.getFullQualifiedName());
+        textAreaContent.append(" will be moved from ");
+        textAreaContent.append(smellClass.getBelongingPackage().getFullQualifiedName());
+        textAreaContent.append(" to ");
+        textAreaContent.append(smellClass.getEnviedPackage().getFullQualifiedName());
+
+        textArea.setText(textAreaContent.toString());
+
+        contentPanel.add(new JBScrollPane(textArea), BorderLayout.SOUTH);
 
         return contentPanel;
     }

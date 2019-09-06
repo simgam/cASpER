@@ -164,7 +164,6 @@ public class FileChangeHandler implements ApplicationComponent, BulkFileListener
     }
 
     private boolean isAJavaFile(String eventString) {
-        logger.severe("Is a java file");
         return eventString.contains(".java");
     }
 

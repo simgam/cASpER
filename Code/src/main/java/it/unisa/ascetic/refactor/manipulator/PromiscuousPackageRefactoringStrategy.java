@@ -45,57 +45,57 @@ public class PromiscuousPackageRefactoringStrategy implements RefactoringStrateg
 
     /**
      * Metodo che permette il refactoring di codeSmell di tipo Promiscuous Package
+     *
      * @throws PromiscuousPackageException
      */
     @Override
     public void doRefactor() throws PromiscuousPackageException {
-        classExtract();
-    }
-
-    private void classExtract() {
         //Creo il javaPsiFacade per trovare i psiClass
-        JavaPsiFacade javaPsiFacade = JavaPsiFacade.getInstance(project);
+        try {
+            JavaPsiFacade javaPsiFacade = JavaPsiFacade.getInstance(project);
 
-        List<PackageBean> newPackagesList = new ArrayList<>();
+            List<PackageBean> newPackagesList = new ArrayList<>();
 
-        //Inizializzo la lista con i packageBean di destinazione
-        int count = 0;
-        while (count < newPackages.size()) {
-            newPackagesList.add(newPackages.get(count));
-            count++;
-        }
-
-        for (int i = 0; i < newPackagesList.size(); i++) {
-
-            List<ClassBean> classBeanList = newPackagesList.get(i).getClassList();
-
-            for (int j = 0; j < classBeanList.size(); j++) {
-                PsiClass aClass = javaPsiFacade.findClass(classBeanList.get(j).getFullQualifiedName(), GlobalSearchScope.allScope(project));
-                List<PsiField> psiFields = new ArrayList<>();
-                List<PsiMethod> psiMethods = new ArrayList<>();
-                List<PsiClass> psiInnerClasses = new ArrayList<>();
-
-                for (int k = 0; k < aClass.getFields().length; k++) {
-                    psiFields.add(aClass.getFields()[k]);
-                }
-                for (int k = 0; k < aClass.getMethods().length; k++) {
-                    psiMethods.add(aClass.getMethods()[k]);
-                }
-                for (int k = 0; k < aClass.getInnerClasses().length; k++) {
-                    psiInnerClasses.add(aClass.getInnerClasses()[k]);
-                }
-
-                //Estraggo completamente la classe per spostarla nel nuovo package
-                ExtractClassProcessor extractClassProcessor = new ExtractClassProcessor(aClass, psiFields, psiMethods,
-                        psiInnerClasses, newPackagesList.get(i).getFullQualifiedName(), aClass.getName());
-                extractClassProcessor.run();
-
-                //Elimino il file contenente la classe da cui abbiamo fatto l'extract
-                aClass.getContainingFile().delete();
-
+            //Inizializzo la lista con i packageBean di destinazione
+            int count = 0;
+            while (count < newPackages.size()) {
+                newPackagesList.add(newPackages.get(count));
+                count++;
             }
-        }
 
+            for (int i = 0; i < newPackagesList.size(); i++) {
+
+                List<ClassBean> classBeanList = newPackagesList.get(i).getClassList();
+
+                for (int j = 0; j < classBeanList.size(); j++) {
+                    PsiClass aClass = javaPsiFacade.findClass(classBeanList.get(j).getFullQualifiedName(), GlobalSearchScope.allScope(project));
+                    List<PsiField> psiFields = new ArrayList<>();
+                    List<PsiMethod> psiMethods = new ArrayList<>();
+                    List<PsiClass> psiInnerClasses = new ArrayList<>();
+
+                    for (int k = 0; k < aClass.getFields().length; k++) {
+                        psiFields.add(aClass.getFields()[k]);
+                    }
+                    for (int k = 0; k < aClass.getMethods().length; k++) {
+                        psiMethods.add(aClass.getMethods()[k]);
+                    }
+                    for (int k = 0; k < aClass.getInnerClasses().length; k++) {
+                        psiInnerClasses.add(aClass.getInnerClasses()[k]);
+                    }
+
+                    //Estraggo completamente la classe per spostarla nel nuovo package
+                    ExtractClassProcessor extractClassProcessor = new ExtractClassProcessor(aClass, psiFields, psiMethods,
+                            psiInnerClasses, newPackagesList.get(i).getFullQualifiedName(), aClass.getName());
+                    extractClassProcessor.run();
+
+                    //Elimino il file contenente la classe da cui abbiamo fatto l'extract
+                    aClass.getContainingFile().delete();
+
+                }
+            }
+        } catch (Exception e) {
+            throw new PromiscuousPackageException(e.getMessage());
+        }
 
     }
 }
