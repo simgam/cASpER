@@ -15,6 +15,7 @@
     <location key="#com.intellij.execution.impl.EditConfigurationsDialog.0.0.1920.1080" x="674" y="177" />
     <location key="IDE.errors.dialog.0.0.1920.1080" x="540" y="251" />
     <location key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes.0.0.1920.1080" x="756" y="403" />
+    <location key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog.0.0.1920.1080" x="690" y="273" />
     <size key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes.0.0.1920.1080" width="407" height="242" />
   </component>
 </application>

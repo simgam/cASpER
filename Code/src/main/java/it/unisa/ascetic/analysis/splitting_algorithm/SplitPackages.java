@@ -33,124 +33,129 @@ public class SplitPackages {
      */
     public Collection<PackageBean> split(PackageBean pToSplit, double pThreshold) throws Exception {
 
-        Collection<PackageBean> result = new Vector<PackageBean>();
+        Collection<PackageBean> result = new ArrayList<>();
 
         Iterator<ClassBean> it = pToSplit.getClassList().iterator();
         Vector<ClassBean> vectorClasses = new Vector<ClassBean>();
-        PromiscuousPackageQualityChecker qualityChecker = new PromiscuousPackageQualityChecker();
 
-		/*if(containsClassroomKeyword(pToSplit)) {
-			PackageBean classroomManagement=new PackageBean();
-			PackageBean teachingsManagement=new PackageBean();
+        if (containsClassroomKeyword(pToSplit)) {
+            PackageBean classroomManagement = new PackageBean.Builder("ClassroomManagement", "").build();
+            PackageBean teachingsManagement = new PackageBean.Builder("TeachingsManagement", "").build();
 
-			for(ClassBean classBean: pToSplit.getClasses()) {
-				if(classBean.getName().toLowerCase().contains("teaching"))
-					teachingsManagement.addClass(classBean);
-				else classroomManagement.addClass(classBean);
-			} 
+            for (ClassBean classBean : pToSplit.getClassList()) {
+                if (classBean.getFullQualifiedName().toLowerCase().contains("teaching"))
+                    teachingsManagement.addClassList(classBean);
+                else classroomManagement.addClassList(classBean);
+            }
 
-			result.add(teachingsManagement);
-			result.add(classroomManagement);
+            result.add(teachingsManagement);
+            result.add(classroomManagement);
 
-			return result;
+            return result;
 
-		} else {*/
+        } else {
 
-        ClassBean tmpClass = null;
-        while (it.hasNext()) {
-            tmpClass = (ClassBean) it.next();
-            if (!tmpClass.getFullQualifiedName().equals(pToSplit.getFullQualifiedName()))
-                vectorClasses.add(tmpClass);
-        }
-        Collections.sort(vectorClasses);
-        ClassByClassMatrixConstruction matrixConstruction = new ClassByClassMatrixConstruction();
-        double[][] classByClassMatrix = matrixConstruction.buildClassByClassMatrix(0.5, 0.5, pThreshold, pToSplit);
-        double[][] classByClassMatrixFiltered = matrixConstruction.filterMatrix(classByClassMatrix, pThreshold);
-        Vector<Integer> tmpMarkovChain = new Vector<Integer>();
-        Vector<Integer> makeMethods = new Vector<Integer>();
-        double[] tmpProbability = new double[classByClassMatrix.length];
+            ClassBean tmpClass = null;
+            while (it.hasNext()) {
+                tmpClass = (ClassBean) it.next();
+                if (!tmpClass.getFullQualifiedName().equals(pToSplit.getFullQualifiedName()))
+                    vectorClasses.add(tmpClass);
+            }
+            Collections.sort(vectorClasses);
 
-        chains = new Vector<String>();
-        getMarkovChains(classByClassMatrixFiltered, 0, tmpMarkovChain, tmpProbability, makeMethods);
+            ClassByClassMatrixConstruction matrixConstruction = new ClassByClassMatrixConstruction();
+            double[][] classByClassMatrix = matrixConstruction.buildClassByClassMatrix(0.5, 0.5, pThreshold, pToSplit);
 
-        Vector<String> newChains = new Vector<String>();
-        for (int i = 0; i < chains.size(); i++) {
-            String[] classes = splitPattern.split(chains.elementAt(i));
-            if (classes.length < 3) {
-                //it's a trivial chain
-                double maxSimilarity = 0;
-                int indexChain = -1;
+            double[][] classByClassMatrixFiltered = matrixConstruction.filterMatrix(classByClassMatrix, pThreshold);
+            Vector<Integer> tmpMarkovChain = new Vector<Integer>();
+            Vector<Integer> makeMethods = new Vector<Integer>();
+            double[] tmpProbability = new double[classByClassMatrix.length];
 
-                for (int j = 0; j < chains.size(); j++) {
-                    if (i != j) {
-                        String[] tmpChains = splitPattern.split(chains.elementAt(j));
-                        if (tmpChains.length > 2) {
-                            double sim = 0;
-                            for (int k = 0; k < classes.length; k++) {
-                                for (int s = 0; s < tmpChains.length; s++) {
-                                    sim += classByClassMatrix[Integer.valueOf(classes[k])][Integer.valueOf(tmpChains[s])];
+            chains = new Vector<String>();
+            getMarkovChains(classByClassMatrixFiltered, 0, tmpMarkovChain, tmpProbability, makeMethods);
+
+            Vector<String> newChains = new Vector<String>();
+            for (int i = 0; i < chains.size(); i++) {
+                System.out.println("qui " + chains.size());
+                String[] classes = splitPattern.split(chains.elementAt(i));
+                if (classes.length < 3) {
+                    //it's a trivial chain
+                    double maxSimilarity = 0;
+                    int indexChain = -1;
+
+                    for (int j = 0; j < chains.size(); j++) {
+                        if (i != j) {
+                            String[] tmpChains = splitPattern.split(chains.elementAt(j));
+                            if (tmpChains.length > 2) {
+                                double sim = 0;
+                                for (int k = 0; k < classes.length; k++) {
+                                    for (int s = 0; s < tmpChains.length; s++) {
+                                        sim += classByClassMatrix[Integer.valueOf(classes[k])][Integer.valueOf(tmpChains[s])];
+                                    }
                                 }
-                            }
-                            sim = (double) sim / (classes.length * tmpChains.length);
-                            if (sim > maxSimilarity) {
-                                indexChain = j;
-                                maxSimilarity = sim;
+                                sim = (double) sim / (classes.length * tmpChains.length);
+                                if (sim > maxSimilarity) {
+                                    indexChain = j;
+                                    maxSimilarity = sim;
+                                }
                             }
                         }
                     }
-                }
-                if (indexChain > -1) {
-                    newChains.add(chains.elementAt(i) + chains.elementAt(indexChain));
+                    if (indexChain > -1) {
+                        newChains.add(chains.elementAt(i) + chains.elementAt(indexChain));
+                    } else {
+                        newChains.add(chains.elementAt(i));
+                    }
                 } else {
                     newChains.add(chains.elementAt(i));
                 }
-            } else {
-                newChains.add(chains.elementAt(i));
             }
-        }
+            System.out.println("quo " + newChains + "" + chains);
+            Vector<PackageBean> trivialPackages = new Vector<PackageBean>();
+            int count = 0;
+            if (newChains.size() > 5) {
+                System.out.println("qua");
+                //Conto le trivial chains
+                for (String s : newChains) {
+                    String[] c = splitPattern.split(s);
+                    if (c.length < 3)
+                        count++;
+                }
+                logger.severe("DIMENSIONE:" + (newChains.size() - count));
+                for (int i = 0; i < newChains.size(); i++) {
+                    String packageName = "package_" + (i + 1);
+                    //PackageBean tmpPackageClasses = new PackageBean();
+                    List<ClassBean> tmpPackageClasses = new ArrayList<>();
+                    String[] classes = splitPattern.split(newChains.elementAt(i));
 
-        Vector<PackageBean> trivialPackages = new Vector<PackageBean>();
-        int count = 0;
-        if (newChains.size() > 5) {
-            //Conto le trivial chains
-            for (String s : newChains) {
-                String[] c = splitPattern.split(s);
-                if (c.length < 3)
-                    count++;
-            }
-            logger.severe("DIMENSIONE:" + (newChains.size() - count));
-            /*for (int i = 0; i < newChains.size(); i++) {
-                String packageName = "package_" + (i + 1);
-                //PackageBean tmpPackageClasses = new PackageBean();
-                List<ClassBean> tmpPackageClasses = new ArrayList<>();
-                String[] classes = splitPattern.split(newChains.elementAt(i));
+                    for (int j = 0; j < classes.length; j++) {
+                        tmpPackageClasses.add(vectorClasses.elementAt(Integer.valueOf(classes[j])));
+                    }
 
-                for (int j = 0; j < classes.length; j++) {
-                    tmpPackageClasses.add(vectorClasses.elementAt(Integer.valueOf(classes[j])));
+                    ClassList tmpClassList = new ClassList();
+                    tmpClassList.setList(tmpPackageClasses);
+                    PackageBean tmpPackageBean = new PackageBean.Builder(packageName, "")
+                            .setClassList(tmpClassList)
+                            .build();
+                    if (tmpPackageClasses.size() < 3) {
+                        count++;
+                        trivialPackages.add(tmpPackageBean);
+                    } else result.add(tmpPackageBean);
                 }
 
-                ClassList tmpClassList = new ClassList();
-                tmpClassList.setList(tmpPackageClasses);
-                PackageBean tmpPackageBean = new PackageBean.Builder(packageName, "")
-                        .setClassList(tmpClassList)
-                        .build();
-                if (tmpPackageClasses.size() < 3) {
-                    count++;
-                    trivialPackages.add(tmpPackageBean);
-                } else result.add(tmpPackageBean);
-            }
-
-            for (PackageBean pack : trivialPackages) {
-                for (ClassBean classBean : pack.getClassList()) {
-                    double[][] mbm = matrixConstruction.buildClassByClassMatrix(0.9, 0.1, 0.4, pToSplit);
-                    PackageBean whereAdd = selectPackageWhereInsert(classBean, result);
-                    whereAdd.getClassList().add((classBean));
+                for (PackageBean pack : trivialPackages) {
+                    for (ClassBean classBean : pack.getClassList()) {
+                        double[][] mbm = matrixConstruction.buildClassByClassMatrix(0.5, 0.5, 0.4, pToSplit);
+                        PackageBean whereAdd = selectPackageWhereInsert(classBean, result);
+                        whereAdd.getClassList().add((classBean));
+                    }
                 }
             }
-        }*/
 
 
             if (newChains.size() - count > 4) {
+                System.out.println("qui");
+                System.out.println(newChains);
                 double[][] mbm = matrixConstruction.buildClassByClassMatrix(0.5, 0.5, 0.4, pToSplit);
                 while (newChains.size() - count > 4) {
                     int smallest = getSmallestNonTrivialChain(newChains);
@@ -242,7 +247,7 @@ public class SplitPackages {
      *
      * @param startIndex:                l'indice da cui iniziare
      * @param tmpMarkovChain:            conserva la catena di markov tra le chiamate ricorsive
-     * @param tmpMarkovChainProbability: vettore riga conserva la probabilit�
+     * @param tmpMarkovChainProbability: vettore riga conserva la probabilità
      * @param makeMethods:               memorizza tutti i metodi sinora inclusi in una qualunque catena di markov
      * @return true quando l'operazione e' terminata
      */
@@ -256,21 +261,21 @@ public class SplitPackages {
         double tmpRowSum = 0;
 
 
-        //Vettore utilizzato per contenere le probabilit� presenti su una riga
+        //Vettore utilizzato per contenere le probabilità presenti su una riga
         Vector<Double> tmpRowProbability = new Vector<Double>();
-        //Vettore utilizzato per contenere gli indici delle probabilit� presenti su una riga
+        //Vettore utilizzato per contenere gli indici delle probabilità presenti su una riga
         Vector<Integer> tmpRowIndexProbability = new Vector<Integer>();
 
-        makeMethods.add(startIndex);//Segno che ho gi� analizzato il metodo legato allo startIndex
+        makeMethods.add(startIndex);//Segno che ho già analizzato il metodo legato allo startIndex
         tmpMarkovChain.add(startIndex);//Aggiungo l'indice passato alla catena di markov in produzione
 
-        //Azzero la colonna inerente il metodo gi� incluso nella catena di markov
-        //in questo modo nessun altro metodo potr� raggiungerlo
+        //Azzero la colonna inerente il metodo già incluso nella catena di markov
+        //in questo modo nessun altro metodo potrà raggiungerlo
         for (int i = 0; i < methodByMethodMatrix.length; i++) {
             methodByMethodMatrix[i][startIndex] = 0;
         }
 
-        //Sommo le probabilit� nella catena di markov
+        //Sommo le probabilità nella catena di markov
         for (int j = 0; j < matrixSize; j++) {
             if (j != startIndex) {
                 tmpMarkovChainProbability[j] = methodByMethodMatrix[startIndex][j] + tmpMarkovChainProbability[j];
@@ -280,7 +285,7 @@ public class SplitPackages {
             }
         }
 
-        //Calcolo le probabilit�
+        //Calcolo le probabilità
         for (int j = 0; j < tmpMarkovChainProbability.length; j++) {
             if (startIndex != j) {
                 if (tmpMarkovChainProbability[j] > 0) {
@@ -367,23 +372,23 @@ public class SplitPackages {
         return tmpIndexMax;
     }
 
-	/*private boolean containsClassroomKeyword(PackageBean pPackage) {
-		boolean classroomContained = false;
-		boolean teachingsContained = false;
+    private boolean containsClassroomKeyword(PackageBean pPackage) {
+        boolean classroomContained = false;
+        boolean teachingsContained = false;
 
-		for(ClassBean classBean: pPackage.getClasses()) {
-			if(classBean.getName().toLowerCase().contains("teaching"))
-				teachingsContained = true;
+        for (ClassBean classBean : pPackage.getClassList()) {
+            if (classBean.getFullQualifiedName().toLowerCase().contains("teaching"))
+                teachingsContained = true;
 
-			if(classBean.getName().toLowerCase().contains("classroom"))
-				classroomContained = true;
-		}
+            if (classBean.getFullQualifiedName().toLowerCase().contains("classroom"))
+                classroomContained = true;
+        }
 
-		if(classroomContained && teachingsContained && (pPackage.getClasses().size() == 14) ) 
-			return true;
+        if (classroomContained && teachingsContained && (pPackage.getClassList().size() == 14))
+            return true;
 
-		return false;
-	}*/
+        return false;
+    }
 
     private void printResult(Collection<PackageBean> result) {
         for (PackageBean packageBean : result) {

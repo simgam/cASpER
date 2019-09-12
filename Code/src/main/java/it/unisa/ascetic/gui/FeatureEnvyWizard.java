@@ -195,7 +195,7 @@ public class FeatureEnvyWizard extends DialogWrapper {
                     //message = "Something went wrong during refactoring. Press Ctrl+Z to fix";
                     icon = Messages.getErrorIcon();
                 } else {
-                    message = "Move method refactoring correctly executed";
+                    message = "Move method refactoring correctly executed.\nCheck the imports in the manipulated classes.";
                     icon = Messages.getInformationIcon();
                     try {
                         FileWriter f = new FileWriter(System.getProperty("user.home") + File.separator + ".ascetic" + File.separator + "refactoring.txt");

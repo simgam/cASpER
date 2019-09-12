@@ -2,3 +2,27 @@
 jaccessjfxrt
 localedata
 nashornsunecsunjce.provider	sunmscapi	sunpkcs11zipfs	javawsjcejfr	jfxswtjssemanagement.agent	plugin	resourcesrt
+jcommon
+jcommonlucene.corelucene.coresqlite.jdbcsqlite.jdbctoolsjsoup	org.jsoup
+jfreechart
+jfreechart	ideaICaapt.proto.jarjar
+aether.apiaether.connector.basicaether.dependency.resolveraether.impl
+aether.spiaether.transport.fileaether.transport.httpaether.util"org.jetbrains.annotations-java5asm
+asm.allasm.analysisasm.tree	automatonbaksmali	batik.allorg.bouncycastle.provider	bootstrapcglib.nodep
+cli.parsercommon.image	common.iocommon.langcommons.codeccommons.collectionsorg.apache.commons.compresscommons.httpclientcommons.imagingorg.apache.commons.iocommons.langcommons.lang3commons.loggingcommons.netcucumber.corecucumber.javadebugger.memory.agentdelight.rhino.sandbox
+dexlib2ecjeddsaerror.prone.annotations
+extensionsexternal.system.implexternal.system.rt&#org.apache.httpcomponents.fluent-hcformsforms.rtfst
+gherkin
+groovy.allgsoncom.google.commonhamcrest.core'$org.apache.httpcomponents.httpclient%"org.apache.httpcomponents.httpcore%"org.apache.httpcomponents.httpmimeiconsidea
+idea.rtimageio.coreimageio.metadataimageio.tiffimgscalr.libini4jintellij.coverage.agent intellij.test.discovery.agentisorelaxjackson.annotationscom.fasterxml.jackson.core!com.fasterxml.jackson.databindjava.apijava.compatibility	java.impljava.resources.en	javac2javahelp	javassistjava.activationjava.annotationjaxen
+jbcryptjcip.annotationsjdkAnnotationsjdomjediterm.ptyjetCheckjgoodies.commonjingjna.platformjnajps.buildersjps.buildersjps.launcher	jps.modeljschjshell.frontendjshell.protocol	org.jsoup	jsr305junitjunitkotlin.reflectkotlin.stdlibkotlin.stdlib.commonkotlin.stdlib.jdk7kotlin.stdlib.jdk8kotlin.testkotlin.test.commonkotlinx.coroutines.core!kotlinx.coroutines.core.commonkotlinx.coroutines.jdk8log4jlz4markdownj.coremaven.aether.providermaven.artifactmaven.builder.supportmaven.modelmaven.model.buildermaven.repository.metadata
+microbamiglayout.coremiglayout.swing
+nanoxmlnekohtmlio.netty.bufferio.netty.codecio.netty.codec.httpio.netty.commonio.netty.handlerio.netty.resolverio.netty.transport	objenesis
+openapioropicocontainerplatform.apiplatform.implplexus.component.annotationsplexus.interpolationplexus.utilsprotobuf.java
+proxy.volepty4jpurejavacomm	resourcesresources.enrhinorngom.20051226.patched
+sa.jdwpserviceMessages	slf4j.apislf4j.log4j12	snakeyamlsqlite.jdbcstax.apione.util.streamexswingx.core
+trang.core!trilead.ssh2.build.217.jenkins
+trove4jutilutilvelocity	wadl.corewinp
+xercesImplxml.apis.extxml.resolverxmlbeansxmlgraphics.commons
+xmlpull	xmlrpcxpp3.min
+xstreamorg.tukaani.xzhamcrest.corehamcrest.corejunitjunit

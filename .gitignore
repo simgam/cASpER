@@ -13,6 +13,7 @@
 
 # Sensitive or high-churn files
 .idea/**/dataSources/
+Code/build/idea-sandbox/
 .idea/**/dataSources.ids
 .idea/**/dataSources.local.xml
 .idea/**/sqlDataSources.xml

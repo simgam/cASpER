@@ -14,6 +14,9 @@ import java.util.regex.Pattern;
 
 public class CKMetrics {
 
+    private double maxIpc = 0.0;
+    private double minIpc = 0.0;
+
     public static int getELOC(ClassBean cb) {
         return cb.getTextContent().split("\r\n|\r|\n").length;
     }
@@ -409,17 +412,17 @@ public class CKMetrics {
     }
 
     public static double getCCBC(ClassBean pClass, ClassBean pClass2) {
-        Double ccbc=0.0;
+        Double ccbc = 0.0;
 
-        double comparisons=0.0;
+        double comparisons = 0.0;
         CosineSimilarity cosineSimilarity = new CosineSimilarity();
 
-        for(MethodBean methodBean: pClass.getMethodList()) {
-            for(MethodBean methodBean2: pClass2.getMethodList()) {
+        for (MethodBean methodBean : pClass.getMethodList()) {
+            for (MethodBean methodBean2 : pClass2.getMethodList()) {
 
-                if(! methodBean.equals(methodBean2)) {
-                    String[] document1=new String[2];
-                    String[] document2=new String[2];
+                if (!methodBean.equals(methodBean2)) {
+                    String[] document1 = new String[2];
+                    String[] document2 = new String[2];
 
                     document1[0] = methodBean.getFullQualifiedName();
                     document1[1] = methodBean.getTextContent();
@@ -428,7 +431,7 @@ public class CKMetrics {
                     document2[1] = methodBean2.getTextContent();
 
                     try {
-                        ccbc+=cosineSimilarity.computeSimilarity(document1, document2);
+                        ccbc += cosineSimilarity.computeSimilarity(document1, document2);
                         comparisons++;
                     } catch (IOException e) {
                         e.printStackTrace();
@@ -437,12 +440,83 @@ public class CKMetrics {
             }
         }
 
-        ccbc=ccbc/comparisons;
+        ccbc = ccbc / comparisons;
 
         if (ccbc.isNaN()) {
             return 0.0;
-        } else if(ccbc.isInfinite()) {
+        } else if (ccbc.isInfinite()) {
             return 0.0;
         } else return ccbc;
+    }
+
+    private int getWeigthedNumberOfDependencies(ClassBean pFirstClass, ClassBean pSecondClass) {
+        int dependencies = 0;
+        int numberOfParameters = 0;
+
+        for (MethodBean methodBean : pFirstClass.getMethodList()) {
+            Collection<MethodBean> calls = methodBean.getMethodsCalls();
+
+            for (MethodBean call : calls) {
+
+                for (MethodBean methodBeanToCompare : pSecondClass.getMethodList()) {
+                    if (call.getFullQualifiedName().equals(methodBeanToCompare.getFullQualifiedName())) {
+                        numberOfParameters += call.getParameters().size();
+                        dependencies++;
+
+                    }
+                }
+            }
+        }
+
+        return (numberOfParameters * dependencies);
+    }
+
+    public double getICP(ClassBean pFirstClass, ClassBean pSecondClass, PackageBean pPackage) {
+        this.computeMaxAndMinICP(pPackage);
+
+        double icp = 0.0;
+        double normalizedIcp = 0.0;
+
+        int dependenciesFirstToSecond = this.getWeigthedNumberOfDependencies(pFirstClass, pSecondClass);
+        int dependenciesSecondToFirst = this.getWeigthedNumberOfDependencies(pSecondClass, pFirstClass);
+
+        if (dependenciesFirstToSecond > dependenciesSecondToFirst) {
+            icp = dependenciesFirstToSecond;
+        } else icp = dependenciesSecondToFirst;
+
+        if ((this.maxIpc - this.minIpc) > 0.0)
+            normalizedIcp = (icp - this.minIpc) / (this.maxIpc - this.minIpc);
+
+        if (normalizedIcp < 0.0005)
+            normalizedIcp = 0.0;
+
+        return normalizedIcp;
+    }
+
+    private void computeMaxAndMinICP(PackageBean pPackage) {
+        double icp = 0.0;
+
+        for (ClassBean classBean : pPackage.getClassList()) {
+
+            for (ClassBean classBeanToCompare : pPackage.getClassList()) {
+
+                if (!classBean.getFullQualifiedName().equals(classBeanToCompare.getFullQualifiedName())) {
+
+                    int dependenciesFirstToSecond = this.getWeigthedNumberOfDependencies(classBean, classBeanToCompare);
+                    int dependenciesSecondToFirst = this.getWeigthedNumberOfDependencies(classBeanToCompare, classBean);
+
+                    if (dependenciesFirstToSecond > dependenciesSecondToFirst) {
+                        icp = dependenciesFirstToSecond;
+                    } else icp = dependenciesSecondToFirst;
+
+                    if (this.maxIpc < icp)
+                        maxIpc = icp;
+
+                    if (this.minIpc > icp)
+                        minIpc = icp;
+                }
+            }
+
+        }
     }
 }

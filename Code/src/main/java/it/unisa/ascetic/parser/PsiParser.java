@@ -293,12 +293,14 @@ public class PsiParser implements Parser {
         File[] in;
         while (j < all.length && !controllo) {
             in = all[j].listFiles();
-            while (i < in.length && !controllo) {
-                if (in[i].getName().equalsIgnoreCase(root)) {
-                    controllo = true;
-                    root = path + "/" + all[j].getName();
+            if (in != null) {
+                while (i < in.length && !controllo) {
+                    if (in[i].getName().equalsIgnoreCase(root)) {
+                        controllo = true;
+                        root = path + "/" + all[j].getName();
+                    }
+                    i++;
                 }
-                i++;
             }
             i = 0;
             j++;
