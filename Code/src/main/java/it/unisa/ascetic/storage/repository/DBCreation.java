@@ -10,11 +10,12 @@ import java.util.ArrayList;
 /**
  * classe addetta alla creazione del db
  */
-public class DBCreation{
+public class DBCreation {
     /**
      * metodo che costruisce il db tramite le apposite query
-     * @return true se il db è stato creato correttamente, false altrimenti
+     *
      * @param conn
+     * @return true se il db è stato creato correttamente, false altrimenti
      */
     public static boolean createSQL(Connection conn) {
 
@@ -83,7 +84,7 @@ public class DBCreation{
                         + "name VARCHAR(255), "
                         + "PRIMARY KEY(indexId,indice)"
                         + ");");
-        sql.append(//Package_CodeSmell
+        sql.append(//Package_SmellType
                 "CREATE TABLE IF NOT EXISTS Package_SmellType ("
                         + "packageBeanFullQualifiedName VARCHAR(255) NOT NULL, "
                         + "codeSmellFullQualifiedName VARCHAR(255) NOT NULL, "
@@ -94,7 +95,7 @@ public class DBCreation{
                         + "FOREIGN KEY (codeSmellFullQualifiedName) REFERENCES CodeSmell (fullQualifiedName) ON DELETE CASCADE ON UPDATE CASCADE,"
                         + "FOREIGN KEY (indice) REFERENCES Index_CodeSmell (indexId) ON DELETE CASCADE ON UPDATE CASCADE"
                         + ");");
-        sql.append(//Classe_CodeSmell
+        sql.append(//Classe_SmellType
                 "CREATE TABLE IF NOT EXISTS Classe_SmellType ("
                         + "classBeanFullQualifiedName VARCHAR(255) NOT NULL, "
                         + "codeSmellFullQualifiedName VARCHAR(255) NOT NULL , "
@@ -103,10 +104,11 @@ public class DBCreation{
                         + "indice VARCHAR(255), "
                         + "PRIMARY KEY(classBeanFullQualifiedName,codeSmellFullQualifiedName,algorithmUsed),"
                         + "FOREIGN KEY (classBeanFullQualifiedName) REFERENCES ClassBean (fullQualifiedName) ON DELETE CASCADE ON UPDATE CASCADE,"
+                        + "FOREIGN KEY (fqn_envied_package) REFERENCES PackageBean (fullQualifiedName) ON DELETE CASCADE ON UPDATE CASCADE,"
                         + "FOREIGN KEY (codeSmellFullQualifiedName) REFERENCES CodeSmell (fullQualifiedName) ON DELETE CASCADE ON UPDATE CASCADE,"
                         + "FOREIGN KEY (indice) REFERENCES Index_CodeSmell (indexId) ON DELETE CASCADE ON UPDATE CASCADE"
                         + ");");
-        sql.append(//Metodo_CodeSmell
+        sql.append(//Metodo_SmellType
                 "CREATE TABLE IF NOT EXISTS Metodo_SmellType ("
                         + "methodBeanFullQualifiedName VARCHAR(255) NOT NULL, "
                         + "codeSmellFullQualifiedName VARCHAR(255) NOT NULL, "
@@ -115,6 +117,7 @@ public class DBCreation{
                         + "indice VARCHAR(255), "
                         + "PRIMARY KEY(methodBeanFullQualifiedName,codeSmellFullQualifiedName,algorithmUsed),"
                         + "FOREIGN KEY (methodBeanFullQualifiedName) REFERENCES MethodBean (fullQualifiedName) ON DELETE CASCADE ON UPDATE CASCADE,"
+                        + "FOREIGN KEY (fqn_envied_class) REFERENCES ClassBean (fullQualifiedName) ON DELETE CASCADE ON UPDATE CASCADE,"
                         + "FOREIGN KEY (codeSmellFullQualifiedName) REFERENCES CodeSmell (fullQualifiedName) ON DELETE CASCADE ON UPDATE CASCADE,"
                         + "FOREIGN KEY (indice) REFERENCES Index_CodeSmell (indexId) ON DELETE CASCADE ON UPDATE CASCADE"
                         + ");");
@@ -136,17 +139,24 @@ public class DBCreation{
                         + "FOREIGN KEY (methodBeanFullQualifiedName) REFERENCES MethodBean (fullQualifiedName) ON DELETE CASCADE ON UPDATE CASCADE,"
                         + "FOREIGN KEY (classBeanFullQualifiedName) REFERENCES ClassBean (fullQualifiedName) ON DELETE CASCADE ON UPDATE CASCADE"
                         + ");");
-        sql.append("INSERT OR REPLACE INTO CodeSmell (fullQualifiedName,detectionStrategy) VALUES ('"+CodeSmell.MISPLACED_CLASS +"','TextualMisplacedClassStrategy');");
-        sql.append("INSERT OR REPLACE INTO CodeSmell (fullQualifiedName,detectionStrategy) VALUES ('"+CodeSmell.FEATURE_ENVY +"','TextualFeatureEnvyStrategy');");
-        sql.append("INSERT OR REPLACE INTO CodeSmell (fullQualifiedName,detectionStrategy) VALUES ('"+CodeSmell.BLOB +"','TextualBlobStrategy');");
-        sql.append("INSERT OR REPLACE INTO CodeSmell (fullQualifiedName,detectionStrategy) VALUES ('"+CodeSmell.PROMISCUOUS_PACKAGE +"','TextualPromiscuousPackageStrategy');");
+        sql.append("INSERT OR REPLACE INTO CodeSmell (fullQualifiedName,detectionStrategy) VALUES ('" + CodeSmell.MISPLACED_CLASS + "','TextualMisplacedClassStrategy');");
+        sql.append("INSERT OR REPLACE INTO CodeSmell (fullQualifiedName,detectionStrategy) VALUES ('" + CodeSmell.FEATURE_ENVY + "','TextualFeatureEnvyStrategy');");
+        sql.append("INSERT OR REPLACE INTO CodeSmell (fullQualifiedName,detectionStrategy) VALUES ('" + CodeSmell.BLOB + "','TextualBlobStrategy');");
+        sql.append("INSERT OR REPLACE INTO CodeSmell (fullQualifiedName,detectionStrategy) VALUES ('" + CodeSmell.PROMISCUOUS_PACKAGE + "','TextualPromiscuousPackageStrategy');");
+        sql.append("INSERT OR REPLACE INTO CodeSmell (fullQualifiedName,detectionStrategy) VALUES ('" + CodeSmell.MISPLACED_CLASS + "','StructuralMisplacedClassStrategy');");
+        sql.append("INSERT OR REPLACE INTO CodeSmell (fullQualifiedName,detectionStrategy) VALUES ('" + CodeSmell.FEATURE_ENVY + "','StructuralFeatureEnvyStrategy');");
+        sql.append("INSERT OR REPLACE INTO CodeSmell (fullQualifiedName,detectionStrategy) VALUES ('" + CodeSmell.BLOB + "','StructuralBlobStrategy');");
+        sql.append("INSERT OR REPLACE INTO CodeSmell (fullQualifiedName,detectionStrategy) VALUES ('" + CodeSmell.PROMISCUOUS_PACKAGE + "','StructuralPromiscuousPackageStrategy');");
 
         try (Statement cmd = conn.createStatement()) {
             cmd.executeUpdate(sql.toString());
             conn.commit();
             cmd.close();
 
-        } catch (Exception e) { e.printStackTrace(); return false;}
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
 
         return true;
     }

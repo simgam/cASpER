@@ -36,7 +36,7 @@ public class MethodByMethodMatrixConstruction {
 			getPrintWriterStopWord(stopwordList);
 		}
 
-		File CCMmatrixFile = new File(matrixFolder.getAbsolutePath() + "/" + "CCM_matrix" + pToSplit.getFullQualifiedName() + ".txt");
+		File CDMmatrixFile = new File(matrixFolder.getAbsolutePath() + "/" + "CDM_matrix" + pToSplit.getFullQualifiedName() + ".txt");
 		File CSMmatrixFile = new File(matrixFolder.getAbsolutePath() + "/" + "CSM_matrix" + pToSplit.getFullQualifiedName() + ".txt");
 		File SSMmatrixFile = new File(matrixFolder.getAbsolutePath() + "/" + "SSM_matrix" + pToSplit.getFullQualifiedName() + ".txt");
 
@@ -53,7 +53,7 @@ public class MethodByMethodMatrixConstruction {
 
 		double [][] methodByMethodMatrix = new double[methods.size()][methods.size()];
 
-		double[][] CCMmatrix = new double[methodByMethodMatrix.length][methodByMethodMatrix.length];
+		double[][] CDMmatrix = new double[methodByMethodMatrix.length][methodByMethodMatrix.length];
 		double[][] CSMmatrix = new double[methodByMethodMatrix.length][methodByMethodMatrix.length];
 		double[][] SSMmatrix = new double[methodByMethodMatrix.length][methodByMethodMatrix.length];
 
@@ -72,21 +72,21 @@ public class MethodByMethodMatrixConstruction {
 			logger.severe(m.getFullQualifiedName());
 		}*/
 
-		if (!CCMmatrixFile.exists() || !CSMmatrixFile.exists() || !SSMmatrixFile.exists()) {
+		if (!CDMmatrixFile.exists() || !CSMmatrixFile.exists() || !SSMmatrixFile.exists()) {
 			matrixFolder.mkdirs();
 
-			CCMmatrixFile.createNewFile();
+			CDMmatrixFile.createNewFile();
 
-			for (int i = 0; i<CCMmatrix.length; i++){
-				for (int j=i+1; j<CCMmatrix.length; j++){
+			for (int i = 0; i<CDMmatrix.length; i++){
+				for (int j=i+1; j<CDMmatrix.length; j++){
 					if (i != j){
 						MethodBean methodSource = vectorOfMethods.elementAt(i);
 						MethodBean methodTarget = vectorOfMethods.elementAt(j);
-						CCMmatrix[i][j] = getCCM(methodSource.getMethodsCalls(), methodTarget.getMethodsCalls(), methodSource.getFullQualifiedName(), methodTarget.getFullQualifiedName());
+						CDMmatrix[i][j] = getCCM(methodSource.getMethodsCalls(), methodTarget.getMethodsCalls(), methodSource.getFullQualifiedName(), methodTarget.getFullQualifiedName());
 					} else {
-						CCMmatrix[i][j] = 1.0;
+						CDMmatrix[i][j] = 1.0;
 					}
-					CCMmatrix[j][i] = CCMmatrix[i][j];
+					CDMmatrix[j][i] = CDMmatrix[i][j];
 				}
 			}
 			for (int i = 0; i<SSMmatrix.length; i++){
@@ -116,18 +116,18 @@ public class MethodByMethodMatrixConstruction {
 
 			CSMmatrix = getCSMmatrix(vectorOfMethods, badWordsSet);
 			CSMmatrixFile.createNewFile();
-			CCMmatrixFile.createNewFile();
+			CDMmatrixFile.createNewFile();
 			SSMmatrixFile.createNewFile();
 
 			PrintWriter pwCSM = new PrintWriter(CSMmatrixFile);
-			PrintWriter pwCCM = new PrintWriter(CCMmatrixFile);
+			PrintWriter pwCCM = new PrintWriter(CDMmatrixFile);
 			PrintWriter pwSSM = new PrintWriter(SSMmatrixFile);
 
-			for (int i = 0; i<CCMmatrix.length; i++){
+			for (int i = 0; i<CDMmatrix.length; i++){
 				if (i>0)
 					pwCCM.println();
-				for (int j=0; j<CCMmatrix.length; j++){
-					pwCCM.print(CCMmatrix[i][j] + "-");
+				for (int j=0; j<CDMmatrix.length; j++){
+					pwCCM.print(CDMmatrix[i][j] + "-");
 				}
 			}
 			pwCCM.close();
@@ -148,7 +148,7 @@ public class MethodByMethodMatrixConstruction {
 			}
 			pwSSM.close();
 		} else {
-			CCMmatrix = readMatrixFromFile(CCMmatrixFile, CCMmatrix.length);
+			CDMmatrix = readMatrixFromFile(CDMmatrixFile, CDMmatrix.length);
 			CSMmatrix = readMatrixFromFile(CSMmatrixFile, CSMmatrix.length);
 			SSMmatrix = readMatrixFromFile(SSMmatrixFile, SSMmatrix.length);
 		}
@@ -156,7 +156,7 @@ public class MethodByMethodMatrixConstruction {
 		for (int i = 0; i<methodByMethodMatrix.length; i++){
 			for (int j=i+1; j<methodByMethodMatrix.length; j++){
 				if (i != j){
-					methodByMethodMatrix[i][j] = CCMmatrix[i][j]*pWccm + CSMmatrix[i][j]*pWcsm  + SSMmatrix[i][j]*pWssm;	
+					methodByMethodMatrix[i][j] = CDMmatrix[i][j]*pWccm + CSMmatrix[i][j]*pWcsm  + SSMmatrix[i][j]*pWssm;
 				} else {
 					methodByMethodMatrix[i][j] = 1.0;
 				}

@@ -65,14 +65,4 @@ public class BeanDetection {
         return false;
     }
 
-    public void stampa(MethodBean pMethod){
-        System.out.println(pMethod.getFullQualifiedName());
-        System.out.println(!isGetter(pMethod));
-        System.out.println(!isSetter(pMethod));
-        System.out.println(!isToString(pMethod));
-        System.out.println(!isEquals(pMethod));
-        System.out.println(!isHashCode(pMethod));
-        System.out.println(!(pMethod.getFullQualifiedName().toLowerCase().contains("main")));
-        System.out.println(!isConstructor(pMethod));
-    }
 }
