@@ -1121,7 +1121,7 @@ public class TextualBlobStrategyTest {
     @Test
     public void isSmellyTrue() {
 
-        TextualBlobStrategy analisi = new TextualBlobStrategy();
+        TextualBlobStrategy analisi = new TextualBlobStrategy(0.5);
         it.unisa.ascetic.analysis.code_smell.BlobCodeSmell smell = new it.unisa.ascetic.analysis.code_smell.BlobCodeSmell(analisi,"Textual");
         boolean risultato = smelly.isAffected(smell);
         assertTrue(smelly.getAffectedSmell().contains(smell));
@@ -1133,7 +1133,7 @@ public class TextualBlobStrategyTest {
     @Test
     public void isSmellyFalse() {
 
-        TextualBlobStrategy analisi = new TextualBlobStrategy();
+        TextualBlobStrategy analisi = new TextualBlobStrategy(0.5);
         it.unisa.ascetic.analysis.code_smell.BlobCodeSmell smell = new it.unisa.ascetic.analysis.code_smell.BlobCodeSmell(analisi,"Textual");
         boolean risultato = noSmelly.isAffected(smell);
         assertFalse(noSmelly.getAffectedSmell().contains(smell));
@@ -1144,7 +1144,7 @@ public class TextualBlobStrategyTest {
 
     @Test
     public void getBlobProbability() {
-        TextualBlobStrategy analisi = new TextualBlobStrategy();
+        TextualBlobStrategy analisi = new TextualBlobStrategy(0.5);
         Logger log = Logger.getLogger(getClass().getName());
         boolean risultato;
         if (analisi.getBlobProbability(smelly) != 0.0) {

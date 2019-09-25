@@ -703,7 +703,7 @@ public class TextualFeatureEnvyStrategyTest {
 
         List<PackageBean> list = new ArrayList<PackageBean>();
         list.add(pack);
-        TextualFeatureEnvyStrategy analisi = new TextualFeatureEnvyStrategy(list);
+        TextualFeatureEnvyStrategy analisi = new TextualFeatureEnvyStrategy(list,0.5);
         it.unisa.ascetic.analysis.code_smell.FeatureEnvyCodeSmell smell = new it.unisa.ascetic.analysis.code_smell.FeatureEnvyCodeSmell(analisi,"Textual");
         boolean risultato = smelly.isAffected(smell);
         assertTrue(smelly.getAffectedSmell().contains(smell));
@@ -717,7 +717,7 @@ public class TextualFeatureEnvyStrategyTest {
 
         List<PackageBean> list = new ArrayList<PackageBean>();
         list.add(pack);
-        TextualFeatureEnvyStrategy analisi = new TextualFeatureEnvyStrategy(list);
+        TextualFeatureEnvyStrategy analisi = new TextualFeatureEnvyStrategy(list,0.5);
         it.unisa.ascetic.analysis.code_smell.FeatureEnvyCodeSmell smell = new it.unisa.ascetic.analysis.code_smell.FeatureEnvyCodeSmell(analisi,"Textual");
         boolean risultato = noSmelly.isAffected(smell);
         assertFalse(noSmelly.getAffectedSmell().contains(smell));

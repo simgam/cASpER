@@ -751,7 +751,7 @@ public class TextualPromiscuousPackageStrategyTest {
     @Test
     public void isSmellyTrue() {
 
-        TextualPromiscuousPackageStrategy analisi = new TextualPromiscuousPackageStrategy();
+        TextualPromiscuousPackageStrategy analisi = new TextualPromiscuousPackageStrategy(0.5);
         it.unisa.ascetic.analysis.code_smell.PromiscuousPackageCodeSmell smell = new it.unisa.ascetic.analysis.code_smell.PromiscuousPackageCodeSmell(analisi,"Textual");
         boolean risultato = smelly.isAffected(smell);
         assertTrue(smelly.getAffectedSmell().contains(smell));
@@ -763,7 +763,7 @@ public class TextualPromiscuousPackageStrategyTest {
     @Test
     public void isSmellyFalse() {
 
-        TextualPromiscuousPackageStrategy analisi = new TextualPromiscuousPackageStrategy();
+        TextualPromiscuousPackageStrategy analisi = new TextualPromiscuousPackageStrategy(0.5);
         it.unisa.ascetic.analysis.code_smell.PromiscuousPackageCodeSmell smell = new it.unisa.ascetic.analysis.code_smell.PromiscuousPackageCodeSmell(analisi,"Textual");
         boolean risultato = noSmelly.isAffected(smell);
         assertFalse(noSmelly.getAffectedSmell().contains(smell));
@@ -774,7 +774,7 @@ public class TextualPromiscuousPackageStrategyTest {
 
     @Test
     public void getPromiscuousPackageProbability() {
-        TextualPromiscuousPackageStrategy analisi = new TextualPromiscuousPackageStrategy();
+        TextualPromiscuousPackageStrategy analisi = new TextualPromiscuousPackageStrategy(0.5);
         Logger log = Logger.getLogger(getClass().getName());
         boolean risultato;
         if (analisi.getPromiscuousPackageProbability(smelly) != 0.0) {

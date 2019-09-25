@@ -1,182 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="ANALYZE_TEST_SOURCES" value="false" />
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="bf6613c4-36d1-4240-883b-591136465c5d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../Ascetic3.0.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Ascetic3.0.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gradle/4.4/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/4.4/fileContent/fileContent.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gradle/4.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/4.4/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gradle/4.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/4.4/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gradle/4.4/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/4.4/taskHistory/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gradle/4.4/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/4.4/taskHistory/taskHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/gui/BlobWizard$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/gui/BlobWizard$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/parser/PsiParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/parser/PsiParser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/refactor/manipulator/BlobRefatoringStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/refactor/manipulator/BlobRefatoringStrategy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/refactor/manipulator/FeatureEnvyRefactoringStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/refactor/manipulator/FeatureEnvyRefactoringStrategy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/refactor/manipulator/MisplacedClassRefactoringStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/refactor/manipulator/MisplacedClassRefactoringStrategy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/refactor/manipulator/PromiscuousPackageRefactoringStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/refactor/manipulator/PromiscuousPackageRefactoringStrategy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/gui/BlobWizard$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/gui/BlobWizard$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/parser/PsiParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/parser/PsiParser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/refactor/manipulator/BlobRefatoringStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/refactor/manipulator/BlobRefatoringStrategy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/refactor/manipulator/FeatureEnvyRefactoringStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/refactor/manipulator/FeatureEnvyRefactoringStrategy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/refactor/manipulator/MisplacedClassRefactoringStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/refactor/manipulator/MisplacedClassRefactoringStrategy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/refactor/manipulator/PromiscuousPackageRefactoringStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/refactor/manipulator/PromiscuousPackageRefactoringStrategy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/config/options/recentProjects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/config/options/recentProjects.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/config/options/usage.statistics.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/config/options/usage.statistics.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/config/options/window.manager.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/config/options/window.manager.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/plugins/ascetic/lib/ascetic-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/plugins/ascetic/lib/ascetic-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/plugins/availables.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/plugins/availables.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/plugins/availables.xml.etag" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/plugins/availables.xml.etag" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/LocalHistory/changes.storageData" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/LocalHistory/changes.storageData" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/LocalHistory/changes.storageRecordIndex" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/LocalHistory/changes.storageRecordIndex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/caches/attrib.dat.storageData" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/caches/attrib.dat.storageData" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/caches/attrib.dat.storageRecordIndex" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/caches/attrib.dat.storageRecordIndex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/caches/content.dat.storageData" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/caches/content.dat.storageData" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/caches/content.dat.storageRecordIndex" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/caches/content.dat.storageRecordIndex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/caches/contentHashes.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/caches/contentHashes.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/caches/contentHashes.dat.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/caches/contentHashes.dat.keystream" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/caches/contentHashes.dat.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/caches/contentHashes.dat.keystream.len" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/caches/contentHashes.dat_i" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/caches/contentHashes.dat_i" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/caches/records.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/caches/records.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/compile-server/progettitest_31fc6e61/ustamp" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/compile-server/progettitest_31fc6e61/ustamp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/conversion/ProgettiTest7f46cf18.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/conversion/ProgettiTest7f46cf18.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/.persistent/hashesWithFileType" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/.persistent/hashesWithFileType" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/.persistent/hashesWithFileType.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/.persistent/hashesWithFileType.keystream" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/.persistent/hashesWithFileType.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/.persistent/hashesWithFileType.keystream.len" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/.persistent/hashesWithFileType_i" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/.persistent/hashesWithFileType_i" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/.persistent/idindex/values" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/.persistent/idindex/values" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/.persistent/idindex/values.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/.persistent/idindex/values.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/.persistent/idindex/values_i" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/.persistent/idindex/values_i" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/.persistent/todoindex/values" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/.persistent/todoindex/values" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/.persistent/todoindex/values.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/.persistent/todoindex/values.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/.persistent/todoindex/values_i" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/.persistent/todoindex/values_i" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/.persistent/trigram.index/values" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/.persistent/trigram.index/values" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/.persistent/trigram.index/values.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/.persistent/trigram.index/values.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/.persistent/trigram.index/values_i" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/.persistent/trigram.index/values_i" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/filenameindex/FilenameIndex.project" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/filenameindex/FilenameIndex.project" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/filenameindex/FilenameIndex.project.len" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/filenameindex/FilenameIndex.project.len" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/filenameindex/FilenameIndex.storage" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/filenameindex/FilenameIndex.storage" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/filenameindex/FilenameIndex.storage.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/filenameindex/FilenameIndex.storage.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/filenameindex/FilenameIndex_inputs" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/filenameindex/FilenameIndex_inputs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/filenameindex/FilenameIndex_inputs.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/filenameindex/FilenameIndex_inputs.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/filenameindex/FilenameIndex_inputs_i" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/filenameindex/FilenameIndex_inputs_i" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/filetypes/filetypes.storage" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/filetypes/filetypes.storage" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/filetypes/filetypes.storage.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/filetypes/filetypes.storage.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/filetypes/filetypes_inputs" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/filetypes/filetypes_inputs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/filetypes/filetypes_inputs.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/filetypes/filetypes_inputs.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/filetypes/filetypes_inputs_i" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/filetypes/filetypes_inputs_i" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/idindex/IdIndex.storage" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/idindex/IdIndex.storage" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/idindex/IdIndex.storage.values" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/idindex/IdIndex.storage.values" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/idindex/IdIndex.storage.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/idindex/IdIndex.storage.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/idindex/IdIndex.storage.values.s" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/idindex/IdIndex.storage.values.s" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/idindex/IdIndex.storage_i" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/idindex/IdIndex.storage_i" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/idindex/fileIdToHashId" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/idindex/fileIdToHashId" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/idindex/fileIdToHashId_i" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/idindex/fileIdToHashId_i" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/java.binary.plus.expression/java.binary.plus.expression.storage" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/java.binary.plus.expression/java.binary.plus.expression.storage" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/java.binary.plus.expression/java.binary.plus.expression.storage.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/java.binary.plus.expression/java.binary.plus.expression.storage.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/java.binary.plus.expression/java.binary.plus.expression.storage_i" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/java.binary.plus.expression/java.binary.plus.expression.storage_i" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/java.binary.plus.expression/java.binary.plus.expression_inputs" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/java.binary.plus.expression/java.binary.plus.expression_inputs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/java.binary.plus.expression/java.binary.plus.expression_inputs.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/java.binary.plus.expression/java.binary.plus.expression_inputs.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/java.binary.plus.expression/java.binary.plus.expression_inputs_i" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/java.binary.plus.expression/java.binary.plus.expression_inputs_i" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/java.simple.property/java.simple.property.storage" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/java.simple.property/java.simple.property.storage" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/java.simple.property/java.simple.property.storage.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/java.simple.property/java.simple.property.storage.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/java.simple.property/java.simple.property.storage_i" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/java.simple.property/java.simple.property.storage_i" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/java.simple.property/java.simple.property_inputs" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/java.simple.property/java.simple.property_inputs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/java.simple.property/java.simple.property_inputs.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/java.simple.property/java.simple.property_inputs.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/java.simple.property/java.simple.property_inputs_i" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/java.simple.property/java.simple.property_inputs_i" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/stubs/Stubs.storage" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/stubs/Stubs.storage" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/stubs/Stubs.storage.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/stubs/Stubs.storage.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/stubs/Stubs.storage_i" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/stubs/Stubs.storage_i" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/stubs/Stubs_inputs" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/stubs/Stubs_inputs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/stubs/Stubs_inputs.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/stubs/Stubs_inputs.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/stubs/Stubs_inputs_i" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/stubs/Stubs_inputs_i" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/stubs/java.class.fqn/java.class.fqn.storage" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/stubs/java.class.fqn/java.class.fqn.storage" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/stubs/java.class.fqn/java.class.fqn.storage.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/stubs/java.class.fqn/java.class.fqn.storage.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/stubs/java.class.fqn/java.class.fqn.storage_i" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/stubs/java.class.fqn/java.class.fqn.storage_i" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/stubs/java.class.shortname/java.class.shortname.project" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/stubs/java.class.shortname/java.class.shortname.project" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/stubs/java.class.shortname/java.class.shortname.project.len" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/stubs/java.class.shortname/java.class.shortname.project.len" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/stubs/java.class.shortname/java.class.shortname.storage" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/stubs/java.class.shortname/java.class.shortname.storage" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/stubs/java.class.shortname/java.class.shortname.storage.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/stubs/java.class.shortname/java.class.shortname.storage.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/stubs/java.field.name/java.field.name.storage" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/stubs/java.field.name/java.field.name.storage" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/stubs/java.field.name/java.field.name.storage.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/stubs/java.field.name/java.field.name.storage.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/stubs/java.method.name/java.method.name.storage" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/stubs/java.method.name/java.method.name.storage" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/stubs/java.method.name/java.method.name.storage.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/stubs/java.method.name/java.method.name.storage.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/stubs/java.method.parameter.types/java.method.parameter.types.storage" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/stubs/java.method.parameter.types/java.method.parameter.types.storage" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/stubs/java.method.parameter.types/java.method.parameter.types.storage.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/stubs/java.method.parameter.types/java.method.parameter.types.storage.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/stubs/org.jetbrains.kotlin.idea.stubindex.kotlinclassshortnameindex/org.jetbrains.kotlin.idea.stubindex.KotlinClassShortNameIndex.storage" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/stubs/org.jetbrains.kotlin.idea.stubindex.kotlinclassshortnameindex/org.jetbrains.kotlin.idea.stubindex.KotlinClassShortNameIndex.storage" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/todoindex/fileIdToHashId" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/todoindex/fileIdToHashId" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/todoindex/fileIdToHashId_i" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/todoindex/fileIdToHashId_i" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/trigram.index/Trigram.Index.storage" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/trigram.index/Trigram.Index.storage" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/trigram.index/Trigram.Index.storage.values" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/trigram.index/Trigram.Index.storage.values" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/trigram.index/Trigram.Index.storage.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/trigram.index/Trigram.Index.storage.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/trigram.index/Trigram.Index.storage.values.s" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/trigram.index/Trigram.Index.storage.values.s" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/trigram.index/Trigram.Index.storage_i" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/trigram.index/Trigram.Index.storage_i" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/trigram.index/fileIdToHashId" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/trigram.index/fileIdToHashId" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/index/trigram.index/fileIdToHashId_i" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/index/trigram.index/fileIdToHashId_i" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/log/idea.log" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/log/idea.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/log/threadDumps-freeze-20190906-123146-IC-191.7479.19-9sec/threadDump-20190906-123152.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/log/threadDumps-freeze-20190906-132605-IC-191.7479.19-7sec/threadDump-20190906-132611.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/log/threadDumps-freeze-20190906-133110-IC-191.7479.19-7sec/threadDump-20190906-133116.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/log/threadDumps-freeze-20190906-142639-IC-191.7479.19-8sec/threadDump-20190906-142645.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/log/threadDumps-freeze-20190906-143701-IC-191.7479.19-7sec/threadDump-20190906-143707.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/libs/ascetic-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../build/libs/ascetic-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/java/it/unisa/ascetic/gui/BlobWizard.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/it/unisa/ascetic/gui/BlobWizard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/java/it/unisa/ascetic/parser/PsiParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/it/unisa/ascetic/parser/PsiParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/java/it/unisa/ascetic/refactor/manipulator/BlobRefatoringStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/it/unisa/ascetic/refactor/manipulator/BlobRefatoringStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/java/it/unisa/ascetic/refactor/manipulator/FeatureEnvyRefactoringStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/it/unisa/ascetic/refactor/manipulator/FeatureEnvyRefactoringStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/java/it/unisa/ascetic/refactor/manipulator/MisplacedClassRefactoringStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/it/unisa/ascetic/refactor/manipulator/MisplacedClassRefactoringStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/java/it/unisa/ascetic/refactor/manipulator/PromiscuousPackageRefactoringStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/it/unisa/ascetic/refactor/manipulator/PromiscuousPackageRefactoringStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../test/it/unisa/ascetic/analysis/code_smell_detection/blob/TextualBlobStrategyTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../test/it/unisa/ascetic/analysis/code_smell_detection/feature_envy/StructuralFeatureEnvyStrategyTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../test/it/unisa/ascetic/analysis/code_smell_detection/feature_envy/TextualFeatureEnvyStrategyTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../test/it/unisa/ascetic/analysis/code_smell_detection/misplaced_class/StructuralMisplacedClassStrategyTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../test/it/unisa/ascetic/analysis/code_smell_detection/misplaced_class/TextualMisplacedClassStrategyTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../test/it/unisa/ascetic/analysis/code_smell_detection/promiscuous_package/TextualPromiscuousPackageStrategyTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../test/it/unisa/ascetic/storage/JUnitTestSuite.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../test/it/unisa/ascetic/storage/TestRunner.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../test/it/unisa/ascetic/storage/beans/CalledMethodsListProxyTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../test/it/unisa/ascetic/storage/beans/ClassListProxyTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../test/it/unisa/ascetic/storage/beans/InstanceVariableListProxyTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../test/it/unisa/ascetic/storage/beans/MethodListProxyTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../test/it/unisa/ascetic/storage/beans/UsedInstanceVariableListProxyTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../test/it/unisa/ascetic/storage/repository/ClassRepositoryTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../test/it/unisa/ascetic/storage/repository/DBCreationTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../test/it/unisa/ascetic/storage/repository/InstanceVariableRepositoryTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../test/it/unisa/ascetic/storage/repository/MethodRepositoryTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../test/it/unisa/ascetic/storage/repository/PackageRepositoryTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../test/it/unisa/ascetic/storage/sqlite_jdbc_driver_connection/SQLiteConnectorTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../testData/ParserDataTest/bCustomer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../testData/ParserDataTest/bPhone.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../testData/TopicEmptyPackageTest/TopicClassTestBiometria.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../testData/TopicEmptyPackageTest/TopicClassTestIride.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../testData/TopicEmptyPackageTest/TopicClassTestViso.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../testData/TopicPackageTest/TopicClassTestBiometria.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../testData/TopicPackageTest/TopicClassTestIride.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../testData/TopicPackageTest/TopicClassTestViso.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../testData/moveClass/moveClass1/Customer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../testData/moveClass/moveClass1/Licantropo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../testData/moveClass/moveClass1/Phone.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../testData/moveClass/moveClass2/Vampiro.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../testData/moveMethod/global/aCustomer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../testData/moveMethod/global/aPhone.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../testData/moveMethod/global/bCustomer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../testData/moveMethod/global/bPhone.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../testData/moveMethod/global/statico/aCustomer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../testData/moveMethod/global/statico/aPhone.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../testData/moveMethod/global/statico/bCustomer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../testData/moveMethod/global/statico/bPhone.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../testData/moveMethod/parameter/aCustomer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../testData/moveMethod/parameter/aPhone.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../testData/moveMethod/parameter/bCustomer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../testData/moveMethod/parameter/bPhone.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../testData/moveMethod/parameter/statico/aCustomer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../testData/moveMethod/parameter/statico/aPhone.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../testData/moveMethod/parameter/statico/bCustomer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../testData/moveMethod/parameter/statico/bPhone.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../testData/moveMethod/unfixable/aCustomer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../testData/moveMethod/unfixable/aPhone.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../testData/moveMethod/unfixable/bCustomer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../testData/moveMethod/unfixable/bPhone.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/src.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/src.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -189,7 +20,7 @@
     <option name="delegatedBuild" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main/test/it/unisa/ascetic/storage/JUnitTestSuite.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -242,51 +73,13 @@
               <item name="src" type="b2602c69:ProjectViewProjectNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="src" type="b2602c69:ProjectViewProjectNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="it" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="src" type="b2602c69:ProjectViewProjectNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="it" type="462c0819:PsiDirectoryNode" />
-              <item name="unisa" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="src" type="b2602c69:ProjectViewProjectNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="it" type="462c0819:PsiDirectoryNode" />
-              <item name="unisa" type="462c0819:PsiDirectoryNode" />
-              <item name="ascetic" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="src" type="b2602c69:ProjectViewProjectNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="it" type="462c0819:PsiDirectoryNode" />
-              <item name="unisa" type="462c0819:PsiDirectoryNode" />
-              <item name="ascetic" type="462c0819:PsiDirectoryNode" />
-              <item name="analysis" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="src" type="b2602c69:ProjectViewProjectNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="it" type="462c0819:PsiDirectoryNode" />
-              <item name="unisa" type="462c0819:PsiDirectoryNode" />
-              <item name="ascetic" type="462c0819:PsiDirectoryNode" />
-              <item name="storage" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -296,11 +89,15 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/main/java" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.26091954" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -325,29 +122,23 @@
       <option name="presentableId" value="Default" />
       <updated>1569403720693</updated>
       <workItem from="1569403732133" duration="335000" />
+      <workItem from="1569405756973" duration="146000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="335000" />
+    <option name="totallyTimeSpent" value="481000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Image Layers" />
-      <window_info id="Designer" />
-      <window_info id="UI Designer" />
-      <window_info id="Capture Tool" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25266525" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Messages" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -355,15 +146,21 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Palette" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="right" id="Maven" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info anchor="right" id="Database" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Maven" order="6" />
+      <window_info anchor="right" id="Capture Analysis" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -380,6 +177,64 @@
   </component>
   <component name="masterDetails">
     <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>src</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.26091954" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="ProjectJDKs.UI">
         <settings>
           <last-edited>1.8</last-edited>
@@ -387,6 +242,28 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.26091954" />
               </list>
             </option>
           </splitter-proportions>

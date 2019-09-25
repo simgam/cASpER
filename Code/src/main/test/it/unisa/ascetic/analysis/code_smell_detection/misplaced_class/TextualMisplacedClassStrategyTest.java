@@ -216,7 +216,7 @@ public class TextualMisplacedClassStrategyTest {
     @Test
     public void isSmellyTrue() {
 
-        TextualMisplacedClassStrategy analisi = new TextualMisplacedClassStrategy(systemPackage);
+        TextualMisplacedClassStrategy analisi = new TextualMisplacedClassStrategy(systemPackage,0);
         it.unisa.ascetic.analysis.code_smell.MisplacedClassCodeSmell smell = new it.unisa.ascetic.analysis.code_smell.MisplacedClassCodeSmell(analisi,"Textual");
         boolean risultato = smelly.isAffected(smell);
         assertTrue(smelly.getAffectedSmell().contains(smell));
@@ -228,7 +228,7 @@ public class TextualMisplacedClassStrategyTest {
     @Test
     public void isSmellyFalse() {
 
-        TextualMisplacedClassStrategy analisi = new TextualMisplacedClassStrategy(systemPackage);
+        TextualMisplacedClassStrategy analisi = new TextualMisplacedClassStrategy(systemPackage,0);
         it.unisa.ascetic.analysis.code_smell.MisplacedClassCodeSmell smell = new it.unisa.ascetic.analysis.code_smell.MisplacedClassCodeSmell(analisi,"Textual");
         boolean risultato = noSmelly.isAffected(smell);
         assertFalse(noSmelly.getAffectedSmell().contains(smell));

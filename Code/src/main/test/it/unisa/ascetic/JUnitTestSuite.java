@@ -1,4 +1,5 @@
-package it.unisa.ascetic.storage;
+package it.unisa.ascetic;
+
 
 import it.unisa.ascetic.analysis.code_smell_detection.blob.TextualBlobStrategyTest;
 import it.unisa.ascetic.analysis.code_smell_detection.feature_envy.StructuralFeatureEnvyStrategyTest;
@@ -7,6 +8,7 @@ import it.unisa.ascetic.analysis.code_smell_detection.misplaced_class.Structural
 import it.unisa.ascetic.analysis.code_smell_detection.misplaced_class.TextualMisplacedClassStrategyTest;
 import it.unisa.ascetic.analysis.code_smell_detection.promiscuous_package.TextualPromiscuousPackageStrategyTest;
 import it.unisa.ascetic.storage.beans.*;
+
 import it.unisa.ascetic.storage.repository.*;
 import it.unisa.ascetic.storage.sqlite_jdbc_driver_connection.SQLiteConnectorTest;
 import org.junit.runner.RunWith;

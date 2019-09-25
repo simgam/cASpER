@@ -1,4 +1,4 @@
-package it.unisa.ascetic.storage;
+package it.unisa.ascetic;
 
 import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;

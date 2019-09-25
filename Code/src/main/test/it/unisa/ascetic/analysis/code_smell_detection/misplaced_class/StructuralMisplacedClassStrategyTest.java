@@ -215,7 +215,7 @@ public class StructuralMisplacedClassStrategyTest {
     @Test
     public void isSmellyTrue() {
 
-        StructuralMisplacedClassStrategy analisi = new StructuralMisplacedClassStrategy(systemPackage);
+        StructuralMisplacedClassStrategy analisi = new StructuralMisplacedClassStrategy(systemPackage,0);
         it.unisa.ascetic.analysis.code_smell.MisplacedClassCodeSmell smell = new it.unisa.ascetic.analysis.code_smell.MisplacedClassCodeSmell(analisi,"Structural");
         boolean risultato = smelly.isAffected(smell);
         assertTrue(smelly.getAffectedSmell().contains(smell));

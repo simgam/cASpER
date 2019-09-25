@@ -206,7 +206,7 @@ public class MethodRepositoryTest {
         List<PackageBean> systemPackage = new ArrayList<PackageBean>();
         systemPackage.add(new PackageBean.Builder("package", "contenuto").setClassList(new ClassList()).build());
         systemPackage.get(0).addClassList(classe);
-        method.addSmell(new FeatureEnvyCodeSmell(new TextualFeatureEnvyStrategy(systemPackage)));
+        method.addSmell(new FeatureEnvyCodeSmell(new TextualFeatureEnvyStrategy(systemPackage,0.5),"textual"));
 
         MethodBean oracolo = new MethodBean.Builder("metodo", "prova")
                 .setReturnType(new ClassBean.Builder("String", "").build())
@@ -216,7 +216,7 @@ public class MethodRepositoryTest {
                 .setVisibility("public")
                 .setAffectedSmell()
                 .build();
-        oracolo.addSmell(new FeatureEnvyCodeSmell(new TextualFeatureEnvyStrategy(systemPackage)));
+        oracolo.addSmell(new FeatureEnvyCodeSmell(new TextualFeatureEnvyStrategy(systemPackage,0.5),"textual"));
         try {
             selection = con.createStatement();
             repo.update(method);

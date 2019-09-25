@@ -438,7 +438,7 @@ public class StructuralFeatureEnvyStrategyTest {
 
         List<PackageBean> list = new ArrayList<PackageBean>();
         list.add(pack);
-        StructuralFeatureEnvyStrategy analisi = new StructuralFeatureEnvyStrategy(list);
+        StructuralFeatureEnvyStrategy analisi = new StructuralFeatureEnvyStrategy(list,0);
         it.unisa.ascetic.analysis.code_smell.FeatureEnvyCodeSmell smell = new it.unisa.ascetic.analysis.code_smell.FeatureEnvyCodeSmell(analisi,"Structural");
         boolean risultato = smelly.isAffected(smell);
         assertTrue(smelly.getAffectedSmell().contains(smell));
