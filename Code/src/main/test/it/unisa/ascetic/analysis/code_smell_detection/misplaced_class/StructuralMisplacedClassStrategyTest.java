@@ -9,6 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.logging.Logger;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public class StructuralMisplacedClassStrategyTest {
@@ -16,7 +17,7 @@ public class StructuralMisplacedClassStrategyTest {
     private List<PackageBean> systemPackage = new ArrayList<PackageBean>();
     private MethodBeanList methods, list;
     private MethodBean metodo;
-    private ClassBean smelly, noSmelly;
+    private ClassBean noSmelly, smelly;
     private ClassBeanList classes;
     private PackageBean pack;
 
@@ -46,7 +47,7 @@ public class StructuralMisplacedClassStrategyTest {
         methods = new MethodList();
         List<String> imports = new ArrayList<String>();
         MethodBeanList called = new MethodList();
-        noSmelly = new ClassBean.Builder("misplaced_class.package.Cliente", "private String name;\n" +
+        smelly = new ClassBean.Builder("misplaced_class.package.Cliente", "private String name;\n" +
                 "\tprivate int età;\n" +
                 "\t\n" +
                 "\tpublic Cliente(String name, int età) {\n" +
@@ -87,7 +88,7 @@ public class StructuralMisplacedClassStrategyTest {
                 .setVisibility("public")
                 .setAffectedSmell()
                 .build();
-        noSmelly.addMethodBeanList(metodo);
+        smelly.addMethodBeanList(metodo);
         called.getList().add(metodo);
         HashMap<String, ClassBean> nulla = new HashMap<String, ClassBean>();
         instances.getList().remove(new InstanceVariableBean("eta", "int", "", "private "));
@@ -102,7 +103,7 @@ public class StructuralMisplacedClassStrategyTest {
                 .setVisibility("public")
                 .setAffectedSmell()
                 .build();
-        noSmelly.addMethodBeanList(metodo);
+        smelly.addMethodBeanList(metodo);
 
         instances.getList().remove(new InstanceVariableBean("name", "String", "", "private "));
         instances.getList().add(new InstanceVariableBean("eta", "int", "", "private "));
@@ -117,10 +118,10 @@ public class StructuralMisplacedClassStrategyTest {
                 .setVisibility("public")
                 .setAffectedSmell()
                 .build();
-        noSmelly.addMethodBeanList(metodo);
+        smelly.addMethodBeanList(metodo);
         called.getList().add(metodo);
 
-        pack.addClassList(noSmelly);
+        pack.addClassList(smelly);
         systemPackage.add(pack);
 ///////////////////////////////////
         instances = new InstanceVariableList();
@@ -148,7 +149,7 @@ public class StructuralMisplacedClassStrategyTest {
 
         instances = new InstanceVariableList();
         methods = new MethodList();
-        smelly = new ClassBean.Builder("misplaced_class.package2.Gestione", "public Cliente scorriListaClienti() {\n" +
+        noSmelly = new ClassBean.Builder("misplaced_class.package2.Gestione", "public Cliente scorriListaClienti() {\n" +
                 "\t\t\n" +
                 "\t\tArrayList<Cliente> clienti= new ArrayList<Cliente>();\n" +
                 "\t\tCliente c= new Cliente(\"Lucia\",\"Abagnale\",30);\n" +
@@ -206,8 +207,8 @@ public class StructuralMisplacedClassStrategyTest {
                 .setAffectedSmell()
                 .build();
 
-        smelly.addMethodBeanList(metodo);
-        pack.addClassList(smelly);
+        noSmelly.addMethodBeanList(metodo);
+        pack.addClassList(noSmelly);
         systemPackage.add(pack);
 
     }
@@ -222,6 +223,18 @@ public class StructuralMisplacedClassStrategyTest {
         Logger log = Logger.getLogger(getClass().getName());
         log.info("\n" + risultato);
         assertTrue(risultato);
+    }
+
+    @Test
+    public void isSmellyFalse() {
+
+        StructuralMisplacedClassStrategy analisi = new StructuralMisplacedClassStrategy(systemPackage,0);
+        it.unisa.ascetic.analysis.code_smell.MisplacedClassCodeSmell smell = new it.unisa.ascetic.analysis.code_smell.MisplacedClassCodeSmell(analisi,"Structural");
+        boolean risultato = noSmelly.isAffected(smell);
+        assertFalse(noSmelly.getAffectedSmell().contains(smell));
+        Logger log = Logger.getLogger(getClass().getName());
+        log.info("\n" + risultato);
+        assertFalse(risultato);
     }
 
 }

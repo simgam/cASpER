@@ -42,7 +42,6 @@ public class StructuralBlobStrategy implements ClassSmellDetectionStrategy {
 
     private static boolean isLargeClassLowCohesion(ClassBean pClass) {
         int fSUM = CKMetrics.getWMC(pClass) + CKMetrics.getNOA(pClass);
-
         if ((CKMetrics.getLCOM(pClass) > LCOM) || (fSUM > featureSum)) {
             if (CKMetrics.getELOC(pClass) > ELOC) {
                 return true;

@@ -166,7 +166,7 @@ public class MisplacedClassWizard extends DialogWrapper {
     private JPanel getRadarMapFromNewEnviedPackage(ClassBean smellClass, PackageBean enviedPackage) {
         String newTextContent = enviedPackage.getTextContent() + smellClass.getTextContent();
         PackageBean newEnviedPackageBean = new PackageBean.Builder(enviedPackage.getFullQualifiedName(), newTextContent).build();
-        return radars.createRadarMapFromPackageBean(newEnviedPackageBean, "New Envied Class Topic");
+        return radars.createRadarMapFromPackageBean(newEnviedPackageBean, "New Envied Package Topic");
     }
 
     @NotNull

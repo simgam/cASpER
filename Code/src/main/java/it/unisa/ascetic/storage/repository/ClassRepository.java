@@ -4,12 +4,6 @@ import it.unisa.ascetic.analysis.code_smell.BlobCodeSmell;
 import it.unisa.ascetic.analysis.code_smell.CodeSmell;
 import it.unisa.ascetic.analysis.code_smell.MisplacedClassCodeSmell;
 import it.unisa.ascetic.storage.beans.*;
-import it.unisa.ascetic.storage.beans.ClassBean;
-import it.unisa.ascetic.storage.beans.InstanceVariableBean;
-import it.unisa.ascetic.storage.beans.InstanceVariableListProxy;
-import it.unisa.ascetic.storage.beans.MethodBean;
-import it.unisa.ascetic.storage.beans.MethodListProxy;
-import it.unisa.ascetic.storage.beans.PackageBean;
 import it.unisa.ascetic.storage.sqlite_jdbc_driver_connection.SQLiteConnector;
 
 import java.sql.*;
@@ -223,7 +217,7 @@ public class ClassRepository implements ClassBeanRepository {
                 String key = null;
                 HashMap<String, Double> index = null;
                 for (CodeSmell smell : list) {
-                    key = smell.getSmellName() + "-" +aClass.getFullQualifiedName();
+                    key = smell.getSmellName() + "-" + aClass.getFullQualifiedName();
                     stat = (PreparedStatement) con.prepareStatement(sql);
 
                     index = smell.getIndex();
@@ -369,26 +363,28 @@ public class ClassRepository implements ClassBeanRepository {
                 if (!res.getString("superclass").equals("")) {
                     c.setSuperclass(res.getString("superclass"));
                 }
-
                 classes.add(c.build());
             }
 
             for (ClassBean classe : classes) {
                 sql = "SELECT codeSmellFullQualifiedName, fqn_envied_package, algorithmUsed, indice FROM Classe_SmellType WHERE classBeanFullQualifiedName='" + classe.getFullQualifiedName() + "'";
                 res = selection.executeQuery(sql);
+                String envied = null;
                 while (res.next()) {
                     CodeSmell smell = null;
                     if (res.getString("codeSmellFullQualifiedName").equals(CodeSmell.MISPLACED_CLASS)) {
                         smell = new MisplacedClassCodeSmell(null, res.getString("algorithmUsed"));
-                        if (res.getString("fqn_envied_package") != null) {
-                            PackageBean enviedPackage = new PackageBean.Builder(res.getString("fqn_envied_package"), "").build();
-                            classe.setEnviedPackage(enviedPackage);
+                        if (!res.getString("fqn_envied_package").equals("")) {
+                            envied = res.getString("fqn_envied_package");
                         }
+                        classe.addSmell(smell);
+
+                        if (envied != null) classe.setEnviedPackage(new PackageBean.Builder(envied, "").build());
                     } else if (res.getString("codeSmellFullQualifiedName").equalsIgnoreCase(CodeSmell.BLOB)) {
                         smell = new BlobCodeSmell(null, res.getString("algorithmUsed"));
+                        classe.addSmell(smell);
                     }
 
-                    classe.addSmell(smell);
                 }
             }
 
@@ -401,7 +397,7 @@ public class ClassRepository implements ClassBeanRepository {
                     }
                 }
 
-                for(CodeSmell smell : classBean.getAffectedSmell()){
+                for (CodeSmell smell : classBean.getAffectedSmell()) {
                     key = smell.getSmellName() + "-" + classBean.getFullQualifiedName();
                     sql = "SELECT indice, name FROM Index_CodeSmell WHERE indexId='" + key + "'";
                     res = selection.executeQuery(sql);
@@ -416,7 +412,8 @@ public class ClassRepository implements ClassBeanRepository {
             res.close();
             selection.close();
             SQLiteConnector.releaseConnection(con);
-        } catch (SQLException e) {
+        } catch (
+                SQLException e) {
             try {
                 con.rollback();
             } catch (SQLException ex) {

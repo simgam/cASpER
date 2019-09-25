@@ -1,7 +1,5 @@
 package it.unisa.ascetic.storage.repository;
 
-import it.unisa.ascetic.storage.beans.ClassBean;
-
 /**
  * oggetto che istanzia la query da eseguire per la selezione delle variabili di istanza
  */

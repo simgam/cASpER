@@ -73,7 +73,7 @@ public class BlobWizard extends DialogWrapper {
 
                     String[] name = blobClassBean.getFullQualifiedName().replace(".", "/").split("/");
                     File file = new File(blobClassBean.getPathToFile() + "/" + name[name.length - 1]+".java");
-                    //System.out.println(file.toString());
+
                     if(!file.delete()){Messages.showMessageDialog("Error during delete of original class, pleace delete it manually", "Attention", Messages.getInformationIcon());}
 
                     close(0);

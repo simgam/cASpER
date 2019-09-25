@@ -9,6 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.logging.Logger;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public class StructuralFeatureEnvyStrategyTest {
@@ -167,7 +168,7 @@ public class StructuralFeatureEnvyStrategyTest {
                 .setReturnType(new ClassBean.Builder("String", "").build())
                 .setInstanceVariableList(instances)
                 .setMethodsCalls(null)
-                .setParameters(null)
+                .setParameters(new HashMap<String, ClassBean>())
                 .setStaticMethod(false)
                 .setDefaultCostructor(false)
                 .setBelongingClass(new ClassBean.Builder("feature_envy.package.Phone", "private final String unformattedNumber;\n" +
@@ -193,7 +194,7 @@ public class StructuralFeatureEnvyStrategyTest {
                 .setReturnType(new ClassBean.Builder("String", "").build())
                 .setInstanceVariableList(instances)
                 .setMethodsCalls(null)
-                .setParameters(null)
+                .setParameters(new HashMap<String, ClassBean>())
                 .setStaticMethod(false)
                 .setDefaultCostructor(false)
                 .setBelongingClass(new ClassBean.Builder("feature_envy.package.Phone", "private final String unformattedNumber;\n" +
@@ -219,7 +220,7 @@ public class StructuralFeatureEnvyStrategyTest {
                 .setReturnType(new ClassBean.Builder("String", "").build())
                 .setInstanceVariableList(instances)
                 .setMethodsCalls(null)
-                .setParameters(null)
+                .setParameters(new HashMap<String, ClassBean>())
                 .setStaticMethod(false)
                 .setDefaultCostructor(false)
                 .setBelongingClass(new ClassBean.Builder("feature_envy.package.Phone", "private final String unformattedNumber;\n" +
@@ -322,7 +323,7 @@ public class StructuralFeatureEnvyStrategyTest {
                 .setReturnType(null)
                 .setInstanceVariableList(instances)
                 .setMethodsCalls(null)
-                .setParameters(null)
+                .setParameters(new HashMap<String, ClassBean>())
                 .setStaticMethod(false)
                 .setDefaultCostructor(true)
                 .setBelongingClass(new ClassBean.Builder("feature_envy.package.Customer", "private String name;\n" +
@@ -356,7 +357,7 @@ public class StructuralFeatureEnvyStrategyTest {
                 .setReturnType(new ClassBean.Builder("String", "").build())
                 .setInstanceVariableList(instances)
                 .setMethodsCalls(null)
-                .setParameters(null)
+                .setParameters(new HashMap<String, ClassBean>())
                 .setStaticMethod(false)
                 .setDefaultCostructor(false)
                 .setBelongingClass(new ClassBean.Builder("feature_envy.package.Customer", "private String name;\n" +
@@ -399,7 +400,7 @@ public class StructuralFeatureEnvyStrategyTest {
                 .setReturnType(new ClassBean.Builder("String", "").build())
                 .setInstanceVariableList(null)
                 .setMethodsCalls(called)
-                .setParameters(null)
+                .setParameters(new HashMap<String, ClassBean>())
                 .setStaticMethod(false)
                 .setDefaultCostructor(false)
                 .setBelongingClass(new ClassBean.Builder("feature_envy.package.Customer", "private String name;\n" +
@@ -441,10 +442,24 @@ public class StructuralFeatureEnvyStrategyTest {
         StructuralFeatureEnvyStrategy analisi = new StructuralFeatureEnvyStrategy(list,0);
         it.unisa.ascetic.analysis.code_smell.FeatureEnvyCodeSmell smell = new it.unisa.ascetic.analysis.code_smell.FeatureEnvyCodeSmell(analisi,"Structural");
         boolean risultato = smelly.isAffected(smell);
-        assertTrue(smelly.getAffectedSmell().contains(smell));
+        assertTrue(!smelly.getAffectedSmell().contains(smell));
         Logger log = Logger.getLogger(getClass().getName());
         log.info("\n" + risultato);
-        assertTrue(risultato);
+        assertTrue(!risultato);
+    }
+
+    @Test
+    public void isSmellyFalse() {
+
+        List<PackageBean> list = new ArrayList<PackageBean>();
+        list.add(pack);
+        StructuralFeatureEnvyStrategy analisi = new StructuralFeatureEnvyStrategy(list,0);
+        it.unisa.ascetic.analysis.code_smell.FeatureEnvyCodeSmell smell = new it.unisa.ascetic.analysis.code_smell.FeatureEnvyCodeSmell(analisi,"Structural");
+        boolean risultato = noSmelly.isAffected(smell);
+        assertFalse(noSmelly.getAffectedSmell().contains(smell));
+        Logger log = Logger.getLogger(getClass().getName());
+        log.info("\n" + risultato);
+        assertFalse(risultato);
     }
 
 }

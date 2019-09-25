@@ -3,15 +3,13 @@ package it.unisa.ascetic.storage.repository;
 import it.unisa.ascetic.analysis.code_smell.CodeSmell;
 import it.unisa.ascetic.analysis.code_smell.PromiscuousPackageCodeSmell;
 import it.unisa.ascetic.storage.beans.*;
-import it.unisa.ascetic.storage.beans.ClassBean;
-import it.unisa.ascetic.storage.beans.ClassListProxy;
-import it.unisa.ascetic.storage.beans.InstanceVariableBean;
-import it.unisa.ascetic.storage.beans.MethodBean;
-import it.unisa.ascetic.storage.beans.PackageBean;
 import it.unisa.ascetic.storage.sqlite_jdbc_driver_connection.SQLiteConnector;
 
 import java.sql.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Set;
 
 /**
  * repository dedicata ai package

@@ -21,7 +21,7 @@ public class StructuralPromiscuousPackageStrategy implements PackageSmellDetecti
 
     public boolean isSmelly(PackageBean pPackage) {
 
-        if ((CKMetrics.computeMediumInterConnectivity(pPackage, projectPackages) > MIntraC) || (CKMetrics.computeMediumIntraConnectivity(pPackage) > MInterC)) {
+        if ((CKMetrics.computeMediumInterConnectivity(pPackage, projectPackages) > MInterC) || (CKMetrics.computeMediumIntraConnectivity(pPackage) > MIntraC)) {
             return true;
         }
         return false;

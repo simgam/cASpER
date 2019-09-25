@@ -278,7 +278,7 @@ public class MethodBean implements Comparable {
     /**
      * setter
      *
-     * @param indice generato durante l'analisi
+     * @param index generato durante l'analisi
      */
     public void setIndex(double index) {
         this.index = index;

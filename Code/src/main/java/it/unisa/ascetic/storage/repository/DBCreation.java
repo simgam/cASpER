@@ -1,11 +1,9 @@
 package it.unisa.ascetic.storage.repository;
 
 import it.unisa.ascetic.analysis.code_smell.CodeSmell;
-import it.unisa.ascetic.storage.sqlite_jdbc_driver_connection.SQLiteConnector;
 
 import java.sql.Connection;
 import java.sql.Statement;
-import java.util.ArrayList;
 
 /**
  * classe addetta alla creazione del db

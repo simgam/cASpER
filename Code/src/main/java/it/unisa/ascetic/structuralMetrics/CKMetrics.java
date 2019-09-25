@@ -237,7 +237,6 @@ public class CKMetrics {
                 sumInterConnectivities += ((packsInterConnectivity) / packsAllLinks);
             }
         }
-
         return ((1.0 / (pPackages.size() * (pPackages.size() - 1))) * sumInterConnectivities);
     }
 
