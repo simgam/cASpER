@@ -26,7 +26,7 @@ import java.util.logging.Logger;
  **/
 
 public class FeatureEnvyRefactoringStrategy implements RefactoringStrategy {
-    Logger logger = Logger.getLogger(this.getClass().getName());
+    Logger logger =  Logger.getLogger("global");
     //PSI Section
     private PsiClass psiSourceClass, psiDestinationClass;
     private PsiMethod psiMethod;
@@ -72,7 +72,6 @@ public class FeatureEnvyRefactoringStrategy implements RefactoringStrategy {
                     otherFeatureEnvy();
             }
         } catch (Exception e) {
-            e.printStackTrace();
             throw new FeatureEnvyException(e.getMessage());
         }
     }

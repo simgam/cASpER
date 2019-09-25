@@ -1,6 +1,8 @@
 package it.unisa.ascetic.gui.radarMap;
 
-import it.unisa.ascetic.storage.beans.*;
+import it.unisa.ascetic.storage.beans.ClassBean;
+import it.unisa.ascetic.storage.beans.MethodBean;
+import it.unisa.ascetic.storage.beans.PackageBean;
 import it.unisa.ascetic.topic.TopicExtracter;
 import org.jetbrains.annotations.NotNull;
 import org.jfree.chart.ChartPanel;
@@ -9,7 +11,6 @@ import org.jfree.chart.plot.SpiderWebPlot;
 import org.jfree.chart.title.TextTitle;
 import org.jfree.data.category.DefaultCategoryDataset;
 
-import javax.swing.*;
 import java.awt.*;
 import java.util.Map;
 import java.util.Set;

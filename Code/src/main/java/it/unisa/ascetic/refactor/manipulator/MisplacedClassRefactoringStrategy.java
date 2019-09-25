@@ -16,7 +16,7 @@ import it.unisa.ascetic.storage.beans.PackageBean;
 import java.util.logging.Logger;
 
 public class MisplacedClassRefactoringStrategy implements RefactoringStrategy {
-    Logger logger = Logger.getLogger(this.getClass().getName());
+    Logger logger = Logger.getLogger("global");
     private ClassBean classToMove;
     private PackageBean fromPackage, toPackage;
     private Project project;            //Aggiunta variabile d'istanza project

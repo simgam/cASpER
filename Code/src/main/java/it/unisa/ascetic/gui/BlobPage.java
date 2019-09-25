@@ -6,7 +6,7 @@ import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.ui.components.JBScrollPane;
 import com.intellij.ui.table.JBTable;
-import it.unisa.ascetic.analysis.splitting_algorithm.SplitClasses;
+import it.unisa.ascetic.refactor.splitting_algorithm.SplitClasses;
 import it.unisa.ascetic.gui.radarMap.RadarMapUtils;
 import it.unisa.ascetic.gui.radarMap.RadarMapUtilsAdapter;
 import it.unisa.ascetic.storage.beans.ClassBean;

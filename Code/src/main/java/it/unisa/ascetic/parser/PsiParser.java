@@ -31,7 +31,7 @@ import java.util.regex.Pattern;
 //import it.unisa.ascetic.storage.beans.*;
 
 public class PsiParser implements Parser {
-    Logger logger = Logger.getLogger(this.getClass().getName());
+    Logger logger = Logger.getLogger("global");
     private Project project;
     private static PackageBeanRepository packageBeanRepository;
     private static ClassBeanRepository classBeanRepository;

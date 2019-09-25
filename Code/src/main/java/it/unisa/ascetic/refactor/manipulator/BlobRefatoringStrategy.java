@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.logging.Logger;
 
 public class BlobRefatoringStrategy implements RefactoringStrategy {
-    Logger logger = Logger.getLogger(this.getClass().getName());
+    Logger logger = Logger.getLogger("global");
     private ClassBean originalClass;
     private List<ClassBean> splittedList;
     protected Project project;
@@ -31,15 +31,6 @@ public class BlobRefatoringStrategy implements RefactoringStrategy {
 
     @Override
     public void doRefactor() throws BlobException {
-//        List<ClassBean> lista;
-//        lista = splittedList;
-//        for (ClassBean classBean : lista) {
-//            PsiClass psiSplittedClass = PsiUtil.getPsi(classBean, project);
-//            for (PsiMethod metodoSplittato : psiSplittedClass.getAllMethods()) {
-//                createDelegation(metodoSplittato);
-//            }
-//        }
-        //test con il processor
 
         String packageName = originalClass.getBelongingPackage().getFullQualifiedName();
 
@@ -69,10 +60,6 @@ public class BlobRefatoringStrategy implements RefactoringStrategy {
 
             });
             try {
-                for(ClassBean c : splittedList){
-                    System.out.println(c.getTextContent());
-                }
-
                 processor = new ExtractClassProcessor(psiOriginalClass, fieldsToMove, methodsToMove, innerClasses, packageName, classShortName);
                 processor.run();
             } catch (NullPointerException e) {

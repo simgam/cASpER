@@ -22,7 +22,7 @@ import java.util.logging.Logger;
  */
 
 public class PromiscuousPackageRefactoringStrategy implements RefactoringStrategy {
-    Logger logger = Logger.getLogger(this.getClass().getName());
+    Logger logger = Logger.getLogger("global");
 
     private PackageBean packageBeanSource;
     private List<PackageBean> newPackages;

@@ -2,8 +2,6 @@ package it.unisa.ascetic.gui;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.DialogWrapper;
-import com.intellij.openapi.ui.Messages;
-import com.intellij.ui.components.JBScrollPane;
 import com.intellij.ui.table.JBTable;
 import com.intellij.util.ui.JBUI;
 import it.unisa.ascetic.gui.radarMap.RadarMapUtils;

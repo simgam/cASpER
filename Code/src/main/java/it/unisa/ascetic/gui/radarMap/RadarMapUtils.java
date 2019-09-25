@@ -1,7 +1,9 @@
 package it.unisa.ascetic.gui.radarMap;
 
 
-import it.unisa.ascetic.storage.beans.*;
+import it.unisa.ascetic.storage.beans.ClassBean;
+import it.unisa.ascetic.storage.beans.MethodBean;
+import it.unisa.ascetic.storage.beans.PackageBean;
 import org.jfree.chart.ChartPanel;
 
 import javax.swing.*;

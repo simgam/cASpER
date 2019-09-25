@@ -6,10 +6,6 @@ import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.ui.Messages;
 import it.unisa.ascetic.gui.radarMap.RadarMapUtils;
 import it.unisa.ascetic.gui.radarMap.RadarMapUtilsAdapter;
-import it.unisa.ascetic.refactor.exceptions.BlobException;
-import it.unisa.ascetic.refactor.exceptions.FeatureEnvyException;
-import it.unisa.ascetic.refactor.exceptions.MisplacedClassException;
-import it.unisa.ascetic.refactor.exceptions.PromiscuousPackageException;
 import it.unisa.ascetic.refactor.manipulator.BlobRefatoringStrategy;
 import it.unisa.ascetic.refactor.strategy.RefactoringManager;
 import it.unisa.ascetic.refactor.strategy.RefactoringStrategy;
@@ -22,8 +18,6 @@ import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -79,8 +73,8 @@ public class BlobWizard extends DialogWrapper {
 
                     String[] name = blobClassBean.getFullQualifiedName().replace(".", "/").split("/");
                     File file = new File(blobClassBean.getPathToFile() + "/" + name[name.length - 1]+".java");
-                    System.out.println(file.toString());
-                    file.delete();
+                    //System.out.println(file.toString());
+                    if(!file.delete()){Messages.showMessageDialog("Error during delete of original class, pleace delete it manually", "Attention", Messages.getInformationIcon());}
 
                     close(0);
                     message = "Blob Corrected, check new classes generated name";
