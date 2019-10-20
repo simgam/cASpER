@@ -7,6 +7,6 @@ public class SQLPromiscuousSelection implements SQLiteCriterion {
     public String toSQLquery() {
         return "SELECT DISTINCT PackageBean.fullQualifiedName, textContent " +
                 "FROM Package_SmellType INNER JOIN PackageBean ON packageBeanFullQualifiedName=PackageBean.fullQualifiedName " +
-                "WHERE codeSmellFullQualifiedName='"+CodeSmell.PROMISCUOUS_PACKAGE +"'";
+                "WHERE codeSmellFullQualifiedName='" + CodeSmell.PROMISCUOUS_PACKAGE + "'";
     }
 }

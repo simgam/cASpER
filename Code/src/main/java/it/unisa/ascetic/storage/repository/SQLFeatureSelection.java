@@ -8,6 +8,6 @@ public class SQLFeatureSelection implements SQLiteCriterion {
         return "SELECT DISTINCT MethodBean.fullQualifiedName AS MfullQualifiedName, Metodo_SmellType.methodBeanFullQualifiedName, Metodo_SmellType.codeSmellFullQualifiedName, belongingClass, fqn_envied_class, ClassBean.textContent AS CtextContent, MethodBean.textContent AS MtextContent," +
                 "return_type,staticMethod,isDefaultConstructor,visibility " +
                 "FROM (Metodo_SmellType INNER JOIN MethodBean ON methodBeanFullQualifiedName=MethodBean.fullQualifiedName) INNER JOIN ClassBean ON ClassBean.fullQualifiedName=MethodBean.belongingClass " +
-                "WHERE codeSmellFullQualifiedName='"+CodeSmell.FEATURE_ENVY +"'";
+                "WHERE codeSmellFullQualifiedName='" + CodeSmell.FEATURE_ENVY + "'";
     }
 }

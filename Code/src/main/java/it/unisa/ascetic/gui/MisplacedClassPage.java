@@ -38,7 +38,7 @@ public class MisplacedClassPage extends DialogWrapper {
         super(canBeParent);
     }
 
-    public MisplacedClassPage(ClassBean misplacedClassBean, Project project){
+    public MisplacedClassPage(ClassBean misplacedClassBean, Project project) {
         super(true);
         this.misplacedClassBean = misplacedClassBean;
         this.project = project;
@@ -55,7 +55,7 @@ public class MisplacedClassPage extends DialogWrapper {
         centerPanel = new JPanel();
         centerPanel.setBorder(JBUI.Borders.empty(5));
         centerPanel.setLayout(new BoxLayout(centerPanel, BoxLayout.Y_AXIS));
-        centerPanel.setPreferredSize(new Dimension(1050,900));
+        centerPanel.setPreferredSize(new Dimension(1050, 900));
 
         //radarmap containre init
         radarmapContainer = new JPanel();
@@ -63,7 +63,7 @@ public class MisplacedClassPage extends DialogWrapper {
         radarmapContainer.setLayout(new BoxLayout(radarmapContainer, BoxLayout.X_AXIS));
 
 
-        Dimension radarmapPreferredSize = new Dimension(100,300);
+        Dimension radarmapPreferredSize = new Dimension(100, 300);
         JPanel methodRadarmap = radarMapGenerator.createRadarMapFromClassBean(misplacedClassBean, misplacedClassBean.getFullQualifiedName());
         methodRadarmap.setPreferredSize(radarmapPreferredSize);
         methodRadarmapContainer = new JPanel();
@@ -92,12 +92,12 @@ public class MisplacedClassPage extends DialogWrapper {
         enviedClassRadarmapContainer.setPreferredSize(radarmapPreferredSize);
         radarmapContainer.add(enviedClassRadarmapContainer);
 
-        centerPanel.add(Box.createRigidArea(new Dimension(0,50)));
+        centerPanel.add(Box.createRigidArea(new Dimension(0, 50)));
 
 
         level2Panel = new JPanel();
         JPanel p = new JPanel();
-        level2Panel.setLayout(new BoxLayout(level2Panel,BoxLayout.X_AXIS));
+        level2Panel.setLayout(new BoxLayout(level2Panel, BoxLayout.X_AXIS));
         centerPanel.add(level2Panel);
 
         JTextPane textContentArea = new JTextPane();
@@ -122,18 +122,18 @@ public class MisplacedClassPage extends DialogWrapper {
     private void createTable() {
         table = new JBTable();
 
-        String[] columnsNames = {"Method","LOC","WCM","LCOM","CBO","NOM","NOPA"};
-        DefaultTableModel tableModel = new DefaultTableModel(columnsNames,0);
+        String[] columnsNames = {"Method", "LOC", "WCM", "LCOM", "CBO", "NOM", "NOPA"};
+        DefaultTableModel tableModel = new DefaultTableModel(columnsNames, 0);
 
         Vector<String> row = new Vector<>();
         row.add(misplacedClassBean.getFullQualifiedName());
-        row.add(CKMetrics.getLOC(misplacedClassBean)+"");
-        row.add(CKMetrics.getWMC(misplacedClassBean)+"");
-        row.add(CKMetrics.getLCOM(misplacedClassBean)+"");
-        row.add(CKMetrics.getCBO(misplacedClassBean)+"");
-        row.add(CKMetrics.getNOA(misplacedClassBean)+"");
-        row.add(CKMetrics.getNOM(misplacedClassBean)+"");
-        row.add(CKMetrics.getNOPA(misplacedClassBean)+"");
+        row.add(CKMetrics.getLOC(misplacedClassBean) + "");
+        row.add(CKMetrics.getWMC(misplacedClassBean) + "");
+        row.add(CKMetrics.getLCOM(misplacedClassBean) + "");
+        row.add(CKMetrics.getCBO(misplacedClassBean) + "");
+        row.add(CKMetrics.getNOA(misplacedClassBean) + "");
+        row.add(CKMetrics.getNOM(misplacedClassBean) + "");
+        row.add(CKMetrics.getNOPA(misplacedClassBean) + "");
         tableModel.addRow(row);
 
         table.setModel(tableModel);

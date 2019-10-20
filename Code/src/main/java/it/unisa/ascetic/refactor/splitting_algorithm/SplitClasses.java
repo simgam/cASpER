@@ -3,6 +3,7 @@ package it.unisa.ascetic.refactor.splitting_algorithm;
 import it.unisa.ascetic.storage.beans.*;
 
 import java.util.*;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Pattern;
 
@@ -27,10 +28,12 @@ public class SplitClasses {
      */
     public Collection<ClassBean> split(ClassBean pToSplit, double pThreshold) throws Exception {
 
+        logger.setLevel(Level.OFF);
         Collection<ClassBean> result = new Vector<>();
 
         Iterator<MethodBean> it = pToSplit.getMethodList().iterator();
         Vector<MethodBean> vectorMethods = new Vector<>();
+
         MethodBean tmpMethod = null;
         while (it.hasNext()) {
             tmpMethod = (MethodBean) it.next();
@@ -38,9 +41,11 @@ public class SplitClasses {
                 vectorMethods.add(tmpMethod);
         }
         Collections.sort(vectorMethods);
+
         MethodByMethodMatrixConstruction matrixConstruction = new MethodByMethodMatrixConstruction();
-        double[][] methodByMethodMatrix = matrixConstruction.buildMethodByMethodMatrix(0.2, 0.1, 0.5, pThreshold, pToSplit);
+        double[][] methodByMethodMatrix = matrixConstruction.buildMethodByMethodMatrix(0.5, 0.5, 0.5, pToSplit);
         double[][] methodByMethodMatrixFiltered = matrixConstruction.filterMatrix(methodByMethodMatrix, pThreshold);
+
         Vector<Integer> tmpMarkovChain = new Vector<Integer>();
         Vector<Integer> makeMethods = new Vector<Integer>();
         double[] tmpProbability = new double[methodByMethodMatrix.length];
@@ -84,60 +89,60 @@ public class SplitClasses {
             }
         }
 
-        if (newChains.size() > 5) {
-            //Conto le trivial chains
-            int count = 0;
-            for (String s : newChains) {
-                String[] methods = splitPattern.split(s);
-                if (methods.length < 3)
-                    count++;
-            }
-            logger.severe("DIMENSIONE:" + (newChains.size() - count));
-            if (newChains.size() - count > 4) {
-                double[][] mbm = matrixConstruction.buildMethodByMethodMatrix(0, 0, 1, 0.05, pToSplit);
-                while (newChains.size() - count > 4) {
-                    int smallest = getSmallestNonTrivialChain(newChains);
-                    String[] methodsSource = splitPattern.split(newChains.elementAt(smallest));
-                    double maxSimilarity = 0;
-                    int indexChain = -1;
-                    for (int i = 0; i < newChains.size(); i++) {
-                        if (i != smallest) {
-                            String[] methodsTarget = splitPattern.split(newChains.elementAt(i));
-                            if (methodsTarget.length > 2) {
-                                //non ? una trivial chain
-                                double sim = 0;
-                                for (int k = 0; k < methodsSource.length; k++) {
-                                    for (int s = 0; s < methodsTarget.length; s++) {
-                                        sim += mbm[Integer.valueOf(methodsSource[k])][Integer.valueOf(methodsTarget[s])];
-                                    }
-                                }
-                                sim = (double) sim / (methodsSource.length * methodsTarget.length);
-                                if (sim >= maxSimilarity) {
-                                    indexChain = i;
-                                    maxSimilarity = sim;
-                                }
-                            }
-                        }
-                    }
-                    if (indexChain > -1) {
-                        String toDelete1 = newChains.elementAt(smallest);
-                        String toDelete2 = newChains.elementAt(indexChain);
-                        String toAdd = toDelete1 + toDelete2;
-                        newChains.remove(toDelete1);
-                        newChains.remove(toDelete2);
-                        newChains.add(toAdd);
-                    }
-                }
-            } else if (newChains.size() - count == 0) {
-                Collection<ClassBean> emptyCollection = new Vector<ClassBean>();
-                return emptyCollection;
-            }
-        }
+//        if (newChains.size() > 5) {
+//            //Conto le trivial chains
+//            int count = 0;
+//            for (String s : newChains) {
+//                String[] methods = splitPattern.split(s);
+//                if (methods.length < 3)
+//                    count++;
+//            }
+//            logger.severe("DIMENSIONE:" + (newChains.size() - count));
+//            if (newChains.size() - count > 4) {
+//                double[][] mbm = matrixConstruction.buildMethodByMethodMatrix(0, 0, 1, 0.05, pToSplit);
+//                while (newChains.size() - count > 4) {
+//                    int smallest = getSmallestNonTrivialChain(newChains);
+//                    String[] methodsSource = splitPattern.split(newChains.elementAt(smallest));
+//                    double maxSimilarity = 0;
+//                    int indexChain = -1;
+//                    for (int i = 0; i < newChains.size(); i++) {
+//                        if (i != smallest) {
+//                            String[] methodsTarget = splitPattern.split(newChains.elementAt(i));
+//                            if (methodsTarget.length > 2) {
+//                                //non è una trivial chain
+//                                double sim = 0;
+//                                for (int k = 0; k < methodsSource.length; k++) {
+//                                    for (int s = 0; s < methodsTarget.length; s++) {
+//                                        sim += mbm[Integer.valueOf(methodsSource[k])][Integer.valueOf(methodsTarget[s])];
+//                                    }
+//                                }
+//                                sim = (double) sim / (methodsSource.length * methodsTarget.length);
+//                                if (sim >= maxSimilarity) {
+//                                    indexChain = i;
+//                                    maxSimilarity = sim;
+//                                }
+//                            }
+//                        }
+//                    }
+//                    if (indexChain > -1) {
+//                        String toDelete1 = newChains.elementAt(smallest);
+//                        String toDelete2 = newChains.elementAt(indexChain);
+//                        String toAdd = toDelete1 + toDelete2;
+//                        newChains.remove(toDelete1);
+//                        newChains.remove(toDelete2);
+//                        newChains.add(toAdd);
+//                    }
+//                }
+//            } else if (newChains.size() - count == 0) {
+//                Collection<ClassBean> emptyCollection = new Vector<ClassBean>();
+//                return emptyCollection;
+//            }
+//        }
+
         String packageName = pToSplit.getFullQualifiedName().substring(0, pToSplit.getFullQualifiedName().lastIndexOf('.'));
         logger.severe("DBG-> package name: " + packageName);
         for (int i = 0; i < newChains.size(); i++) {
             ClassBean tmpClass = createSplittedClassBean(i, packageName, newChains, vectorMethods, new Vector<>(pToSplit.getInstanceVariablesList()), pToSplit.getBelongingPackage());
-
             result.add(tmpClass);
         }
 
@@ -171,7 +176,6 @@ public class SplitClasses {
         }
         return tmpIndexMax;
     }
-
 
     private ClassBean createSplittedClassBean(int index, String packageName, Vector<String> chain, Vector<MethodBean> methods, Vector<InstanceVariableBean> instanceVariables, PackageBean belongingPackage) {
         String classShortName = "Class_" + (index + 1);
@@ -235,36 +239,32 @@ public class SplitClasses {
      *
      * @param startIndex:                l'indice da cui iniziare
      * @param tmpMarkovChain:            conserva la catena di markov tra le chiamate ricorsive
-     * @param tmpMarkovChainProbability: vettore riga conserva la probabilitﾈ
+     * @param tmpMarkovChainProbability: vettore riga conserva la probabilità
      * @param makeMethods:               memorizza tutti i metodi sinora inclusi in una qualunque catena di markov
      * @return true quando l'operazione e' terminata
      */
     public boolean getMarkovChains(double[][] methodByMethodMatrix, int startIndex, Vector<Integer> tmpMarkovChain, double[] tmpMarkovChainProbability, Vector<Integer> makeMethods) {
 
-        //Le dimensioni della matrice
-        int matrixSize = methodByMethodMatrix.length;
-
         //Variabili temporanee
         int tmpSum = 0;
         double tmpRowSum = 0;
 
-
-        //Vettore utilizzato per contenere le probabilitﾈ presenti su una riga
+        //Vettore utilizzato per contenere le probabilità presenti su una riga
         Vector<Double> tmpRowProbability = new Vector<Double>();
-        //Vettore utilizzato per contenere gli indici delle probabilitﾈ presenti su una riga
+        //Vettore utilizzato per contenere gli indici delle probabilità presenti su una riga
         Vector<Integer> tmpRowIndexProbability = new Vector<Integer>();
 
-        makeMethods.add(startIndex);//Segno che ho giﾈ analizzato il metodo legato allo startIndex
+        makeMethods.add(startIndex);//Segno che ho già analizzato il metodo legato allo startIndex
         tmpMarkovChain.add(startIndex);//Aggiungo l'indice passato alla catena di markov in produzione
 
-        //Azzero la colonna inerente il metodo giﾈ incluso nella catena di markov
-        //in questo modo nessun altro metodo potrﾈ raggiungerlo
+        //Azzero la colonna inerente il metodo già incluso nella catena di markov
+        //in questo modo nessun altro metodo potrà raggiungerlo
         for (int i = 0; i < methodByMethodMatrix.length; i++) {
             methodByMethodMatrix[i][startIndex] = 0;
         }
 
-        //Sommo le probabilitﾈ nella catena di markov
-        for (int j = 0; j < matrixSize; j++) {
+        //Sommo le probabilità nella catena di markov
+        for (int j = 0; j < methodByMethodMatrix.length; j++) {
             if (j != startIndex) {
                 tmpMarkovChainProbability[j] = methodByMethodMatrix[startIndex][j] + tmpMarkovChainProbability[j];
             } else {
@@ -273,8 +273,7 @@ public class SplitClasses {
             }
         }
 
-
-        //Calcolo le probabilitﾈ
+        //Calcolo le probabilità
         for (int j = 0; j < tmpMarkovChainProbability.length; j++) {
             if (startIndex != j) {
                 if (tmpMarkovChainProbability[j] > 0) {
@@ -310,7 +309,6 @@ public class SplitClasses {
         } else {//In questo caso devo fermare la produzione della catena di markov
 
             //Ordino il contenuto della catena di markov
-
             Collections.sort(tmpMarkovChain);
             String chain = "";
             for (int i = 0; i < tmpMarkovChain.size(); i++) {
@@ -328,14 +326,9 @@ public class SplitClasses {
                     getMarkovChains(methodByMethodMatrix, startIndex, tmpMarkovChain, tmpMarkovChainProbability, makeMethods);
                 }
             }
-
             return true;
-
-
         }
-
         return true;
-
     }
 
     public static int getSmallestNonTrivialChain(Vector<String> chains) {

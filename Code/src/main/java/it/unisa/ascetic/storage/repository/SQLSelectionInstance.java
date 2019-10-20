@@ -18,6 +18,6 @@ public class SQLSelectionInstance implements SQLiteCriterion {
         return "SELECT * " +
                 "FROM InstanceVariableBean INNER JOIN Classe_VariabileIstanza ON fullQualifiedName=instanceVariableBeanFullQualifiedName " +
                 "WHERE classBeanFullQualifiedName = '" +
-                ""+ belongingClass+"'";
+                "" + belongingClass + "'";
     }
 }

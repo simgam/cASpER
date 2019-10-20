@@ -12,7 +12,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
-import java.util.regex.Pattern;
 
 
 public class StructuralFeatureEnvyStrategy implements MethodSmellDetectionStrategy {
@@ -55,7 +54,6 @@ public class StructuralFeatureEnvyStrategy implements MethodSmellDetectionStrate
             for (ClassBean classBean : classes) {
 
                 numberOfDependenciesWithCandidateEnviedClass = CKMetrics.getNumberOfDependencies(pMethod, classBean);
-
                 comparableClassBean = new ClassBean.Builder(classBean.getFullQualifiedName(), classBean.getTextContent())
                         .setInstanceVariables(classBean.instanceVariables)
                         .setMethods(classBean.methods)
@@ -75,7 +73,6 @@ public class StructuralFeatureEnvyStrategy implements MethodSmellDetectionStrate
             Collections.sort(dependenciesWithMethod, comparator);
 
             ClassBean firstRankedClass = dependenciesWithMethod.get(dependenciesWithMethod.size() - 1);
-
             if (numberOfDependenciesWithActualClass <= firstRankedClass.getSimilarity() && firstRankedClass.getSimilarity() != 0 && firstRankedClass.getSimilarity() >= soglia) {
                 pMethod.setEnviedClass(firstRankedClass);
                 return true;

@@ -2,15 +2,15 @@ package it.unisa.ascetic.refactor.manipulator;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.ui.Messages;
 import com.intellij.psi.*;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.refactoring.extractclass.ExtractClassProcessor;
 import it.unisa.ascetic.refactor.exceptions.BlobException;
 import it.unisa.ascetic.refactor.strategy.RefactoringStrategy;
-import it.unisa.ascetic.storage.beans.*;
+import it.unisa.ascetic.storage.beans.ClassBean;
+import it.unisa.ascetic.storage.beans.InstanceVariableBean;
+import it.unisa.ascetic.storage.beans.MethodBean;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;

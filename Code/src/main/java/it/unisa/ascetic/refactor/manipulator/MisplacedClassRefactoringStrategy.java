@@ -41,8 +41,6 @@ public class MisplacedClassRefactoringStrategy implements RefactoringStrategy {
         try {
 
             logger.severe("inizio lo spostamento");
-            PsiPackage destinaPackage = JavaPsiFacade.getInstance(project).findPackage(toPackage.getFullQualifiedName());
-
 
             PsiClass sourceClass = JavaPsiFacade.getInstance(project).findClass(classToMove.getFullQualifiedName(), GlobalSearchScope.everythingScope(project));
             PsiPackage destinationPackage = JavaPsiFacade.getInstance(project).findPackage(toPackage.getFullQualifiedName());

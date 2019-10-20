@@ -2,10 +2,7 @@
   <component name="FileBasedIndex">
     <option name="registeredIndices">
       <list>
-        <option value="org.jetbrains.kotlin.idea.stubindex.KotlinFileFacadeShortNameIndex" />
-        <option value="org.jetbrains.kotlin.idea.stubindex.KotlinFileFacadeClassByPackageIndex" />
-        <option value="org.jetbrains.kotlin.idea.stubindex.KotlinFilePartClassIndex" />
-        <option value="org.jetbrains.kotlin.idea.stubindex.KotlinFileFacadeFqNameIndex" />
+        <option value="org.jetbrains.kotlin.idea.stubindex.KotlinProbablyContractedFunctionShortNameIndex" />
         <option value="org.jetbrains.kotlin.idea.stubindex.KotlinProbablyNothingPropertyShortNameIndex" />
         <option value="org.jetbrains.kotlin.idea.stubindex.KotlinProbablyNothingFunctionShortNameIndex" />
         <option value="org.jetbrains.kotlin.idea.stubindex.KotlinAnnotationsIndex" />
@@ -36,7 +33,6 @@
         <option value="properties.index" />
         <option value="dom.elementClass" />
         <option value="dom.namespaceKey" />
-        <option value="org.jetbrains.kotlin.idea.stubindex.KotlinProbablyContractedFunctionShortNameIndex" />
         <option value="java.module.name" />
         <option value="java.class.fqn" />
         <option value="java.class.shortname" />
@@ -52,6 +48,10 @@
         <option value="org.jetbrains.kotlin.idea.stubindex.KotlinTypeAliasByExpansionShortNameIndex" />
         <option value="org.jetbrains.kotlin.idea.stubindex.KotlinScriptFqnIndex" />
         <option value="org.jetbrains.kotlin.idea.stubindex.KotlinMultifileClassPartIndex" />
+        <option value="org.jetbrains.kotlin.idea.stubindex.KotlinFileFacadeShortNameIndex" />
+        <option value="org.jetbrains.kotlin.idea.stubindex.KotlinFileFacadeClassByPackageIndex" />
+        <option value="org.jetbrains.kotlin.idea.stubindex.KotlinFilePartClassIndex" />
+        <option value="org.jetbrains.kotlin.idea.stubindex.KotlinFileFacadeFqNameIndex" />
       </list>
     </option>
   </component>

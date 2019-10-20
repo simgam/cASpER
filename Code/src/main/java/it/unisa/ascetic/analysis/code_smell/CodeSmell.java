@@ -108,7 +108,7 @@ public abstract class CodeSmell<T> {
      *
      * @param HashMap<String, Double>  lista di double corrispondente agli indici da settare
      */
-    public void setIndex(HashMap<String, Double>  index) {
+    public void setIndex(HashMap<String, Double> index) {
         this.index = index;
     }
 

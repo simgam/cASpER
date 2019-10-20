@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="ProgettiTest.db">
+  <database-model serializer="dbm" dbms="SQLITE" family-id="SQLITE" format-version="4.15">
+    <root id="1">
+      <ServerVersion>3.25.1</ServerVersion>
+    </root>
+    <schema id="2" parent="1" name="main">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <collation id="3" parent="1" name="BINARY"/>
+    <collation id="4" parent="1" name="NOCASE"/>
+    <collation id="5" parent="1" name="RTRIM"/>
+    <table id="6" parent="2" name="ClassBean"/>
+    <table id="7" parent="2" name="Classe_SmellType"/>
+    <table id="8" parent="2" name="Classe_VariabileIstanza"/>
+    <table id="9" parent="2" name="CodeSmell"/>
+    <table id="10" parent="2" name="Index_CodeSmell"/>
+    <table id="11" parent="2" name="InstanceVariableBean"/>
+    <table id="12" parent="2" name="Instance_Variable_Used"/>
+    <table id="13" parent="2" name="MethodBean"/>
+    <table id="14" parent="2" name="Methods_Calls"/>
+    <table id="15" parent="2" name="Metodo_SmellType"/>
+    <table id="16" parent="2" name="PackageBean"/>
+    <table id="17" parent="2" name="Package_SmellType"/>
+    <table id="18" parent="2" name="Parameter_Used"/>
+    <table id="19" parent="2" name="sqlite_master">
+      <System>1</System>
+    </table>
+    <column id="20" parent="6" name="fullQualifiedName">
+      <Position>1</Position>
+      <DataType>VARCHAR(255)|0s</DataType>
+    </column>
+    <column id="21" parent="6" name="textContent">
+      <Position>2</Position>
+      <DataType>TEXT|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="22" parent="6" name="belongingPackage">
+      <Position>3</Position>
+      <DataType>VARCHAR(255)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="23" parent="6" name="LOC">
+      <Position>4</Position>
+      <DataType>INTEGER(10)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="24" parent="6" name="superclass">
+      <Position>5</Position>
+      <DataType>VARCHAR(255)|0s</DataType>
+    </column>
+    <column id="25" parent="6" name="entityClassUsage">
+      <Position>6</Position>
+      <DataType>INTEGER(10)|0s</DataType>
+    </column>
+    <column id="26" parent="6" name="pathToFile">
+      <Position>7</Position>
+      <DataType>VARCHAR(255)|0s</DataType>
+    </column>
+    <index id="27" parent="6" name="sqlite_autoindex_ClassBean_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>fullQualifiedName</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="28" parent="6">
+      <ColNames>fullQualifiedName</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_ClassBean_1</UnderlyingIndexName>
+    </key>
+    <foreign-key id="29" parent="6">
+      <ColNames>belongingPackage</ColNames>
+      <RefTableName>PackageBean</RefTableName>
+      <RefColNames>fullQualifiedName</RefColNames>
+      <OnDelete>cascade</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+    <foreign-key id="30" parent="6">
+      <ColNames>superclass</ColNames>
+      <RefTableName>ClassBean</RefTableName>
+      <RefColNames>fullQualifiedName</RefColNames>
+      <OnDelete>cascade</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+    <column id="31" parent="7" name="classBeanFullQualifiedName">
+      <Position>1</Position>
+      <DataType>VARCHAR(255)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="32" parent="7" name="codeSmellFullQualifiedName">
+      <Position>2</Position>
+      <DataType>VARCHAR(255)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="33" parent="7" name="fqn_envied_package">
+      <Position>3</Position>
+      <DataType>VARCHAR(255)|0s</DataType>
+    </column>
+    <column id="34" parent="7" name="algorithmUsed">
+      <Position>4</Position>
+      <DataType>VARCHAR(255)|0s</DataType>
+    </column>
+    <column id="35" parent="7" name="indice">
+      <Position>5</Position>
+      <DataType>VARCHAR(255)|0s</DataType>
+    </column>
+    <index id="36" parent="7" name="sqlite_autoindex_Classe_SmellType_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>classBeanFullQualifiedName
+codeSmellFullQualifiedName
+algorithmUsed</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="37" parent="7">
+      <ColNames>classBeanFullQualifiedName
+codeSmellFullQualifiedName
+algorithmUsed</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_Classe_SmellType_1</UnderlyingIndexName>
+    </key>
+    <foreign-key id="38" parent="7">
+      <ColNames>classBeanFullQualifiedName</ColNames>
+      <RefTableName>ClassBean</RefTableName>
+      <RefColNames>fullQualifiedName</RefColNames>
+      <OnDelete>cascade</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+    <foreign-key id="39" parent="7">
+      <ColNames>codeSmellFullQualifiedName</ColNames>
+      <RefTableName>CodeSmell</RefTableName>
+      <RefColNames>fullQualifiedName</RefColNames>
+      <OnDelete>cascade</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+    <foreign-key id="40" parent="7">
+      <ColNames>fqn_envied_package</ColNames>
+      <RefTableName>PackageBean</RefTableName>
+      <RefColNames>fullQualifiedName</RefColNames>
+      <OnDelete>cascade</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+    <foreign-key id="41" parent="7">
+      <ColNames>indice</ColNames>
+      <RefTableName>Index_CodeSmell</RefTableName>
+      <RefColNames>indexId</RefColNames>
+      <OnDelete>cascade</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+    <column id="42" parent="8" name="classBeanFullQualifiedName">
+      <Position>1</Position>
+      <DataType>VARCHAR(255)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="43" parent="8" name="instanceVariableBeanFullQualifiedName">
+      <Position>2</Position>
+      <DataType>VARCHAR(255)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="44" parent="8" name="sqlite_autoindex_Classe_VariabileIstanza_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>classBeanFullQualifiedName
+instanceVariableBeanFullQualifiedName</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="45" parent="8">
+      <ColNames>classBeanFullQualifiedName
+instanceVariableBeanFullQualifiedName</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_Classe_VariabileIstanza_1</UnderlyingIndexName>
+    </key>
+    <foreign-key id="46" parent="8">
+      <ColNames>classBeanFullQualifiedName</ColNames>
+      <RefTableName>ClassBean</RefTableName>
+      <RefColNames>fullQualifiedName</RefColNames>
+      <OnDelete>cascade</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+    <foreign-key id="47" parent="8">
+      <ColNames>instanceVariableBeanFullQualifiedName</ColNames>
+      <RefTableName>InstanceVariableBean</RefTableName>
+      <RefColNames>fullQualifiedName</RefColNames>
+      <OnDelete>cascade</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+    <column id="48" parent="9" name="fullQualifiedName">
+      <Position>1</Position>
+      <DataType>VARCHAR(255)|0s</DataType>
+    </column>
+    <column id="49" parent="9" name="detectionStrategy">
+      <Position>2</Position>
+      <DataType>VARCHAR(255)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="50" parent="9" name="sqlite_autoindex_CodeSmell_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>fullQualifiedName</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="51" parent="9">
+      <ColNames>fullQualifiedName</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_CodeSmell_1</UnderlyingIndexName>
+    </key>
+    <column id="52" parent="10" name="indexId">
+      <Position>1</Position>
+      <DataType>VARCHAR(255)|0s</DataType>
+    </column>
+    <column id="53" parent="10" name="indice">
+      <Position>2</Position>
+      <DataType>INTEGER(5)|0s</DataType>
+    </column>
+    <column id="54" parent="10" name="name">
+      <Position>3</Position>
+      <DataType>VARCHAR(255)|0s</DataType>
+    </column>
+    <index id="55" parent="10" name="sqlite_autoindex_Index_CodeSmell_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>indexId
+indice</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="56" parent="10">
+      <ColNames>indexId
+indice</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_Index_CodeSmell_1</UnderlyingIndexName>
+    </key>
+    <column id="57" parent="11" name="fullQualifiedName">
+      <Position>1</Position>
+      <DataType>VARCHAR(255)|0s</DataType>
+    </column>
+    <column id="58" parent="11" name="tipo">
+      <Position>2</Position>
+      <DataType>VARCHAR(255)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="59" parent="11" name="initialization">
+      <Position>3</Position>
+      <DataType>VARCHAR(255)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="60" parent="11" name="visibility">
+      <Position>4</Position>
+      <DataType>VARCHAR(255)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="61" parent="11" name="sqlite_autoindex_InstanceVariableBean_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>fullQualifiedName</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="62" parent="11">
+      <ColNames>fullQualifiedName</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_InstanceVariableBean_1</UnderlyingIndexName>
+    </key>
+    <column id="63" parent="12" name="methodBeanFullQualifiedName">
+      <Position>1</Position>
+      <DataType>VARCHAR(255)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="64" parent="12" name="instanceVariableBeanFullQualifiedName">
+      <Position>2</Position>
+      <DataType>VARCHAR(255)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="65" parent="12" name="sqlite_autoindex_Instance_Variable_Used_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>methodBeanFullQualifiedName
+instanceVariableBeanFullQualifiedName</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="66" parent="12">
+      <ColNames>methodBeanFullQualifiedName
+instanceVariableBeanFullQualifiedName</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_Instance_Variable_Used_1</UnderlyingIndexName>
+    </key>
+    <foreign-key id="67" parent="12">
+      <ColNames>methodBeanFullQualifiedName</ColNames>
+      <RefTableName>MethodBean</RefTableName>
+      <RefColNames>fullQualifiedName</RefColNames>
+      <OnDelete>cascade</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+    <foreign-key id="68" parent="12">
+      <ColNames>instanceVariableBeanFullQualifiedName</ColNames>
+      <RefTableName>InstanceVariableBean</RefTableName>
+      <RefColNames>fullQualifiedName</RefColNames>
+      <OnDelete>cascade</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+    <column id="69" parent="13" name="fullQualifiedName">
+      <Position>1</Position>
+      <DataType>VARCHAR(255)|0s</DataType>
+    </column>
+    <column id="70" parent="13" name="textContent">
+      <Position>2</Position>
+      <DataType>TEXT|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="71" parent="13" name="return_type">
+      <Position>3</Position>
+      <DataType>VARCHAR(255)|0s</DataType>
+    </column>
+    <column id="72" parent="13" name="staticMethod">
+      <Position>4</Position>
+      <DataType>BINARY(1)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="73" parent="13" name="isDefaultConstructor">
+      <Position>5</Position>
+      <DataType>BINARY(1)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="74" parent="13" name="belongingClass">
+      <Position>6</Position>
+      <DataType>VARCHAR(255)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="75" parent="13" name="visibility">
+      <Position>7</Position>
+      <DataType>VARCHAR(255)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="76" parent="13" name="sqlite_autoindex_MethodBean_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>fullQualifiedName</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="77" parent="13">
+      <ColNames>fullQualifiedName</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_MethodBean_1</UnderlyingIndexName>
+    </key>
+    <foreign-key id="78" parent="13">
+      <ColNames>belongingClass</ColNames>
+      <RefTableName>ClassBean</RefTableName>
+      <RefColNames>fullQualifiedName</RefColNames>
+      <OnDelete>cascade</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+    <column id="79" parent="14" name="methodCallerFullQualifiedName">
+      <Position>1</Position>
+      <DataType>VARCHAR(255)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="80" parent="14" name="methodCalledFullQualifiedName">
+      <Position>2</Position>
+      <DataType>VARCHAR(255)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="81" parent="14" name="sqlite_autoindex_Methods_Calls_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>methodCallerFullQualifiedName
+methodCalledFullQualifiedName</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="82" parent="14">
+      <ColNames>methodCallerFullQualifiedName
+methodCalledFullQualifiedName</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_Methods_Calls_1</UnderlyingIndexName>
+    </key>
+    <foreign-key id="83" parent="14">
+      <ColNames>methodCallerFullQualifiedName</ColNames>
+      <RefTableName>MethodBean</RefTableName>
+      <RefColNames>fullQualifiedName</RefColNames>
+      <OnDelete>cascade</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+    <foreign-key id="84" parent="14">
+      <ColNames>methodCalledFullQualifiedName</ColNames>
+      <RefTableName>MethodBean</RefTableName>
+      <RefColNames>fullQualifiedName</RefColNames>
+      <OnDelete>cascade</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+    <column id="85" parent="15" name="methodBeanFullQualifiedName">
+      <Position>1</Position>
+      <DataType>VARCHAR(255)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="86" parent="15" name="codeSmellFullQualifiedName">
+      <Position>2</Position>
+      <DataType>VARCHAR(255)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="87" parent="15" name="fqn_envied_class">
+      <Position>3</Position>
+      <DataType>VARCHAR(255)|0s</DataType>
+    </column>
+    <column id="88" parent="15" name="algorithmUsed">
+      <Position>4</Position>
+      <DataType>VARCHAR(255)|0s</DataType>
+    </column>
+    <column id="89" parent="15" name="indice">
+      <Position>5</Position>
+      <DataType>VARCHAR(255)|0s</DataType>
+    </column>
+    <index id="90" parent="15" name="sqlite_autoindex_Metodo_SmellType_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>methodBeanFullQualifiedName
+codeSmellFullQualifiedName
+algorithmUsed</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="91" parent="15">
+      <ColNames>methodBeanFullQualifiedName
+codeSmellFullQualifiedName
+algorithmUsed</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_Metodo_SmellType_1</UnderlyingIndexName>
+    </key>
+    <foreign-key id="92" parent="15">
+      <ColNames>methodBeanFullQualifiedName</ColNames>
+      <RefTableName>MethodBean</RefTableName>
+      <RefColNames>fullQualifiedName</RefColNames>
+      <OnDelete>cascade</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+    <foreign-key id="93" parent="15">
+      <ColNames>codeSmellFullQualifiedName</ColNames>
+      <RefTableName>CodeSmell</RefTableName>
+      <RefColNames>fullQualifiedName</RefColNames>
+      <OnDelete>cascade</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+    <foreign-key id="94" parent="15">
+      <ColNames>fqn_envied_class</ColNames>
+      <RefTableName>ClassBean</RefTableName>
+      <RefColNames>fullQualifiedName</RefColNames>
+      <OnDelete>cascade</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+    <foreign-key id="95" parent="15">
+      <ColNames>indice</ColNames>
+      <RefTableName>Index_CodeSmell</RefTableName>
+      <RefColNames>indexId</RefColNames>
+      <OnDelete>cascade</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+    <column id="96" parent="16" name="fullQualifiedName">
+      <Position>1</Position>
+      <DataType>VARCHAR(255)|0s</DataType>
+    </column>
+    <column id="97" parent="16" name="textContent">
+      <Position>2</Position>
+      <DataType>TEXT|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="98" parent="16" name="sqlite_autoindex_PackageBean_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>fullQualifiedName</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="99" parent="16">
+      <ColNames>fullQualifiedName</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_PackageBean_1</UnderlyingIndexName>
+    </key>
+    <column id="100" parent="17" name="packageBeanFullQualifiedName">
+      <Position>1</Position>
+      <DataType>VARCHAR(255)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="101" parent="17" name="codeSmellFullQualifiedName">
+      <Position>2</Position>
+      <DataType>VARCHAR(255)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="102" parent="17" name="algorithmUsed">
+      <Position>3</Position>
+      <DataType>VARCHAR(255)|0s</DataType>
+    </column>
+    <column id="103" parent="17" name="indice">
+      <Position>4</Position>
+      <DataType>VARCHAR(255)|0s</DataType>
+    </column>
+    <index id="104" parent="17" name="sqlite_autoindex_Package_SmellType_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>packageBeanFullQualifiedName
+codeSmellFullQualifiedName
+algorithmUsed</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="105" parent="17">
+      <ColNames>packageBeanFullQualifiedName
+codeSmellFullQualifiedName
+algorithmUsed</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_Package_SmellType_1</UnderlyingIndexName>
+    </key>
+    <foreign-key id="106" parent="17">
+      <ColNames>packageBeanFullQualifiedName</ColNames>
+      <RefTableName>PackageBean</RefTableName>
+      <RefColNames>fullQualifiedName</RefColNames>
+      <OnDelete>cascade</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+    <foreign-key id="107" parent="17">
+      <ColNames>codeSmellFullQualifiedName</ColNames>
+      <RefTableName>CodeSmell</RefTableName>
+      <RefColNames>fullQualifiedName</RefColNames>
+      <OnDelete>cascade</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+    <foreign-key id="108" parent="17">
+      <ColNames>indice</ColNames>
+      <RefTableName>Index_CodeSmell</RefTableName>
+      <RefColNames>indexId</RefColNames>
+      <OnDelete>cascade</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+    <column id="109" parent="18" name="methodBeanFullQualifiedName">
+      <Position>1</Position>
+      <DataType>VARCHAR(255)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="110" parent="18" name="parameterClassFullQualifiedName">
+      <Position>2</Position>
+      <DataType>VARCHAR(255)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="111" parent="18" name="typeParameter">
+      <Position>3</Position>
+      <DataType>VARCHAR(255)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="112" parent="18" name="classBeanFullQualifiedName">
+      <Position>4</Position>
+      <DataType>VARCHAR(255)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="113" parent="18" name="sqlite_autoindex_Parameter_Used_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>methodBeanFullQualifiedName
+parameterClassFullQualifiedName
+classBeanFullQualifiedName</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="114" parent="18">
+      <ColNames>methodBeanFullQualifiedName
+parameterClassFullQualifiedName
+classBeanFullQualifiedName</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_Parameter_Used_1</UnderlyingIndexName>
+    </key>
+    <foreign-key id="115" parent="18">
+      <ColNames>methodBeanFullQualifiedName</ColNames>
+      <RefTableName>MethodBean</RefTableName>
+      <RefColNames>fullQualifiedName</RefColNames>
+      <OnDelete>cascade</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+    <foreign-key id="116" parent="18">
+      <ColNames>classBeanFullQualifiedName</ColNames>
+      <RefTableName>ClassBean</RefTableName>
+      <RefColNames>fullQualifiedName</RefColNames>
+      <OnDelete>cascade</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+    <column id="117" parent="19" name="type">
+      <Position>1</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="118" parent="19" name="name">
+      <Position>2</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="119" parent="19" name="tbl_name">
+      <Position>3</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="120" parent="19" name="rootpage">
+      <Position>4</Position>
+      <DataType>int|0s</DataType>
+    </column>
+    <column id="121" parent="19" name="sql">
+      <Position>5</Position>
+      <DataType>text|0s</DataType>
+    </column>
+  </database-model>
+</dataSource>

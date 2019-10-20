@@ -23,6 +23,6 @@ public class SQLCalledMethodsSelection implements SQLiteCriterion {
                 "isDefaultConstructor, staticMethod, return_type, visibility " +
                 "FROM (Methods_Calls INNER JOIN MethodBean ON methodCalledFullQualifiedName=MethodBean.fullQualifiedName) INNER JOIN ClassBean ON ClassBean.fullQualifiedName=MethodBean.belongingClass " +
                 "WHERE methodCallerFullQualifiedName = '" +
-                "" + this.methodCaller+"'";
+                "" + this.methodCaller + "'";
     }
 }

@@ -35,18 +35,18 @@ public class PromiscuousPackageWizard extends DialogWrapper {
     private PackageBean packageDestra, packageSinistra;
     private JComboBox<String> comboBox, comboBox2;
     private JTable metric;
-    private JPanel main, vecchio, sinistra, destra, radar_1, viste = null, panel_25, panel_26;
+    private JPanel main, vecchio, sinistra, radar_1, viste = null, panel_25, panel_26;
     private JTable table1, table2;
     private RadarMapUtils radar;
     private List<JPanel> list;
-    private PackageBean packageBean;
+    private PackageBean promiscuousPackageBean;
     private List<PackageBean> splitting;
     private Project project;
     private boolean errorOccured;
 
-    public PromiscuousPackageWizard(PackageBean packageBean, List<PackageBean> splitting, Project project) {
+    public PromiscuousPackageWizard(PackageBean p, List<PackageBean> splitting, Project project) {
         super(true);
-        this.packageBean = packageBean;
+        this.promiscuousPackageBean = p;
         this.splitting = splitting;
         packageSinistra = splitting.get(0);
         packageDestra = splitting.get(1);
@@ -68,28 +68,21 @@ public class PromiscuousPackageWizard extends DialogWrapper {
             protected void doAction(ActionEvent actionEvent) {
                 try {
 
-                    RefactoringStrategy refactoringStrategy = new PromiscuousPackageRefactoringStrategy(packageBean, splitting, project);
+                    RefactoringStrategy refactoringStrategy = new PromiscuousPackageRefactoringStrategy(promiscuousPackageBean, splitting, project);
                     RefactoringManager refactoringManager = new RefactoringManager(refactoringStrategy);
                     refactoringManager.executeRefactor();
-                } catch (Exception e) {
-                    errorOccured = true;
-                    message = e.getMessage();
-                    e.printStackTrace();
-                }
 
-                if (errorOccured) {
-                    Messages.showMessageDialog(message, "Oh!No!", Messages.getErrorIcon());
-                } else {
                     close(0);
-                    message = "Promiscuous package Corrected, check new package generated name";
+                    message = "Promiscuous Package Corrected, check new classes generated name and control the import";
                     Messages.showMessageDialog(message, "Success !", Messages.getInformationIcon());
-                    try {
-                        FileWriter f = new FileWriter(System.getProperty("user.home") + File.separator + ".ascetic" + File.separator + "refactoring.txt");
-                        BufferedWriter out = new BufferedWriter(f);
-                        out.write("success");
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
+                    FileWriter f = new FileWriter(System.getProperty("user.home") + File.separator + ".ascetic" + File.separator + "refactoring.txt");
+                    BufferedWriter out = new BufferedWriter(f);
+                    out.write("success");
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (Exception e) {
+                    Messages.showMessageDialog("Error during refactoring", "Error", Messages.getErrorIcon());
                 }
             }
         };
@@ -259,8 +252,8 @@ public class PromiscuousPackageWizard extends DialogWrapper {
         metriche();
 
         sinistra = new JPanel();
-        vecchio.setBorder(new TitledBorder(packageBean.getFullQualifiedName()));
-        sinistra = radar.createRadarMapFromPackageBean(packageBean, "OLD CLASS");
+        vecchio.setBorder(new TitledBorder(promiscuousPackageBean.getFullQualifiedName()));
+        sinistra = radar.createRadarMapFromPackageBean(promiscuousPackageBean, "OLD PACKAGE");
         vecchio.add(sinistra, BorderLayout.CENTER);
 
         destro.addActionListener(new ActionListener() {
@@ -300,7 +293,7 @@ public class PromiscuousPackageWizard extends DialogWrapper {
                         }
                         ;
                     } else {
-                        String message = "Non puoi spostare un metodo nella classe in cui \u00E8 gi\u00E0 presente";
+                        String message = "Non puoi spostare una classe nel package in cui \u00E8 gi\u00E0 presente";
                         Messages.showMessageDialog(message, "Error", Messages.getErrorIcon());
                     }
                 }
@@ -345,7 +338,7 @@ public class PromiscuousPackageWizard extends DialogWrapper {
                         }
                         ;
                     } else {
-                        String message = "Non puoi spostare un metodo nella classe in cui \u00E8 gi\u00E0 presente";
+                        String message = "Non puoi spostare una classe nel package in cui \u00E8 gi\u00E0 presente";
                         Messages.showMessageDialog(message, "Error", Messages.getErrorIcon());
                     }
                 }
@@ -377,8 +370,8 @@ public class PromiscuousPackageWizard extends DialogWrapper {
         if (selection != null) {
             ((DefaultTableModel) table1.getModel()).setRowCount(0);
             PackageBean ricerca;
-            if (selection.equalsIgnoreCase(packageBean.getFullQualifiedName())) {
-                ricerca = packageBean;
+            if (selection.equalsIgnoreCase(promiscuousPackageBean.getFullQualifiedName())) {
+                ricerca = promiscuousPackageBean;
             } else {
                 int i = 0;
                 while (i < splitting.size() && !selection.equalsIgnoreCase(splitting.get(i).getFullQualifiedName())) {
@@ -394,8 +387,8 @@ public class PromiscuousPackageWizard extends DialogWrapper {
         if (selection != null) {
             ((DefaultTableModel) table2.getModel()).setRowCount(0);
             PackageBean ricerca2;
-            if (selection.equalsIgnoreCase(packageBean.getFullQualifiedName())) {
-                ricerca2 = packageBean;
+            if (selection.equalsIgnoreCase(promiscuousPackageBean.getFullQualifiedName())) {
+                ricerca2 = promiscuousPackageBean;
             } else {
                 int i = 0;
                 while (i < splitting.size() && !selection.equalsIgnoreCase(splitting.get(i).getFullQualifiedName())) {
@@ -411,25 +404,25 @@ public class PromiscuousPackageWizard extends DialogWrapper {
 
         viste = new JPanel();
         if (splitting.size() > 5) {
-            viste.setLayout(new GridLayout(0, 5, 0, 0));
+            viste.setLayout(new GridLayout(1, 5, 0, 0));
         } else {
-            viste.setLayout(new GridLayout(0, splitting.size(), 0, 0));
+            viste.setLayout(new GridLayout(1, splitting.size(), 0, 0));
         }
         ;
         JPanel aggiunta;
 
         if (splitting != null) {
-            int index = 1;
+            StringBuilder classTextContent;
             for (PackageBean p : splitting) {
+                classTextContent = new StringBuilder();
                 for (ClassBean classe : p.getClassList()) {
-                    String classShortName = "Class_" + (index);
-                    StringBuilder classTextContent = new StringBuilder();
-                    classTextContent.append("public class ");
-                    classTextContent.append(classShortName);
-                    classTextContent.append(" {");
+                    String classShortName = classe.getFullQualifiedName();
+                    classShortName = classShortName.substring(classShortName.lastIndexOf(".") + 1);
+                    classTextContent.append("public class " + classShortName + " {\n\t");
 
                     for (InstanceVariableBean instanceVariableBean : classe.getInstanceVariablesList()) {
-                        classTextContent.append(instanceVariableBean.getFullQualifiedName());
+                        classTextContent.append(instanceVariableBean.getVisibility() + " " + instanceVariableBean.getType().substring(instanceVariableBean.getType().lastIndexOf(".") + 1) + " ");
+                        classTextContent.append(instanceVariableBean.getFullQualifiedName() + ";");
                         classTextContent.append("\n");
                     }
 
@@ -439,13 +432,11 @@ public class PromiscuousPackageWizard extends DialogWrapper {
                     }
 
                     classTextContent.append("}");
-                    classe.setTextContent(classTextContent.toString());
-
-                    aggiunta = new JPanel();
-                    aggiunta = radar.createRadarMapFromClassBean(classe, classe.getFullQualifiedName());
-                    viste.add(aggiunta);
-                    index++;
                 }
+
+                p.setTextContent(classTextContent.toString());
+                aggiunta = radar.createRadarMapFromPackageBean(p, p.getFullQualifiedName());
+                viste.add(aggiunta);
             }
         }
         viste.repaint();
@@ -485,16 +476,16 @@ public class PromiscuousPackageWizard extends DialogWrapper {
 
     private void createTable1(PackageBean c) {
         Vector<String> columnNames = new Vector<String>();
-        columnNames.add("Method");
         columnNames.add("Class");
+        columnNames.add("Package");
         DefaultTableModel model = new DefaultTableModel(columnNames, 0);
         table1.removeAll();
         if (c.getClassList() != null) {
             Vector<String> tableItem = null;
-            for (ClassBean cla : c.getClassList()) {
+            for (ClassBean classe : c.getClassList()) {
                 tableItem = new Vector<>();
-                tableItem.add(cla.getFullQualifiedName());
-                tableItem.add(cla.getBelongingPackage().getFullQualifiedName());
+                tableItem.add(classe.getFullQualifiedName());
+                tableItem.add(classe.getBelongingPackage().getFullQualifiedName());
                 model.addRow(tableItem);
             }
         }
@@ -503,16 +494,16 @@ public class PromiscuousPackageWizard extends DialogWrapper {
 
     private void createTable2(PackageBean c) {
         Vector<String> columnNames = new Vector<String>();
-        columnNames.add("Method");
         columnNames.add("Class");
+        columnNames.add("Package");
         DefaultTableModel model2 = new DefaultTableModel(columnNames, 0);
         table2.removeAll();
         if (c.getClassList() != null) {
             Vector<String> tableItem = null;
-            for (ClassBean cla : c.getClassList()) {
+            for (ClassBean classe : c.getClassList()) {
                 tableItem = new Vector<>();
-                tableItem.add(cla.getFullQualifiedName());
-                tableItem.add(cla.getBelongingPackage().getFullQualifiedName());
+                tableItem.add(classe.getFullQualifiedName());
+                tableItem.add(classe.getBelongingPackage().getFullQualifiedName());
                 model2.addRow(tableItem);
             }
         }
@@ -525,16 +516,15 @@ public class PromiscuousPackageWizard extends DialogWrapper {
         columnNames.add("NOC");
         columnNames.add("MIntraC");
         columnNames.add("MInterC");
-        columnNames.add("MInterC2"); //fa riferimento allo splitting
 
         DefaultTableModel model = new DefaultTableModel(columnNames, 0);
         Vector<String> tableItem = new Vector<String>();
 
-        tableItem.add(packageBean.getFullQualifiedName());
-        tableItem.add(String.valueOf(CKMetrics.getNumberOfClasses(packageBean)));
-        tableItem.add(String.valueOf(CKMetrics.computeMediumIntraConnectivity(packageBean)));
-        tableItem.add(String.valueOf(CKMetrics.computeMediumInterConnectivity(splitting)));
-        tableItem.add(String.valueOf(CKMetrics.computeMediumInterConnectivity(packageBean,splitting)));
+        tableItem.add(promiscuousPackageBean.getFullQualifiedName());
+        tableItem.add(String.valueOf(CKMetrics.getNumberOfClasses(promiscuousPackageBean)));
+        tableItem.add(String.valueOf(CKMetrics.computeMediumIntraConnectivity(promiscuousPackageBean)));
+        tableItem.add(String.valueOf(CKMetrics.computeMediumInterConnectivity(promiscuousPackageBean, splitting)));
+
         model.addRow(tableItem);
 
         if (splitting != null) {
@@ -543,8 +533,8 @@ public class PromiscuousPackageWizard extends DialogWrapper {
                 tableItem.add(p.getFullQualifiedName());
                 tableItem.add(String.valueOf(CKMetrics.getNumberOfClasses(p)));
                 tableItem.add(String.valueOf(CKMetrics.computeMediumIntraConnectivity(p)));
-                tableItem.add(String.valueOf(CKMetrics.computeMediumInterConnectivity(splitting)));
-                tableItem.add(String.valueOf(CKMetrics.computeMediumInterConnectivity(p,splitting)));
+                tableItem.add(String.valueOf(CKMetrics.computeMediumInterConnectivity(p, splitting)));
+
                 model.addRow(tableItem);
             }
         }

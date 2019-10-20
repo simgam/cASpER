@@ -1,6 +1,5 @@
 package it.unisa.ascetic.actions;
 
-import com.intellij.openapi.components.ApplicationComponent;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
@@ -22,7 +21,7 @@ public class AsceticStartup {
         File folder = new File(dir.toString());
         File fList[] = folder.listFiles();
         // Searchs .db
-        if (fList!=null){
+        if (fList != null) {
             for (int i = 0; i < fList.length; i++) {
                 File pes = fList[i];
                 if (pes.getName().endsWith(".db")) {

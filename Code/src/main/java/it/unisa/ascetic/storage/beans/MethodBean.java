@@ -245,7 +245,9 @@ public class MethodBean implements Comparable {
      */
     public void addSmell(CodeSmell smell) {
         if (affectedSmell != null) {
-            this.affectedSmell.add(smell);};
+            this.affectedSmell.add(smell);
+        }
+        ;
     }
 
     /**

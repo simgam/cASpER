@@ -9,9 +9,9 @@ import it.unisa.ascetic.refactor.exceptions.PromiscuousPackageException;
 public class RefactoringManager {
     private RefactoringStrategy refactoringStrategy;
 
-    public RefactoringManager(RefactoringStrategy Rstrategy){
+    public RefactoringManager(RefactoringStrategy Rstrategy) {
 
-        this.refactoringStrategy=Rstrategy;
+        this.refactoringStrategy = Rstrategy;
     }
 
     public void executeRefactor() throws PromiscuousPackageException, BlobException, FeatureEnvyException, MisplacedClassException {

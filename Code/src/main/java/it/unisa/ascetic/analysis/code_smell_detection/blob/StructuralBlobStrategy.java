@@ -7,7 +7,6 @@ import it.unisa.ascetic.storage.beans.MethodBean;
 import it.unisa.ascetic.structuralMetrics.CKMetrics;
 
 import java.util.HashMap;
-import java.util.regex.Pattern;
 
 public class StructuralBlobStrategy implements ClassSmellDetectionStrategy {
 

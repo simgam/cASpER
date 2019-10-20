@@ -509,7 +509,7 @@ public class PsiParser implements Parser {
      * @return Restituisce la lista dei Package
      */
     private Set<PsiPackage> getAllPackagesBeans() {
-        // TODO: test,javadoc e aggiungere logger
+
         final Set<PsiPackage> foundPackages = new HashSet<>();
 
         AnalysisScope scope = new AnalysisScope(this.project);

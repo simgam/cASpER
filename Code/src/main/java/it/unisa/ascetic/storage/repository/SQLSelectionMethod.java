@@ -9,7 +9,6 @@ public class SQLSelectionMethod implements SQLiteCriterion {
 
     /**
      * Costruttore
-     *
      */
     public SQLSelectionMethod(String aClass) {
         belongingClass = aClass;

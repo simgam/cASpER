@@ -22,7 +22,7 @@ public class CommitFactory extends CheckinHandlerFactory {
                 start.form(panel.getProject());
 
                 int valore = JOptionPane.showConfirmDialog(null, "Vuoi effettuare il commit?", "Commit", JOptionPane.YES_NO_OPTION);
-                if (valore == 0)return super.beforeCheckin();
+                if (valore == 0) return super.beforeCheckin();
 
                 return ReturnResult.CANCEL;
             }

@@ -6,9 +6,9 @@ import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.ui.components.JBScrollPane;
 import com.intellij.ui.table.JBTable;
-import it.unisa.ascetic.refactor.splitting_algorithm.SplitPackages;
 import it.unisa.ascetic.gui.radarMap.RadarMapUtils;
 import it.unisa.ascetic.gui.radarMap.RadarMapUtilsAdapter;
+import it.unisa.ascetic.refactor.splitting_algorithm.SplitPackages;
 import it.unisa.ascetic.storage.beans.PackageBean;
 import it.unisa.ascetic.structuralMetrics.CKMetrics;
 import org.jetbrains.annotations.NotNull;
@@ -44,7 +44,7 @@ public class PromiscuousPackagePage extends DialogWrapper {
 
     private JBTable table;                      //tabella dove sono visualizzati i codeSmell
 
-    private boolean errorOccured=false;               //serve per verificare se qualche cosa è andata storta
+    private boolean errorOccured = false;               //serve per verificare se qualche cosa è andata storta
 
     public PromiscuousPackagePage(PackageBean packageBeanPP, List<PackageBean> packages, Project project) {
         super(true);
@@ -113,7 +113,7 @@ public class PromiscuousPackagePage extends DialogWrapper {
         panelRadarMapMaster.add(panelRadarMap, BorderLayout.CENTER);
 
         panelMetric.add(new JBScrollPane(table));
-        panelMetric.setBorder(new TitledBorder("Metrics"));
+        panelGrid2.setBorder(new TitledBorder("Metrics"));
         table.setFillsViewportHeight(true);
         panelGrid2.add(panelMetric, BorderLayout.CENTER);
         panelGrid2.add(panelButton, BorderLayout.SOUTH);
@@ -147,7 +147,7 @@ public class PromiscuousPackagePage extends DialogWrapper {
                 message = "Something went wrong in computing solution";
                 ProgressManager.getInstance().runProcessWithProgressSynchronously(() -> {
                     try {
-                        splittedPackages = (List<PackageBean>) new SplitPackages().split(packageBeanPP, 0.1);
+                        splittedPackages = (List<PackageBean>) new SplitPackages().split(packageBeanPP, 0);
                     } catch (Exception e) {
                         errorOccured = true;
                     }

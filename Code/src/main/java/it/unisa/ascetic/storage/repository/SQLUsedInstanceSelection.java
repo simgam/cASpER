@@ -22,6 +22,6 @@ public class SQLUsedInstanceSelection implements SQLiteCriterion {
         return "SELECT *" +
                 "FROM Instance_Variable_Used INNER JOIN InstanceVariableBean ON instanceVariableBeanFullQualifiedName=fullQualifiedName " +
                 "WHERE methodBeanFullQualifiedName ='" +
-                "" + this.methodCaller+"'";
+                "" + this.methodCaller + "'";
     }
 }

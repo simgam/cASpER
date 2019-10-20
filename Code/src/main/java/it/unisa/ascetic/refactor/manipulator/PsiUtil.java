@@ -20,7 +20,7 @@ public class PsiUtil {
     public static PsiMethod getPsi(MethodBean methodBean, Project project) {
         final PsiMethod[] foundPsiMethod = new PsiMethod[1];
 
-        ApplicationManager.getApplication().runReadAction(()-> {
+        ApplicationManager.getApplication().runReadAction(() -> {
                     PsiClass psiClass = getPsi(methodBean.getBelongingClass(), project);
                     String methodName = methodBean.getFullQualifiedName().substring(methodBean.getFullQualifiedName().lastIndexOf('.') + 1);
                     foundPsiMethod[0] = psiClass.findMethodsByName(methodName, true)[0];
@@ -35,9 +35,9 @@ public class PsiUtil {
      * @param classBean da convertire
      * @return psi della classe del bean
      */
-    public static PsiClass getPsi(ClassBean classBean,Project project) {
+    public static PsiClass getPsi(ClassBean classBean, Project project) {
         final PsiClass[] foundClass = new PsiClass[1];
-        ApplicationManager.getApplication().runReadAction(()-> {
+        ApplicationManager.getApplication().runReadAction(() -> {
             foundClass[0] = JavaPsiFacade.getInstance(project).findClass(classBean.getFullQualifiedName(), GlobalSearchScope.allScope(project));
         });
         //https://www.programcreek.com/java-api-examples/?api=com.intellij.psi.JavaPsiFacade

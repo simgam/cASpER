@@ -1,7 +1,5 @@
 package it.unisa.ascetic.analysis.code_smell_detection.comparator;
 
-import it.unisa.ascetic.storage.beans.ClassBean;
-
 import java.util.Comparator;
 
 /**
@@ -11,8 +9,8 @@ public class BeanComparator implements Comparator<ComparableBean> {
 
     /**
      * @return torna 1 se il primo oggetto ha somiglianza maggiore al secondo
-     *         torna -1 se il secondo oggetto ha somiglianza maggiore al primo
-     *         torna 0 se il primo oggetto ha somiglianza uguale al secondo
+     * torna -1 se il secondo oggetto ha somiglianza maggiore al primo
+     * torna 0 se il primo oggetto ha somiglianza uguale al secondo
      */
     @Override
     public int compare(ComparableBean o1, ComparableBean o2) {

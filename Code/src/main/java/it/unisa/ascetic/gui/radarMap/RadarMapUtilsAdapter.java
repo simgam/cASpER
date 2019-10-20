@@ -18,8 +18,9 @@ import java.util.TreeMap;
 
 /**
  * Crea radar map per ogni tipo di Bean utilizzando i topic correlati
- * @version 2.0
+ *
  * @author Sara Patierno
+ * @version 2.0
  */
 
 public class RadarMapUtilsAdapter implements RadarMapUtils {
@@ -28,6 +29,7 @@ public class RadarMapUtilsAdapter implements RadarMapUtils {
 
     /**
      * Genera la radar map di un PackageBean
+     *
      * @param aPackage PackageBean di cui mostrare la radar map
      * @param mapTitle String titolo del panel contenente la radar map
      * @return ChartPanel panel contenente la radar map
@@ -40,7 +42,8 @@ public class RadarMapUtilsAdapter implements RadarMapUtils {
 
     /**
      * Genera la radar map di un ClassBean
-     * @param aClass ClassBean di cui mostrare la radar map
+     *
+     * @param aClass   ClassBean di cui mostrare la radar map
      * @param mapTitle String titolo del panel contenente la radar map
      * @return ChartPanel panel contenente la radar map
      */
@@ -52,7 +55,8 @@ public class RadarMapUtilsAdapter implements RadarMapUtils {
 
     /**
      * Genera la radar map di un MethodBean
-     * @param aMethod MethodBean di cui mostrare la radar map
+     *
+     * @param aMethod  MethodBean di cui mostrare la radar map
      * @param mapTitle String titolo del panel contenente la radar map
      * @return ChartPanel panel contenente la radar map
      */
@@ -64,15 +68,16 @@ public class RadarMapUtilsAdapter implements RadarMapUtils {
 
     /**
      * Crea la radar map di un qualsiasi Bean
-     * @param terms TreeMap<String,Integer> contenente i topic di un qualsiasi Bean
+     *
+     * @param terms    TreeMap<String,Integer> contenente i topic di un qualsiasi Bean
      * @param mapTitle String titolo del panel contenente la radar map
      * @return ChartPanel panel contenente la radar map
      */
     @NotNull
     public ChartPanel getRadarMapPanel(TreeMap<String, Integer> terms, String mapTitle) {
-        Set<Map.Entry<String,Integer>> topics = terms.entrySet();
+        Set<Map.Entry<String, Integer>> topics = terms.entrySet();
         DefaultCategoryDataset defaultCategoryDataSet = new DefaultCategoryDataset();
-        for(Map.Entry<String, Integer> topic : topics) {
+        for (Map.Entry<String, Integer> topic : topics) {
             defaultCategoryDataSet.addValue(topic.getValue(), "Responsabilities", topic.getKey());
         }
 
@@ -85,24 +90,25 @@ public class RadarMapUtilsAdapter implements RadarMapUtils {
         chart = new JFreeChart(mapTitle, TextTitle.DEFAULT_FONT, plot, false);
         chart.setBackgroundPaint(Color.WHITE);
 
-        ChartPanel chartPanel = new ChartPanel(chart){
+        ChartPanel chartPanel = new ChartPanel(chart) {
             @Override
             public Dimension getPreferredSize() {
-                return new Dimension(50,50);
+                return new Dimension(50, 50);
             }
         };
-        chartPanel.setMaximumSize(new Dimension(50,50));
+        chartPanel.setMaximumSize(new Dimension(50, 50));
         return chartPanel;
     }
 
     /**
      * Aggiorna la radar map di un PackageBean
-     * @param radarMap ChartPanel radar map preesistente di cui aggiornare i valori
+     *
+     * @param radarMap       ChartPanel radar map preesistente di cui aggiornare i valori
      * @param newPackageBean PackageBean con cui modificare la radar map
-     * @param newMapTitle String nuovo titolo del panel contenente la radar map
+     * @param newMapTitle    String nuovo titolo del panel contenente la radar map
      * @return ChartPanel panel contenente la radar map
      */
-    public void updatePackageBeanRadarmap(ChartPanel radarMap, PackageBean newPackageBean, String newMapTitle){
+    public void updatePackageBeanRadarmap(ChartPanel radarMap, PackageBean newPackageBean, String newMapTitle) {
         TopicExtracter extracter = new TopicExtracter();
         TreeMap<String, Integer> terms = extracter.extractTopicFromPackageBean(newPackageBean);
 
@@ -112,12 +118,13 @@ public class RadarMapUtilsAdapter implements RadarMapUtils {
 
     /**
      * Aggiorna la radar map di un ClassBean
-     * @param radarMap ChartPanel radar map preesistente di cui aggiornare i valori
+     *
+     * @param radarMap     ChartPanel radar map preesistente di cui aggiornare i valori
      * @param newClassBean ClassBean con cui modificare la radar map
-     * @param newMapTitle String nuovo titolo del panel contenente la radar map
+     * @param newMapTitle  String nuovo titolo del panel contenente la radar map
      * @return ChartPanel panel contenente la radar map
      */
-    public void updateClassBeanRadarmap(ChartPanel radarMap, ClassBean newClassBean, String newMapTitle){
+    public void updateClassBeanRadarmap(ChartPanel radarMap, ClassBean newClassBean, String newMapTitle) {
         TopicExtracter extracter = new TopicExtracter();
         TreeMap<String, Integer> terms = extracter.extractTopicFromClassBean(newClassBean);
 
@@ -127,29 +134,32 @@ public class RadarMapUtilsAdapter implements RadarMapUtils {
 
     /**
      * Aggiorna la radar map di un MethodBean
-     * @param radarMap ChartPanel radar map preesistente di cui aggiornare i valori
+     *
+     * @param radarMap      ChartPanel radar map preesistente di cui aggiornare i valori
      * @param newMethodBean MethodBean con cui modificare la radar map
-     * @param newMapTitle String nuovo titolo del panel contenente la radar map
+     * @param newMapTitle   String nuovo titolo del panel contenente la radar map
      * @return ChartPanel panel contenente la radar map
      */
-    public void updateMethodBeanRadarmap(ChartPanel radarMap, MethodBean newMethodBean, String newMapTitle){
+    public void updateMethodBeanRadarmap(ChartPanel radarMap, MethodBean newMethodBean, String newMapTitle) {
         TopicExtracter extracter = new TopicExtracter();
         TreeMap<String, Integer> terms = extracter.extractTopicFromMethodBean(newMethodBean);
 
         updateRadarMap(radarMap, terms, newMapTitle);
 
     }
+
     /**
      * Modifica la radar map di un qualsiasi Bean
-     * @param radarMap ChartPanel radar map preesistente di cui aggiornare i valori
-     * @param terms TreeMap<String,Integer> contenente i topic di un qualsiasi Bean
+     *
+     * @param radarMap    ChartPanel radar map preesistente di cui aggiornare i valori
+     * @param terms       TreeMap<String,Integer> contenente i topic di un qualsiasi Bean
      * @param newMapTitle String nuovo titolo del panel contenente la radar map
      * @return ChartPanel panel contenente la radar map
      */
     private void updateRadarMap(ChartPanel radarMap, TreeMap<String, Integer> terms, String newMapTitle) {
-        Set<Map.Entry<String,Integer>> topics = terms.entrySet();
+        Set<Map.Entry<String, Integer>> topics = terms.entrySet();
         DefaultCategoryDataset defaultCategoryDataSet = new DefaultCategoryDataset();
-        for(Map.Entry<String, Integer> topic : topics) {
+        for (Map.Entry<String, Integer> topic : topics) {
             defaultCategoryDataSet.addValue(topic.getValue(), "Responsabilities", topic.getKey());
         }
 

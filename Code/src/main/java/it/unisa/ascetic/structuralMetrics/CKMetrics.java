@@ -14,8 +14,8 @@ import java.util.regex.Pattern;
 
 public class CKMetrics {
 
-    private double maxIpc = 0.0;
-    private double minIpc = 0.0;
+    private static double maxIpc = 0.0;
+    private static double minIpc = 0.0;
 
     public static int getELOC(ClassBean cb) {
         return cb.getTextContent().split("\r\n|\r|\n").length;
@@ -204,9 +204,8 @@ public class CKMetrics {
     }
 
     public static double computeMediumIntraConnectivity(PackageBean pPackage) {
-        double packAllLinks = Math.pow(pPackage.getClassList().size(), 2);
+        double packAllLinks = Math.pow(pPackage.getClassList().size() - 1, 2);
         double packIntraConnectivity = 0.0;
-
         for (ClassBean eClass : pPackage.getClassList()) {
             for (ClassBean current : pPackage.getClassList()) {
                 if (eClass != current) {
@@ -216,16 +215,16 @@ public class CKMetrics {
                 }
             }
         }
-        return packIntraConnectivity / packAllLinks;
+        return 1.0 - (packIntraConnectivity / packAllLinks); // ne calcolo il complemento per capire quanto le classi non sono coese tra loro
     }
 
     public static double computeMediumInterConnectivity(PackageBean pPackage, Collection<PackageBean> pPackages) {
         double sumInterConnectivities = 0.0;
-
+        double packsAllLinks, packsInterConnectivity;
         for (ClassBean eClass : pPackage.getClassList()) {
             for (PackageBean currentPack : pPackages) {
-                double packsInterConnectivity = 0.0;
-                double packsAllLinks = 2 * pPackage.getClassList().size() * currentPack.getClassList().size();
+                packsInterConnectivity = 0.0;
+                packsAllLinks = 2 * pPackage.getClassList().size() - 1 * currentPack.getClassList().size() - 1;
 
                 if (pPackage != currentPack) {
                     for (ClassBean currentClass : currentPack.getClassList()) {
@@ -240,27 +239,27 @@ public class CKMetrics {
         return ((1.0 / (pPackages.size() * (pPackages.size() - 1))) * sumInterConnectivities);
     }
 
-    public static double computeMediumInterConnectivity(Collection<PackageBean> pClusters) {
-        double sumInterConnectivities = 0.0;
-
-        for (PackageBean pack : pClusters) {
-            for (ClassBean eClass : pack.getClassList()) {
-                for (PackageBean currentPack : pClusters) {
-                    double packsInterConnectivity = 0.0;
-                    double packsAllLinks = 2 * pack.getClassList().size() * currentPack.getClassList().size();
-                    if (pack != currentPack) {
-                        for (ClassBean currentClass : currentPack.getClassList()) {
-                            if (existsDependence(eClass, currentClass)) {
-                                packsInterConnectivity++;
-                            }
-                        }
-                    }
-                    sumInterConnectivities += ((packsInterConnectivity) / packsAllLinks);
-                }
-            }
-        }
-        return ((1.0 / (pClusters.size() * (pClusters.size() - 1))) * sumInterConnectivities);
-    }
+//    public static double computeMediumInterConnectivity(Collection<PackageBean> pClusters) {
+//        double sumInterConnectivities = 0.0;
+//
+//        for (PackageBean pack : pClusters) {
+//            for (ClassBean eClass : pack.getClassList()) {
+//                for (PackageBean currentPack : pClusters) {
+//                    double packsInterConnectivity = 0.0;
+//                    double packsAllLinks = 2 * pack.getClassList().size() * currentPack.getClassList().size();
+//                    if (pack != currentPack) {
+//                        for (ClassBean currentClass : currentPack.getClassList()) {
+//                            if (existsDependence(eClass, currentClass)) {
+//                                packsInterConnectivity++;
+//                            }
+//                        }
+//                    }
+//                    sumInterConnectivities += ((packsInterConnectivity) / packsAllLinks);
+//                }
+//            }
+//        }
+//        return ((1.0 / (pClusters.size() * (pClusters.size() - 1))) * sumInterConnectivities);
+//    }
 
 
     public static int getMcCabeCycloComplexity(MethodBean mb) {
@@ -410,7 +409,7 @@ public class CKMetrics {
         return false;
     }
 
-    public static double getCCBC(ClassBean pClass, ClassBean pClass2) {
+    private static double getCCBC(ClassBean pClass, ClassBean pClass2) {
         Double ccbc = 0.0;
 
         double comparisons = 0.0;
@@ -448,7 +447,20 @@ public class CKMetrics {
         } else return ccbc;
     }
 
-    private int getWeigthedNumberOfDependencies(ClassBean pFirstClass, ClassBean pSecondClass) {
+    public static double getCCBC(PackageBean aPackage) {
+        Double ccbc = 0.0;
+        CosineSimilarity cosineSimilarity = new CosineSimilarity();
+
+        for (ClassBean currentClass : aPackage.getClassList()) {
+            for (ClassBean classe : aPackage.getClassList()) {
+                ccbc = CKMetrics.getCCBC(currentClass, classe);
+            }
+        }
+
+        return ccbc / (aPackage.getClassList().size());
+    }
+
+    private static int getWeigthedNumberOfDependencies(ClassBean pFirstClass, ClassBean pSecondClass) {
         int dependencies = 0;
         int numberOfParameters = 0;
 
@@ -470,29 +482,34 @@ public class CKMetrics {
         return (numberOfParameters * dependencies);
     }
 
-    public double getICP(ClassBean pFirstClass, ClassBean pSecondClass, PackageBean pPackage) {
-        this.computeMaxAndMinICP(pPackage);
+    public static double getICP(PackageBean pPackage) {
+        CKMetrics.computeMaxAndMinICP(pPackage);
 
-        double icp = 0.0;
-        double normalizedIcp = 0.0;
+        double icp = 0.0, normalizedIcp = 0.0, res = 0.0;
 
-        int dependenciesFirstToSecond = this.getWeigthedNumberOfDependencies(pFirstClass, pSecondClass);
-        int dependenciesSecondToFirst = this.getWeigthedNumberOfDependencies(pSecondClass, pFirstClass);
+        int dependenciesFirstToSecond, dependenciesSecondToFirst;
 
-        if (dependenciesFirstToSecond > dependenciesSecondToFirst) {
-            icp = dependenciesFirstToSecond;
-        } else icp = dependenciesSecondToFirst;
+        for (ClassBean currentClass : pPackage.getClassList()) {
+            for (ClassBean classe : pPackage.getClassList()) {
+                dependenciesFirstToSecond = CKMetrics.getWeigthedNumberOfDependencies(currentClass, classe);
+                dependenciesSecondToFirst = CKMetrics.getWeigthedNumberOfDependencies(classe, currentClass);
 
-        if ((this.maxIpc - this.minIpc) > 0.0)
-            normalizedIcp = (icp - this.minIpc) / (this.maxIpc - this.minIpc);
+                if (dependenciesFirstToSecond > dependenciesSecondToFirst) {
+                    icp = dependenciesFirstToSecond;
+                } else icp = dependenciesSecondToFirst;
 
-        if (normalizedIcp < 0.0005)
-            normalizedIcp = 0.0;
+                if ((CKMetrics.maxIpc - CKMetrics.minIpc) > 0.0)
+                    normalizedIcp = (icp - CKMetrics.minIpc) / (CKMetrics.maxIpc - CKMetrics.minIpc);
 
-        return normalizedIcp;
+                if (normalizedIcp < 0.0005)
+                    normalizedIcp = 0.0;
+            }
+            res += normalizedIcp;
+        }
+        return res / pPackage.getClassList().size();
     }
 
-    private void computeMaxAndMinICP(PackageBean pPackage) {
+    private static void computeMaxAndMinICP(PackageBean pPackage) {
         double icp = 0.0;
 
         for (ClassBean classBean : pPackage.getClassList()) {
@@ -501,17 +518,17 @@ public class CKMetrics {
 
                 if (!classBean.getFullQualifiedName().equals(classBeanToCompare.getFullQualifiedName())) {
 
-                    int dependenciesFirstToSecond = this.getWeigthedNumberOfDependencies(classBean, classBeanToCompare);
-                    int dependenciesSecondToFirst = this.getWeigthedNumberOfDependencies(classBeanToCompare, classBean);
+                    int dependenciesFirstToSecond = CKMetrics.getWeigthedNumberOfDependencies(classBean, classBeanToCompare);
+                    int dependenciesSecondToFirst = CKMetrics.getWeigthedNumberOfDependencies(classBeanToCompare, classBean);
 
                     if (dependenciesFirstToSecond > dependenciesSecondToFirst) {
                         icp = dependenciesFirstToSecond;
                     } else icp = dependenciesSecondToFirst;
 
-                    if (this.maxIpc < icp)
+                    if (CKMetrics.maxIpc < icp)
                         maxIpc = icp;
 
-                    if (this.minIpc > icp)
+                    if (CKMetrics.minIpc > icp)
                         minIpc = icp;
                 }
             }

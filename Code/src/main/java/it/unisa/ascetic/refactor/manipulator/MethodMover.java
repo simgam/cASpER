@@ -38,6 +38,7 @@ public class MethodMover {
                 + s + "\n\n*****************************************************************");
         return s;
     }
+
     /**
      * Metodo che scrive il metodo passato
      * nella classe passata
@@ -46,7 +47,7 @@ public class MethodMover {
      * @param writePlace    classe dove scrivere il metodo
      * @param replace       settare true se si vuole sostituire, false per aggiungere da nuovo
      */
-    public static void methodWriter(String methodToWrite,PsiMethod actualPsiMethod, PsiClass writePlace, Boolean replace,Project project) {
+    public static void methodWriter(String methodToWrite, PsiMethod actualPsiMethod, PsiClass writePlace, Boolean replace, Project project) {
         Logger logger = Logger.getLogger("methodWriter di MethodMover");
 
         PsiElementFactory elementFactory = JavaPsiFacade.getElementFactory(project);

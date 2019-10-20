@@ -1,7 +1,5 @@
 package it.unisa.ascetic.analysis.code_smell_detection.similarityComputation;
 
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.project.ProjectManager;
 import it.unisa.ascetic.analysis.code_smell_detection.fileUtilities.FileUtility;
 
 import java.io.File;

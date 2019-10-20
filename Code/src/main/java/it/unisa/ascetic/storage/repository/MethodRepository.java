@@ -287,7 +287,7 @@ public class MethodRepository implements MethodBeanRepository {
                     }
                 }
 
-                for(CodeSmell smell : methodBean.getAffectedSmell()){
+                for (CodeSmell smell : methodBean.getAffectedSmell()) {
                     key = smell.getSmellName() + "-" + methodBean.getFullQualifiedName();
                     sql = "SELECT indice, name FROM Index_CodeSmell WHERE indexId='" + key + "'";
                     res = selection.executeQuery(sql);

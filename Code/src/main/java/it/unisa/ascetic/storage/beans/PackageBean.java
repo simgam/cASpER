@@ -64,6 +64,15 @@ public class PackageBean implements ComparableBean, Comparable {
     }
 
     /**
+     * setter
+     *
+     * @param textContent contenuto testuale del package
+     */
+    public void setTextContent(String textContent) {
+        this.textContent = textContent;
+    }
+
+    /**
      * getter
      *
      * @return lista delle classi appartenenti al package

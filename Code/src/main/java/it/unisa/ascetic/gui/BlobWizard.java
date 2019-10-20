@@ -34,10 +34,9 @@ public class BlobWizard extends DialogWrapper {
     private ClassBean classeDestra, classeSinistra;
     private JComboBox<String> comboBox, comboBox2;
     private JTable metric;
-    private JPanel main, vecchio, sinistra, destra, radar_1, viste = null, panel_25, panel_26;
+    private JPanel main, vecchio, sinistra, radar_1, viste = null, panel_25, panel_26;
     private JTable table1, table2;
     private RadarMapUtils radar;
-    private List<JPanel> list;
     private ClassBean blobClassBean;
     private List<ClassBean> splitting;
     private Project project;
@@ -72,9 +71,11 @@ public class BlobWizard extends DialogWrapper {
                     refactoringManager.executeRefactor();
 
                     String[] name = blobClassBean.getFullQualifiedName().replace(".", "/").split("/");
-                    File file = new File(blobClassBean.getPathToFile() + "/" + name[name.length - 1]+".java");
+                    File file = new File(blobClassBean.getPathToFile() + "/" + name[name.length - 1] + ".java");
 
-                    if(!file.delete()){Messages.showMessageDialog("Error during delete of original class, pleace delete it manually", "Attention", Messages.getInformationIcon());}
+                    if (!file.delete()) {
+                        Messages.showMessageDialog("Error during delete of original class, pleace delete it manually", "Attention", Messages.getInformationIcon());
+                    }
 
                     close(0);
                     message = "Blob Corrected, check new classes generated name";
@@ -408,24 +409,26 @@ public class BlobWizard extends DialogWrapper {
 
         viste = new JPanel();
         if (splitting.size() > 5) {
-            viste.setLayout(new GridLayout(0, 5, 0, 0));
+            viste.setLayout(new GridLayout(1, 5, 0, 0));
         } else {
-            viste.setLayout(new GridLayout(0, splitting.size(), 0, 0));
+            viste.setLayout(new GridLayout(1, splitting.size(), 0, 0));
         }
         ;
         JPanel aggiunta;
 
         if (splitting != null) {
             int index = 1;
+            StringBuilder classTextContent;
             for (ClassBean classe : splitting) {
                 String classShortName = "Class_" + (index);
-                StringBuilder classTextContent = new StringBuilder();
+                classTextContent = new StringBuilder();
                 classTextContent.append("public class ");
                 classTextContent.append(classShortName);
-                classTextContent.append(" {");
+                classTextContent.append(" {\n\t");
 
                 for (InstanceVariableBean instanceVariableBean : classe.getInstanceVariablesList()) {
-                    classTextContent.append(instanceVariableBean.getFullQualifiedName());
+                    classTextContent.append(instanceVariableBean.getVisibility() + " " + instanceVariableBean.getType().substring(instanceVariableBean.getType().lastIndexOf(".") + 1) + " ");
+                    classTextContent.append(instanceVariableBean.getFullQualifiedName() + ";");
                     classTextContent.append("\n");
                 }
 
@@ -437,13 +440,12 @@ public class BlobWizard extends DialogWrapper {
                 classTextContent.append("}");
                 classe.setTextContent(classTextContent.toString());
 
-                aggiunta = new JPanel();
                 aggiunta = radar.createRadarMapFromClassBean(classe, classe.getFullQualifiedName());
                 viste.add(aggiunta);
                 index++;
             }
         }
-        viste.repaint();
+        //viste.repaint();
         radar_1.add(viste, BorderLayout.CENTER);
         radar_1.repaint();
     }

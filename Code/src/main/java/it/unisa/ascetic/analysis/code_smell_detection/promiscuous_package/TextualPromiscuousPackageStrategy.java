@@ -7,9 +7,7 @@ import it.unisa.ascetic.storage.beans.PackageBean;
 import it.unisa.ascetic.structuralMetrics.CKMetrics;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 /*
 

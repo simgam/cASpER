@@ -16,7 +16,8 @@ public class BeanDetection {
 
     private boolean isGetter(MethodBean pMethodBean) {
         if (pMethodBean.getFullQualifiedName().toLowerCase().contains("get") && pMethodBean.getParameters().isEmpty() &&
-                !((ClassBean) pMethodBean.getReturnType()).getFullQualifiedName().equalsIgnoreCase("void")) {
+                !((ClassBean) pMethodBean.getReturnType()).getFullQualifiedName().equalsIgnoreCase("void") &&
+                pMethodBean.getTextContent().length() < 100) {
             return true;
         }
         return false;

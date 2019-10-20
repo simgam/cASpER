@@ -5,9 +5,7 @@ import it.unisa.ascetic.storage.beans.ClassBean;
 import it.unisa.ascetic.storage.beans.PackageBean;
 
 import java.io.*;
-import java.math.BigDecimal;
 import java.util.*;
-import java.util.regex.Pattern;
 
 
 public class ClassByClassMatrixConstruction {
@@ -15,6 +13,9 @@ public class ClassByClassMatrixConstruction {
     private String asceticDirectoryPath;
     private File matrixFolder;
     private File stopwordList;
+    private FileInputStream fs;
+    private InputStreamReader isr;
+    private BufferedReader br;
 
     public ClassByClassMatrixConstruction() {
         asceticDirectoryPath = System.getProperty("user.home") + "/.ascetic";
@@ -22,55 +23,61 @@ public class ClassByClassMatrixConstruction {
         stopwordList = new File(matrixFolder.getAbsolutePath() + "stopword.txt");
     }
 
-    public double[][] buildClassByClassMatrix(double pWicp, double pWccbc, double pThreshold, PackageBean pToSplit) throws Exception {
+    private void stampa(double matrix[][]) {
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix.length; j++) {
+                System.out.print(matrix[i][j] + " | ");
+            }
+            System.out.println();
+        }
+    }
+
+    public double[][] buildClassByClassMatrix(double pWicp, double pWccbc, PackageBean pToSplit) throws Exception {
         PromiscuousPackageQualityChecker promiscuousPackageQualityChecker = new PromiscuousPackageQualityChecker();
+        Collection<ClassBean> classes = pToSplit.getClassList();
+        Iterator<ClassBean> it = classes.iterator();
+        ClassBean tmpClass;
+        Vector<ClassBean> vectorOfClasses = new Vector<ClassBean>();
+        double[][] classByClassMatrix = new double[classes.size()][classes.size()];
+        double[][] ICPmatrix = new double[classByClassMatrix.length][classByClassMatrix.length];
+        double[][] CCBCmatrix = new double[classByClassMatrix.length][classByClassMatrix.length];
+
         matrixFolder.mkdirs();
         createStopwordListIfNotExists();
         File ICPmatrixFile = new File(matrixFolder.getAbsolutePath() + "/" + "ICP_matrix" + pToSplit.getFullQualifiedName() + ".txt");
         File CCBCmatrixFile = new File(matrixFolder.getAbsolutePath() + "/" + "CCBC_matrix" + pToSplit.getFullQualifiedName() + ".txt");
-        Collection<ClassBean> classesAll = pToSplit.getClassList();
-        Collection<ClassBean> classes = pToSplit.getClassList();
-        Iterator<ClassBean> it = classes.iterator();
-        double[][] classByClassMatrix = new double[classes.size()][classes.size()];
-        double[][] ICPmatrix = new double[classByClassMatrix.length][classByClassMatrix.length];
-        double[][] CCBCmatrix = new double[classByClassMatrix.length][classByClassMatrix.length];
-        ClassBean tmpClass = null;
-        Vector<ClassBean> vectorOfClasses = new Vector<ClassBean>();
+
         while (it.hasNext()) {
             tmpClass = (ClassBean) it.next();
             vectorOfClasses.add(tmpClass);
         }
         Collections.sort(vectorOfClasses);
-        matrixFolder.mkdirs();
-        ICPmatrixFile.createNewFile();
         for (int i = 0; i < ICPmatrix.length; i++) {
             for (int j = i + 1; j < ICPmatrix.length; j++) {
-                if (i != j) {
-                    ClassBean classSource = vectorOfClasses.elementAt(i);
-                    ClassBean classTarget = vectorOfClasses.elementAt(j);
-                    ICPmatrix[i][j] = promiscuousPackageQualityChecker.computeICP(classSource, classTarget, pToSplit);
-                } else {
-                    ICPmatrix[i][j] = 1.0;
-                }
+
+                ClassBean classSource = vectorOfClasses.elementAt(i);
+                ClassBean classTarget = vectorOfClasses.elementAt(j);
+                ICPmatrix[i][j] = promiscuousPackageQualityChecker.computeICP(classSource, classTarget, pToSplit);
+
                 ICPmatrix[j][i] = ICPmatrix[i][j];
             }
         }
+
         for (int i = 0; i < CCBCmatrix.length; i++) {
             for (int j = i + 1; j < CCBCmatrix.length; j++) {
-                if (i != j) {
-                    ClassBean classSource = vectorOfClasses.elementAt(i);
-                    ClassBean classTarget = vectorOfClasses.elementAt(j);
-                    CCBCmatrix[i][j] = promiscuousPackageQualityChecker.computeCCBC(classSource, classTarget);
-                } else {
-                    CCBCmatrix[i][j] = 1.0;
-                }
+
+                ClassBean classSource = vectorOfClasses.elementAt(i);
+                ClassBean classTarget = vectorOfClasses.elementAt(j);
+                CCBCmatrix[i][j] = promiscuousPackageQualityChecker.computeCCBC(classSource, classTarget);
+
                 CCBCmatrix[j][i] = CCBCmatrix[i][j];
             }
         }
+
         //Prepare the stopwords List
-        FileInputStream fs = new FileInputStream(stopwordList);
-        InputStreamReader isr = new InputStreamReader(fs);
-        BufferedReader br = new BufferedReader(isr);
+        fs = new FileInputStream(stopwordList);
+        isr = new InputStreamReader(fs);
+        br = new BufferedReader(isr);
         String tmpLine = null;
         Set<String> badWordsSet = new HashSet<>();
         tmpLine = br.readLine();
@@ -78,38 +85,12 @@ public class ClassByClassMatrixConstruction {
             badWordsSet.add(tmpLine.replace("\n", ""));
             tmpLine = br.readLine();
         }
-        CCBCmatrixFile.createNewFile();
-        ICPmatrixFile.createNewFile();
-        PrintWriter pwCCBC = new PrintWriter(CCBCmatrixFile);
-        PrintWriter pwICP = new PrintWriter(ICPmatrixFile);
-        for (int i = 0; i < ICPmatrix.length; i++) {
-            if (i > 0)
-                pwICP.println();
-            for (int j = 0; j < ICPmatrix.length; j++) {
-                BigDecimal num = new BigDecimal(ICPmatrix[i][j]);
-                String numWithNoExponents = num.toPlainString();
 
-                pwICP.print(numWithNoExponents + "-");
-            }
-        }
-        pwICP.close();
-        for (int i = 0; i < CCBCmatrix.length; i++) {
-            if (i > 0)
-                pwCCBC.println();
-            for (int j = 0; j < CCBCmatrix.length; j++) {
-                BigDecimal num = new BigDecimal(CCBCmatrix[i][j]);
-                String numWithNoExponents = num.toPlainString();
-
-                pwCCBC.print(numWithNoExponents + "-");
-            }
-        }
-        pwCCBC.close();
-
-        ICPmatrix = readMatrixFromFile(ICPmatrixFile, ICPmatrix.length);
-        CCBCmatrix = readMatrixFromFile(CCBCmatrixFile, CCBCmatrix.length);
+        ICPmatrix = filterMatrix(ICPmatrix, pWicp);
+        CCBCmatrix = filterMatrix(CCBCmatrix, pWccbc);
 
         for (int i = 0; i < classByClassMatrix.length; i++) {
-            for (int j = i + 1; j < classByClassMatrix.length; j++) {
+            for (int j = 0; j < classByClassMatrix.length; j++) {
                 if (i != j) {
                     classByClassMatrix[i][j] = ICPmatrix[i][j] * pWicp + CCBCmatrix[i][j] * pWccbc;
                 } else {
@@ -118,6 +99,7 @@ public class ClassByClassMatrixConstruction {
                 classByClassMatrix[j][i] = classByClassMatrix[i][j];
             }
         }
+
         return classByClassMatrix;
     }
 
@@ -996,42 +978,6 @@ public class ClassByClassMatrixConstruction {
             }
         }
         return classByClassMatrix;
-    }
-
-    public double[][] readMatrixFromFile(File pFile, int dimension) throws IOException {
-        double[][] result = new double[dimension][dimension];
-        Pattern p = Pattern.compile("-");
-        FileInputStream fs = new FileInputStream(pFile);
-        InputStreamReader isr = new InputStreamReader(fs);
-        BufferedReader br = new BufferedReader(isr);
-        String tmpLine = null;
-        int row = -1;
-        tmpLine = br.readLine();
-        while (tmpLine != null) {
-            row++;
-            String[] tokens = p.split(tmpLine);
-            for (int i = 0; i < tokens.length; i++) {
-                //IF added after some indexOutOfBoundException
-                if (row < dimension && i < dimension) {
-                    result[row][i] = Double.valueOf(tokens[i]);
-                }
-            }
-            tmpLine = br.readLine();
-        }
-        return result;
-    }
-
-    public boolean DelDir(File dir) {
-        if (dir.isDirectory()) {
-            String[] contenuto = dir.list();
-            for (int i = 0; i < contenuto.length; i++) {
-                boolean success = DelDir(new File(dir, contenuto[i]));
-                if (!success) {
-                    return false;
-                }
-            }
-        }
-        return dir.delete();
     }
 
     public String clean(String toClean) {

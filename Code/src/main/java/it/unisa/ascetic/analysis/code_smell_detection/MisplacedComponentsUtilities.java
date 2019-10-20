@@ -1,5 +1,4 @@
-package it.unisa.ascetic.analysis.code_smell_detection.feature_envy;
-
+package it.unisa.ascetic.analysis.code_smell_detection;
 
 import it.unisa.ascetic.analysis.code_smell_detection.similarityComputation.CosineSimilarity;
 import it.unisa.ascetic.storage.beans.ClassBean;
@@ -8,7 +7,6 @@ import it.unisa.ascetic.storage.beans.PackageBean;
 
 import java.io.IOException;
 import java.util.*;
-
 
 public class MisplacedComponentsUtilities {
 

@@ -3,9 +3,7 @@
     <option name="recentPaths">
       <list>
         <option value="$USER_HOME$/Desktop/TestAscetic/ProgettiTest" />
-        <option value="$USER_HOME$/Desktop/Ascetic3.0/Code" />
         <option value="$USER_HOME$/Desktop/TestAscetic" />
-        <option value="$USER_HOME$/Desktop/test per algo" />
       </list>
     </option>
     <option name="openPaths">
@@ -17,25 +15,14 @@
     <option name="pid" value="" />
     <option name="additionalInfo">
       <map>
-        <entry key="$USER_HOME$/Desktop/Ascetic3.0/Code">
-          <value>
-            <RecentProjectMetaInfo>
-              <option name="build" value="IC-191.7479.19" />
-              <option name="productionCode" value="IC" />
-              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
-              <option name="projectOpenTimestamp" value="1568155361390" />
-              <option name="buildTimestamp" value="1559024602512" />
-            </RecentProjectMetaInfo>
-          </value>
-        </entry>
         <entry key="$USER_HOME$/Desktop/TestAscetic">
           <value>
             <RecentProjectMetaInfo>
               <option name="build" value="IC-191.7479.19" />
               <option name="productionCode" value="IC" />
               <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
-              <option name="projectOpenTimestamp" value="1567703266029" />
-              <option name="buildTimestamp" value="1559024617440" />
+              <option name="projectOpenTimestamp" value="1571315441609" />
+              <option name="buildTimestamp" value="1559024616748" />
             </RecentProjectMetaInfo>
           </value>
         </entry>
@@ -45,19 +32,8 @@
               <option name="build" value="IC-191.7479.19" />
               <option name="productionCode" value="IC" />
               <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
-              <option name="projectOpenTimestamp" value="1569425905243" />
-              <option name="buildTimestamp" value="1559024600486" />
-            </RecentProjectMetaInfo>
-          </value>
-        </entry>
-        <entry key="$USER_HOME$/Desktop/test per algo">
-          <value>
-            <RecentProjectMetaInfo>
-              <option name="build" value="IC-181.4892.42" />
-              <option name="productionCode" value="IC" />
-              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
-              <option name="projectOpenTimestamp" value="1563568942848" />
-              <option name="buildTimestamp" value="1525762652849" />
+              <option name="projectOpenTimestamp" value="1571606744546" />
+              <option name="buildTimestamp" value="1559024621322" />
             </RecentProjectMetaInfo>
           </value>
         </entry>

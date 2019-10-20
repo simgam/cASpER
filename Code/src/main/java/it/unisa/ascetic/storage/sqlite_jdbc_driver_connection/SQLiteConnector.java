@@ -34,14 +34,14 @@ public class SQLiteConnector {
         Connection conn = null;
         try {
             Class.forName("org.sqlite.JDBC");
-            String dir = System.getProperty("user.home") + File.separator +".ascetic";
+            String dir = System.getProperty("user.home") + File.separator + ".ascetic";
             if (!(new File(dir)).exists()) {
                 new File(dir).mkdir();
             }
             String url = "jdbc:sqlite:" + dir;
             // create a connection to the database
 
-            if(!DBexists()) {
+            if (!DBexists()) {
                 conn = DriverManager.getConnection(url + File.separator + nameDB + ".db");
                 conn.setAutoCommit(false);
                 DBCreation.createSQL(conn);
@@ -50,7 +50,7 @@ public class SQLiteConnector {
                 conn.setAutoCommit(false);
             }
         } catch (SQLException e) {
-            Logger logger= Logger.getLogger("global");
+            Logger logger = Logger.getLogger("global");
             logger.severe(e.getMessage());
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
@@ -64,12 +64,12 @@ public class SQLiteConnector {
      * @return boolean true se il db esiste, false altrimenti
      */
     public static boolean DBexists() {
-        String dir = System.getProperty("user.home") + File.separator +".ascetic"+File.separator+nameDB+".db";
+        String dir = System.getProperty("user.home") + File.separator + ".ascetic" + File.separator + nameDB + ".db";
         return (new File(dir)).exists();
     }
 
-    public static boolean PrepareDB(){
-        String dir = System.getProperty("user.home") + File.separator +".ascetic"+File.separator+nameDB+".db";
+    public static boolean PrepareDB() {
+        String dir = System.getProperty("user.home") + File.separator + ".ascetic" + File.separator + nameDB + ".db";
         File dbFile = new File(dir);
         dbFile.delete();
         return true;

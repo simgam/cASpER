@@ -13,7 +13,7 @@ public class StyleText {
     private AttributeSet defaultAttr;
 
     public StyleText() {
-        this.attributesMap = new HashMap<String,AttributeSet>();
+        this.attributesMap = new HashMap<String, AttributeSet>();
         SimpleAttributeSet attr;
 
         attr = new SimpleAttributeSet();
@@ -54,7 +54,7 @@ public class StyleText {
 
         attr = new SimpleAttributeSet();
         StyleConstants.setForeground(attr, new Color(104, 151, 187));
-        
+
         attributesMap.put("0", attr);
         attributesMap.put("1", attr);
         attributesMap.put("2", attr);
