@@ -1,15 +1,29 @@
 package it.unisa.ascetic.refactor.manipulator;
 
+import com.intellij.lang.ASTNode;
+import com.intellij.lang.Language;
+import com.intellij.navigation.ItemPresentation;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
+import com.intellij.openapi.util.Key;
+import com.intellij.openapi.util.TextRange;
 import com.intellij.psi.*;
+import com.intellij.psi.javadoc.PsiDocComment;
+import com.intellij.psi.scope.PsiScopeProcessor;
 import com.intellij.psi.search.GlobalSearchScope;
+import com.intellij.psi.search.SearchScope;
+import com.intellij.psi.util.MethodSignature;
+import com.intellij.psi.util.MethodSignatureBackedByPsiMethod;
 import com.intellij.refactoring.extractclass.ExtractClassProcessor;
+import com.intellij.util.IncorrectOperationException;
 import it.unisa.ascetic.refactor.exceptions.PromiscuousPackageException;
 import it.unisa.ascetic.refactor.strategy.RefactoringStrategy;
 import it.unisa.ascetic.storage.beans.ClassBean;
 import it.unisa.ascetic.storage.beans.PackageBean;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+import javax.swing.*;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -53,34 +67,28 @@ public class PromiscuousPackageRefactoringStrategy implements RefactoringStrateg
         try {
             JavaPsiFacade javaPsiFacade = JavaPsiFacade.getInstance(project);
             PsiMethod m;
-            List<PackageBean> newPackagesList = new ArrayList<>();
 
-            //Inizializzo la lista con i packageBean di destinazione
-            int count = 0;
-            while (count < newPackages.size()) {
-                newPackagesList.add(newPackages.get(count));
-                count++;
-            }
             List<Boolean> contructVuoto = new ArrayList<Boolean>();
             int i = 0;
 
-            for (PackageBean toPackage : newPackagesList) {
-                contructVuoto.add(false);
+            for (PackageBean toPackage : newPackages) {
+
                 List<ClassBean> classBeanList = toPackage.getClassList();
 
                 String path = pathPackage.substring(0, pathPackage.lastIndexOf('/'));
                 path = path + "/" + toPackage.getFullQualifiedName().substring(toPackage.getFullQualifiedName().lastIndexOf(".") + 1);
                 new File(path).mkdir();
+                PsiClass aClass;
+                List<PsiField> psiFields;
+                List<PsiMethod> psiMethods;
+                List<PsiClass> psiInnerClasses;
 
                 for (ClassBean classToMove : classBeanList) {
-
-                    PsiClass sourceClass = JavaPsiFacade.getInstance(project).findClass(classToMove.getFullQualifiedName(), GlobalSearchScope.everythingScope(project));
-                    PsiPackage destinationPackage = JavaPsiFacade.getInstance(project).findPackage(toPackage.getFullQualifiedName());
-
-                    PsiClass aClass = javaPsiFacade.findClass(classToMove.getFullQualifiedName(), GlobalSearchScope.allScope(project));
-                    List<PsiField> psiFields = new ArrayList<>();
-                    List<PsiMethod> psiMethods = new ArrayList<>();
-                    List<PsiClass> psiInnerClasses = new ArrayList<>();
+                    contructVuoto.add(false);
+                    psiFields = new ArrayList<>();
+                    psiMethods = new ArrayList<>();
+                    psiInnerClasses = new ArrayList<>();
+                    aClass = javaPsiFacade.findClass(classToMove.getFullQualifiedName(), GlobalSearchScope.allScope(project));
 
                     for (int k = 0; k < aClass.getFields().length; k++) {
                         psiFields.add(aClass.getFields()[k]);
@@ -88,7 +96,7 @@ public class PromiscuousPackageRefactoringStrategy implements RefactoringStrateg
                     for (int k = 0; k < aClass.getMethods().length; k++) {
                         psiMethods.add(aClass.getMethods()[k]);
                         m = aClass.getMethods()[k];
-                        if (!m.hasParameters() && m.getReturnType() == null && m.getName().equalsIgnoreCase(aClass.getName())) {
+                        if (m.isConstructor() && m.hasParameters()) {
                             contructVuoto.set(i, true);
                         }
                     }
@@ -111,10 +119,28 @@ public class PromiscuousPackageRefactoringStrategy implements RefactoringStrateg
             for (File f : file.listFiles()) {
                 f.delete();
             }
-
             if (!file.delete()) {
                 Messages.showMessageDialog("Error during delete of original package, pleace delete it manually", "Attention", Messages.getInformationIcon());
             }
+
+//            i = 0;
+//
+//            for (PackageBean toPackage : newPackages) {
+//                PsiPackage newPackage = JavaPsiFacade.getInstance(project).findPackage(toPackage.getFullQualifiedName());
+//                for (PsiClass classe : newPackage.getClasses()) {
+//                    System.out.println(contructVuoto.get(i));
+//                    if (contructVuoto.get(i)) {
+//
+//                        for (PsiMethod c : classe.getMethods()) {
+//                            System.out.println(c.getName());
+//                            if (c.isConstructor() && c.hasParameters()) {
+//                                System.out.println(c.getName() + " tolto");
+//                                c.delete();
+//                            }
+//                        }
+//                    }
+//                }
+//            }
 
         } catch (
                 Exception e) {
