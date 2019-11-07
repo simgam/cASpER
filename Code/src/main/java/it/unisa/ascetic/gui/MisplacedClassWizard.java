@@ -208,6 +208,6 @@ public class MisplacedClassWizard extends DialogWrapper {
                 Messages.showMessageDialog(message, "Outcome of refactoring", icon);
             }
         };
-        return new Action[]{okAction, new DialogWrapperExitAction("EXIT", 0)};
+        return new Action[]{okAction, new DialogWrapperExitAction("CANCEL", 0)};
     }
 }

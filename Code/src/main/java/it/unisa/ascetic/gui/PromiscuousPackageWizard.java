@@ -72,13 +72,12 @@ public class PromiscuousPackageWizard extends DialogWrapper {
                     RefactoringManager refactoringManager = new RefactoringManager(refactoringStrategy);
                     refactoringManager.executeRefactor();
 
-                    close(0);
                     message = "Promiscuous Package Corrected, check new classes generated name and control the import";
                     Messages.showMessageDialog(message, "Success !", Messages.getInformationIcon());
                     FileWriter f = new FileWriter(System.getProperty("user.home") + File.separator + ".ascetic" + File.separator + "refactoring.txt");
                     BufferedWriter out = new BufferedWriter(f);
                     out.write("success");
-
+                    close(0);
                 } catch (IOException e) {
                     e.printStackTrace();
                 } catch (Exception e) {
@@ -87,7 +86,7 @@ public class PromiscuousPackageWizard extends DialogWrapper {
             }
         };
 
-        return new Action[]{okAction, new DialogWrapperExitAction("EXIT", 0)};
+        return new Action[]{okAction, new DialogWrapperExitAction("CANCEL", 0)};
     }
 
     @Nullable

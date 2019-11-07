@@ -52,7 +52,7 @@ public class PsiParser implements Parser {
     }
 
     @Override
-    public void parse() throws ParsingException, RepositoryException {
+    public void parse() throws RepositoryException {
         if (packageBeanRepository == null || classBeanRepository == null || methodBeanRepository == null || instanceVariableBeanRepository == null) {
             throw new RepositoryException("Repository non inizializzate!");
         }
@@ -77,13 +77,6 @@ public class PsiParser implements Parser {
             }
         }
 
-        analizeProject();
-    }
-
-    /**
-     * @throws RepositoryException
-     */
-    private void analizeProject() throws RepositoryException {
         HashMap<String, Double> coseno = new HashMap<String, Double>();
         HashMap<String, Integer> dipendence = new HashMap<String, Integer>();
 

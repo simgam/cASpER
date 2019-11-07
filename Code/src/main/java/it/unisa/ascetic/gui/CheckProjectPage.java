@@ -114,6 +114,10 @@ public class CheckProjectPage extends DialogWrapper {
     @Override
     protected JComponent createCenterPanel() {
 
+        File f = new File(System.getProperty("user.home") + File.separator + ".ascetic" + File.separator + "refactoring.txt");
+        if (f.exists()) {
+            f.delete();
+        }
         threshold = new HashMap<String, Integer>();
         int i = 0;
         while (i < blobThresholdName.size()) {
@@ -780,9 +784,16 @@ public class CheckProjectPage extends DialogWrapper {
                     }
                 } else {
                     if (whereToSearch.equalsIgnoreCase("promiscuous package")) {
+                        int i = 0;
+                        textContent = "";
                         for (PackageBean p : promiscuousPackageList) {
                             if (p.getFullQualifiedName().equalsIgnoreCase(whatToReturn)) {
-                                textContent = p.getTextContent();
+                                for (ClassBean c : p.getClassList()) {
+                                    if (i < p.getClassList().size())
+                                        textContent += "-------------------------------------------" + c.getFullQualifiedName() + "-------------------------------------------\n";
+                                    i++;
+                                    textContent += c.getTextContent();
+                                }
                             }
                         }
                     } else {

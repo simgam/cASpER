@@ -106,16 +106,16 @@ public class FeatureEnvyRefactoringStrategy implements RefactoringStrategy {
                 }
             }
         }
-        {//Conrollo i parametri
-            PsiParameter[] parameters = psiMethod.getParameterList().getParameters();
-            for (PsiParameter parametro : parameters) {
-                if (parametro.getType().getInternalCanonicalText().equals(psiDestinationClass.getQualifiedName())) {
-                    variabileDaTrasformare = parametro.getName();
-                    logger.severe("selezionata la strategia PARAMETRI");
-                    return 2;
-                }
+        //Conrollo i parametri
+        PsiParameter[] parameters = psiMethod.getParameterList().getParameters();
+        for (PsiParameter parametro : parameters) {
+            if (parametro.getType().getInternalCanonicalText().equals(psiDestinationClass.getQualifiedName())) {
+                variabileDaTrasformare = parametro.getName();
+                logger.severe("selezionata la strategia PARAMETRI");
+                return 2;
             }
         }
+
         logger.severe("selezionata la strategia NESSUNA");
         return 0;
     }
@@ -172,10 +172,15 @@ public class FeatureEnvyRefactoringStrategy implements RefactoringStrategy {
         for (i = 0; i < fields.length; i++) {
             PsiField variabiliIstanza = fields[i];
             if (psiMethod.getBody().getText().contains(variabiliIstanza.getName())) {
-                newMethodBody.append(",").append(variabiliIstanza.getName());
-                othervariables += variabiliIstanza.getType().getPresentableText() + " " + variabiliIstanza.getName() + ",";
+                newMethodBody.append(variabiliIstanza.getName());
+                othervariables += variabiliIstanza.getType().getPresentableText() + " " + variabiliIstanza.getName();
+                if (i < fields.length - 2) {
+                    newMethodBody.append(",");
+                    othervariables+=",";
+                }
             }
         }
+
         newMethodBody.append(");\n}");
         String textToWrite = MethodMover.buildMethod(scope, returnType, name, parameters, throwsList, newMethodBody.toString());
         MethodMover.methodWriter(textToWrite, psiMethod, psiSourceClass, true, project);
@@ -223,16 +228,22 @@ public class FeatureEnvyRefactoringStrategy implements RefactoringStrategy {
                 }
             }
         }
+        if (!newMethodBody.toString().equalsIgnoreCase("")) newMethodBody.append(",");
         //controllo se devo passare qualche variabile d'istanza
         PsiField[] fields = psiSourceClass.getFields();
         for (int i = 0; i < fields.length; i++) {
             PsiField variabiliIstanza = fields[i];
             if (psiMethod.getBody().getText().contains(variabiliIstanza.getName())) {
-                newMethodBody.append(",").append(variabiliIstanza.getName());
-                othervariables += variabiliIstanza.getType().getPresentableText() + " " + variabiliIstanza.getName() + ",";
+                newMethodBody.append(variabiliIstanza.getName());
+                othervariables += variabiliIstanza.getType().getPresentableText() + " " + variabiliIstanza.getName();
+                if (i < parameters1.length - 2) {
+                    newMethodBody.append(",");
+                    othervariables += ", ";
+                }
             }
         }
         newMethodBody.append(");\n}");
+
         String textToWrite = MethodMover.buildMethod(scope, returnType, name, parameters, throwsList, newMethodBody.toString());
         MethodMover.methodWriter(textToWrite, psiMethod, psiSourceClass, true, project);
 
@@ -241,11 +252,11 @@ public class FeatureEnvyRefactoringStrategy implements RefactoringStrategy {
         if (isStaticMethod)
             scope += " static";
         String s = parameters.replace(")", "");
-        s = s.replace(variabileDaTrasformare, "");
+        s = s.replace(variabileDaTrasformare + ",", "");
         s = s.replace(psiDestinationClass.getName(), "");
-        s += othervariables;
-        s = s.substring(0, s.length() - 1);
-        s += ")";
+        if (s.equalsIgnoreCase("")) s = othervariables + ")";
+        else s += ", " + othervariables + ")";
+
         body = body.replace(variabileDaTrasformare + ".", "");
         textToWrite = MethodMover.buildMethod(scope, returnType, name, s, throwsList, body);
         MethodMover.methodWriter(textToWrite, psiMethod, psiDestinationClass, false, project);
@@ -256,6 +267,8 @@ public class FeatureEnvyRefactoringStrategy implements RefactoringStrategy {
      * Metodo che si occupa di fixare il FE se la classe inviata è una variabile d'istanza
      */
     private void instanceVariableFeatureEnvy() {
+        System.out.println("qui");
+
         String scope, returnType, name, parameters, throwsList, body;
         scope = psiMethod.getModifierList().getText();
         returnType = psiMethod.getReturnType().getPresentableText();

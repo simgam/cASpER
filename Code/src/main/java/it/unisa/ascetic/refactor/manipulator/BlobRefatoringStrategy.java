@@ -1,6 +1,7 @@
 package it.unisa.ascetic.refactor.manipulator;
 
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.command.WriteCommandAction;
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.*;
 import com.intellij.psi.search.GlobalSearchScope;
@@ -13,10 +14,8 @@ import it.unisa.ascetic.storage.beans.MethodBean;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Logger;
 
 public class BlobRefatoringStrategy implements RefactoringStrategy {
-    Logger logger = Logger.getLogger("global");
     private ClassBean originalClass;
     private List<ClassBean> splittedList;
     protected Project project;
@@ -45,12 +44,14 @@ public class BlobRefatoringStrategy implements RefactoringStrategy {
 
                 // creo una lista di metodi
                 for (MethodBean metodoSplittato : classBean.getMethodList()) {
+                    //System.out.println(psiOriginalClass.getConstructors().length);
                     String methodShortName = metodoSplittato.getFullQualifiedName().substring(metodoSplittato.getFullQualifiedName().lastIndexOf('.') + 1);
                     methodsToMove.add(psiOriginalClass.findMethodsByName(methodShortName, true)[0]);
                 }
 
                 //creo una lista di fields
                 for (InstanceVariableBean instanceVariableBean : classBean.getInstanceVariablesList()) {
+                    System.out.println(psiOriginalClass.findFieldByName(instanceVariableBean.getFullQualifiedName(), true).getName());
                     fieldsToMove.add(psiOriginalClass.findFieldByName(instanceVariableBean.getFullQualifiedName(), true));
                 }
 
@@ -60,9 +61,43 @@ public class BlobRefatoringStrategy implements RefactoringStrategy {
 
             });
             try {
+
                 processor = new ExtractClassProcessor(psiOriginalClass, fieldsToMove, methodsToMove, innerClasses, packageName, classShortName);
+                WriteCommandAction.runWriteCommandAction(project, () -> {
+                    PsiMethod toDelete = processor.getCreatedClass().getMethods()[0];
+                    toDelete.delete();
+                });
                 processor.run();
-            } catch (NullPointerException e) {
+
+
+//                WriteCommandAction.runWriteCommandAction(project, () -> {
+//                    //                   PsiStatement[] statements = methodProcessor.getBody().getStatements();
+////                    String methodName = processor.getExtractedMethod().getName() + "();";
+////                    for (PsiStatement statement : statements) {
+////                        if (statement.getText().equals(methodName)) {
+////                            statement.delete();
+////                        }
+////                    }
+//                    PsiMethod[] elementsToMove = processor.getCreatedClass().getConstructors();
+//                    System.out.println(elementsToMove.length);
+//                    Editor editor = FileEditorManager.getInstance(project).getSelectedTextEditor();
+                    //ExtractMethodProcessor methodProcessor = new ExtractMethodProcessor(project, editor, elementsToMove, null, "setUpRefactored", "setUp", null);
+////
+////                    System.out.println(elementsToMove.getName() + " " + !elementsToMove.hasParameters());
+////                    if (!elementsToMove.hasParameters())
+////                        elementsToMove.delete();
+//
+//                    PsiStatement[] statements = elementsToMove[0].getBody().getStatements();
+//                    String methodName = methodProcessor.getExtractedMethod().getName() + "();";
+//                    for (PsiStatement statement : statements) {
+//                        if (statement.getText().equals(methodName)) {
+//                            statement.delete();
+//                        }
+//                    }
+//                });
+                //System.out.println(psiOriginalClass.getConstructors().length);
+
+            } catch (Exception e) {
                 e.printStackTrace();
                 throw new BlobException(e.getMessage());
             }

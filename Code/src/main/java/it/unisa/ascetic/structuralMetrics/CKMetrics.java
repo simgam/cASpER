@@ -1,21 +1,16 @@
 package it.unisa.ascetic.structuralMetrics;
 
-import it.unisa.ascetic.analysis.code_smell_detection.similarityComputation.CosineSimilarity;
 import it.unisa.ascetic.storage.beans.ClassBean;
 import it.unisa.ascetic.storage.beans.InstanceVariableBean;
 import it.unisa.ascetic.storage.beans.MethodBean;
 import it.unisa.ascetic.storage.beans.PackageBean;
 
-import java.io.IOException;
 import java.util.Collection;
 import java.util.Vector;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class CKMetrics {
-
-    private static double maxIpc = 0.0;
-    private static double minIpc = 0.0;
 
     public static int getELOC(ClassBean cb) {
         return cb.getTextContent().split("\r\n|\r|\n").length;
@@ -239,29 +234,6 @@ public class CKMetrics {
         return ((1.0 / (pPackages.size() * (pPackages.size() - 1))) * sumInterConnectivities);
     }
 
-//    public static double computeMediumInterConnectivity(Collection<PackageBean> pClusters) {
-//        double sumInterConnectivities = 0.0;
-//
-//        for (PackageBean pack : pClusters) {
-//            for (ClassBean eClass : pack.getClassList()) {
-//                for (PackageBean currentPack : pClusters) {
-//                    double packsInterConnectivity = 0.0;
-//                    double packsAllLinks = 2 * pack.getClassList().size() * currentPack.getClassList().size();
-//                    if (pack != currentPack) {
-//                        for (ClassBean currentClass : currentPack.getClassList()) {
-//                            if (existsDependence(eClass, currentClass)) {
-//                                packsInterConnectivity++;
-//                            }
-//                        }
-//                    }
-//                    sumInterConnectivities += ((packsInterConnectivity) / packsAllLinks);
-//                }
-//            }
-//        }
-//        return ((1.0 / (pClusters.size() * (pClusters.size() - 1))) * sumInterConnectivities);
-//    }
-
-
     public static int getMcCabeCycloComplexity(MethodBean mb) {
 
         int mcCabe = 0;
@@ -409,57 +381,6 @@ public class CKMetrics {
         return false;
     }
 
-    private static double getCCBC(ClassBean pClass, ClassBean pClass2) {
-        Double ccbc = 0.0;
-
-        double comparisons = 0.0;
-        CosineSimilarity cosineSimilarity = new CosineSimilarity();
-
-        for (MethodBean methodBean : pClass.getMethodList()) {
-            for (MethodBean methodBean2 : pClass2.getMethodList()) {
-
-                if (!methodBean.equals(methodBean2)) {
-                    String[] document1 = new String[2];
-                    String[] document2 = new String[2];
-
-                    document1[0] = methodBean.getFullQualifiedName();
-                    document1[1] = methodBean.getTextContent();
-
-                    document2[0] = methodBean2.getFullQualifiedName();
-                    document2[1] = methodBean2.getTextContent();
-
-                    try {
-                        ccbc += cosineSimilarity.computeSimilarity(document1, document2);
-                        comparisons++;
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
-        }
-
-        ccbc = ccbc / comparisons;
-
-        if (ccbc.isNaN()) {
-            return 0.0;
-        } else if (ccbc.isInfinite()) {
-            return 0.0;
-        } else return ccbc;
-    }
-
-    public static double getCCBC(PackageBean aPackage) {
-        Double ccbc = 0.0;
-        CosineSimilarity cosineSimilarity = new CosineSimilarity();
-
-        for (ClassBean currentClass : aPackage.getClassList()) {
-            for (ClassBean classe : aPackage.getClassList()) {
-                ccbc = CKMetrics.getCCBC(currentClass, classe);
-            }
-        }
-
-        return ccbc / (aPackage.getClassList().size());
-    }
-
     private static int getWeigthedNumberOfDependencies(ClassBean pFirstClass, ClassBean pSecondClass) {
         int dependencies = 0;
         int numberOfParameters = 0;
@@ -482,57 +403,4 @@ public class CKMetrics {
         return (numberOfParameters * dependencies);
     }
 
-    public static double getICP(PackageBean pPackage) {
-        CKMetrics.computeMaxAndMinICP(pPackage);
-
-        double icp = 0.0, normalizedIcp = 0.0, res = 0.0;
-
-        int dependenciesFirstToSecond, dependenciesSecondToFirst;
-
-        for (ClassBean currentClass : pPackage.getClassList()) {
-            for (ClassBean classe : pPackage.getClassList()) {
-                dependenciesFirstToSecond = CKMetrics.getWeigthedNumberOfDependencies(currentClass, classe);
-                dependenciesSecondToFirst = CKMetrics.getWeigthedNumberOfDependencies(classe, currentClass);
-
-                if (dependenciesFirstToSecond > dependenciesSecondToFirst) {
-                    icp = dependenciesFirstToSecond;
-                } else icp = dependenciesSecondToFirst;
-
-                if ((CKMetrics.maxIpc - CKMetrics.minIpc) > 0.0)
-                    normalizedIcp = (icp - CKMetrics.minIpc) / (CKMetrics.maxIpc - CKMetrics.minIpc);
-
-                if (normalizedIcp < 0.0005)
-                    normalizedIcp = 0.0;
-            }
-            res += normalizedIcp;
-        }
-        return res / pPackage.getClassList().size();
-    }
-
-    private static void computeMaxAndMinICP(PackageBean pPackage) {
-        double icp = 0.0;
-
-        for (ClassBean classBean : pPackage.getClassList()) {
-
-            for (ClassBean classBeanToCompare : pPackage.getClassList()) {
-
-                if (!classBean.getFullQualifiedName().equals(classBeanToCompare.getFullQualifiedName())) {
-
-                    int dependenciesFirstToSecond = CKMetrics.getWeigthedNumberOfDependencies(classBean, classBeanToCompare);
-                    int dependenciesSecondToFirst = CKMetrics.getWeigthedNumberOfDependencies(classBeanToCompare, classBean);
-
-                    if (dependenciesFirstToSecond > dependenciesSecondToFirst) {
-                        icp = dependenciesFirstToSecond;
-                    } else icp = dependenciesSecondToFirst;
-
-                    if (CKMetrics.maxIpc < icp)
-                        maxIpc = icp;
-
-                    if (CKMetrics.minIpc > icp)
-                        minIpc = icp;
-                }
-            }
-
-        }
-    }
 }

@@ -3,7 +3,6 @@
     <option name="recentPaths">
       <list>
         <option value="$USER_HOME$/Desktop/TestAscetic/ProgettiTest" />
-        <option value="$USER_HOME$/Desktop/TestAscetic" />
       </list>
     </option>
     <option name="openPaths">
@@ -15,25 +14,14 @@
     <option name="pid" value="" />
     <option name="additionalInfo">
       <map>
-        <entry key="$USER_HOME$/Desktop/TestAscetic">
-          <value>
-            <RecentProjectMetaInfo>
-              <option name="build" value="IC-191.7479.19" />
-              <option name="productionCode" value="IC" />
-              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
-              <option name="projectOpenTimestamp" value="1571315441609" />
-              <option name="buildTimestamp" value="1559024616748" />
-            </RecentProjectMetaInfo>
-          </value>
-        </entry>
         <entry key="$USER_HOME$/Desktop/TestAscetic/ProgettiTest">
           <value>
             <RecentProjectMetaInfo>
               <option name="build" value="IC-191.7479.19" />
               <option name="productionCode" value="IC" />
               <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
-              <option name="projectOpenTimestamp" value="1571825284599" />
-              <option name="buildTimestamp" value="1559024637604" />
+              <option name="projectOpenTimestamp" value="1573154447429" />
+              <option name="buildTimestamp" value="1559024608104" />
             </RecentProjectMetaInfo>
           </value>
         </entry>

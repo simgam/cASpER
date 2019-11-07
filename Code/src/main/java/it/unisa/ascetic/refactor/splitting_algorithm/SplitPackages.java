@@ -106,87 +106,6 @@ public class SplitPackages {
                     newChains.add(chains.elementAt(i));
                 }
             }
-
-//            Vector<PackageBean> trivialPackages = new Vector<PackageBean>();
-//            int count = 0;
-//
-//            if (newChains.size() > 5) {
-//                //Conto le trivial chains
-//                for (String s : newChains) {
-//                    String[] c = splitPattern.split(s);
-//                    if (c.length < 3)
-//                        count++;
-//                }
-//                logger.severe("DIMENSIONE:" + (newChains.size() - count));
-//                for (int i = 0; i < newChains.size(); i++) {
-//                    String packageName = "package_" + (i + 1);
-//                    //PackageBean tmpPackageClasses = new PackageBean();
-//                    List<ClassBean> tmpPackageClasses = new ArrayList<>();
-//                    String[] classes = splitPattern.split(newChains.elementAt(i));
-//
-//                    for (int j = 0; j < classes.length; j++) {
-//                        tmpPackageClasses.add(vectorClasses.elementAt(Integer.valueOf(classes[j])));
-//                    }
-//
-//                    ClassList tmpClassList = new ClassList();
-//                    tmpClassList.setList(tmpPackageClasses);
-//                    PackageBean tmpPackageBean = new PackageBean.Builder(packageName, "")
-//                            .setClassList(tmpClassList)
-//                            .build();
-//                    if (tmpPackageClasses.size() < 3) {
-//                        count++;
-//                        trivialPackages.add(tmpPackageBean);
-//                    } else result.add(tmpPackageBean);
-//                }
-//
-//                for (PackageBean pack : trivialPackages) {
-//                    for (ClassBean classBean : pack.getClassList()) {
-//                        double[][] mbm = matrixConstruction.buildClassByClassMatrix(0.5, 0.5, pToSplit);
-//                        PackageBean whereAdd = selectPackageWhereInsert(classBean, result);
-//                        whereAdd.getClassList().add((classBean));
-//                    }
-//                }
-//            }
-//
-//            if (newChains.size() - count > 4) {
-//                double[][] mbm = matrixConstruction.buildClassByClassMatrix(0.5, 0.5, pToSplit);
-//                while (newChains.size() - count > 4) {
-//                    int smallest = getSmallestNonTrivialChain(newChains);
-//                    String[] methodsSource = splitPattern.split(newChains.elementAt(smallest));
-//                    double maxSimilarity = 0;
-//                    int indexChain = -1;
-//                    for (int i = 0; i < newChains.size(); i++) {
-//                        if (i != smallest) {
-//                            String[] methodsTarget = splitPattern.split(newChains.elementAt(i));
-//                            if (methodsTarget.length > 2) {
-//                                //non ? una trivial chain
-//                                double sim = 0;
-//                                for (int k = 0; k < methodsSource.length; k++) {
-//                                    for (int s = 0; s < methodsTarget.length; s++) {
-//                                        sim += mbm[Integer.valueOf(methodsSource[k])][Integer.valueOf(methodsTarget[s])];
-//                                    }
-//                                }
-//                                sim = (double) sim / (methodsSource.length * methodsTarget.length);
-//                                if (sim >= maxSimilarity) {
-//                                    indexChain = i;
-//                                    maxSimilarity = sim;
-//                                }
-//                            }
-//                        }
-//                    }
-//                    if (indexChain > -1) {
-//                        String toDelete1 = newChains.elementAt(smallest);
-//                        String toDelete2 = newChains.elementAt(indexChain);
-//                        String toAdd = toDelete1 + toDelete2;
-//                        newChains.remove(toDelete1);
-//                        newChains.remove(toDelete2);
-//                        newChains.add(toAdd);
-//                    }
-//                }
-//            } else if (newChains.size() - count == 0) {
-//                Collection<PackageBean> emptyCollection = new Vector<PackageBean>();
-//                return emptyCollection;
-//            }
         }
 
         for (int i = 0; i < newChains.size(); i++) {
@@ -194,7 +113,6 @@ public class SplitPackages {
             result.add(tmpPackage);
         }
 
-        printResult(result);
         return result;
     }
 
@@ -403,17 +321,6 @@ public class SplitPackages {
             return true;
 
         return false;
-    }
-
-    private void printResult(Collection<PackageBean> result) {
-        for (PackageBean packageBean : result) {
-            logger.severe("***************************");
-            logger.severe(packageBean.getFullQualifiedName());
-            /*logger.severe("Class:");
-            for (ClassBean classBean : packageBean.getClassList()) {
-                logger.severe(classBean.getFullQualifiedName() + "");
-            }*/
-        }
     }
 
 }

@@ -10,6 +10,6 @@ public interface ComparableBean {
      *
      * @return similarity somiglianza del ComparableBean
      */
-    public double getSimilarity();
+    double getSimilarity();
 
 }

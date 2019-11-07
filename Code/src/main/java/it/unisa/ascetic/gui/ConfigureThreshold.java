@@ -254,7 +254,7 @@ public class ConfigureThreshold extends DialogWrapper {
                 }
             }
         };
-        Action exitAction = new DialogWrapperExitAction("CANCEL", 0) {
+        Action exitAction = new DialogWrapperExitAction("EXIT", 0) {
             @Override
             protected void doAction(ActionEvent actionEvent) {
                 try {

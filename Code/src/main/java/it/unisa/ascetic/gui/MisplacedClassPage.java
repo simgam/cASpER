@@ -155,6 +155,6 @@ public class MisplacedClassPage extends DialogWrapper {
             }
         };
 
-        return new Action[]{okAction, new DialogWrapperExitAction("EXIT", 0)};
+        return new Action[]{okAction, new DialogWrapperExitAction("CANCEL", 0)};
     }
 }
