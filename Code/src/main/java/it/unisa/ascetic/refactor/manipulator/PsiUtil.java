@@ -42,7 +42,6 @@ public class PsiUtil {
         });
         //https://www.programcreek.com/java-api-examples/?api=com.intellij.psi.JavaPsiFacade
 
-
         return foundClass[0];
     }
 }

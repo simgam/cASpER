@@ -71,7 +71,6 @@ public class BaseConf {
         return default_home_dir + "/" + this.default_configuration_filename;
     }
 
-
     public String getAbsolutePathForDefaultErrorFile() {
         return default_home_dir + "/" + this.default_error_filename;
     }

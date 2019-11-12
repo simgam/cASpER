@@ -6,7 +6,6 @@ import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
 import it.unisa.ascetic.gui.CheckProjectPage;
-import it.unisa.ascetic.parser.ParsingException;
 import it.unisa.ascetic.parser.PsiParser;
 import it.unisa.ascetic.storage.beans.ClassBean;
 import it.unisa.ascetic.storage.beans.MethodBean;
@@ -111,9 +110,6 @@ public class SystemStart {
             ApplicationManager.getApplication().runReadAction(() -> {
                 try {
                     parser.parse();
-                } catch (ParsingException e) {
-                    errorHappened = true;
-                    e.printStackTrace();
                 } catch (RepositoryException e) {
                     errorHappened = true;
                     e.printStackTrace();

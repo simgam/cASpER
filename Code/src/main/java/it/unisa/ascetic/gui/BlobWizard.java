@@ -77,13 +77,12 @@ public class BlobWizard extends DialogWrapper {
                         Messages.showMessageDialog("Error during delete of original class, pleace delete it manually", "Attention", Messages.getInformationIcon());
                     }
 
-                    close(0);
                     message = "Blob Corrected, check new classes generated name";
                     Messages.showMessageDialog(message, "Success !", Messages.getInformationIcon());
                     FileWriter f = new FileWriter(System.getProperty("user.home") + File.separator + ".ascetic" + File.separator + "refactoring.txt");
                     BufferedWriter out = new BufferedWriter(f);
                     out.write("success");
-
+                    close(0);
                 } catch (IOException e) {
                     e.printStackTrace();
                 } catch (Exception e) {
@@ -92,7 +91,7 @@ public class BlobWizard extends DialogWrapper {
             }
         };
 
-        return new Action[]{okAction, new DialogWrapperExitAction("EXIT", 0)};
+        return new Action[]{okAction, new DialogWrapperExitAction("CANCEL", 0)};
     }
 
     @Nullable

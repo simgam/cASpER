@@ -205,11 +205,11 @@ public class FeatureEnvyWizard extends DialogWrapper {
                     }
                 }
 
-                close(0);
                 Messages.showMessageDialog(message, "Outcome of refactoring", icon);
+                close(0);
             }
         };
 
-        return new Action[]{okAction, new DialogWrapperExitAction("EXIT", 0)};
+        return new Action[]{okAction, new DialogWrapperExitAction("CANCEL", 0)};
     }
 }

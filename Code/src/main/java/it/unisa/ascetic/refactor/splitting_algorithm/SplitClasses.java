@@ -89,56 +89,6 @@ public class SplitClasses {
             }
         }
 
-//        if (newChains.size() > 5) {
-//            //Conto le trivial chains
-//            int count = 0;
-//            for (String s : newChains) {
-//                String[] methods = splitPattern.split(s);
-//                if (methods.length < 3)
-//                    count++;
-//            }
-//            logger.severe("DIMENSIONE:" + (newChains.size() - count));
-//            if (newChains.size() - count > 4) {
-//                double[][] mbm = matrixConstruction.buildMethodByMethodMatrix(0, 0, 1, 0.05, pToSplit);
-//                while (newChains.size() - count > 4) {
-//                    int smallest = getSmallestNonTrivialChain(newChains);
-//                    String[] methodsSource = splitPattern.split(newChains.elementAt(smallest));
-//                    double maxSimilarity = 0;
-//                    int indexChain = -1;
-//                    for (int i = 0; i < newChains.size(); i++) {
-//                        if (i != smallest) {
-//                            String[] methodsTarget = splitPattern.split(newChains.elementAt(i));
-//                            if (methodsTarget.length > 2) {
-//                                //non è una trivial chain
-//                                double sim = 0;
-//                                for (int k = 0; k < methodsSource.length; k++) {
-//                                    for (int s = 0; s < methodsTarget.length; s++) {
-//                                        sim += mbm[Integer.valueOf(methodsSource[k])][Integer.valueOf(methodsTarget[s])];
-//                                    }
-//                                }
-//                                sim = (double) sim / (methodsSource.length * methodsTarget.length);
-//                                if (sim >= maxSimilarity) {
-//                                    indexChain = i;
-//                                    maxSimilarity = sim;
-//                                }
-//                            }
-//                        }
-//                    }
-//                    if (indexChain > -1) {
-//                        String toDelete1 = newChains.elementAt(smallest);
-//                        String toDelete2 = newChains.elementAt(indexChain);
-//                        String toAdd = toDelete1 + toDelete2;
-//                        newChains.remove(toDelete1);
-//                        newChains.remove(toDelete2);
-//                        newChains.add(toAdd);
-//                    }
-//                }
-//            } else if (newChains.size() - count == 0) {
-//                Collection<ClassBean> emptyCollection = new Vector<ClassBean>();
-//                return emptyCollection;
-//            }
-//        }
-
         String packageName = pToSplit.getFullQualifiedName().substring(0, pToSplit.getFullQualifiedName().lastIndexOf('.'));
         logger.severe("DBG-> package name: " + packageName);
         for (int i = 0; i < newChains.size(); i++) {
@@ -146,23 +96,7 @@ public class SplitClasses {
             result.add(tmpClass);
         }
 
-        printResult(result);
         return result;
-    }
-
-    private void printResult(Collection<ClassBean> result) {
-        for (ClassBean classBean : result) {
-            logger.severe("***************************");
-            logger.severe(classBean.getFullQualifiedName());
-            logger.severe("Fields:");
-            for (InstanceVariableBean field : classBean.getInstanceVariablesList()) {
-                logger.severe(field + "");
-            }
-            logger.severe("Methods:");
-            for (MethodBean methodBean : classBean.getMethodList()) {
-                logger.severe(methodBean.getFullQualifiedName());
-            }
-        }
     }
 
     public static int getMaxValueFromVector(int[] vector) {

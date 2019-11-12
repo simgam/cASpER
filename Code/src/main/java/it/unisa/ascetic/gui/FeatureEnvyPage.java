@@ -145,11 +145,10 @@ public class FeatureEnvyPage extends DialogWrapper {
             protected void doAction(ActionEvent actionEvent) {
                 FeatureEnvyWizard featureEnvyWizard = new FeatureEnvyWizard(featureEnvyBean, project);
                 featureEnvyWizard.show();
-
                 close(0);
             }
         };
 
-        return new Action[]{okAction, new DialogWrapperExitAction("EXIT", 0)};
+        return new Action[]{okAction, new DialogWrapperExitAction("CANCEL", 0)};
     }
 }

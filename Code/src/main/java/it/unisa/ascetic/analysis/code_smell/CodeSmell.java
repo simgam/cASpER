@@ -87,8 +87,8 @@ public abstract class CodeSmell<T> {
     /**
      * setter
      *
-     * @param String key corrispondente all'indice da inserire
-     * @param double index corrispondente all'indice ottenute dall'algoritmo usato
+     * @param key String corrispondente all'indice da inserire
+     * @param indice double corrispondente all'indice ottenute dall'algoritmo usato
      */
     public void addIndex(String key, double indice) {
         index.put(key, indice);
@@ -97,7 +97,7 @@ public abstract class CodeSmell<T> {
     /**
      * setter
      *
-     * @param String key corrispondente all'indice da eliminare
+     * @param key String corrispondente all'indice da eliminare
      */
     public void removeIndex(String key) {
         index.remove(key);
@@ -106,7 +106,7 @@ public abstract class CodeSmell<T> {
     /**
      * setter
      *
-     * @param HashMap<String, Double>  lista di double corrispondente agli indici da settare
+     * @param index HashMap<String, Double>  lista di double corrispondente agli indici da settare
      */
     public void setIndex(HashMap<String, Double> index) {
         this.index = index;

@@ -1127,9 +1127,6 @@ public class SplitClassTest {
             e.getMessage();
         }
         Iterator<ClassBean> it = splittedClasses.iterator();
-        while (it.hasNext()) {
-            System.out.println(it.next().getFullQualifiedName());
-        }
         assertTrue(splittedClasses.size() == 4);
         Logger log = Logger.getLogger(getClass().getName());
         log.info("\n" + errorOccured);
@@ -1147,9 +1144,6 @@ public class SplitClassTest {
             e.getMessage();
         }
         Iterator<ClassBean> it = splittedClasses.iterator();
-        while (it.hasNext()) {
-            System.out.println(it.next().getFullQualifiedName());
-        }
         assertTrue(splittedClasses.size() == 1);
         Logger log = Logger.getLogger(getClass().getName());
         log.info("\n" + errorOccured);

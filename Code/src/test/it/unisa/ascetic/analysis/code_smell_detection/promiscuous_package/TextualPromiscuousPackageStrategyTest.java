@@ -4,6 +4,7 @@ import it.unisa.ascetic.storage.beans.*;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -23,6 +24,10 @@ public class TextualPromiscuousPackageStrategyTest {
 
     @Before
     public void setUp() throws Exception {
+        String filename = System.getProperty("user.home") + File.separator + ".ascetic" + File.separator + "stopwordlist.txt";
+        File stopwordlist= new File(filename);
+        stopwordlist.delete();
+
         InstanceVariableBeanList instances;
         MethodBeanList vuota = new MethodList();
         HashMap<String, ClassBean> nulla = new HashMap<String, ClassBean>();

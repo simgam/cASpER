@@ -4,6 +4,7 @@ import it.unisa.ascetic.storage.beans.*;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -23,6 +24,10 @@ public class TextualMisplacedClassStrategyTest {
 
     @Before
     public void setUp() throws Exception {
+        String filename = System.getProperty("user.home") + File.separator + ".ascetic" + File.separator + "stopwordlist.txt";
+        File stopwordlist= new File(filename);
+        stopwordlist.delete();
+
         classes = new ClassList();
         MethodBeanList vuoto = new MethodList();
         pack = new PackageBean.Builder("misplaced_class.package", "public class Cliente {\n" +

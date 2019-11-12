@@ -1,10 +1,6 @@
 package it.unisa.ascetic.analysis.code_smell_detection.similarityComputation;
 
-import it.unisa.ascetic.analysis.code_smell_detection.fileUtilities.FileUtility;
-
-import java.io.File;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.util.*;
 
 public class CosineSimilarity {
@@ -79,7 +75,6 @@ public class CosineSimilarity {
             pw.println("instanceof");
             pw.println("short");
             pw.println("while");
-            pw.println("abstract");
             pw.println("boolean");
             pw.println("break");
             pw.println("byte");
@@ -919,7 +914,7 @@ public class CosineSimilarity {
     }
 
     private String[] normalize(String[] document) throws IOException {
-        String stopWordListFile = FileUtility.readFile(this.stopwordList.getAbsolutePath());
+        String stopWordListFile = readFile(this.stopwordList.getAbsolutePath());
         String[] stopWordList = stopWordListFile.split("\n");
         Vector<String> finalWords = new Vector<>();
 
@@ -1040,6 +1035,28 @@ public class CosineSimilarity {
             norm = norm + Math.pow(feature.get(featurename), 2);
         }
         return Math.sqrt(norm);
+    }
+
+    public static String readFile(String nomeFile) throws IOException {
+        InputStream is = null;
+        InputStreamReader isr = null;
+
+        StringBuffer sb = new StringBuffer();
+        char[] buf = new char[1024];
+        int len;
+
+        try {
+            is = new FileInputStream(nomeFile);
+            isr = new InputStreamReader(is);
+
+            while ((len = isr.read(buf)) > 0)
+                sb.append(buf, 0, len);
+
+            return sb.toString();
+        } finally {
+            if (isr != null)
+                isr.close();
+        }
     }
 
 }

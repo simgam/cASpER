@@ -2,7 +2,6 @@
   <artifact type="jar" name="ascetic:jar">
     <output-path>$PROJECT_DIR$/out/artifacts/ascetic_jar</output-path>
     <root id="archive" name="ascetic.jar">
-      <element id="module-output" name="ascetic" />
       <element id="extracted-dir" path="D:/%lib%/jcommon-1.0.23.jar" path-in-jar="/" />
       <element id="extracted-dir" path="D:/%lib%/jfreechart-1.0.19.jar" path-in-jar="/" />
       <element id="extracted-dir" path="D:/%lib%/openapi-7.0.3.jar" path-in-jar="/" />

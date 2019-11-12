@@ -4,8 +4,6 @@ import it.unisa.ascetic.storage.beans.ClassBean;
 import it.unisa.ascetic.storage.beans.MethodBean;
 import it.unisa.ascetic.storage.beans.PackageBean;
 
-import java.util.ArrayList;
-
 public class ComponentMutation {
 
     public String alterClass(ClassBean pClass) {
@@ -30,17 +28,6 @@ public class ComponentMutation {
         }
 
         return mutatedPackage;
-    }
-
-    public String alterMethod(ArrayList<String> pMethodBlocks) {
-        String mutatedMethod = "";
-
-        for (String block : pMethodBlocks) {
-            mutatedMethod += block;
-            mutatedMethod += "_____\n";
-        }
-
-        return mutatedMethod;
     }
 
 }
