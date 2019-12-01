@@ -109,27 +109,26 @@ public class PromiscuousPackageRefactoringStrategy implements RefactoringStrateg
                 Messages.showMessageDialog("Error during delete of original package, pleace delete it manually", "Attention", Messages.getInformationIcon());
             }
 
-            i = 0;
+//            i = 0;
+//
+//            for (PackageBean toPackage : newPackages) {
+//                PsiPackage newPackage = JavaPsiFacade.getInstance(project).findPackage(toPackage.getFullQualifiedName());
+//                for (PsiClass classe : newPackage.getClasses()) {
+//                    System.out.println(contructVuoto.get(i));
+//                    if (contructVuoto.get(i)) {
+//
+//                        for (PsiMethod c : classe.getMethods()) {
+//                            System.out.println(c.getName());
+//                            if (c.isConstructor() && c.hasParameters()) {
+//                                System.out.println(c.getName() + " tolto");
+//                                c.delete();
+//                            }
+//                        }
+//                    }
+//                }
+//            }
 
-            for (PackageBean toPackage : newPackages) {
-                PsiPackage newPackage = JavaPsiFacade.getInstance(project).findPackage(toPackage.getFullQualifiedName());
-                for (PsiClass classe : newPackage.getClasses()) {
-                    System.out.println(contructVuoto.get(i));
-                    if (contructVuoto.get(i)) {
-
-                        for (PsiMethod c : classe.getMethods()) {
-                            System.out.println(c.getName());
-                            if (c.isConstructor() && c.hasParameters()) {
-                                System.out.println(c.getName() + " tolto");
-                                c.delete();
-                            }
-                        }
-                    }
-                }
-            }
-
-        } catch (
-                Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
             throw new PromiscuousPackageException(e.getMessage());
 

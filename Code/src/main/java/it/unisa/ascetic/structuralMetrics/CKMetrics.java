@@ -25,9 +25,7 @@ public class CKMetrics {
     }
 
     public static int getWMC(ClassBean cb) {
-
         int WMC = 0;
-
         Vector<MethodBean> methods = new Vector<MethodBean>(cb.getMethodList());
         for (MethodBean m : methods) {
             WMC += getMcCabeCycloComplexity(m);
@@ -35,7 +33,6 @@ public class CKMetrics {
 
         return WMC;
     }
-
 
     public static int getNumberOfClasses(PackageBean pb) {
         return pb.getClassList().size();
@@ -175,6 +172,9 @@ public class CKMetrics {
         return NOA;
     }
 
+    public static int getFeatureSum(ClassBean pClass) {
+        return CKMetrics.getWMC(pClass) + CKMetrics.getNOA(pClass);
+    }
 
     //Number of operations overridden by a subclass
     public static int getNOO(ClassBean cb, Vector<ClassBean> System) {
@@ -199,39 +199,46 @@ public class CKMetrics {
     }
 
     public static double computeMediumIntraConnectivity(PackageBean pPackage) {
-        double packAllLinks = Math.pow(pPackage.getClassList().size() - 1, 2);
-        double packIntraConnectivity = 0.0;
-        for (ClassBean eClass : pPackage.getClassList()) {
-            for (ClassBean current : pPackage.getClassList()) {
-                if (eClass != current) {
-                    if (existsDependence(eClass, current)) {
-                        packIntraConnectivity++;
+        if (pPackage.getClassList().size() > 1) {
+            double packAllLinks = Math.pow(pPackage.getClassList().size() - 1, 2);
+            double packIntraConnectivity = 0.0;
+            for (ClassBean eClass : pPackage.getClassList()) {
+                for (ClassBean current : pPackage.getClassList()) {
+                    if (eClass != current) {
+                        if (existsDependence(eClass, current)) {
+                            packIntraConnectivity++;
+                        }
                     }
                 }
             }
+            return 1 - (packIntraConnectivity / packAllLinks);
         }
-        return 1.0 - (packIntraConnectivity / packAllLinks); // ne calcolo il complemento per capire quanto le classi non sono coese tra loro
+        return 0.0;
     }
 
     public static double computeMediumInterConnectivity(PackageBean pPackage, Collection<PackageBean> pPackages) {
         double sumInterConnectivities = 0.0;
         double packsAllLinks, packsInterConnectivity;
-        for (ClassBean eClass : pPackage.getClassList()) {
-            for (PackageBean currentPack : pPackages) {
-                packsInterConnectivity = 0.0;
-                packsAllLinks = 2 * pPackage.getClassList().size() - 1 * currentPack.getClassList().size() - 1;
-
-                if (pPackage != currentPack) {
-                    for (ClassBean currentClass : currentPack.getClassList()) {
-                        if (existsDependence(eClass, currentClass)) {
-                            packsInterConnectivity++;
+        if (pPackages.size() > 1) {
+            for (ClassBean eClass : pPackage.getClassList()) {
+                for (PackageBean currentPack : pPackages) {
+                    packsInterConnectivity = 0.0;
+                    packsAllLinks = 2 * pPackage.getClassList().size() - 1 * currentPack.getClassList().size() - 1;
+                    if (pPackage != currentPack) {
+                        for (ClassBean currentClass : currentPack.getClassList()) {
+                            if (existsDependence(eClass, currentClass)) {
+                                packsInterConnectivity++;
+                            }
                         }
                     }
+                    if (packsAllLinks == 0.0) return 0.0;
+                    sumInterConnectivities += ((packsInterConnectivity) / packsAllLinks);
                 }
-                sumInterConnectivities += ((packsInterConnectivity) / packsAllLinks);
+
             }
+            return ((1.0 / (pPackages.size() * (pPackages.size() - 1))) * sumInterConnectivities);
         }
-        return ((1.0 / (pPackages.size() * (pPackages.size() - 1))) * sumInterConnectivities);
+        return 0.0;
     }
 
     public static int getMcCabeCycloComplexity(MethodBean mb) {

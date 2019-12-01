@@ -49,18 +49,11 @@ public class TextualMisplacedClassStrategy implements ClassSmellDetectionStrateg
             return false;
         }
         Entry<PackageBean, Double> firstRankedPackage = similaritiesWithClass.entrySet().iterator().next();
-
-        if (firstRankedPackage.getKey().getFullQualifiedName().equals(pClass.getBelongingPackage().getFullQualifiedName()) || (firstRankedPackage.getValue() < soglia && soglia > 0.5)) {
+        if (firstRankedPackage.getKey().getFullQualifiedName().equals(pClass.getBelongingPackage().getFullQualifiedName()) || (firstRankedPackage.getValue() <= soglia)) {
             return false;
         }
         pClass.setEnviedPackage(firstRankedPackage.getKey());
-
-        if (firstRankedPackage.getValue() < soglia && soglia <= 0.5) {
-            pClass.setSimilarity(soglia);
-        } else {
-            pClass.setSimilarity(firstRankedPackage.getValue());
-        }
-
+        pClass.setSimilarity(firstRankedPackage.getValue());
         return true;
     }
 

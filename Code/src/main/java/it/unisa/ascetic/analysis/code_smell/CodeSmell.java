@@ -97,15 +97,6 @@ public abstract class CodeSmell<T> {
     /**
      * setter
      *
-     * @param key String corrispondente all'indice da eliminare
-     */
-    public void removeIndex(String key) {
-        index.remove(key);
-    }
-
-    /**
-     * setter
-     *
      * @param index HashMap<String, Double>  lista di double corrispondente agli indici da settare
      */
     public void setIndex(HashMap<String, Double> index) {

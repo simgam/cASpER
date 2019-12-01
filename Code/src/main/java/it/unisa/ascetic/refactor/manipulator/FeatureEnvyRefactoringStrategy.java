@@ -267,7 +267,6 @@ public class FeatureEnvyRefactoringStrategy implements RefactoringStrategy {
      * Metodo che si occupa di fixare il FE se la classe inviata è una variabile d'istanza
      */
     private void instanceVariableFeatureEnvy() {
-        System.out.println("qui");
 
         String scope, returnType, name, parameters, throwsList, body;
         scope = psiMethod.getModifierList().getText();

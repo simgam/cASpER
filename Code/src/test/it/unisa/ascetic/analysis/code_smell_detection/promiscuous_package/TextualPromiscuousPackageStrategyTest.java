@@ -1,5 +1,7 @@
 package it.unisa.ascetic.analysis.code_smell_detection.promiscuous_package;
 
+import it.unisa.ascetic.analysis.code_smell.PromiscuousPackageCodeSmell;
+import it.unisa.ascetic.analysis.code_smell_detection.Helper.SmellynessMetricStub;
 import it.unisa.ascetic.storage.beans.*;
 import org.junit.Before;
 import org.junit.Test;
@@ -23,9 +25,9 @@ public class TextualPromiscuousPackageStrategyTest {
     private PackageBean smelly, noSmelly;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         String filename = System.getProperty("user.home") + File.separator + ".ascetic" + File.separator + "stopwordlist.txt";
-        File stopwordlist= new File(filename);
+        File stopwordlist = new File(filename);
         stopwordlist.delete();
 
         InstanceVariableBeanList instances;
@@ -149,7 +151,7 @@ public class TextualPromiscuousPackageStrategyTest {
 
         metodo = new MethodBean.Builder("promiscuous_package.package.Cliente.Cliente", "this.name = name;\n" +
                 "\t\tthis.età = età;")
-                .setReturnType(null)
+                .setReturnType(new ClassBean.Builder("void","").build())
                 .setInstanceVariableList(instances)
                 .setMethodsCalls(vuota)
                 .setParameters(hash)
@@ -258,7 +260,7 @@ public class TextualPromiscuousPackageStrategyTest {
         instances = new InstanceVariableList();
         instances.getList().add(new InstanceVariableBean("unformattedNumber", "String", "", "private"));
         metodo = new MethodBean.Builder("promiscuous_package.package.Phone.Phone", "this.unformattedNumber = unformattedNumber;")
-                .setReturnType(null)
+                .setReturnType(new ClassBean.Builder("void","").build())
                 .setInstanceVariableList(instances)
                 .setMethodsCalls(vuota)
                 .setParameters(hash)
@@ -389,7 +391,7 @@ public class TextualPromiscuousPackageStrategyTest {
         hash = new HashMap<String, ClassBean>();
         hash.put("nome_Ristorante", new ClassBean.Builder("String", "").build());
         metodo = new MethodBean.Builder("promiscuous_package.package.Ristorante.Ristorante", "this.nome_Ristorante = nome_Ristorante;")
-                .setReturnType(null)
+                .setReturnType(new ClassBean.Builder("void","").build())
                 .setInstanceVariableList(instances)
                 .setMethodsCalls(vuota)
                 .setParameters(hash)
@@ -441,7 +443,7 @@ public class TextualPromiscuousPackageStrategyTest {
         instances.getList().remove(new InstanceVariableBean("name", "String", "", "private "));
         instances.getList().add(new InstanceVariableBean("età", "int", "", "private "));
         metodo = new MethodBean.Builder("promiscuous_package.package.Ristorante.setNome_Ristorante", "this.nome_Ristorante = nome_Ristorante;")
-                .setReturnType(null)
+                .setReturnType(new ClassBean.Builder("void","").build())
                 .setInstanceVariableList(instances)
                 .setMethodsCalls(vuota)
                 .setParameters(hash)
@@ -493,7 +495,7 @@ public class TextualPromiscuousPackageStrategyTest {
         hash = new HashMap<String, ClassBean>();
         hash.put("nome_Ristorante", new ClassBean.Builder("String", "").build());
         metodo = new MethodBean.Builder("promiscuous_package.package.BankAccount.BankAccount", "this.balance = balance;")
-                .setReturnType(null)
+                .setReturnType(new ClassBean.Builder("void","").build())
                 .setInstanceVariableList(instances)
                 .setMethodsCalls(vuota)
                 .setParameters(hash)
@@ -574,7 +576,7 @@ public class TextualPromiscuousPackageStrategyTest {
         hash = new HashMap<String, ClassBean>();
         hash.put("nome_Ristorante", new ClassBean.Builder("String", "").build());
         metodo = new MethodBean.Builder("promiscuous_package.package2.BankAccount.BankAccount", "this.balance = balance;")
-                .setReturnType(null)
+                .setReturnType(new ClassBean.Builder("void","").build())
                 .setInstanceVariableList(instances)
                 .setMethodsCalls(vuota)
                 .setParameters(hash)
@@ -621,9 +623,8 @@ public class TextualPromiscuousPackageStrategyTest {
 
     @Test
     public void isSmellyTrue() {
-
-        TextualPromiscuousPackageStrategy analisi = new TextualPromiscuousPackageStrategy(0.5);
-        it.unisa.ascetic.analysis.code_smell.PromiscuousPackageCodeSmell smell = new it.unisa.ascetic.analysis.code_smell.PromiscuousPackageCodeSmell(analisi, "Textual");
+        TextualPromiscuousPackageStrategy analisi = new TextualPromiscuousPackageStrategy(0.5); //soglia default
+        PromiscuousPackageCodeSmell smell = new PromiscuousPackageCodeSmell(analisi, "Textual");
         boolean risultato = smelly.isAffected(smell);
         assertTrue(smelly.getAffectedSmell().contains(smell));
         Logger log = Logger.getLogger(getClass().getName());
@@ -632,29 +633,37 @@ public class TextualPromiscuousPackageStrategyTest {
     }
 
     @Test
-    public void isSmellyFalse() {
+    public void isSmellyNearThreshold() {
+        TextualPromiscuousPackageStrategy analisi = new TextualPromiscuousPackageStrategy(SmellynessMetricStub.computeSmellynessPackage(smelly.getTextContent())-0.1);
+        PromiscuousPackageCodeSmell smell = new PromiscuousPackageCodeSmell(analisi, "Textual");
+        boolean risultato = smelly.isAffected(smell);
+        System.out.println(analisi.getThresold(smelly));
+        assertTrue(smelly.getAffectedSmell().contains(smell));
+        Logger log = Logger.getLogger(getClass().getName());
+        log.info("\n" + risultato);
+        assertTrue(risultato);
+    }
 
-        TextualPromiscuousPackageStrategy analisi = new TextualPromiscuousPackageStrategy(0.5);
-        it.unisa.ascetic.analysis.code_smell.PromiscuousPackageCodeSmell smell = new it.unisa.ascetic.analysis.code_smell.PromiscuousPackageCodeSmell(analisi, "Textual");
-        boolean risultato = noSmelly.isAffected(smell);
-        assertFalse(noSmelly.getAffectedSmell().contains(smell));
+    @Test
+    public void isSmellyMinThreshold() {
+        TextualPromiscuousPackageStrategy analisi = new TextualPromiscuousPackageStrategy(SmellynessMetricStub.computeSmellynessPackage(smelly.getTextContent()));
+        PromiscuousPackageCodeSmell smell = new PromiscuousPackageCodeSmell(analisi, "Textual");
+        boolean risultato = smelly.isAffected(smell);
+        assertFalse(smelly.getAffectedSmell().contains(smell));
         Logger log = Logger.getLogger(getClass().getName());
         log.info("\n" + risultato);
         assertFalse(risultato);
     }
 
     @Test
-    public void getPromiscuousPackageProbability() {
-        TextualPromiscuousPackageStrategy analisi = new TextualPromiscuousPackageStrategy(0.5);
+    public void isSmellyFalse() {
+        TextualPromiscuousPackageStrategy analisi = new TextualPromiscuousPackageStrategy(0.5); //soglia default
+        PromiscuousPackageCodeSmell smell = new PromiscuousPackageCodeSmell(analisi, "Textual");
+        boolean risultato = noSmelly.isAffected(smell);
+        assertFalse(noSmelly.getAffectedSmell().contains(smell));
         Logger log = Logger.getLogger(getClass().getName());
-        boolean risultato;
-        if (analisi.getPromiscuousPackageProbability(smelly) != 0.5) {
-            risultato = true;
-        } else {
-            risultato = false;
-        }
         log.info("\n" + risultato);
-        assertTrue(risultato);
+        assertFalse(risultato);
     }
 
 }

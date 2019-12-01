@@ -1,5 +1,7 @@
 package it.unisa.ascetic.analysis.code_smell_detection.feature_envy;
 
+import it.unisa.ascetic.analysis.code_smell.FeatureEnvyCodeSmell;
+import it.unisa.ascetic.analysis.code_smell_detection.Helper.CosineSimilarityStub;
 import it.unisa.ascetic.storage.beans.*;
 import org.junit.Before;
 import org.junit.Test;
@@ -18,14 +20,15 @@ public class TextualFeatureEnvyStrategyTest {
     private InstanceVariableBeanList instances;
     private MethodBeanList methods, list;
     private MethodBean metodo, smelly, noSmelly;
-    private ClassBean classe;
+    private ClassBean classe,classeE;
     private ClassBeanList classes;
     private PackageBean pack;
+    private List<PackageBean> listPackage = new ArrayList<PackageBean>();
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         String filename = System.getProperty("user.home") + File.separator + ".ascetic" + File.separator + "stopwordlist.txt";
-        File stopwordlist= new File(filename);
+        File stopwordlist = new File(filename);
         stopwordlist.delete();
 
         MethodBeanList vuota = new MethodList();
@@ -88,7 +91,7 @@ public class TextualFeatureEnvyStrategyTest {
         instances.getList().add(new InstanceVariableBean("operatore", "String", "", "private final"));
         methods = new MethodList();
         MethodBeanList called = new MethodList();
-        classe = new ClassBean.Builder("feature_envy.package.Phone", "public class Phone {\n" +
+        classeE = new ClassBean.Builder("feature_envy.package.Phone", "public class Phone {\n" +
                 "   private final String operatore;" +
                 "private final String unformattedNumber;\n" +
                 "   public Phone(String unformattedNumber) {\n" +
@@ -189,7 +192,7 @@ public class TextualFeatureEnvyStrategyTest {
         hash.put("unformattedNumber", new ClassBean.Builder("String", "").build());
 
         metodo = new MethodBean.Builder("feature_envy.package.Phone.Phone", "this.unformattedNumber = unformattedNumber;")
-                .setReturnType(null)
+                .setReturnType(new ClassBean.Builder("void","").build())
                 .setInstanceVariableList(instances)
                 .setMethodsCalls(vuota)
                 .setParameters(hash)
@@ -230,7 +233,7 @@ public class TextualFeatureEnvyStrategyTest {
                 .setVisibility("public")
                 .setAffectedSmell()
                 .build();
-        classe.addMethodBeanList(metodo);
+        classeE.addMethodBeanList(metodo);
 
         metodo = new MethodBean.Builder("feature_envy.package.Phone.getAreaCode", "return unformattedNumber.substring(0,3);")
                 .setReturnType(new ClassBean.Builder("String", "").build())
@@ -268,7 +271,7 @@ public class TextualFeatureEnvyStrategyTest {
                 .setVisibility("public")
                 .setAffectedSmell()
                 .build();
-        classe.addMethodBeanList(metodo);
+        classeE.addMethodBeanList(metodo);
         called.getList().add(metodo);
 
         metodo = new MethodBean.Builder("feature_envy.package.Phone.getPrefix", "return unformattedNumber.substring(3,6);")
@@ -306,7 +309,7 @@ public class TextualFeatureEnvyStrategyTest {
                         "   }").build())
                 .setVisibility("public")
                 .build();
-        classe.addMethodBeanList(metodo);
+        classeE.addMethodBeanList(metodo);
         called.getList().add(metodo);
 
         metodo = new MethodBean.Builder("feature_envy.package.Phone.getOperatore", "return operatore+getAreaCode()+getPrefix();")
@@ -351,7 +354,7 @@ public class TextualFeatureEnvyStrategyTest {
                 .setVisibility("public")
                 .setAffectedSmell()
                 .build();
-        classe.addMethodBeanList(metodo);
+        classeE.addMethodBeanList(metodo);
 
         metodo = new MethodBean.Builder("feature_envy.package.Phone.italianNumber", "return \"39+\"+getNumber()+getPrefix()+getAreaCode();")
                 .setReturnType(new ClassBean.Builder("String", "").build())
@@ -395,7 +398,7 @@ public class TextualFeatureEnvyStrategyTest {
                 .setVisibility("public")
                 .setAffectedSmell()
                 .build();
-        classe.addMethodBeanList(metodo);
+        classeE.addMethodBeanList(metodo);
 
         noSmelly = new MethodBean.Builder("feature_envy.package.Phone.getNumber", "return unformattedNumber.substring(6,10);")
                 .setReturnType(new ClassBean.Builder("String", "").build())
@@ -439,7 +442,7 @@ public class TextualFeatureEnvyStrategyTest {
                 .setVisibility("public")
                 .setAffectedSmell()
                 .build();
-        classe.addMethodBeanList(noSmelly);
+        classeE.addMethodBeanList(noSmelly);
         called.getList().add(noSmelly);
 
         metodo = new MethodBean.Builder("feature_envy.package.Phone.reverceNumber", "return getNumber()+getPrefix()+getAreaCode();")
@@ -484,7 +487,7 @@ public class TextualFeatureEnvyStrategyTest {
                 .setVisibility("public")
                 .setAffectedSmell()
                 .build();
-        classe.addMethodBeanList(metodo);
+        classeE.addMethodBeanList(metodo);
 
         metodo = new MethodBean.Builder("feature_envy.package.Phone.pushNumber", "if(getAreaCode().equals(getPrefix()))\n" +
                 "               if(getPrefix().equals(getNumber())){return false;}\n" +
@@ -533,8 +536,8 @@ public class TextualFeatureEnvyStrategyTest {
                         "   }").build())
                 .setVisibility("public")
                 .build();
-        classe.addMethodBeanList(metodo);
-        pack.addClassList(classe);
+        classeE.addMethodBeanList(metodo);
+        pack.addClassList(classeE);
 
         instances = new InstanceVariableList();
         methods = new MethodList();
@@ -617,7 +620,7 @@ public class TextualFeatureEnvyStrategyTest {
                 .build();
 
         metodo = new MethodBean.Builder("feature_envy.package.Customer.Customer", "this.name=name;")
-                .setReturnType(null)
+                .setReturnType(new ClassBean.Builder("void","").build())
                 .setInstanceVariableList(instances)
                 .setMethodsCalls(vuota)
                 .setParameters(nulla)
@@ -696,20 +699,19 @@ public class TextualFeatureEnvyStrategyTest {
                         .build())
                 .setVisibility("public")
                 .setAffectedSmell()
+                .setEnviedClass(classeE)
                 .build();
 
         classe.addMethodBeanList(smelly);
         pack.addClassList(classe);
+        listPackage.add(pack);
 
     }
 
     @Test
     public void isSmellyTrue() {
-
-        List<PackageBean> list = new ArrayList<PackageBean>();
-        list.add(pack);
-        TextualFeatureEnvyStrategy analisi = new TextualFeatureEnvyStrategy(list, 0.5);
-        it.unisa.ascetic.analysis.code_smell.FeatureEnvyCodeSmell smell = new it.unisa.ascetic.analysis.code_smell.FeatureEnvyCodeSmell(analisi, "Textual");
+        TextualFeatureEnvyStrategy analisi = new TextualFeatureEnvyStrategy(listPackage, 0.5); //soglia default
+        FeatureEnvyCodeSmell smell = new FeatureEnvyCodeSmell(analisi, "Textual");
         boolean risultato = smelly.isAffected(smell);
         assertTrue(smelly.getAffectedSmell().contains(smell));
         Logger log = Logger.getLogger(getClass().getName());
@@ -718,12 +720,45 @@ public class TextualFeatureEnvyStrategyTest {
     }
 
     @Test
-    public void isSmellyFalse() {
+    public void isSmellyNearThreshold() {
+        String[] document1 = new String[2];
+        document1[0] = "method";
+        document1[1] = smelly.getTextContent();
+        String[] document2 = new String[2];
+        document2[0] = "class";
+        document2[1] = smelly.getEnviedClass().getTextContent();
 
-        List<PackageBean> list = new ArrayList<PackageBean>();
-        list.add(pack);
-        TextualFeatureEnvyStrategy analisi = new TextualFeatureEnvyStrategy(list, 0.5);
-        it.unisa.ascetic.analysis.code_smell.FeatureEnvyCodeSmell smell = new it.unisa.ascetic.analysis.code_smell.FeatureEnvyCodeSmell(analisi, "Textual");
+        TextualFeatureEnvyStrategy analisi = new TextualFeatureEnvyStrategy(listPackage, CosineSimilarityStub.computeSimilarity(document1, document2)-0.1);
+        FeatureEnvyCodeSmell smell = new FeatureEnvyCodeSmell(analisi, "Textual");
+        boolean risultato = smelly.isAffected(smell);
+        assertTrue(smelly.getAffectedSmell().contains(smell));
+        Logger log = Logger.getLogger(getClass().getName());
+        log.info("\n" + risultato);
+        assertTrue(risultato);
+    }
+
+    @Test
+    public void isSmellyMinThreshold() {
+        String[] document1 = new String[2];
+        document1[0] = "method";
+        document1[1] = smelly.getTextContent();
+        String[] document2 = new String[2];
+        document2[0] = "class";
+        document2[1] = smelly.getEnviedClass().getTextContent();
+
+        TextualFeatureEnvyStrategy analisi = new TextualFeatureEnvyStrategy(listPackage, CosineSimilarityStub.computeSimilarity(document1, document2));
+        FeatureEnvyCodeSmell smell = new FeatureEnvyCodeSmell(analisi, "Textual");
+        boolean risultato = smelly.isAffected(smell);
+        assertFalse(smelly.getAffectedSmell().contains(smell));
+        Logger log = Logger.getLogger(getClass().getName());
+        log.info("\n" + risultato);
+        assertFalse(risultato);
+    }
+
+    @Test
+    public void isSmellyFalse() {
+        TextualFeatureEnvyStrategy analisi = new TextualFeatureEnvyStrategy(listPackage, 0.5); //soglia default
+        FeatureEnvyCodeSmell smell = new FeatureEnvyCodeSmell(analisi, "Textual");
         boolean risultato = noSmelly.isAffected(smell);
         assertFalse(noSmelly.getAffectedSmell().contains(smell));
         Logger log = Logger.getLogger(getClass().getName());

@@ -628,7 +628,7 @@ public class CheckProjectPage extends DialogWrapper {
                         }
                         indice = Double.parseDouble(valCoseno.getText());
                         cos = listThreschold.get("coseno");
-                        if (cos <= sogliaCoseno) {
+                        if (cos < sogliaCoseno + (sogliaCoseno * 0.10)) {
                             basso = true;
                         }
                         ;

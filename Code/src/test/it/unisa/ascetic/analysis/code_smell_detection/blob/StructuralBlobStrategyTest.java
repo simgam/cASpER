@@ -1,5 +1,7 @@
 package it.unisa.ascetic.analysis.code_smell_detection.blob;
 
+import it.unisa.ascetic.analysis.code_smell.BlobCodeSmell;
+import it.unisa.ascetic.analysis.code_smell_detection.Helper.CKMetricsStub;
 import it.unisa.ascetic.storage.beans.*;
 import org.junit.Before;
 import org.junit.Test;
@@ -16,12 +18,12 @@ public class StructuralBlobStrategyTest {
 
     private MethodBeanList methods, called1, called2, called3, called4;
     private MethodBean metodo;
-    private ClassBean classe, noSmelly, smelly;
+    private ClassBean classe, noSmelly, smelly, smellyControl;
     private ClassBeanList classes;
     private PackageBean pack;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         MethodBeanList vuota = new MethodList();
         HashMap<String, ClassBean> nulla = new HashMap<String, ClassBean>();
         classes = new ClassList();
@@ -143,9 +145,6 @@ public class StructuralBlobStrategyTest {
                 "}\n").setClassList(classes).build();
 
         InstanceVariableBeanList instances = new InstanceVariableList();
-        instances.getList().add(new InstanceVariableBean("uno", "String", "", "private "));
-        instances.getList().add(new InstanceVariableBean("due", "String", "", "private "));
-        instances.getList().add(new InstanceVariableBean("tre", "String", "", "private "));
         List<String> imports = new ArrayList<String>();
         imports.add("import java.util.Scanner;");
         imports.add("import java.util.ArrayList;");
@@ -156,8 +155,7 @@ public class StructuralBlobStrategyTest {
         called4 = new MethodList();
 
         methods = new MethodList();
-        InstanceVariableBeanList instancesBank = new InstanceVariableList();
-        instancesBank.getList().add(new InstanceVariableBean("balance", "double", "", "private "));
+        instances.getList().add(new InstanceVariableBean("balance", "double", "", "private "));
         noSmelly = new ClassBean.Builder("blob.package.BankAccount", "private double balance;\n" +
                 "\n" +
                 "    public BankAccount(double balance) {\n" +
@@ -167,7 +165,7 @@ public class StructuralBlobStrategyTest {
                 "    public double getBalance() {\n" +
                 "        return balance;\n" +
                 "    }")
-                .setInstanceVariables(instancesBank)
+                .setInstanceVariables(instances)
                 .setMethods(methods)
                 .setImports(new ArrayList<String>())
                 .setLOC(10)
@@ -297,8 +295,8 @@ public class StructuralBlobStrategyTest {
         HashMap<String, ClassBean> hash = new HashMap<String, ClassBean>();
         hash.put("balance", new ClassBean.Builder("Double", "").build());
         metodo = new MethodBean.Builder("blob.package.BankAccount.BankAccount", "this.balance = balance;")
-                .setReturnType(null)
-                .setInstanceVariableList(instancesBank)
+                .setReturnType(new ClassBean.Builder("void","").build())
+                .setInstanceVariableList(instances)
                 .setMethodsCalls(vuota)
                 .setParameters(hash)
                 .setStaticMethod(false)
@@ -319,7 +317,7 @@ public class StructuralBlobStrategyTest {
 
         metodo = new MethodBean.Builder("blob.package.BankAccount.getBalance", "return balance;")
                 .setReturnType(new ClassBean.Builder("Double", "").build())
-                .setInstanceVariableList(instancesBank)
+                .setInstanceVariableList(instances)
                 .setMethodsCalls(vuota)
                 .setParameters(nulla)
                 .setStaticMethod(false)
@@ -341,6 +339,8 @@ public class StructuralBlobStrategyTest {
         pack.addClassList(noSmelly);
 
         methods = new MethodList();
+        instances= new InstanceVariableList();
+        instances.getList().add(new InstanceVariableBean("unformattedNumber", "String", "", "private final "));
         classe = new ClassBean.Builder("blob.package.Phone", "private final String unformattedNumber;\n" +
                 "   public Phone(String unformattedNumber) {\n" +
                 "      this.unformattedNumber = unformattedNumber;\n" +
@@ -485,7 +485,7 @@ public class StructuralBlobStrategyTest {
         hash.put("unformattedNumber", new ClassBean.Builder("String", "").build());
 
         metodo = new MethodBean.Builder("blob.package.Phone.Phone", "this.unformattedNumber = unformattedNumber;")
-                .setReturnType(null)
+                .setReturnType(new ClassBean.Builder("void","").build())
                 .setInstanceVariableList(instances)
                 .setMethodsCalls(vuota)
                 .setParameters(hash)
@@ -619,7 +619,7 @@ public class StructuralBlobStrategyTest {
         hash.put("età", new ClassBean.Builder("int", "").build());
         metodo = new MethodBean.Builder("blob.package.Cliente.Cliente", "this.name = name;\n" +
                 "\t\tthis.età = età;")
-                .setReturnType(null)
+                .setReturnType(new ClassBean.Builder("void","").build())
                 .setInstanceVariableList(instances)
                 .setMethodsCalls(vuota)
                 .setParameters(hash)
@@ -730,7 +730,7 @@ public class StructuralBlobStrategyTest {
         hash = new HashMap<String, ClassBean>();
         hash.put("nome_Ristorante", new ClassBean.Builder("String", "").build());
         metodo = new MethodBean.Builder("blob.package.Ristorante.Ristorante", "this.nome_Ristorante = nome_Ristorante;")
-                .setReturnType(null)
+                .setReturnType(new ClassBean.Builder("void","").build())
                 .setInstanceVariableList(instances)
                 .setMethodsCalls(vuota)
                 .setParameters(hash)
@@ -772,7 +772,7 @@ public class StructuralBlobStrategyTest {
         instances.getList().remove(new InstanceVariableBean("name", "String", "", "private "));
         instances.getList().add(new InstanceVariableBean("età", "int", "", "private "));
         metodo = new MethodBean.Builder("blob.package.Cliente.setNome_Ristorante", "this.nome_Ristorante = nome_Ristorante;")
-                .setReturnType(null)
+                .setReturnType(new ClassBean.Builder("void","").build())
                 .setInstanceVariableList(instances)
                 .setMethodsCalls(vuota)
                 .setParameters(hash)
@@ -1116,13 +1116,329 @@ public class StructuralBlobStrategyTest {
         smelly.addMethodBeanList(metodo);
         pack.addClassList(smelly);
 
+        smellyControl = new ClassBean.Builder("blob.package.controlProdotto", "public String uno;\n" +
+                "\tpublic String due;\n" +
+                "\tpublic double tre;\n" +
+                "\n" +
+                "    public double withdraw(String b) {\n" +
+                "            BankAccount new= BankAccount(b);\n" +
+                "            b.getBalance() - 1000;\n" +
+                "            return new;\n" +
+                "        }" +
+                "\n" +
+                "    public String getMobilePhoneNumber(Phone mobilePhone) {\n" +
+                "          return \"(\" +\n" +
+                "             mobilePhone.getAreaCode() + \") \" +\n" +
+                "             mobilePhone.getPrefix() + \"-\" +\n" +
+                "             mobilePhone.getNumber();\n" +
+                "       }\n" +
+                "\n" +
+                "\tpublic String nuovoNomeRistorante() {\n" +
+                "\t\tScanner in= new Scanner(System.in);\n" +
+                "\t\tString ristorante=in.nextLine();\n" +
+                "\t\tRistorante r= new Ristorante(ristorante);\n" +
+                "\t\treturn ristorante=r.getNome_Ristorante();\n" +
+                "\t}\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "\tpublic Cliente scorriListaClienti() {\n" +
+                "\t\t\n" +
+                "\t\tArrayList<Cliente> clienti= new ArrayList<Cliente>();\n" +
+                "\t\tCliente c= new Cliente(\"Lucia\",30);\n" +
+                "\t\tclienti.add(c);\n" +
+                "\t\tc= new Cliente(\"Ugo\",51);\n" +
+                "\t\tclienti.add(c);\n" +
+                "\t\tc= new Cliente(\"Maria\",16);\n" +
+                "\t\tclienti.add(c);\n" +
+                "\t\tc= new Cliente(\"Lucia\",20);\n" +
+                "\t\tclienti.add(c);\n" +
+                "\n" +
+                "\t\tint contatore=0;\n" +
+                "\n" +
+                "\t\tfor(int i=0;i<4;i++) {\n" +
+                "\t\t\tif(clienti.get(contatore)<clienti.get(i).getEtà()){contatore=i;}\n" +
+                "\t\t}\t\n" +
+                "\t\treturn clienti.get(contatore);\n" +
+                "\t}")
+                .setInstanceVariables(instances)
+                .setMethods(methods)
+                .setImports(imports)
+                .setLOC(42)
+                .setSuperclass(null)
+                .setBelongingPackage(new PackageBean.Builder("blob.package", "").build())
+                .setEnviedPackage(null)
+                .setEntityClassUsage(0)
+                .setPathToFile("C:\\Users\\Simone\\Desktop\\IdeaProjects\\Code\\testData\\blob\\package")
+                .setAffectedSmell()
+                .build();
+
+        hash = new HashMap<String, ClassBean>();
+        hash.put("b", new ClassBean.Builder("String", "").build());
+        metodo = new MethodBean.Builder("blob.package.controlProdotto.withdraw", "public double withdraw(String b) {\n" +
+                "            BankAccount new= BankAccount(b);\n" +
+                "            b.getBalance() - 1000;\n" +
+                "            return new;\n" +
+                "        }")
+                .setReturnType(new ClassBean.Builder("BankAccount", "").build())
+                .setInstanceVariableList(new InstanceVariableList())
+                .setMethodsCalls(called4)
+                .setParameters(hash)
+                .setStaticMethod(false)
+                .setDefaultCostructor(false)
+                .setBelongingClass(new ClassBean.Builder("blob.package.controlProdotto", "public String uno;\n" +
+                        "\tpublic String due;\n" +
+                        "\tpublic double tre;\n" +
+                        "\n" +
+                        "    public double withdraw(String b) {\n" +
+                        "            BankAccount new= BankAccount(b);\n" +
+                        "            b.getBalance() - 1000;\n" +
+                        "            return new;\n" +
+                        "        }" +
+                        "\n" +
+                        "    public String getMobilePhoneNumber(Phone mobilePhone) {\n" +
+                        "          return \"(\" +\n" +
+                        "             mobilePhone.getAreaCode() + \") \" +\n" +
+                        "             mobilePhone.getPrefix() + \"-\" +\n" +
+                        "             mobilePhone.getNumber();\n" +
+                        "       }\n" +
+                        "\n" +
+                        "\tpublic String nuovoNomeRistorante() {\n" +
+                        "\t\tScanner in= new Scanner(System.in);\n" +
+                        "\t\tString ristorante=in.nextLine();\n" +
+                        "\t\tRistorante r= new Ristorante(ristorante);\n" +
+                        "\t\treturn ristorante=r.getNome_Ristorante();\n" +
+                        "\t}\n" +
+                        "\n" +
+                        "\n" +
+                        "\n" +
+                        "\tpublic Cliente scorriListaClienti() {\n" +
+                        "\t\t\n" +
+                        "\t\tArrayList<Cliente> clienti= new ArrayList<Cliente>();\n" +
+                        "\t\tCliente c= new Cliente(\"Lucia\",30);\n" +
+                        "\t\tclienti.add(c);\n" +
+                        "\t\tc= new Cliente(\"Ugo\",51);\n" +
+                        "\t\tclienti.add(c);\n" +
+                        "\t\tc= new Cliente(\"Maria\",16);\n" +
+                        "\t\tclienti.add(c);\n" +
+                        "\t\tc= new Cliente(\"Lucia\",20);\n" +
+                        "\t\tclienti.add(c);\n" +
+                        "\n" +
+                        "\t\tint contatore=0;\n" +
+                        "\n" +
+                        "\t\tfor(int i=0;i<4;i++) {\n" +
+                        "\t\t\tif(clienti.get(contatore)<clienti.get(i).getEtà()){contatore=i;}\n" +
+                        "\t\t}\t\n" +
+                        "\t\treturn clienti.get(contatore);\n" +
+                        "\t}").build())
+                .setVisibility("public")
+                .setAffectedSmell()
+                .build();
+        smellyControl.addMethodBeanList(metodo);
+
+        metodo = new MethodBean.Builder("blob.package.controlProdotto.listaClienti", "Scanner in= new Scanner(System.in);\n" +
+                "\t\tString ristorante=in.nextLine();\n" +
+                "\t\tRistorante r= new Ristorante(ristorante);\n" +
+                "\t\treturn ristorante=r.getNome_Ristorante();\n" +
+                "\t")
+                .setReturnType(new ClassBean.Builder("String", "").build())
+                .setInstanceVariableList(new InstanceVariableList())
+                .setMethodsCalls(called2)
+                .setParameters(nulla)
+                .setStaticMethod(false)
+                .setDefaultCostructor(false)
+                .setBelongingClass(new ClassBean.Builder("blob.package.controlProdotto", "public String uno;\n" +
+                        "\tpublic String due;\n" +
+                        "\tpublic double tre;\n" +
+                        "\n" +
+                        "    public double withdraw(String b) {\n" +
+                        "            BankAccount new= BankAccount(b);\n" +
+                        "            b.getBalance() - 1000;\n" +
+                        "            return new;\n" +
+                        "        }" +
+                        "\n" +
+                        "    public String getMobilePhoneNumber(Phone mobilePhone) {\n" +
+                        "          return \"(\" +\n" +
+                        "             mobilePhone.getAreaCode() + \") \" +\n" +
+                        "             mobilePhone.getPrefix() + \"-\" +\n" +
+                        "             mobilePhone.getNumber();\n" +
+                        "       }\n" +
+                        "\n" +
+                        "\tpublic String nuovoNomeRistorante() {\n" +
+                        "\t\tScanner in= new Scanner(System.in);\n" +
+                        "\t\tString ristorante=in.nextLine();\n" +
+                        "\t\tRistorante r= new Ristorante(ristorante);\n" +
+                        "\t\treturn ristorante=r.getNome_Ristorante();\n" +
+                        "\t}\n" +
+                        "\n" +
+                        "\n" +
+                        "\n" +
+                        "\tpublic Cliente scorriListaClienti() {\n" +
+                        "\t\t\n" +
+                        "\t\tArrayList<Cliente> clienti= new ArrayList<Cliente>();\n" +
+                        "\t\tCliente c= new Cliente(\"Lucia\",30);\n" +
+                        "\t\tclienti.add(c);\n" +
+                        "\t\tc= new Cliente(\"Ugo\",51);\n" +
+                        "\t\tclienti.add(c);\n" +
+                        "\t\tc= new Cliente(\"Maria\",16);\n" +
+                        "\t\tclienti.add(c);\n" +
+                        "\t\tc= new Cliente(\"Lucia\",20);\n" +
+                        "\t\tclienti.add(c);\n" +
+                        "\n" +
+                        "\t\tint contatore=0;\n" +
+                        "\n" +
+                        "\t\tfor(int i=0;i<4;i++) {\n" +
+                        "\t\t\tif(clienti.get(contatore)<clienti.get(i).getEtà()){contatore=i;}\n" +
+                        "\t\t}\t\n" +
+                        "\t\treturn clienti.get(contatore);\n" +
+                        "\t}").build())
+                .setVisibility("public")
+                .setAffectedSmell()
+                .build();
+        smellyControl.addMethodBeanList(metodo);
+
+        instances = new InstanceVariableList();
+        instances.getList().add(new InstanceVariableBean("mobilePhone", "Phone", "", "private"));
+        metodo = new MethodBean.Builder("blob.package.controlProdotto.getMobilePhoneNumber", "return \"(\" +\n" +
+                "         mobilePhone.getAreaCode() + \") \" +\n" +
+                "         mobilePhone.getPrefix() + \"-\" +\n" +
+                "         mobilePhone.getNumber();\n" +
+                "   }")
+                .setReturnType(new ClassBean.Builder("String", "").build())
+                .setInstanceVariableList(instances)
+                .setMethodsCalls(called3)
+                .setParameters(nulla)
+                .setStaticMethod(false)
+                .setDefaultCostructor(false)
+                .setBelongingClass(new ClassBean.Builder("blob.package.controlProdotto ", "public String uno;\n" +
+                        "\tpublic String due;\n" +
+                        "\tpublic double tre;\n" +
+                        "\n" +
+                        "    public double withdraw(String b) {\n" +
+                        "            BankAccount new= BankAccount(b);\n" +
+                        "            b.getBalance() - 1000;\n" +
+                        "            return new;\n" +
+                        "        }" +
+                        "\n" +
+                        "    public String getMobilePhoneNumber(Phone mobilePhone) {\n" +
+                        "          return \"(\" +\n" +
+                        "             mobilePhone.getAreaCode() + \") \" +\n" +
+                        "             mobilePhone.getPrefix() + \"-\" +\n" +
+                        "             mobilePhone.getNumber();\n" +
+                        "       }\n" +
+                        "\n" +
+                        "\tpublic String nuovoNomeRistorante() {\n" +
+                        "\t\tScanner in= new Scanner(System.in);\n" +
+                        "\t\tString ristorante=in.nextLine();\n" +
+                        "\t\tRistorante r= new Ristorante(ristorante);\n" +
+                        "\t\treturn ristorante=r.getNome_Ristorante();\n" +
+                        "\t}\n" +
+                        "\n" +
+                        "\n" +
+                        "\n" +
+                        "\tpublic Cliente scorriListaClienti() {\n" +
+                        "\t\t\n" +
+                        "\t\tArrayList<Cliente> clienti= new ArrayList<Cliente>();\n" +
+                        "\t\tCliente c= new Cliente(\"Lucia\",30);\n" +
+                        "\t\tclienti.add(c);\n" +
+                        "\t\tc= new Cliente(\"Ugo\",51);\n" +
+                        "\t\tclienti.add(c);\n" +
+                        "\t\tc= new Cliente(\"Maria\",16);\n" +
+                        "\t\tclienti.add(c);\n" +
+                        "\t\tc= new Cliente(\"Lucia\",20);\n" +
+                        "\t\tclienti.add(c);\n" +
+                        "\n" +
+                        "\t\tint contatore=0;\n" +
+                        "\n" +
+                        "\t\tfor(int i=0;i<4;i++) {\n" +
+                        "\t\t\tif(clienti.get(contatore)<clienti.get(i).getEtà()){contatore=i;}\n" +
+                        "\t\t}\t\n" +
+                        "\t\treturn clienti.get(contatore);\n" +
+                        "\t}").build())
+                .setVisibility("public")
+                .setAffectedSmell()
+                .build();
+        smellyControl.addMethodBeanList(metodo);
+
+        metodo = new MethodBean.Builder("blob.package.controlProdotto.scorriListaClienti", "ArrayList<Cliente> clienti= new ArrayList<Cliente>();\n" +
+                "\t\tCliente c= new Cliente(\"Lucia\",30);\n" +
+                "\t\tclienti.add(c);\n" +
+                "\t\tc= new Cliente(\"Ugo\",51);\n" +
+                "\t\tclienti.add(c);\n" +
+                "\t\tc= new Cliente(\"Maria\",16);\n" +
+                "\t\tclienti.add(c);\n" +
+                "\t\tc= new Cliente(\"Lucia\",20);\n" +
+                "\t\tclienti.add(c);\n" +
+                "\n" +
+                "\t\tint contatore=0;\n" +
+                "\n" +
+                "\t\tfor(int i=0;i<4;i++) {\n" +
+                "\t\t\tif(clienti.get(contatore)<clienti.get(i).getEtà()){contatore=i;}\n" +
+                "\t\t}\t\n" +
+                "\t\treturn clienti.get(contatore);")
+                .setReturnType(new ClassBean.Builder("Cliente", "").build())
+                .setInstanceVariableList(new InstanceVariableList())
+                .setMethodsCalls(called1)
+                .setParameters(nulla)
+                .setStaticMethod(false)
+                .setDefaultCostructor(false)
+                .setBelongingClass(new ClassBean.Builder("blob.package.controlProdotto", "public String uno;\n" +
+                        "\tpublic String due;\n" +
+                        "\tpublic double tre;\n" +
+                        "\n" +
+                        "    public double withdraw(String b) {\n" +
+                        "            BankAccount new= BankAccount(b);\n" +
+                        "            b.getBalance() - 1000;\n" +
+                        "            return new;\n" +
+                        "        }" +
+                        "\n" +
+                        "    public String getMobilePhoneNumber(Phone mobilePhone) {\n" +
+                        "          return \"(\" +\n" +
+                        "             mobilePhone.getAreaCode() + \") \" +\n" +
+                        "             mobilePhone.getPrefix() + \"-\" +\n" +
+                        "             mobilePhone.getNumber();\n" +
+                        "       }\n" +
+                        "\n" +
+                        "\tpublic String nuovoNomeRistorante() {\n" +
+                        "\t\tScanner in= new Scanner(System.in);\n" +
+                        "\t\tString ristorante=in.nextLine();\n" +
+                        "\t\tRistorante r= new Ristorante(ristorante);\n" +
+                        "\t\treturn ristorante=r.getNome_Ristorante();\n" +
+                        "\t}\n" +
+                        "\n" +
+                        "\n" +
+                        "\n" +
+                        "\tpublic Cliente scorriListaClienti() {\n" +
+                        "\t\t\n" +
+                        "\t\tArrayList<Cliente> clienti= new ArrayList<Cliente>();\n" +
+                        "\t\tCliente c= new Cliente(\"Lucia\",30);\n" +
+                        "\t\tclienti.add(c);\n" +
+                        "\t\tc= new Cliente(\"Ugo\",51);\n" +
+                        "\t\tclienti.add(c);\n" +
+                        "\t\tc= new Cliente(\"Maria\",16);\n" +
+                        "\t\tclienti.add(c);\n" +
+                        "\t\tc= new Cliente(\"Lucia\",20);\n" +
+                        "\t\tclienti.add(c);\n" +
+                        "\n" +
+                        "\t\tint contatore=0;\n" +
+                        "\n" +
+                        "\t\tfor(int i=0;i<4;i++) {\n" +
+                        "\t\t\tif(clienti.get(contatore)<clienti.get(i).getEtà()){contatore=i;}\n" +
+                        "\t\t}\t\n" +
+                        "\t\treturn clienti.get(contatore);\n" +
+                        "\t}").build())
+                .setVisibility("public")
+                .setAffectedSmell()
+                .build();
+        smellyControl.addMethodBeanList(metodo);
+        pack.addClassList(smellyControl);
+
     }
 
     @Test
     public void isSmellyTrue() {
-
         StructuralBlobStrategy analisi = new StructuralBlobStrategy(5, 10, 40); // SOGLIE DI PROVA
-        it.unisa.ascetic.analysis.code_smell.BlobCodeSmell smell = new it.unisa.ascetic.analysis.code_smell.BlobCodeSmell(analisi, "Textual");
+        BlobCodeSmell smell = new BlobCodeSmell(analisi, "Structural");
         boolean risultato = smelly.isAffected(smell);
         assertTrue(smelly.getAffectedSmell().contains(smell));
         Logger log = Logger.getLogger(getClass().getName());
@@ -1131,10 +1447,42 @@ public class StructuralBlobStrategyTest {
     }
 
     @Test
-    public void isSmellyFalse() {
+    public void isSmellyNearThreshold() {
+        StructuralBlobStrategy analisi = new StructuralBlobStrategy(CKMetricsStub.getLCOM(smelly)-1,CKMetricsStub.getFeatureSum(smelly)-1,CKMetricsStub.getELOC(smelly)-1);
+        BlobCodeSmell smell = new BlobCodeSmell(analisi, "Structural");
+        boolean risultato = smelly.isAffected(smell);
+        assertTrue(smelly.getAffectedSmell().contains(smell));
+        Logger log = Logger.getLogger(getClass().getName());
+        log.info("\n" + risultato);
+        assertTrue(risultato);
+    }
 
+    @Test
+    public void isSmellyMinThreshold() {
+        StructuralBlobStrategy analisi = new StructuralBlobStrategy(CKMetricsStub.getLCOM(smelly),CKMetricsStub.getFeatureSum(smelly),CKMetricsStub.getELOC(smelly));
+        BlobCodeSmell smell = new BlobCodeSmell(analisi, "Structural");
+        boolean risultato = smelly.isAffected(smell);
+        assertFalse(smelly.getAffectedSmell().contains(smell));
+        Logger log = Logger.getLogger(getClass().getName());
+        log.info("\n" + risultato);
+        assertFalse(risultato);
+    }
+
+    @Test
+    public void isSmellyTrueControl() {
         StructuralBlobStrategy analisi = new StructuralBlobStrategy(5, 10, 40); // SOGLIE DI PROVA
-        it.unisa.ascetic.analysis.code_smell.BlobCodeSmell smell = new it.unisa.ascetic.analysis.code_smell.BlobCodeSmell(analisi, "Textual");
+        BlobCodeSmell smell = new BlobCodeSmell(analisi, "Structural");
+        boolean risultato = smellyControl.isAffected(smell);
+        assertTrue(smellyControl.getAffectedSmell().contains(smell));
+        Logger log = Logger.getLogger(getClass().getName());
+        log.info("\n" + risultato);
+        assertTrue(risultato);
+    }
+
+    @Test
+    public void isSmellyFalse() {
+        StructuralBlobStrategy analisi = new StructuralBlobStrategy(5, 10, 40); // SOGLIE DI PROVA
+        BlobCodeSmell smell = new BlobCodeSmell(analisi, "Structural");
         boolean risultato = noSmelly.isAffected(smell);
         assertFalse(noSmelly.getAffectedSmell().contains(smell));
         Logger log = Logger.getLogger(getClass().getName());

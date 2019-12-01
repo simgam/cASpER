@@ -21,26 +21,23 @@ public class StructuralBlobStrategy implements ClassSmellDetectionStrategy {
     }
 
     public boolean isSmelly(ClassBean pClass) {
-        BeanDetection control = new BeanDetection();
         boolean bean = true;
-        for (MethodBean method : pClass.getMethodList()) {
-            if (!control.detection(method)) {
+        for (MethodBean method : pClass.getMethodList()) { //se tutti dei metodi della classe rispecchiano un metodo di un bean, allora la classe viene ignorata mentre se almeno uno non è considerato tale, l'esecuzione prosegue
+            if (!BeanDetection.detection(method)) {
                 bean = false;
             }
         }
 
         if (!bean) {
-
             if (isControllerClass(pClass) || isLargeClassLowCohesion(pClass)) {
                 return true;
             }
-
         }
         return false;
     }
 
     private static boolean isLargeClassLowCohesion(ClassBean pClass) {
-        int fSUM = CKMetrics.getWMC(pClass) + CKMetrics.getNOA(pClass);
+        int fSUM = CKMetrics.getFeatureSum(pClass);
         if ((CKMetrics.getLCOM(pClass) > LCOM) || (fSUM > featureSum)) {
             if (CKMetrics.getELOC(pClass) > ELOC) {
                 return true;
@@ -54,7 +51,7 @@ public class StructuralBlobStrategy implements ClassSmellDetectionStrategy {
 
         if ((pClassName.contains("process")) || (pClassName.contains("control") || pClassName.contains("command")
                 || pClassName.contains("manage") || pClassName.contains("drive") || pClassName.contains("system"))) {
-            int fSUM = CKMetrics.getWMC(pClass) + CKMetrics.getNOA(pClass);
+            int fSUM = CKMetrics.getFeatureSum(pClass);
 
             if ((CKMetrics.getLCOM(pClass) > LCOM) || (fSUM > featureSum)) {
                 if (CKMetrics.getELOC(pClass) > ELOC)

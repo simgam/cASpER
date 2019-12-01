@@ -1,5 +1,7 @@
 package it.unisa.ascetic.analysis.code_smell_detection.misplaced_class;
 
+import it.unisa.ascetic.analysis.code_smell.MisplacedClassCodeSmell;
+import it.unisa.ascetic.analysis.code_smell_detection.Helper.CKMetricsStub;
 import it.unisa.ascetic.storage.beans.*;
 import org.junit.Before;
 import org.junit.Test;
@@ -19,10 +21,10 @@ public class StructuralMisplacedClassStrategyTest {
     private MethodBean metodo;
     private ClassBean noSmelly, smelly;
     private ClassBeanList classes;
-    private PackageBean pack;
+    private PackageBean pack, packE;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         classes = new ClassList();
         MethodBeanList vuoto = new MethodList();
         pack = new PackageBean.Builder("misplaced_class.package", "public class Cliente {\n" +
@@ -71,6 +73,7 @@ public class StructuralMisplacedClassStrategyTest {
                 .setPathToFile("C:\\Users\\Simone\\Desktop\\IdeaProjects\\Code\\testData\\misplaced_class\\package")
                 .setAffectedSmell()
                 .build();
+        pack.getClassList().add(smelly);
 
         HashMap<String, ClassBean> hash = new HashMap<String, ClassBean>();
         hash.put("name", new ClassBean.Builder("String", "").build());
@@ -78,7 +81,7 @@ public class StructuralMisplacedClassStrategyTest {
 
         metodo = new MethodBean.Builder("misplaced_class.package.Cliente.Cliente", "this.name = name;\n" +
                 "\t\tthis.età = età;")
-                .setReturnType(null)
+                .setReturnType(new ClassBean.Builder("void","").build())
                 .setInstanceVariableList(instances)
                 .setMethodsCalls(vuoto)
                 .setParameters(hash)
@@ -127,7 +130,7 @@ public class StructuralMisplacedClassStrategyTest {
         instances = new InstanceVariableList();
         methods = new MethodList();
         classes = new ClassList();
-        pack = new PackageBean.Builder("misplaced_class.package2", "public Cliente scorriListaClienti() {\n" +
+        packE = new PackageBean.Builder("misplaced_class.package2", "public Cliente scorriListaClienti() {\n" +
                 "\t\t\n" +
                 "\t\tArrayList<Cliente> clienti= new ArrayList<Cliente>();\n" +
                 "\t\tCliente c= new Cliente(\"Lucia\",30);\n" +
@@ -206,18 +209,17 @@ public class StructuralMisplacedClassStrategyTest {
                 .setVisibility("public")
                 .setAffectedSmell()
                 .build();
-
+        packE.getClassList().add(noSmelly);
         noSmelly.addMethodBeanList(metodo);
-        pack.addClassList(noSmelly);
-        systemPackage.add(pack);
+        packE.addClassList(noSmelly);
+        systemPackage.add(packE);
 
     }
 
     @Test
     public void isSmellyTrue() {
-
-        StructuralMisplacedClassStrategy analisi = new StructuralMisplacedClassStrategy(systemPackage, 0);
-        it.unisa.ascetic.analysis.code_smell.MisplacedClassCodeSmell smell = new it.unisa.ascetic.analysis.code_smell.MisplacedClassCodeSmell(analisi, "Structural");
+        StructuralMisplacedClassStrategy analisi = new StructuralMisplacedClassStrategy(systemPackage, 0); //soglia default
+        MisplacedClassCodeSmell smell = new MisplacedClassCodeSmell(analisi, "Structural");
         boolean risultato = smelly.isAffected(smell);
         assertTrue(smelly.getAffectedSmell().contains(smell));
         Logger log = Logger.getLogger(getClass().getName());
@@ -226,10 +228,31 @@ public class StructuralMisplacedClassStrategyTest {
     }
 
     @Test
-    public void isSmellyFalse() {
+    public void isSmellyNearThreshold() {
+        StructuralMisplacedClassStrategy analisi = new StructuralMisplacedClassStrategy(systemPackage, (int)CKMetricsStub.getNumberOfDependencies(smelly, smelly.getEnviedPackage())-1);
+        MisplacedClassCodeSmell smell = new MisplacedClassCodeSmell(analisi, "Structural");
+        boolean risultato = smelly.isAffected(smell);
+        assertTrue(smelly.getAffectedSmell().contains(smell));
+        Logger log = Logger.getLogger(getClass().getName());
+        log.info("\n" + risultato);
+        assertTrue(risultato);
+    }
 
-        StructuralMisplacedClassStrategy analisi = new StructuralMisplacedClassStrategy(systemPackage, 0);
-        it.unisa.ascetic.analysis.code_smell.MisplacedClassCodeSmell smell = new it.unisa.ascetic.analysis.code_smell.MisplacedClassCodeSmell(analisi, "Structural");
+    @Test
+    public void isSmellyMinThreshold() {
+        StructuralMisplacedClassStrategy analisi = new StructuralMisplacedClassStrategy(systemPackage, (int)CKMetricsStub.getNumberOfDependencies(smelly, smelly.getEnviedPackage()));
+        MisplacedClassCodeSmell smell = new MisplacedClassCodeSmell(analisi, "Structural");
+        boolean risultato = smelly.isAffected(smell);
+        assertFalse(smelly.getAffectedSmell().contains(smell));
+        Logger log = Logger.getLogger(getClass().getName());
+        log.info("\n" + risultato);
+        assertFalse(risultato);
+    }
+
+    @Test
+    public void isSmellyFalse() {
+        StructuralMisplacedClassStrategy analisi = new StructuralMisplacedClassStrategy(systemPackage, 0); //soglia default
+        MisplacedClassCodeSmell smell = new MisplacedClassCodeSmell(analisi, "Structural");
         boolean risultato = noSmelly.isAffected(smell);
         assertFalse(noSmelly.getAffectedSmell().contains(smell));
         Logger log = Logger.getLogger(getClass().getName());

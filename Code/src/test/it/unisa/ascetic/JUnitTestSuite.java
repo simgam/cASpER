@@ -1,5 +1,6 @@
 package it.unisa.ascetic;
 
+import it.unisa.ascetic.analysis.code_smell_detection.BeanDetectionTest;
 import it.unisa.ascetic.analysis.code_smell_detection.blob.StructuralBlobStrategyTest;
 import it.unisa.ascetic.analysis.code_smell_detection.blob.TextualBlobStrategyTest;
 import it.unisa.ascetic.analysis.code_smell_detection.feature_envy.StructuralFeatureEnvyStrategyTest;
@@ -38,7 +39,8 @@ import org.junit.runners.Suite;
         TextualPromiscuousPackageStrategyTest.class,
         StructuralPromiscuousPackageStrategyTest.class,
         SplitPackagesTest.class,
-        SplitClassTest.class
+        SplitClassTest.class,
+        BeanDetectionTest.class
 })
 
 public class JUnitTestSuite {

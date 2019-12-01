@@ -1,5 +1,7 @@
 package it.unisa.ascetic.analysis.code_smell_detection.blob;
 
+import it.unisa.ascetic.analysis.code_smell.BlobCodeSmell;
+import it.unisa.ascetic.analysis.code_smell_detection.Helper.SmellynessMetricStub;
 import it.unisa.ascetic.storage.beans.*;
 import org.junit.Before;
 import org.junit.Test;
@@ -22,9 +24,9 @@ public class TextualBlobStrategyTest {
     private PackageBean pack;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         String filename = System.getProperty("user.home") + File.separator + ".ascetic" + File.separator + "stopwordlist.txt";
-        File stopwordlist= new File(filename);
+        File stopwordlist = new File(filename);
         stopwordlist.delete();
 
         MethodBeanList vuota = new MethodList();
@@ -148,9 +150,6 @@ public class TextualBlobStrategyTest {
                 "}\n").setClassList(classes).build();
 
         InstanceVariableBeanList instances = new InstanceVariableList();
-        instances.getList().add(new InstanceVariableBean("uno", "String", "", "private "));
-        instances.getList().add(new InstanceVariableBean("due", "String", "", "private "));
-        instances.getList().add(new InstanceVariableBean("tre", "String", "", "private "));
         List<String> imports = new ArrayList<String>();
         imports.add("import java.util.Scanner;");
         imports.add("import java.util.ArrayList;");
@@ -161,8 +160,7 @@ public class TextualBlobStrategyTest {
         called4 = new MethodList();
 
         methods = new MethodList();
-        InstanceVariableBeanList instancesBank = new InstanceVariableList();
-        instancesBank.getList().add(new InstanceVariableBean("balance", "double", "", "private "));
+        instances.getList().add(new InstanceVariableBean("balance", "double", "", "private "));
         noSmelly = new ClassBean.Builder("blob.package.BankAccount", "private double balance;\n" +
                 "\n" +
                 "    public BankAccount(double balance) {\n" +
@@ -172,7 +170,7 @@ public class TextualBlobStrategyTest {
                 "    public double getBalance() {\n" +
                 "        return balance;\n" +
                 "    }")
-                .setInstanceVariables(instancesBank)
+                .setInstanceVariables(instances)
                 .setMethods(methods)
                 .setImports(new ArrayList<String>())
                 .setLOC(10)
@@ -302,8 +300,8 @@ public class TextualBlobStrategyTest {
         HashMap<String, ClassBean> hash = new HashMap<String, ClassBean>();
         hash.put("balance", new ClassBean.Builder("Double", "").build());
         metodo = new MethodBean.Builder("blob.package.BankAccount.BankAccount", "this.balance = balance;")
-                .setReturnType(null)
-                .setInstanceVariableList(instancesBank)
+                .setReturnType(new ClassBean.Builder("void","").build())
+                .setInstanceVariableList(instances)
                 .setMethodsCalls(vuota)
                 .setParameters(hash)
                 .setStaticMethod(false)
@@ -324,7 +322,7 @@ public class TextualBlobStrategyTest {
 
         metodo = new MethodBean.Builder("blob.package.BankAccount.getBalance", "return balance;")
                 .setReturnType(new ClassBean.Builder("Double", "").build())
-                .setInstanceVariableList(instancesBank)
+                .setInstanceVariableList(instances)
                 .setMethodsCalls(vuota)
                 .setParameters(nulla)
                 .setStaticMethod(false)
@@ -346,6 +344,8 @@ public class TextualBlobStrategyTest {
         pack.addClassList(noSmelly);
 
         methods = new MethodList();
+        instances= new InstanceVariableList();
+        instances.getList().add(new InstanceVariableBean("unformattedNumber", "String", "", "private final "));
         classe = new ClassBean.Builder("blob.package.Phone", "private final String unformattedNumber;\n" +
                 "   public Phone(String unformattedNumber) {\n" +
                 "      this.unformattedNumber = unformattedNumber;\n" +
@@ -490,7 +490,7 @@ public class TextualBlobStrategyTest {
         hash.put("unformattedNumber", new ClassBean.Builder("String", "").build());
 
         metodo = new MethodBean.Builder("blob.package.Phone.Phone", "this.unformattedNumber = unformattedNumber;")
-                .setReturnType(null)
+                .setReturnType(new ClassBean.Builder("void","").build())
                 .setInstanceVariableList(instances)
                 .setMethodsCalls(vuota)
                 .setParameters(hash)
@@ -624,7 +624,7 @@ public class TextualBlobStrategyTest {
         hash.put("età", new ClassBean.Builder("int", "").build());
         metodo = new MethodBean.Builder("blob.package.Cliente.Cliente", "this.name = name;\n" +
                 "\t\tthis.età = età;")
-                .setReturnType(null)
+                .setReturnType(new ClassBean.Builder("void","").build())
                 .setInstanceVariableList(instances)
                 .setMethodsCalls(vuota)
                 .setParameters(hash)
@@ -735,7 +735,7 @@ public class TextualBlobStrategyTest {
         hash = new HashMap<String, ClassBean>();
         hash.put("nome_Ristorante", new ClassBean.Builder("String", "").build());
         metodo = new MethodBean.Builder("blob.package.Ristorante.Ristorante", "this.nome_Ristorante = nome_Ristorante;")
-                .setReturnType(null)
+                .setReturnType(new ClassBean.Builder("void","").build())
                 .setInstanceVariableList(instances)
                 .setMethodsCalls(vuota)
                 .setParameters(hash)
@@ -777,7 +777,7 @@ public class TextualBlobStrategyTest {
         instances.getList().remove(new InstanceVariableBean("name", "String", "", "private "));
         instances.getList().add(new InstanceVariableBean("età", "int", "", "private "));
         metodo = new MethodBean.Builder("blob.package.Cliente.setNome_Ristorante", "this.nome_Ristorante = nome_Ristorante;")
-                .setReturnType(null)
+                .setReturnType(new ClassBean.Builder("void","").build())
                 .setInstanceVariableList(instances)
                 .setMethodsCalls(vuota)
                 .setParameters(hash)
@@ -804,6 +804,10 @@ public class TextualBlobStrategyTest {
         pack.addClassList(classe);
 
         methods = new MethodList();
+        instances = new InstanceVariableList();
+        instances.getList().add(new InstanceVariableBean("uno", "String", "", "private "));
+        instances.getList().add(new InstanceVariableBean("due", "String", "", "private "));
+        instances.getList().add(new InstanceVariableBean("tre", "String", "", "private "));
         smelly = new ClassBean.Builder("blob.package.Prodotto", "public String uno;\n" +
                 "\tpublic String due;\n" +
                 "\tpublic double tre;\n" +
@@ -1125,9 +1129,8 @@ public class TextualBlobStrategyTest {
 
     @Test
     public void isSmellyTrue() {
-
-        TextualBlobStrategy analisi = new TextualBlobStrategy(0.5);
-        it.unisa.ascetic.analysis.code_smell.BlobCodeSmell smell = new it.unisa.ascetic.analysis.code_smell.BlobCodeSmell(analisi, "Textual");
+        TextualBlobStrategy analisi = new TextualBlobStrategy(0.5); //soglia default
+        BlobCodeSmell smell = new BlobCodeSmell(analisi, "Textual");
         boolean risultato = smelly.isAffected(smell);
         assertTrue(smelly.getAffectedSmell().contains(smell));
         Logger log = Logger.getLogger(getClass().getName());
@@ -1136,29 +1139,36 @@ public class TextualBlobStrategyTest {
     }
 
     @Test
-    public void isSmellyFalse() {
+    public void isSmellyNearThreshold() {
+        TextualBlobStrategy analisi = new TextualBlobStrategy(SmellynessMetricStub.computeSmellynessClass(smelly.getTextContent())-0.1);
+        BlobCodeSmell smell = new BlobCodeSmell(analisi, "Textual");
+        boolean risultato = smelly.isAffected(smell);
+        assertTrue(smelly.getAffectedSmell().contains(smell));
+        Logger log = Logger.getLogger(getClass().getName());
+        log.info("\n" + risultato);
+        assertTrue(risultato);
+    }
 
-        TextualBlobStrategy analisi = new TextualBlobStrategy(0.5);
-        it.unisa.ascetic.analysis.code_smell.BlobCodeSmell smell = new it.unisa.ascetic.analysis.code_smell.BlobCodeSmell(analisi, "Textual");
-        boolean risultato = noSmelly.isAffected(smell);
-        assertFalse(noSmelly.getAffectedSmell().contains(smell));
+    @Test
+    public void isSmellyMinThreshold() {
+        TextualBlobStrategy analisi = new TextualBlobStrategy(SmellynessMetricStub.computeSmellynessClass(smelly.getTextContent()));
+        BlobCodeSmell smell = new BlobCodeSmell(analisi, "Textual");
+        boolean risultato = smelly.isAffected(smell);
+        assertFalse(smelly.getAffectedSmell().contains(smell));
         Logger log = Logger.getLogger(getClass().getName());
         log.info("\n" + risultato);
         assertFalse(risultato);
     }
 
     @Test
-    public void getBlobProbability() {
-        TextualBlobStrategy analisi = new TextualBlobStrategy(0.5);
+    public void isSmellyFalse() {
+        TextualBlobStrategy analisi = new TextualBlobStrategy(0.5); //soglia default
+        BlobCodeSmell smell = new BlobCodeSmell(analisi, "Textual");
+        boolean risultato = noSmelly.isAffected(smell);
+        assertFalse(noSmelly.getAffectedSmell().contains(smell));
         Logger log = Logger.getLogger(getClass().getName());
-        boolean risultato;
-        if (analisi.getBlobProbability(smelly) != 0.0) {
-            risultato = true;
-        } else {
-            risultato = false;
-        }
         log.info("\n" + risultato);
-        assertTrue(risultato);
+        assertFalse(risultato);
     }
 
 }

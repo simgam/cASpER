@@ -32,8 +32,7 @@ public class TextualFeatureEnvyStrategy implements MethodSmellDetectionStrategy 
 
     public boolean isSmelly(MethodBean pMethod) {
 
-        BeanDetection control = new BeanDetection();
-        if (!control.detection(pMethod)) {
+        if (!BeanDetection.detection(pMethod)) {
 
             SortedMap<ClassBean, Double> similaritiesWithMethod = new TreeMap<ClassBean, Double>();
             CosineSimilarity cosineSimilarity = new CosineSimilarity();

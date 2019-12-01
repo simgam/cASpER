@@ -15,7 +15,6 @@ public class SmellynessMetric {
         ArrayList<String> filteredBlocks = new ArrayList<String>();
         Double smellyness = 0.0;
 
-
         for (int k = 0; k < blocks.length; k++) {
             if (blocks[k].split("\n").length > 3) {
                 filteredBlocks.add(blocks[k]);

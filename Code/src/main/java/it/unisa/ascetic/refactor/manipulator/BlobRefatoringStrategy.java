@@ -51,7 +51,7 @@ public class BlobRefatoringStrategy implements RefactoringStrategy {
 
                 //creo una lista di fields
                 for (InstanceVariableBean instanceVariableBean : classBean.getInstanceVariablesList()) {
-                    System.out.println(psiOriginalClass.findFieldByName(instanceVariableBean.getFullQualifiedName(), true).getName());
+                    //System.out.println(psiOriginalClass.findFieldByName(instanceVariableBean.getFullQualifiedName(), true).getName());
                     fieldsToMove.add(psiOriginalClass.findFieldByName(instanceVariableBean.getFullQualifiedName(), true));
                 }
 

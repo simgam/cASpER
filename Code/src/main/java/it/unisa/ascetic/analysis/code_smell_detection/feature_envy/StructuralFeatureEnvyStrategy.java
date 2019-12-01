@@ -26,8 +26,7 @@ public class StructuralFeatureEnvyStrategy implements MethodSmellDetectionStrate
 
     public boolean isSmelly(MethodBean pMethod) {
 
-        BeanDetection control = new BeanDetection();
-        if (!control.detection(pMethod)) {
+        if (!BeanDetection.detection(pMethod)) {
 
             ArrayList<ClassBean> classes = new ArrayList<ClassBean>();
             ClassBean actualClass = null;
@@ -73,7 +72,7 @@ public class StructuralFeatureEnvyStrategy implements MethodSmellDetectionStrate
             Collections.sort(dependenciesWithMethod, comparator);
 
             ClassBean firstRankedClass = dependenciesWithMethod.get(dependenciesWithMethod.size() - 1);
-            if (numberOfDependenciesWithActualClass <= firstRankedClass.getSimilarity() && firstRankedClass.getSimilarity() != 0 && firstRankedClass.getSimilarity() >= soglia) {
+            if (numberOfDependenciesWithActualClass <= firstRankedClass.getSimilarity() && firstRankedClass.getSimilarity() != 0 && firstRankedClass.getSimilarity() > soglia) {
                 pMethod.setEnviedClass(firstRankedClass);
                 return true;
             }

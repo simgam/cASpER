@@ -4,7 +4,6 @@ import it.unisa.ascetic.analysis.code_smell_detection.ComponentMutation;
 import it.unisa.ascetic.analysis.code_smell_detection.smellynessMetricProcessing.SmellynessMetric;
 import it.unisa.ascetic.analysis.code_smell_detection.strategy.PackageSmellDetectionStrategy;
 import it.unisa.ascetic.storage.beans.PackageBean;
-import it.unisa.ascetic.structuralMetrics.CKMetrics;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -54,26 +53,6 @@ public class TextualPromiscuousPackageStrategy implements PackageSmellDetectionS
             return list;
         } catch (IOException e) {
             return list;
-        }
-    }
-
-    public double getPromiscuousPackageProbability(PackageBean pPackage) {
-        SmellynessMetric smellyness = new SmellynessMetric();
-        ComponentMutation componentMutation = new ComponentMutation();
-
-        String mutatedPackage = componentMutation.alterPackage(pPackage);
-
-        try {
-            double similarity = smellyness.computeSmellyness(mutatedPackage);
-
-            if (CKMetrics.getNumberOfClasses(pPackage) < 20) {
-                similarity -= ((similarity * 75) / 100);
-            }
-
-            return smellyness.computeSmellyness(mutatedPackage);
-
-        } catch (IOException e) {
-            return 0.0;
         }
     }
 }

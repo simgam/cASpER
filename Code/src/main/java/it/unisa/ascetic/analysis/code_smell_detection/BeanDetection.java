@@ -1,66 +1,66 @@
 package it.unisa.ascetic.analysis.code_smell_detection;
 
-import it.unisa.ascetic.storage.beans.ClassBean;
 import it.unisa.ascetic.storage.beans.MethodBean;
 
 import java.util.regex.Pattern;
 
 public class BeanDetection {
 
-    public boolean detection(MethodBean pMethod) {
+    public static boolean detection(MethodBean pMethod) {
         if (!isGetter(pMethod) && !isSetter(pMethod) && !isToString(pMethod) && !isEquals(pMethod) && !isHashCode(pMethod) && !(pMethod.getFullQualifiedName().toLowerCase().contains("main")) && !isConstructor(pMethod)) {
             return false;
         }
         return true;
     }
 
-    private boolean isGetter(MethodBean pMethodBean) {
+    private static boolean isGetter(MethodBean pMethodBean) {
         if (pMethodBean.getFullQualifiedName().toLowerCase().contains("get") && pMethodBean.getParameters().isEmpty() &&
-                !((ClassBean) pMethodBean.getReturnType()).getFullQualifiedName().equalsIgnoreCase("void") &&
+                !(pMethodBean.getReturnType()).getFullQualifiedName().equalsIgnoreCase("void") &&
                 pMethodBean.getTextContent().length() < 100) {
             return true;
         }
         return false;
     }
 
-    private boolean isSetter(MethodBean pMethodBean) {
+    private static boolean isSetter(MethodBean pMethodBean) {
         if (pMethodBean.getFullQualifiedName().toLowerCase().contains("set") && pMethodBean.getParameters().size() == 1 &&
-                ((ClassBean) pMethodBean.getReturnType()).getFullQualifiedName().equalsIgnoreCase("void")) {
+                (pMethodBean.getReturnType()).getFullQualifiedName().equalsIgnoreCase("void")) {
             return true;
         }
         return false;
     }
 
-    private boolean isToString(MethodBean pMethodBean) {
+    private static boolean isToString(MethodBean pMethodBean) {
         if (pMethodBean.getFullQualifiedName().toLowerCase().equals("toString") && pMethodBean.getParameters().isEmpty() &&
-                ((ClassBean) pMethodBean.getReturnType()).getFullQualifiedName().equals("String")) {
+                (pMethodBean.getReturnType()).getFullQualifiedName().equals("String")) {
             return true;
         }
         return false;
     }
 
-    private boolean isHashCode(MethodBean pMethodBean) {
+    private static boolean isHashCode(MethodBean pMethodBean) {
         if (pMethodBean.getFullQualifiedName().toLowerCase().equals("hasCode") && pMethodBean.getParameters().isEmpty() &&
-                ((ClassBean) pMethodBean.getReturnType()).getFullQualifiedName().equals("int")) {
+                (pMethodBean.getReturnType()).getFullQualifiedName().equals("int")) {
             return true;
         }
         return false;
     }
 
-    private boolean isEquals(MethodBean pMethodBean) {
+    private static boolean isEquals(MethodBean pMethodBean) {
         if (pMethodBean.getFullQualifiedName().toLowerCase().equals("equals") && pMethodBean.getParameters().size() == 1 &&
-                ((ClassBean) pMethodBean.getReturnType()).getFullQualifiedName().equals("boolean")) {
+                (pMethodBean.getReturnType()).getFullQualifiedName().equals("boolean")) {
             return true;
         }
         return false;
     }
 
-    private boolean isConstructor(MethodBean pMethodBean) {
-        String[] fullClass = ((ClassBean) pMethodBean.getBelongingClass()).getFullQualifiedName().split(Pattern.quote("."));
+    private static boolean isConstructor(MethodBean pMethodBean) {
+        String[] fullClass = (pMethodBean.getBelongingClass()).getFullQualifiedName().split(Pattern.quote("."));
         String[] fullMethod = pMethodBean.getFullQualifiedName().split(Pattern.quote("."));
+        String nameClass = fullClass[fullClass.length - 1], nameMethod = fullMethod[fullMethod.length - 1];
 
-        if (fullMethod[fullMethod.length - 1].equalsIgnoreCase(fullClass[fullClass.length - 1]) &&
-                ((ClassBean) pMethodBean.getReturnType()).getFullQualifiedName().equalsIgnoreCase("void")) {
+        nameClass = nameClass.substring(0, nameClass.length() - 1);
+        if (nameMethod.equalsIgnoreCase(nameClass) && (pMethodBean.getReturnType()).getFullQualifiedName().equalsIgnoreCase("void")) {
             return true;
         }
         return false;

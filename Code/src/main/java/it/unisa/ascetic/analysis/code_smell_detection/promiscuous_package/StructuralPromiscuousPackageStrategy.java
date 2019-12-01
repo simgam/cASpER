@@ -29,8 +29,8 @@ public class StructuralPromiscuousPackageStrategy implements PackageSmellDetecti
     public HashMap<String, Double> getThresold(PackageBean pPackage) {
         HashMap<String, Double> list = new HashMap<String, Double>();
 
-        list.put("MInterC", CKMetrics.computeMediumInterConnectivity(pPackage, projectPackages));
         list.put("MIntraC", CKMetrics.computeMediumIntraConnectivity(pPackage));
+        list.put("MInterC", CKMetrics.computeMediumInterConnectivity(pPackage, projectPackages));
         return list;
     }
 }

@@ -71,7 +71,6 @@ public class PromiscuousPackageWizard extends DialogWrapper {
                     RefactoringStrategy refactoringStrategy = new PromiscuousPackageRefactoringStrategy(promiscuousPackageBean, splitting, project);
                     RefactoringManager refactoringManager = new RefactoringManager(refactoringStrategy);
                     refactoringManager.executeRefactor();
-
                     message = "Promiscuous Package Corrected, check new classes generated name and control the import";
                     Messages.showMessageDialog(message, "Success !", Messages.getInformationIcon());
                     FileWriter f = new FileWriter(System.getProperty("user.home") + File.separator + ".ascetic" + File.separator + "refactoring.txt");

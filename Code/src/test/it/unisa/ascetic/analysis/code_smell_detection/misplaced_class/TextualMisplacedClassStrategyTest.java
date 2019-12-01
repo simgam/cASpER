@@ -1,5 +1,6 @@
 package it.unisa.ascetic.analysis.code_smell_detection.misplaced_class;
 
+import it.unisa.ascetic.analysis.code_smell_detection.Helper.CosineSimilarityStub;
 import it.unisa.ascetic.storage.beans.*;
 import org.junit.Before;
 import org.junit.Test;
@@ -20,17 +21,17 @@ public class TextualMisplacedClassStrategyTest {
     private MethodBean metodo;
     private ClassBean smelly, noSmelly;
     private ClassBeanList classes;
-    private PackageBean pack;
+    private PackageBean pack, packE;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         String filename = System.getProperty("user.home") + File.separator + ".ascetic" + File.separator + "stopwordlist.txt";
-        File stopwordlist= new File(filename);
+        File stopwordlist = new File(filename);
         stopwordlist.delete();
 
         classes = new ClassList();
         MethodBeanList vuoto = new MethodList();
-        pack = new PackageBean.Builder("misplaced_class.package", "public class Cliente {\n" +
+        packE = new PackageBean.Builder("misplaced_class.package", "public class Cliente {\n" +
                 "\n" +
                 "\tprivate String name;\n" +
                 "\tprivate int età;\n" +
@@ -83,7 +84,7 @@ public class TextualMisplacedClassStrategyTest {
 
         metodo = new MethodBean.Builder("misplaced_class.package.Cliente.Cliente", "this.name = name;\n" +
                 "\t\tthis.età = età;")
-                .setReturnType(null)
+                .setReturnType(new ClassBean.Builder("void","").build())
                 .setInstanceVariableList(instances)
                 .setMethodsCalls(vuoto)
                 .setParameters(hash)
@@ -126,8 +127,8 @@ public class TextualMisplacedClassStrategyTest {
         noSmelly.addMethodBeanList(metodo);
         called.getList().add(metodo);
 
-        pack.addClassList(noSmelly);
-        systemPackage.add(pack);
+        packE.addClassList(noSmelly);
+        systemPackage.add(packE);
 
         instances = new InstanceVariableList();
         methods = new MethodList();
@@ -179,7 +180,7 @@ public class TextualMisplacedClassStrategyTest {
                 .setLOC(18)
                 .setSuperclass(null)
                 .setBelongingPackage(new PackageBean.Builder("misplaced_class.package2", "").build())
-                .setEnviedPackage(null)
+                .setEnviedPackage(packE)
                 .setEntityClassUsage(0)
                 .setPathToFile("C:\\Users\\Simone\\Desktop\\IdeaProjects\\Code\\testData\\misplaced_class\\package2")
                 .setAffectedSmell()
@@ -220,8 +221,7 @@ public class TextualMisplacedClassStrategyTest {
 
     @Test
     public void isSmellyTrue() {
-
-        TextualMisplacedClassStrategy analisi = new TextualMisplacedClassStrategy(systemPackage, 0);
+        TextualMisplacedClassStrategy analisi = new TextualMisplacedClassStrategy(systemPackage, 0); //soglia default
         it.unisa.ascetic.analysis.code_smell.MisplacedClassCodeSmell smell = new it.unisa.ascetic.analysis.code_smell.MisplacedClassCodeSmell(analisi, "Textual");
         boolean risultato = smelly.isAffected(smell);
         assertTrue(smelly.getAffectedSmell().contains(smell));
@@ -231,9 +231,44 @@ public class TextualMisplacedClassStrategyTest {
     }
 
     @Test
-    public void isSmellyFalse() {
+    public void isSmellyNearThreshold() {
+        String[] document1 = new String[2];
+        document1[0] = "class";
+        document1[1] = smelly.getTextContent();
+        String[] document2 = new String[2];
+        document2[0] = "package";
+        document2[1] = smelly.getEnviedPackage().getTextContent();
 
-        TextualMisplacedClassStrategy analisi = new TextualMisplacedClassStrategy(systemPackage, 0);
+        TextualMisplacedClassStrategy analisi = new TextualMisplacedClassStrategy(systemPackage, CosineSimilarityStub.computeSimilarity(document1, document2)-0.1);
+        it.unisa.ascetic.analysis.code_smell.MisplacedClassCodeSmell smell = new it.unisa.ascetic.analysis.code_smell.MisplacedClassCodeSmell(analisi, "Textual");
+        boolean risultato = smelly.isAffected(smell);
+        assertTrue(smelly.getAffectedSmell().contains(smell));
+        Logger log = Logger.getLogger(getClass().getName());
+        log.info("\n" + risultato);
+        assertTrue(risultato);
+    }
+
+    @Test
+    public void isSmellyMinThreshold() {
+        String[] document1 = new String[2];
+        document1[0] = "class";
+        document1[1] = smelly.getTextContent();
+        String[] document2 = new String[2];
+        document2[0] = "package";
+        document2[1] = smelly.getEnviedPackage().getTextContent();
+
+        TextualMisplacedClassStrategy analisi = new TextualMisplacedClassStrategy(systemPackage, CosineSimilarityStub.computeSimilarity(document1, document2));
+        it.unisa.ascetic.analysis.code_smell.MisplacedClassCodeSmell smell = new it.unisa.ascetic.analysis.code_smell.MisplacedClassCodeSmell(analisi, "Textual");
+        boolean risultato = smelly.isAffected(smell);
+        assertFalse(smelly.getAffectedSmell().contains(smell));
+        Logger log = Logger.getLogger(getClass().getName());
+        log.info("\n" + risultato);
+        assertFalse(risultato);
+    }
+
+    @Test
+    public void isSmellyFalse() {
+        TextualMisplacedClassStrategy analisi = new TextualMisplacedClassStrategy(systemPackage, 0); //soglia default
         it.unisa.ascetic.analysis.code_smell.MisplacedClassCodeSmell smell = new it.unisa.ascetic.analysis.code_smell.MisplacedClassCodeSmell(analisi, "Textual");
         boolean risultato = noSmelly.isAffected(smell);
         assertFalse(noSmelly.getAffectedSmell().contains(smell));
