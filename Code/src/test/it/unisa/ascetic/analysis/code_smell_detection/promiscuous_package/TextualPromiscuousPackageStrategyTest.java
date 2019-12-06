@@ -637,7 +637,6 @@ public class TextualPromiscuousPackageStrategyTest {
         TextualPromiscuousPackageStrategy analisi = new TextualPromiscuousPackageStrategy(SmellynessMetricStub.computeSmellynessPackage(smelly.getTextContent())-0.1);
         PromiscuousPackageCodeSmell smell = new PromiscuousPackageCodeSmell(analisi, "Textual");
         boolean risultato = smelly.isAffected(smell);
-        System.out.println(analisi.getThresold(smelly));
         assertTrue(smelly.getAffectedSmell().contains(smell));
         Logger log = Logger.getLogger(getClass().getName());
         log.info("\n" + risultato);

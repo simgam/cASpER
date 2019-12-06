@@ -54,14 +54,13 @@ public class MisplacedClassPage extends DialogWrapper {
         //main panel init
         centerPanel = new JPanel();
         centerPanel.setBorder(JBUI.Borders.empty(5));
-        centerPanel.setLayout(new BoxLayout(centerPanel, BoxLayout.Y_AXIS));
+        centerPanel.setLayout(new GridLayout(2, 1, 0, 0));
         centerPanel.setPreferredSize(new Dimension(1050, 900));
 
         //radarmap containre init
         radarmapContainer = new JPanel();
         centerPanel.add(radarmapContainer);
         radarmapContainer.setLayout(new BoxLayout(radarmapContainer, BoxLayout.X_AXIS));
-
 
         Dimension radarmapPreferredSize = new Dimension(100, 300);
         JPanel methodRadarmap = radarMapGenerator.createRadarMapFromClassBean(misplacedClassBean, misplacedClassBean.getFullQualifiedName());
@@ -92,12 +91,9 @@ public class MisplacedClassPage extends DialogWrapper {
         enviedClassRadarmapContainer.setPreferredSize(radarmapPreferredSize);
         radarmapContainer.add(enviedClassRadarmapContainer);
 
-        centerPanel.add(Box.createRigidArea(new Dimension(0, 50)));
-
-
         level2Panel = new JPanel();
         JPanel p = new JPanel();
-        level2Panel.setLayout(new BoxLayout(level2Panel, BoxLayout.X_AXIS));
+        level2Panel.setLayout(new GridLayout(0, 2, 0, 0));
         centerPanel.add(level2Panel);
 
         JTextPane textContentArea = new JTextPane();
@@ -109,8 +105,6 @@ public class MisplacedClassPage extends DialogWrapper {
         StyleText generator = new StyleText();
         textContentArea.setStyledDocument(generator.createDocument(misplacedClassBean.getTextContent()));
         level2Panel.add(p);
-
-        level2Panel.add(Box.createHorizontalGlue());
 
         tableContainer = new JPanel();
         tableContainer.setLayout(new BorderLayout());

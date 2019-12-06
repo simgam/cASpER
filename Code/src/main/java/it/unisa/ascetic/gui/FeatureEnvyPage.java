@@ -54,14 +54,13 @@ public class FeatureEnvyPage extends DialogWrapper {
         //main panel init
         centerPanel = new JPanel();
         centerPanel.setBorder(JBUI.Borders.empty(5));
-        centerPanel.setLayout(new BoxLayout(centerPanel, BoxLayout.Y_AXIS));
+        centerPanel.setLayout(new GridLayout(2, 1, 0, 0));
         centerPanel.setPreferredSize(new Dimension(1050, 900));
 
         //radarmap containre init
         radarmapContainer = new JPanel();
         centerPanel.add(radarmapContainer);
         radarmapContainer.setLayout(new BoxLayout(radarmapContainer, BoxLayout.X_AXIS));
-
 
         Dimension radarmapPreferredSize = new Dimension(100, 300);
         JPanel methodRadarmap = radarMapGenerator.createRadarMapFromMethodBean(featureEnvyBean, featureEnvyBean.getFullQualifiedName());
@@ -91,9 +90,6 @@ public class FeatureEnvyPage extends DialogWrapper {
         enviedClassRadarmapContainer.add(enviedClassRadarmap);
         enviedClassRadarmapContainer.setPreferredSize(radarmapPreferredSize);
         radarmapContainer.add(enviedClassRadarmapContainer);
-
-        centerPanel.add(Box.createRigidArea(new Dimension(0, 50)));
-
 
         level2Panel = new JPanel();
         JPanel p = new JPanel();

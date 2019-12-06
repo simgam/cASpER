@@ -57,7 +57,6 @@ public class BaseConf {
             configuration.close();
         } catch (FileNotFoundException e) {
 
-            e.printStackTrace();
         }
     }
 

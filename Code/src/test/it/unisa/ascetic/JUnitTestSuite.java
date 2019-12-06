@@ -11,25 +11,12 @@ import it.unisa.ascetic.analysis.code_smell_detection.promiscuous_package.Struct
 import it.unisa.ascetic.analysis.code_smell_detection.promiscuous_package.TextualPromiscuousPackageStrategyTest;
 import it.unisa.ascetic.refactoring.SplitClassTest;
 import it.unisa.ascetic.refactoring.SplitPackagesTest;
-import it.unisa.ascetic.storage.beans.*;
-import it.unisa.ascetic.storage.repository.*;
-import it.unisa.ascetic.storage.sqlite_jdbc_driver_connection.SQLiteConnectorTest;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
 @RunWith(Suite.class)
 
-@Suite.SuiteClasses({SQLiteConnectorTest.class,
-        DBCreationTest.class,
-        InstanceVariableListProxyTest.class,
-        UsedInstanceVariableListProxyTest.class,
-        CalledMethodsListProxyTest.class,
-        MethodListProxyTest.class,
-        ClassListProxyTest.class,
-        InstanceVariableRepositoryTest.class,
-        MethodRepositoryTest.class,
-        ClassRepositoryTest.class,
-        PackageRepositoryTest.class,
+@Suite.SuiteClasses({
         TextualFeatureEnvyStrategyTest.class,
         StructuralFeatureEnvyStrategyTest.class,
         TextualMisplacedClassStrategyTest.class,

@@ -5,12 +5,13 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
+import it.unisa.ascetic.analysis.code_smell.PromiscuousPackageCodeSmell;
 import it.unisa.ascetic.gui.CheckProjectPage;
+import it.unisa.ascetic.parser.ParsingException;
 import it.unisa.ascetic.parser.PsiParser;
 import it.unisa.ascetic.storage.beans.ClassBean;
 import it.unisa.ascetic.storage.beans.MethodBean;
 import it.unisa.ascetic.storage.beans.PackageBean;
-import it.unisa.ascetic.storage.repository.*;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -93,10 +94,11 @@ public class SystemStart {
 
     public void form(Project currentProject) {
 
-        PackageBeanRepository packRepo = new PackageRepository();
-        ClassBeanRepository classRepo = new ClassRepository();
-        MethodBeanRepository methodRepo = new MethodRepository();
-        InstanceVariableBeanRepository instanceRepo = new InstanceVariableRepository();
+        final List<PackageBean>[] packageList = new List[]{new ArrayList<>()};
+        List<PackageBean> promiscuousList = new ArrayList<>();
+        List<ClassBean> blobList = new ArrayList<>();
+        List<ClassBean> misplacedList = new ArrayList<>();
+        List<MethodBean> featureList = new ArrayList<>();
 
         PsiParser parser = new PsiParser(currentProject);
         errorHappened = false;
@@ -109,8 +111,8 @@ public class SystemStart {
 
             ApplicationManager.getApplication().runReadAction(() -> {
                 try {
-                    parser.parse();
-                } catch (RepositoryException e) {
+                    packageList[0] = parser.parse();
+                } catch (ParsingException e) {
                     errorHappened = true;
                     e.printStackTrace();
                 }
@@ -119,25 +121,10 @@ public class SystemStart {
         }, "Ascetic - Code Smell Detection", false, currentProject);
 
         if (!errorHappened) {
-            List<PackageBean> packageList = new ArrayList<>();
-            List<PackageBean> promiscuousList = new ArrayList<>();
-            List<ClassBean> blobList = new ArrayList<>();
-            List<ClassBean> misplacedList = new ArrayList<>();
-            List<MethodBean> featureList = new ArrayList<>();
 
-            try {
-                packageList = packRepo.select(new SQLSelectionPackage());
-                promiscuousList = packRepo.select(new SQLPromiscuousSelection());
-                blobList = classRepo.select(new SQLBlobSelection());
-                misplacedList = classRepo.select(new SQLMisplacedSelection());
-                featureList = methodRepo.select(new SQLFeatureSelection());
-
-            } catch (RepositoryException e) {
-                e.printStackTrace();
-            }
-            CheckProjectPage frame = new CheckProjectPage(currentProject, packageList, promiscuousList, blobList, misplacedList, featureList, minC, sogliaStructural, algoritmo);
-
+            CheckProjectPage frame = new CheckProjectPage(currentProject, packageList[0], minC, sogliaStructural, algoritmo);
             frame.show();
+
         } else {
             Messages.showMessageDialog(currentProject, "Sorry, an error has occurred. Prease try again or contact support", "OH ! No! ", Messages.getErrorIcon());
         }

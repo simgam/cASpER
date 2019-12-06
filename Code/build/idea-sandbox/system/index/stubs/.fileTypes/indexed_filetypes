@@ -1,12 +1,12 @@
-1573154443120
-KJSM￿binary stub builder:com.intellij.psi.impl.compiled.ClassFileStubBuilder,970144114￿1573154443119
-CLASS￿binary stub builder:com.intellij.psi.impl.compiled.ClassFileStubBuilder,970144114￿1573154443118
-JAVA￿stub:com.intellij.psi.impl.source.JavaFileElementType,42￿1573154443117
-Groovy￿stub:org.jetbrains.plugins.groovy.lang.psi.stubs.elements.GrStubFileElementType,49￿1573154443116
-KNM￿binary stub builder:com.intellij.psi.impl.compiled.ClassFileStubBuilder,970144114￿1573154443115
-kotlin_builtins￿binary stub builder:com.intellij.psi.impl.compiled.ClassFileStubBuilder,970144114￿1573154443114
-XML￿binary stub builder:com.intellij.util.xml.stubs.builder.DomStubBuilder,1804543720￿1573154443113
-Properties￿stub:com.intellij.lang.properties.parsing.PropertiesElementTypes$1,0￿1573154443112
-HTML￿stub:com.intellij.psi.xml.XmlElementType$1,1￿1573154443111
-Kotlin￿stub:org.jetbrains.kotlin.psi.stubs.elements.KtFileElementType,135￿1573154443110
-DGM File Type￿stub:com.intellij.lang.properties.parsing.PropertiesElementTypes$1,0￿1573154443109
+1575481889072
+KNM￿binary stub builder:com.intellij.psi.impl.compiled.ClassFileStubBuilder,970144114￿1575481889071
+Properties￿stub:com.intellij.lang.properties.parsing.PropertiesElementTypes$1,0￿1575481889070
+Kotlin￿stub:org.jetbrains.kotlin.psi.stubs.elements.KtFileElementType,135￿1575481889069
+JAVA￿stub:com.intellij.psi.impl.source.JavaFileElementType,42￿1575481889068
+KJSM￿binary stub builder:com.intellij.psi.impl.compiled.ClassFileStubBuilder,970144114￿1575481889067
+kotlin_builtins￿binary stub builder:com.intellij.psi.impl.compiled.ClassFileStubBuilder,970144114￿1575481889066
+Groovy￿stub:org.jetbrains.plugins.groovy.lang.psi.stubs.elements.GrStubFileElementType,49￿1575481889065
+HTML￿stub:com.intellij.psi.xml.XmlElementType$1,1￿1575481889064
+DGM File Type￿stub:com.intellij.lang.properties.parsing.PropertiesElementTypes$1,0￿1575481889063
+CLASS￿binary stub builder:com.intellij.psi.impl.compiled.ClassFileStubBuilder,970144114￿1575481889062
+XML￿binary stub builder:com.intellij.util.xml.stubs.builder.DomStubBuilder,1804543720￿1575481889061

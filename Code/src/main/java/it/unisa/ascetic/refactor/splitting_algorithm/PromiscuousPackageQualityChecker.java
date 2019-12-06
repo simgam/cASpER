@@ -100,15 +100,11 @@ public class PromiscuousPackageQualityChecker {
         int numberOfParameters = 0;
 
         for (MethodBean methodBean : pFirstClass.getMethodList()) {
-            Collection<MethodBean> calls = methodBean.getMethodsCalls();
-
-            for (MethodBean call : calls) {
-
+            for (MethodBean call : methodBean.getMethodsCalls()) {
                 for (MethodBean methodBeanToCompare : pSecondClass.getMethodList()) {
                     if (call.getFullQualifiedName().equals(methodBeanToCompare.getFullQualifiedName())) {
-                        numberOfParameters += call.getParameters().size();
+                         numberOfParameters += methodBeanToCompare.getParameters().size();
                         dependencies++;
-
                     }
                 }
             }

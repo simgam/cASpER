@@ -68,6 +68,7 @@ public class TextualFeatureEnvyStrategy implements MethodSmellDetectionStrategy 
                 if (classBean.getSimilarity() > firstRankedClass.getSimilarity()) {
                     firstRankedClass = classBean;
                 }
+                classBean.setSimilarity(0);
             }
 
             if (firstRankedClass.getFullQualifiedName().equals(pMethod.getBelongingClass().getFullQualifiedName())) {

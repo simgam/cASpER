@@ -11,6 +11,6 @@ public interface ClassBeanList {
      *
      * @return una lista di classi
      */
-    public List<ClassBean> getList();
+    List<ClassBean> getList();
 
 }

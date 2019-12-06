@@ -123,8 +123,7 @@ public class ConfigureThreshold extends DialogWrapper {
                     dipendence.put("dipendenza" + s + "3", Integer.parseInt(list[3]));
                     algoritmi = list[4];
                 }
-
-                if (!(Double.parseDouble(list[0]) == 0.5 || (s.equalsIgnoreCase("Misplaced class") && Double.parseDouble(list[0]) == 0.0)) || !((!s.equalsIgnoreCase("Blob") && Integer.parseInt(list[1]) == 0) ||
+                if (!(Double.parseDouble(list[0]) == 0.5 || (s.equalsIgnoreCase("Misplaced class") && Double.parseDouble(list[0]) == 0.0)) || !(((!s.equalsIgnoreCase("Blob") && !s.equalsIgnoreCase("Promiscuous package")) && Integer.parseInt(list[1]) == 0) ||
                         (s.equalsIgnoreCase("Blob") && (Integer.parseInt(list[1]) == 350) && (Integer.parseInt(list[2]) == 20) && (Integer.parseInt(list[3]) == 500)) ||
                         (s.equalsIgnoreCase("Promiscuous package") && (Integer.parseInt(list[1]) == 50) && (Integer.parseInt(list[2]) == 50))) ||
                         !algoritmi.equalsIgnoreCase("all")) {

@@ -265,20 +265,4 @@ public class SplitClasses {
         return true;
     }
 
-    public static int getSmallestNonTrivialChain(Vector<String> chains) {
-        int result = -1;
-        int minLength = 10000;
-        Pattern p = Pattern.compile("-");
-        for (int i = 0; i < chains.size(); i++) {
-            String s = chains.elementAt(i);
-            String[] methods = p.split(s);
-            if (methods.length < minLength && methods.length > 2) {
-                minLength = methods.length;
-                result = i;
-            }
-        }
-
-        return result;
-    }
-
 }

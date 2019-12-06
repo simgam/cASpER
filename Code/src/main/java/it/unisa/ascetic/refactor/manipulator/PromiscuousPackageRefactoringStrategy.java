@@ -3,7 +3,6 @@ package it.unisa.ascetic.refactor.manipulator;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.psi.*;
-import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.refactoring.extractclass.ExtractClassProcessor;
 import it.unisa.ascetic.refactor.exceptions.PromiscuousPackageException;
 import it.unisa.ascetic.refactor.strategy.RefactoringStrategy;
@@ -49,86 +48,102 @@ public class PromiscuousPackageRefactoringStrategy implements RefactoringStrateg
     @Override
     public void doRefactor() throws PromiscuousPackageException {
         //Creo il javaPsiFacade per trovare i psiClass
+        PsiClass aClass;
+        List<PsiField> psiFields;
+        List<PsiMethod> psiMethods;
+        List<PsiClass> psiInnerClasses;
+        List<ClassBean> classBeanList;
         String pathPackage = packageBeanSource.getClassList().get(0).getPathToFile();
+        String incopletePath = pathPackage.substring(0, pathPackage.lastIndexOf('/'));
+        String path, fqn;
+        PsiPackage newPackage;
+        int inizio = 1, i;
+
         try {
             JavaPsiFacade javaPsiFacade = JavaPsiFacade.getInstance(project);
-            PsiMethod m;
+            fqn = packageBeanSource.getFullQualifiedName();
+            fqn = fqn.substring(0, fqn.lastIndexOf(".") + 1);
+            if (fqn.equalsIgnoreCase("")) {
+                fqn += ".";
+            }
 
-            List<Boolean> contructVuoto = new ArrayList<Boolean>();
-            int i = 0;
-
+            while (javaPsiFacade.findPackage(fqn + "Package" + inizio) != null) {
+                inizio++;
+            }
+            i = inizio;
             for (PackageBean toPackage : newPackages) {
 
-                List<ClassBean> classBeanList = toPackage.getClassList();
+                path = fqn + "Package" + i++;
+                toPackage.setFullQualifiedName(path);
+                classBeanList = toPackage.getClassList();
 
-                String path = pathPackage.substring(0, pathPackage.lastIndexOf('/'));
-                path = path + "/" + toPackage.getFullQualifiedName().substring(toPackage.getFullQualifiedName().lastIndexOf(".") + 1);
+                path = incopletePath + "/" + toPackage.getFullQualifiedName().substring(toPackage.getFullQualifiedName().lastIndexOf(".") + 1);
                 new File(path).mkdir();
-                PsiClass aClass;
-                List<PsiField> psiFields;
-                List<PsiMethod> psiMethods;
-                List<PsiClass> psiInnerClasses;
 
                 for (ClassBean classToMove : classBeanList) {
-                    contructVuoto.add(false);
                     psiFields = new ArrayList<>();
                     psiMethods = new ArrayList<>();
                     psiInnerClasses = new ArrayList<>();
-                    aClass = javaPsiFacade.findClass(classToMove.getFullQualifiedName(), GlobalSearchScope.allScope(project));
+                    aClass = PsiUtil.getPsi(classToMove, project);
+                    // aClass = javaPsiFacade.findClasses(classToMove.getFullQualifiedName(), GlobalSearchScope.allScope(project))[0];
 
-                    for (int k = 0; k < aClass.getFields().length; k++) {
-                        psiFields.add(aClass.getFields()[k]);
-                    }
-                    for (int k = 0; k < aClass.getMethods().length; k++) {
-                        psiMethods.add(aClass.getMethods()[k]);
-                        m = aClass.getMethods()[k];
-                        if (m.isConstructor() && m.hasParameters()) {
-                            contructVuoto.set(i, true);
-                        }
+                    for (PsiField field : aClass.getFields()) {
+                        psiFields.add(field);
                     }
 
-                    for (int k = 0; k < aClass.getInnerClasses().length; k++) {
-                        psiInnerClasses.add(aClass.getInnerClasses()[k]);
+                    for (PsiMethod m : aClass.getMethods()) {
+                        psiMethods.add(m);
                     }
 
-                    //Estraggo completamente la classe per spostarla nel nuovo package
-                    ExtractClassProcessor extractClassProcessor = new ExtractClassProcessor(aClass, psiFields, psiMethods, psiInnerClasses, toPackage.getFullQualifiedName(), aClass.getName());
-                    extractClassProcessor.run();
+                    for (PsiClass c : aClass.getInnerClasses()) {
+                        psiInnerClasses.add(c);
+                    }
 
+                    try {
+                        //Estraggo completamente la classe per spostarla nel nuovo package
+                        ExtractClassProcessor extractClassProcessor = new ExtractClassProcessor(aClass, psiFields, psiMethods, psiInnerClasses, toPackage.getFullQualifiedName(), aClass.getName());
+                        extractClassProcessor.run();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        throw new PromiscuousPackageException(e.getMessage());
+                    }
+                }
+            }
+
+            File file;
+            List<PsiMethod> methodsToMove;
+            for (PackageBean toPackage : newPackages) {
+                i = 0;
+                newPackage = JavaPsiFacade.getInstance(project).findPackage(toPackage.getFullQualifiedName());
+
+                for (PsiClass classe : newPackage.getClasses()) {
+                    methodsToMove = new ArrayList<>();
+                    methodsToMove.add(classe.getMethods()[0]);
+                    ExtractClassProcessor processor = new ExtractClassProcessor(classe, new ArrayList<>(), methodsToMove, new ArrayList<>(), toPackage.getFullQualifiedName(), "appoggioAbcdefg" + (i + inizio));
+                    processor.run();
+                    i++;
+                }
+                i = 0;
+                while (i < toPackage.getClassList().size()) {
+                    path = incopletePath + "/" + toPackage.getFullQualifiedName().substring(toPackage.getFullQualifiedName().lastIndexOf(".") + 1);
+                    path = path.substring(toPackage.getFullQualifiedName().lastIndexOf("/") + 1) + "/appoggioAbcdefg" + (i + inizio) + ".java";
+                    file = new File(path);
+                    file.delete();
                     i++;
                 }
             }
 
             //elimino il vecchio package affetto
-            File file = new File(pathPackage);
-
+            file = new File(pathPackage);
             for (File f : file.listFiles()) {
                 f.delete();
             }
             if (!file.delete()) {
-                Messages.showMessageDialog("Error during delete of original package, pleace delete it manually", "Attention", Messages.getInformationIcon());
+                Messages.showMessageDialog("Error during delete of original package, pleace delete it manually", "Attention", Messages.getWarningIcon());
             }
 
-//            i = 0;
-//
-//            for (PackageBean toPackage : newPackages) {
-//                PsiPackage newPackage = JavaPsiFacade.getInstance(project).findPackage(toPackage.getFullQualifiedName());
-//                for (PsiClass classe : newPackage.getClasses()) {
-//                    System.out.println(contructVuoto.get(i));
-//                    if (contructVuoto.get(i)) {
-//
-//                        for (PsiMethod c : classe.getMethods()) {
-//                            System.out.println(c.getName());
-//                            if (c.isConstructor() && c.hasParameters()) {
-//                                System.out.println(c.getName() + " tolto");
-//                                c.delete();
-//                            }
-//                        }
-//                    }
-//                }
-//            }
-
-        } catch (Exception e) {
+        } catch (
+                Exception e) {
             e.printStackTrace();
             throw new PromiscuousPackageException(e.getMessage());
 

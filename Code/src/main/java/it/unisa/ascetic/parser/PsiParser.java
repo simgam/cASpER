@@ -4,10 +4,7 @@ import com.intellij.analysis.AnalysisScope;
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.*;
 import com.intellij.psi.util.PsiTreeUtil;
-import it.unisa.ascetic.analysis.code_smell.BlobCodeSmell;
-import it.unisa.ascetic.analysis.code_smell.FeatureEnvyCodeSmell;
-import it.unisa.ascetic.analysis.code_smell.MisplacedClassCodeSmell;
-import it.unisa.ascetic.analysis.code_smell.PromiscuousPackageCodeSmell;
+import it.unisa.ascetic.analysis.code_smell.*;
 import it.unisa.ascetic.analysis.code_smell_detection.blob.StructuralBlobStrategy;
 import it.unisa.ascetic.analysis.code_smell_detection.blob.TextualBlobStrategy;
 import it.unisa.ascetic.analysis.code_smell_detection.feature_envy.StructuralFeatureEnvyStrategy;
@@ -17,8 +14,6 @@ import it.unisa.ascetic.analysis.code_smell_detection.misplaced_class.TextualMis
 import it.unisa.ascetic.analysis.code_smell_detection.promiscuous_package.StructuralPromiscuousPackageStrategy;
 import it.unisa.ascetic.analysis.code_smell_detection.promiscuous_package.TextualPromiscuousPackageStrategy;
 import it.unisa.ascetic.storage.beans.*;
-import it.unisa.ascetic.storage.repository.*;
-import it.unisa.ascetic.storage.sqlite_jdbc_driver_connection.SQLiteConnector;
 import javafx.util.Pair;
 
 import java.io.*;
@@ -33,10 +28,6 @@ import java.util.regex.Pattern;
 public class PsiParser implements Parser {
     Logger logger = Logger.getLogger("global");
     private Project project;
-    private static PackageBeanRepository packageBeanRepository;
-    private static ClassBeanRepository classBeanRepository;
-    private static MethodBeanRepository methodBeanRepository;
-    private static InstanceVariableBeanRepository instanceVariableBeanRepository;
     private final List<PackageBean> projectPackages;
     private static String path;
 
@@ -44,182 +35,98 @@ public class PsiParser implements Parser {
         this.project = project;
         path = project.getBasePath();
         projectPackages = new ArrayList<PackageBean>();
-        packageBeanRepository = new PackageRepository();
-        classBeanRepository = new ClassRepository();
-        methodBeanRepository = new MethodRepository();
-        instanceVariableBeanRepository = new InstanceVariableRepository();
         logger.setLevel(Level.OFF);
     }
 
     @Override
-    public void parse() throws RepositoryException {
-        if (packageBeanRepository == null || classBeanRepository == null || methodBeanRepository == null || instanceVariableBeanRepository == null) {
-            throw new RepositoryException("Repository non inizializzate!");
-        }
-
-        String nameProject = project.getName();
-        SQLiteConnector.setNameDB(nameProject);
-        if (SQLiteConnector.DBexists()) {
-            SQLiteConnector.PrepareDB();
-        }
-        PackageBean parsedPackageBean;
-        for (PsiPackage psiPackage : getAllPackagesBeans()) {
-            parsedPackageBean = parse(psiPackage);
-            packageBeanRepository.add(parsedPackageBean);
-            projectPackages.add(parsedPackageBean);
-        }
-
-        for (PackageBean p : projectPackages) {
-            for (ClassBean c : p.getClassList()) {
-                for (MethodBean m : c.getMethodList()) {
-                    methodBeanRepository.update(m);
-                }
-            }
-        }
-
-        HashMap<String, Double> coseno = new HashMap<String, Double>();
-        HashMap<String, Integer> dipendence = new HashMap<String, Integer>();
-
-        ArrayList<String> smell = new ArrayList<String>();
-        smell.add("Feature");
-        smell.add("Misplaced");
-        smell.add("Blob");
-        smell.add("Promiscuous");
+    public List<PackageBean> parse() throws ParsingException {
         try {
-            FileReader f = new FileReader(System.getProperty("user.home") + File.separator + ".ascetic" + File.separator + "threshold.txt");
-            BufferedReader b = new BufferedReader(f);
+            PackageBean parsedPackageBean;
+            Set<PsiPackage> listPackages = getAllPackagesBeans();
+            for (PsiPackage psiPackage : listPackages) {
+                parsedPackageBean = parse(psiPackage);
+                projectPackages.add(parsedPackageBean);
+            }
 
-            String[] list = null;
-            double sogliaCoseno;
-            int sogliaDip;
-            for (String s : smell) {
-                list = b.readLine().split(",");
-                coseno.put("coseno" + s, Double.parseDouble(list[0]));
-                dipendence.put("dip" + s, Integer.parseInt(list[1]));
-                if (s.equalsIgnoreCase("promiscuous")) {
-                    dipendence.put("dip" + s + "2", Integer.parseInt(list[2]));
+            HashMap<String, Double> coseno = new HashMap<String, Double>();
+            HashMap<String, Integer> dipendence = new HashMap<String, Integer>();
+
+            ArrayList<String> smell = new ArrayList<String>();
+            smell.add("Feature");
+            smell.add("Misplaced");
+            smell.add("Blob");
+            smell.add("Promiscuous");
+            try {
+                FileReader f = new FileReader(System.getProperty("user.home") + File.separator + ".ascetic" + File.separator + "threshold.txt");
+                BufferedReader b = new BufferedReader(f);
+
+                String[] list = null;
+                double sogliaCoseno;
+                int sogliaDip;
+                for (String s : smell) {
+                    list = b.readLine().split(",");
+                    coseno.put("coseno" + s, Double.parseDouble(list[0]));
+                    dipendence.put("dip" + s, Integer.parseInt(list[1]));
+                    if (s.equalsIgnoreCase("promiscuous")) {
+                        dipendence.put("dip" + s + "2", Integer.parseInt(list[2]));
+                    }
+                    if (s.equalsIgnoreCase("blob")) {
+                        dipendence.put("dip" + s + "2", Integer.parseInt(list[2]));
+                        dipendence.put("dip" + s + "3", Integer.parseInt(list[3]));
+                    }
                 }
-                if (s.equalsIgnoreCase("blob")) {
-                    dipendence.put("dip" + s + "2", Integer.parseInt(list[2]));
-                    dipendence.put("dip" + s + "3", Integer.parseInt(list[3]));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            for (PackageBean packageBean : projectPackages) {
+
+                TextualPromiscuousPackageStrategy textualPromiscuousPackageStrategy = new TextualPromiscuousPackageStrategy(coseno.get("cosenoPromiscuous"));
+                PromiscuousPackageCodeSmell tPromiscuousPackagecodeSmell = new PromiscuousPackageCodeSmell(textualPromiscuousPackageStrategy, "Textual");
+                packageBean.isAffected(tPromiscuousPackagecodeSmell);
+                packageBean.setSimilarity(0);
+
+                StructuralPromiscuousPackageStrategy structuralPromiscuousPackageStrategy = new StructuralPromiscuousPackageStrategy(projectPackages, dipendence.get("dipPromiscuous") / 100, dipendence.get("dipPromiscuous2") / 100);
+                PromiscuousPackageCodeSmell sPromiscuousPackagecodeSmell = new PromiscuousPackageCodeSmell(structuralPromiscuousPackageStrategy, "Structural");
+                packageBean.isAffected(sPromiscuousPackagecodeSmell);
+                packageBean.setSimilarity(0);
+
+                for (ClassBean classBean : packageBean.getClassList()) {
+
+                    TextualBlobStrategy textualBlobStrategy = new TextualBlobStrategy(coseno.get("cosenoBlob"));
+                    BlobCodeSmell tBlobCodeSmell = new BlobCodeSmell(textualBlobStrategy, "Textual");
+                    TextualMisplacedClassStrategy textualMisplacedClassStrategy = new TextualMisplacedClassStrategy(projectPackages, coseno.get("cosenoMisplaced"));
+                    MisplacedClassCodeSmell tMisplacedClassCodeSmell = new MisplacedClassCodeSmell(textualMisplacedClassStrategy, "Textual");
+                    classBean.isAffected(tBlobCodeSmell);
+                    classBean.isAffected(tMisplacedClassCodeSmell);
+                    classBean.setSimilarity(0);
+
+                    StructuralBlobStrategy structuralBlobStrategy = new StructuralBlobStrategy(dipendence.get("dipBlob"), dipendence.get("dipBlob2"), dipendence.get("dipBlob3"));
+                    BlobCodeSmell sBlobCodeSmell = new BlobCodeSmell(structuralBlobStrategy, "Structural");
+                    StructuralMisplacedClassStrategy structuralMisplacedClassStrategy = new StructuralMisplacedClassStrategy(projectPackages, dipendence.get("dipMisplaced"));
+                    MisplacedClassCodeSmell sMisplacedClassCodeSmell = new MisplacedClassCodeSmell(structuralMisplacedClassStrategy, "Structural");
+                    classBean.isAffected(sBlobCodeSmell);
+                    classBean.isAffected(sMisplacedClassCodeSmell);
+                    classBean.setSimilarity(0);
+
+                    for (MethodBean methodBean : classBean.getMethodList()) {
+
+                        TextualFeatureEnvyStrategy textualFeatureEnvyStrategy = new TextualFeatureEnvyStrategy(projectPackages, coseno.get("cosenoFeature"));
+                        FeatureEnvyCodeSmell tFeatureEnvyCodeSmell = new FeatureEnvyCodeSmell(textualFeatureEnvyStrategy, "Textual");
+                        methodBean.isAffected(tFeatureEnvyCodeSmell);
+                        methodBean.setIndex(0);
+
+                        StructuralFeatureEnvyStrategy structuralFeatureEnvyStrategy = new StructuralFeatureEnvyStrategy(projectPackages, dipendence.get("dipFeature"));
+                        FeatureEnvyCodeSmell sFeatureEnvyCodeSmell = new FeatureEnvyCodeSmell(structuralFeatureEnvyStrategy, "Structural");
+                        methodBean.isAffected(sFeatureEnvyCodeSmell);
+                        methodBean.setIndex(0);
+                    }
                 }
             }
+            return projectPackages;
         } catch (Exception e) {
-            e.printStackTrace();
+            throw new ParsingException();
         }
-
-        classBeanRepository.delete();
-        boolean affectedbean = false;
-
-        for (PackageBean packageBean : projectPackages) {
-            TextualPromiscuousPackageStrategy textualPromiscuousPackageStrategy = new TextualPromiscuousPackageStrategy(coseno.get("cosenoPromiscuous"));
-            PromiscuousPackageCodeSmell tPromiscuousPackagecodeSmell = new PromiscuousPackageCodeSmell(textualPromiscuousPackageStrategy, "Textual");
-            if (packageBean.isAffected(tPromiscuousPackagecodeSmell)) {
-                affectedbean = true;
-            }
-            packageBean.setSimilarity(0);
-            StructuralPromiscuousPackageStrategy structuralPromiscuousPackageStrategy = new StructuralPromiscuousPackageStrategy(projectPackages, dipendence.get("dipPromiscuous") / 100, dipendence.get("dipPromiscuous2") / 100);
-            PromiscuousPackageCodeSmell sPromiscuousPackagecodeSmell = new PromiscuousPackageCodeSmell(structuralPromiscuousPackageStrategy, "Structural");
-            if (packageBean.isAffected(sPromiscuousPackagecodeSmell)) {
-                affectedbean = true;
-            }
-
-            if (affectedbean) {
-                packageBeanRepository.update(packageBean);
-                affectedbean = false;
-            }
-            packageBean.setSimilarity(0);
-
-            for (ClassBean classBean : packageBean.getClassList()) {
-
-                TextualBlobStrategy textualBlobStrategy = new TextualBlobStrategy(coseno.get("cosenoBlob"));
-                BlobCodeSmell tBlobCodeSmell = new BlobCodeSmell(textualBlobStrategy, "Textual");
-                TextualMisplacedClassStrategy textualMisplacedClassStrategy = new TextualMisplacedClassStrategy(projectPackages, coseno.get("cosenoMisplaced"));
-                MisplacedClassCodeSmell tMisplacedClassCodeSmell = new MisplacedClassCodeSmell(textualMisplacedClassStrategy, "Textual");
-                if (classBean.isAffected(tBlobCodeSmell) || classBean.isAffected(tMisplacedClassCodeSmell)) {
-                    affectedbean = true;
-                }
-
-                StructuralBlobStrategy structuralBlobStrategy = new StructuralBlobStrategy(dipendence.get("dipBlob"), dipendence.get("dipBlob2"), dipendence.get("dipBlob3"));
-                BlobCodeSmell sBlobCodeSmell = new BlobCodeSmell(structuralBlobStrategy, "Structural");
-                StructuralMisplacedClassStrategy structuralMisplacedClassStrategy = new StructuralMisplacedClassStrategy(projectPackages, dipendence.get("dipMisplaced"));
-                MisplacedClassCodeSmell sMisplacedClassCodeSmell = new MisplacedClassCodeSmell(structuralMisplacedClassStrategy, "Structural");
-                if (classBean.isAffected(sBlobCodeSmell) || classBean.isAffected(sMisplacedClassCodeSmell)) {
-                    affectedbean = true;
-                }
-
-                if (affectedbean) {
-                    classBeanRepository.update(classBean);
-                    affectedbean = false;
-                }
-
-                classBean.setSimilarity(0);
-                classBean.setEnviedPackage(null);
-
-                for (MethodBean methodBean : classBean.getMethodList()) {
-
-                    TextualFeatureEnvyStrategy textualFeatureEnvyStrategy = new TextualFeatureEnvyStrategy(projectPackages, coseno.get("cosenoFeature"));
-                    FeatureEnvyCodeSmell tFeatureEnvyCodeSmell = new FeatureEnvyCodeSmell(textualFeatureEnvyStrategy, "Textual");
-                    if (methodBean.isAffected(tFeatureEnvyCodeSmell)) {
-                        affectedbean = true;
-                    }
-
-                    StructuralFeatureEnvyStrategy structuralFeatureEnvyStrategy = new StructuralFeatureEnvyStrategy(projectPackages, dipendence.get("dipFeature"));
-                    FeatureEnvyCodeSmell sFeatureEnvyCodeSmell = new FeatureEnvyCodeSmell(structuralFeatureEnvyStrategy, "Structural");
-                    if (methodBean.isAffected(sFeatureEnvyCodeSmell)) {
-                        affectedbean = true;
-                    }
-
-                    if (affectedbean) {
-                        methodBeanRepository.update(methodBean);
-                        affectedbean = false;
-                    }
-
-                    methodBean.setIndex(0);
-                    methodBean.setEnviedClass(null);
-                }
-            }
-        }
-
-    }
-
-    public List<Pair<String, String>> getFile(String nameOfFIle) throws IOException {
-        String fileName = System.getProperty("user.home") + File.separator + ".ascetic" + File.separator + nameOfFIle + ".csv";
-        File file = new File(fileName);
-        List<Pair<String, String>> allMethod = new ArrayList<Pair<String, String>>();
-        BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
-        String nextString, nameClass, operation;
-        nextString = bufferedReader.readLine();
-        String[] split;
-        while (nextString != null) {
-            split = nextString.split(",");
-            nameClass = split[0];
-            operation = split[1];
-            Pair<String, String> pair = new Pair<>(nameClass, operation);
-            allMethod.add(pair);
-
-            nextString = bufferedReader.readLine();
-        }
-        return allMethod;
-    }
-
-    private void removeLines(File inputFile, String lineToRemove) throws IOException {
-        File tempFile = new File("myTempFile.csv");
-
-        BufferedReader reader = new BufferedReader(new FileReader(inputFile));
-        PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(tempFile)));
-
-        String currentLine;
-
-        while ((currentLine = reader.readLine()) != null) {
-
-            String trimmedLine = currentLine.trim();
-            if (trimmedLine.equals(lineToRemove)) continue;
-            writer.println(currentLine);
-        }
-        writer.close();
-        reader.close();
-        tempFile.renameTo(inputFile);
     }
 
     /**
@@ -231,7 +138,7 @@ public class PsiParser implements Parser {
      * @return
      */
     private PackageBean parse(PsiPackage psiPackage) {
-
+        //Package da parsare
         StringBuilder textContent = new StringBuilder();
         String name;
         ArrayList<ClassBean> list = new ArrayList<>();
@@ -245,7 +152,7 @@ public class PsiParser implements Parser {
         PsiClass[] classes = psiPackage.getClasses();
         ClassList classBeanList = new ClassList();
         for (PsiClass psiClass : classes) {
-            list.add(parse(psiClass));
+            list.add(parse(psiClass,textContent.toString()));
         }
         classBeanList.setList(list);
         builder.setClassList(classBeanList);
@@ -258,16 +165,14 @@ public class PsiParser implements Parser {
      * @param psiClass
      * @return ClassBean
      */
-    public ClassBean parse(PsiClass psiClass) {
-
-        //Creo packageBean di appartenenza
-        String contentForPackage = "";
+    public ClassBean parse(PsiClass psiClass,String contentForPackage) {
+        //Classe da parsare
         PsiJavaFile file = (PsiJavaFile) psiClass.getContainingFile();
         PsiPackage psiPackage = JavaPsiFacade.getInstance(project).findPackage(file.getPackageName());
         String pkgName = psiPackage.getQualifiedName();
         //PackageBean per supporto
         PackageBean packageBean = new PackageBean.Builder(pkgName, contentForPackage).build();
-        // analizzo la classe
+        //analizzo la classe
         String name = psiClass.getQualifiedName();
         String text = psiClass.getScope().getText();
 
@@ -328,7 +233,7 @@ public class PsiParser implements Parser {
         ArrayList<MethodBean> listaMetodi = new ArrayList<>();
         PsiMethod[] methods = psiClass.getMethods();
         for (PsiMethod method : methods) {
-            listaMetodi.add(parse(method));
+            listaMetodi.add(parse(method, text));
         }
         MethodList methodList = new MethodList();
         methodList.setList(listaMetodi);
@@ -344,7 +249,7 @@ public class PsiParser implements Parser {
      * @param psiMethod the method to convert
      * @return MethodBean
      */
-    public MethodBean parse(PsiMethod psiMethod) {
+    public MethodBean parse(PsiMethod psiMethod, String textContent) {
         //MethodBan da Parsare
         MethodBean.Builder builder = new MethodBean.Builder(psiMethod.getContainingClass().getQualifiedName() + "." + psiMethod.getName(), psiMethod.getText());
         builder.setStaticMethod(psiMethod.getModifierList().hasExplicitModifier("static"));
@@ -365,7 +270,7 @@ public class PsiParser implements Parser {
         InstanceVariableList instanceVariableList = new InstanceVariableList();
         instanceVariableList.setList(list);
 
-        //ClassBean Pezzotto Return Type
+        //ClassBean Return Type
         String returnTypeName;
         try {
             returnTypeName = psiMethod.getReturnType().getInternalCanonicalText();
@@ -377,8 +282,8 @@ public class PsiParser implements Parser {
         builder.setInstanceVariableList(instanceVariableList);
 
 
-        //ClassBean Pezzotto belonging Class
-        ClassBean belongingClass = new ClassBean.Builder(psiMethod.getContainingClass().getQualifiedName(), "").build();
+        //ClassBean Belonging Class
+        ClassBean belongingClass = new ClassBean.Builder(psiMethod.getContainingClass().getQualifiedName(), textContent).build();
         builder.setBelongingClass(belongingClass);
         //setto i parametri del metodo
         HashMap<String, ClassBean> map = new HashMap<>();
@@ -394,7 +299,6 @@ public class PsiParser implements Parser {
         for (MethodBean m : findMethodInvocations(psiMethod)) {
             methodCallList.add(m);
         }
-
         ((MethodList) methodCalls).setList(methodCallList);
         builder.setMethodsCalls(methodCalls);
         return builder.build();
@@ -410,6 +314,7 @@ public class PsiParser implements Parser {
      * @return the InstanceVariableBean corresponding to the given PsiField
      */
     public InstanceVariableBean parse(PsiField psiField) {
+        //Variabili d'instanza da parsare
         String name = psiField.getName();
         String type = psiField.getType().getCanonicalText();
         String initialization = "";
@@ -492,7 +397,7 @@ public class PsiParser implements Parser {
             }
         }
 
-        return (ArrayList) invocations;
+        return invocations;
     }
 
     /**

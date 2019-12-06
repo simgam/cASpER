@@ -64,10 +64,6 @@ public class CheckProjectPage extends DialogWrapper {
     private JPanel smell;
 
     private ArrayList<JPanel> smellPanel;
-    private JPanel featurePanel;
-    private JPanel misPanel;
-    private JPanel blobPanel;
-    private JPanel promiscuousPanel;
     private HashMap<String, JCheckBox> codeSmell = new HashMap<String, JCheckBox>();
     private HashMap<String, JCheckBox> algoritmi = new HashMap<String, JCheckBox>();
     private HashMap<String, Integer> threshold = new HashMap<String, Integer>();
@@ -81,7 +77,7 @@ public class CheckProjectPage extends DialogWrapper {
     private double sogliaCoseno;
     private ArrayList<Integer> sogliaDipendenze;
 
-    public CheckProjectPage(Project currentProj, List<PackageBean> packages, List<PackageBean> promiscuous, List<ClassBean> blob, List<ClassBean> misplaced, List<MethodBean> feature, double sogliaCoseno, ArrayList<Integer> sogliaDipendenze, String algorithm) {
+    public CheckProjectPage(Project currentProj, List<PackageBean> packages, double sogliaCoseno, ArrayList<Integer> sogliaDipendenze, String algorithm) {
         super(true);
         smellName = new ArrayList<String>();
         smellName.add("Feature Envy");
@@ -96,12 +92,13 @@ public class CheckProjectPage extends DialogWrapper {
         promiscuousThresholdName.add("MIntraC");
         promiscuousThresholdName.add("MInterC");
 
+        promiscuousPackageList = new ArrayList<PackageBean>();
+        featureEnvyList = new ArrayList<MethodBean>();
+        misplacedClassList = new ArrayList<ClassBean>();
+        blobList = new ArrayList<ClassBean>();
+
         this.currentProject = currentProj;
         this.packages = packages;
-        this.promiscuousPackageList = promiscuous;
-        this.featureEnvyList = feature;
-        this.misplacedClassList = misplaced;
-        this.blobList = blob;
         this.algorithm = algorithm;
         this.sogliaCoseno = sogliaCoseno;
         this.sogliaDipendenze = sogliaDipendenze;
@@ -118,6 +115,32 @@ public class CheckProjectPage extends DialogWrapper {
         if (f.exists()) {
             f.delete();
         }
+
+        String name = "";
+        for (PackageBean p : packages) {
+            if (p.getAffectedSmell().size() != 0)
+                promiscuousPackageList.add(p);
+            for (ClassBean c : p.getClassList()) {
+                for (CodeSmell smellC : c.getAffectedSmell()) {
+                    if (!name.equals(smellC.getSmellName()))
+                        switch (smellC.getSmellName()) {
+                            case "Blob":
+                                name = "Blob";
+                                blobList.add(c);
+                                break;
+                            case "Misplaced Class":
+                                name = "Misplaced Class";
+                                misplacedClassList.add(c);
+                        }
+                }
+                name = "";
+                for (MethodBean m : c.getMethodList()) {
+                    if (m.getAffectedSmell().size() != 0)
+                        featureEnvyList.add(m);
+                }
+            }
+        }
+
         threshold = new HashMap<String, Integer>();
         int i = 0;
         while (i < blobThresholdName.size()) {
@@ -172,7 +195,7 @@ public class CheckProjectPage extends DialogWrapper {
 
         algo = new ArrayList<JPanel>();
         smellPanel = new ArrayList<JPanel>();
-        for (i = 0; i < 4; i++) {
+        for (i = 0; i < smellName.size(); i++) {
             smellPanel.add(new JPanel());
             smellPanel.get(i).setBorder(new EmptyBorder(0, 0, 10, 0));
             smellPanel.get(i).setLayout(new GridLayout(0, 2, 0, 0));
@@ -373,7 +396,6 @@ public class CheckProjectPage extends DialogWrapper {
 
         structural.add(blobThreshold);
         structural.add(promiscuousThreshold);
-
         pannello.add(centerPanel);
         createTable();
 
@@ -465,11 +487,7 @@ public class CheckProjectPage extends DialogWrapper {
             scritta.setHorizontalAlignment(SwingConstants.CENTER);
             livello.add(scritta);
             livello.add(valDipendenza.get(j + pos));
-            if (ThresholdName.get(j - 1).
-
-                    equalsIgnoreCase("mintrac") || ThresholdName.get(j - 1).
-
-                    equalsIgnoreCase("minterc")) {
+            if (ThresholdName.get(j - 1).equalsIgnoreCase("mintrac") || ThresholdName.get(j - 1).equalsIgnoreCase("minterc")) {
                 vincolo = new JLabel("valore in [" + ((double) threshold.get(ThresholdName.get(finalJ - 1))) / 100 + ";1]");
             } else {
                 vincolo = new JLabel("valore min = " + threshold.get(ThresholdName.get(j - 1)));
@@ -556,7 +574,7 @@ public class CheckProjectPage extends DialogWrapper {
         columnNames.add("priority");
         model = new DefaultTableModel(columnNames, 0);
 
-        if (blobList != null) {
+        if (blobList.size() != 0) {
             if (codeSmell.get("Blob").isSelected()) {
                 for (ClassBean c : blobList) {
                     gestione(c.getAffectedSmell(), "Blob", c.getFullQualifiedName());
@@ -564,7 +582,7 @@ public class CheckProjectPage extends DialogWrapper {
             }
         }
 
-        if (misplacedClassList != null) {
+        if (misplacedClassList.size() != 0) {
             if (codeSmell.get("Misplaced Class").isSelected()) {
                 for (ClassBean c : misplacedClassList) {
                     gestione(c.getAffectedSmell(), "Misplaced Class", c.getFullQualifiedName());
@@ -572,7 +590,7 @@ public class CheckProjectPage extends DialogWrapper {
             }
         }
 
-        if (promiscuousPackageList != null) {
+        if (promiscuousPackageList.size() != 0) {
             if (codeSmell.get("Promiscuous Package").isSelected()) {
                 for (PackageBean pp : promiscuousPackageList) {
                     gestione(pp.getAffectedSmell(), "Promiscuous Package", pp.getFullQualifiedName());
@@ -580,7 +598,7 @@ public class CheckProjectPage extends DialogWrapper {
             }
         }
 
-        if (featureEnvyList != null) {
+        if (featureEnvyList.size() != 0) {
             if (codeSmell.get("Feature Envy").isSelected()) {
                 for (MethodBean m : featureEnvyList) {
                     gestione(m.getAffectedSmell(), "Feature Envy", m.getFullQualifiedName());
@@ -639,6 +657,7 @@ public class CheckProjectPage extends DialogWrapper {
                     } else {
                         controllo = true;
                     }
+
                 } else {
                     controllo = true;
                 }
@@ -659,7 +678,7 @@ public class CheckProjectPage extends DialogWrapper {
                     if (dip >= maxS) {
                         maxS = dip;
                     }
-                    ;
+
                 } else {
                     if (smell.getSmellName().equalsIgnoreCase("blob") && algoritmi.get("structural" + codeSmell.substring(0, 1)).isSelected() && used.equalsIgnoreCase("structural")) {
                         Double lcom = Double.parseDouble(valDipendenza.get(1).getText());
@@ -672,6 +691,7 @@ public class CheckProjectPage extends DialogWrapper {
                                 basso = true;
                             }
                         }
+
                     } else {
                         if (smell.getSmellName().equalsIgnoreCase("promiscuous package") && algoritmi.get("structural" + codeSmell.substring(0, 1)).isSelected() && used.equalsIgnoreCase("structural")) {
                             Double mintrac = Double.parseDouble(valDipendenza.get(4).getText());
@@ -694,12 +714,15 @@ public class CheckProjectPage extends DialogWrapper {
 
                 if (i + 1 >= list.size() || !list.get(i + 1).getSmellName().equalsIgnoreCase(smell.getSmellName())) {
 
-                    if (((cos != 0.0 || dip != 0) && ((listThreschold.get("coseno") != null && indice <= listThreschold.get("coseno") && algoritmi.get("textual" + codeSmell.substring(0, 1)).isSelected()) ||
-                            (listThreschold.get("dipendenza") != null && indice <= listThreschold.get("dipendenza") && algoritmi.get("structural" + codeSmell.substring(0, 1)).isSelected()))) ||
-                            (smell.getSmellName().equalsIgnoreCase("Blob") && smell.getAlgoritmsUsed().equalsIgnoreCase("structural") && algoritmi.get("structural" + codeSmell.substring(0, 1)).isSelected() &&
-                                    (Double.parseDouble(valDipendenza.get(1).getText()) <= listThreschold.get("LCOM") || Double.parseDouble(valDipendenza.get(2).getText()) <= listThreschold.get("featureSum") || Double.parseDouble(valDipendenza.get(3).getText()) <= listThreschold.get("ELOC"))) ||
-                            (smell.getSmellName().equalsIgnoreCase("Promiscuous package") && smell.getAlgoritmsUsed().equalsIgnoreCase("structural") && algoritmi.get("structural" + codeSmell.substring(0, 1)).isSelected() &&
-                                    (Double.parseDouble(valDipendenza.get(1).getText()) <= listThreschold.get("MIntraC") || Double.parseDouble(valDipendenza.get(2).getText()) <= listThreschold.get("MInterC")))) {
+                    boolean prima, seconda, terza;
+                    prima = ((cos != 0.0 || dip != 0) && ((listThreschold.get("coseno") != null && indice <= listThreschold.get("coseno") && algoritmi.get("textual" + codeSmell.substring(0, 1)).isSelected()) ||
+                            (listThreschold.get("dipendenza") != null && indice <= listThreschold.get("dipendenza") && algoritmi.get("structural" + codeSmell.substring(0, 1)).isSelected())));
+                    seconda = (smell.getSmellName().equalsIgnoreCase("Blob") && smell.getAlgoritmsUsed().equalsIgnoreCase("structural") && algoritmi.get("structural" + codeSmell.substring(0, 1)).isSelected() &&
+                            (Double.parseDouble(valDipendenza.get(1).getText()) <= listThreschold.get("LCOM") || Double.parseDouble(valDipendenza.get(2).getText()) <= listThreschold.get("featureSum") || Double.parseDouble(valDipendenza.get(3).getText()) <= listThreschold.get("ELOC")));
+                    terza = (smell.getSmellName().equalsIgnoreCase("Promiscuous package") && smell.getAlgoritmsUsed().equalsIgnoreCase("structural") && algoritmi.get("structural" + codeSmell.substring(0, 1)).isSelected() &&
+                            (Double.parseDouble(valDipendenza.get(4).getText()) <= listThreschold.get("MIntraC") || Double.parseDouble(valDipendenza.get(5).getText()) <= listThreschold.get("MInterC")));
+
+                    if (prima || seconda || terza) {
                         tableItem.add(bean);
                         tableItem.add(smell.getSmellName());
                         if (cos == 0.0) {
@@ -707,7 +730,7 @@ public class CheckProjectPage extends DialogWrapper {
                         } else {
                             tableItem.add(df.format(cos));
                         }
-                        ;
+
                         if (dip == 0) {
                             if (smell.getSmellName().equalsIgnoreCase("Blob") && algoritmi.get("structural" + codeSmell.substring(0, 1)).isSelected() && alto > 0) {
                                 HashMap<String, Double> soglie = smell.getIndex();

@@ -66,7 +66,7 @@ public class BeanDetectionTest {
                 .setParameters(new HashMap<String, ClassBean>())
                 .setStaticMethod(false)
                 .setDefaultCostructor(true)
-                .setBelongingClass(new ClassBean.Builder("blob.package.Phone ", "private final String unformattedNumber;\n" +
+                .setBelongingClass(new ClassBean.Builder("blob.package.Phone", "private final String unformattedNumber;\n" +
                         "   public Phone(String unformattedNumber) {\n" +
                         "      this.unformattedNumber = unformattedNumber;\n" +
                         "   }\n" +

@@ -9,6 +9,7 @@ import it.unisa.ascetic.refactor.exceptions.FeatureEnvyException;
 import it.unisa.ascetic.refactor.strategy.RefactoringStrategy;
 import it.unisa.ascetic.storage.beans.MethodBean;
 
+import javax.swing.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -61,6 +62,7 @@ public class FeatureEnvyRefactoringStrategy implements RefactoringStrategy {
     @Override
     public void doRefactor() throws FeatureEnvyException {
         try {
+            controlName();
             switch (fixtype) {
                 case 1:
                     instanceVariableFeatureEnvy();
@@ -73,6 +75,34 @@ public class FeatureEnvyRefactoringStrategy implements RefactoringStrategy {
             }
         } catch (Exception e) {
             throw new FeatureEnvyException(e.getMessage());
+        }
+    }
+
+    /**
+     * Questo metodo effettua un controllo per verificare se il metodo da spostare abbia un nome uguale
+     * ad un altro metodo nella classe invidiata
+     *
+     * @throws FeatureEnvyException lanciata per segnalare l'impossibilità al fix automatizzato
+     */
+    private void controlName() {
+        int i = 0;
+        while (i < psiDestinationClass.getMethods().length && !psiDestinationClass.getMethods()[i].getName().equals(psiMethod.getName())) {
+            i++;
+        }
+        try {
+            if (i < psiDestinationClass.getMethods().length) {
+                PsiMethod equalMethod = psiDestinationClass.getMethods()[i];
+                if (equalMethod.getParameters().length == psiMethod.getParameters().length) {
+                    i = 0;
+                    while (i < equalMethod.getParameters().length && equalMethod.getParameters()[i].getType().toString().equals(psiMethod.getParameters()[i].getType().toString())) {
+                        i++;
+                    }
+                    if (i >= equalMethod.getParameters().length)
+                        psiMethod.setName(JOptionPane.showInputDialog("Homonymous class present. Enter new name:", psiMethod.getName() + "_2"));
+                }
+            }
+        } catch (Exception e) {
+            psiMethod.setName(psiMethod.getName() + "_2");
         }
     }
 
@@ -176,7 +206,7 @@ public class FeatureEnvyRefactoringStrategy implements RefactoringStrategy {
                 othervariables += variabiliIstanza.getType().getPresentableText() + " " + variabiliIstanza.getName();
                 if (i < fields.length - 2) {
                     newMethodBody.append(",");
-                    othervariables+=",";
+                    othervariables += ",";
                 }
             }
         }
@@ -291,7 +321,7 @@ public class FeatureEnvyRefactoringStrategy implements RefactoringStrategy {
         newParameters += methodSignature + ")";
         String s = MethodMover.buildMethod(scope, returnType, name, newParameters, throwsList, newBody);
         MethodMover.methodWriter(s, psiMethod, psiDestinationClass, false, project);
-        //Metodo da Fixare
+
         body = "{\n";
         if (!isStaticMethod && returnType != "void") {
             body += "return ";

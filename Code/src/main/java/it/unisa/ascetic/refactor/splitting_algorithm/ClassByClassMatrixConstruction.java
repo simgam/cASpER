@@ -25,15 +25,6 @@ public class ClassByClassMatrixConstruction {
         stopwordList = new File(matrixFolder.getAbsolutePath() + "stopword.txt");
     }
 
-//    private void stampa(double matrix[][]) {
-//        for (int i = 0; i < matrix.length; i++) {
-//            for (int j = 0; j < matrix.length; j++) {
-//                System.out.print(matrix[i][j] + " | ");
-//            }
-//            System.out.println();
-//        }
-//    }
-
     public double[][] buildClassByClassMatrix(double pWicp, double pWccbc, PackageBean pToSplit) throws Exception {
         PromiscuousPackageQualityChecker promiscuousPackageQualityChecker = new PromiscuousPackageQualityChecker();
         Collection<ClassBean> classes = pToSplit.getClassList();

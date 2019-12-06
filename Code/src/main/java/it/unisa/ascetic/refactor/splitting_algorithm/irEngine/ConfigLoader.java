@@ -43,7 +43,6 @@ public class ConfigLoader {
             e.printStackTrace();
         } catch (IOException e) {
             // Errore nel caricamento del file di configurazione [02]
-
             e.printStackTrace();
         } finally {
             try {

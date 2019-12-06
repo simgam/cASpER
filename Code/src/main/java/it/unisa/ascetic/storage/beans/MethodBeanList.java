@@ -12,7 +12,7 @@ public interface MethodBeanList {
      *
      * @return lista di metodi
      */
-    public List<MethodBean> getList();
+    List<MethodBean> getList();
 
 }
 

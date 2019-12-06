@@ -48,10 +48,19 @@ public class PackageBean implements ComparableBean, Comparable {
     /**
      * getter
      *
-     * @return fqn del package
+     * @return fullQualifiedName del package nel progetto
      */
     public String getFullQualifiedName() {
         return fullQualifiedName;
+    }
+
+    /**
+     * setter
+     *
+     * @param fullQualifiedName nome identificativo del package nel progetto
+     */
+    public void setFullQualifiedName(String fullQualifiedName) {
+        this.fullQualifiedName = fullQualifiedName;
     }
 
     /**

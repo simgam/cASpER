@@ -4,5 +4,6 @@
     <location key="WELCOME_SCREEN.0.0.1920.1080" x="963" y="437" />
     <location key="com.intellij.ide.util.TipDialog.0.0.1920.1080" x="614" y="346" />
     <location key="SettingsEditor.0.0.1920.1080" x="448" y="164" />
+    <location key="IDE.errors.dialog.0.0.1920.1080" x="540" y="251" />
   </component>
 </application>

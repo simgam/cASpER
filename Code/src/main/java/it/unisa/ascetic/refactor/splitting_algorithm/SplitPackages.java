@@ -116,40 +116,6 @@ public class SplitPackages {
         return result;
     }
 
-    private PackageBean selectPackageWhereInsert(ClassBean pClassBean, Collection<PackageBean> actualPackages) {
-        double max = 0.0;
-        CosineSimilarity cosineSimilarity = new CosineSimilarity();
-        PackageBean toReturn = null;
-
-        for (PackageBean pack : actualPackages) {
-            double similarity = 0.0;
-
-            for (ClassBean classBean : pack.getClassList()) {
-                String[] document1 = new String[2];
-                String[] document2 = new String[2];
-
-                document1[0] = classBean.getFullQualifiedName();
-                document1[1] = classBean.getTextContent();
-
-                document2[0] = pClassBean.getFullQualifiedName();
-                document2[1] = pClassBean.getTextContent();
-
-                try {
-                    similarity += cosineSimilarity.computeSimilarity(document1, document2);
-
-                } catch (IOException e) {
-                    similarity += 0.0;
-                }
-            }
-
-            if (similarity > max) {
-                toReturn = pack;
-            }
-        }
-
-        return toReturn;
-    }
-
     /**
      * Estrae le catene di markov (Classi) e le stampa su un file
      *
@@ -245,21 +211,6 @@ public class SplitPackages {
             return true;
         }
         return true;
-    }
-
-    public static int getSmallestNonTrivialChain(Vector<String> chains) {
-        int result = -1;
-        int minLength = 10000;
-        Pattern p = Pattern.compile("-");
-        for (int i = 0; i < chains.size(); i++) {
-            String s = chains.elementAt(i);
-            String[] methods = p.split(s);
-            if (methods.length < minLength && methods.length > 2) {
-                minLength = methods.length;
-                result = i;
-            }
-        }
-        return result;
     }
 
     private PackageBean createSplittedPackageBean(int index, Vector<String> chain, Vector<ClassBean> classes) {

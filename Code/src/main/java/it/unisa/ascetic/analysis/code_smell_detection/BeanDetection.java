@@ -59,7 +59,6 @@ public class BeanDetection {
         String[] fullMethod = pMethodBean.getFullQualifiedName().split(Pattern.quote("."));
         String nameClass = fullClass[fullClass.length - 1], nameMethod = fullMethod[fullMethod.length - 1];
 
-        nameClass = nameClass.substring(0, nameClass.length() - 1);
         if (nameMethod.equalsIgnoreCase(nameClass) && (pMethodBean.getReturnType()).getFullQualifiedName().equalsIgnoreCase("void")) {
             return true;
         }
