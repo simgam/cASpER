@@ -4,7 +4,10 @@ import com.intellij.analysis.AnalysisScope;
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.*;
 import com.intellij.psi.util.PsiTreeUtil;
-import it.unisa.casper.analysis.code_smell.*;
+import it.unisa.casper.analysis.code_smell.BlobCodeSmell;
+import it.unisa.casper.analysis.code_smell.FeatureEnvyCodeSmell;
+import it.unisa.casper.analysis.code_smell.MisplacedClassCodeSmell;
+import it.unisa.casper.analysis.code_smell.PromiscuousPackageCodeSmell;
 import it.unisa.casper.analysis.code_smell_detection.blob.StructuralBlobStrategy;
 import it.unisa.casper.analysis.code_smell_detection.blob.TextualBlobStrategy;
 import it.unisa.casper.analysis.code_smell_detection.feature_envy.StructuralFeatureEnvyStrategy;
@@ -14,9 +17,10 @@ import it.unisa.casper.analysis.code_smell_detection.misplaced_class.TextualMisp
 import it.unisa.casper.analysis.code_smell_detection.promiscuous_package.StructuralPromiscuousPackageStrategy;
 import it.unisa.casper.analysis.code_smell_detection.promiscuous_package.TextualPromiscuousPackageStrategy;
 import it.unisa.casper.storage.beans.*;
-import javafx.util.Pair;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -150,7 +154,7 @@ public class PsiParser implements Parser {
         PsiClass[] classes = psiPackage.getClasses();
         ClassList classBeanList = new ClassList();
         for (PsiClass psiClass : classes) {
-            list.add(parse(psiClass,textContent.toString()));
+            list.add(parse(psiClass, textContent.toString()));
         }
         classBeanList.setList(list);
         builder.setClassList(classBeanList);
@@ -163,7 +167,7 @@ public class PsiParser implements Parser {
      * @param psiClass
      * @return ClassBean
      */
-    public ClassBean parse(PsiClass psiClass,String contentForPackage) {
+    public ClassBean parse(PsiClass psiClass, String contentForPackage) {
         //Classe da parsare
         PsiJavaFile file = (PsiJavaFile) psiClass.getContainingFile();
         PsiPackage psiPackage = JavaPsiFacade.getInstance(project).findPackage(file.getPackageName());
@@ -236,6 +240,13 @@ public class PsiParser implements Parser {
         MethodList methodList = new MethodList();
         methodList.setList(listaMetodi);
         builder.setMethods(methodList);
+
+        List<String> imports = new ArrayList<>();
+        for (PsiElement e : ((PsiJavaFile) psiClass.getContainingFile()).getImportList().getChildren()) {
+            if (!e.getText().contains("\n")){
+                imports.add(e.getText());}
+        }
+        builder.setImports(imports);
         return builder.build();
     }
 

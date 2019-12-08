@@ -119,14 +119,14 @@ public class PromiscuousPackageRefactoringStrategy implements RefactoringStrateg
                 for (PsiClass classe : newPackage.getClasses()) {
                     methodsToMove = new ArrayList<>();
                     methodsToMove.add(classe.getMethods()[0]);
-                    ExtractClassProcessor processor = new ExtractClassProcessor(classe, new ArrayList<>(), methodsToMove, new ArrayList<>(), toPackage.getFullQualifiedName(), "appoggioAbcdefg" + (i + inizio));
+                    ExtractClassProcessor processor = new ExtractClassProcessor(classe, new ArrayList<>(), methodsToMove, new ArrayList<>(), toPackage.getFullQualifiedName(), "classForFixingPromiscuousPackage" + (i + inizio));
                     processor.run();
                     i++;
                 }
                 i = 0;
                 while (i < toPackage.getClassList().size()) {
                     path = incopletePath + "/" + toPackage.getFullQualifiedName().substring(toPackage.getFullQualifiedName().lastIndexOf(".") + 1);
-                    path = path.substring(toPackage.getFullQualifiedName().lastIndexOf("/") + 1) + "/appoggioAbcdefg" + (i + inizio) + ".java";
+                    path = path.substring(toPackage.getFullQualifiedName().lastIndexOf("/") + 1) + "/classForFixingPromiscuousPackage" + (i + inizio) + ".java";
                     file = new File(path);
                     file.delete();
                     i++;

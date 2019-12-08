@@ -43,10 +43,7 @@ public class BlobRefatoringStrategy implements RefactoringStrategy {
             innerClasses = new ArrayList<>();
             String classShortName = classBean.getFullQualifiedName().substring(classBean.getFullQualifiedName().lastIndexOf('.') + 1);
 
-            //ApplicationManager.getApplication().runReadAction(() -> {
             psiOriginalClass = PsiUtil.getPsi(originalClass, project);
-//
-//            JavaPsiFacade.getInstance(project).findClass(originalClass.getFullQualifiedName(), GlobalSearchScope.everythingScope(project));//PsiUtil.getPsi(,project);
 
             // creo una lista di metodi
             for (MethodBean metodoSplittato : classBean.getMethodList()) {
@@ -65,9 +62,7 @@ public class BlobRefatoringStrategy implements RefactoringStrategy {
                 innerClasses.add(innerClass);
             }
 
-            // });
             try {
-
                 ExtractClassProcessor processor = new ExtractClassProcessor(psiOriginalClass, fieldsToMove, methodsToMove, innerClasses, packageName, classShortName);
                 processor.run();
 
@@ -85,7 +80,7 @@ public class BlobRefatoringStrategy implements RefactoringStrategy {
 
             methodsToMove = new ArrayList<>();
             methodsToMove.add(aClass.getMethods()[0]);
-            ExtractClassProcessor processor = new ExtractClassProcessor(aClass, new ArrayList<>(), methodsToMove, new ArrayList<>(), packageName, "appoggioAbcdefg" + i);
+            ExtractClassProcessor processor = new ExtractClassProcessor(aClass, new ArrayList<>(), methodsToMove, new ArrayList<>(), packageName, "classForFixingBlobClass"+ i);
             processor.run();
             i++;
         }
@@ -93,7 +88,7 @@ public class BlobRefatoringStrategy implements RefactoringStrategy {
         String path = "";
         while (i < splittedList.size()) {
             path = incopletePath + "/" + packageName.substring(packageName.lastIndexOf(".") + 1);
-            path = path.substring(packageName.lastIndexOf("/") + 1) + "/appoggioAbcdefg" + i + ".java";
+            path = path.substring(packageName.lastIndexOf("/") + 1) + "/classForFixingBlobClass" + i + ".java";
             file = new File(path);
             file.delete();
             i++;

@@ -4,10 +4,11 @@ import it.unisa.casper.refactor.splitting_algorithm.irEngine.VectorSpaceModel;
 import it.unisa.casper.storage.beans.ClassBean;
 import it.unisa.casper.storage.beans.InstanceVariableBean;
 import it.unisa.casper.storage.beans.MethodBean;
-import org.apache.lucene.index.CorruptIndexException;
-import org.apache.lucene.store.LockObtainFailedException;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
 import java.util.*;
 
 public class MethodByMethodMatrixConstruction {
@@ -48,7 +49,7 @@ public class MethodByMethodMatrixConstruction {
         Iterator<MethodBean> it = methods.iterator();
         double[][] methodByMethodMatrix = new double[methods.size()][methods.size()];
         double[][] CDMmatrix = new double[methodByMethodMatrix.length][methodByMethodMatrix.length];
-        double[][] CSMmatrix;
+        double[][] CSMmatrix = new double[methodByMethodMatrix.length][methodByMethodMatrix.length];
         double[][] SSMmatrix = new double[methodByMethodMatrix.length][methodByMethodMatrix.length];
         MethodBean tmpMethod = null;
         Vector<MethodBean> vectorOfMethods = new Vector<MethodBean>();
@@ -61,12 +62,12 @@ public class MethodByMethodMatrixConstruction {
         Collections.sort(vectorOfMethods);
 
         matrixFolder.mkdirs();
-
+        MethodBean methodSource, methodTarget;
         for (int i = 0; i < CDMmatrix.length; i++) {
             for (int j = i; j < CDMmatrix.length; j++) {
                 if (i != j) {
-                    MethodBean methodSource = vectorOfMethods.elementAt(i);
-                    MethodBean methodTarget = vectorOfMethods.elementAt(j);
+                    methodSource = vectorOfMethods.elementAt(i);
+                    methodTarget = vectorOfMethods.elementAt(j);
                     CDMmatrix[i][j] = getCCM(methodSource.getMethodsCalls(), methodTarget.getMethodsCalls(), methodSource.getFullQualifiedName(), methodTarget.getFullQualifiedName());
                 } else {
                     CDMmatrix[i][j] = 1.0;
@@ -77,8 +78,8 @@ public class MethodByMethodMatrixConstruction {
         for (int i = 0; i < SSMmatrix.length; i++) {
             for (int j = i; j < SSMmatrix.length; j++) {
                 if (i != j) {
-                    MethodBean methodSource = vectorOfMethods.elementAt(i);
-                    MethodBean methodTarget = vectorOfMethods.elementAt(j);
+                    methodSource = vectorOfMethods.elementAt(i);
+                    methodTarget = vectorOfMethods.elementAt(j);
                     SSMmatrix[i][j] = getSSM(methodSource.getInstanceVariableList(), methodTarget.getInstanceVariableList());
                 } else {
                     SSMmatrix[i][j] = 1.0;
@@ -86,19 +87,18 @@ public class MethodByMethodMatrixConstruction {
                 SSMmatrix[j][i] = SSMmatrix[i][j];
             }
         }
-
-        //Prepare the stopwords List
-        fs = new FileInputStream(stopwordList);
-        isr = new InputStreamReader(fs);
-        br = new BufferedReader(isr);
-        String tmpLine = null;
-        Set<String> badWordsSet = new HashSet();
-        tmpLine = br.readLine();
-        while (tmpLine != null) {
-            badWordsSet.add(tmpLine.replace("\n", ""));
-            tmpLine = br.readLine();
+        for (int i = 0; i < CSMmatrix.length; i++) {
+            for (int j = i; j < CSMmatrix.length; j++) {
+                if (i != j) {
+                    methodSource = vectorOfMethods.elementAt(i);
+                    methodTarget = vectorOfMethods.elementAt(j);
+                    CSMmatrix[i][j] = getCSM(methodSource,methodTarget);
+                } else {
+                    SSMmatrix[i][j] = 1.0;
+                }
+                SSMmatrix[j][i] = SSMmatrix[i][j];
+            }
         }
-        CSMmatrix = getCSMmatrix(vectorOfMethods, badWordsSet);
 
         CDMmatrix = filterMatrix(CDMmatrix, pWdcm);
         CSMmatrix = filterMatrix(CSMmatrix, pWcsm);
@@ -169,7 +169,7 @@ public class MethodByMethodMatrixConstruction {
         return csm;
     }
 
-    private double[][] getCSMmatrix(Vector<MethodBean> methods, Set badWordsSet) throws CorruptIndexException, LockObtainFailedException, IOException {
+    private double[][] getCSMmatrix(Vector<MethodBean> methods) {
 
         double matrix[][] = new double[methods.size()][methods.size()];
 
@@ -221,7 +221,6 @@ public class MethodByMethodMatrixConstruction {
         }
         return methodByMethodMatrix;
     }
-
 
 
 }
