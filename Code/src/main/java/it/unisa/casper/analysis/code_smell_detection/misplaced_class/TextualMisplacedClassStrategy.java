@@ -63,24 +63,12 @@ public class TextualMisplacedClassStrategy implements ClassSmellDetectionStrateg
         maxCosine = similaritiesWithClass.lastKey();
         PackageBean firstRankedPackage = similaritiesWithClass.get(maxCosine);
 
-        for (Double p : similaritiesWithClass.keySet()) {
-            System.out.println(similaritiesWithClass.get(p).getFullQualifiedName()+" " +p);
-        }
-
         for (PackageBean p : similaritiesWithClass.values()) {
             p.setSimilarity(0);
         }
 
-        //Map.Entry<Double, PackageBean> firstRankedPackage = similaritiesWithClass.entrySet().iterator().next();
-        //System.out.println("prima " + firstRankedPackage.getValue().getFullQualifiedName() + " " + firstRankedPackage.getKey());
-        System.out.println("dopo " + firstRankedPackage.getFullQualifiedName() + " " + maxCosine);
-        System.out.println(maxCosine + " " + belongingCosine);
-        System.out.println(firstRankedPackage.getFullQualifiedName() + " " + pClass.getFullQualifiedName() + "\n----------------------------");
-
         if (!firstRankedPackage.getFullQualifiedName().equals(pClass.getBelongingPackage().getFullQualifiedName()) && (maxCosine - belongingCosine > soglia)) {
-            System.out.println("max" + maxCosine + " " + belongingCosine + "=" + (maxCosine - belongingCosine));
             pClass.setEnviedPackage(similaritiesWithClass.get(maxCosine));
-            System.out.println();
             return true;
         }
         System.out.println();
