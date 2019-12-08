@@ -1,5 +1,5 @@
 <idea-plugin>
-    <id>it.unisa.ascetic</id>
+    <id>it.unisa.casper</id>
     <name>Ascetic</name>
     <vendor email="support@ascengers.it" url="http://www.ascengers.com">Ascengers</vendor>
 
@@ -8,15 +8,15 @@
     ]]></description>
 
     <extensions defaultExtensionNs="com.intellij">
-        <checkinHandlerFactory implementation="it.unisa.ascetic.actions.CommitFactory"/>
+        <checkinHandlerFactory implementation="it.unisa.casper.actions.CommitFactory"/>
     </extensions>
 
     <actions>
-        <group id="org.jetbrains.tutorials.actions.GroupedActions" text="Ascetic - Analyze Project" popup="true">
+        <group id="org.jetbrains.tutorials.actions.GroupedActions" text="cASpER - Analyze Project" popup="true">
             <add-to-group group-id="ToolsMenu" anchor="first"/>
-            <action id="it.unisa.ascetic.actions.BeginAction" class="it.unisa.ascetic.actions.BeginAction"
+            <action id="it.unisa.casper.actions.BeginAction" class="it.unisa.casper.actions.BeginAction"
                     text="Run plug-in"/>
-            <action id="it.unisa.ascetic.actions.ConfigureAction" class="it.unisa.ascetic.actions.ConfigureAction"
+            <action id="it.unisa.casper.actions.ConfigureAction" class="it.unisa.casper.actions.ConfigureAction"
                     text="Configure threshold"/>
         </group>
     </actions>
@@ -25,10 +25,10 @@
     <application-components>
         <!-- Add your application components here -->
         <component>
-            <implementation-class>it.unisa.ascetic.actions.AsceticStartup</implementation-class>
+            <implementation-class>it.unisa.casper.actions.CasperStartup</implementation-class>
         </component>
         <component>
-            <implementation-class>it.unisa.ascetic.actions.FileChangeHandler</implementation-class>
+            <implementation-class>it.unisa.casper.actions.FileChangeHandler</implementation-class>
         </component>
     </application-components>
 
