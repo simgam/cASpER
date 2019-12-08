@@ -117,10 +117,6 @@
     <option name="right" path="ActionManager" hit="Apply Non-Conflicting Changes from the Right Side" />
     <option name="side" path="ActionManager" hit="Apply Non-Conflicting Changes from the Right Side" />
     <option name="the" path="ActionManager" hit="Apply Non-Conflicting Changes from the Right Side" />
-    <option name="-" path="ActionManager" hit="Ascetic - Analyze Project" />
-    <option name="analyze" path="ActionManager" hit="Ascetic - Analyze Project" />
-    <option name="ascetic" path="ActionManager" hit="Ascetic - Analyze Project" />
-    <option name="project" path="ActionManager" hit="Ascetic - Analyze Project" />
     <option name="background" path="ActionManager" hit="Background Tasks" />
     <option name="tasks" path="ActionManager" hit="Background Tasks" />
     <option name="and" path="ActionManager" hit="Base and Left" />
@@ -890,6 +886,10 @@
     <option name="xml" path="ActionManager" hit="XML Generate Actions" />
     <option name="actions" path="ActionManager" hit="XPath Actions" />
     <option name="xpath" path="ActionManager" hit="XPath Actions" />
+    <option name="-" path="ActionManager" hit="cASpER - Analyze Project" />
+    <option name="analyze" path="ActionManager" hit="cASpER - Analyze Project" />
+    <option name="casper" path="ActionManager" hit="cASpER - Analyze Project" />
+    <option name="project" path="ActionManager" hit="cASpER - Analyze Project" />
   </configurable>
   <configurable id="http.certificates" configurable_name="Server Certificates">
     <option name="accept" hit="Accept non-trusted certificates automatically" />

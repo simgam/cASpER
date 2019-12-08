@@ -5216,3 +5216,67 @@ Max     duration: 21ms (it was 'Run anything action update (class com.intellij.i
 2019-12-08 15:42:00,801 [ 151159]   INFO - plication.impl.ApplicationImpl - Global instance threads created counter = 18; ProcessIOExecutorService threads: 12 
 2019-12-08 15:42:00,803 [ 151161]   INFO -        #com.intellij.idea.Main - ------------------------------------------------------ IDE SHUTDOWN ------------------------------------------------------ 
 2019-12-08 15:42:00,804 [ 151162]   INFO - org.jetbrains.io.BuiltInServer - web server stopped 
+2019-12-08 17:55:34,474 [      0]   INFO -        #com.intellij.idea.Main - ------------------------------------------------------ IDE STARTED ------------------------------------------------------ 
+2019-12-08 17:55:34,612 [    138]   INFO -        #com.intellij.idea.Main - IDE: IntelliJ IDEA (build #IC-191.7479.19, 28 May 2019 08:23) 
+2019-12-08 17:55:34,612 [    138]   INFO -        #com.intellij.idea.Main - OS: Windows 10 (10.0, amd64) 
+2019-12-08 17:55:34,612 [    138]   INFO -        #com.intellij.idea.Main - JRE: 1.8.0_202-release-1483-b53 (JetBrains s.r.o) 
+2019-12-08 17:55:34,612 [    138]   INFO -        #com.intellij.idea.Main - JVM: 25.202-b53 (OpenJDK 64-Bit Server VM) 
+2019-12-08 17:55:34,622 [    148]   INFO -        #com.intellij.idea.Main - JVM Args: -Didea.classpath.index.enabled=false -Didea.config.path=C:\Users\Simone\Desktop\Ascetic3.0\Code\build\idea-sandbox\config -Didea.is.internal=true -Didea.platform.prefix=Idea -Didea.plugins.path=C:\Users\Simone\Desktop\Ascetic3.0\Code\build\idea-sandbox\plugins -Didea.required.plugins.id=it.unisa.casper -Didea.system.path=C:\Users\Simone\Desktop\Ascetic3.0\Code\build\idea-sandbox\system -Xms256m -Xmx512m -Dfile.encoding=windows-1252 -Duser.country=IT -Duser.language=it -Duser.variant -ea 
+2019-12-08 17:55:34,623 [    149]   INFO -        #com.intellij.idea.Main - ext: C:\Users\Simone\.gradle\caches\modules-2\files-2.1\com.jetbrains\jbre\jbrx-8u202-windows-x64-b1483.53\jre\lib\ext: [access-bridge-64.jar, cldrdata.jar, dnsns.jar, jaccess.jar, jfxrt.jar, localedata.jar, meta-index, nashorn.jar, sunec.jar, sunjce_provider.jar, sunmscapi.jar, sunpkcs11.jar, zipfs.jar] 
+2019-12-08 17:55:34,623 [    149]   INFO -        #com.intellij.idea.Main - charsets: JNU=Cp1252 file=windows-1252 
+2019-12-08 17:55:34,721 [    247]   INFO -        #com.intellij.idea.Main - JNA library (64-bit) loaded in 97 ms 
+2019-12-08 17:55:34,730 [    256]   INFO - penapi.util.io.win32.IdeaWin32 - Native filesystem for Windows is operational 
+2019-12-08 17:55:34,820 [    346]   INFO - .intellij.idea.IdeaApplication - CPU cores: 8; ForkJoinPool.commonPool: java.util.concurrent.ForkJoinPool@6de5d5c9[Running, parallelism = 8, size = 0, active = 0, running = 0, steals = 0, tasks = 0, submissions = 0]; factory: com.intellij.concurrency.IdeaForkJoinWorkerThreadFactory@435d3509 
+2019-12-08 17:55:35,540 [   1066]   INFO - llij.ide.plugins.PluginManager - Cannot find optional descriptor duplicates-groovy.xml 
+2019-12-08 17:55:35,542 [   1068]   INFO - llij.ide.plugins.PluginManager - Cannot find optional descriptor duplicates-detection-groovy.xml 
+2019-12-08 17:55:35,899 [   1425]   INFO - llij.ide.plugins.PluginManager - load plugin descriptors took 743 ms 
+2019-12-08 17:55:36,022 [   1548]   INFO - llij.ide.plugins.PluginManager - 35 plugins initialized in 891 ms 
+2019-12-08 17:55:36,022 [   1548]   INFO - llij.ide.plugins.PluginManager - Loaded bundled plugins: Android Support (10.3.3), Ant Support (191.7479.19), Bytecode Viewer (191.7479.19), Copyright (191.7479.19), Coverage (191.7479.19), Eclipse Integration (191.7479.19), EditorConfig (191.7479.19), Git Integration (191.7479.19), GitHub (191.7479.19), Gradle (191.7479.19), Groovy (191.7479.19), I18n for Java (191.7479.19), IDEA CORE (191.7479.19), IntelliJ Configuration Script (191.7479.19), IntelliLang (191.7479.19), JUnit (191.7479.19), Java Bytecode Decompiler (191.7479.19), Java Stream Debugger (191.7479.19), JavaFX (191.7479.19), Kotlin (1.3.21-release-IJ2019.1-3), Maven Integration (191.7479.19), Mercurial Integration (191.7479.19), Plugin DevKit (191.7479.19), Properties Support (191.7479.19), Settings Repository (191.7479.19), Smali Support (191.7479.19), Subversion (191.7479.19), Task Management (191.7479.19), Terminal (191.7479.19), TestNG-J (191.7479.19), UI Designer (191.7479.19), XPathView + XSLT Support (191.7479.19), XSLT-Debugger (191.7479.19), YAML (191.7479.19) 
+2019-12-08 17:55:36,022 [   1548]   INFO - llij.ide.plugins.PluginManager - Loaded custom plugins: Ascetic (1.0-SNAPSHOT) 
+2019-12-08 17:55:47,118 [  12644]   INFO - pi.util.registry.RegistryState - Registry values changed by user: 
+2019-12-08 17:55:47,118 [  12644]   INFO - pi.util.registry.RegistryState -   java.completion.argument.hints.internal = false 
+2019-12-08 17:55:47,151 [  12677]   INFO - pi.util.registry.RegistryState - Experimental features enabled for user: inline.browse.button, linux.native.menu, recent.and.edited.files.together 
+2019-12-08 17:55:47,203 [  12729]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=435; buffer=10; max=435 
+2019-12-08 17:55:47,431 [  12957]   INFO - pl.local.NativeFileWatcherImpl - Native file watcher is disabled 
+2019-12-08 17:55:47,513 [  13039]   INFO -     #com.intellij.util.ui.JBUI - System scale factor: 1.0 (IDE-managed HiDPI) 
+2019-12-08 17:55:47,513 [  13039]   INFO -     #com.intellij.util.ui.JBUI - User scale factor: 1.0 
+2019-12-08 17:55:50,106 [  15632]   INFO - til.net.ssl.CertificateManager - Default SSL context initialized 
+2019-12-08 17:55:50,117 [  15643]   WARN - com.intellij.util.xmlb.Binding - no accessors for interface com.intellij.openapi.extensions.PluginDescriptor 
+2019-12-08 17:55:50,139 [  15665]   INFO - rains.ide.BuiltInServerManager - built-in server started, port 63343 
+2019-12-08 17:55:50,434 [  15960]   INFO - il.indexing.FileBasedIndexImpl - Index exts enumerated:207, number of extensions:47 
+2019-12-08 17:55:50,451 [  15977]   INFO - il.indexing.FileBasedIndexImpl - Index scheduled:17 
+2019-12-08 17:55:50,514 [  16040]   INFO - tellij.psi.stubs.StubIndexImpl - All stub exts enumerated:38, number of extensions:50 
+2019-12-08 17:55:50,518 [  16044]   INFO - tellij.psi.stubs.StubIndexImpl - stub exts update scheduled:1 
+2019-12-08 17:55:51,132 [  16658]   INFO - plication.impl.ApplicationImpl - 76 application components initialized in 15016ms 
+2019-12-08 17:55:51,600 [  17126]   INFO - ellij.project.impl.ProjectImpl - 20 project components initialized in 431 ms 
+2019-12-08 17:55:52,019 [  17545]   WARN - ConfigurableExtensionPointUtil - ignore deprecated groupId: language for id: preferences.language.Kotlin.scripting 
+2019-12-08 17:55:52,826 [  18352]   INFO - com.intellij.ide.ui.UISettings - Loaded: fontSize=12, fontScale=1.0; restored: fontSize=12, fontScale=1.0 
+2019-12-08 17:55:53,452 [  18978]   INFO - pl$FileIndexDataInitialization - Initialization done:3000 
+2019-12-08 17:55:54,173 [  19699]   INFO - CompilerWorkspaceConfiguration - Available processors: 8 
+2019-12-08 17:55:54,559 [  20085]   INFO - exImpl$StubIndexInitialization - Initialization done:1108 
+2019-12-08 17:55:55,518 [  21044]   INFO - m.intellij.ui.mac.touchbar.NST - OS doesn't support touchbar, skip nst loading 
+2019-12-08 17:55:58,599 [  24125]   INFO - com.intellij.ide.ui.UISettings - Loaded: fontSize=12, fontScale=1.0; restored: fontSize=12, fontScale=1.0 
+2019-12-08 17:56:12,703 [  38229]   INFO - stubs.SerializationManagerImpl - START StubSerializationManager SHUTDOWN 
+2019-12-08 17:56:12,709 [  38235]   INFO - stubs.SerializationManagerImpl - END StubSerializationManager SHUTDOWN 
+2019-12-08 17:56:12,709 [  38235]   INFO - il.indexing.FileBasedIndexImpl - START INDEX SHUTDOWN 
+2019-12-08 17:56:12,765 [  38291]   INFO - il.indexing.FileBasedIndexImpl - END INDEX SHUTDOWN 
+2019-12-08 17:56:12,765 [  38291]   INFO - org.jetbrains.io.BuiltInServer - web server stopped 
+2019-12-08 17:56:12,769 [  38295]   INFO - Types.impl.FileTypeManagerImpl - FileTypeManager: 0 auto-detected files
+Elapsed time on auto-detect: 0 ms 
+2019-12-08 17:56:12,786 [  38312]   INFO - newvfs.persistent.PersistentFS - VFS dispose started 
+2019-12-08 17:56:12,794 [  38320]   INFO - newvfs.persistent.PersistentFS - VFS dispose completed 
+2019-12-08 17:56:12,796 [  38322]   INFO - plication.impl.ApplicationImpl - Write action Statistics:
+Event number:     0
+Total time spent: 0ms
+Average duration: 0ms
+Median  duration: 0ms
+Max     duration: 0ms (it was 'null') 
+2019-12-08 17:56:12,796 [  38322]   INFO - plication.impl.ApplicationImpl - AnAction.update() Statistics:
+Event number:     0
+Total time spent: 0ms
+Average duration: 0ms
+Median  duration: 0ms
+Max     duration: 0ms (it was 'null') 
+2019-12-08 17:56:12,797 [  38323]   INFO - plication.impl.ApplicationImpl - Global instance threads created counter = 8; ProcessIOExecutorService threads: 0 
+2019-12-08 17:56:12,800 [  38326]   INFO -        #com.intellij.idea.Main - ------------------------------------------------------ IDE SHUTDOWN ------------------------------------------------------ 
+2019-12-08 17:56:12,802 [  38328]   INFO - org.jetbrains.io.BuiltInServer - web server stopped 
