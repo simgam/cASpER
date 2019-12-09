@@ -5,10 +5,10 @@
       &lt;em&gt;most HTML tags may be used&lt;/em&gt;</change-notes>
   <idea-version since-build="191.7479" until-build="191.*"/>
   <id>it.unisa.casper</id>
-  <name>Ascetic</name>
+  <name>cASpER</name>
   <vendor email="support@ascengers.it" url="http://www.ascengers.com">Ascengers</vendor>
   <description>
-    Automated Code Smell Detection and Correction&lt;br&gt;
+    A Plug-in for Automated Code Smell Detection and Refactoring
     </description>
   <extensions defaultExtensionNs="com.intellij">
     <checkinHandlerFactory implementation="it.unisa.casper.actions.CommitFactory"/>

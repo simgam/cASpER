@@ -1,10 +1,10 @@
 <idea-plugin>
     <id>it.unisa.casper</id>
-    <name>Ascetic</name>
+    <name>cASpER</name>
     <vendor email="support@ascengers.it" url="http://www.ascengers.com">Ascengers</vendor>
 
     <description><![CDATA[
-    Automated Code Smell Detection and Correction<br>
+    A Plug-in for Automated Code Smell Detection and Refactoring
     ]]></description>
 
     <extensions defaultExtensionNs="com.intellij">
