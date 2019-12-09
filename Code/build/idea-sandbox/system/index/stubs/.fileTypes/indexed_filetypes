@@ -1,12 +1,12 @@
-1575481889072
-KNM￿binary stub builder:com.intellij.psi.impl.compiled.ClassFileStubBuilder,970144114￿1575481889071
-Properties￿stub:com.intellij.lang.properties.parsing.PropertiesElementTypes$1,0￿1575481889070
-Kotlin￿stub:org.jetbrains.kotlin.psi.stubs.elements.KtFileElementType,135￿1575481889069
-JAVA￿stub:com.intellij.psi.impl.source.JavaFileElementType,42￿1575481889068
-KJSM￿binary stub builder:com.intellij.psi.impl.compiled.ClassFileStubBuilder,970144114￿1575481889067
-kotlin_builtins￿binary stub builder:com.intellij.psi.impl.compiled.ClassFileStubBuilder,970144114￿1575481889066
-Groovy￿stub:org.jetbrains.plugins.groovy.lang.psi.stubs.elements.GrStubFileElementType,49￿1575481889065
-HTML￿stub:com.intellij.psi.xml.XmlElementType$1,1￿1575481889064
-DGM File Type￿stub:com.intellij.lang.properties.parsing.PropertiesElementTypes$1,0￿1575481889063
-CLASS￿binary stub builder:com.intellij.psi.impl.compiled.ClassFileStubBuilder,970144114￿1575481889062
-XML￿binary stub builder:com.intellij.util.xml.stubs.builder.DomStubBuilder,1804543720￿1575481889061
+1575921510075
+Properties￿stub:com.intellij.lang.properties.parsing.PropertiesElementTypes$1,0￿1575921510074
+Groovy￿stub:org.jetbrains.plugins.groovy.lang.psi.stubs.elements.GrStubFileElementType,49￿1575921510073
+HTML￿stub:com.intellij.psi.xml.XmlElementType$1,1￿1575921510072
+CLASS￿binary stub builder:com.intellij.psi.impl.compiled.ClassFileStubBuilder,970144114￿1575921510071
+KJSM￿binary stub builder:com.intellij.psi.impl.compiled.ClassFileStubBuilder,970144114￿1575921510070
+KNM￿binary stub builder:com.intellij.psi.impl.compiled.ClassFileStubBuilder,970144114￿1575921510069
+XML￿binary stub builder:com.intellij.util.xml.stubs.builder.DomStubBuilder,1804543720￿1575921510068
+kotlin_builtins￿binary stub builder:com.intellij.psi.impl.compiled.ClassFileStubBuilder,970144114￿1575921510067
+JAVA￿stub:com.intellij.psi.impl.source.JavaFileElementType,42￿1575921510066
+Kotlin￿stub:org.jetbrains.kotlin.psi.stubs.elements.KtFileElementType,135￿1575921510065
+DGM File Type￿stub:com.intellij.lang.properties.parsing.PropertiesElementTypes$1,0￿1575921510064
