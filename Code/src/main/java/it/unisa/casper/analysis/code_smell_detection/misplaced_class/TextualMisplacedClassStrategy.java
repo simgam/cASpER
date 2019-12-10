@@ -71,7 +71,6 @@ public class TextualMisplacedClassStrategy implements ClassSmellDetectionStrateg
             pClass.setEnviedPackage(similaritiesWithClass.get(maxCosine));
             return true;
         }
-        System.out.println();
         return false;
     }
 

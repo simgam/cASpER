@@ -69,3 +69,5 @@ fabric.properties
 .DS_Store
 .aux
 .log
+
+.gradle

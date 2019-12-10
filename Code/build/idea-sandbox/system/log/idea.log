@@ -333,3 +333,1416 @@ Max     duration: 21ms (it was 'Show History action update (class com.intellij.o
 2019-12-09 21:15:28,574 [  37413]   INFO - plication.impl.ApplicationImpl - Global instance threads created counter = 12; ProcessIOExecutorService threads: 12 
 2019-12-09 21:15:28,577 [  37416]   INFO -        #com.intellij.idea.Main - ------------------------------------------------------ IDE SHUTDOWN ------------------------------------------------------ 
 2019-12-09 21:15:28,578 [  37417]   INFO - org.jetbrains.io.BuiltInServer - web server stopped 
+2019-12-10 10:10:40,610 [      0]   INFO -        #com.intellij.idea.Main - ------------------------------------------------------ IDE STARTED ------------------------------------------------------ 
+2019-12-10 10:10:40,759 [    149]   INFO -        #com.intellij.idea.Main - IDE: IntelliJ IDEA (build #IC-191.7479.19, 28 May 2019 08:23) 
+2019-12-10 10:10:40,759 [    149]   INFO -        #com.intellij.idea.Main - OS: Windows 10 (10.0, amd64) 
+2019-12-10 10:10:40,759 [    149]   INFO -        #com.intellij.idea.Main - JRE: 1.8.0_202-release-1483-b53 (JetBrains s.r.o) 
+2019-12-10 10:10:40,759 [    149]   INFO -        #com.intellij.idea.Main - JVM: 25.202-b53 (OpenJDK 64-Bit Server VM) 
+2019-12-10 10:10:40,768 [    158]   INFO -        #com.intellij.idea.Main - JVM Args: -Didea.classpath.index.enabled=false -Didea.config.path=C:\Users\Simone\Desktop\cASpER\Code\build\idea-sandbox\config -Didea.is.internal=true -Didea.platform.prefix=Idea -Didea.plugins.path=C:\Users\Simone\Desktop\cASpER\Code\build\idea-sandbox\plugins -Didea.required.plugins.id=it.unisa.casper -Didea.system.path=C:\Users\Simone\Desktop\cASpER\Code\build\idea-sandbox\system -Xms256m -Xmx512m -Dfile.encoding=windows-1252 -Duser.country=IT -Duser.language=it -Duser.variant -ea 
+2019-12-10 10:10:40,768 [    158]   INFO -        #com.intellij.idea.Main - ext: C:\Users\Simone\.gradle\caches\modules-2\files-2.1\com.jetbrains\jbre\jbrx-8u202-windows-x64-b1483.53\jre\lib\ext: [access-bridge-64.jar, cldrdata.jar, dnsns.jar, jaccess.jar, jfxrt.jar, localedata.jar, meta-index, nashorn.jar, sunec.jar, sunjce_provider.jar, sunmscapi.jar, sunpkcs11.jar, zipfs.jar] 
+2019-12-10 10:10:40,768 [    158]   INFO -        #com.intellij.idea.Main - charsets: JNU=Cp1252 file=windows-1252 
+2019-12-10 10:10:40,843 [    233]   INFO -        #com.intellij.idea.Main - JNA library (64-bit) loaded in 74 ms 
+2019-12-10 10:10:40,853 [    243]   INFO - penapi.util.io.win32.IdeaWin32 - Native filesystem for Windows is operational 
+2019-12-10 10:10:41,180 [    570]   INFO -     #com.intellij.util.ui.JBUI - User scale factor: 1.0 
+2019-12-10 10:10:41,208 [    598]   INFO -     #com.intellij.util.ui.JBUI - System scale factor: 1.0 (JRE-managed HiDPI) 
+2019-12-10 10:10:43,921 [   3311]   INFO - .intellij.idea.IdeaApplication - CPU cores: 8; ForkJoinPool.commonPool: java.util.concurrent.ForkJoinPool@144a7622[Running, parallelism = 7, size = 0, active = 0, running = 0, steals = 0, tasks = 0, submissions = 0]; factory: com.intellij.concurrency.IdeaForkJoinWorkerThreadFactory@48df5648 
+2019-12-10 10:10:44,814 [   4204]   INFO - llij.ide.plugins.PluginManager - Cannot find optional descriptor duplicates-groovy.xml 
+2019-12-10 10:10:44,816 [   4206]   INFO - llij.ide.plugins.PluginManager - Cannot find optional descriptor duplicates-detection-groovy.xml 
+2019-12-10 10:10:45,081 [   4471]   INFO - llij.ide.plugins.PluginManager - load plugin descriptors took 675 ms 
+2019-12-10 10:10:45,228 [   4618]   INFO - llij.ide.plugins.PluginManager - 35 plugins initialized in 822 ms 
+2019-12-10 10:10:45,229 [   4619]   INFO - llij.ide.plugins.PluginManager - Loaded bundled plugins: Android Support (10.3.3), Ant Support (191.7479.19), Bytecode Viewer (191.7479.19), Copyright (191.7479.19), Coverage (191.7479.19), Eclipse Integration (191.7479.19), EditorConfig (191.7479.19), Git Integration (191.7479.19), GitHub (191.7479.19), Gradle (191.7479.19), Groovy (191.7479.19), I18n for Java (191.7479.19), IDEA CORE (191.7479.19), IntelliJ Configuration Script (191.7479.19), IntelliLang (191.7479.19), JUnit (191.7479.19), Java Bytecode Decompiler (191.7479.19), Java Stream Debugger (191.7479.19), JavaFX (191.7479.19), Kotlin (1.3.21-release-IJ2019.1-3), Maven Integration (191.7479.19), Mercurial Integration (191.7479.19), Plugin DevKit (191.7479.19), Properties Support (191.7479.19), Settings Repository (191.7479.19), Smali Support (191.7479.19), Subversion (191.7479.19), Task Management (191.7479.19), Terminal (191.7479.19), TestNG-J (191.7479.19), UI Designer (191.7479.19), XPathView + XSLT Support (191.7479.19), XSLT-Debugger (191.7479.19), YAML (191.7479.19) 
+2019-12-10 10:10:45,229 [   4619]   INFO - llij.ide.plugins.PluginManager - Loaded custom plugins: cASpER (1.0-SNAPSHOT) 
+2019-12-10 10:10:56,789 [  16179]   INFO - pi.util.registry.RegistryState - Registry values changed by user: 
+2019-12-10 10:10:56,790 [  16180]   INFO - pi.util.registry.RegistryState -   java.completion.argument.hints.internal = false 
+2019-12-10 10:10:56,821 [  16211]   INFO - pi.util.registry.RegistryState - Experimental features enabled for user: inline.browse.button, linux.native.menu, recent.and.edited.files.together 
+2019-12-10 10:10:56,880 [  16270]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=435; buffer=10; max=435 
+2019-12-10 10:10:57,098 [  16488]   INFO - pl.local.NativeFileWatcherImpl - Starting file watcher: C:\Users\Simone\.gradle\caches\modules-2\files-2.1\com.jetbrains.intellij.idea\ideaIC\2019.1.3\6a2d76b455a8e07743bd5bdc891a410a7ddb2fb3\ideaIC-2019.1.3\bin\win\fsnotifier64.exe 
+2019-12-10 10:10:57,186 [  16576]   INFO - pl.local.NativeFileWatcherImpl - Native file watcher is operational. 
+2019-12-10 10:11:00,349 [  19739]   INFO - til.net.ssl.CertificateManager - Default SSL context initialized 
+2019-12-10 10:11:00,368 [  19758]   WARN - com.intellij.util.xmlb.Binding - no accessors for interface com.intellij.openapi.extensions.PluginDescriptor 
+2019-12-10 10:11:00,385 [  19775]   INFO - rains.ide.BuiltInServerManager - built-in server started, port 63343 
+2019-12-10 10:11:00,506 [  19896]   INFO - gs.impl.UpdateCheckerComponent - channel: release 
+2019-12-10 10:11:01,088 [  20478]   INFO - il.indexing.FileBasedIndexImpl - Index exts enumerated:469, number of extensions:47 
+2019-12-10 10:11:01,106 [  20496]   INFO - il.indexing.FileBasedIndexImpl - Index scheduled:17 
+2019-12-10 10:11:01,191 [  20581]   INFO - tellij.psi.stubs.StubIndexImpl - All stub exts enumerated:56, number of extensions:50 
+2019-12-10 10:11:01,193 [  20583]   INFO - tellij.psi.stubs.StubIndexImpl - stub exts update scheduled:2 
+2019-12-10 10:11:01,946 [  21336]   INFO - plication.impl.ApplicationImpl - 85 application components initialized in 17546ms 
+2019-12-10 10:11:01,995 [  21385]   INFO - .intellij.idea.IdeaApplication - App initialization took 26919 ms 
+2019-12-10 10:11:01,997 [  21387]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.kotlin loaded 710 classes 
+2019-12-10 10:11:01,997 [  21387]   INFO - llij.ide.plugins.PluginManager - org.intellij.groovy loaded 248 classes 
+2019-12-10 10:11:01,997 [  21387]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.android loaded 138 classes 
+2019-12-10 10:11:01,997 [  21387]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.idea.maven loaded 34 classes 
+2019-12-10 10:11:01,997 [  21387]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.settingsRepository loaded 30 classes 
+2019-12-10 10:11:01,997 [  21387]   INFO - llij.ide.plugins.PluginManager - com.intellij.properties loaded 28 classes 
+2019-12-10 10:11:01,997 [  21387]   INFO - llij.ide.plugins.PluginManager - XPathView loaded 20 classes 
+2019-12-10 10:11:01,997 [  21387]   INFO - llij.ide.plugins.PluginManager - org.editorconfig.editorconfigjetbrains loaded 17 classes 
+2019-12-10 10:11:01,997 [  21387]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.plugins.yaml loaded 14 classes 
+2019-12-10 10:11:01,998 [  21388]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.plugins.javaFX loaded 13 classes 
+2019-12-10 10:11:01,998 [  21388]   INFO - llij.ide.plugins.PluginManager - Subversion loaded 12 classes 
+2019-12-10 10:11:01,998 [  21388]   INFO - llij.ide.plugins.PluginManager - Git4Idea loaded 9 classes 
+2019-12-10 10:11:01,998 [  21388]   INFO - llij.ide.plugins.PluginManager - com.intellij.tasks loaded 9 classes 
+2019-12-10 10:11:01,998 [  21388]   INFO - llij.ide.plugins.PluginManager - com.intellij.uiDesigner loaded 7 classes 
+2019-12-10 10:11:01,998 [  21388]   INFO - llij.ide.plugins.PluginManager - DevKit loaded 5 classes 
+2019-12-10 10:11:01,998 [  21388]   INFO - llij.ide.plugins.PluginManager - AntSupport loaded 5 classes 
+2019-12-10 10:11:01,998 [  21388]   INFO - llij.ide.plugins.PluginManager - com.android.tools.idea.smali loaded 5 classes 
+2019-12-10 10:11:01,998 [  21388]   INFO - llij.ide.plugins.PluginManager - org.intellij.intelliLang loaded 4 classes 
+2019-12-10 10:11:01,998 [  21388]   INFO - llij.ide.plugins.PluginManager - hg4idea loaded 3 classes 
+2019-12-10 10:11:01,998 [  21388]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.plugins.gradle loaded 3 classes 
+2019-12-10 10:11:01,998 [  21388]   INFO - llij.ide.plugins.PluginManager - it.unisa.casper loaded 2 classes 
+2019-12-10 10:11:01,998 [  21388]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.idea.eclipse loaded 2 classes 
+2019-12-10 10:11:01,998 [  21388]   INFO - llij.ide.plugins.PluginManager - com.intellij.java-i18n loaded 1 classes 
+2019-12-10 10:11:02,043 [  21433]   INFO - j.ide.ui.OptionsTopHitProvider - 2099 ms spent to cache options in application 
+2019-12-10 10:11:02,044 [  21434]   INFO - .openapi.application.Preloader - com.intellij.ide.ui.OptionsTopHitProvider$Activity took 2099 ms 
+2019-12-10 10:11:02,571 [  21961]   INFO - m.intellij.ui.mac.touchbar.NST - OS doesn't support touchbar, skip nst loading 
+2019-12-10 10:11:03,590 [  22980]   INFO - pl$FileIndexDataInitialization - Initialization done:2483 
+2019-12-10 10:11:03,898 [  23288]   INFO - pl.projectlevelman.NewMappings - VCS Root: [] - [<Project>] 
+2019-12-10 10:11:03,900 [  23290]   INFO - pl.projectlevelman.NewMappings - VCS Root: [Git] - [C:/Users/Simone/Desktop/TestAscetic] 
+2019-12-10 10:11:04,545 [  23935]   INFO - com.intellij.ide.ui.UISettings - Loaded: fontSize=12, fontScale=1.0; restored: fontSize=12, fontScale=1.0 
+2019-12-10 10:11:04,591 [  23981]   INFO - exImpl$StubIndexInitialization - Initialization done:1001 
+2019-12-10 10:11:05,565 [  24955]   INFO - .openapi.application.Preloader - com.intellij.openapi.actionSystem.impl.ActionPreloader took 3521 ms 
+2019-12-10 10:11:05,708 [  25098]   INFO - ellij.project.impl.ProjectImpl - 164 project components initialized in 2642 ms 
+2019-12-10 10:11:05,849 [  25239]   INFO - le.impl.ModuleManagerComponent - 1 module(s) loaded in 139 ms 
+2019-12-10 10:11:06,137 [  25527]   INFO - j.ide.script.IdeStartupScripts - 0 startup script(s) found 
+2019-12-10 10:11:06,375 [  25765]   INFO - rojectCodeStyleSettingsManager - Initialized from default code style settings. 
+2019-12-10 10:11:07,534 [  26924]   INFO - penapi.project.DumbServiceImpl - Running dumb mode task: com.intellij.util.indexing.UnindexedFilesUpdater@2e142599 
+2019-12-10 10:11:07,599 [  26989]   INFO - .diagnostic.PerformanceWatcher - Pushing properties took 62ms; general responsiveness: ok; EDT responsiveness: ok 
+2019-12-10 10:11:07,632 [  27022]   INFO - tartup.impl.StartupManagerImpl - EditorHistoryManagerStartUpActivity run in 104ms under project opening modal progress 
+2019-12-10 10:11:07,639 [  27029]   INFO - ntellij.internal.IconsLoadTime - IMG load time: ide_startup=21,81ms, average=2,73ms, median=4,34ms; number of icons: 8 
+2019-12-10 10:11:07,640 [  27030]   INFO - ntellij.internal.IconsLoadTime - SVG load time: ide_startup=197,47ms, average=5,20ms, median=6,52ms; number of icons: 38 
+2019-12-10 10:11:07,779 [  27169]   INFO - .openapi.application.Preloader - com.intellij.ide.ui.search.SearchableOptionPreloader took 2213 ms 
+2019-12-10 10:11:08,269 [  27659]   INFO - .openapi.application.Preloader - com.intellij.codeInsight.completion.CompletionPreloader took 486 ms 
+2019-12-10 10:11:08,289 [  27679]   INFO - .openapi.application.Preloader - com.intellij.ide.actions.GotoClassPresentationUpdater took 18 ms 
+2019-12-10 10:11:09,034 [  28424]   INFO - tartup.impl.StartupManagerImpl - OpenFilesActivity run in 1384ms under project opening modal progress 
+2019-12-10 10:11:09,176 [  28566]   INFO - ge.ExternalProjectsDataStorage - Loaded external projects data in 9 millis 
+2019-12-10 10:11:09,181 [  28571]   INFO - tartup.impl.StartupManagerImpl - ExternalSystemStartupActivity run in 125ms under project opening modal progress 
+2019-12-10 10:11:09,250 [  28640]   INFO - .diagnostic.PerformanceWatcher - Post-startup activities under progress took 1891ms; general responsiveness: ok; EDT responsiveness: 0/2 sluggish, 1/2 very slow 
+2019-12-10 10:11:10,048 [  29438]   INFO - j.ide.ui.OptionsTopHitProvider - 488 ms spent on EDT to cache options in application 
+2019-12-10 10:11:10,208 [  29598]   INFO - tartup.impl.StartupManagerImpl - C:/Users/Simone/Desktop/TestAscetic/ProgettiTest/.idea case-sensitivity: expected=false actual=false 
+2019-12-10 10:11:10,258 [  29648]   INFO -  #git4idea.commands.GitHandler - [.] git version 
+2019-12-10 10:11:10,341 [  29731]   INFO - tor.impl.FileEditorManagerImpl - Project opening took 7531 ms 
+2019-12-10 10:11:10,342 [  29732]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.kotlin loaded 1631 classes 
+2019-12-10 10:11:10,342 [  29732]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.android loaded 1317 classes 
+2019-12-10 10:11:10,342 [  29732]   INFO - llij.ide.plugins.PluginManager - org.intellij.groovy loaded 511 classes 
+2019-12-10 10:11:10,342 [  29732]   INFO - llij.ide.plugins.PluginManager - com.intellij.uiDesigner loaded 211 classes 
+2019-12-10 10:11:10,342 [  29732]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.idea.maven loaded 203 classes 
+2019-12-10 10:11:10,342 [  29732]   INFO - llij.ide.plugins.PluginManager - Git4Idea loaded 158 classes 
+2019-12-10 10:11:10,342 [  29732]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.debugger.streams loaded 129 classes 
+2019-12-10 10:11:10,342 [  29732]   INFO - llij.ide.plugins.PluginManager - com.intellij.tasks loaded 100 classes 
+2019-12-10 10:11:10,342 [  29732]   INFO - llij.ide.plugins.PluginManager - org.editorconfig.editorconfigjetbrains loaded 70 classes 
+2019-12-10 10:11:10,342 [  29732]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.plugins.gradle loaded 68 classes 
+2019-12-10 10:11:10,342 [  29732]   INFO - llij.ide.plugins.PluginManager - XPathView loaded 66 classes 
+2019-12-10 10:11:10,342 [  29732]   INFO - llij.ide.plugins.PluginManager - com.intellij.properties loaded 60 classes 
+2019-12-10 10:11:10,342 [  29732]   INFO - llij.ide.plugins.PluginManager - Subversion loaded 57 classes 
+2019-12-10 10:11:10,342 [  29732]   INFO - llij.ide.plugins.PluginManager - DevKit loaded 55 classes 
+2019-12-10 10:11:10,342 [  29732]   INFO - llij.ide.plugins.PluginManager - hg4idea loaded 44 classes 
+2019-12-10 10:11:10,342 [  29732]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.settingsRepository loaded 37 classes 
+2019-12-10 10:11:10,342 [  29732]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.plugins.yaml loaded 31 classes 
+2019-12-10 10:11:10,343 [  29733]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.plugins.javaFX loaded 24 classes 
+2019-12-10 10:11:10,343 [  29733]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.plugins.github loaded 21 classes 
+2019-12-10 10:11:10,343 [  29733]   INFO - llij.ide.plugins.PluginManager - AntSupport loaded 20 classes 
+2019-12-10 10:11:10,343 [  29733]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.plugins.terminal loaded 19 classes 
+2019-12-10 10:11:10,343 [  29733]   INFO - llij.ide.plugins.PluginManager - JUnit loaded 18 classes 
+2019-12-10 10:11:10,343 [  29733]   INFO - llij.ide.plugins.PluginManager - TestNG-J loaded 15 classes 
+2019-12-10 10:11:10,343 [  29733]   INFO - llij.ide.plugins.PluginManager - Coverage loaded 15 classes 
+2019-12-10 10:11:10,343 [  29733]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.idea.eclipse loaded 11 classes 
+2019-12-10 10:11:10,343 [  29733]   INFO - llij.ide.plugins.PluginManager - com.intellij.java-i18n loaded 7 classes 
+2019-12-10 10:11:10,343 [  29733]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.java.decompiler loaded 7 classes 
+2019-12-10 10:11:10,343 [  29733]   INFO - llij.ide.plugins.PluginManager - com.intellij.copyright loaded 6 classes 
+2019-12-10 10:11:10,343 [  29733]   INFO - llij.ide.plugins.PluginManager - org.intellij.intelliLang loaded 6 classes 
+2019-12-10 10:11:10,343 [  29733]   INFO - llij.ide.plugins.PluginManager - com.android.tools.idea.smali loaded 5 classes 
+2019-12-10 10:11:10,343 [  29733]   INFO - llij.ide.plugins.PluginManager - it.unisa.casper loaded 4 classes 
+2019-12-10 10:11:10,343 [  29733]   INFO - llij.ide.plugins.PluginManager - XSLT-Debugger loaded 2 classes 
+2019-12-10 10:11:10,343 [  29733]   INFO - llij.ide.plugins.PluginManager - ByteCodeViewer loaded 2 classes 
+2019-12-10 10:11:10,435 [  29825]   INFO -  #git4idea.commands.GitHandler - git version 2.19.2.windows.3 
+2019-12-10 10:11:10,515 [  29905]   INFO - ea.config.GitExecutableManager - Git version for C:\Users\Simone\AppData\Local\GitHubDesktop\app-2.2.2\resources\app\git\cmd\git.exe : 2.19.2 
+2019-12-10 10:11:11,226 [  30616]   INFO - pl.projectlevelman.NewMappings - VCS Root: [Git] - [C:/Users/Simone/Desktop/TestAscetic] 
+2019-12-10 10:11:11,921 [  31311]   INFO - .diagnostic.PerformanceWatcher - Indexable file iteration took 4320ms; general responsiveness: ok; EDT responsiveness: 1/4 sluggish, 1/4 very slow 
+2019-12-10 10:11:11,926 [  31316]   INFO - penapi.project.DumbServiceImpl - Running dumb mode task: initial refresh 
+2019-12-10 10:11:11,934 [  31324]   INFO - penapi.project.DumbServiceImpl - updateFinished 
+2019-12-10 10:11:11,943 [  31333]   INFO - g.FileBasedIndexProjectHandler - Has changed files: false; project=Project 'C:\Users\Simone\Desktop\TestAscetic\ProgettiTest' ProgettiTest 
+2019-12-10 10:11:12,076 [  31466]   INFO - j.ide.ui.OptionsTopHitProvider - 125 ms spent to cache options in project 
+2019-12-10 10:11:12,077 [  31467]   INFO - tartup.impl.StartupManagerImpl - Some post-startup activities freeze UI for noticeable time. Please consider making them DumbAware to do them in background under modal progress, or just making them faster to speed up project opening. 
+2019-12-10 10:11:12,077 [  31467]   INFO - tartup.impl.StartupManagerImpl - Activity run in 126ms on UI thread 
+2019-12-10 10:11:12,091 [  31481]   WARN - com.intellij.util.xmlb.Binding - no accessors for class org.jetbrains.kotlin.idea.highlighter.KotlinDefaultHighlightingSettingsProvider 
+2019-12-10 10:11:13,462 [  32852]   INFO - tartup.impl.StartupManagerImpl - CreateKotlinSdkActivity run in 1274ms on UI thread 
+2019-12-10 10:11:13,751 [  33141]   INFO - j.ide.ui.OptionsTopHitProvider - 236 ms spent on EDT to cache options in project 
+2019-12-10 10:11:13,846 [  33236]   INFO - penapi.project.DumbServiceImpl - Running dumb mode task: com.android.tools.idea.res.ResourceFolderRepositoryFileCacheImpl$PruneTask@53e559fc 
+2019-12-10 10:11:13,917 [  33307]   INFO - penapi.project.DumbServiceImpl - Running dumb mode task: com.android.tools.idea.res.ResourceFolderRepositoryFileCacheImpl$ManageLruProjectFilesTask@bf3dbde 
+2019-12-10 10:11:14,022 [  33412]   INFO - penapi.project.DumbServiceImpl - updateFinished 
+2019-12-10 10:11:14,024 [  33414]   INFO - g.FileBasedIndexProjectHandler - Has changed files: false; project=Project 'C:\Users\Simone\Desktop\TestAscetic\ProgettiTest' ProgettiTest 
+2019-12-10 10:11:14,066 [  33456]   INFO - penapi.project.DumbServiceImpl - Running dumb mode task: com.android.tools.idea.res.ResourceFolderRegistry$PopulateCachesTask@59ccd096 
+2019-12-10 10:11:14,144 [  33534]   INFO - penapi.project.DumbServiceImpl - updateFinished 
+2019-12-10 10:11:14,145 [  33535]   INFO - g.FileBasedIndexProjectHandler - Has changed files: false; project=Project 'C:\Users\Simone\Desktop\TestAscetic\ProgettiTest' ProgettiTest 
+2019-12-10 10:11:14,457 [  33847]   INFO - CompilerWorkspaceConfiguration - Available processors: 8 
+2019-12-10 10:11:18,641 [  38031]   INFO - ellij.project.impl.ProjectImpl - 20 project components initialized in 19 ms 
+2019-12-10 10:11:28,082 [  47472]   INFO - ntellij.internal.IconsLoadTime - SVG load time: total=467,29ms, average=4,67ms, median=7,98ms; number of icons: 100 
+2019-12-10 10:11:32,591 [  51981]   INFO - .script.IdeScriptEngineManager - javax.script.ScriptEngineManager initialized in 23 ms 
+2019-12-10 10:12:11,291 [  90681]   INFO - rationStore.ComponentStoreImpl - Saving Project 'C:\Users\Simone\Desktop\TestAscetic\ProgettiTest' ProgettiTestRunManager took 23 ms 
+2019-12-10 10:12:11,353 [  90743]   INFO - mponents.impl.stores.StoreUtil - saveProjectsAndApp took 713 ms 
+2019-12-10 10:13:47,176 [ 186566]   INFO - mponents.impl.stores.StoreUtil - saveProjectsAndApp took 46 ms 
+2019-12-10 10:14:56,772 [ 256162]   INFO -  #git4idea.commands.GitHandler - [..\..\TestAscetic] git -c credential.helper= -c core.quotepath=false -c log.showSignature=false add --ignore-errors -A -- ProgettiTest/src/com/fumet/registration/Customer.java 
+2019-12-10 10:14:57,168 [ 256558]   INFO -  #git4idea.commands.GitHandler - [..\..\TestAscetic] git -c credential.helper= -c core.quotepath=false -c log.showSignature=false rm --ignore-unmatch --cached -- ProgettiTest/src/com/fumet/entities/Customer.java 
+2019-12-10 10:15:10,728 [ 270118]   INFO - rationStore.ComponentStoreImpl - Saving appFileBasedIndex took 20 ms 
+2019-12-10 10:15:10,822 [ 270212]   INFO - rationStore.ComponentStoreImpl - Saving Project 'C:\Users\Simone\Desktop\TestAscetic\ProgettiTest' ProgettiTestXDebuggerManager took 14 ms 
+2019-12-10 10:15:10,866 [ 270256]   INFO - mponents.impl.stores.StoreUtil - saveProjectsAndApp took 281 ms 
+2019-12-10 10:17:23,564 [ 402954]   INFO -  #git4idea.commands.GitHandler - [..\..\TestAscetic] git -c credential.helper= -c core.quotepath=false -c log.showSignature=false add --ignore-errors -A -- ProgettiTest/src/com/fumet/entities/Customer.java 
+2019-12-10 10:17:23,967 [ 403357]   INFO -  #git4idea.commands.GitHandler - [..\..\TestAscetic] git -c credential.helper= -c core.quotepath=false -c log.showSignature=false rm --ignore-unmatch --cached -- ProgettiTest/src/com/fumet/registration/Customer.java 
+2019-12-10 15:36:31,062 [      0]   INFO -        #com.intellij.idea.Main - ------------------------------------------------------ IDE STARTED ------------------------------------------------------ 
+2019-12-10 15:36:31,192 [    130]   INFO -        #com.intellij.idea.Main - IDE: IntelliJ IDEA (build #IC-191.7479.19, 28 May 2019 08:23) 
+2019-12-10 15:36:31,192 [    130]   INFO -        #com.intellij.idea.Main - OS: Windows 10 (10.0, amd64) 
+2019-12-10 15:36:31,192 [    130]   INFO -        #com.intellij.idea.Main - JRE: 1.8.0_202-release-1483-b53 (JetBrains s.r.o) 
+2019-12-10 15:36:31,192 [    130]   INFO -        #com.intellij.idea.Main - JVM: 25.202-b53 (OpenJDK 64-Bit Server VM) 
+2019-12-10 15:36:31,202 [    140]   INFO -        #com.intellij.idea.Main - JVM Args: -Didea.classpath.index.enabled=false -Didea.config.path=C:\Users\Simone\Desktop\cASpER\Code\build\idea-sandbox\config -Didea.is.internal=true -Didea.platform.prefix=Idea -Didea.plugins.path=C:\Users\Simone\Desktop\cASpER\Code\build\idea-sandbox\plugins -Didea.required.plugins.id=it.unisa.casper -Didea.system.path=C:\Users\Simone\Desktop\cASpER\Code\build\idea-sandbox\system -Xms256m -Xmx512m -Dfile.encoding=windows-1252 -Duser.country=IT -Duser.language=it -Duser.variant -ea 
+2019-12-10 15:36:31,204 [    142]   INFO -        #com.intellij.idea.Main - ext: C:\Users\Simone\.gradle\caches\modules-2\files-2.1\com.jetbrains\jbre\jbrx-8u202-windows-x64-b1483.53\jre\lib\ext: [access-bridge-64.jar, cldrdata.jar, dnsns.jar, jaccess.jar, jfxrt.jar, localedata.jar, meta-index, nashorn.jar, sunec.jar, sunjce_provider.jar, sunmscapi.jar, sunpkcs11.jar, zipfs.jar] 
+2019-12-10 15:36:31,204 [    142]   INFO -        #com.intellij.idea.Main - charsets: JNU=Cp1252 file=windows-1252 
+2019-12-10 15:36:31,297 [    235]   INFO -        #com.intellij.idea.Main - JNA library (64-bit) loaded in 92 ms 
+2019-12-10 15:36:31,306 [    244]   INFO - penapi.util.io.win32.IdeaWin32 - Native filesystem for Windows is operational 
+2019-12-10 15:36:31,671 [    609]   INFO -     #com.intellij.util.ui.JBUI - User scale factor: 1.0 
+2019-12-10 15:36:31,696 [    634]   INFO -     #com.intellij.util.ui.JBUI - System scale factor: 1.0 (JRE-managed HiDPI) 
+2019-12-10 15:36:33,225 [   2163]   INFO - .intellij.idea.IdeaApplication - CPU cores: 8; ForkJoinPool.commonPool: java.util.concurrent.ForkJoinPool@52175533[Running, parallelism = 7, size = 0, active = 0, running = 0, steals = 0, tasks = 0, submissions = 0]; factory: com.intellij.concurrency.IdeaForkJoinWorkerThreadFactory@1d378e5a 
+2019-12-10 15:36:34,115 [   3053]   INFO - llij.ide.plugins.PluginManager - Cannot find optional descriptor duplicates-groovy.xml 
+2019-12-10 15:36:34,119 [   3057]   INFO - llij.ide.plugins.PluginManager - Cannot find optional descriptor duplicates-detection-groovy.xml 
+2019-12-10 15:36:34,374 [   3312]   INFO - llij.ide.plugins.PluginManager - load plugin descriptors took 778 ms 
+2019-12-10 15:36:34,514 [   3452]   INFO - llij.ide.plugins.PluginManager - 35 plugins initialized in 918 ms 
+2019-12-10 15:36:34,514 [   3452]   INFO - llij.ide.plugins.PluginManager - Loaded bundled plugins: Android Support (10.3.3), Ant Support (191.7479.19), Bytecode Viewer (191.7479.19), Copyright (191.7479.19), Coverage (191.7479.19), Eclipse Integration (191.7479.19), EditorConfig (191.7479.19), Git Integration (191.7479.19), GitHub (191.7479.19), Gradle (191.7479.19), Groovy (191.7479.19), I18n for Java (191.7479.19), IDEA CORE (191.7479.19), IntelliJ Configuration Script (191.7479.19), IntelliLang (191.7479.19), JUnit (191.7479.19), Java Bytecode Decompiler (191.7479.19), Java Stream Debugger (191.7479.19), JavaFX (191.7479.19), Kotlin (1.3.21-release-IJ2019.1-3), Maven Integration (191.7479.19), Mercurial Integration (191.7479.19), Plugin DevKit (191.7479.19), Properties Support (191.7479.19), Settings Repository (191.7479.19), Smali Support (191.7479.19), Subversion (191.7479.19), Task Management (191.7479.19), Terminal (191.7479.19), TestNG-J (191.7479.19), UI Designer (191.7479.19), XPathView + XSLT Support (191.7479.19), XSLT-Debugger (191.7479.19), YAML (191.7479.19) 
+2019-12-10 15:36:34,514 [   3452]   INFO - llij.ide.plugins.PluginManager - Loaded custom plugins: cASpER (1.0-SNAPSHOT) 
+2019-12-10 15:36:46,386 [  15324]   INFO - pi.util.registry.RegistryState - Registry values changed by user: 
+2019-12-10 15:36:46,386 [  15324]   INFO - pi.util.registry.RegistryState -   java.completion.argument.hints.internal = false 
+2019-12-10 15:36:46,416 [  15354]   INFO - pi.util.registry.RegistryState - Experimental features enabled for user: inline.browse.button, linux.native.menu, recent.and.edited.files.together 
+2019-12-10 15:36:46,472 [  15410]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=435; buffer=10; max=435 
+2019-12-10 15:36:46,632 [  15570]   INFO - pl.local.NativeFileWatcherImpl - Starting file watcher: C:\Users\Simone\.gradle\caches\modules-2\files-2.1\com.jetbrains.intellij.idea\ideaIC\2019.1.3\6a2d76b455a8e07743bd5bdc891a410a7ddb2fb3\ideaIC-2019.1.3\bin\win\fsnotifier64.exe 
+2019-12-10 15:36:46,674 [  15612]   INFO - pl.local.NativeFileWatcherImpl - Native file watcher is operational. 
+2019-12-10 15:36:49,722 [  18660]   INFO - til.net.ssl.CertificateManager - Default SSL context initialized 
+2019-12-10 15:36:49,751 [  18689]   WARN - com.intellij.util.xmlb.Binding - no accessors for interface com.intellij.openapi.extensions.PluginDescriptor 
+2019-12-10 15:36:49,768 [  18706]   INFO - rains.ide.BuiltInServerManager - built-in server started, port 63343 
+2019-12-10 15:36:49,926 [  18864]   INFO - gs.impl.UpdateCheckerComponent - channel: release 
+2019-12-10 15:36:50,619 [  19557]   INFO - il.indexing.FileBasedIndexImpl - Index exts enumerated:568, number of extensions:47 
+2019-12-10 15:36:50,644 [  19582]   INFO - il.indexing.FileBasedIndexImpl - Index scheduled:25 
+2019-12-10 15:36:50,750 [  19688]   INFO - tellij.psi.stubs.StubIndexImpl - All stub exts enumerated:70, number of extensions:50 
+2019-12-10 15:36:50,754 [  19692]   INFO - tellij.psi.stubs.StubIndexImpl - stub exts update scheduled:2 
+2019-12-10 15:36:51,586 [  20524]   INFO - plication.impl.ApplicationImpl - 85 application components initialized in 17997ms 
+2019-12-10 15:36:51,612 [  20550]   INFO - .intellij.idea.IdeaApplication - App initialization took 27232 ms 
+2019-12-10 15:36:51,612 [  20550]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.kotlin loaded 717 classes 
+2019-12-10 15:36:51,612 [  20550]   INFO - llij.ide.plugins.PluginManager - org.intellij.groovy loaded 248 classes 
+2019-12-10 15:36:51,612 [  20550]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.android loaded 138 classes 
+2019-12-10 15:36:51,612 [  20550]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.idea.maven loaded 34 classes 
+2019-12-10 15:36:51,612 [  20550]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.settingsRepository loaded 30 classes 
+2019-12-10 15:36:51,612 [  20550]   INFO - llij.ide.plugins.PluginManager - com.intellij.properties loaded 28 classes 
+2019-12-10 15:36:51,612 [  20550]   INFO - llij.ide.plugins.PluginManager - XPathView loaded 20 classes 
+2019-12-10 15:36:51,612 [  20550]   INFO - llij.ide.plugins.PluginManager - org.editorconfig.editorconfigjetbrains loaded 17 classes 
+2019-12-10 15:36:51,612 [  20550]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.plugins.yaml loaded 14 classes 
+2019-12-10 15:36:51,612 [  20550]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.plugins.javaFX loaded 13 classes 
+2019-12-10 15:36:51,612 [  20550]   INFO - llij.ide.plugins.PluginManager - Subversion loaded 12 classes 
+2019-12-10 15:36:51,612 [  20550]   INFO - llij.ide.plugins.PluginManager - com.intellij.tasks loaded 9 classes 
+2019-12-10 15:36:51,612 [  20550]   INFO - llij.ide.plugins.PluginManager - Git4Idea loaded 9 classes 
+2019-12-10 15:36:51,612 [  20550]   INFO - llij.ide.plugins.PluginManager - com.intellij.uiDesigner loaded 7 classes 
+2019-12-10 15:36:51,612 [  20550]   INFO - llij.ide.plugins.PluginManager - com.android.tools.idea.smali loaded 5 classes 
+2019-12-10 15:36:51,612 [  20550]   INFO - llij.ide.plugins.PluginManager - AntSupport loaded 5 classes 
+2019-12-10 15:36:51,612 [  20550]   INFO - llij.ide.plugins.PluginManager - DevKit loaded 5 classes 
+2019-12-10 15:36:51,612 [  20550]   INFO - llij.ide.plugins.PluginManager - org.intellij.intelliLang loaded 4 classes 
+2019-12-10 15:36:51,612 [  20550]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.plugins.gradle loaded 3 classes 
+2019-12-10 15:36:51,612 [  20550]   INFO - llij.ide.plugins.PluginManager - hg4idea loaded 3 classes 
+2019-12-10 15:36:51,612 [  20550]   INFO - llij.ide.plugins.PluginManager - it.unisa.casper loaded 2 classes 
+2019-12-10 15:36:51,616 [  20554]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.idea.eclipse loaded 2 classes 
+2019-12-10 15:36:51,616 [  20554]   INFO - llij.ide.plugins.PluginManager - com.intellij.java-i18n loaded 1 classes 
+2019-12-10 15:36:51,716 [  20654]   INFO - j.ide.ui.OptionsTopHitProvider - 2487 ms spent to cache options in application 
+2019-12-10 15:36:51,716 [  20654]   INFO - .openapi.application.Preloader - com.intellij.ide.ui.OptionsTopHitProvider$Activity took 2486 ms 
+2019-12-10 15:36:52,241 [  21179]   INFO - m.intellij.ui.mac.touchbar.NST - OS doesn't support touchbar, skip nst loading 
+2019-12-10 15:36:53,292 [  22230]   INFO - pl$FileIndexDataInitialization - Initialization done:2645 
+2019-12-10 15:36:53,732 [  22670]   INFO - pl.projectlevelman.NewMappings - VCS Root: [] - [<Project>] 
+2019-12-10 15:36:53,734 [  22672]   INFO - pl.projectlevelman.NewMappings - VCS Root: [Git] - [C:/Users/Simone/Desktop/TestAscetic] 
+2019-12-10 15:36:54,243 [  23181]   INFO - exImpl$StubIndexInitialization - Initialization done:950 
+2019-12-10 15:36:54,390 [  23328]   INFO - com.intellij.ide.ui.UISettings - Loaded: fontSize=12, fontScale=1.0; restored: fontSize=12, fontScale=1.0 
+2019-12-10 15:36:55,348 [  24286]   INFO - .openapi.application.Preloader - com.intellij.openapi.actionSystem.impl.ActionPreloader took 3630 ms 
+2019-12-10 15:36:55,535 [  24473]   INFO - ellij.project.impl.ProjectImpl - 164 project components initialized in 2592 ms 
+2019-12-10 15:36:55,693 [  24631]   INFO - le.impl.ModuleManagerComponent - 1 module(s) loaded in 154 ms 
+2019-12-10 15:36:55,951 [  24889]   INFO - j.ide.script.IdeStartupScripts - 0 startup script(s) found 
+2019-12-10 15:36:56,161 [  25099]   INFO - rojectCodeStyleSettingsManager - Initialized from default code style settings. 
+2019-12-10 15:36:57,182 [  26120]   INFO - penapi.project.DumbServiceImpl - Running dumb mode task: com.intellij.util.indexing.UnindexedFilesUpdater@5e1b7a37 
+2019-12-10 15:36:57,209 [  26147]   INFO - .openapi.application.Preloader - com.intellij.ide.ui.search.SearchableOptionPreloader took 1860 ms 
+2019-12-10 15:36:57,242 [  26180]   INFO - .diagnostic.PerformanceWatcher - Pushing properties took 55ms; general responsiveness: ok; EDT responsiveness: ok 
+2019-12-10 15:36:57,301 [  26239]   INFO - ntellij.internal.IconsLoadTime - IMG load time: ide_startup=20,88ms, average=2,61ms, median=3,54ms; number of icons: 8 
+2019-12-10 15:36:57,302 [  26240]   INFO - ntellij.internal.IconsLoadTime - SVG load time: ide_startup=168,83ms, average=4,44ms, median=6,85ms; number of icons: 38 
+2019-12-10 15:36:57,836 [  26774]   INFO - .openapi.application.Preloader - com.intellij.codeInsight.completion.CompletionPreloader took 624 ms 
+2019-12-10 15:36:57,854 [  26792]   INFO - .openapi.application.Preloader - com.intellij.ide.actions.GotoClassPresentationUpdater took 18 ms 
+2019-12-10 15:36:59,079 [  28017]   INFO - tartup.impl.StartupManagerImpl - OpenFilesActivity run in 1768ms under project opening modal progress 
+2019-12-10 15:36:59,203 [  28141]   INFO - ge.ExternalProjectsDataStorage - Loaded external projects data in 5 millis 
+2019-12-10 15:36:59,290 [  28228]   INFO - .diagnostic.PerformanceWatcher - Post-startup activities under progress took 2222ms; general responsiveness: ok; EDT responsiveness: 0/2 sluggish, 1/2 very slow 
+2019-12-10 15:37:00,267 [  29205]   INFO - j.ide.ui.OptionsTopHitProvider - 508 ms spent on EDT to cache options in application 
+2019-12-10 15:37:00,465 [  29403]   INFO - tartup.impl.StartupManagerImpl - C:/Users/Simone/Desktop/TestAscetic/ProgettiTest/.idea case-sensitivity: expected=false actual=false 
+2019-12-10 15:37:00,518 [  29456]   INFO -  #git4idea.commands.GitHandler - [.] git version 
+2019-12-10 15:37:00,662 [  29600]   INFO - tor.impl.FileEditorManagerImpl - Project opening took 7947 ms 
+2019-12-10 15:37:00,662 [  29600]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.kotlin loaded 1699 classes 
+2019-12-10 15:37:00,662 [  29600]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.android loaded 1324 classes 
+2019-12-10 15:37:00,662 [  29600]   INFO - llij.ide.plugins.PluginManager - org.intellij.groovy loaded 515 classes 
+2019-12-10 15:37:00,662 [  29600]   INFO - llij.ide.plugins.PluginManager - com.intellij.uiDesigner loaded 211 classes 
+2019-12-10 15:37:00,662 [  29600]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.idea.maven loaded 207 classes 
+2019-12-10 15:37:00,662 [  29600]   INFO - llij.ide.plugins.PluginManager - Git4Idea loaded 158 classes 
+2019-12-10 15:37:00,662 [  29600]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.debugger.streams loaded 129 classes 
+2019-12-10 15:37:00,662 [  29600]   INFO - llij.ide.plugins.PluginManager - com.intellij.tasks loaded 99 classes 
+2019-12-10 15:37:00,662 [  29600]   INFO - llij.ide.plugins.PluginManager - org.editorconfig.editorconfigjetbrains loaded 71 classes 
+2019-12-10 15:37:00,662 [  29600]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.plugins.gradle loaded 68 classes 
+2019-12-10 15:37:00,662 [  29600]   INFO - llij.ide.plugins.PluginManager - XPathView loaded 66 classes 
+2019-12-10 15:37:00,662 [  29600]   INFO - llij.ide.plugins.PluginManager - com.intellij.properties loaded 61 classes 
+2019-12-10 15:37:00,662 [  29600]   INFO - llij.ide.plugins.PluginManager - Subversion loaded 57 classes 
+2019-12-10 15:37:00,662 [  29600]   INFO - llij.ide.plugins.PluginManager - DevKit loaded 55 classes 
+2019-12-10 15:37:00,662 [  29600]   INFO - llij.ide.plugins.PluginManager - hg4idea loaded 44 classes 
+2019-12-10 15:37:00,662 [  29600]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.settingsRepository loaded 37 classes 
+2019-12-10 15:37:00,662 [  29600]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.plugins.yaml loaded 32 classes 
+2019-12-10 15:37:00,662 [  29600]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.plugins.javaFX loaded 24 classes 
+2019-12-10 15:37:00,662 [  29600]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.plugins.github loaded 21 classes 
+2019-12-10 15:37:00,662 [  29600]   INFO - llij.ide.plugins.PluginManager - AntSupport loaded 20 classes 
+2019-12-10 15:37:00,662 [  29600]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.plugins.terminal loaded 19 classes 
+2019-12-10 15:37:00,662 [  29600]   INFO - llij.ide.plugins.PluginManager - JUnit loaded 18 classes 
+2019-12-10 15:37:00,662 [  29600]   INFO - llij.ide.plugins.PluginManager - Coverage loaded 15 classes 
+2019-12-10 15:37:00,662 [  29600]   INFO - llij.ide.plugins.PluginManager - TestNG-J loaded 15 classes 
+2019-12-10 15:37:00,662 [  29600]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.idea.eclipse loaded 11 classes 
+2019-12-10 15:37:00,662 [  29600]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.java.decompiler loaded 7 classes 
+2019-12-10 15:37:00,662 [  29600]   INFO - llij.ide.plugins.PluginManager - com.intellij.java-i18n loaded 7 classes 
+2019-12-10 15:37:00,662 [  29600]   INFO - llij.ide.plugins.PluginManager - org.intellij.intelliLang loaded 6 classes 
+2019-12-10 15:37:00,662 [  29600]   INFO - llij.ide.plugins.PluginManager - com.intellij.copyright loaded 6 classes 
+2019-12-10 15:37:00,662 [  29600]   INFO - llij.ide.plugins.PluginManager - com.android.tools.idea.smali loaded 5 classes 
+2019-12-10 15:37:00,662 [  29600]   INFO - llij.ide.plugins.PluginManager - it.unisa.casper loaded 4 classes 
+2019-12-10 15:37:00,662 [  29600]   INFO - llij.ide.plugins.PluginManager - XSLT-Debugger loaded 2 classes 
+2019-12-10 15:37:00,662 [  29600]   INFO - llij.ide.plugins.PluginManager - ByteCodeViewer loaded 2 classes 
+2019-12-10 15:37:00,724 [  29662]   INFO -  #git4idea.commands.GitHandler - git version 2.19.2.windows.3 
+2019-12-10 15:37:00,762 [  29700]   INFO - ea.config.GitExecutableManager - Git version for C:\Users\Simone\AppData\Local\GitHubDesktop\app-2.2.2\resources\app\git\cmd\git.exe : 2.19.2 
+2019-12-10 15:37:01,235 [  30173]   INFO - pl.projectlevelman.NewMappings - VCS Root: [Git] - [C:/Users/Simone/Desktop/TestAscetic] 
+2019-12-10 15:37:02,916 [  31854]   INFO - .diagnostic.PerformanceWatcher - Indexable file iteration took 5668ms; general responsiveness: ok; EDT responsiveness: 0/6 sluggish, 2/6 very slow 
+2019-12-10 15:37:02,934 [  31872]   INFO - penapi.project.DumbServiceImpl - Running dumb mode task: initial refresh 
+2019-12-10 15:37:03,007 [  31945]   INFO - penapi.project.DumbServiceImpl - updateFinished 
+2019-12-10 15:37:03,007 [  31945]   INFO - g.FileBasedIndexProjectHandler - Has changed files: false; project=Project 'C:\Users\Simone\Desktop\TestAscetic\ProgettiTest' ProgettiTest 
+2019-12-10 15:37:03,169 [  32107]   INFO - CompilerWorkspaceConfiguration - Available processors: 8 
+2019-12-10 15:37:03,188 [  32126]   INFO - j.ide.ui.OptionsTopHitProvider - 164 ms spent to cache options in project 
+2019-12-10 15:37:03,188 [  32126]   INFO - tartup.impl.StartupManagerImpl - Some post-startup activities freeze UI for noticeable time. Please consider making them DumbAware to do them in background under modal progress, or just making them faster to speed up project opening. 
+2019-12-10 15:37:03,188 [  32126]   INFO - tartup.impl.StartupManagerImpl - Activity run in 164ms on UI thread 
+2019-12-10 15:37:03,206 [  32144]   WARN - com.intellij.util.xmlb.Binding - no accessors for class org.jetbrains.kotlin.idea.highlighter.KotlinDefaultHighlightingSettingsProvider 
+2019-12-10 15:37:04,836 [  33774]   INFO - tartup.impl.StartupManagerImpl - CreateKotlinSdkActivity run in 1560ms on UI thread 
+2019-12-10 15:37:05,321 [  34259]   INFO - j.ide.ui.OptionsTopHitProvider - 271 ms spent on EDT to cache options in project 
+2019-12-10 15:37:05,384 [  34322]   INFO - penapi.project.DumbServiceImpl - Running dumb mode task: com.android.tools.idea.res.ResourceFolderRepositoryFileCacheImpl$PruneTask@769be274 
+2019-12-10 15:37:05,422 [  34360]   INFO - penapi.project.DumbServiceImpl - Running dumb mode task: com.android.tools.idea.res.ResourceFolderRepositoryFileCacheImpl$ManageLruProjectFilesTask@fb49a07 
+2019-12-10 15:37:05,467 [  34405]   INFO - penapi.project.DumbServiceImpl - updateFinished 
+2019-12-10 15:37:05,467 [  34405]   INFO - g.FileBasedIndexProjectHandler - Has changed files: false; project=Project 'C:\Users\Simone\Desktop\TestAscetic\ProgettiTest' ProgettiTest 
+2019-12-10 15:37:05,502 [  34440]   INFO - penapi.project.DumbServiceImpl - Running dumb mode task: com.android.tools.idea.res.ResourceFolderRegistry$PopulateCachesTask@27e2840b 
+2019-12-10 15:37:05,527 [  34465]   INFO - penapi.project.DumbServiceImpl - updateFinished 
+2019-12-10 15:37:05,528 [  34466]   INFO - g.FileBasedIndexProjectHandler - Has changed files: false; project=Project 'C:\Users\Simone\Desktop\TestAscetic\ProgettiTest' ProgettiTest 
+2019-12-10 15:37:12,616 [  41554]   INFO - ellij.project.impl.ProjectImpl - 20 project components initialized in 15 ms 
+2019-12-10 15:37:13,704 [  42642]  ERROR - j.psi.stubs.StubTreeLoaderImpl - Outdated stub in index: file://C:/Users/Simone/Desktop/TestAscetic/ProgettiTest/src/com/fumet/registration/IdentityChecker.java indexed at 1575662106097 with document size 477, doc=DocumentImpl[file://C:/Users/Simone/Desktop/TestAscetic/ProgettiTest/src/com/fumet/registration/IdentityChecker.java], docSaved=true, wasIndexedAlready=true, queried at 1575969310606
+indexed lengths={chars=513, bytes=537}
+doc length=477
+file length=500
+cached PSI class com.intellij.psi.impl.source.PsiJavaFileImpl
+projects with file: 1 
+java.lang.Exception
+	at com.intellij.psi.stubs.StubTreeLoaderImpl.diagnoseLengthMismatch(StubTreeLoaderImpl.java:180)
+	at com.intellij.psi.stubs.StubTreeLoaderImpl.checkLengthMatch(StubTreeLoaderImpl.java:150)
+	at com.intellij.psi.stubs.StubTreeLoaderImpl.readFromVFile(StubTreeLoaderImpl.java:118)
+	at com.intellij.psi.stubs.StubTreeLoader.stubTreeAndIndexDoNotMatch(StubTreeLoader.java:72)
+	at com.intellij.psi.stubs.StubProcessingHelperBase.inconsistencyDetected(StubProcessingHelperBase.java:147)
+	at com.intellij.psi.stubs.StubProcessingHelperBase.checkType(StubProcessingHelperBase.java:89)
+	at com.intellij.psi.stubs.StubProcessingHelperBase.processStubsInFile(StubProcessingHelperBase.java:68)
+	at com.intellij.psi.stubs.StubIndexImpl$2.process(StubIndexImpl.java:290)
+	at com.intellij.psi.stubs.StubIndexImpl$StubIdListContainerAction.perform(StubIndexImpl.java:602)
+	at com.intellij.psi.stubs.StubIndexImpl$StubIdListContainerAction.perform(StubIndexImpl.java:590)
+	at com.intellij.util.indexing.ValueContainer.forEach(ValueContainer.java:62)
+	at com.intellij.psi.stubs.StubIndexImpl.lambda$null$0(StubIndexImpl.java:314)
+	at com.intellij.util.ConcurrencyUtil.withLock(ConcurrencyUtil.java:245)
+	at com.intellij.psi.stubs.StubIndexImpl.lambda$null$1(StubIndexImpl.java:312)
+	at com.intellij.util.indexing.FileBasedIndexImpl.disableUpToDateCheckIn(FileBasedIndexImpl.java:671)
+	at com.intellij.psi.stubs.StubIndexImpl.lambda$doProcessStubs$2(StubIndexImpl.java:311)
+	at com.intellij.util.indexing.IndexAccessValidator.validate(IndexAccessValidator.java:43)
+	at com.intellij.psi.stubs.StubIndexImpl.doProcessStubs(StubIndexImpl.java:309)
+	at com.intellij.psi.stubs.StubIndexImpl.processElements(StubIndexImpl.java:281)
+	at com.intellij.psi.stubs.StubIndex.getElements(StubIndex.java:121)
+	at com.intellij.psi.stubs.StubIndex.getElements(StubIndex.java:109)
+	at com.intellij.psi.impl.java.stubs.index.JavaFullClassNameIndex.get(JavaFullClassNameIndex.java:47)
+	at com.intellij.psi.impl.file.impl.JavaFileManagerImpl.doFindClasses(JavaFileManagerImpl.java:88)
+	at com.intellij.psi.impl.file.impl.JavaFileManagerImpl.findClass(JavaFileManagerImpl.java:123)
+	at com.intellij.psi.impl.PsiElementFinderImpl.findClass(PsiElementFinderImpl.java:38)
+	at com.intellij.psi.impl.JavaPsiFacadeImpl.doFindClass(JavaPsiFacadeImpl.java:116)
+	at com.intellij.psi.impl.JavaPsiFacadeImpl.findClass(JavaPsiFacadeImpl.java:93)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.resolve(PsiJavaCodeReferenceElementImpl.java:452)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.access$100(PsiJavaCodeReferenceElementImpl.java:44)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl$OurGenericsResolver.resolve(PsiJavaCodeReferenceElementImpl.java:383)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl$OurGenericsResolver.resolve(PsiJavaCodeReferenceElementImpl.java:375)
+	at com.intellij.psi.impl.source.resolve.ResolveCache.lambda$resolveWithCaching$1(ResolveCache.java:203)
+	at com.intellij.openapi.util.RecursionManager$1.doPreventingRecursion(RecursionManager.java:116)
+	at com.intellij.psi.impl.source.resolve.ResolveCache.resolveWithCaching(ResolveCache.java:202)
+	at com.intellij.psi.impl.PsiImplUtil.multiResolveImpl(PsiImplUtil.java:797)
+	at com.intellij.psi.impl.PsiImplUtil.multiResolveImpl(PsiImplUtil.java:788)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.multiResolve(PsiJavaCodeReferenceElementImpl.java:434)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.advancedResolve(PsiJavaCodeReferenceElementImpl.java:427)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.resolve(PsiJavaCodeReferenceElementImpl.java:359)
+	at com.intellij.psi.impl.source.PsiImportStatementBaseImpl.resolve(PsiImportStatementBaseImpl.java:64)
+	at com.intellij.psi.impl.source.PsiJavaFileBaseImpl.processNamedTypeImports(PsiJavaFileBaseImpl.java:380)
+	at com.intellij.psi.impl.source.PsiJavaFileBaseImpl.processNamedImports(PsiJavaFileBaseImpl.java:365)
+	at com.intellij.psi.impl.source.PsiJavaFileBaseImpl.processDeclarationsNoGuess(PsiJavaFileBaseImpl.java:331)
+	at com.intellij.psi.impl.source.PsiJavaFileBaseImpl.access$200(PsiJavaFileBaseImpl.java:40)
+	at com.intellij.psi.impl.source.PsiJavaFileBaseImpl$MyCacheBuilder.compute(PsiJavaFileBaseImpl.java:595)
+	at com.intellij.psi.impl.PsiCachedValueImpl.doCompute(PsiCachedValueImpl.java:49)
+	at com.intellij.util.CachedValueBase.lambda$getValueWithLock$0(CachedValueBase.java:236)
+	at com.intellij.openapi.util.RecursionManager$1.doPreventingRecursion(RecursionManager.java:116)
+	at com.intellij.util.CachedValueBase.getValueWithLock(CachedValueBase.java:237)
+	at com.intellij.psi.impl.PsiCachedValueImpl.getValue(PsiCachedValueImpl.java:38)
+	at com.intellij.psi.impl.source.PsiJavaFileBaseImpl.processDeclarations(PsiJavaFileBaseImpl.java:314)
+	at com.intellij.psi.scope.util.PsiScopesUtil.treeWalkUp(PsiScopesUtil.java:69)
+	at com.intellij.psi.scope.util.PsiScopesUtil.treeWalkUp(PsiScopesUtil.java:51)
+	at com.intellij.psi.scope.util.PsiScopesUtil.resolveAndWalk(PsiScopesUtil.java:218)
+	at com.intellij.psi.scope.util.PsiScopesUtil.resolveAndWalk(PsiScopesUtil.java:149)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.resolve(PsiJavaCodeReferenceElementImpl.java:501)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.access$100(PsiJavaCodeReferenceElementImpl.java:44)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl$OurGenericsResolver.resolve(PsiJavaCodeReferenceElementImpl.java:383)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl$OurGenericsResolver.resolve(PsiJavaCodeReferenceElementImpl.java:375)
+	at com.intellij.psi.impl.source.resolve.ResolveCache.lambda$resolveWithCaching$1(ResolveCache.java:203)
+	at com.intellij.openapi.util.RecursionManager$1.doPreventingRecursion(RecursionManager.java:116)
+	at com.intellij.psi.impl.source.resolve.ResolveCache.resolveWithCaching(ResolveCache.java:202)
+	at com.intellij.psi.impl.PsiImplUtil.multiResolveImpl(PsiImplUtil.java:797)
+	at com.intellij.psi.impl.PsiImplUtil.multiResolveImpl(PsiImplUtil.java:788)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.multiResolve(PsiJavaCodeReferenceElementImpl.java:434)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.advancedResolve(PsiJavaCodeReferenceElementImpl.java:427)
+	at com.intellij.psi.impl.source.PsiClassReferenceType.resolveGenerics(PsiClassReferenceType.java:194)
+	at com.intellij.psi.impl.source.resolve.PsiResolveHelperImpl.multiResolveConstructor(PsiResolveHelperImpl.java:41)
+	at com.intellij.psi.impl.source.tree.java.PsiNewExpressionImpl$1.resolveInner(PsiNewExpressionImpl.java:153)
+	at com.intellij.psi.impl.source.tree.java.PsiNewExpressionImpl$1.resolveInner(PsiNewExpressionImpl.java:142)
+	at com.intellij.psi.impl.source.resolve.reference.impl.PsiPolyVariantCachingReference$MyResolver.resolve(PsiPolyVariantCachingReference.java:65)
+	at com.intellij.psi.impl.source.resolve.ResolveCache.lambda$resolveWithCaching$1(ResolveCache.java:203)
+	at com.intellij.openapi.util.RecursionManager$1.doPreventingRecursion(RecursionManager.java:116)
+	at com.intellij.psi.impl.source.resolve.ResolveCache.resolveWithCaching(ResolveCache.java:202)
+	at com.intellij.psi.impl.source.resolve.reference.impl.PsiPolyVariantCachingReference.multiResolve(PsiPolyVariantCachingReference.java:32)
+	at com.intellij.psi.impl.source.tree.java.PsiNewExpressionImpl.resolveMethodGenerics(PsiNewExpressionImpl.java:216)
+	at com.intellij.codeInsight.hints.JavaInlayHintsProvider.hints(JavaHintUtils.kt:65)
+	at com.intellij.codeInsight.hints.JavaInlayParameterHintsProvider.getParameterHints(JavaInlayParameterHintsProvider.kt:32)
+	at com.intellij.codeInsight.hints.ParameterHintsPass.process(ParameterHintsPass.java:90)
+	at com.intellij.codeInsight.hints.ParameterHintsPass.lambda$doCollectInformation$0(ParameterHintsPass.java:82)
+	at java.lang.Iterable.forEach(Iterable.java:75)
+	at com.intellij.codeInsight.hints.ParameterHintsPass.doCollectInformation(ParameterHintsPass.java:82)
+	at com.intellij.codeHighlighting.TextEditorHighlightingPass.collectInformation(TextEditorHighlightingPass.java:69)
+	at com.intellij.codeInsight.daemon.impl.PassExecutorService$ScheduledPass.lambda$null$1(PassExecutorService.java:430)
+	at com.intellij.openapi.application.impl.ApplicationImpl.tryRunReadAction(ApplicationImpl.java:1166)
+	at com.intellij.codeInsight.daemon.impl.PassExecutorService$ScheduledPass.lambda$doRun$2(PassExecutorService.java:423)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.registerIndicatorAndRun(CoreProgressManager.java:586)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.executeProcessUnderProgress(CoreProgressManager.java:532)
+	at com.intellij.openapi.progress.impl.ProgressManagerImpl.executeProcessUnderProgress(ProgressManagerImpl.java:86)
+	at com.intellij.codeInsight.daemon.impl.PassExecutorService$ScheduledPass.doRun(PassExecutorService.java:422)
+	at com.intellij.codeInsight.daemon.impl.PassExecutorService$ScheduledPass.lambda$run$0(PassExecutorService.java:398)
+	at com.intellij.openapi.application.impl.ReadMostlyRWLock.executeByImpatientReader(ReadMostlyRWLock.java:164)
+	at com.intellij.openapi.application.impl.ApplicationImpl.executeByImpatientReader(ApplicationImpl.java:218)
+	at com.intellij.codeInsight.daemon.impl.PassExecutorService$ScheduledPass.run(PassExecutorService.java:396)
+	at com.intellij.concurrency.JobLauncherImpl$VoidForkJoinTask$1.exec(JobLauncherImpl.java:174)
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289)
+	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:157)
+2019-12-10 15:37:13,707 [  42645]  ERROR - j.psi.stubs.StubTreeLoaderImpl - IntelliJ IDEA 2019.1.3  Build #IC-191.7479.19 
+2019-12-10 15:37:13,707 [  42645]  ERROR - j.psi.stubs.StubTreeLoaderImpl - JDK: 1.8.0_202-release; VM: OpenJDK 64-Bit Server VM; Vendor: JetBrains s.r.o 
+2019-12-10 15:37:13,707 [  42645]  ERROR - j.psi.stubs.StubTreeLoaderImpl - OS: Windows 10 
+2019-12-10 15:37:13,705 [  42643]  ERROR - j.psi.stubs.StubTreeLoaderImpl - Outdated stub in index: file://C:/Users/Simone/Desktop/TestAscetic/ProgettiTest/src/com/fumet/registration/IdentityChecker.java indexed at 1575662106097 with document size 477, doc=DocumentImpl[file://C:/Users/Simone/Desktop/TestAscetic/ProgettiTest/src/com/fumet/registration/IdentityChecker.java], docSaved=true, wasIndexedAlready=true, queried at 1575969310606
+indexed lengths={chars=513, bytes=537}
+doc length=477
+file length=500
+cached PSI class com.intellij.psi.impl.source.PsiJavaFileImpl
+projects with file: 1 
+java.lang.Exception
+	at com.intellij.psi.stubs.StubTreeLoaderImpl.diagnoseLengthMismatch(StubTreeLoaderImpl.java:180)
+	at com.intellij.psi.stubs.StubTreeLoaderImpl.checkLengthMatch(StubTreeLoaderImpl.java:150)
+	at com.intellij.psi.stubs.StubTreeLoaderImpl.readFromVFile(StubTreeLoaderImpl.java:118)
+	at com.intellij.psi.stubs.StubTreeLoader.stubTreeAndIndexDoNotMatch(StubTreeLoader.java:72)
+	at com.intellij.psi.stubs.StubProcessingHelperBase.inconsistencyDetected(StubProcessingHelperBase.java:147)
+	at com.intellij.psi.stubs.StubProcessingHelperBase.checkType(StubProcessingHelperBase.java:89)
+	at com.intellij.psi.stubs.StubProcessingHelperBase.processStubsInFile(StubProcessingHelperBase.java:68)
+	at com.intellij.psi.stubs.StubIndexImpl$2.process(StubIndexImpl.java:290)
+	at com.intellij.psi.stubs.StubIndexImpl$StubIdListContainerAction.perform(StubIndexImpl.java:602)
+	at com.intellij.psi.stubs.StubIndexImpl$StubIdListContainerAction.perform(StubIndexImpl.java:590)
+	at com.intellij.util.indexing.ValueContainer.forEach(ValueContainer.java:62)
+	at com.intellij.psi.stubs.StubIndexImpl.lambda$null$0(StubIndexImpl.java:314)
+	at com.intellij.util.ConcurrencyUtil.withLock(ConcurrencyUtil.java:245)
+	at com.intellij.psi.stubs.StubIndexImpl.lambda$null$1(StubIndexImpl.java:312)
+	at com.intellij.util.indexing.FileBasedIndexImpl.disableUpToDateCheckIn(FileBasedIndexImpl.java:671)
+	at com.intellij.psi.stubs.StubIndexImpl.lambda$doProcessStubs$2(StubIndexImpl.java:311)
+	at com.intellij.util.indexing.IndexAccessValidator.validate(IndexAccessValidator.java:43)
+	at com.intellij.psi.stubs.StubIndexImpl.doProcessStubs(StubIndexImpl.java:309)
+	at com.intellij.psi.stubs.StubIndexImpl.processElements(StubIndexImpl.java:281)
+	at com.intellij.psi.stubs.StubIndex.getElements(StubIndex.java:121)
+	at com.intellij.psi.stubs.StubIndex.getElements(StubIndex.java:109)
+	at com.intellij.psi.impl.java.stubs.index.JavaFullClassNameIndex.get(JavaFullClassNameIndex.java:47)
+	at com.intellij.psi.impl.file.impl.JavaFileManagerImpl.doFindClasses(JavaFileManagerImpl.java:88)
+	at com.intellij.psi.impl.file.impl.JavaFileManagerImpl.findClass(JavaFileManagerImpl.java:123)
+	at com.intellij.psi.impl.PsiElementFinderImpl.findClass(PsiElementFinderImpl.java:38)
+	at com.intellij.psi.impl.JavaPsiFacadeImpl.doFindClass(JavaPsiFacadeImpl.java:116)
+	at com.intellij.psi.impl.JavaPsiFacadeImpl.findClass(JavaPsiFacadeImpl.java:93)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.resolve(PsiJavaCodeReferenceElementImpl.java:452)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.access$100(PsiJavaCodeReferenceElementImpl.java:44)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl$OurGenericsResolver.resolve(PsiJavaCodeReferenceElementImpl.java:383)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl$OurGenericsResolver.resolve(PsiJavaCodeReferenceElementImpl.java:375)
+	at com.intellij.psi.impl.source.resolve.ResolveCache.lambda$resolveWithCaching$1(ResolveCache.java:203)
+	at com.intellij.openapi.util.RecursionManager$1.doPreventingRecursion(RecursionManager.java:116)
+	at com.intellij.psi.impl.source.resolve.ResolveCache.resolveWithCaching(ResolveCache.java:202)
+	at com.intellij.psi.impl.PsiImplUtil.multiResolveImpl(PsiImplUtil.java:797)
+	at com.intellij.psi.impl.PsiImplUtil.multiResolveImpl(PsiImplUtil.java:788)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.multiResolve(PsiJavaCodeReferenceElementImpl.java:434)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.advancedResolve(PsiJavaCodeReferenceElementImpl.java:427)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.resolve(PsiJavaCodeReferenceElementImpl.java:359)
+	at com.intellij.psi.impl.source.PsiImportStatementBaseImpl.resolve(PsiImportStatementBaseImpl.java:64)
+	at com.intellij.psi.impl.source.PsiJavaFileBaseImpl.processNamedTypeImports(PsiJavaFileBaseImpl.java:380)
+	at com.intellij.psi.impl.source.PsiJavaFileBaseImpl.processNamedImports(PsiJavaFileBaseImpl.java:365)
+	at com.intellij.psi.impl.source.PsiJavaFileBaseImpl.processDeclarationsNoGuess(PsiJavaFileBaseImpl.java:331)
+	at com.intellij.psi.impl.source.PsiJavaFileBaseImpl.access$200(PsiJavaFileBaseImpl.java:40)
+	at com.intellij.psi.impl.source.PsiJavaFileBaseImpl$MyCacheBuilder.compute(PsiJavaFileBaseImpl.java:595)
+	at com.intellij.psi.impl.PsiCachedValueImpl.doCompute(PsiCachedValueImpl.java:49)
+	at com.intellij.util.CachedValueBase.lambda$getValueWithLock$0(CachedValueBase.java:236)
+	at com.intellij.openapi.util.RecursionManager$1.doPreventingRecursion(RecursionManager.java:116)
+	at com.intellij.util.CachedValueBase.getValueWithLock(CachedValueBase.java:237)
+	at com.intellij.psi.impl.PsiCachedValueImpl.getValue(PsiCachedValueImpl.java:38)
+	at com.intellij.psi.impl.source.PsiJavaFileBaseImpl.processDeclarations(PsiJavaFileBaseImpl.java:314)
+	at com.intellij.psi.scope.util.PsiScopesUtil.treeWalkUp(PsiScopesUtil.java:69)
+	at com.intellij.psi.scope.util.PsiScopesUtil.treeWalkUp(PsiScopesUtil.java:51)
+	at com.intellij.psi.scope.util.PsiScopesUtil.resolveAndWalk(PsiScopesUtil.java:218)
+	at com.intellij.psi.scope.util.PsiScopesUtil.resolveAndWalk(PsiScopesUtil.java:149)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.resolve(PsiJavaCodeReferenceElementImpl.java:501)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.access$100(PsiJavaCodeReferenceElementImpl.java:44)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl$OurGenericsResolver.resolve(PsiJavaCodeReferenceElementImpl.java:383)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl$OurGenericsResolver.resolve(PsiJavaCodeReferenceElementImpl.java:375)
+	at com.intellij.psi.impl.source.resolve.ResolveCache.lambda$resolveWithCaching$1(ResolveCache.java:203)
+	at com.intellij.openapi.util.RecursionManager$1.doPreventingRecursion(RecursionManager.java:116)
+	at com.intellij.psi.impl.source.resolve.ResolveCache.resolveWithCaching(ResolveCache.java:202)
+	at com.intellij.psi.impl.PsiImplUtil.multiResolveImpl(PsiImplUtil.java:797)
+	at com.intellij.psi.impl.PsiImplUtil.multiResolveImpl(PsiImplUtil.java:788)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.multiResolve(PsiJavaCodeReferenceElementImpl.java:434)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.advancedResolve(PsiJavaCodeReferenceElementImpl.java:427)
+	at com.intellij.psi.impl.source.PsiClassReferenceType.resolveGenerics(PsiClassReferenceType.java:194)
+	at com.intellij.psi.impl.TypeCorrector.visitClassType(TypeCorrector.java:65)
+	at com.intellij.psi.impl.TypeCorrector.visitClassType(TypeCorrector.java:19)
+	at com.intellij.psi.PsiClassType.accept(PsiClassType.java:237)
+	at com.intellij.psi.PsiTypeMapper.mapType(PsiTypeMapper.java:36)
+	at com.intellij.psi.PsiTypeMapper.visitArrayType(PsiTypeMapper.java:42)
+	at com.intellij.psi.PsiTypeMapper.visitArrayType(PsiTypeMapper.java:30)
+	at com.intellij.psi.PsiArrayType.accept(PsiArrayType.java:78)
+	at com.intellij.psi.impl.TypeCorrector.correctType(TypeCorrector.java:50)
+	at com.intellij.psi.impl.PsiClassImplUtil.correctType(PsiClassImplUtil.java:726)
+	at com.intellij.psi.impl.source.tree.java.PsiReferenceExpressionImpl$TypeEvaluator.fun(PsiReferenceExpressionImpl.java:450)
+	at com.intellij.psi.impl.source.tree.java.PsiReferenceExpressionImpl$TypeEvaluator.fun(PsiReferenceExpressionImpl.java:393)
+	at com.intellij.psi.impl.source.resolve.JavaResolveCache.getType(JavaResolveCache.java:90)
+	at com.intellij.psi.impl.source.tree.java.PsiReferenceExpressionImpl.getType(PsiReferenceExpressionImpl.java:460)
+	at org.intellij.plugins.intelliLang.inject.java.validation.LanguageMismatch.checkExpression(LanguageMismatch.java:88)
+	at org.intellij.plugins.intelliLang.inject.java.validation.LanguageMismatch$1.visitReferenceExpression(LanguageMismatch.java:82)
+	at com.intellij.psi.impl.source.tree.java.PsiReferenceExpressionImpl.accept(PsiReferenceExpressionImpl.java:818)
+	at com.intellij.codeInspection.InspectionEngine.acceptElements(InspectionEngine.java:75)
+	at com.intellij.codeInspection.InspectionEngine.createVisitorAndAcceptElements(InspectionEngine.java:63)
+	at com.intellij.codeInsight.daemon.impl.LocalInspectionsPass.runToolOnElements(LocalInspectionsPass.java:295)
+	at com.intellij.codeInsight.daemon.impl.LocalInspectionsPass.lambda$null$5(LocalInspectionsPass.java:263)
+	at com.intellij.util.AstLoadingFilter.forceAllowTreeLoading(AstLoadingFilter.java:156)
+	at com.intellij.util.AstLoadingFilter.forceAllowTreeLoading(AstLoadingFilter.java:148)
+	at com.intellij.codeInsight.daemon.impl.LocalInspectionsPass.lambda$null$6(LocalInspectionsPass.java:260)
+	at com.intellij.util.AstLoadingFilter.disallowTreeLoading(AstLoadingFilter.java:127)
+	at com.intellij.util.AstLoadingFilter.disallowTreeLoading(AstLoadingFilter.java:116)
+	at com.intellij.codeInsight.daemon.impl.LocalInspectionsPass.lambda$visitPriorityElementsAndInit$7(LocalInspectionsPass.java:260)
+	at com.intellij.concurrency.ApplierCompleter.execAndForkSubTasks(ApplierCompleter.java:133)
+	at com.intellij.openapi.application.impl.ApplicationImpl.tryRunReadAction(ApplicationImpl.java:1161)
+	at com.intellij.concurrency.ApplierCompleter.lambda$wrapInReadActionAndIndicator$1(ApplierCompleter.java:105)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.registerIndicatorAndRun(CoreProgressManager.java:586)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.executeProcessUnderProgress(CoreProgressManager.java:532)
+	at com.intellij.openapi.progress.impl.ProgressManagerImpl.executeProcessUnderProgress(ProgressManagerImpl.java:86)
+	at com.intellij.concurrency.ApplierCompleter.wrapInReadActionAndIndicator(ApplierCompleter.java:116)
+	at com.intellij.concurrency.ApplierCompleter.lambda$compute$0(ApplierCompleter.java:96)
+	at com.intellij.openapi.application.impl.ReadMostlyRWLock.executeByImpatientReader(ReadMostlyRWLock.java:164)
+	at com.intellij.openapi.application.impl.ApplicationImpl.executeByImpatientReader(ApplicationImpl.java:218)
+	at com.intellij.concurrency.ApplierCompleter.compute(ApplierCompleter.java:96)
+	at java.util.concurrent.CountedCompleter.exec(CountedCompleter.java:731)
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289)
+	at java.util.concurrent.ForkJoinPool$WorkQueue.pollAndExecCC(ForkJoinPool.java:1190)
+	at java.util.concurrent.ForkJoinPool.helpComplete(ForkJoinPool.java:1879)
+	at java.util.concurrent.ForkJoinPool.awaitJoin(ForkJoinPool.java:2045)
+	at java.util.concurrent.ForkJoinTask.get(ForkJoinTask.java:1036)
+	at com.intellij.concurrency.JobLauncherImpl.invokeConcurrentlyUnderProgress(JobLauncherImpl.java:71)
+	at com.intellij.concurrency.JobLauncher.invokeConcurrentlyUnderProgress(JobLauncher.java:56)
+	at com.intellij.codeInsight.daemon.impl.LocalInspectionsPass.visitPriorityElementsAndInit(LocalInspectionsPass.java:266)
+	at com.intellij.codeInsight.daemon.impl.LocalInspectionsPass.inspect(LocalInspectionsPass.java:198)
+	at com.intellij.codeInsight.daemon.impl.LocalInspectionsPass.collectInformationWithProgress(LocalInspectionsPass.java:117)
+	at com.intellij.codeInsight.daemon.impl.ProgressableTextEditorHighlightingPass.doCollectInformation(ProgressableTextEditorHighlightingPass.java:84)
+	at com.intellij.codeHighlighting.TextEditorHighlightingPass.collectInformation(TextEditorHighlightingPass.java:69)
+	at com.intellij.codeInsight.daemon.impl.PassExecutorService$ScheduledPass.lambda$null$1(PassExecutorService.java:430)
+	at com.intellij.openapi.application.impl.ApplicationImpl.tryRunReadAction(ApplicationImpl.java:1166)
+	at com.intellij.codeInsight.daemon.impl.PassExecutorService$ScheduledPass.lambda$doRun$2(PassExecutorService.java:423)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.registerIndicatorAndRun(CoreProgressManager.java:586)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.executeProcessUnderProgress(CoreProgressManager.java:532)
+	at com.intellij.openapi.progress.impl.ProgressManagerImpl.executeProcessUnderProgress(ProgressManagerImpl.java:86)
+	at com.intellij.codeInsight.daemon.impl.PassExecutorService$ScheduledPass.doRun(PassExecutorService.java:422)
+	at com.intellij.codeInsight.daemon.impl.PassExecutorService$ScheduledPass.lambda$run$0(PassExecutorService.java:398)
+	at com.intellij.openapi.application.impl.ReadMostlyRWLock.executeByImpatientReader(ReadMostlyRWLock.java:164)
+	at com.intellij.openapi.application.impl.ApplicationImpl.executeByImpatientReader(ApplicationImpl.java:218)
+	at com.intellij.codeInsight.daemon.impl.PassExecutorService$ScheduledPass.run(PassExecutorService.java:396)
+	at com.intellij.concurrency.JobLauncherImpl$VoidForkJoinTask$1.exec(JobLauncherImpl.java:174)
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289)
+	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:157)
+2019-12-10 15:37:13,713 [  42651]  ERROR - j.psi.stubs.StubTreeLoaderImpl - IntelliJ IDEA 2019.1.3  Build #IC-191.7479.19 
+2019-12-10 15:37:13,714 [  42652]  ERROR - j.psi.stubs.StubTreeLoaderImpl - JDK: 1.8.0_202-release; VM: OpenJDK 64-Bit Server VM; Vendor: JetBrains s.r.o 
+2019-12-10 15:37:13,714 [  42652]  ERROR - j.psi.stubs.StubTreeLoaderImpl - OS: Windows 10 
+2019-12-10 15:37:13,705 [  42643]  ERROR - j.psi.stubs.StubTreeLoaderImpl - Outdated stub in index: file://C:/Users/Simone/Desktop/TestAscetic/ProgettiTest/src/com/fumet/registration/IdentityChecker.java indexed at 1575662106097 with document size 477, doc=DocumentImpl[file://C:/Users/Simone/Desktop/TestAscetic/ProgettiTest/src/com/fumet/registration/IdentityChecker.java], docSaved=true, wasIndexedAlready=true, queried at 1575969310606
+indexed lengths={chars=513, bytes=537}
+doc length=477
+file length=500
+cached PSI class com.intellij.psi.impl.source.PsiJavaFileImpl
+projects with file: 1 
+java.lang.Exception
+	at com.intellij.psi.stubs.StubTreeLoaderImpl.diagnoseLengthMismatch(StubTreeLoaderImpl.java:180)
+	at com.intellij.psi.stubs.StubTreeLoaderImpl.checkLengthMatch(StubTreeLoaderImpl.java:150)
+	at com.intellij.psi.stubs.StubTreeLoaderImpl.readFromVFile(StubTreeLoaderImpl.java:118)
+	at com.intellij.psi.stubs.StubTreeLoader.stubTreeAndIndexDoNotMatch(StubTreeLoader.java:72)
+	at com.intellij.psi.stubs.StubProcessingHelperBase.inconsistencyDetected(StubProcessingHelperBase.java:147)
+	at com.intellij.psi.stubs.StubProcessingHelperBase.checkType(StubProcessingHelperBase.java:89)
+	at com.intellij.psi.stubs.StubProcessingHelperBase.processStubsInFile(StubProcessingHelperBase.java:68)
+	at com.intellij.psi.stubs.StubIndexImpl$2.process(StubIndexImpl.java:290)
+	at com.intellij.psi.stubs.StubIndexImpl$StubIdListContainerAction.perform(StubIndexImpl.java:602)
+	at com.intellij.psi.stubs.StubIndexImpl$StubIdListContainerAction.perform(StubIndexImpl.java:590)
+	at com.intellij.util.indexing.ValueContainer.forEach(ValueContainer.java:62)
+	at com.intellij.psi.stubs.StubIndexImpl.lambda$null$0(StubIndexImpl.java:314)
+	at com.intellij.util.ConcurrencyUtil.withLock(ConcurrencyUtil.java:245)
+	at com.intellij.psi.stubs.StubIndexImpl.lambda$null$1(StubIndexImpl.java:312)
+	at com.intellij.util.indexing.FileBasedIndexImpl.disableUpToDateCheckIn(FileBasedIndexImpl.java:671)
+	at com.intellij.psi.stubs.StubIndexImpl.lambda$doProcessStubs$2(StubIndexImpl.java:311)
+	at com.intellij.util.indexing.IndexAccessValidator.validate(IndexAccessValidator.java:43)
+	at com.intellij.psi.stubs.StubIndexImpl.doProcessStubs(StubIndexImpl.java:309)
+	at com.intellij.psi.stubs.StubIndexImpl.processElements(StubIndexImpl.java:281)
+	at com.intellij.psi.stubs.StubIndex.getElements(StubIndex.java:121)
+	at com.intellij.psi.stubs.StubIndex.getElements(StubIndex.java:109)
+	at com.intellij.psi.impl.java.stubs.index.JavaFullClassNameIndex.get(JavaFullClassNameIndex.java:47)
+	at com.intellij.psi.impl.file.impl.JavaFileManagerImpl.doFindClasses(JavaFileManagerImpl.java:88)
+	at com.intellij.psi.impl.file.impl.JavaFileManagerImpl.findClass(JavaFileManagerImpl.java:123)
+	at com.intellij.psi.impl.PsiElementFinderImpl.findClass(PsiElementFinderImpl.java:38)
+	at com.intellij.psi.impl.JavaPsiFacadeImpl.doFindClass(JavaPsiFacadeImpl.java:116)
+	at com.intellij.psi.impl.JavaPsiFacadeImpl.findClass(JavaPsiFacadeImpl.java:93)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.resolve(PsiJavaCodeReferenceElementImpl.java:452)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.access$100(PsiJavaCodeReferenceElementImpl.java:44)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl$OurGenericsResolver.resolve(PsiJavaCodeReferenceElementImpl.java:383)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl$OurGenericsResolver.resolve(PsiJavaCodeReferenceElementImpl.java:375)
+	at com.intellij.psi.impl.source.resolve.ResolveCache.lambda$resolveWithCaching$1(ResolveCache.java:203)
+	at com.intellij.openapi.util.RecursionManager$1.doPreventingRecursion(RecursionManager.java:116)
+	at com.intellij.psi.impl.source.resolve.ResolveCache.resolveWithCaching(ResolveCache.java:202)
+	at com.intellij.psi.impl.PsiImplUtil.multiResolveImpl(PsiImplUtil.java:797)
+	at com.intellij.psi.impl.PsiImplUtil.multiResolveImpl(PsiImplUtil.java:788)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.multiResolve(PsiJavaCodeReferenceElementImpl.java:434)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.advancedResolve(PsiJavaCodeReferenceElementImpl.java:427)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.resolve(PsiJavaCodeReferenceElementImpl.java:359)
+	at com.intellij.psi.impl.source.PsiImportStatementBaseImpl.resolve(PsiImportStatementBaseImpl.java:64)
+	at com.intellij.psi.impl.source.PsiJavaFileBaseImpl.processNamedTypeImports(PsiJavaFileBaseImpl.java:380)
+	at com.intellij.psi.impl.source.PsiJavaFileBaseImpl.processNamedImports(PsiJavaFileBaseImpl.java:365)
+	at com.intellij.psi.impl.source.PsiJavaFileBaseImpl.processDeclarationsNoGuess(PsiJavaFileBaseImpl.java:331)
+	at com.intellij.psi.impl.source.PsiJavaFileBaseImpl.access$200(PsiJavaFileBaseImpl.java:40)
+	at com.intellij.psi.impl.source.PsiJavaFileBaseImpl$MyCacheBuilder.compute(PsiJavaFileBaseImpl.java:595)
+	at com.intellij.psi.impl.PsiCachedValueImpl.doCompute(PsiCachedValueImpl.java:49)
+	at com.intellij.util.CachedValueBase.lambda$getValueWithLock$0(CachedValueBase.java:236)
+	at com.intellij.openapi.util.RecursionManager$1.doPreventingRecursion(RecursionManager.java:116)
+	at com.intellij.util.CachedValueBase.getValueWithLock(CachedValueBase.java:237)
+	at com.intellij.psi.impl.PsiCachedValueImpl.getValue(PsiCachedValueImpl.java:38)
+	at com.intellij.psi.impl.source.PsiJavaFileBaseImpl.processDeclarations(PsiJavaFileBaseImpl.java:314)
+	at com.intellij.psi.scope.util.PsiScopesUtil.treeWalkUp(PsiScopesUtil.java:69)
+	at com.intellij.psi.scope.util.PsiScopesUtil.treeWalkUp(PsiScopesUtil.java:51)
+	at com.intellij.psi.scope.util.PsiScopesUtil.resolveAndWalk(PsiScopesUtil.java:218)
+	at com.intellij.psi.scope.util.PsiScopesUtil.resolveAndWalk(PsiScopesUtil.java:149)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.resolve(PsiJavaCodeReferenceElementImpl.java:501)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.access$100(PsiJavaCodeReferenceElementImpl.java:44)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl$OurGenericsResolver.resolve(PsiJavaCodeReferenceElementImpl.java:383)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl$OurGenericsResolver.resolve(PsiJavaCodeReferenceElementImpl.java:375)
+	at com.intellij.psi.impl.source.resolve.ResolveCache.lambda$resolveWithCaching$1(ResolveCache.java:203)
+	at com.intellij.openapi.util.RecursionManager$1.doPreventingRecursion(RecursionManager.java:116)
+	at com.intellij.psi.impl.source.resolve.ResolveCache.resolveWithCaching(ResolveCache.java:202)
+	at com.intellij.psi.impl.PsiImplUtil.multiResolveImpl(PsiImplUtil.java:797)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.getCanonicalText(PsiJavaCodeReferenceElementImpl.java:297)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.getCanonicalText(PsiJavaCodeReferenceElementImpl.java:287)
+	at com.intellij.psi.impl.source.PsiClassReferenceType.getText(PsiClassReferenceType.java:260)
+	at com.intellij.psi.impl.source.PsiClassReferenceType.getCanonicalText(PsiClassReferenceType.java:246)
+	at com.intellij.psi.PsiClassType$Stub.getCanonicalText(PsiClassType.java:356)
+	at com.intellij.psi.impl.source.PsiClassReferenceType.equalsToText(PsiClassReferenceType.java:86)
+	at com.intellij.psi.util.PsiMethodUtil.isMainMethod(PsiMethodUtil.java:55)
+	at com.intellij.psi.util.PsiMethodUtil.findMainMethod(PsiMethodUtil.java:40)
+	at com.intellij.psi.util.PsiMethodUtil.findMainMethod(PsiMethodUtil.java:34)
+	at com.intellij.psi.util.PsiMethodUtil.findMainInClass(PsiMethodUtil.java:75)
+	at com.intellij.execution.application.ApplicationRunLineMarkerProvider.getInfo(ApplicationRunLineMarkerProvider.java:29)
+	at com.intellij.execution.lineMarker.RunLineMarkerProvider.getLineMarkerInfo(RunLineMarkerProvider.java:49)
+	at com.intellij.codeInsight.daemon.impl.LineMarkersPass.queryProviders(LineMarkersPass.java:171)
+	at com.intellij.codeInsight.daemon.impl.LineMarkersPass.lambda$doCollectInformation$3(LineMarkersPass.java:96)
+	at com.intellij.codeInsight.daemon.impl.Divider.divideInsideAndOutsideInOneRoot(Divider.java:79)
+	at com.intellij.codeInsight.daemon.impl.LineMarkersPass.doCollectInformation(LineMarkersPass.java:91)
+	at com.intellij.codeHighlighting.TextEditorHighlightingPass.collectInformation(TextEditorHighlightingPass.java:69)
+	at com.intellij.codeInsight.daemon.impl.PassExecutorService$ScheduledPass.lambda$null$1(PassExecutorService.java:430)
+	at com.intellij.openapi.application.impl.ApplicationImpl.tryRunReadAction(ApplicationImpl.java:1166)
+	at com.intellij.codeInsight.daemon.impl.PassExecutorService$ScheduledPass.lambda$doRun$2(PassExecutorService.java:423)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.registerIndicatorAndRun(CoreProgressManager.java:586)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.executeProcessUnderProgress(CoreProgressManager.java:532)
+	at com.intellij.openapi.progress.impl.ProgressManagerImpl.executeProcessUnderProgress(ProgressManagerImpl.java:86)
+	at com.intellij.codeInsight.daemon.impl.PassExecutorService$ScheduledPass.doRun(PassExecutorService.java:422)
+	at com.intellij.codeInsight.daemon.impl.PassExecutorService$ScheduledPass.lambda$run$0(PassExecutorService.java:398)
+	at com.intellij.openapi.application.impl.ReadMostlyRWLock.executeByImpatientReader(ReadMostlyRWLock.java:164)
+	at com.intellij.openapi.application.impl.ApplicationImpl.executeByImpatientReader(ApplicationImpl.java:218)
+	at com.intellij.codeInsight.daemon.impl.PassExecutorService$ScheduledPass.run(PassExecutorService.java:396)
+	at com.intellij.concurrency.JobLauncherImpl$VoidForkJoinTask$1.exec(JobLauncherImpl.java:174)
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289)
+	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:157)
+2019-12-10 15:37:13,716 [  42654]  ERROR - j.psi.stubs.StubTreeLoaderImpl - IntelliJ IDEA 2019.1.3  Build #IC-191.7479.19 
+2019-12-10 15:37:13,716 [  42654]  ERROR - j.psi.stubs.StubTreeLoaderImpl - JDK: 1.8.0_202-release; VM: OpenJDK 64-Bit Server VM; Vendor: JetBrains s.r.o 
+2019-12-10 15:37:13,716 [  42654]  ERROR - j.psi.stubs.StubTreeLoaderImpl - OS: Windows 10 
+2019-12-10 15:37:13,704 [  42642]  ERROR - j.psi.stubs.StubTreeLoaderImpl - Outdated stub in index: file://C:/Users/Simone/Desktop/TestAscetic/ProgettiTest/src/com/fumet/registration/IdentityChecker.java indexed at 1575662106097 with document size 477, doc=DocumentImpl[file://C:/Users/Simone/Desktop/TestAscetic/ProgettiTest/src/com/fumet/registration/IdentityChecker.java], docSaved=true, wasIndexedAlready=true, queried at 1575969310606
+indexed lengths={chars=513, bytes=537}
+doc length=477
+file length=500
+cached PSI class com.intellij.psi.impl.source.PsiJavaFileImpl
+projects with file: 1 
+java.lang.Exception
+	at com.intellij.psi.stubs.StubTreeLoaderImpl.diagnoseLengthMismatch(StubTreeLoaderImpl.java:180)
+	at com.intellij.psi.stubs.StubTreeLoaderImpl.checkLengthMatch(StubTreeLoaderImpl.java:150)
+	at com.intellij.psi.stubs.StubTreeLoaderImpl.readFromVFile(StubTreeLoaderImpl.java:118)
+	at com.intellij.psi.stubs.StubTreeLoader.stubTreeAndIndexDoNotMatch(StubTreeLoader.java:72)
+	at com.intellij.psi.stubs.StubProcessingHelperBase.inconsistencyDetected(StubProcessingHelperBase.java:147)
+	at com.intellij.psi.stubs.StubProcessingHelperBase.checkType(StubProcessingHelperBase.java:89)
+	at com.intellij.psi.stubs.StubProcessingHelperBase.processStubsInFile(StubProcessingHelperBase.java:68)
+	at com.intellij.psi.stubs.StubIndexImpl$2.process(StubIndexImpl.java:290)
+	at com.intellij.psi.stubs.StubIndexImpl$StubIdListContainerAction.perform(StubIndexImpl.java:602)
+	at com.intellij.psi.stubs.StubIndexImpl$StubIdListContainerAction.perform(StubIndexImpl.java:590)
+	at com.intellij.util.indexing.ValueContainer.forEach(ValueContainer.java:62)
+	at com.intellij.psi.stubs.StubIndexImpl.lambda$null$0(StubIndexImpl.java:314)
+	at com.intellij.util.ConcurrencyUtil.withLock(ConcurrencyUtil.java:245)
+	at com.intellij.psi.stubs.StubIndexImpl.lambda$null$1(StubIndexImpl.java:312)
+	at com.intellij.util.indexing.FileBasedIndexImpl.disableUpToDateCheckIn(FileBasedIndexImpl.java:671)
+	at com.intellij.psi.stubs.StubIndexImpl.lambda$doProcessStubs$2(StubIndexImpl.java:311)
+	at com.intellij.util.indexing.IndexAccessValidator.validate(IndexAccessValidator.java:43)
+	at com.intellij.psi.stubs.StubIndexImpl.doProcessStubs(StubIndexImpl.java:309)
+	at com.intellij.psi.stubs.StubIndexImpl.processElements(StubIndexImpl.java:281)
+	at com.intellij.psi.stubs.StubIndex.getElements(StubIndex.java:121)
+	at com.intellij.psi.stubs.StubIndex.getElements(StubIndex.java:109)
+	at com.intellij.psi.impl.java.stubs.index.JavaFullClassNameIndex.get(JavaFullClassNameIndex.java:47)
+	at com.intellij.psi.impl.file.impl.JavaFileManagerImpl.doFindClasses(JavaFileManagerImpl.java:88)
+	at com.intellij.psi.impl.file.impl.JavaFileManagerImpl.findClass(JavaFileManagerImpl.java:123)
+	at com.intellij.psi.impl.PsiElementFinderImpl.findClass(PsiElementFinderImpl.java:38)
+	at com.intellij.psi.impl.JavaPsiFacadeImpl.doFindClass(JavaPsiFacadeImpl.java:116)
+	at com.intellij.psi.impl.JavaPsiFacadeImpl.findClass(JavaPsiFacadeImpl.java:93)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.resolve(PsiJavaCodeReferenceElementImpl.java:452)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.access$100(PsiJavaCodeReferenceElementImpl.java:44)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl$OurGenericsResolver.resolve(PsiJavaCodeReferenceElementImpl.java:383)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl$OurGenericsResolver.resolve(PsiJavaCodeReferenceElementImpl.java:375)
+	at com.intellij.psi.impl.source.resolve.ResolveCache.lambda$resolveWithCaching$1(ResolveCache.java:203)
+	at com.intellij.openapi.util.RecursionManager$1.doPreventingRecursion(RecursionManager.java:116)
+	at com.intellij.psi.impl.source.resolve.ResolveCache.resolveWithCaching(ResolveCache.java:202)
+	at com.intellij.psi.impl.PsiImplUtil.multiResolveImpl(PsiImplUtil.java:797)
+	at com.intellij.psi.impl.PsiImplUtil.multiResolveImpl(PsiImplUtil.java:788)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.multiResolve(PsiJavaCodeReferenceElementImpl.java:434)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.advancedResolve(PsiJavaCodeReferenceElementImpl.java:427)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.resolve(PsiJavaCodeReferenceElementImpl.java:359)
+	at com.intellij.psi.impl.source.PsiImportStatementBaseImpl.resolve(PsiImportStatementBaseImpl.java:64)
+	at com.intellij.psi.impl.source.PsiJavaFileBaseImpl.processNamedTypeImports(PsiJavaFileBaseImpl.java:380)
+	at com.intellij.psi.impl.source.PsiJavaFileBaseImpl.processNamedImports(PsiJavaFileBaseImpl.java:365)
+	at com.intellij.psi.impl.source.PsiJavaFileBaseImpl.processDeclarationsNoGuess(PsiJavaFileBaseImpl.java:331)
+	at com.intellij.psi.impl.source.PsiJavaFileBaseImpl.access$200(PsiJavaFileBaseImpl.java:40)
+	at com.intellij.psi.impl.source.PsiJavaFileBaseImpl$MyCacheBuilder.compute(PsiJavaFileBaseImpl.java:595)
+	at com.intellij.psi.impl.PsiCachedValueImpl.doCompute(PsiCachedValueImpl.java:49)
+	at com.intellij.util.CachedValueBase.lambda$getValueWithLock$0(CachedValueBase.java:236)
+	at com.intellij.openapi.util.RecursionManager$1.doPreventingRecursion(RecursionManager.java:116)
+	at com.intellij.util.CachedValueBase.getValueWithLock(CachedValueBase.java:237)
+	at com.intellij.psi.impl.PsiCachedValueImpl.getValue(PsiCachedValueImpl.java:38)
+	at com.intellij.psi.impl.source.PsiJavaFileBaseImpl.processDeclarations(PsiJavaFileBaseImpl.java:314)
+	at com.intellij.psi.scope.util.PsiScopesUtil.treeWalkUp(PsiScopesUtil.java:69)
+	at com.intellij.psi.scope.util.PsiScopesUtil.treeWalkUp(PsiScopesUtil.java:51)
+	at com.intellij.psi.scope.util.PsiScopesUtil.resolveAndWalk(PsiScopesUtil.java:218)
+	at com.intellij.psi.scope.util.PsiScopesUtil.resolveAndWalk(PsiScopesUtil.java:149)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.resolve(PsiJavaCodeReferenceElementImpl.java:501)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.access$100(PsiJavaCodeReferenceElementImpl.java:44)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl$OurGenericsResolver.resolve(PsiJavaCodeReferenceElementImpl.java:383)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl$OurGenericsResolver.resolve(PsiJavaCodeReferenceElementImpl.java:375)
+	at com.intellij.psi.impl.source.resolve.ResolveCache.lambda$resolveWithCaching$1(ResolveCache.java:203)
+	at com.intellij.openapi.util.RecursionManager$1.doPreventingRecursion(RecursionManager.java:116)
+	at com.intellij.psi.impl.source.resolve.ResolveCache.resolveWithCaching(ResolveCache.java:202)
+	at com.intellij.psi.impl.PsiImplUtil.multiResolveImpl(PsiImplUtil.java:797)
+	at com.intellij.psi.impl.PsiImplUtil.multiResolveImpl(PsiImplUtil.java:788)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.multiResolve(PsiJavaCodeReferenceElementImpl.java:434)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.advancedResolve(PsiJavaCodeReferenceElementImpl.java:427)
+	at com.intellij.psi.impl.source.PsiClassReferenceType.resolveGenerics(PsiClassReferenceType.java:194)
+	at com.intellij.psi.util.PsiUtil.captureToplevelWildcards(PsiUtil.java:828)
+	at com.intellij.psi.impl.PsiImplUtil.normalizeWildcardTypeByPosition(PsiImplUtil.java:355)
+	at com.intellij.psi.impl.source.tree.java.PsiReferenceExpressionImpl$TypeEvaluator.fun(PsiReferenceExpressionImpl.java:448)
+	at com.intellij.psi.impl.source.tree.java.PsiReferenceExpressionImpl$TypeEvaluator.fun(PsiReferenceExpressionImpl.java:393)
+	at com.intellij.psi.impl.source.resolve.JavaResolveCache.getType(JavaResolveCache.java:90)
+	at com.intellij.psi.impl.source.tree.java.PsiReferenceExpressionImpl.getType(PsiReferenceExpressionImpl.java:460)
+	at com.intellij.psi.scope.util.PsiScopesUtil.setupAndRunProcessor(PsiScopesUtil.java:317)
+	at com.intellij.psi.impl.source.tree.java.PsiReferenceExpressionImpl.resolveToMethod(PsiReferenceExpressionImpl.java:331)
+	at com.intellij.psi.impl.source.tree.java.PsiReferenceExpressionImpl.resolve(PsiReferenceExpressionImpl.java:283)
+	at com.intellij.psi.impl.source.tree.java.PsiReferenceExpressionImpl.access$000(PsiReferenceExpressionImpl.java:46)
+	at com.intellij.psi.impl.source.tree.java.PsiReferenceExpressionImpl$OurGenericsResolver.resolve(PsiReferenceExpressionImpl.java:190)
+	at com.intellij.psi.impl.source.tree.java.PsiReferenceExpressionImpl$OurGenericsResolver.resolve(PsiReferenceExpressionImpl.java:178)
+	at com.intellij.psi.impl.source.resolve.ResolveCache.lambda$resolveWithCaching$1(ResolveCache.java:203)
+	at com.intellij.openapi.util.RecursionManager$1.doPreventingRecursion(RecursionManager.java:116)
+	at com.intellij.psi.impl.source.resolve.ResolveCache.resolveWithCaching(ResolveCache.java:202)
+	at com.intellij.psi.impl.PsiImplUtil.multiResolveImpl(PsiImplUtil.java:797)
+	at com.intellij.psi.impl.PsiImplUtil.multiResolveImpl(PsiImplUtil.java:788)
+	at com.intellij.psi.impl.source.tree.java.PsiReferenceExpressionImpl.multiResolve(PsiReferenceExpressionImpl.java:377)
+	at com.intellij.psi.impl.source.tree.java.PsiReferenceExpressionImpl.advancedResolve(PsiReferenceExpressionImpl.java:539)
+	at com.intellij.psi.impl.source.tree.java.PsiReferenceExpressionImpl.resolve(PsiReferenceExpressionImpl.java:839)
+	at com.android.tools.idea.AndroidPsiUtils.getResourceReferenceType(AndroidPsiUtils.java:293)
+	at com.android.tools.idea.folding.ResourceFoldingBuilder.findJavaExpressionReference(ResourceFoldingBuilder.java:164)
+	at com.android.tools.idea.folding.ResourceFoldingBuilder.access$000(ResourceFoldingBuilder.java:47)
+	at com.android.tools.idea.folding.ResourceFoldingBuilder$1.visitReferenceExpression(ResourceFoldingBuilder.java:94)
+	at com.intellij.psi.impl.source.tree.java.PsiReferenceExpressionImpl.accept(PsiReferenceExpressionImpl.java:818)
+	at com.intellij.psi.PsiWalkingState.visit(PsiWalkingState.java:70)
+	at com.intellij.psi.PsiWalkingState.visit(PsiWalkingState.java:27)
+	at com.intellij.util.WalkingState.walkChildren(WalkingState.java:65)
+	at com.intellij.util.WalkingState.elementStarted(WalkingState.java:52)
+	at com.intellij.psi.PsiWalkingState.elementStarted(PsiWalkingState.java:79)
+	at com.intellij.psi.JavaRecursiveElementWalkingVisitor.visitElement(JavaRecursiveElementWalkingVisitor.java:41)
+	at com.intellij.psi.PsiElementVisitor.visitFile(PsiElementVisitor.java:34)
+	at com.intellij.psi.JavaElementVisitor.visitJavaFile(JavaElementVisitor.java:327)
+	at com.intellij.psi.impl.source.PsiJavaFileBaseImpl.accept(PsiJavaFileBaseImpl.java:517)
+	at com.android.tools.idea.folding.ResourceFoldingBuilder.buildFoldRegions(ResourceFoldingBuilder.java:91)
+	at com.intellij.lang.folding.LanguageFolding.buildFoldingDescriptors(LanguageFolding.java:75)
+	at com.intellij.lang.folding.CompositeFoldingBuilder.buildFoldRegions(CompositeFoldingBuilder.java:42)
+	at com.intellij.lang.folding.LanguageFolding.buildFoldingDescriptors(LanguageFolding.java:75)
+	at com.intellij.codeInsight.folding.impl.FoldingUpdate.getFoldingsFor(FoldingUpdate.java:246)
+	at com.intellij.codeInsight.folding.impl.FoldingUpdate.getFoldingsFor(FoldingUpdate.java:226)
+	at com.intellij.codeInsight.folding.impl.FoldingUpdate.getUpdateResult(FoldingUpdate.java:98)
+	at com.intellij.codeInsight.folding.impl.FoldingUpdate.lambda$updateFoldRegions$0(FoldingUpdate.java:87)
+	at com.intellij.psi.impl.PsiParameterizedCachedValue.doCompute(PsiParameterizedCachedValue.java:45)
+	at com.intellij.util.CachedValueBase.lambda$getValueWithLock$0(CachedValueBase.java:236)
+	at com.intellij.openapi.util.RecursionManager$1.doPreventingRecursion(RecursionManager.java:116)
+	at com.intellij.util.CachedValueBase.getValueWithLock(CachedValueBase.java:237)
+	at com.intellij.psi.impl.PsiParameterizedCachedValue.getValue(PsiParameterizedCachedValue.java:35)
+	at com.intellij.psi.util.CachedValuesManager.getParameterizedCachedValue(CachedValuesManager.java:93)
+	at com.intellij.codeInsight.folding.impl.FoldingUpdate.updateFoldRegions(FoldingUpdate.java:83)
+	at com.intellij.codeInsight.folding.impl.CodeFoldingManagerImpl.updateFoldRegions(CodeFoldingManagerImpl.java:298)
+	at com.intellij.codeInsight.folding.impl.CodeFoldingManagerImpl.updateFoldRegionsAsync(CodeFoldingManagerImpl.java:284)
+	at com.intellij.codeInsight.daemon.impl.CodeFoldingPass.doCollectInformation(CodeFoldingPass.java:42)
+	at com.intellij.codeHighlighting.TextEditorHighlightingPass.collectInformation(TextEditorHighlightingPass.java:69)
+	at com.intellij.codeInsight.daemon.impl.PassExecutorService$ScheduledPass.lambda$null$1(PassExecutorService.java:430)
+	at com.intellij.openapi.application.impl.ApplicationImpl.tryRunReadAction(ApplicationImpl.java:1166)
+	at com.intellij.codeInsight.daemon.impl.PassExecutorService$ScheduledPass.lambda$doRun$2(PassExecutorService.java:423)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.registerIndicatorAndRun(CoreProgressManager.java:586)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.executeProcessUnderProgress(CoreProgressManager.java:532)
+	at com.intellij.openapi.progress.impl.ProgressManagerImpl.executeProcessUnderProgress(ProgressManagerImpl.java:86)
+	at com.intellij.codeInsight.daemon.impl.PassExecutorService$ScheduledPass.doRun(PassExecutorService.java:422)
+	at com.intellij.codeInsight.daemon.impl.PassExecutorService$ScheduledPass.lambda$run$0(PassExecutorService.java:398)
+	at com.intellij.openapi.application.impl.ReadMostlyRWLock.executeByImpatientReader(ReadMostlyRWLock.java:164)
+	at com.intellij.openapi.application.impl.ApplicationImpl.executeByImpatientReader(ApplicationImpl.java:218)
+	at com.intellij.codeInsight.daemon.impl.PassExecutorService$ScheduledPass.run(PassExecutorService.java:396)
+	at com.intellij.concurrency.JobLauncherImpl$VoidForkJoinTask$1.exec(JobLauncherImpl.java:174)
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289)
+	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:157)
+2019-12-10 15:37:13,719 [  42657]  ERROR - j.psi.stubs.StubTreeLoaderImpl - IntelliJ IDEA 2019.1.3  Build #IC-191.7479.19 
+2019-12-10 15:37:13,719 [  42657]  ERROR - j.psi.stubs.StubTreeLoaderImpl - JDK: 1.8.0_202-release; VM: OpenJDK 64-Bit Server VM; Vendor: JetBrains s.r.o 
+2019-12-10 15:37:13,719 [  42657]  ERROR - j.psi.stubs.StubTreeLoaderImpl - OS: Windows 10 
+2019-12-10 15:37:13,720 [  42658]  ERROR - j.psi.stubs.StubTreeLoaderImpl - Last Action:  
+2019-12-10 15:37:13,721 [  42659]  ERROR - j.psi.stubs.StubTreeLoaderImpl - Last Action:  
+2019-12-10 15:37:13,720 [  42658]  ERROR - j.psi.stubs.StubTreeLoaderImpl - Last Action:  
+2019-12-10 15:37:13,722 [  42660]  ERROR - j.psi.stubs.StubTreeLoaderImpl - Last Action:  
+2019-12-10 15:37:13,782 [  42720]  ERROR - stubs.StubProcessingHelperBase - PSI and index do not match.
+Please report the problem to JetBrains with the files attached
+ file=PsiJavaFile:IdentityChecker.java, file.class=class com.intellij.psi.impl.source.PsiJavaFileImpl, file.lang=Language: JAVA, modStamp=5
+ tree consistent
+ stub debugInfo=created in getStubTree(), with AST = false; with backReference
+latestIndexedStub=null
+ viewProvider=SingleRootFileViewProvider{myVirtualFile=file://C:/Users/Simone/Desktop/TestAscetic/ProgettiTest/src/com/fumet/registration/IdentityChecker.java, content=VirtualFileContent{size=500}}
+ viewProvider stamp: 0; file stamp: 0; file modCount: 1575969310606; file length: 500
+ doc saved: true; doc stamp: 0; doc size: 477; committed: true
+indexing info: indexed at 1575662106097 with document size 477 
+com.intellij.openapi.diagnostic.RuntimeExceptionWithAttachments: PSI and index do not match.
+Please report the problem to JetBrains with the files attached
+ file=PsiJavaFile:IdentityChecker.java, file.class=class com.intellij.psi.impl.source.PsiJavaFileImpl, file.lang=Language: JAVA, modStamp=5
+ tree consistent
+ stub debugInfo=created in getStubTree(), with AST = false; with backReference
+latestIndexedStub=null
+ viewProvider=SingleRootFileViewProvider{myVirtualFile=file://C:/Users/Simone/Desktop/TestAscetic/ProgettiTest/src/com/fumet/registration/IdentityChecker.java, content=VirtualFileContent{size=500}}
+ viewProvider stamp: 0; file stamp: 0; file modCount: 1575969310606; file length: 500
+ doc saved: true; doc stamp: 0; doc size: 477; committed: true
+indexing info: indexed at 1575662106097 with document size 477
+	at com.intellij.psi.stubs.StubTreeLoader.stubTreeAndIndexDoNotMatch(StubTreeLoader.java:141)
+	at com.intellij.psi.stubs.StubProcessingHelperBase.inconsistencyDetected(StubProcessingHelperBase.java:147)
+	at com.intellij.psi.stubs.StubProcessingHelperBase.checkType(StubProcessingHelperBase.java:89)
+	at com.intellij.psi.stubs.StubProcessingHelperBase.processStubsInFile(StubProcessingHelperBase.java:68)
+	at com.intellij.psi.stubs.StubIndexImpl$2.process(StubIndexImpl.java:290)
+	at com.intellij.psi.stubs.StubIndexImpl$StubIdListContainerAction.perform(StubIndexImpl.java:602)
+	at com.intellij.psi.stubs.StubIndexImpl$StubIdListContainerAction.perform(StubIndexImpl.java:590)
+	at com.intellij.util.indexing.ValueContainer.forEach(ValueContainer.java:62)
+	at com.intellij.psi.stubs.StubIndexImpl.lambda$null$0(StubIndexImpl.java:314)
+	at com.intellij.util.ConcurrencyUtil.withLock(ConcurrencyUtil.java:245)
+	at com.intellij.psi.stubs.StubIndexImpl.lambda$null$1(StubIndexImpl.java:312)
+	at com.intellij.util.indexing.FileBasedIndexImpl.disableUpToDateCheckIn(FileBasedIndexImpl.java:671)
+	at com.intellij.psi.stubs.StubIndexImpl.lambda$doProcessStubs$2(StubIndexImpl.java:311)
+	at com.intellij.util.indexing.IndexAccessValidator.validate(IndexAccessValidator.java:43)
+	at com.intellij.psi.stubs.StubIndexImpl.doProcessStubs(StubIndexImpl.java:309)
+	at com.intellij.psi.stubs.StubIndexImpl.processElements(StubIndexImpl.java:281)
+	at com.intellij.psi.stubs.StubIndex.getElements(StubIndex.java:121)
+	at com.intellij.psi.stubs.StubIndex.getElements(StubIndex.java:109)
+	at com.intellij.psi.impl.java.stubs.index.JavaFullClassNameIndex.get(JavaFullClassNameIndex.java:47)
+	at com.intellij.psi.impl.file.impl.JavaFileManagerImpl.doFindClasses(JavaFileManagerImpl.java:88)
+	at com.intellij.psi.impl.file.impl.JavaFileManagerImpl.findClass(JavaFileManagerImpl.java:123)
+	at com.intellij.psi.impl.PsiElementFinderImpl.findClass(PsiElementFinderImpl.java:38)
+	at com.intellij.psi.impl.JavaPsiFacadeImpl.doFindClass(JavaPsiFacadeImpl.java:116)
+	at com.intellij.psi.impl.JavaPsiFacadeImpl.findClass(JavaPsiFacadeImpl.java:93)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.resolve(PsiJavaCodeReferenceElementImpl.java:452)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.access$100(PsiJavaCodeReferenceElementImpl.java:44)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl$OurGenericsResolver.resolve(PsiJavaCodeReferenceElementImpl.java:383)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl$OurGenericsResolver.resolve(PsiJavaCodeReferenceElementImpl.java:375)
+	at com.intellij.psi.impl.source.resolve.ResolveCache.lambda$resolveWithCaching$1(ResolveCache.java:203)
+	at com.intellij.openapi.util.RecursionManager$1.doPreventingRecursion(RecursionManager.java:116)
+	at com.intellij.psi.impl.source.resolve.ResolveCache.resolveWithCaching(ResolveCache.java:202)
+	at com.intellij.psi.impl.PsiImplUtil.multiResolveImpl(PsiImplUtil.java:797)
+	at com.intellij.psi.impl.PsiImplUtil.multiResolveImpl(PsiImplUtil.java:788)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.multiResolve(PsiJavaCodeReferenceElementImpl.java:434)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.advancedResolve(PsiJavaCodeReferenceElementImpl.java:427)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.resolve(PsiJavaCodeReferenceElementImpl.java:359)
+	at com.intellij.psi.impl.source.PsiImportStatementBaseImpl.resolve(PsiImportStatementBaseImpl.java:64)
+	at com.intellij.psi.impl.source.PsiJavaFileBaseImpl.processNamedTypeImports(PsiJavaFileBaseImpl.java:380)
+	at com.intellij.psi.impl.source.PsiJavaFileBaseImpl.processNamedImports(PsiJavaFileBaseImpl.java:365)
+	at com.intellij.psi.impl.source.PsiJavaFileBaseImpl.processDeclarationsNoGuess(PsiJavaFileBaseImpl.java:331)
+	at com.intellij.psi.impl.source.PsiJavaFileBaseImpl.access$200(PsiJavaFileBaseImpl.java:40)
+	at com.intellij.psi.impl.source.PsiJavaFileBaseImpl$MyCacheBuilder.compute(PsiJavaFileBaseImpl.java:595)
+	at com.intellij.psi.impl.PsiCachedValueImpl.doCompute(PsiCachedValueImpl.java:49)
+	at com.intellij.util.CachedValueBase.lambda$getValueWithLock$0(CachedValueBase.java:236)
+	at com.intellij.openapi.util.RecursionManager$1.doPreventingRecursion(RecursionManager.java:116)
+	at com.intellij.util.CachedValueBase.getValueWithLock(CachedValueBase.java:237)
+	at com.intellij.psi.impl.PsiCachedValueImpl.getValue(PsiCachedValueImpl.java:38)
+	at com.intellij.psi.impl.source.PsiJavaFileBaseImpl.processDeclarations(PsiJavaFileBaseImpl.java:314)
+	at com.intellij.psi.scope.util.PsiScopesUtil.treeWalkUp(PsiScopesUtil.java:69)
+	at com.intellij.psi.scope.util.PsiScopesUtil.treeWalkUp(PsiScopesUtil.java:51)
+	at com.intellij.psi.scope.util.PsiScopesUtil.resolveAndWalk(PsiScopesUtil.java:218)
+	at com.intellij.psi.scope.util.PsiScopesUtil.resolveAndWalk(PsiScopesUtil.java:149)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.resolve(PsiJavaCodeReferenceElementImpl.java:501)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.access$100(PsiJavaCodeReferenceElementImpl.java:44)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl$OurGenericsResolver.resolve(PsiJavaCodeReferenceElementImpl.java:383)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl$OurGenericsResolver.resolve(PsiJavaCodeReferenceElementImpl.java:375)
+	at com.intellij.psi.impl.source.resolve.ResolveCache.lambda$resolveWithCaching$1(ResolveCache.java:203)
+	at com.intellij.openapi.util.RecursionManager$1.doPreventingRecursion(RecursionManager.java:116)
+	at com.intellij.psi.impl.source.resolve.ResolveCache.resolveWithCaching(ResolveCache.java:202)
+	at com.intellij.psi.impl.PsiImplUtil.multiResolveImpl(PsiImplUtil.java:797)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.getCanonicalText(PsiJavaCodeReferenceElementImpl.java:297)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.getCanonicalText(PsiJavaCodeReferenceElementImpl.java:287)
+	at com.intellij.psi.impl.source.PsiClassReferenceType.getText(PsiClassReferenceType.java:260)
+	at com.intellij.psi.impl.source.PsiClassReferenceType.getCanonicalText(PsiClassReferenceType.java:246)
+	at com.intellij.psi.PsiClassType$Stub.getCanonicalText(PsiClassType.java:356)
+	at com.intellij.psi.impl.source.PsiClassReferenceType.equalsToText(PsiClassReferenceType.java:86)
+	at com.intellij.psi.util.PsiMethodUtil.isMainMethod(PsiMethodUtil.java:55)
+	at com.intellij.psi.util.PsiMethodUtil.findMainMethod(PsiMethodUtil.java:40)
+	at com.intellij.psi.util.PsiMethodUtil.findMainMethod(PsiMethodUtil.java:34)
+	at com.intellij.psi.util.PsiMethodUtil.findMainInClass(PsiMethodUtil.java:75)
+	at com.intellij.execution.application.ApplicationRunLineMarkerProvider.getInfo(ApplicationRunLineMarkerProvider.java:29)
+	at com.intellij.execution.lineMarker.RunLineMarkerProvider.getLineMarkerInfo(RunLineMarkerProvider.java:49)
+	at com.intellij.codeInsight.daemon.impl.LineMarkersPass.queryProviders(LineMarkersPass.java:171)
+	at com.intellij.codeInsight.daemon.impl.LineMarkersPass.lambda$doCollectInformation$3(LineMarkersPass.java:96)
+	at com.intellij.codeInsight.daemon.impl.Divider.divideInsideAndOutsideInOneRoot(Divider.java:79)
+	at com.intellij.codeInsight.daemon.impl.LineMarkersPass.doCollectInformation(LineMarkersPass.java:91)
+	at com.intellij.codeHighlighting.TextEditorHighlightingPass.collectInformation(TextEditorHighlightingPass.java:69)
+	at com.intellij.codeInsight.daemon.impl.PassExecutorService$ScheduledPass.lambda$null$1(PassExecutorService.java:430)
+	at com.intellij.openapi.application.impl.ApplicationImpl.tryRunReadAction(ApplicationImpl.java:1166)
+	at com.intellij.codeInsight.daemon.impl.PassExecutorService$ScheduledPass.lambda$doRun$2(PassExecutorService.java:423)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.registerIndicatorAndRun(CoreProgressManager.java:586)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.executeProcessUnderProgress(CoreProgressManager.java:532)
+	at com.intellij.openapi.progress.impl.ProgressManagerImpl.executeProcessUnderProgress(ProgressManagerImpl.java:86)
+	at com.intellij.codeInsight.daemon.impl.PassExecutorService$ScheduledPass.doRun(PassExecutorService.java:422)
+	at com.intellij.codeInsight.daemon.impl.PassExecutorService$ScheduledPass.lambda$run$0(PassExecutorService.java:398)
+	at com.intellij.openapi.application.impl.ReadMostlyRWLock.executeByImpatientReader(ReadMostlyRWLock.java:164)
+	at com.intellij.openapi.application.impl.ApplicationImpl.executeByImpatientReader(ApplicationImpl.java:218)
+	at com.intellij.codeInsight.daemon.impl.PassExecutorService$ScheduledPass.run(PassExecutorService.java:396)
+	at com.intellij.concurrency.JobLauncherImpl$VoidForkJoinTask$1.exec(JobLauncherImpl.java:174)
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289)
+	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:157)
+2019-12-10 15:37:13,783 [  42721]  ERROR - stubs.StubProcessingHelperBase - IntelliJ IDEA 2019.1.3  Build #IC-191.7479.19 
+2019-12-10 15:37:13,783 [  42721]  ERROR - stubs.StubProcessingHelperBase - JDK: 1.8.0_202-release; VM: OpenJDK 64-Bit Server VM; Vendor: JetBrains s.r.o 
+2019-12-10 15:37:13,783 [  42721]  ERROR - stubs.StubProcessingHelperBase - OS: Windows 10 
+2019-12-10 15:37:13,784 [  42722]  ERROR - stubs.StubProcessingHelperBase - Last Action:  
+2019-12-10 15:37:13,866 [  42804]  ERROR - stubs.StubProcessingHelperBase - PSI and index do not match.
+Please report the problem to JetBrains with the files attached
+ file=PsiJavaFile:IdentityChecker.java, file.class=class com.intellij.psi.impl.source.PsiJavaFileImpl, file.lang=Language: JAVA, modStamp=5
+ tree consistent
+ stub debugInfo=created in getStubTree(), with AST = false; with backReference
+latestIndexedStub=null
+ viewProvider=SingleRootFileViewProvider{myVirtualFile=file://C:/Users/Simone/Desktop/TestAscetic/ProgettiTest/src/com/fumet/registration/IdentityChecker.java, content=VirtualFileContent{size=500}}
+ viewProvider stamp: 0; file stamp: 0; file modCount: 1575969310606; file length: 500
+ doc saved: true; doc stamp: 0; doc size: 477; committed: true
+indexing info: indexed at 1575662106097 with document size 477 
+com.intellij.openapi.diagnostic.RuntimeExceptionWithAttachments: PSI and index do not match.
+Please report the problem to JetBrains with the files attached
+ file=PsiJavaFile:IdentityChecker.java, file.class=class com.intellij.psi.impl.source.PsiJavaFileImpl, file.lang=Language: JAVA, modStamp=5
+ tree consistent
+ stub debugInfo=created in getStubTree(), with AST = false; with backReference
+latestIndexedStub=null
+ viewProvider=SingleRootFileViewProvider{myVirtualFile=file://C:/Users/Simone/Desktop/TestAscetic/ProgettiTest/src/com/fumet/registration/IdentityChecker.java, content=VirtualFileContent{size=500}}
+ viewProvider stamp: 0; file stamp: 0; file modCount: 1575969310606; file length: 500
+ doc saved: true; doc stamp: 0; doc size: 477; committed: true
+indexing info: indexed at 1575662106097 with document size 477
+	at com.intellij.psi.stubs.StubTreeLoader.stubTreeAndIndexDoNotMatch(StubTreeLoader.java:141)
+	at com.intellij.psi.stubs.StubProcessingHelperBase.inconsistencyDetected(StubProcessingHelperBase.java:147)
+	at com.intellij.psi.stubs.StubProcessingHelperBase.checkType(StubProcessingHelperBase.java:89)
+	at com.intellij.psi.stubs.StubProcessingHelperBase.processStubsInFile(StubProcessingHelperBase.java:68)
+	at com.intellij.psi.stubs.StubIndexImpl$2.process(StubIndexImpl.java:290)
+	at com.intellij.psi.stubs.StubIndexImpl$StubIdListContainerAction.perform(StubIndexImpl.java:602)
+	at com.intellij.psi.stubs.StubIndexImpl$StubIdListContainerAction.perform(StubIndexImpl.java:590)
+	at com.intellij.util.indexing.ValueContainer.forEach(ValueContainer.java:62)
+	at com.intellij.psi.stubs.StubIndexImpl.lambda$null$0(StubIndexImpl.java:314)
+	at com.intellij.util.ConcurrencyUtil.withLock(ConcurrencyUtil.java:245)
+	at com.intellij.psi.stubs.StubIndexImpl.lambda$null$1(StubIndexImpl.java:312)
+	at com.intellij.util.indexing.FileBasedIndexImpl.disableUpToDateCheckIn(FileBasedIndexImpl.java:671)
+	at com.intellij.psi.stubs.StubIndexImpl.lambda$doProcessStubs$2(StubIndexImpl.java:311)
+	at com.intellij.util.indexing.IndexAccessValidator.validate(IndexAccessValidator.java:43)
+	at com.intellij.psi.stubs.StubIndexImpl.doProcessStubs(StubIndexImpl.java:309)
+	at com.intellij.psi.stubs.StubIndexImpl.processElements(StubIndexImpl.java:281)
+	at com.intellij.psi.stubs.StubIndex.getElements(StubIndex.java:121)
+	at com.intellij.psi.stubs.StubIndex.getElements(StubIndex.java:109)
+	at com.intellij.psi.impl.java.stubs.index.JavaFullClassNameIndex.get(JavaFullClassNameIndex.java:47)
+	at com.intellij.psi.impl.file.impl.JavaFileManagerImpl.doFindClasses(JavaFileManagerImpl.java:88)
+	at com.intellij.psi.impl.file.impl.JavaFileManagerImpl.findClass(JavaFileManagerImpl.java:123)
+	at com.intellij.psi.impl.PsiElementFinderImpl.findClass(PsiElementFinderImpl.java:38)
+	at com.intellij.psi.impl.JavaPsiFacadeImpl.doFindClass(JavaPsiFacadeImpl.java:116)
+	at com.intellij.psi.impl.JavaPsiFacadeImpl.findClass(JavaPsiFacadeImpl.java:93)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.resolve(PsiJavaCodeReferenceElementImpl.java:452)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.access$100(PsiJavaCodeReferenceElementImpl.java:44)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl$OurGenericsResolver.resolve(PsiJavaCodeReferenceElementImpl.java:383)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl$OurGenericsResolver.resolve(PsiJavaCodeReferenceElementImpl.java:375)
+	at com.intellij.psi.impl.source.resolve.ResolveCache.lambda$resolveWithCaching$1(ResolveCache.java:203)
+	at com.intellij.openapi.util.RecursionManager$1.doPreventingRecursion(RecursionManager.java:116)
+	at com.intellij.psi.impl.source.resolve.ResolveCache.resolveWithCaching(ResolveCache.java:202)
+	at com.intellij.psi.impl.PsiImplUtil.multiResolveImpl(PsiImplUtil.java:797)
+	at com.intellij.psi.impl.PsiImplUtil.multiResolveImpl(PsiImplUtil.java:788)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.multiResolve(PsiJavaCodeReferenceElementImpl.java:434)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.advancedResolve(PsiJavaCodeReferenceElementImpl.java:427)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.resolve(PsiJavaCodeReferenceElementImpl.java:359)
+	at com.intellij.psi.impl.source.PsiImportStatementBaseImpl.resolve(PsiImportStatementBaseImpl.java:64)
+	at com.intellij.psi.impl.source.PsiJavaFileBaseImpl.processNamedTypeImports(PsiJavaFileBaseImpl.java:380)
+	at com.intellij.psi.impl.source.PsiJavaFileBaseImpl.processNamedImports(PsiJavaFileBaseImpl.java:365)
+	at com.intellij.psi.impl.source.PsiJavaFileBaseImpl.processDeclarationsNoGuess(PsiJavaFileBaseImpl.java:331)
+	at com.intellij.psi.impl.source.PsiJavaFileBaseImpl.access$200(PsiJavaFileBaseImpl.java:40)
+	at com.intellij.psi.impl.source.PsiJavaFileBaseImpl$MyCacheBuilder.compute(PsiJavaFileBaseImpl.java:595)
+	at com.intellij.psi.impl.PsiCachedValueImpl.doCompute(PsiCachedValueImpl.java:49)
+	at com.intellij.util.CachedValueBase.lambda$getValueWithLock$0(CachedValueBase.java:236)
+	at com.intellij.openapi.util.RecursionManager$1.doPreventingRecursion(RecursionManager.java:116)
+	at com.intellij.util.CachedValueBase.getValueWithLock(CachedValueBase.java:237)
+	at com.intellij.psi.impl.PsiCachedValueImpl.getValue(PsiCachedValueImpl.java:38)
+	at com.intellij.psi.impl.source.PsiJavaFileBaseImpl.processDeclarations(PsiJavaFileBaseImpl.java:314)
+	at com.intellij.psi.scope.util.PsiScopesUtil.treeWalkUp(PsiScopesUtil.java:69)
+	at com.intellij.psi.scope.util.PsiScopesUtil.treeWalkUp(PsiScopesUtil.java:51)
+	at com.intellij.psi.scope.util.PsiScopesUtil.resolveAndWalk(PsiScopesUtil.java:218)
+	at com.intellij.psi.scope.util.PsiScopesUtil.resolveAndWalk(PsiScopesUtil.java:149)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.resolve(PsiJavaCodeReferenceElementImpl.java:501)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.access$100(PsiJavaCodeReferenceElementImpl.java:44)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl$OurGenericsResolver.resolve(PsiJavaCodeReferenceElementImpl.java:383)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl$OurGenericsResolver.resolve(PsiJavaCodeReferenceElementImpl.java:375)
+	at com.intellij.psi.impl.source.resolve.ResolveCache.lambda$resolveWithCaching$1(ResolveCache.java:203)
+	at com.intellij.openapi.util.RecursionManager$1.doPreventingRecursion(RecursionManager.java:116)
+	at com.intellij.psi.impl.source.resolve.ResolveCache.resolveWithCaching(ResolveCache.java:202)
+	at com.intellij.psi.impl.PsiImplUtil.multiResolveImpl(PsiImplUtil.java:797)
+	at com.intellij.psi.impl.PsiImplUtil.multiResolveImpl(PsiImplUtil.java:788)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.multiResolve(PsiJavaCodeReferenceElementImpl.java:434)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.advancedResolve(PsiJavaCodeReferenceElementImpl.java:427)
+	at com.intellij.psi.impl.source.PsiClassReferenceType.resolveGenerics(PsiClassReferenceType.java:194)
+	at com.intellij.psi.impl.TypeCorrector.visitClassType(TypeCorrector.java:65)
+	at com.intellij.psi.impl.TypeCorrector.visitClassType(TypeCorrector.java:19)
+	at com.intellij.psi.PsiClassType.accept(PsiClassType.java:237)
+	at com.intellij.psi.PsiTypeMapper.mapType(PsiTypeMapper.java:36)
+	at com.intellij.psi.PsiTypeMapper.visitArrayType(PsiTypeMapper.java:42)
+	at com.intellij.psi.PsiTypeMapper.visitArrayType(PsiTypeMapper.java:30)
+	at com.intellij.psi.PsiArrayType.accept(PsiArrayType.java:78)
+	at com.intellij.psi.impl.TypeCorrector.correctType(TypeCorrector.java:50)
+	at com.intellij.psi.impl.PsiClassImplUtil.correctType(PsiClassImplUtil.java:726)
+	at com.intellij.psi.impl.source.tree.java.PsiReferenceExpressionImpl$TypeEvaluator.fun(PsiReferenceExpressionImpl.java:450)
+	at com.intellij.psi.impl.source.tree.java.PsiReferenceExpressionImpl$TypeEvaluator.fun(PsiReferenceExpressionImpl.java:393)
+	at com.intellij.psi.impl.source.resolve.JavaResolveCache.getType(JavaResolveCache.java:90)
+	at com.intellij.psi.impl.source.tree.java.PsiReferenceExpressionImpl.getType(PsiReferenceExpressionImpl.java:460)
+	at org.intellij.plugins.intelliLang.inject.java.validation.LanguageMismatch.checkExpression(LanguageMismatch.java:88)
+	at org.intellij.plugins.intelliLang.inject.java.validation.LanguageMismatch$1.visitReferenceExpression(LanguageMismatch.java:82)
+	at com.intellij.psi.impl.source.tree.java.PsiReferenceExpressionImpl.accept(PsiReferenceExpressionImpl.java:818)
+	at com.intellij.codeInspection.InspectionEngine.acceptElements(InspectionEngine.java:75)
+	at com.intellij.codeInspection.InspectionEngine.createVisitorAndAcceptElements(InspectionEngine.java:63)
+	at com.intellij.codeInsight.daemon.impl.LocalInspectionsPass.runToolOnElements(LocalInspectionsPass.java:295)
+	at com.intellij.codeInsight.daemon.impl.LocalInspectionsPass.lambda$null$5(LocalInspectionsPass.java:263)
+	at com.intellij.util.AstLoadingFilter.forceAllowTreeLoading(AstLoadingFilter.java:156)
+	at com.intellij.util.AstLoadingFilter.forceAllowTreeLoading(AstLoadingFilter.java:148)
+	at com.intellij.codeInsight.daemon.impl.LocalInspectionsPass.lambda$null$6(LocalInspectionsPass.java:260)
+	at com.intellij.util.AstLoadingFilter.disallowTreeLoading(AstLoadingFilter.java:127)
+	at com.intellij.util.AstLoadingFilter.disallowTreeLoading(AstLoadingFilter.java:116)
+	at com.intellij.codeInsight.daemon.impl.LocalInspectionsPass.lambda$visitPriorityElementsAndInit$7(LocalInspectionsPass.java:260)
+	at com.intellij.concurrency.ApplierCompleter.execAndForkSubTasks(ApplierCompleter.java:133)
+	at com.intellij.openapi.application.impl.ApplicationImpl.tryRunReadAction(ApplicationImpl.java:1161)
+	at com.intellij.concurrency.ApplierCompleter.lambda$wrapInReadActionAndIndicator$1(ApplierCompleter.java:105)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.registerIndicatorAndRun(CoreProgressManager.java:586)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.executeProcessUnderProgress(CoreProgressManager.java:532)
+	at com.intellij.openapi.progress.impl.ProgressManagerImpl.executeProcessUnderProgress(ProgressManagerImpl.java:86)
+	at com.intellij.concurrency.ApplierCompleter.wrapInReadActionAndIndicator(ApplierCompleter.java:116)
+	at com.intellij.concurrency.ApplierCompleter.lambda$compute$0(ApplierCompleter.java:96)
+	at com.intellij.openapi.application.impl.ReadMostlyRWLock.executeByImpatientReader(ReadMostlyRWLock.java:164)
+	at com.intellij.openapi.application.impl.ApplicationImpl.executeByImpatientReader(ApplicationImpl.java:218)
+	at com.intellij.concurrency.ApplierCompleter.compute(ApplierCompleter.java:96)
+	at java.util.concurrent.CountedCompleter.exec(CountedCompleter.java:731)
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289)
+	at java.util.concurrent.ForkJoinPool$WorkQueue.pollAndExecCC(ForkJoinPool.java:1190)
+	at java.util.concurrent.ForkJoinPool.helpComplete(ForkJoinPool.java:1879)
+	at java.util.concurrent.ForkJoinPool.awaitJoin(ForkJoinPool.java:2045)
+	at java.util.concurrent.ForkJoinTask.get(ForkJoinTask.java:1036)
+	at com.intellij.concurrency.JobLauncherImpl.invokeConcurrentlyUnderProgress(JobLauncherImpl.java:71)
+	at com.intellij.concurrency.JobLauncher.invokeConcurrentlyUnderProgress(JobLauncher.java:56)
+	at com.intellij.codeInsight.daemon.impl.LocalInspectionsPass.visitPriorityElementsAndInit(LocalInspectionsPass.java:266)
+	at com.intellij.codeInsight.daemon.impl.LocalInspectionsPass.inspect(LocalInspectionsPass.java:198)
+	at com.intellij.codeInsight.daemon.impl.LocalInspectionsPass.collectInformationWithProgress(LocalInspectionsPass.java:117)
+	at com.intellij.codeInsight.daemon.impl.ProgressableTextEditorHighlightingPass.doCollectInformation(ProgressableTextEditorHighlightingPass.java:84)
+	at com.intellij.codeHighlighting.TextEditorHighlightingPass.collectInformation(TextEditorHighlightingPass.java:69)
+	at com.intellij.codeInsight.daemon.impl.PassExecutorService$ScheduledPass.lambda$null$1(PassExecutorService.java:430)
+	at com.intellij.openapi.application.impl.ApplicationImpl.tryRunReadAction(ApplicationImpl.java:1166)
+	at com.intellij.codeInsight.daemon.impl.PassExecutorService$ScheduledPass.lambda$doRun$2(PassExecutorService.java:423)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.registerIndicatorAndRun(CoreProgressManager.java:586)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.executeProcessUnderProgress(CoreProgressManager.java:532)
+	at com.intellij.openapi.progress.impl.ProgressManagerImpl.executeProcessUnderProgress(ProgressManagerImpl.java:86)
+	at com.intellij.codeInsight.daemon.impl.PassExecutorService$ScheduledPass.doRun(PassExecutorService.java:422)
+	at com.intellij.codeInsight.daemon.impl.PassExecutorService$ScheduledPass.lambda$run$0(PassExecutorService.java:398)
+	at com.intellij.openapi.application.impl.ReadMostlyRWLock.executeByImpatientReader(ReadMostlyRWLock.java:164)
+	at com.intellij.openapi.application.impl.ApplicationImpl.executeByImpatientReader(ApplicationImpl.java:218)
+	at com.intellij.codeInsight.daemon.impl.PassExecutorService$ScheduledPass.run(PassExecutorService.java:396)
+	at com.intellij.concurrency.JobLauncherImpl$VoidForkJoinTask$1.exec(JobLauncherImpl.java:174)
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289)
+	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:157)
+2019-12-10 15:37:13,868 [  42806]  ERROR - stubs.StubProcessingHelperBase - IntelliJ IDEA 2019.1.3  Build #IC-191.7479.19 
+2019-12-10 15:37:13,868 [  42806]  ERROR - stubs.StubProcessingHelperBase - JDK: 1.8.0_202-release; VM: OpenJDK 64-Bit Server VM; Vendor: JetBrains s.r.o 
+2019-12-10 15:37:13,868 [  42806]  ERROR - stubs.StubProcessingHelperBase - OS: Windows 10 
+2019-12-10 15:37:13,869 [  42807]  ERROR - stubs.StubProcessingHelperBase - Last Action:  
+2019-12-10 15:37:13,977 [  42915]  ERROR - stubs.StubProcessingHelperBase - PSI and index do not match.
+Please report the problem to JetBrains with the files attached
+ file=PsiJavaFile:IdentityChecker.java, file.class=class com.intellij.psi.impl.source.PsiJavaFileImpl, file.lang=Language: JAVA, modStamp=5
+ tree consistent
+ stub debugInfo=created in getStubTree(), with AST = false; with backReference
+latestIndexedStub=null
+ viewProvider=SingleRootFileViewProvider{myVirtualFile=file://C:/Users/Simone/Desktop/TestAscetic/ProgettiTest/src/com/fumet/registration/IdentityChecker.java, content=VirtualFileContent{size=500}}
+ viewProvider stamp: 0; file stamp: 0; file modCount: 1575969310606; file length: 500
+ doc saved: true; doc stamp: 0; doc size: 477; committed: true
+indexing info: indexed at 1575662106097 with document size 477 
+com.intellij.openapi.diagnostic.RuntimeExceptionWithAttachments: PSI and index do not match.
+Please report the problem to JetBrains with the files attached
+ file=PsiJavaFile:IdentityChecker.java, file.class=class com.intellij.psi.impl.source.PsiJavaFileImpl, file.lang=Language: JAVA, modStamp=5
+ tree consistent
+ stub debugInfo=created in getStubTree(), with AST = false; with backReference
+latestIndexedStub=null
+ viewProvider=SingleRootFileViewProvider{myVirtualFile=file://C:/Users/Simone/Desktop/TestAscetic/ProgettiTest/src/com/fumet/registration/IdentityChecker.java, content=VirtualFileContent{size=500}}
+ viewProvider stamp: 0; file stamp: 0; file modCount: 1575969310606; file length: 500
+ doc saved: true; doc stamp: 0; doc size: 477; committed: true
+indexing info: indexed at 1575662106097 with document size 477
+	at com.intellij.psi.stubs.StubTreeLoader.stubTreeAndIndexDoNotMatch(StubTreeLoader.java:141)
+	at com.intellij.psi.stubs.StubProcessingHelperBase.inconsistencyDetected(StubProcessingHelperBase.java:147)
+	at com.intellij.psi.stubs.StubProcessingHelperBase.checkType(StubProcessingHelperBase.java:89)
+	at com.intellij.psi.stubs.StubProcessingHelperBase.processStubsInFile(StubProcessingHelperBase.java:68)
+	at com.intellij.psi.stubs.StubIndexImpl$2.process(StubIndexImpl.java:290)
+	at com.intellij.psi.stubs.StubIndexImpl$StubIdListContainerAction.perform(StubIndexImpl.java:602)
+	at com.intellij.psi.stubs.StubIndexImpl$StubIdListContainerAction.perform(StubIndexImpl.java:590)
+	at com.intellij.util.indexing.ValueContainer.forEach(ValueContainer.java:62)
+	at com.intellij.psi.stubs.StubIndexImpl.lambda$null$0(StubIndexImpl.java:314)
+	at com.intellij.util.ConcurrencyUtil.withLock(ConcurrencyUtil.java:245)
+	at com.intellij.psi.stubs.StubIndexImpl.lambda$null$1(StubIndexImpl.java:312)
+	at com.intellij.util.indexing.FileBasedIndexImpl.disableUpToDateCheckIn(FileBasedIndexImpl.java:671)
+	at com.intellij.psi.stubs.StubIndexImpl.lambda$doProcessStubs$2(StubIndexImpl.java:311)
+	at com.intellij.util.indexing.IndexAccessValidator.validate(IndexAccessValidator.java:43)
+	at com.intellij.psi.stubs.StubIndexImpl.doProcessStubs(StubIndexImpl.java:309)
+	at com.intellij.psi.stubs.StubIndexImpl.processElements(StubIndexImpl.java:281)
+	at com.intellij.psi.stubs.StubIndex.getElements(StubIndex.java:121)
+	at com.intellij.psi.stubs.StubIndex.getElements(StubIndex.java:109)
+	at com.intellij.psi.impl.java.stubs.index.JavaFullClassNameIndex.get(JavaFullClassNameIndex.java:47)
+	at com.intellij.psi.impl.file.impl.JavaFileManagerImpl.doFindClasses(JavaFileManagerImpl.java:88)
+	at com.intellij.psi.impl.file.impl.JavaFileManagerImpl.findClass(JavaFileManagerImpl.java:123)
+	at com.intellij.psi.impl.PsiElementFinderImpl.findClass(PsiElementFinderImpl.java:38)
+	at com.intellij.psi.impl.JavaPsiFacadeImpl.doFindClass(JavaPsiFacadeImpl.java:116)
+	at com.intellij.psi.impl.JavaPsiFacadeImpl.findClass(JavaPsiFacadeImpl.java:93)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.resolve(PsiJavaCodeReferenceElementImpl.java:452)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.access$100(PsiJavaCodeReferenceElementImpl.java:44)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl$OurGenericsResolver.resolve(PsiJavaCodeReferenceElementImpl.java:383)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl$OurGenericsResolver.resolve(PsiJavaCodeReferenceElementImpl.java:375)
+	at com.intellij.psi.impl.source.resolve.ResolveCache.lambda$resolveWithCaching$1(ResolveCache.java:203)
+	at com.intellij.openapi.util.RecursionManager$1.doPreventingRecursion(RecursionManager.java:116)
+	at com.intellij.psi.impl.source.resolve.ResolveCache.resolveWithCaching(ResolveCache.java:202)
+	at com.intellij.psi.impl.PsiImplUtil.multiResolveImpl(PsiImplUtil.java:797)
+	at com.intellij.psi.impl.PsiImplUtil.multiResolveImpl(PsiImplUtil.java:788)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.multiResolve(PsiJavaCodeReferenceElementImpl.java:434)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.advancedResolve(PsiJavaCodeReferenceElementImpl.java:427)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.resolve(PsiJavaCodeReferenceElementImpl.java:359)
+	at com.intellij.psi.impl.source.PsiImportStatementBaseImpl.resolve(PsiImportStatementBaseImpl.java:64)
+	at com.intellij.psi.impl.source.PsiJavaFileBaseImpl.processNamedTypeImports(PsiJavaFileBaseImpl.java:380)
+	at com.intellij.psi.impl.source.PsiJavaFileBaseImpl.processNamedImports(PsiJavaFileBaseImpl.java:365)
+	at com.intellij.psi.impl.source.PsiJavaFileBaseImpl.processDeclarationsNoGuess(PsiJavaFileBaseImpl.java:331)
+	at com.intellij.psi.impl.source.PsiJavaFileBaseImpl.access$200(PsiJavaFileBaseImpl.java:40)
+	at com.intellij.psi.impl.source.PsiJavaFileBaseImpl$MyCacheBuilder.compute(PsiJavaFileBaseImpl.java:595)
+	at com.intellij.psi.impl.PsiCachedValueImpl.doCompute(PsiCachedValueImpl.java:49)
+	at com.intellij.util.CachedValueBase.lambda$getValueWithLock$0(CachedValueBase.java:236)
+	at com.intellij.openapi.util.RecursionManager$1.doPreventingRecursion(RecursionManager.java:116)
+	at com.intellij.util.CachedValueBase.getValueWithLock(CachedValueBase.java:237)
+	at com.intellij.psi.impl.PsiCachedValueImpl.getValue(PsiCachedValueImpl.java:38)
+	at com.intellij.psi.impl.source.PsiJavaFileBaseImpl.processDeclarations(PsiJavaFileBaseImpl.java:314)
+	at com.intellij.psi.scope.util.PsiScopesUtil.treeWalkUp(PsiScopesUtil.java:69)
+	at com.intellij.psi.scope.util.PsiScopesUtil.treeWalkUp(PsiScopesUtil.java:51)
+	at com.intellij.psi.scope.util.PsiScopesUtil.resolveAndWalk(PsiScopesUtil.java:218)
+	at com.intellij.psi.scope.util.PsiScopesUtil.resolveAndWalk(PsiScopesUtil.java:149)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.resolve(PsiJavaCodeReferenceElementImpl.java:501)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.access$100(PsiJavaCodeReferenceElementImpl.java:44)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl$OurGenericsResolver.resolve(PsiJavaCodeReferenceElementImpl.java:383)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl$OurGenericsResolver.resolve(PsiJavaCodeReferenceElementImpl.java:375)
+	at com.intellij.psi.impl.source.resolve.ResolveCache.lambda$resolveWithCaching$1(ResolveCache.java:203)
+	at com.intellij.openapi.util.RecursionManager$1.doPreventingRecursion(RecursionManager.java:116)
+	at com.intellij.psi.impl.source.resolve.ResolveCache.resolveWithCaching(ResolveCache.java:202)
+	at com.intellij.psi.impl.PsiImplUtil.multiResolveImpl(PsiImplUtil.java:797)
+	at com.intellij.psi.impl.PsiImplUtil.multiResolveImpl(PsiImplUtil.java:788)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.multiResolve(PsiJavaCodeReferenceElementImpl.java:434)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.advancedResolve(PsiJavaCodeReferenceElementImpl.java:427)
+	at com.intellij.psi.impl.source.PsiClassReferenceType.resolveGenerics(PsiClassReferenceType.java:194)
+	at com.intellij.psi.impl.source.resolve.PsiResolveHelperImpl.multiResolveConstructor(PsiResolveHelperImpl.java:41)
+	at com.intellij.psi.impl.source.tree.java.PsiNewExpressionImpl$1.resolveInner(PsiNewExpressionImpl.java:153)
+	at com.intellij.psi.impl.source.tree.java.PsiNewExpressionImpl$1.resolveInner(PsiNewExpressionImpl.java:142)
+	at com.intellij.psi.impl.source.resolve.reference.impl.PsiPolyVariantCachingReference$MyResolver.resolve(PsiPolyVariantCachingReference.java:65)
+	at com.intellij.psi.impl.source.resolve.ResolveCache.lambda$resolveWithCaching$1(ResolveCache.java:203)
+	at com.intellij.openapi.util.RecursionManager$1.doPreventingRecursion(RecursionManager.java:116)
+	at com.intellij.psi.impl.source.resolve.ResolveCache.resolveWithCaching(ResolveCache.java:202)
+	at com.intellij.psi.impl.source.resolve.reference.impl.PsiPolyVariantCachingReference.multiResolve(PsiPolyVariantCachingReference.java:32)
+	at com.intellij.psi.impl.source.tree.java.PsiNewExpressionImpl.resolveMethodGenerics(PsiNewExpressionImpl.java:216)
+	at com.intellij.codeInsight.hints.JavaInlayHintsProvider.hints(JavaHintUtils.kt:65)
+	at com.intellij.codeInsight.hints.JavaInlayParameterHintsProvider.getParameterHints(JavaInlayParameterHintsProvider.kt:32)
+	at com.intellij.codeInsight.hints.ParameterHintsPass.process(ParameterHintsPass.java:90)
+	at com.intellij.codeInsight.hints.ParameterHintsPass.lambda$doCollectInformation$0(ParameterHintsPass.java:82)
+	at java.lang.Iterable.forEach(Iterable.java:75)
+	at com.intellij.codeInsight.hints.ParameterHintsPass.doCollectInformation(ParameterHintsPass.java:82)
+	at com.intellij.codeHighlighting.TextEditorHighlightingPass.collectInformation(TextEditorHighlightingPass.java:69)
+	at com.intellij.codeInsight.daemon.impl.PassExecutorService$ScheduledPass.lambda$null$1(PassExecutorService.java:430)
+	at com.intellij.openapi.application.impl.ApplicationImpl.tryRunReadAction(ApplicationImpl.java:1166)
+	at com.intellij.codeInsight.daemon.impl.PassExecutorService$ScheduledPass.lambda$doRun$2(PassExecutorService.java:423)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.registerIndicatorAndRun(CoreProgressManager.java:586)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.executeProcessUnderProgress(CoreProgressManager.java:532)
+	at com.intellij.openapi.progress.impl.ProgressManagerImpl.executeProcessUnderProgress(ProgressManagerImpl.java:86)
+	at com.intellij.codeInsight.daemon.impl.PassExecutorService$ScheduledPass.doRun(PassExecutorService.java:422)
+	at com.intellij.codeInsight.daemon.impl.PassExecutorService$ScheduledPass.lambda$run$0(PassExecutorService.java:398)
+	at com.intellij.openapi.application.impl.ReadMostlyRWLock.executeByImpatientReader(ReadMostlyRWLock.java:164)
+	at com.intellij.openapi.application.impl.ApplicationImpl.executeByImpatientReader(ApplicationImpl.java:218)
+	at com.intellij.codeInsight.daemon.impl.PassExecutorService$ScheduledPass.run(PassExecutorService.java:396)
+	at com.intellij.concurrency.JobLauncherImpl$VoidForkJoinTask$1.exec(JobLauncherImpl.java:174)
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289)
+	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:157)
+2019-12-10 15:37:13,978 [  42916]  ERROR - stubs.StubProcessingHelperBase - PSI and index do not match.
+Please report the problem to JetBrains with the files attached
+ file=PsiJavaFile:IdentityChecker.java, file.class=class com.intellij.psi.impl.source.PsiJavaFileImpl, file.lang=Language: JAVA, modStamp=5
+ tree consistent
+ stub debugInfo=created in getStubTree(), with AST = false; with backReference
+latestIndexedStub=null
+ viewProvider=SingleRootFileViewProvider{myVirtualFile=file://C:/Users/Simone/Desktop/TestAscetic/ProgettiTest/src/com/fumet/registration/IdentityChecker.java, content=VirtualFileContent{size=500}}
+ viewProvider stamp: 0; file stamp: 0; file modCount: 1575969310606; file length: 500
+ doc saved: true; doc stamp: 0; doc size: 477; committed: true
+indexing info: indexed at 1575662106097 with document size 477 
+com.intellij.openapi.diagnostic.RuntimeExceptionWithAttachments: PSI and index do not match.
+Please report the problem to JetBrains with the files attached
+ file=PsiJavaFile:IdentityChecker.java, file.class=class com.intellij.psi.impl.source.PsiJavaFileImpl, file.lang=Language: JAVA, modStamp=5
+ tree consistent
+ stub debugInfo=created in getStubTree(), with AST = false; with backReference
+latestIndexedStub=null
+ viewProvider=SingleRootFileViewProvider{myVirtualFile=file://C:/Users/Simone/Desktop/TestAscetic/ProgettiTest/src/com/fumet/registration/IdentityChecker.java, content=VirtualFileContent{size=500}}
+ viewProvider stamp: 0; file stamp: 0; file modCount: 1575969310606; file length: 500
+ doc saved: true; doc stamp: 0; doc size: 477; committed: true
+indexing info: indexed at 1575662106097 with document size 477
+	at com.intellij.psi.stubs.StubTreeLoader.stubTreeAndIndexDoNotMatch(StubTreeLoader.java:141)
+	at com.intellij.psi.stubs.StubProcessingHelperBase.inconsistencyDetected(StubProcessingHelperBase.java:147)
+	at com.intellij.psi.stubs.StubProcessingHelperBase.checkType(StubProcessingHelperBase.java:89)
+	at com.intellij.psi.stubs.StubProcessingHelperBase.processStubsInFile(StubProcessingHelperBase.java:68)
+	at com.intellij.psi.stubs.StubIndexImpl$2.process(StubIndexImpl.java:290)
+	at com.intellij.psi.stubs.StubIndexImpl$StubIdListContainerAction.perform(StubIndexImpl.java:602)
+	at com.intellij.psi.stubs.StubIndexImpl$StubIdListContainerAction.perform(StubIndexImpl.java:590)
+	at com.intellij.util.indexing.ValueContainer.forEach(ValueContainer.java:62)
+	at com.intellij.psi.stubs.StubIndexImpl.lambda$null$0(StubIndexImpl.java:314)
+	at com.intellij.util.ConcurrencyUtil.withLock(ConcurrencyUtil.java:245)
+	at com.intellij.psi.stubs.StubIndexImpl.lambda$null$1(StubIndexImpl.java:312)
+	at com.intellij.util.indexing.FileBasedIndexImpl.disableUpToDateCheckIn(FileBasedIndexImpl.java:671)
+	at com.intellij.psi.stubs.StubIndexImpl.lambda$doProcessStubs$2(StubIndexImpl.java:311)
+	at com.intellij.util.indexing.IndexAccessValidator.validate(IndexAccessValidator.java:43)
+	at com.intellij.psi.stubs.StubIndexImpl.doProcessStubs(StubIndexImpl.java:309)
+	at com.intellij.psi.stubs.StubIndexImpl.processElements(StubIndexImpl.java:281)
+	at com.intellij.psi.stubs.StubIndex.getElements(StubIndex.java:121)
+	at com.intellij.psi.stubs.StubIndex.getElements(StubIndex.java:109)
+	at com.intellij.psi.impl.java.stubs.index.JavaFullClassNameIndex.get(JavaFullClassNameIndex.java:47)
+	at com.intellij.psi.impl.file.impl.JavaFileManagerImpl.doFindClasses(JavaFileManagerImpl.java:88)
+	at com.intellij.psi.impl.file.impl.JavaFileManagerImpl.findClass(JavaFileManagerImpl.java:123)
+	at com.intellij.psi.impl.PsiElementFinderImpl.findClass(PsiElementFinderImpl.java:38)
+	at com.intellij.psi.impl.JavaPsiFacadeImpl.doFindClass(JavaPsiFacadeImpl.java:116)
+	at com.intellij.psi.impl.JavaPsiFacadeImpl.findClass(JavaPsiFacadeImpl.java:93)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.resolve(PsiJavaCodeReferenceElementImpl.java:452)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.access$100(PsiJavaCodeReferenceElementImpl.java:44)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl$OurGenericsResolver.resolve(PsiJavaCodeReferenceElementImpl.java:383)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl$OurGenericsResolver.resolve(PsiJavaCodeReferenceElementImpl.java:375)
+	at com.intellij.psi.impl.source.resolve.ResolveCache.lambda$resolveWithCaching$1(ResolveCache.java:203)
+	at com.intellij.openapi.util.RecursionManager$1.doPreventingRecursion(RecursionManager.java:116)
+	at com.intellij.psi.impl.source.resolve.ResolveCache.resolveWithCaching(ResolveCache.java:202)
+	at com.intellij.psi.impl.PsiImplUtil.multiResolveImpl(PsiImplUtil.java:797)
+	at com.intellij.psi.impl.PsiImplUtil.multiResolveImpl(PsiImplUtil.java:788)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.multiResolve(PsiJavaCodeReferenceElementImpl.java:434)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.advancedResolve(PsiJavaCodeReferenceElementImpl.java:427)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.resolve(PsiJavaCodeReferenceElementImpl.java:359)
+	at com.intellij.psi.impl.source.PsiImportStatementBaseImpl.resolve(PsiImportStatementBaseImpl.java:64)
+	at com.intellij.psi.impl.source.PsiJavaFileBaseImpl.processNamedTypeImports(PsiJavaFileBaseImpl.java:380)
+	at com.intellij.psi.impl.source.PsiJavaFileBaseImpl.processNamedImports(PsiJavaFileBaseImpl.java:365)
+	at com.intellij.psi.impl.source.PsiJavaFileBaseImpl.processDeclarationsNoGuess(PsiJavaFileBaseImpl.java:331)
+	at com.intellij.psi.impl.source.PsiJavaFileBaseImpl.access$200(PsiJavaFileBaseImpl.java:40)
+	at com.intellij.psi.impl.source.PsiJavaFileBaseImpl$MyCacheBuilder.compute(PsiJavaFileBaseImpl.java:595)
+	at com.intellij.psi.impl.PsiCachedValueImpl.doCompute(PsiCachedValueImpl.java:49)
+	at com.intellij.util.CachedValueBase.lambda$getValueWithLock$0(CachedValueBase.java:236)
+	at com.intellij.openapi.util.RecursionManager$1.doPreventingRecursion(RecursionManager.java:116)
+	at com.intellij.util.CachedValueBase.getValueWithLock(CachedValueBase.java:237)
+	at com.intellij.psi.impl.PsiCachedValueImpl.getValue(PsiCachedValueImpl.java:38)
+	at com.intellij.psi.impl.source.PsiJavaFileBaseImpl.processDeclarations(PsiJavaFileBaseImpl.java:314)
+	at com.intellij.psi.scope.util.PsiScopesUtil.treeWalkUp(PsiScopesUtil.java:69)
+	at com.intellij.psi.scope.util.PsiScopesUtil.treeWalkUp(PsiScopesUtil.java:51)
+	at com.intellij.psi.scope.util.PsiScopesUtil.resolveAndWalk(PsiScopesUtil.java:218)
+	at com.intellij.psi.scope.util.PsiScopesUtil.resolveAndWalk(PsiScopesUtil.java:149)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.resolve(PsiJavaCodeReferenceElementImpl.java:501)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.access$100(PsiJavaCodeReferenceElementImpl.java:44)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl$OurGenericsResolver.resolve(PsiJavaCodeReferenceElementImpl.java:383)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl$OurGenericsResolver.resolve(PsiJavaCodeReferenceElementImpl.java:375)
+	at com.intellij.psi.impl.source.resolve.ResolveCache.lambda$resolveWithCaching$1(ResolveCache.java:203)
+	at com.intellij.openapi.util.RecursionManager$1.doPreventingRecursion(RecursionManager.java:116)
+	at com.intellij.psi.impl.source.resolve.ResolveCache.resolveWithCaching(ResolveCache.java:202)
+	at com.intellij.psi.impl.PsiImplUtil.multiResolveImpl(PsiImplUtil.java:797)
+	at com.intellij.psi.impl.PsiImplUtil.multiResolveImpl(PsiImplUtil.java:788)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.multiResolve(PsiJavaCodeReferenceElementImpl.java:434)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.advancedResolve(PsiJavaCodeReferenceElementImpl.java:427)
+	at com.intellij.psi.impl.source.PsiClassReferenceType.resolveGenerics(PsiClassReferenceType.java:194)
+	at com.intellij.psi.util.PsiUtil.captureToplevelWildcards(PsiUtil.java:828)
+	at com.intellij.psi.impl.PsiImplUtil.normalizeWildcardTypeByPosition(PsiImplUtil.java:355)
+	at com.intellij.psi.impl.source.tree.java.PsiReferenceExpressionImpl$TypeEvaluator.fun(PsiReferenceExpressionImpl.java:448)
+	at com.intellij.psi.impl.source.tree.java.PsiReferenceExpressionImpl$TypeEvaluator.fun(PsiReferenceExpressionImpl.java:393)
+	at com.intellij.psi.impl.source.resolve.JavaResolveCache.getType(JavaResolveCache.java:90)
+	at com.intellij.psi.impl.source.tree.java.PsiReferenceExpressionImpl.getType(PsiReferenceExpressionImpl.java:460)
+	at com.intellij.psi.scope.util.PsiScopesUtil.setupAndRunProcessor(PsiScopesUtil.java:317)
+	at com.intellij.psi.impl.source.tree.java.PsiReferenceExpressionImpl.resolveToMethod(PsiReferenceExpressionImpl.java:331)
+	at com.intellij.psi.impl.source.tree.java.PsiReferenceExpressionImpl.resolve(PsiReferenceExpressionImpl.java:283)
+	at com.intellij.psi.impl.source.tree.java.PsiReferenceExpressionImpl.access$000(PsiReferenceExpressionImpl.java:46)
+	at com.intellij.psi.impl.source.tree.java.PsiReferenceExpressionImpl$OurGenericsResolver.resolve(PsiReferenceExpressionImpl.java:190)
+	at com.intellij.psi.impl.source.tree.java.PsiReferenceExpressionImpl$OurGenericsResolver.resolve(PsiReferenceExpressionImpl.java:178)
+	at com.intellij.psi.impl.source.resolve.ResolveCache.lambda$resolveWithCaching$1(ResolveCache.java:203)
+	at com.intellij.openapi.util.RecursionManager$1.doPreventingRecursion(RecursionManager.java:116)
+	at com.intellij.psi.impl.source.resolve.ResolveCache.resolveWithCaching(ResolveCache.java:202)
+	at com.intellij.psi.impl.PsiImplUtil.multiResolveImpl(PsiImplUtil.java:797)
+	at com.intellij.psi.impl.PsiImplUtil.multiResolveImpl(PsiImplUtil.java:788)
+	at com.intellij.psi.impl.source.tree.java.PsiReferenceExpressionImpl.multiResolve(PsiReferenceExpressionImpl.java:377)
+	at com.intellij.psi.impl.source.tree.java.PsiReferenceExpressionImpl.advancedResolve(PsiReferenceExpressionImpl.java:539)
+	at com.intellij.psi.impl.source.tree.java.PsiReferenceExpressionImpl.resolve(PsiReferenceExpressionImpl.java:839)
+	at com.android.tools.idea.AndroidPsiUtils.getResourceReferenceType(AndroidPsiUtils.java:293)
+	at com.android.tools.idea.folding.ResourceFoldingBuilder.findJavaExpressionReference(ResourceFoldingBuilder.java:164)
+	at com.android.tools.idea.folding.ResourceFoldingBuilder.access$000(ResourceFoldingBuilder.java:47)
+	at com.android.tools.idea.folding.ResourceFoldingBuilder$1.visitReferenceExpression(ResourceFoldingBuilder.java:94)
+	at com.intellij.psi.impl.source.tree.java.PsiReferenceExpressionImpl.accept(PsiReferenceExpressionImpl.java:818)
+	at com.intellij.psi.PsiWalkingState.visit(PsiWalkingState.java:70)
+	at com.intellij.psi.PsiWalkingState.visit(PsiWalkingState.java:27)
+	at com.intellij.util.WalkingState.walkChildren(WalkingState.java:65)
+	at com.intellij.util.WalkingState.elementStarted(WalkingState.java:52)
+	at com.intellij.psi.PsiWalkingState.elementStarted(PsiWalkingState.java:79)
+	at com.intellij.psi.JavaRecursiveElementWalkingVisitor.visitElement(JavaRecursiveElementWalkingVisitor.java:41)
+	at com.intellij.psi.PsiElementVisitor.visitFile(PsiElementVisitor.java:34)
+	at com.intellij.psi.JavaElementVisitor.visitJavaFile(JavaElementVisitor.java:327)
+	at com.intellij.psi.impl.source.PsiJavaFileBaseImpl.accept(PsiJavaFileBaseImpl.java:517)
+	at com.android.tools.idea.folding.ResourceFoldingBuilder.buildFoldRegions(ResourceFoldingBuilder.java:91)
+	at com.intellij.lang.folding.LanguageFolding.buildFoldingDescriptors(LanguageFolding.java:75)
+	at com.intellij.lang.folding.CompositeFoldingBuilder.buildFoldRegions(CompositeFoldingBuilder.java:42)
+	at com.intellij.lang.folding.LanguageFolding.buildFoldingDescriptors(LanguageFolding.java:75)
+	at com.intellij.codeInsight.folding.impl.FoldingUpdate.getFoldingsFor(FoldingUpdate.java:246)
+	at com.intellij.codeInsight.folding.impl.FoldingUpdate.getFoldingsFor(FoldingUpdate.java:226)
+	at com.intellij.codeInsight.folding.impl.FoldingUpdate.getUpdateResult(FoldingUpdate.java:98)
+	at com.intellij.codeInsight.folding.impl.FoldingUpdate.lambda$updateFoldRegions$0(FoldingUpdate.java:87)
+	at com.intellij.psi.impl.PsiParameterizedCachedValue.doCompute(PsiParameterizedCachedValue.java:45)
+	at com.intellij.util.CachedValueBase.lambda$getValueWithLock$0(CachedValueBase.java:236)
+	at com.intellij.openapi.util.RecursionManager$1.doPreventingRecursion(RecursionManager.java:116)
+	at com.intellij.util.CachedValueBase.getValueWithLock(CachedValueBase.java:237)
+	at com.intellij.psi.impl.PsiParameterizedCachedValue.getValue(PsiParameterizedCachedValue.java:35)
+	at com.intellij.psi.util.CachedValuesManager.getParameterizedCachedValue(CachedValuesManager.java:93)
+	at com.intellij.codeInsight.folding.impl.FoldingUpdate.updateFoldRegions(FoldingUpdate.java:83)
+	at com.intellij.codeInsight.folding.impl.CodeFoldingManagerImpl.updateFoldRegions(CodeFoldingManagerImpl.java:298)
+	at com.intellij.codeInsight.folding.impl.CodeFoldingManagerImpl.updateFoldRegionsAsync(CodeFoldingManagerImpl.java:284)
+	at com.intellij.codeInsight.daemon.impl.CodeFoldingPass.doCollectInformation(CodeFoldingPass.java:42)
+	at com.intellij.codeHighlighting.TextEditorHighlightingPass.collectInformation(TextEditorHighlightingPass.java:69)
+	at com.intellij.codeInsight.daemon.impl.PassExecutorService$ScheduledPass.lambda$null$1(PassExecutorService.java:430)
+	at com.intellij.openapi.application.impl.ApplicationImpl.tryRunReadAction(ApplicationImpl.java:1166)
+	at com.intellij.codeInsight.daemon.impl.PassExecutorService$ScheduledPass.lambda$doRun$2(PassExecutorService.java:423)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.registerIndicatorAndRun(CoreProgressManager.java:586)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.executeProcessUnderProgress(CoreProgressManager.java:532)
+	at com.intellij.openapi.progress.impl.ProgressManagerImpl.executeProcessUnderProgress(ProgressManagerImpl.java:86)
+	at com.intellij.codeInsight.daemon.impl.PassExecutorService$ScheduledPass.doRun(PassExecutorService.java:422)
+	at com.intellij.codeInsight.daemon.impl.PassExecutorService$ScheduledPass.lambda$run$0(PassExecutorService.java:398)
+	at com.intellij.openapi.application.impl.ReadMostlyRWLock.executeByImpatientReader(ReadMostlyRWLock.java:164)
+	at com.intellij.openapi.application.impl.ApplicationImpl.executeByImpatientReader(ApplicationImpl.java:218)
+	at com.intellij.codeInsight.daemon.impl.PassExecutorService$ScheduledPass.run(PassExecutorService.java:396)
+	at com.intellij.concurrency.JobLauncherImpl$VoidForkJoinTask$1.exec(JobLauncherImpl.java:174)
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289)
+	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:157)
+2019-12-10 15:37:13,979 [  42917]  ERROR - stubs.StubProcessingHelperBase - IntelliJ IDEA 2019.1.3  Build #IC-191.7479.19 
+2019-12-10 15:37:13,980 [  42918]  ERROR - stubs.StubProcessingHelperBase - IntelliJ IDEA 2019.1.3  Build #IC-191.7479.19 
+2019-12-10 15:37:13,980 [  42918]  ERROR - stubs.StubProcessingHelperBase - JDK: 1.8.0_202-release; VM: OpenJDK 64-Bit Server VM; Vendor: JetBrains s.r.o 
+2019-12-10 15:37:13,981 [  42919]  ERROR - stubs.StubProcessingHelperBase - OS: Windows 10 
+2019-12-10 15:37:13,980 [  42918]  ERROR - stubs.StubProcessingHelperBase - JDK: 1.8.0_202-release; VM: OpenJDK 64-Bit Server VM; Vendor: JetBrains s.r.o 
+2019-12-10 15:37:13,981 [  42919]  ERROR - stubs.StubProcessingHelperBase - OS: Windows 10 
+2019-12-10 15:37:13,981 [  42919]  ERROR - stubs.StubProcessingHelperBase - Last Action:  
+2019-12-10 15:37:13,981 [  42919]  ERROR - stubs.StubProcessingHelperBase - Last Action:  
+2019-12-10 15:37:15,090 [  44028]   INFO - ntellij.internal.IconsLoadTime - SVG load time: total=507,23ms, average=5,07ms, median=11,25ms; number of icons: 100 
+2019-12-10 15:38:24,961 [ 113899]   INFO - .script.IdeScriptEngineManager - javax.script.ScriptEngineManager initialized in 30 ms 
+2019-12-10 15:41:05,271 [ 274209]   INFO -  #git4idea.commands.GitHandler - [..\..\TestAscetic] git -c credential.helper= -c core.quotepath=false -c log.showSignature=false add --ignore-errors -A -- ProgettiTest/src/com/fumet/registration/Customer.java 
+2019-12-10 15:41:05,600 [ 274538]   INFO -  #git4idea.commands.GitHandler - [..\..\TestAscetic] git -c credential.helper= -c core.quotepath=false -c log.showSignature=false rm --ignore-unmatch --cached -- ProgettiTest/src/com/fumet/entities/Customer.java 
+2019-12-10 15:41:25,467 [ 294405]   INFO -  #git4idea.commands.GitHandler - [..\..\TestAscetic] git -c credential.helper= -c core.quotepath=false -c log.showSignature=false add --ignore-errors -A -- ProgettiTest/src/com/fumet/entities/Customer.java 
+2019-12-10 15:41:25,582 [ 294520]   INFO -  #git4idea.commands.GitHandler - [..\..\TestAscetic] git -c credential.helper= -c core.quotepath=false -c log.showSignature=false rm --ignore-unmatch --cached -- ProgettiTest/src/com/fumet/registration/Customer.java 
+2019-12-10 15:42:11,900 [ 340838]   INFO - rationStore.ComponentStoreImpl - Saving Project 'C:\Users\Simone\Desktop\TestAscetic\ProgettiTest' ProgettiTestRunManager took 12 ms 
+2019-12-10 15:42:11,990 [ 340928]   INFO - .changes.ChangeListManagerImpl - Cannot get changes from Git 
+com.intellij.openapi.vcs.VcsException: Cannot get changes from Git
+	at git4idea.status.GitChangeProvider.getChanges(GitChangeProvider.java:107)
+	at com.intellij.openapi.vcs.changes.ChangeListManagerImpl.actualUpdate(ChangeListManagerImpl.java:780)
+	at com.intellij.openapi.vcs.changes.ChangeListManagerImpl.iterateScopes(ChangeListManagerImpl.java:693)
+	at com.intellij.openapi.vcs.changes.ChangeListManagerImpl.lambda$updateImmediately$14(ChangeListManagerImpl.java:595)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.lambda$runProcess$2(CoreProgressManager.java:164)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.registerIndicatorAndRun(CoreProgressManager.java:586)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.executeProcessUnderProgress(CoreProgressManager.java:532)
+	at com.intellij.openapi.progress.impl.ProgressManagerImpl.executeProcessUnderProgress(ProgressManagerImpl.java:86)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.runProcess(CoreProgressManager.java:151)
+	at com.intellij.openapi.vcs.changes.ChangeListManagerImpl.updateImmediately(ChangeListManagerImpl.java:556)
+	at com.intellij.openapi.vcs.changes.ChangeListManagerImpl.lambda$new$0(ChangeListManagerImpl.java:146)
+	at com.intellij.openapi.vcs.changes.UpdateRequestsQueue$MyRunnable.run(UpdateRequestsQueue.java:225)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at com.intellij.util.concurrency.SchedulingWrapper$MyScheduledFutureTask.run(SchedulingWrapper.java:224)
+	at com.intellij.util.concurrency.BoundedTaskExecutor.doRun(BoundedTaskExecutor.java:220)
+	at com.intellij.util.concurrency.BoundedTaskExecutor.access$100(BoundedTaskExecutor.java:26)
+	at com.intellij.util.concurrency.BoundedTaskExecutor$2.lambda$run$0(BoundedTaskExecutor.java:198)
+	at com.intellij.util.ConcurrencyUtil.runUnderThreadName(ConcurrencyUtil.java:224)
+	at com.intellij.util.concurrency.BoundedTaskExecutor$2.run(BoundedTaskExecutor.java:194)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: com.intellij.openapi.progress.ProcessCanceledException
+	at com.intellij.openapi.vcs.changes.UpdatingChangeListBuilder.checkIfDisposed(UpdatingChangeListBuilder.java:43)
+	at com.intellij.openapi.vcs.changes.UpdatingChangeListBuilder.processChangeInList(UpdatingChangeListBuilder.java:58)
+	at com.intellij.openapi.vcs.changes.UpdatingChangeListBuilder.processChange(UpdatingChangeListBuilder.java:53)
+	at git4idea.status.GitChangeProvider.getChanges(GitChangeProvider.java:84)
+	... 22 more
+2019-12-10 15:42:12,532 [ 341470]   INFO - stubs.SerializationManagerImpl - START StubSerializationManager SHUTDOWN 
+2019-12-10 15:42:12,532 [ 341470]   INFO - stubs.SerializationManagerImpl - END StubSerializationManager SHUTDOWN 
+2019-12-10 15:42:12,532 [ 341470]   INFO - il.indexing.FileBasedIndexImpl - START INDEX SHUTDOWN 
+2019-12-10 15:42:12,617 [ 341555]   INFO - il.indexing.FileBasedIndexImpl - END INDEX SHUTDOWN 
+2019-12-10 15:42:12,643 [ 341581]   INFO - org.jetbrains.io.BuiltInServer - web server stopped 
+2019-12-10 15:42:12,674 [ 341612]   INFO - Types.impl.FileTypeManagerImpl - FileTypeManager: 0 auto-detected files
+Elapsed time on auto-detect: 0 ms 
+2019-12-10 15:42:12,681 [ 341619]   INFO - pl.local.NativeFileWatcherImpl - Watcher terminated with exit code 0 
+2019-12-10 15:42:12,682 [ 341620]   INFO - newvfs.persistent.PersistentFS - VFS dispose started 
+2019-12-10 15:42:12,786 [ 341724]   INFO - newvfs.persistent.PersistentFS - VFS dispose completed 
+2019-12-10 15:42:12,788 [ 341726]   INFO - plication.impl.ApplicationImpl - Write action Statistics:
+Event number:     50
+Total time spent: 1324ms
+Average duration: 26ms
+Median  duration: 2ms
+Max     duration: 284ms (it was 'write action (class com.intellij.refactoring.BaseRefactoringProcessor$$Lambda$3650/504829237)') 
+2019-12-10 15:42:12,789 [ 341727]   INFO - plication.impl.ApplicationImpl - AnAction.update() Statistics:
+Event number:     8265
+Total time spent: 566ms
+Average duration: 0ms
+Median  duration: 0ms
+Max     duration: 244ms (it was 'Run context configuration action update (class com.intellij.execution.actions.RunContextAction)') 
+2019-12-10 15:42:12,789 [ 341727]   INFO - plication.impl.ApplicationImpl - Global instance threads created counter = 19; ProcessIOExecutorService threads: 24 
+2019-12-10 15:42:12,791 [ 341729]   INFO -        #com.intellij.idea.Main - ------------------------------------------------------ IDE SHUTDOWN ------------------------------------------------------ 
+2019-12-10 15:42:12,795 [ 341733]   INFO - org.jetbrains.io.BuiltInServer - web server stopped 
