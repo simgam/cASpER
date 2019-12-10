@@ -49,6 +49,7 @@ public class MethodMover {
      */
     public static void methodWriter(String methodToWrite, PsiMethod actualPsiMethod, PsiClass writePlace, Boolean replace, Project project) {
         Logger logger = Logger.getLogger("methodWriter di MethodMover");
+        logger.setLevel(Level.OFF);
 
         PsiElementFactory elementFactory = JavaPsiFacade.getElementFactory(project);
         PsiMethod newMethod = elementFactory.createMethodFromText(methodToWrite, writePlace);

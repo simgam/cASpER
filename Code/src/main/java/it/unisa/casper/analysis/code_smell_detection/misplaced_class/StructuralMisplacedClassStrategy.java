@@ -57,14 +57,17 @@ public class StructuralMisplacedClassStrategy implements ClassSmellDetectionStra
         BeanComparator comparator = new BeanComparator();
         Collections.sort(dependenciesWithClass, comparator);
 
-        PackageBean firstRankedPackage = dependenciesWithClass.get(dependenciesWithClass.size() - 1);
+        if (dependenciesWithClass.size() != 0) {
+            PackageBean firstRankedPackage = dependenciesWithClass.get(dependenciesWithClass.size() - 1);
 
-        if (numberOfDependenciesWithActualPackage <= firstRankedPackage.getSimilarity() && firstRankedPackage.getSimilarity() != 0 && firstRankedPackage.getSimilarity() > soglia) {
-            pClass.setEnviedPackage(firstRankedPackage);
-            return true;
-        } else {
-            return false;
+            if (numberOfDependenciesWithActualPackage <= firstRankedPackage.getSimilarity() && firstRankedPackage.getSimilarity() != 0 && firstRankedPackage.getSimilarity() > soglia) {
+                pClass.setEnviedPackage(firstRankedPackage);
+                return true;
+            } else {
+                return false;
+            }
         }
+        return false;
     }
 
     public HashMap<String, Double> getThresold(ClassBean pClass) {

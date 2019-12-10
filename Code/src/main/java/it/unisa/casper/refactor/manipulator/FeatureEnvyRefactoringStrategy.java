@@ -156,7 +156,7 @@ public class FeatureEnvyRefactoringStrategy implements RefactoringStrategy {
      *
      * @throws FeatureEnvyException lanciata per segnalare l'impossibilità al fix automatizzato
      */
-    private void otherFeatureEnvy() throws FeatureEnvyException {
+    private void otherFeatureEnvy() {
         //setto le stringe per la costruzione del metodo
         String scope = psiMethod.getModifierList().getText();
         String returnType = psiMethod.getReturnType().getPresentableText();
@@ -247,29 +247,23 @@ public class FeatureEnvyRefactoringStrategy implements RefactoringStrategy {
         if (psiMethod.getReturnType().getCanonicalText() != "void")
             newMethodBody.append("return ");
         //aggiungo i parametri passati dal metodo originario
-        newMethodBody.append(variabileDaTrasformare).append(".").append(psiMethod.getName()).append("(");
+        newMethodBody.append(variabileDaTrasformare + "." + psiMethod.getName() + "(");
         PsiParameter[] parameters1 = psiMethod.getParameterList().getParameters();
         for (int i = 0; i < parameters1.length; i++) {
             PsiParameter parametriDaPassare = parameters1[i];
-            if (parametriDaPassare.getName() != variabileDaTrasformare) {
+            if ((parametriDaPassare.getName() != variabileDaTrasformare) || isStaticMethod) {
                 newMethodBody.append(parametriDaPassare.getName());
-                if (i < parameters1.length - 2) {
-                    newMethodBody.append(",");
-                }
             }
         }
-        if (!newMethodBody.toString().equalsIgnoreCase("")) newMethodBody.append(",");
+
         //controllo se devo passare qualche variabile d'istanza
         PsiField[] fields = psiSourceClass.getFields();
         for (int i = 0; i < fields.length; i++) {
             PsiField variabiliIstanza = fields[i];
             if (psiMethod.getBody().getText().contains(variabiliIstanza.getName())) {
+                if (newMethodBody.charAt(newMethodBody.length() - 1) != '(') newMethodBody.append(", ");
                 newMethodBody.append(variabiliIstanza.getName());
                 othervariables += variabiliIstanza.getType().getPresentableText() + " " + variabiliIstanza.getName();
-                if (i < parameters1.length - 2) {
-                    newMethodBody.append(",");
-                    othervariables += ", ";
-                }
             }
         }
         newMethodBody.append(");\n}");
@@ -279,15 +273,29 @@ public class FeatureEnvyRefactoringStrategy implements RefactoringStrategy {
 
         //Genera nuovo metedo
         scope = "public";
-        if (isStaticMethod)
+        if (isStaticMethod) {
             scope += " static";
+        }
         String s = parameters.replace(")", "");
-        s = s.replace(variabileDaTrasformare + ",", "");
-        s = s.replace(psiDestinationClass.getName(), "");
-        if (s.equalsIgnoreCase("")) s = othervariables + ")";
-        else s += ", " + othervariables + ")";
 
-        body = body.replace(variabileDaTrasformare + ".", "");
+        System.out.println(parameters + "\n" + s + "\n\n");
+
+        if (!isStaticMethod) {
+            s = s.replace(variabileDaTrasformare + ",", "");
+            s = s.replace(variabileDaTrasformare, "");
+            s = s.replace(psiDestinationClass.getName(), "");
+            body = body.replace(variabileDaTrasformare + ".", "");
+        }
+
+        System.out.println(parameters + "\n" + s + "\n\n");
+
+        if (!othervariables.equals("")) {
+            if (!s.equalsIgnoreCase("(")) s += ", ";
+            s = othervariables;
+        }
+        s += ")";
+        System.out.println(parameters + "\n" + s + "\n\n");
+
         textToWrite = MethodMover.buildMethod(scope, returnType, name, s, throwsList, body);
         MethodMover.methodWriter(textToWrite, psiMethod, psiDestinationClass, false, project);
 
@@ -297,7 +305,6 @@ public class FeatureEnvyRefactoringStrategy implements RefactoringStrategy {
      * Metodo che si occupa di fixare il FE se la classe inviata è una variabile d'istanza
      */
     private void instanceVariableFeatureEnvy() {
-
         String scope, returnType, name, parameters, throwsList, body;
         scope = psiMethod.getModifierList().getText();
         returnType = psiMethod.getReturnType().getPresentableText();

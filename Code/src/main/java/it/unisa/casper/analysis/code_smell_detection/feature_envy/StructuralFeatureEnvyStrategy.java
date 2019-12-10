@@ -71,11 +71,16 @@ public class StructuralFeatureEnvyStrategy implements MethodSmellDetectionStrate
             BeanComparator comparator = new BeanComparator();
             Collections.sort(dependenciesWithMethod, comparator);
 
-            ClassBean firstRankedClass = dependenciesWithMethod.get(dependenciesWithMethod.size() - 1);
-            if (numberOfDependenciesWithActualClass <= firstRankedClass.getSimilarity() && firstRankedClass.getSimilarity() != 0 && firstRankedClass.getSimilarity() > soglia) {
-                pMethod.setEnviedClass(firstRankedClass);
-                return true;
+            if (dependenciesWithMethod.size() != 0) {
+                ClassBean firstRankedClass = dependenciesWithMethod.get(dependenciesWithMethod.size() - 1);
+                if (numberOfDependenciesWithActualClass <= firstRankedClass.getSimilarity() && firstRankedClass.getSimilarity() != 0 && firstRankedClass.getSimilarity() > soglia) {
+                    pMethod.setEnviedClass(firstRankedClass);
+                    return true;
+                } else {
+                    return false;
+                }
             }
+
         }
         return false;
     }

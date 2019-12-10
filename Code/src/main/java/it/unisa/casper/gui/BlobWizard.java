@@ -70,12 +70,12 @@ public class BlobWizard extends DialogWrapper {
                     RefactoringManager refactoringManager = new RefactoringManager(refactoringStrategy);
                     refactoringManager.executeRefactor();
 
-                    String[] name = blobClassBean.getFullQualifiedName().replace(".", "/").split("/");
+                    /*String[] name = blobClassBean.getFullQualifiedName().replace(".", "/").split("/");
                     File file = new File(blobClassBean.getPathToFile() + "/" + name[name.length - 1] + ".java");
 
                     if (!file.delete()) {
                         Messages.showMessageDialog("Error during delete of original class, pleace delete it manually", "Attention", Messages.getInformationIcon());
-                    }
+                    }*/
 
                     message = "Blob Corrected, check new classes generated name";
                     Messages.showMessageDialog(message, "Success !", Messages.getInformationIcon());
@@ -87,6 +87,7 @@ public class BlobWizard extends DialogWrapper {
                     e.printStackTrace();
                 } catch (Exception e) {
                     Messages.showMessageDialog("Error during refactoring", "Error", Messages.getErrorIcon());
+                    e.printStackTrace();
                 }
             }
         };

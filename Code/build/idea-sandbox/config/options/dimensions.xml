@@ -5,6 +5,8 @@
     <location key="com.intellij.ide.util.TipDialog.0.0.1920.1080" x="614" y="346" />
     <location key="SettingsEditor.0.0.1920.1080" x="448" y="164" />
     <location key="IDE.errors.dialog.0.0.1920.1080" x="540" y="251" />
+    <location key="NewModule_or_Project.wizard.0.0.1920.1080" x="610" y="201" />
+    <location key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog.0.0.1920.1080" x="690" y="265" />
     <size key="IDE.errors.dialog.0.0.1920.1080" width="840" height="655" />
   </component>
 </application>

@@ -3,6 +3,8 @@
     <option name="recentPaths">
       <list>
         <option value="$USER_HOME$/Desktop/TestAscetic/ProgettiTest" />
+        <option value="$USER_HOME$/Desktop/Book-a-Book2" />
+        <option value="$USER_HOME$/Desktop/Book-a-Book-master/Book-a-Book2" />
       </list>
     </option>
     <option name="openPaths">
@@ -14,18 +16,41 @@
     <option name="pid" value="" />
     <option name="additionalInfo">
       <map>
+        <entry key="$USER_HOME$/Desktop/Book-a-Book-master/Book-a-Book2">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="IC-191.7479.19" />
+              <option name="productionCode" value="IC" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1575998181775" />
+              <option name="buildTimestamp" value="1559024597371" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/Desktop/Book-a-Book2">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="IC-191.7479.19" />
+              <option name="productionCode" value="IC" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1575998628339" />
+              <option name="buildTimestamp" value="1559024623984" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
         <entry key="$USER_HOME$/Desktop/TestAscetic/ProgettiTest">
           <value>
             <RecentProjectMetaInfo>
               <option name="build" value="IC-191.7479.19" />
               <option name="productionCode" value="IC" />
               <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
-              <option name="projectOpenTimestamp" value="1575988615951" />
-              <option name="buildTimestamp" value="1559024629289" />
+              <option name="projectOpenTimestamp" value="1576014318958" />
+              <option name="buildTimestamp" value="1559024596060" />
             </RecentProjectMetaInfo>
           </value>
         </entry>
       </map>
     </option>
+    <option name="lastProjectLocation" value="$USER_HOME$/Desktop/Book-a-Book-master" />
   </component>
 </application>

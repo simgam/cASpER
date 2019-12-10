@@ -243,8 +243,9 @@ public class PsiParser implements Parser {
 
         List<String> imports = new ArrayList<>();
         for (PsiElement e : ((PsiJavaFile) psiClass.getContainingFile()).getImportList().getChildren()) {
-            if (!e.getText().contains("\n")){
-                imports.add(e.getText());}
+            if (!e.getText().contains("\n")) {
+                imports.add(e.getText());
+            }
         }
         builder.setImports(imports);
         return builder.build();
@@ -268,7 +269,12 @@ public class PsiParser implements Parser {
         // controllo se nel metodo ci sono variabili d'istanza
         try {
             PsiField[] fields = psiMethod.getContainingClass().getFields();
-            String methodBody = psiMethod.getBody().getText();
+            String methodBody;
+            if (psiMethod.getBody() == null) {
+                methodBody = "";
+            } else {
+                methodBody = psiMethod.getBody().getText();
+            }
             for (PsiField field : fields) {
                 if (methodBody.contains(field.getName()))
                     list.add(parse(field));

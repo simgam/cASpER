@@ -1,5 +1,6 @@
 package it.unisa.casper.refactor.manipulator;
 
+import com.intellij.openapi.command.WriteCommandAction;
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.*;
 import com.intellij.psi.search.GlobalSearchScope;
@@ -32,10 +33,11 @@ public class BlobRefatoringStrategy implements RefactoringStrategy {
         String pathClass = originalClass.getPathToFile();
         String incopletePath = pathClass.substring(0, pathClass.lastIndexOf('/'));
         String packageName = originalClass.getBelongingPackage().getFullQualifiedName();
-        List<PsiMethod> methodsToMove;
+        List<PsiMethod> methodsToMove = null;
         List<PsiField> fieldsToMove;
         List<PsiClass> innerClasses;
         JavaPsiFacade javaPsiFacade = JavaPsiFacade.getInstance(project);
+        psiOriginalClass = PsiUtil.getPsi(originalClass, project);
 
         for (ClassBean classBean : splittedList) {
             methodsToMove = new ArrayList<>();
@@ -43,18 +45,14 @@ public class BlobRefatoringStrategy implements RefactoringStrategy {
             innerClasses = new ArrayList<>();
             String classShortName = classBean.getFullQualifiedName().substring(classBean.getFullQualifiedName().lastIndexOf('.') + 1);
 
-            psiOriginalClass = PsiUtil.getPsi(originalClass, project);
-
             // creo una lista di metodi
             for (MethodBean metodoSplittato : classBean.getMethodList()) {
-                //System.out.println(psiOriginalClass.getConstructors().length);
                 String methodShortName = metodoSplittato.getFullQualifiedName().substring(metodoSplittato.getFullQualifiedName().lastIndexOf('.') + 1);
                 methodsToMove.add(psiOriginalClass.findMethodsByName(methodShortName, true)[0]);
             }
 
             //creo una lista di fields
             for (InstanceVariableBean instanceVariableBean : classBean.getInstanceVariablesList()) {
-                //System.out.println(psiOriginalClass.findFieldByName(instanceVariableBean.getFullQualifiedName(), true).getName());
                 fieldsToMove.add(psiOriginalClass.findFieldByName(instanceVariableBean.getFullQualifiedName(), true));
             }
 
@@ -65,37 +63,61 @@ public class BlobRefatoringStrategy implements RefactoringStrategy {
             try {
                 ExtractClassProcessor processor = new ExtractClassProcessor(psiOriginalClass, fieldsToMove, methodsToMove, innerClasses, packageName, classShortName);
                 processor.run();
-
             } catch (Exception e) {
                 e.printStackTrace();
                 throw new BlobException(e.getMessage());
             }
         }
 
-        File file;
         PsiClass aClass;
-        int i = 0;
+        final int[] i = {0};
         for (ClassBean classToMove : splittedList) {
             aClass = javaPsiFacade.findClasses(classToMove.getFullQualifiedName(), GlobalSearchScope.allScope(project))[0];
 
             methodsToMove = new ArrayList<>();
             methodsToMove.add(aClass.getMethods()[0]);
-            ExtractClassProcessor processor = new ExtractClassProcessor(aClass, new ArrayList<>(), methodsToMove, new ArrayList<>(), packageName, "classForFixingBlobClass"+ i);
+            ExtractClassProcessor processor = new ExtractClassProcessor(aClass, new ArrayList<>(), methodsToMove, new ArrayList<>(), packageName, "classForFixingBlobClass" + i[0]);
             processor.run();
-            i++;
+            i[0]++;
         }
-        i = 0;
-        String path = "";
-        while (i < splittedList.size()) {
-            path = incopletePath + "/" + packageName.substring(packageName.lastIndexOf(".") + 1);
-            path = path.substring(packageName.lastIndexOf("/") + 1) + "/classForFixingBlobClass" + i + ".java";
-            file = new File(path);
-            file.delete();
-            i++;
-        }
+
+        WriteCommandAction.runWriteCommandAction(project, () -> {
+            i[0] = 0;
+            int j;
+            List<MethodBean> listName;
+            boolean found = false;
+            for (PsiMethod metodoSplittato : psiOriginalClass.getMethods()) {
+
+                while (i[0] < splittedList.size() && !found) {
+                    j = 0;
+                    listName = splittedList.get(i[0]).getMethodList();
+                    while (j < listName.size() && !listName.get(j).getFullQualifiedName().contains(metodoSplittato.getName())) {
+
+                        j++;
+                    }
+                    if (j < listName.size()) found = true;
+                    i[0]++;
+                }
+                createDelegation(metodoSplittato, "Class_" + (i[0]));
+                i[0] = 0;
+                found = false;
+            }
+
+            i[0] = 0;
+            File file;
+            String path = "";
+            while (i[0] < splittedList.size()) {
+                path = incopletePath + "/" + packageName.substring(packageName.lastIndexOf(".") + 1);
+                path = path.substring(packageName.lastIndexOf("/") + 1) + "/classForFixingBlobClass" + i[0] + ".java";
+                file = new File(path);
+                file.delete();
+                i[0]++;
+            }
+        });
+
     }
 
-    private void createDelegation(PsiMethod metodoSplittato) {
+    private void createDelegation(PsiMethod metodoSplittato, String newName) {
         //ottengo il metodo da aggiornare
         PsiMethod metodoDaAggiornare = psiOriginalClass.findMethodsByName(metodoSplittato.getName(), true)[0];
         //Creo il corpo del metodo da modificare
@@ -106,7 +128,7 @@ public class BlobRefatoringStrategy implements RefactoringStrategy {
         String throwsList = metodoDaAggiornare.getThrowsList().getText();
         //Creo il nuovo Body
         StringBuilder newMethodBody = new StringBuilder("{\n\t");
-        newMethodBody.append(metodoSplittato.getContainingClass().getQualifiedName() + " variabile = new " + metodoSplittato.getContainingClass().getQualifiedName() + "();\n\t");
+        newMethodBody.append(newName + " variabile = new " + newName + "();\n\t");
         if (metodoDaAggiornare.getReturnType().getCanonicalText() != "void")
             newMethodBody.append("return  ");
         //Setto la lista dei parametri da passare
@@ -123,6 +145,7 @@ public class BlobRefatoringStrategy implements RefactoringStrategy {
         parametriDaPassare += ")";
         if (parameters.length() < 3)
             parametriDaPassare = parameters;
+
         newMethodBody.append("variabile." + metodoSplittato.getName() + parametriDaPassare + ";\n}");
         String textToWrite = MethodMover.buildMethod(scope, returnType, name, parameters, throwsList, newMethodBody.toString());
         MethodMover.methodWriter(textToWrite, metodoDaAggiornare, psiOriginalClass, true, project);
