@@ -7,6 +7,8 @@
     <location key="IDE.errors.dialog.0.0.1920.1080" x="540" y="251" />
     <location key="NewModule_or_Project.wizard.0.0.1920.1080" x="610" y="201" />
     <location key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog.0.0.1920.1080" x="690" y="265" />
+    <location key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes.0.0.1920.1080" x="756" y="403" />
     <size key="IDE.errors.dialog.0.0.1920.1080" width="840" height="655" />
+    <size key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes.0.0.1920.1080" width="407" height="242" />
   </component>
 </application>

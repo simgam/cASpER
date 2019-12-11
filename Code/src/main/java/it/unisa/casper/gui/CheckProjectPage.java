@@ -89,7 +89,7 @@ public class CheckProjectPage extends DialogWrapper {
         blobThresholdName.add("FeatureSUM");
         blobThresholdName.add("ELOC");
         promiscuousThresholdName = new ArrayList<String>();
-        promiscuousThresholdName.add("MIntraC");
+        promiscuousThresholdName.add("InverseMIntraC");
         promiscuousThresholdName.add("MInterC");
 
         promiscuousPackageList = new ArrayList<PackageBean>();
@@ -155,8 +155,8 @@ public class CheckProjectPage extends DialogWrapper {
 
         for (PackageBean p : promiscuousPackageList) {
             for (CodeSmell s : p.getAffectedSmell()) {
-                if (s.getIndex().containsKey("MIntraC") && s.getIndex().containsKey("MInterC")) {
-                    s.getIndex().put("MIntraC", CKMetrics.computeMediumIntraConnectivity(p));
+                if (s.getIndex().containsKey("InverseMIntraC") && s.getIndex().containsKey("MInterC")) {
+                    s.getIndex().put("InverseMIntraC", CKMetrics.computeMediumIntraConnectivity(p));
                     s.getIndex().put("MInterC", CKMetrics.computeMediumInterConnectivity(p, packages));
                 }
             }
@@ -270,12 +270,6 @@ public class CheckProjectPage extends DialogWrapper {
         coseno.setFont(new Font("Arial", Font.PLAIN, 12));
         coseno.setPaintTicks(true);
         coseno.setMinorTickSpacing(10);
-//        if (sogliaCoseno <= 0.5) {
-//            coseno.setMinimum((int) (0));
-//        } else {
-//            coseno.setMinimum(50);
-//        }
-//        ;
         coseno.setValue((int) (sogliaCoseno * 100));
         bar1.add(coseno);
 
@@ -439,7 +433,7 @@ public class CheckProjectPage extends DialogWrapper {
         for (j = 1; j <= ThresholdName.size(); j++) {
 
             valDipendenza.add(new JTextField());
-            if (ThresholdName.get(j - 1).equalsIgnoreCase("mintrac") || ThresholdName.get(j - 1).equalsIgnoreCase("minterc")) {
+            if (ThresholdName.get(j - 1).equalsIgnoreCase("inversemintrac") || ThresholdName.get(j - 1).equalsIgnoreCase("minterc")) {
                 valDipendenza.get(j + pos).setText(((double) threshold.get(ThresholdName.get(j - 1))) / 100 + "");
             } else {
                 valDipendenza.get(j + pos).setText(df2.format(threshold.get(ThresholdName.get(j - 1))));
@@ -450,7 +444,7 @@ public class CheckProjectPage extends DialogWrapper {
                 public void actionPerformed(ActionEvent c) {
                     JTextField f = (JTextField) c.getSource();
                     try {
-                        if (ThresholdName.get(finalJ - 1).equalsIgnoreCase("mintrac") || ThresholdName.get(finalJ - 1).equalsIgnoreCase("minterc")) {
+                        if (ThresholdName.get(finalJ - 1).equalsIgnoreCase("inversemintrac") || ThresholdName.get(finalJ - 1).equalsIgnoreCase("minterc")) {
                             if (Double.parseDouble(f.getText()) < ((double) threshold.get(ThresholdName.get(finalJ - 1))) / 100) {
                                 f.setText(((double) threshold.get(ThresholdName.get(finalJ - 1))) / 100 + "");
                                 JOptionPane.showMessageDialog(null, "Soglia minima non rispettata");
@@ -467,7 +461,7 @@ public class CheckProjectPage extends DialogWrapper {
                             }
                         }
                     } catch (NumberFormatException e) {
-                        if (ThresholdName.get(finalJ - 1).equalsIgnoreCase("mintrac") || ThresholdName.get(finalJ - 1).equalsIgnoreCase("minterc")) {
+                        if (ThresholdName.get(finalJ - 1).equalsIgnoreCase("inversemintrac") || ThresholdName.get(finalJ - 1).equalsIgnoreCase("minterc")) {
                             f.setText(((double) threshold.get(ThresholdName.get(finalJ - 1))) / 100 + "");
                         } else {
                             f.setText(threshold.get(ThresholdName.get(finalJ - 1)) + "");
@@ -486,7 +480,7 @@ public class CheckProjectPage extends DialogWrapper {
             scritta.setHorizontalAlignment(SwingConstants.CENTER);
             livello.add(scritta);
             livello.add(valDipendenza.get(j + pos));
-            if (ThresholdName.get(j - 1).equalsIgnoreCase("mintrac") || ThresholdName.get(j - 1).equalsIgnoreCase("minterc")) {
+            if (ThresholdName.get(j - 1).equalsIgnoreCase("inversemintrac") || ThresholdName.get(j - 1).equalsIgnoreCase("minterc")) {
                 vincolo = new JLabel("valore in [" + ((double) threshold.get(ThresholdName.get(finalJ - 1))) / 100 + ";1]");
             } else {
                 vincolo = new JLabel("valore min = " + threshold.get(ThresholdName.get(j - 1)));
@@ -548,7 +542,7 @@ public class CheckProjectPage extends DialogWrapper {
                     }
 
                 } catch (ArrayIndexOutOfBoundsException ex) {
-                    String message = "Seleziona un elemento";
+                    String message = "Select an item";
                     Messages.showMessageDialog(message, "Warning", Messages.getWarningIcon());
                 }
 
@@ -693,15 +687,15 @@ public class CheckProjectPage extends DialogWrapper {
 
                     } else {
                         if (smell.getSmellName().equalsIgnoreCase("promiscuous package") && algoritmi.get("structural" + codeSmell.substring(0, 1)).isSelected() && used.equalsIgnoreCase("structural")) {
-                            Double mintrac = Double.parseDouble(valDipendenza.get(4).getText());
+                            Double inversemintrac = Double.parseDouble(valDipendenza.get(4).getText());
                             Double minterc = Double.parseDouble(valDipendenza.get(5).getText());
-                            if (mintrac <= listThreschold.get("MIntraC") || minterc <= listThreschold.get("MInterC")) {
+                            if (inversemintrac <= listThreschold.get("InverseMIntraC") || minterc <= listThreschold.get("MInterC")) {
                                 complessita += 2;
                                 alto++;
-                                if (listThreschold.get("MIntraC") >= 0.75 || listThreschold.get("MInterC") >= 0.75) {
+                                if (listThreschold.get("InverseMIntraC") >= 0.75 || listThreschold.get("MInterC") >= 0.75) {
                                     alto++;
                                 }
-                                if (mintrac == listThreschold.get("MIntraC") && minterc == listThreschold.get("MInterC")) {
+                                if (inversemintrac == listThreschold.get("InverseMIntraC") && minterc == listThreschold.get("MInterC")) {
                                     basso = true;
                                 }
                             } else {
@@ -719,7 +713,7 @@ public class CheckProjectPage extends DialogWrapper {
                     seconda = (smell.getSmellName().equalsIgnoreCase("Blob") && smell.getAlgoritmsUsed().equalsIgnoreCase("structural") && algoritmi.get("structural" + codeSmell.substring(0, 1)).isSelected() &&
                             (Double.parseDouble(valDipendenza.get(1).getText()) <= listThreschold.get("LCOM") || Double.parseDouble(valDipendenza.get(2).getText()) <= listThreschold.get("featureSum") || Double.parseDouble(valDipendenza.get(3).getText()) <= listThreschold.get("ELOC")));
                     terza = (smell.getSmellName().equalsIgnoreCase("Promiscuous package") && smell.getAlgoritmsUsed().equalsIgnoreCase("structural") && algoritmi.get("structural" + codeSmell.substring(0, 1)).isSelected() &&
-                            (Double.parseDouble(valDipendenza.get(4).getText()) <= listThreschold.get("MIntraC") || Double.parseDouble(valDipendenza.get(5).getText()) <= listThreschold.get("MInterC")));
+                            (Double.parseDouble(valDipendenza.get(4).getText()) <= listThreschold.get("InverseMIntraC") || Double.parseDouble(valDipendenza.get(5).getText()) <= listThreschold.get("MInterC")));
 
                     if (prima || seconda || terza) {
                         tableItem.add(bean);
@@ -737,7 +731,7 @@ public class CheckProjectPage extends DialogWrapper {
                             } else {
                                 if (smell.getSmellName().equalsIgnoreCase("Promiscuous package") && algoritmi.get("structural" + codeSmell.substring(0, 1)).isSelected() && alto > 0) {
                                     HashMap<String, Double> soglie = smell.getIndex();
-                                    tableItem.add(df3.format(soglie.get("MIntraC")) + "-" + df3.format(soglie.get("MInterC")));
+                                    tableItem.add(df3.format(soglie.get("InverseMIntraC")) + "-" + df3.format(soglie.get("MInterC")));
                                 } else {
                                     tableItem.add("---");
                                 }

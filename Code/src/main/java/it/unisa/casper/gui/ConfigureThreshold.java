@@ -169,7 +169,7 @@ public class ConfigureThreshold extends DialogWrapper {
                 if (!s.equalsIgnoreCase("Promiscuous package")) {
                     app.add(new JLabel("Dipendenze ="));
                 } else {
-                    app.add(new JLabel("MIntraC ="));
+                    app.add(new JLabel("InverseMIntraC ="));
                 }
             } else {
                 app.add(new JLabel("LCOM ="));

@@ -512,7 +512,7 @@ public class PromiscuousPackageWizard extends DialogWrapper {
         Vector<String> columnNames = new Vector<String>();
         columnNames.add("");
         columnNames.add("NOC");
-        columnNames.add("MIntraC");
+        columnNames.add("InverseMIntraC");
         columnNames.add("MInterC");
 
         DefaultTableModel model = new DefaultTableModel(columnNames, 0);

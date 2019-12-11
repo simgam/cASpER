@@ -86,7 +86,7 @@ public class PromiscuousPackagePage extends DialogWrapper {
         table = new JBTable();
         Vector<String> tableHeaders = new Vector<>();
         tableHeaders.add("NOC");
-        tableHeaders.add("MIntraC");
+        tableHeaders.add("InverseMIntraC");
         tableHeaders.add("MInterC");
         Vector<String> tableElemet = new Vector<>();
 

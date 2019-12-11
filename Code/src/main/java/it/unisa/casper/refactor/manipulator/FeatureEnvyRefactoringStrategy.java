@@ -10,6 +10,7 @@ import it.unisa.casper.refactor.strategy.RefactoringStrategy;
 import it.unisa.casper.storage.beans.MethodBean;
 
 import javax.swing.*;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -28,6 +29,7 @@ import java.util.logging.Logger;
 
 public class FeatureEnvyRefactoringStrategy implements RefactoringStrategy {
     Logger logger = Logger.getLogger("global");
+    private MethodBean methodToMove;
     //PSI Section
     private PsiClass psiSourceClass, psiDestinationClass;
     private PsiMethod psiMethod;
@@ -38,6 +40,8 @@ public class FeatureEnvyRefactoringStrategy implements RefactoringStrategy {
     private String variabileDaTrasformare = "";
     private boolean isStaticMethod;
 
+    private String scope, returnType, name, parameters, throwsList, body;
+
     /**
      * Costruttore di Feature Envy Refactoring strategy con classe sorgente implicita
      *
@@ -46,11 +50,20 @@ public class FeatureEnvyRefactoringStrategy implements RefactoringStrategy {
      */
     public FeatureEnvyRefactoringStrategy(MethodBean methodToMove, Project project) {
         this.project = project;
+        this.methodToMove = methodToMove;
         psiMethod = PsiUtil.getPsi(methodToMove, project);
         psiSourceClass = PsiUtil.getPsi(methodToMove.getBelongingClass(), project);
         psiDestinationClass = PsiUtil.getPsi(methodToMove.getEnviedClass(), project);
         fixtype = selectFixingStrategy();
         isStaticMethod = methodToMove.getStaticMethod();
+        //setto le stringe per la costruzione del metodo
+        scope = psiMethod.getModifierList().getText();
+        returnType = psiMethod.getReturnType().getPresentableText();
+        name = psiMethod.getName();
+        parameters = psiMethod.getParameterList().getText();
+        throwsList = psiMethod.getThrowsList().getText();
+        body = psiMethod.getBody().getText();
+
         logger.setLevel(Level.OFF);
     }
 
@@ -61,20 +74,36 @@ public class FeatureEnvyRefactoringStrategy implements RefactoringStrategy {
      */
     @Override
     public void doRefactor() throws FeatureEnvyException {
-        try {
-            controlName();
-            switch (fixtype) {
-                case 1:
-                    instanceVariableFeatureEnvy();
-                    break;
-                case 2:
-                    parametersFeatureEnvy();
-                    break;
-                case 0:
-                    otherFeatureEnvy();
+        int i = 0;
+        String nameMethodCall;
+        boolean controllo = false;
+        List<MethodBean> methodsCall = methodToMove.getMethodsCalls();
+
+        while (i < methodsCall.size() && !controllo) {
+            nameMethodCall = methodsCall.get(i).getFullQualifiedName();
+            nameMethodCall = nameMethodCall.substring(nameMethodCall.lastIndexOf(".") + 1);
+            if (body.contains(nameMethodCall) && !body.contains("." + nameMethodCall)) controllo = true;
+            i++;
+        }
+
+        if (i >= methodsCall.size()) {
+            try {
+                controlName();
+                switch (fixtype) {
+                    case 1:
+                        instanceVariableFeatureEnvy();
+                        break;
+                    case 2:
+                        parametersFeatureEnvy();
+                        break;
+                    case 0:
+                        otherFeatureEnvy();
+                }
+            } catch (Exception e) {
+                throw new FeatureEnvyException(e.getMessage());
             }
-        } catch (Exception e) {
-            throw new FeatureEnvyException(e.getMessage());
+        } else {
+            throw new FeatureEnvyException("Extract methods application is required.\nThis type of refactoring is not yet possible");
         }
     }
 
@@ -97,12 +126,15 @@ public class FeatureEnvyRefactoringStrategy implements RefactoringStrategy {
                     while (i < equalMethod.getParameters().length && equalMethod.getParameters()[i].getType().toString().equals(psiMethod.getParameters()[i].getType().toString())) {
                         i++;
                     }
-                    if (i >= equalMethod.getParameters().length)
+                    if (i >= equalMethod.getParameters().length) {
                         psiMethod.setName(JOptionPane.showInputDialog("Homonymous class present. Enter new name:", psiMethod.getName() + "_2"));
+                        name = psiMethod.getName();
+                    }
                 }
             }
         } catch (Exception e) {
             psiMethod.setName(psiMethod.getName() + "_2");
+            name = psiMethod.getName();
         }
     }
 
@@ -115,27 +147,27 @@ public class FeatureEnvyRefactoringStrategy implements RefactoringStrategy {
      * @return Numero di selezione della strategia di fixing
      */
     private int selectFixingStrategy() {
-        {//Controllo se si tratta di una Variabile d'istanza
-            PsiField[] psiFields = psiSourceClass.getFields();
-            for (PsiField field : psiFields) {
-                if (psiMethod.getBody().getText().contains(field.getName())) {
-                    String a = field.getType().getInternalCanonicalText();
-                    String b = psiDestinationClass.getQualifiedName();
-                    if (a.equals(b)) {
-                        boolean x = field.getModifierList().getText().contains("static");
-                        boolean y = psiMethod.getModifierList().getText().contains("static");
-                        if ((x || y) && !(x && y))//questo è uno XOR, VERO se e solo se gli ingressi sono diversi tra di loro.
-                        {
-                            logger.severe("selezionata la strategia NESSUNA");
-                            return 0;
-                        }
-                        variabileDaTrasformare = field.getName();
-                        logger.severe("selezionata la strategia VARIABILE D'ISTANZA");
-                        return 1;
+        //Controllo se si tratta di una Variabile d'istanza
+        PsiField[] psiFields = psiSourceClass.getFields();
+        for (PsiField field : psiFields) {
+            if (psiMethod.getBody().getText().contains(field.getName())) {
+                String a = field.getType().getInternalCanonicalText();
+                String b = psiDestinationClass.getQualifiedName();
+                if (a.equals(b)) {
+                    boolean x = field.getModifierList().getText().contains("static");
+                    boolean y = psiMethod.getModifierList().getText().contains("static");
+                    if ((x || y) && !(x && y))//questo è uno XOR, VERO se e solo se gli ingressi sono diversi tra di loro.
+                    {
+                        logger.severe("selezionata la strategia NESSUNA");
+                        return 0;
                     }
+                    variabileDaTrasformare = field.getName();
+                    logger.severe("selezionata la strategia VARIABILE D'ISTANZA");
+                    return 1;
                 }
             }
         }
+
         //Conrollo i parametri
         PsiParameter[] parameters = psiMethod.getParameterList().getParameters();
         for (PsiParameter parametro : parameters) {
@@ -157,89 +189,72 @@ public class FeatureEnvyRefactoringStrategy implements RefactoringStrategy {
      * @throws FeatureEnvyException lanciata per segnalare l'impossibilità al fix automatizzato
      */
     private void otherFeatureEnvy() {
-        //setto le stringe per la costruzione del metodo
-        String scope = psiMethod.getModifierList().getText();
-        String returnType = psiMethod.getReturnType().getPresentableText();
-        String name = psiMethod.getName();
-        String parameters = psiMethod.getParameterList().getText();
-        String throwsList = psiMethod.getThrowsList().getText();
-        String body = psiMethod.getBody().getText();
         String othervariables = "";
-        String costruttore;
         StringBuilder newMethodBody = new StringBuilder();
         newMethodBody.append("{\n");
         //Modifico il metodo già esistente
         String newName = psiDestinationClass.getName().toLowerCase() + "Refactoring";
 
+        //controllo se nel corpo del metodo affetto si sono chiamate a metodi nella stessa classe belonging
         PsiMethod[] listConstructors = psiDestinationClass.getConstructors();
         int i = 0;
-        while (i < listConstructors.length && listConstructors[i].hasParameters()) {
-            i++;
-        }
-        if (i >= listConstructors.length) {
-            costruttore = MethodMover.buildMethod("public", "", psiDestinationClass.getName(), "()", "", "{}");
-            MethodMover.methodWriter(costruttore, psiMethod, psiDestinationClass, false, project);
-        }
-        //Creo il corpo del metodo da modificare
-        newMethodBody.append(psiDestinationClass.getName() + " " + newName + " = new " + psiDestinationClass.getName() + "();\n");
 
-        if (psiMethod.getReturnType().getCanonicalText() != "void")
-            newMethodBody.append("return ");
-        //aggiungo i parametri passati dal metodo originario
-        newMethodBody.append(newName).append(".").append(psiMethod.getName()).append("(");
-        PsiParameter[] parameters1 = psiMethod.getParameterList().getParameters();
-        for (i = 0; i < parameters1.length; i++) {
-            PsiParameter parametriDaPassare = parameters1[i];
-            if (parametriDaPassare.getName() != variabileDaTrasformare) {
-                newMethodBody.append(parametriDaPassare.getName());
-                if (i < parameters1.length - 2) {
-                    newMethodBody.append(",");
+        //if (i >= methodsCall.size()) {
+        try {
+            i = 0;
+            while (i < listConstructors.length && listConstructors[i].hasParameters()) {
+                i++;
+            }
+            if (i >= listConstructors.length) {
+                String costruttore = MethodMover.buildMethod("public", "", psiDestinationClass.getName(), "()", "", "{}");
+                MethodMover.methodWriter(costruttore, psiMethod, psiDestinationClass, false, project);
+            }
+            //Creo il corpo del metodo da modificare
+            newMethodBody.append(psiDestinationClass.getName() + " " + newName + " = new " + psiDestinationClass.getName() + "();\n");
+
+            if (psiMethod.getReturnType().getCanonicalText() != "void")
+                newMethodBody.append("return ");
+            //aggiungo i parametri passati dal metodo originario
+            newMethodBody.append(newName).append(".").append(psiMethod.getName()).append("(");
+            PsiParameter[] parameters1 = psiMethod.getParameterList().getParameters();
+            for (i = 0; i < parameters1.length; i++) {
+                PsiParameter parametriDaPassare = parameters1[i];
+                if (parametriDaPassare.getName() != variabileDaTrasformare) {
+                    newMethodBody.append(parametriDaPassare.getName());
+                    if (i < parameters1.length - 2) {
+                        newMethodBody.append(",");
+                    }
                 }
             }
-        }
-        //controllo se devo passare qualche variabile d'istanza
-        PsiField[] fields = psiSourceClass.getFields();
-        for (i = 0; i < fields.length; i++) {
-            PsiField variabiliIstanza = fields[i];
-            if (psiMethod.getBody().getText().contains(variabiliIstanza.getName())) {
-                newMethodBody.append(variabiliIstanza.getName());
-                othervariables += variabiliIstanza.getType().getPresentableText() + " " + variabiliIstanza.getName();
-                if (i < fields.length - 2) {
-                    newMethodBody.append(",");
-                    othervariables += ",";
-                }
+            //controllo se devo passare qualche variabile d'istanza
+            PsiField[] fields = psiSourceClass.getFields();
+            for (i = 0; i < fields.length; i++) {
+                othervariables = applySolutionEnvied(othervariables, newMethodBody, fields, i);
             }
+            newMethodBody.append(");\n}");
+            String textToWrite = MethodMover.buildMethod(scope, returnType, name, parameters, throwsList, newMethodBody.toString());
+            MethodMover.methodWriter(textToWrite, psiMethod, psiSourceClass, true, project);
+
+            //Genera nuovo metedo
+            String s = parameters.replace(")", "");
+            scope = "public";
+            if (isStaticMethod) {
+                scope += " static";
+            }
+
+            body = body.replace("this.", "");
+
+            applySolutionBelonging(othervariables, s);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-
-        newMethodBody.append(");\n}");
-        String textToWrite = MethodMover.buildMethod(scope, returnType, name, parameters, throwsList, newMethodBody.toString());
-        MethodMover.methodWriter(textToWrite, psiMethod, psiSourceClass, true, project);
-
-        //Genera nuovo metedo
-        scope = "public";
-        if (isStaticMethod)
-            scope += " static";
-
-        String s = parameters.replace(")", "");
-        s += othervariables + ")";
-        textToWrite = MethodMover.buildMethod(scope, returnType, name, s, throwsList, body);
-        MethodMover.methodWriter(textToWrite, psiMethod, psiDestinationClass, false, project);
-
     }
 
     /**
      * Metodo che si occupa di fixare il FE se la classe inviata è passata come parametro al metodo
      */
     private void parametersFeatureEnvy() {
-        //setto le stringe per la costruzione del metodo
-        String scope = psiMethod.getModifierList().getText();
-        String returnType = psiMethod.getReturnType().getPresentableText();
-        String name = psiMethod.getName();
-        String parameters = psiMethod.getParameterList().getText();
-        String throwsList = psiMethod.getThrowsList().getText();
-        String body = psiMethod.getBody().getText();
         String othervariables = "";
-        //Modifico il metodo da Esistente
         //Creo il corpo del metodo da modificare
         StringBuilder newMethodBody = new StringBuilder();
         newMethodBody.append("{\n");
@@ -259,12 +274,7 @@ public class FeatureEnvyRefactoringStrategy implements RefactoringStrategy {
         //controllo se devo passare qualche variabile d'istanza
         PsiField[] fields = psiSourceClass.getFields();
         for (int i = 0; i < fields.length; i++) {
-            PsiField variabiliIstanza = fields[i];
-            if (psiMethod.getBody().getText().contains(variabiliIstanza.getName())) {
-                if (newMethodBody.charAt(newMethodBody.length() - 1) != '(') newMethodBody.append(", ");
-                newMethodBody.append(variabiliIstanza.getName());
-                othervariables += variabiliIstanza.getType().getPresentableText() + " " + variabiliIstanza.getName();
-            }
+            othervariables = applySolutionEnvied(othervariables, newMethodBody, fields, i);
         }
         newMethodBody.append(");\n}");
 
@@ -272,46 +282,54 @@ public class FeatureEnvyRefactoringStrategy implements RefactoringStrategy {
         MethodMover.methodWriter(textToWrite, psiMethod, psiSourceClass, true, project);
 
         //Genera nuovo metedo
+        String s = parameters.replace(")", "");
         scope = "public";
         if (isStaticMethod) {
             scope += " static";
-        }
-        String s = parameters.replace(")", "");
-
-        System.out.println(parameters + "\n" + s + "\n\n");
-
-        if (!isStaticMethod) {
+        } else {
             s = s.replace(variabileDaTrasformare + ",", "");
             s = s.replace(variabileDaTrasformare, "");
             s = s.replace(psiDestinationClass.getName(), "");
             body = body.replace(variabileDaTrasformare + ".", "");
+            body = body.replace("this.", "");
         }
 
-        System.out.println(parameters + "\n" + s + "\n\n");
+        applySolutionBelonging(othervariables, s);
 
+    }
+
+    /**
+     * Metodo che si applicare la soluzione stabilita alla classe envied
+     */
+    private String applySolutionEnvied(String othervariables, StringBuilder newMethodBody, PsiField[] fields, int i) {
+        PsiField variabiliIstanza = fields[i];
+        if (psiMethod.getBody().getText().contains(variabiliIstanza.getName())) {
+            if (newMethodBody.charAt(newMethodBody.length() - 1) != '(') newMethodBody.append(", ");
+            newMethodBody.append(variabiliIstanza.getName());
+            othervariables += variabiliIstanza.getType().getPresentableText() + " " + variabiliIstanza.getName();
+        }
+        return othervariables;
+    }
+
+    /**
+     * Metodo che si applicare la soluzione stabilita alla classe belonging
+     */
+    private void applySolutionBelonging(String othervariables, String s) {
+        String textToWrite;
         if (!othervariables.equals("")) {
             if (!s.equalsIgnoreCase("(")) s += ", ";
-            s = othervariables;
+            s += othervariables;
         }
         s += ")";
-        System.out.println(parameters + "\n" + s + "\n\n");
 
         textToWrite = MethodMover.buildMethod(scope, returnType, name, s, throwsList, body);
         MethodMover.methodWriter(textToWrite, psiMethod, psiDestinationClass, false, project);
-
     }
 
     /**
      * Metodo che si occupa di fixare il FE se la classe inviata è una variabile d'istanza
      */
     private void instanceVariableFeatureEnvy() {
-        String scope, returnType, name, parameters, throwsList, body;
-        scope = psiMethod.getModifierList().getText();
-        returnType = psiMethod.getReturnType().getPresentableText();
-        name = psiMethod.getName();
-        parameters = psiMethod.getParameterList().getText();
-        throwsList = psiMethod.getThrowsList().getText();
-        body = psiMethod.getBody().getText();
         //controllo se devo passare delle variabili
         PsiField[] fields = psiSourceClass.getFields();
         String parameterstoAdd = "";
@@ -346,6 +364,7 @@ public class FeatureEnvyRefactoringStrategy implements RefactoringStrategy {
         }
         body = body.substring(0, body.length() - 1);
         body += parameterstoAdd + ");\n}";
+        body = body.replace("this.", "");
         s = MethodMover.buildMethod(scope, returnType, name, parameters, throwsList, body);
         MethodMover.methodWriter(s, psiMethod, psiSourceClass, true, project);
     }

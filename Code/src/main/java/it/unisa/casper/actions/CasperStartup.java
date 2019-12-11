@@ -8,7 +8,7 @@ public class CasperStartup {
 
     @NotNull
     public String getComponentName() {
-        return "Ascetic";
+        return "cASpER";
     }
 
     public void initComponent() {

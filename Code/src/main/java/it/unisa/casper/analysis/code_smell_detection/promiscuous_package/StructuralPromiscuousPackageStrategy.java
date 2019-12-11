@@ -10,17 +10,17 @@ import java.util.List;
 public class StructuralPromiscuousPackageStrategy implements PackageSmellDetectionStrategy {
 
     private static List<PackageBean> projectPackages;
-    private static double MIntraC;
+    private static double InverseMIntraC;
     private static double MInterC;
 
-    public StructuralPromiscuousPackageStrategy(List<PackageBean> projectPackages, double MIntraC, double MInterC) {
+    public StructuralPromiscuousPackageStrategy(List<PackageBean> projectPackages, double InverseMIntraC, double MInterC) {
         this.projectPackages = projectPackages;
-        this.MIntraC = MIntraC;
+        this.InverseMIntraC = InverseMIntraC;
         this.MInterC = MInterC;
     }
 
     public boolean isSmelly(PackageBean pPackage) {
-        if ((CKMetrics.computeMediumInterConnectivity(pPackage, projectPackages) > MInterC) || (CKMetrics.computeMediumIntraConnectivity(pPackage) > MIntraC)) {
+        if ((CKMetrics.computeMediumInterConnectivity(pPackage, projectPackages) > MInterC) || (CKMetrics.computeMediumIntraConnectivity(pPackage) > InverseMIntraC)) {
             return true;
         }
         return false;
@@ -29,7 +29,7 @@ public class StructuralPromiscuousPackageStrategy implements PackageSmellDetecti
     public HashMap<String, Double> getThresold(PackageBean pPackage) {
         HashMap<String, Double> list = new HashMap<String, Double>();
 
-        list.put("MIntraC", CKMetrics.computeMediumIntraConnectivity(pPackage));
+        list.put("InverseMIntraC", CKMetrics.computeMediumIntraConnectivity(pPackage));
         list.put("MInterC", CKMetrics.computeMediumInterConnectivity(pPackage, projectPackages));
         return list;
     }
