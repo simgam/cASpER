@@ -2,7 +2,7 @@ To be able to install cASpER it is essential to have on your device:
 
      1. IntelliJ IDEA (starting from version 2019.1.3)
   
-  2. the .zip file of the plug-in, downloadable from GitHub from the following link: https://github.com/simgam/cASpER/tree/master/Code/build/distributions/ascetic-1.0-SNAPSHOT.zip
+  2. the .zip file of the plug-in, downloadable from GitHub from the following link: https://github.com/simgam/cASpER/tree/master/Code/build/distributions/casper-1.0-SNAPSHOT.zip
 
 Once the preparations are complete, open the Settings console (via the "File" menu or Ctlr + Alt + s shortcut) and select the "Plugins" sub-item.
 
