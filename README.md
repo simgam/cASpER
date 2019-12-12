@@ -1,3 +1,5 @@
+## How to install
+
 To be able to install cASpER it is essential to have on your device:
 
      1. IntelliJ IDEA (starting from version 2019.1.3)
