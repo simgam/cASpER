@@ -42,7 +42,7 @@ public class Utility {
         return toClean;
     }
 
-    public static void createStopwordListIfNotExists(File stopwordList) throws IOException {
+    public static void createStopwordList(File stopwordList) throws IOException {
 
         stopwordList.createNewFile();
         PrintWriter pw = new PrintWriter(stopwordList);

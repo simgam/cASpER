@@ -6,9 +6,10 @@
   <idea-version since-build="191.7479" until-build="191.*"/>
   <id>it.unisa.casper</id>
   <name>cASpER</name>
-  <vendor email="support@ascengers.it" url="http://www.ascengers.com">Ascengers</vendor>
+  <vendor url="" email="">SESA Lab.</vendor>
   <description>
     A Plug-in for Automated Code Smell Detection and Refactoring
+    
     </description>
   <extensions defaultExtensionNs="com.intellij">
     <checkinHandlerFactory implementation="it.unisa.casper.actions.CommitFactory"/>
@@ -20,12 +21,5 @@
       <action id="it.unisa.casper.actions.ConfigureAction" class="it.unisa.casper.actions.ConfigureAction" text="Configure threshold"/>
     </group>
   </actions>
-  <application-components>
-    <component>
-      <implementation-class>it.unisa.casper.actions.CasperStartup</implementation-class>
-    </component>
-    <component>
-      <implementation-class>it.unisa.casper.actions.FileChangeHandler</implementation-class>
-    </component>
-  </application-components>
+  <application-components/>
 </idea-plugin>

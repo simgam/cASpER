@@ -1,9 +1,11 @@
 package it.unisa.casper.refactor.splitting_algorithm.irEngine;
 
 
-import java.io.*;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Properties;
-import java.util.logging.Logger;
 
 public class ConfigLoader {
     private static Properties config = null;
@@ -21,9 +23,6 @@ public class ConfigLoader {
      * software per far si che le modifiche abbiano effetto.
      */
     public ConfigLoader() {
-        Logger logger = Logger.getLogger("global");
-        logger.severe("PATH DOVE INSERIRE IL FILE DI CONFIGURAZIONE: " + file_config_path);
-
         if (ConfigLoader.config == null) {
             this.loadConfig();
         }
@@ -40,15 +39,15 @@ public class ConfigLoader {
 
         } catch (FileNotFoundException e) {
             // Errore nell'apertura dello stream di input [01]
-            e.printStackTrace();
+
         } catch (IOException e) {
             // Errore nel caricamento del file di configurazione [02]
-            e.printStackTrace();
+
         } finally {
             try {
                 file_conf.close();
             } catch (IOException e) {
-                e.printStackTrace();
+
             }
         }
     }

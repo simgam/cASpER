@@ -14,10 +14,8 @@ import it.unisa.casper.storage.beans.ClassBean;
 import it.unisa.casper.storage.beans.PackageBean;
 
 import javax.swing.*;
-import java.util.logging.Logger;
 
 public class MisplacedClassRefactoringStrategy implements RefactoringStrategy {
-    Logger logger = Logger.getLogger("global");
     private ClassBean classToMove;
     private PackageBean fromPackage, toPackage;
     private Project project;            //Aggiunta variabile d'istanza project
@@ -29,7 +27,6 @@ public class MisplacedClassRefactoringStrategy implements RefactoringStrategy {
      * @param classToMove
      */
     public MisplacedClassRefactoringStrategy(ClassBean classToMove, PackageBean destinationPackage, Project project) {  //Aggiunto il parametro project
-        logger.severe("Oggetto MC_STGY creaton\n");
         this.classToMove = classToMove;
         this.fromPackage = classToMove.getBelongingPackage();
         this.toPackage = destinationPackage;
@@ -40,8 +37,6 @@ public class MisplacedClassRefactoringStrategy implements RefactoringStrategy {
     @Override
     public void doRefactor() throws MisplacedClassException {
         try {
-
-            logger.severe("inizio lo spostamento");
 
             PsiClass psiClass = PsiUtil.getPsi(classToMove, project);
             PsiPackage destinationPackage = JavaPsiFacade.getInstance(project).findPackage(toPackage.getFullQualifiedName());

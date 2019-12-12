@@ -23,14 +23,14 @@ public class MethodByMethodMatrixConstruction {
     public MethodByMethodMatrixConstruction() {
         casperDirectoryPath = System.getProperty("user.home") + "/.casper";
         matrixFolder = new File(casperDirectoryPath + "/matrix");
-        stopwordList = new File(matrixFolder.getAbsolutePath() + "stopword.txt");
+        stopwordList = new File(casperDirectoryPath + "stopwordlist.txt");
     }
 
-    public double[][] buildMethodByMethodMatrix(double pWdcm, double pWssm, double pWcsm, ClassBean pToSplit) throws Exception {
+    public double[][] buildMethodByMethodMatrix(double pWcdm, double pWssm, double pWcsm, ClassBean pToSplit) throws Exception {
 
         if (!stopwordList.exists()) {
             stopwordList.createNewFile();
-            Utility.createStopwordListIfNotExists(stopwordList);
+            Utility.createStopwordList(stopwordList);
         }
 
         File CDMmatrixFile = new File(matrixFolder.getAbsolutePath() + "/" + "CDM_matrix" + pToSplit.getFullQualifiedName() + ".txt");
@@ -92,22 +92,22 @@ public class MethodByMethodMatrixConstruction {
                 if (i != j) {
                     methodSource = vectorOfMethods.elementAt(i);
                     methodTarget = vectorOfMethods.elementAt(j);
-                    CSMmatrix[i][j] = getCSM(methodSource,methodTarget);
+                    CSMmatrix[i][j] = getCSM(methodSource, methodTarget);
                 } else {
-                    SSMmatrix[i][j] = 1.0;
+                    CSMmatrix[i][j] = 1.0;
                 }
-                SSMmatrix[j][i] = SSMmatrix[i][j];
+                CSMmatrix[j][i] = CSMmatrix[i][j];
             }
         }
 
-        CDMmatrix = filterMatrix(CDMmatrix, pWdcm);
+        CDMmatrix = filterMatrix(CDMmatrix, pWcdm);
         CSMmatrix = filterMatrix(CSMmatrix, pWcsm);
         SSMmatrix = filterMatrix(SSMmatrix, pWssm);
 
         for (int i = 0; i < methodByMethodMatrix.length; i++) {
             for (int j = i; j < methodByMethodMatrix.length; j++) {
                 if (i != j) {
-                    methodByMethodMatrix[i][j] = CDMmatrix[i][j] * pWdcm + CSMmatrix[i][j] * pWcsm + SSMmatrix[i][j] * pWssm;
+                    methodByMethodMatrix[i][j] = CDMmatrix[i][j] * pWcdm + CSMmatrix[i][j] * pWcsm + SSMmatrix[i][j] * pWssm;
                 } else {
                     methodByMethodMatrix[i][j] = 1.0;
                 }
@@ -119,11 +119,8 @@ public class MethodByMethodMatrixConstruction {
     }
 
     private double getSSM(List<InstanceVariableBean> variablesSourceMethod, List<InstanceVariableBean> variablesTargetMethod) {
-
         double ssm = 0;
-
         Iterator itSource = variablesSourceMethod.iterator();
-
         int shared = 0;
 
         if (variablesSourceMethod.size() == 0 || variablesTargetMethod.size() == 0) {
@@ -169,26 +166,10 @@ public class MethodByMethodMatrixConstruction {
         return csm;
     }
 
-    private double[][] getCSMmatrix(Vector<MethodBean> methods) {
-
-        double matrix[][] = new double[methods.size()][methods.size()];
-
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix.length; j++) {
-                //if (i==j){
-                matrix[i][j] = 0;
-                //}
-            }
-        }
-        return matrix;
-    }
-
     private static double getCCM(Collection<MethodBean> callsSourceMethod, Collection<MethodBean> callsTargetMethod, String sourceMethodName, String targetMethodName) {
         double ccm = 0;
-
         Iterator itSource = callsSourceMethod.iterator();
         Iterator itTarget = callsTargetMethod.iterator();
-
         int calls = 0;
 
         if (callsSourceMethod.size() == 0 && callsTargetMethod.size() == 0) {

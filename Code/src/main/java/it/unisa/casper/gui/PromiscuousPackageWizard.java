@@ -78,7 +78,7 @@ public class PromiscuousPackageWizard extends DialogWrapper {
                     out.write("success");
                     close(0);
                 } catch (IOException e) {
-                    e.printStackTrace();
+
                 } catch (Exception e) {
                     Messages.showMessageDialog("Error during refactoring", "Error", Messages.getErrorIcon());
                 }
@@ -286,12 +286,12 @@ public class PromiscuousPackageWizard extends DialogWrapper {
                                 Messages.showMessageDialog(message, "Oh no", Messages.getErrorIcon());
                             }
                         } catch (ArrayIndexOutOfBoundsException ex) {
-                            String message = "Seleziona un elemento";
+                            String message = "Select au item";
                             Messages.showMessageDialog(message, "Warning", Messages.getWarningIcon());
                         }
                         ;
                     } else {
-                        String message = "Non puoi spostare una classe nel package in cui \u00E8 gi\u00E0 presente";
+                        String message = "You cannot move a class to the package where it is already present";
                         Messages.showMessageDialog(message, "Error", Messages.getErrorIcon());
                     }
                 }
@@ -331,12 +331,12 @@ public class PromiscuousPackageWizard extends DialogWrapper {
                             }
 
                         } catch (ArrayIndexOutOfBoundsException ex) {
-                            String message = "Seleziona un elemento";
+                            String message = "Select an item";
                             Messages.showMessageDialog(message, "Warning", Messages.getWarningIcon());
                         }
                         ;
                     } else {
-                        String message = "Non puoi spostare una classe nel package in cui \u00E8 gi\u00E0 presente";
+                        String message = "You cannot move a class to the package where it is already present";
                         Messages.showMessageDialog(message, "Error", Messages.getErrorIcon());
                     }
                 }

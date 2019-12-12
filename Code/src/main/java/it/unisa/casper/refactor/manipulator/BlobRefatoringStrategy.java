@@ -64,7 +64,7 @@ public class BlobRefatoringStrategy implements RefactoringStrategy {
                 ExtractClassProcessor processor = new ExtractClassProcessor(psiOriginalClass, fieldsToMove, methodsToMove, innerClasses, packageName, classShortName);
                 processor.run();
             } catch (Exception e) {
-                e.printStackTrace();
+
                 throw new BlobException(e.getMessage());
             }
         }
@@ -128,7 +128,7 @@ public class BlobRefatoringStrategy implements RefactoringStrategy {
         String throwsList = metodoDaAggiornare.getThrowsList().getText();
         //Creo il nuovo Body
         StringBuilder newMethodBody = new StringBuilder("{\n\t");
-        newMethodBody.append(newName + " variabile = new " + newName + "();\n\t");
+        newMethodBody.append(newName + " variable = new " + newName + "();\n\t");
         if (metodoDaAggiornare.getReturnType().getCanonicalText() != "void")
             newMethodBody.append("return  ");
         //Setto la lista dei parametri da passare
@@ -146,7 +146,7 @@ public class BlobRefatoringStrategy implements RefactoringStrategy {
         if (parameters.length() < 3)
             parametriDaPassare = parameters;
 
-        newMethodBody.append("variabile." + metodoSplittato.getName() + parametriDaPassare + ";\n}");
+        newMethodBody.append("variable." + metodoSplittato.getName() + parametriDaPassare + ";\n}");
         String textToWrite = MethodMover.buildMethod(scope, returnType, name, parameters, throwsList, newMethodBody.toString());
         MethodMover.methodWriter(textToWrite, metodoDaAggiornare, psiOriginalClass, true, project);
     }

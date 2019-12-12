@@ -13,14 +13,12 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import java.util.logging.Logger;
 
 /**
  * Promiscuous Package Refactor Strategy (PP Refactor) è la classe che si occupa del Refactor degli smells di tipo Promiscuous Package
  */
 
 public class PromiscuousPackageRefactoringStrategy implements RefactoringStrategy {
-    Logger logger = Logger.getLogger("global");
 
     private PackageBean packageBeanSource;
     private List<PackageBean> newPackages;
@@ -34,7 +32,6 @@ public class PromiscuousPackageRefactoringStrategy implements RefactoringStrateg
      * @param project           Progetto nel quale sono presenti i PackageBean
      */
     public PromiscuousPackageRefactoringStrategy(PackageBean packageBeanSource, Collection<PackageBean> newPackages, Project project) {
-        logger.severe("oggetto PP_STGY creato\n");
         this.packageBeanSource = packageBeanSource;
         this.newPackages = (List<PackageBean>) newPackages;
         this.project = project;
@@ -104,7 +101,7 @@ public class PromiscuousPackageRefactoringStrategy implements RefactoringStrateg
                         ExtractClassProcessor extractClassProcessor = new ExtractClassProcessor(aClass, psiFields, psiMethods, psiInnerClasses, toPackage.getFullQualifiedName(), aClass.getName());
                         extractClassProcessor.run();
                     } catch (Exception e) {
-                        e.printStackTrace();
+
                         throw new PromiscuousPackageException(e.getMessage());
                     }
                 }
@@ -144,7 +141,7 @@ public class PromiscuousPackageRefactoringStrategy implements RefactoringStrateg
 
         } catch (
                 Exception e) {
-            e.printStackTrace();
+
             throw new PromiscuousPackageException(e.getMessage());
 
         }

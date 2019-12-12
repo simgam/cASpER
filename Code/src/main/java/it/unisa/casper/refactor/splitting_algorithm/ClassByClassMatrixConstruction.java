@@ -22,7 +22,7 @@ public class ClassByClassMatrixConstruction {
     public ClassByClassMatrixConstruction() {
         casperDirectoryPath = System.getProperty("user.home") + "/.casper";
         matrixFolder = new File(casperDirectoryPath + "/matrix");
-        stopwordList = new File(matrixFolder.getAbsolutePath() + "stopword.txt");
+        stopwordList = new File(casperDirectoryPath + "/stopwordlist.txt");
     }
 
     public double[][] buildClassByClassMatrix(double pWicp, double pWccbc, PackageBean pToSplit) throws Exception {
@@ -30,15 +30,21 @@ public class ClassByClassMatrixConstruction {
         Collection<ClassBean> classes = pToSplit.getClassList();
         Iterator<ClassBean> it = classes.iterator();
         ClassBean tmpClass;
+
+        if (!stopwordList.exists()) {
+            stopwordList.createNewFile();
+            Utility.createStopwordList(stopwordList);
+        }
+
+        File ICPmatrixFile = new File(matrixFolder.getAbsolutePath() + "/" + "ICP_matrix" + pToSplit.getFullQualifiedName() + ".txt");
+        File CCBCmatrixFile = new File(matrixFolder.getAbsolutePath() + "/" + "CCBC_matrix" + pToSplit.getFullQualifiedName() + ".txt");
+
         Vector<ClassBean> vectorOfClasses = new Vector<ClassBean>();
         double[][] classByClassMatrix = new double[classes.size()][classes.size()];
         double[][] ICPmatrix = new double[classByClassMatrix.length][classByClassMatrix.length];
         double[][] CCBCmatrix = new double[classByClassMatrix.length][classByClassMatrix.length];
 
         matrixFolder.mkdirs();
-        Utility.createStopwordListIfNotExists(stopwordList);
-        File ICPmatrixFile = new File(matrixFolder.getAbsolutePath() + "/" + "ICP_matrix" + pToSplit.getFullQualifiedName() + ".txt");
-        File CCBCmatrixFile = new File(matrixFolder.getAbsolutePath() + "/" + "CCBC_matrix" + pToSplit.getFullQualifiedName() + ".txt");
 
         while (it.hasNext()) {
             tmpClass = (ClassBean) it.next();

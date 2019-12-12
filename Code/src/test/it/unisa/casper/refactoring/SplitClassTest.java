@@ -295,7 +295,7 @@ public class SplitClassTest {
         HashMap<String, ClassBean> hash = new HashMap<String, ClassBean>();
         hash.put("balance", new ClassBean.Builder("Double", "").build());
         metodo = new MethodBean.Builder("blob.package.BankAccount.BankAccount", "this.balance = balance;")
-                .setReturnType(new ClassBean.Builder("void","").build())
+                .setReturnType(new ClassBean.Builder("void", "").build())
                 .setInstanceVariableList(instancesBank)
                 .setMethodsCalls(vuota)
                 .setParameters(hash)
@@ -483,7 +483,7 @@ public class SplitClassTest {
         hash.put("unformattedNumber", new ClassBean.Builder("String", "").build());
 
         metodo = new MethodBean.Builder("blob.package.Phone.Phone", "this.unformattedNumber = unformattedNumber;")
-                .setReturnType(new ClassBean.Builder("void","").build())
+                .setReturnType(new ClassBean.Builder("void", "").build())
                 .setInstanceVariableList(instances)
                 .setMethodsCalls(vuota)
                 .setParameters(hash)
@@ -617,7 +617,7 @@ public class SplitClassTest {
         hash.put("età", new ClassBean.Builder("int", "").build());
         metodo = new MethodBean.Builder("blob.package.Cliente.Cliente", "this.name = name;\n" +
                 "\t\tthis.età = età;")
-                .setReturnType(new ClassBean.Builder("void","").build())
+                .setReturnType(new ClassBean.Builder("void", "").build())
                 .setInstanceVariableList(instances)
                 .setMethodsCalls(vuota)
                 .setParameters(hash)
@@ -728,7 +728,7 @@ public class SplitClassTest {
         hash = new HashMap<String, ClassBean>();
         hash.put("nome_Ristorante", new ClassBean.Builder("String", "").build());
         metodo = new MethodBean.Builder("blob.package.Ristorante.Ristorante", "this.nome_Ristorante = nome_Ristorante;")
-                .setReturnType(new ClassBean.Builder("void","").build())
+                .setReturnType(new ClassBean.Builder("void", "").build())
                 .setInstanceVariableList(instances)
                 .setMethodsCalls(vuota)
                 .setParameters(hash)
@@ -770,7 +770,7 @@ public class SplitClassTest {
         instances.getList().remove(new InstanceVariableBean("name", "String", "", "private "));
         instances.getList().add(new InstanceVariableBean("età", "int", "", "private "));
         metodo = new MethodBean.Builder("blob.package.Cliente.setNome_Ristorante", "this.nome_Ristorante = nome_Ristorante;")
-                .setReturnType(new ClassBean.Builder("void","").build())
+                .setReturnType(new ClassBean.Builder("void", "").build())
                 .setInstanceVariableList(instances)
                 .setMethodsCalls(vuota)
                 .setParameters(hash)

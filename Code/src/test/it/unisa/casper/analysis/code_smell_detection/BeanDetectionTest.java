@@ -60,7 +60,7 @@ public class BeanDetectionTest {
         hash.put("unformattedNumber", new ClassBean.Builder("String", "").build());
 
         metodo = new MethodBean.Builder("blob.package.Phone.Phone", "this.unformattedNumber = unformattedNumber;")
-                .setReturnType(new ClassBean.Builder("void","").build())
+                .setReturnType(new ClassBean.Builder("void", "").build())
                 .setInstanceVariableList(instances)
                 .setMethodsCalls(new MethodList())
                 .setParameters(new HashMap<String, ClassBean>())

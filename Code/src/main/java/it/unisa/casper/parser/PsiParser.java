@@ -22,15 +22,11 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.util.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import java.util.regex.Pattern;
 
-//import it.unisa.casper.storage.repository.*;
 //import it.unisa.casper.storage.beans.*;
 
 public class PsiParser implements Parser {
-    Logger logger = Logger.getLogger("global");
     private Project project;
     private final List<PackageBean> projectPackages;
     private static String path;
@@ -39,7 +35,6 @@ public class PsiParser implements Parser {
         this.project = project;
         path = project.getBasePath();
         projectPackages = new ArrayList<PackageBean>();
-        logger.setLevel(Level.OFF);
     }
 
     @Override
@@ -65,8 +60,6 @@ public class PsiParser implements Parser {
                 BufferedReader b = new BufferedReader(f);
 
                 String[] list = null;
-                double sogliaCoseno;
-                int sogliaDip;
                 for (String s : smell) {
                     list = b.readLine().split(",");
                     coseno.put("coseno" + s, Double.parseDouble(list[0]));
@@ -80,7 +73,7 @@ public class PsiParser implements Parser {
                     }
                 }
             } catch (Exception e) {
-                e.printStackTrace();
+
             }
 
             for (PackageBean packageBean : projectPackages) {
@@ -279,8 +272,8 @@ public class PsiParser implements Parser {
                 if (methodBody.contains(field.getName()))
                     list.add(parse(field));
             }
-        } catch (NullPointerException npe) {
-            npe.printStackTrace();
+        } catch (NullPointerException e) {
+
         }
         InstanceVariableList instanceVariableList = new InstanceVariableList();
         instanceVariableList.setList(list);
@@ -431,11 +424,9 @@ public class PsiParser implements Parser {
             public void visitFile(final PsiFile file) {
                 if (file instanceof PsiJavaFile) {
                     PsiJavaFile psiJavaFile = (PsiJavaFile) file;
-                    final PsiPackage aPackage =
-                            JavaPsiFacade.getInstance(project).findPackage(psiJavaFile.getPackageName());
+                    final PsiPackage aPackage = JavaPsiFacade.getInstance(project).findPackage(psiJavaFile.getPackageName());
                     if (aPackage != null) {
                         foundPackages.add(aPackage);
-                        //logger.severe("found " + aPackage.getQualifiedName());//aggiungi logger
                     }
                 }
             }

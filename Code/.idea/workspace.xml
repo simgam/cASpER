@@ -2,52 +2,102 @@
 <project version="4">
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/BeanDetectionTest.java" line="170" mnemonic="1" />
-    <bookmark url="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/manipulator/FeatureEnvyRefactoringStrategy.java" line="84" mnemonic="6" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/manipulator/FeatureEnvyRefactoringStrategy.java" line="79" mnemonic="6" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00a0e477-6dac-423e-898a-87a0f2ac6b60" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/fileContent/fileContent.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/ascetic_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/actions/CasperStartup.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/actions/CasperStartup.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/actions/CasperStartup.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/actions/CommitFactory$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/actions/CommitFactory$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/actions/FileChangeHandler.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/actions/SystemStart.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/actions/SystemStart.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/analysis/code_smell_detection/promiscuous_package/StructuralPromiscuousPackageStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/analysis/code_smell_detection/promiscuous_package/StructuralPromiscuousPackageStrategy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/gui/CheckProjectPage$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/gui/CheckProjectPage$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/analysis/code_smell_detection/blob/StructuralBlobStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/analysis/code_smell_detection/blob/StructuralBlobStrategy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/analysis/code_smell_detection/smellynessMetricProcessing/SmellynessMetric.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/analysis/code_smell_detection/smellynessMetricProcessing/SmellynessMetric.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/gui/BlobWizard$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/gui/BlobWizard$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/gui/BlobWizard$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/gui/BlobWizard$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/gui/BlobWizard$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/gui/BlobWizard$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/gui/BlobWizard$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/gui/BlobWizard$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/gui/BlobWizard$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/gui/BlobWizard$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/gui/BlobWizard.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/gui/BlobWizard.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/gui/CheckProjectPage$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/gui/CheckProjectPage$4.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/gui/CheckProjectPage$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/gui/CheckProjectPage$5.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/gui/CheckProjectPage$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/gui/CheckProjectPage$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/gui/CheckProjectPage$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/gui/CheckProjectPage$7.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/gui/CheckProjectPage$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/gui/CheckProjectPage$8.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/gui/CheckProjectPage$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/gui/CheckProjectPage$9.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/gui/CheckProjectPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/gui/CheckProjectPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/gui/ConfigureThreshold$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/gui/ConfigureThreshold$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/gui/ConfigureThreshold$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/gui/ConfigureThreshold$7.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/gui/ConfigureThreshold.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/gui/ConfigureThreshold.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/gui/PromiscuousPackagePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/gui/PromiscuousPackagePage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/gui/PromiscuousPackageWizard.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/gui/PromiscuousPackageWizard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/gui/PromiscuousPackageWizard$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/gui/PromiscuousPackageWizard$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/gui/PromiscuousPackageWizard$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/gui/PromiscuousPackageWizard$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/parser/PsiParser$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/parser/PsiParser$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/parser/PsiParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/parser/PsiParser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/refactor/manipulator/BlobRefatoringStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/refactor/manipulator/BlobRefatoringStrategy.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/refactor/manipulator/FeatureEnvyRefactoringStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/refactor/manipulator/FeatureEnvyRefactoringStrategy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/actions/CasperStartup.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/actions/CasperStartup.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/refactor/manipulator/MethodMover.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/refactor/manipulator/MethodMover.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/refactor/manipulator/MisplacedClassRefactoringStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/refactor/manipulator/MisplacedClassRefactoringStrategy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/refactor/manipulator/PromiscuousPackageRefactoringStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/refactor/manipulator/PromiscuousPackageRefactoringStrategy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/refactor/splitting_algorithm/ClassByClassMatrixConstruction.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/refactor/splitting_algorithm/ClassByClassMatrixConstruction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/refactor/splitting_algorithm/MethodByMethodMatrixConstruction.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/refactor/splitting_algorithm/MethodByMethodMatrixConstruction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/refactor/splitting_algorithm/PromiscuousPackageQualityChecker.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/refactor/splitting_algorithm/PromiscuousPackageQualityChecker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/refactor/splitting_algorithm/SplitClasses.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/refactor/splitting_algorithm/SplitClasses.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/refactor/splitting_algorithm/SplitPackages.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/refactor/splitting_algorithm/SplitPackages.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/refactor/splitting_algorithm/Utility.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/refactor/splitting_algorithm/Utility.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/refactor/splitting_algorithm/irEngine/ConfigLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/refactor/splitting_algorithm/irEngine/ConfigLoader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/refactor/splitting_algorithm/irEngine/VectorSpaceModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/refactor/splitting_algorithm/irEngine/VectorSpaceModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/storage/beans/MethodBean$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/storage/beans/MethodBean$Builder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/storage/beans/MethodBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main-instrumented/it/unisa/casper/storage/beans/MethodBean.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/actions/CasperStartup.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/actions/CommitFactory$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/actions/CommitFactory$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/actions/FileChangeHandler.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/actions/SystemStart.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/actions/SystemStart.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/analysis/code_smell_detection/promiscuous_package/StructuralPromiscuousPackageStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/analysis/code_smell_detection/promiscuous_package/StructuralPromiscuousPackageStrategy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/gui/CheckProjectPage$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/gui/CheckProjectPage$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/analysis/code_smell_detection/blob/StructuralBlobStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/analysis/code_smell_detection/blob/StructuralBlobStrategy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/analysis/code_smell_detection/smellynessMetricProcessing/SmellynessMetric.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/analysis/code_smell_detection/smellynessMetricProcessing/SmellynessMetric.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/gui/BlobWizard$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/gui/BlobWizard$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/gui/BlobWizard$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/gui/BlobWizard$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/gui/BlobWizard$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/gui/BlobWizard$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/gui/BlobWizard$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/gui/BlobWizard$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/gui/BlobWizard$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/gui/BlobWizard$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/gui/BlobWizard.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/gui/BlobWizard.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/gui/CheckProjectPage$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/gui/CheckProjectPage$4.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/gui/CheckProjectPage$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/gui/CheckProjectPage$5.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/gui/CheckProjectPage$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/gui/CheckProjectPage$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/gui/CheckProjectPage$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/gui/CheckProjectPage$7.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/gui/CheckProjectPage$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/gui/CheckProjectPage$8.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/gui/CheckProjectPage$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/gui/CheckProjectPage$9.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/gui/CheckProjectPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/gui/CheckProjectPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/gui/ConfigureThreshold$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/gui/ConfigureThreshold$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/gui/ConfigureThreshold$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/gui/ConfigureThreshold$7.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/gui/ConfigureThreshold.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/gui/ConfigureThreshold.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/gui/PromiscuousPackagePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/gui/PromiscuousPackagePage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/gui/PromiscuousPackageWizard.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/gui/PromiscuousPackageWizard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/gui/PromiscuousPackageWizard$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/gui/PromiscuousPackageWizard$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/gui/PromiscuousPackageWizard$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/gui/PromiscuousPackageWizard$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/parser/PsiParser$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/parser/PsiParser$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/parser/PsiParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/parser/PsiParser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/refactor/manipulator/BlobRefatoringStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/refactor/manipulator/BlobRefatoringStrategy.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/refactor/manipulator/FeatureEnvyRefactoringStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/refactor/manipulator/FeatureEnvyRefactoringStrategy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/refactor/manipulator/MethodMover.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/refactor/manipulator/MethodMover.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/refactor/manipulator/MisplacedClassRefactoringStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/refactor/manipulator/MisplacedClassRefactoringStrategy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/refactor/manipulator/PromiscuousPackageRefactoringStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/refactor/manipulator/PromiscuousPackageRefactoringStrategy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/refactor/splitting_algorithm/ClassByClassMatrixConstruction.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/refactor/splitting_algorithm/ClassByClassMatrixConstruction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/refactor/splitting_algorithm/MethodByMethodMatrixConstruction.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/refactor/splitting_algorithm/MethodByMethodMatrixConstruction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/refactor/splitting_algorithm/PromiscuousPackageQualityChecker.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/refactor/splitting_algorithm/PromiscuousPackageQualityChecker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/refactor/splitting_algorithm/SplitClasses.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/refactor/splitting_algorithm/SplitClasses.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/refactor/splitting_algorithm/SplitPackages.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/refactor/splitting_algorithm/SplitPackages.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/refactor/splitting_algorithm/Utility.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/refactor/splitting_algorithm/Utility.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/refactor/splitting_algorithm/irEngine/ConfigLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/refactor/splitting_algorithm/irEngine/ConfigLoader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/refactor/splitting_algorithm/irEngine/VectorSpaceModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/refactor/splitting_algorithm/irEngine/VectorSpaceModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/storage/beans/MethodBean$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/storage/beans/MethodBean$Builder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/storage/beans/MethodBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/it/unisa/casper/storage/beans/MethodBean.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/distributions/ascetic-1.0-SNAPSHOT.zip" beforeDir="false" afterPath="$PROJECT_DIR$/build/distributions/ascetic-1.0-SNAPSHOT.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/config/options/dimensions.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/config/options/dimensions.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/config/options/other.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/config/options/other.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/config/options/git.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/config/options/git.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/idea-sandbox/config/options/recentProjects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/config/options/recentProjects.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/config/options/usage.statistics.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/config/options/usage.statistics.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/idea-sandbox/plugins/ascetic/lib/ascetic-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/plugins/ascetic/lib/ascetic-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/LocalHistory/changes.storageData" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/LocalHistory/changes.storageData" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/LocalHistory/changes.storageRecordIndex" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/LocalHistory/changes.storageRecordIndex" afterDir="false" />
@@ -59,10 +109,6 @@
       <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/caches/contentHashes.dat.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/caches/contentHashes.dat.keystream" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/caches/contentHashes.dat.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/caches/contentHashes.dat.keystream.len" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/caches/contentHashes.dat_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/caches/contentHashes.dat_i" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/caches/names.dat" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/caches/names.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/caches/names.dat.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/caches/names.dat.keystream" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/caches/names.dat.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/caches/names.dat.keystream.len" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/caches/names.dat_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/caches/names.dat_i" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/caches/records.dat" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/caches/records.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/compile-server/progettitest_31fc6e61/ustamp" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/compile-server/progettitest_31fc6e61/ustamp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/conversion/ProgettiTest7f46cf18.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/conversion/ProgettiTest7f46cf18.xml" afterDir="false" />
@@ -82,11 +128,7 @@
       <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/filenameindex/FilenameIndex.project" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/filenameindex/FilenameIndex.project" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/filenameindex/FilenameIndex.project.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/filenameindex/FilenameIndex.project.len" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/filenameindex/FilenameIndex.storage" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/filenameindex/FilenameIndex.storage" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/filenameindex/FilenameIndex.storage.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/filenameindex/FilenameIndex.storage.keystream" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/filenameindex/FilenameIndex.storage.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/filenameindex/FilenameIndex.storage.keystream.len" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/filenameindex/FilenameIndex.storage.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/filenameindex/FilenameIndex.storage.len" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/filenameindex/FilenameIndex.storage.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/filenameindex/FilenameIndex.storage.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/filenameindex/FilenameIndex.storage_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/filenameindex/FilenameIndex.storage_i" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/filenameindex/FilenameIndex_inputs" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/filenameindex/FilenameIndex_inputs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/filenameindex/FilenameIndex_inputs.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/filenameindex/FilenameIndex_inputs.values.at" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/filenameindex/FilenameIndex_inputs_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/filenameindex/FilenameIndex_inputs_i" afterDir="false" />
@@ -108,28 +150,12 @@
       <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.binary.plus.expression/java.binary.plus.expression_inputs" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.binary.plus.expression/java.binary.plus.expression_inputs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.binary.plus.expression/java.binary.plus.expression_inputs.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.binary.plus.expression/java.binary.plus.expression_inputs.values.at" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.binary.plus.expression/java.binary.plus.expression_inputs_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.binary.plus.expression/java.binary.plus.expression_inputs_i" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.null.method.argument/java.null.method.argument.storage" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.null.method.argument/java.null.method.argument.storage" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.null.method.argument/java.null.method.argument_inputs" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.null.method.argument/java.null.method.argument_inputs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.simple.property/java.simple.property.storage" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.simple.property/java.simple.property.storage" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.simple.property/java.simple.property.storage.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.simple.property/java.simple.property.storage.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.simple.property/java.simple.property.storage_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.simple.property/java.simple.property.storage_i" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.simple.property/java.simple.property_inputs" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.simple.property/java.simple.property_inputs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.simple.property/java.simple.property_inputs.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.simple.property/java.simple.property_inputs.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.simple.property/java.simple.property_inputs_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.simple.property/java.simple.property_inputs_i" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/Stubs.storage" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/Stubs.storage" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/Stubs.storage.values" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/Stubs.storage.values" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/Stubs.storage.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/Stubs.storage.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/Stubs.storage.values.s" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/Stubs.storage.values.s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/Stubs.storage_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/Stubs.storage_i" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/Stubs_inputs" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/Stubs_inputs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/Stubs_inputs.values" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/Stubs_inputs.values" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/Stubs_inputs.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/Stubs_inputs.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/Stubs_inputs.values.s" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/Stubs_inputs.values.s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/Stubs_inputs_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/Stubs_inputs_i" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.annotations/java.annotations.storage" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.annotations/java.annotations.storage" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.annotations/java.annotations.storage.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.annotations/java.annotations.storage.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.class.extlist/java.class.extlist.storage" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.class.extlist/java.class.extlist.storage" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.class.extlist/java.class.extlist.storage.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.class.extlist/java.class.extlist.storage.values.at" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.class.fqn/java.class.fqn.storage" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.class.fqn/java.class.fqn.storage" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.class.fqn/java.class.fqn.storage.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.class.fqn/java.class.fqn.storage.values.at" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.class.fqn/java.class.fqn.storage_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.class.fqn/java.class.fqn.storage_i" afterDir="false" />
@@ -138,38 +164,195 @@
       <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.class.shortname/java.class.shortname.storage" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.class.shortname/java.class.shortname.storage" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.class.shortname/java.class.shortname.storage.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.class.shortname/java.class.shortname.storage.values.at" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.field.name/java.field.name.storage" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.field.name/java.field.name.storage" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.field.name/java.field.name.storage.values" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.field.name/java.field.name.storage.values" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.field.name/java.field.name.storage.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.field.name/java.field.name.storage.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.field.name/java.field.name.storage.values.s" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.field.name/java.field.name.storage.values.s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.method.name/java.method.name.storage" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.method.name/java.method.name.storage" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.method.name/java.method.name.storage.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.method.name/java.method.name.storage.keystream" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.method.name/java.method.name.storage.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.method.name/java.method.name.storage.keystream.len" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.method.name/java.method.name.storage.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.method.name/java.method.name.storage.len" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.method.name/java.method.name.storage.values" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.method.name/java.method.name.storage.values" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.method.name/java.method.name.storage.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.method.name/java.method.name.storage.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.method.name/java.method.name.storage.values.s" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.method.name/java.method.name.storage.values.s" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.method.name/java.method.name.storage_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.method.name/java.method.name.storage_i" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.method.parameter.types/java.method.parameter.types.storage" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.method.parameter.types/java.method.parameter.types.storage" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.method.parameter.types/java.method.parameter.types.storage.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.method.parameter.types/java.method.parameter.types.storage.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/jvm.static.member.name/jvm.static.member.name.storage" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/jvm.static.member.name/jvm.static.member.name.storage" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/jvm.static.member.name/jvm.static.member.name.storage.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/jvm.static.member.name/jvm.static.member.name.storage.values.at" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/todoindex/fileIdToHashId" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/todoindex/fileIdToHashId" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/todoindex/fileIdToHashId_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/todoindex/fileIdToHashId_i" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/trigram.index/Trigram.Index.storage" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/trigram.index/Trigram.Index.storage" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/trigram.index/Trigram.Index.storage.values" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/trigram.index/Trigram.Index.storage.values" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/trigram.index/Trigram.Index.storage.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/trigram.index/Trigram.Index.storage.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/trigram.index/Trigram.Index.storage.values.s" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/trigram.index/Trigram.Index.storage.values.s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/trigram.index/Trigram.Index.storage_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/trigram.index/Trigram.Index.storage_i" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/trigram.index/fileIdToHashId" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/trigram.index/fileIdToHashId" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/trigram.index/fileIdToHashId_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/trigram.index/fileIdToHashId_i" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/log/idea.log" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/log/idea.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/libs/ascetic-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/ascetic-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/casper/actions/CasperStartup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/casper/actions/CasperStartup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/patchedPluginXmlFiles/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/patchedPluginXmlFiles/plugin.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/META-INF/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/META-INF/plugin.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/META-INF/Code.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/actions/AsceticStartup.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/actions/BeginAction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/actions/CommitFactory$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/actions/CommitFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/actions/ConfigureAction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/actions/FileChangeHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/actions/SystemStart.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/analysis/code_smell/BlobCodeSmell.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/analysis/code_smell/ClassLevelCodeSmell.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/analysis/code_smell/CodeSmell.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/analysis/code_smell/FeatureEnvyCodeSmell.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/analysis/code_smell/MethodLevelCodeSmell.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/analysis/code_smell/MisplacedClassCodeSmell.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/analysis/code_smell/PackageLevelCodeSmell.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/analysis/code_smell/PromiscuousPackageCodeSmell.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/analysis/code_smell_detection/BeanDetection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/analysis/code_smell_detection/ComponentMutation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/analysis/code_smell_detection/MisplacedComponentsUtilities.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/analysis/code_smell_detection/blob/StructuralBlobStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/analysis/code_smell_detection/blob/TextualBlobStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/analysis/code_smell_detection/comparator/BeanComparator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/analysis/code_smell_detection/comparator/ComparableBean.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/analysis/code_smell_detection/feature_envy/StructuralFeatureEnvyStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/analysis/code_smell_detection/feature_envy/TextualFeatureEnvyStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/analysis/code_smell_detection/misplaced_class/StructuralMisplacedClassStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/analysis/code_smell_detection/misplaced_class/TextualMisplacedClassStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/analysis/code_smell_detection/promiscuous_package/StructuralPromiscuousPackageStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/analysis/code_smell_detection/promiscuous_package/TextualPromiscuousPackageStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/analysis/code_smell_detection/similarityComputation/CosineSimilarity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/analysis/code_smell_detection/smellynessMetricProcessing/SmellynessMetric.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/analysis/code_smell_detection/strategy/ClassSmellDetectionStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/analysis/code_smell_detection/strategy/CodeSmellDetectionStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/analysis/code_smell_detection/strategy/MethodSmellDetectionStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/analysis/code_smell_detection/strategy/PackageSmellDetectionStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/gui/BlobPage$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/gui/BlobPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/gui/BlobWizard$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/gui/BlobWizard$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/gui/BlobWizard$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/gui/BlobWizard$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/gui/BlobWizard$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/gui/BlobWizard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/gui/CheckProjectPage$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/gui/CheckProjectPage$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/gui/CheckProjectPage$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/gui/CheckProjectPage$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/gui/CheckProjectPage$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/gui/CheckProjectPage$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/gui/CheckProjectPage$7.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/gui/CheckProjectPage$8.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/gui/CheckProjectPage$9.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/gui/CheckProjectPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/gui/ConfigureThreshold$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/gui/ConfigureThreshold$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/gui/ConfigureThreshold$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/gui/ConfigureThreshold$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/gui/ConfigureThreshold$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/gui/ConfigureThreshold$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/gui/ConfigureThreshold$7.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/gui/ConfigureThreshold.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/gui/FeatureEnvyPage$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/gui/FeatureEnvyPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/gui/FeatureEnvyWizard$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/gui/FeatureEnvyWizard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/gui/MisplacedClassPage$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/gui/MisplacedClassPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/gui/MisplacedClassWizard$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/gui/MisplacedClassWizard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/gui/PromiscuousPackagePage$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/gui/PromiscuousPackagePage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/gui/PromiscuousPackageWizard$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/gui/PromiscuousPackageWizard$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/gui/PromiscuousPackageWizard$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/gui/PromiscuousPackageWizard$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/gui/PromiscuousPackageWizard$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/gui/PromiscuousPackageWizard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/gui/radarMap/RadarMapUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/gui/radarMap/RadarMapUtilsAdapter$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/gui/radarMap/RadarMapUtilsAdapter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/parser/Parser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/parser/ParsingException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/parser/PsiParser$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/parser/PsiParser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/refactor/exceptions/BlobException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/refactor/exceptions/FeatureEnvyException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/refactor/exceptions/MisplacedClassException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/refactor/exceptions/PromiscuousPackageException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/refactor/exceptions/RefactorException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/refactor/manipulator/BlobRefatoringStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/refactor/manipulator/FeatureEnvyRefactoringStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/refactor/manipulator/MethodMover.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/refactor/manipulator/MisplacedClassRefactoringStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/refactor/manipulator/PromiscuousPackageRefactoringStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/refactor/manipulator/PsiUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/refactor/splitting_algorithm/ClassByClassMatrixConstruction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/refactor/splitting_algorithm/MethodByMethodMatrixConstruction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/refactor/splitting_algorithm/PromiscuousPackageQualityChecker.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/refactor/splitting_algorithm/SplitClasses.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/refactor/splitting_algorithm/SplitPackages.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/refactor/splitting_algorithm/Utility.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/refactor/splitting_algorithm/irEngine/BaseConf.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/refactor/splitting_algorithm/irEngine/ConfigLoader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/refactor/splitting_algorithm/irEngine/IREngine.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/refactor/splitting_algorithm/irEngine/Stemmer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/refactor/splitting_algorithm/irEngine/VectorSpaceModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/refactor/strategy/RefactoringManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/refactor/strategy/RefactoringStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/storage/beans/ClassBean$Builder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/storage/beans/ClassBean.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/storage/beans/ClassBeanList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/storage/beans/ClassList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/storage/beans/InstanceVariableBean.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/storage/beans/InstanceVariableBeanList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/storage/beans/InstanceVariableList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/storage/beans/MethodBean$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/storage/beans/MethodBean$Builder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/storage/beans/MethodBean.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/storage/beans/MethodBeanList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/storage/beans/MethodList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/storage/beans/PackageBean$Builder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/storage/beans/PackageBean.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/structuralMetrics/CKMetrics.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/it/unisa/ascetic/topic/TopicExtracter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Code/src/main/java/it/unisa/ascetic/gui/StyleText.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/casper/actions/CasperStartup.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/casper/actions/CommitFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/casper/actions/CommitFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/casper/actions/FileChangeHandler.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/casper/actions/SystemStart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/casper/actions/SystemStart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/casper/analysis/code_smell_detection/promiscuous_package/StructuralPromiscuousPackageStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/casper/analysis/code_smell_detection/promiscuous_package/StructuralPromiscuousPackageStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/casper/analysis/code_smell/CodeSmell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/casper/analysis/code_smell/CodeSmell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/casper/analysis/code_smell_detection/blob/StructuralBlobStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/casper/analysis/code_smell_detection/blob/StructuralBlobStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/casper/analysis/code_smell_detection/feature_envy/TextualFeatureEnvyStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/casper/analysis/code_smell_detection/feature_envy/TextualFeatureEnvyStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/casper/analysis/code_smell_detection/misplaced_class/TextualMisplacedClassStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/casper/analysis/code_smell_detection/misplaced_class/TextualMisplacedClassStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/casper/analysis/code_smell_detection/smellynessMetricProcessing/SmellynessMetric.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/casper/analysis/code_smell_detection/smellynessMetricProcessing/SmellynessMetric.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/casper/analysis/code_smell_detection/strategy/ClassSmellDetectionStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/casper/analysis/code_smell_detection/strategy/ClassSmellDetectionStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/casper/gui/BlobWizard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/casper/gui/BlobWizard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/casper/gui/CheckProjectPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/casper/gui/CheckProjectPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/casper/gui/ConfigureThreshold.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/casper/gui/ConfigureThreshold.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/casper/gui/PromiscuousPackagePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/casper/gui/PromiscuousPackagePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/casper/gui/MisplacedClassWizard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/casper/gui/MisplacedClassWizard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/casper/gui/PromiscuousPackageWizard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/casper/gui/PromiscuousPackageWizard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/casper/parser/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/casper/parser/Parser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/casper/parser/ParsingException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/casper/parser/ParsingException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/casper/parser/PsiParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/casper/parser/PsiParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/manipulator/BlobRefatoringStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/manipulator/BlobRefatoringStrategy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/manipulator/FeatureEnvyRefactoringStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/manipulator/FeatureEnvyRefactoringStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/manipulator/MethodMover.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/manipulator/MethodMover.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/manipulator/MisplacedClassRefactoringStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/manipulator/MisplacedClassRefactoringStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/manipulator/PromiscuousPackageRefactoringStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/manipulator/PromiscuousPackageRefactoringStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/ClassByClassMatrixConstruction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/ClassByClassMatrixConstruction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/MethodByMethodMatrixConstruction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/MethodByMethodMatrixConstruction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/PromiscuousPackageQualityChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/PromiscuousPackageQualityChecker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/SplitClasses.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/SplitClasses.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/SplitPackages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/SplitPackages.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/Utility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/Utility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/irEngine/ConfigLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/irEngine/ConfigLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/irEngine/IREngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/irEngine/IREngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/irEngine/VectorSpaceModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/irEngine/VectorSpaceModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/casper/storage/beans/MethodBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/casper/storage/beans/MethodBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/BeanDetectionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/BeanDetectionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/Helper/CosineSimilarityStub.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/Helper/CosineSimilarityStub.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/blob/StructuralBlobStrategyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/blob/StructuralBlobStrategyTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/blob/TextualBlobStrategyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/blob/TextualBlobStrategyTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/feature_envy/StructuralFeatureEnvyStrategyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/feature_envy/StructuralFeatureEnvyStrategyTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/feature_envy/TextualFeatureEnvyStrategyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/feature_envy/TextualFeatureEnvyStrategyTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/misplaced_class/StructuralMisplacedClassStrategyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/misplaced_class/StructuralMisplacedClassStrategyTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/promiscuous_package/StructuralPromiscuousPackageStrategyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/promiscuous_package/StructuralPromiscuousPackageStrategyTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/promiscuous_package/TextualPromiscuousPackageStrategyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/promiscuous_package/TextualPromiscuousPackageStrategyTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/it/unisa/casper/refactoring/SplitClassTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/it/unisa/casper/refactoring/SplitClassTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/it/unisa/casper/refactoring/SplitPackagesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/it/unisa/casper/refactoring/SplitPackagesTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -245,22 +428,22 @@
             <expand>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="ascetic" type="f1a62948:ProjectNode" />
+                <item name="casper" type="f1a62948:ProjectNode" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="ascetic" type="f1a62948:ProjectNode" />
+                <item name="casper" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="ascetic" type="f1a62948:ProjectNode" />
+                <item name="casper" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="intellij" type="c8890929:TasksNode$1" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="ascetic" type="f1a62948:ProjectNode" />
+                <item name="casper" type="f1a62948:ProjectNode" />
                 <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
               </path>
             </expand>
@@ -272,11 +455,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/manipulator/FeatureEnvyRefactoringStrategy.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/ClassByClassMatrixConstruction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
-              <caret line="131" column="21" selection-start-line="131" selection-start-column="21" selection-end-line="131" selection-end-column="21" />
+            <state relative-caret-position="527">
+              <caret line="38" column="26" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/MethodByMethodMatrixConstruction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="331">
+              <caret line="111" column="53" lean-forward="true" selection-start-line="111" selection-start-column="53" selection-end-line="111" selection-end-column="53" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/parser/PsiParser.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="274" column="42" lean-forward="true" selection-start-line="274" selection-start-column="42" selection-end-line="274" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -292,27 +493,10 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>instances</find>
-      <find>ascetic</find>
-      <find>getIndex</find>
-      <find>setEnviedPackage</find>
-      <find>setB</find>
-      <find>System.out.</find>
-      <find>import</find>
-      <find>tmpLine</find>
-      <find>setImports</find>
-      <find>getCSMmatrix</find>
-      <find>appoggioAbcdefg</find>
-      <find>delete</find>
-      <find>tempName</find>
-      <find>pThreshold</find>
-      <find>Move</find>
-      <find>newPackage</find>
-      <find>psiMethod</find>
       <find>originalClass</find>
       <find>scope</find>
       <find>OFF</find>
-      <find>Ascetic</find>
+      <find>cASpER</find>
       <find>MIntraC</find>
       <find>othervariables</find>
       <find>isStaticMethod</find>
@@ -322,6 +506,23 @@
       <find>body</find>
       <find>System.out.println(</find>
       <find>setName</find>
+      <find>changes.csv</find>
+      <find>updateList</find>
+      <find>stopwordList</find>
+      <find>Errore</find>
+      <find>Error</find>
+      <find>bean</find>
+      <find>variabile</find>
+      <find>SSMmatrix</find>
+      <find>matrix</find>
+      <find>logger</find>
+      <find>log</find>
+      <find>System.getProperty(&quot;user.home&quot;) + File.separator + &quot;.casper&quot;</find>
+      <find>stopword</find>
+      <find>CDMmatrixFile</find>
+      <find>ICPmatrixFile</find>
+      <find>e.prin</find>
+      <find>e.printStackTrace();</find>
     </findStrings>
     <replaceStrings>
       <replace>CKMetrics.getFeatureSum(pClass)</replace>
@@ -339,71 +540,75 @@
       <replace>InverceMIntraC</replace>
       <replace>InverseMIntraC</replace>
       <replace>inversemintrac</replace>
+      <replace>Error</replace>
+      <replace>nameDir</replace>
+      <replace />
     </replaceStrings>
     <dirStrings>
-      <dir>C:\Users\Simone\Desktop\Ascetic3.0\Code\src\main\java</dir>
-      <dir>C:\Users\Simone\Desktop\Ascetic3.0\Code\src\test</dir>
-      <dir>C:\Users\Simone\Desktop\Ascetic3.0\Code\src</dir>
+      <dir>C:\Users\Simone\Desktop\cASpER3.0\Code\src\main\java</dir>
+      <dir>C:\Users\Simone\Desktop\cASpER3.0\Code\src\test</dir>
+      <dir>C:\Users\Simone\Desktop\cASpER3.0\Code\src</dir>
       <dir>C:\Users\Simone\Desktop\cASpER\Code\src</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/ascetic/storage/beans/ClassBeanList.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/ascetic/refactor/splitting_algorithm/PromiscuousPackageQualityChecker.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/ascetic/refactor/splitting_algorithm/ClassByClassMatrixConstruction.java" />
-        <option value="$PROJECT_DIR$/src/test/it/unisa/ascetic/analysis/code_smell_detection/promiscuous_package/TextualPromiscuousPackageStrategyTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/ascetic/refactor/splitting_algorithm/irEngine/BaseConf.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/ascetic/refactor/splitting_algorithm/irEngine/ConfigLoader.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/ascetic/gui/PromiscuousPackagePage.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/ascetic/refactor/manipulator/p.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/ascetic/parser/PsiParser.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/ascetic/storage/beans/PackageBean.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/ascetic/refactor/splitting_algorithm/SplitPackages.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/ascetic/refactor/splitting_algorithm/SplitClasses.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/ascetic/refactor/manipulator/PromiscuousPackageRefactoringStrategy.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/ascetic/refactor/manipulator/BlobRefatoringStrategy.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/ascetic/refactor/manipulator/MisplacedClassRefactoringStrategy.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/ascetic/refactor/manipulator/FeatureEnvyRefactoringStrategy.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/ascetic/refactor/splitting_algorithm/Utility.java" />
-        <option value="$PROJECT_DIR$/src/test/it/unisa/ascetic/analysis/code_smell_detection/blob/StructuralBlobStrategyTest.java" />
-        <option value="$PROJECT_DIR$/src/test/it/unisa/ascetic/analysis/code_smell_detection/misplaced_class/StructuralMisplacedClassStrategyTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/ascetic/analysis/code_smell_detection/MisplacedComponentsUtilities.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/ascetic/analysis/code_smell_detection/similarityComputation/CosineSimilarity.java" />
-        <option value="$PROJECT_DIR$/src/test/it/unisa/ascetic/analysis/code_smell_detection/feature_envy/TextualFeatureEnvyStrategyTest.java" />
-        <option value="$PROJECT_DIR$/src/test/it/unisa/ascetic/analysis/code_smell_detection/Helper/CosineSimilarityStub.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/ascetic/storage/beans/ClassBean.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/ascetic/gui/CheckProjectPage.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/ascetic/actions/SystemStart.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/ascetic/gui/ConfigureThreshold.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/ascetic/analysis/code_smell_detection/feature_envy/TextualFeatureEnvyStrategy.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/ascetic/analysis/code_smell_detection/misplaced_class/TextualMisplacedClassStrategy.java" />
-        <option value="$PROJECT_DIR$/src/test/it/unisa/ascetic/analysis/code_smell_detection/blob/TextualBlobStrategyTest.java" />
-        <option value="$PROJECT_DIR$/src/test/it/unisa/ascetic/analysis/code_smell_detection/misplaced_class/TextualMisplacedClassStrategyTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/storage/beans/PackageBean.java" />
+        <option value="$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/blob/StructuralBlobStrategyTest.java" />
+        <option value="$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/misplaced_class/StructuralMisplacedClassStrategyTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/analysis/code_smell_detection/MisplacedComponentsUtilities.java" />
+        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/analysis/code_smell_detection/similarityComputation/CosineSimilarity.java" />
+        <option value="$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/feature_envy/TextualFeatureEnvyStrategyTest.java" />
+        <option value="$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/Helper/CosineSimilarityStub.java" />
+        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/storage/beans/ClassBean.java" />
+        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/analysis/code_smell_detection/feature_envy/TextualFeatureEnvyStrategy.java" />
+        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/analysis/code_smell_detection/misplaced_class/TextualMisplacedClassStrategy.java" />
+        <option value="$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/blob/TextualBlobStrategyTest.java" />
+        <option value="$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/misplaced_class/TextualMisplacedClassStrategyTest.java" />
         <option value="$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/Helper/CosineSimilarityStub.java" />
         <option value="$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/misplaced_class/TextualMisplacedClassStrategyTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/storage/beans/ClassBean.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/storage/beans/MethodBean.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/irEngine/BaseConf.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/irEngine/ConfigLoader.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/MethodByMethodMatrixConstruction.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/manipulator/PromiscuousPackageRefactoringStrategy.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml" />
         <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/analysis/code_smell_detection/misplaced_class/TextualMisplacedClassStrategy.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/gui/BlobWizard.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/analysis/code_smell_detection/misplaced_class/StructuralMisplacedClassStrategy.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/analysis/code_smell_detection/feature_envy/StructuralFeatureEnvyStrategy.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/parser/PsiParser.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/manipulator/MethodMover.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/manipulator/BlobRefatoringStrategy.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/actions/SystemStart.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/actions/CasperStartup.java" />
+        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/actions/CommitFactory.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/actions/BeginAction.java" />
+        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/analysis/code_smell_detection/blob/StructuralBlobStrategy.java" />
+        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/analysis/code_smell_detection/smellynessMetricProcessing/SmellynessMetric.java" />
+        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/analysis/code_smell_detection/strategy/ClassSmellDetectionStrategy.java" />
+        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/gui/BlobWizard.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/gui/CheckProjectPage.java" />
+        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/gui/CheckProjectPage.java" />
+        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/gui/ConfigureThreshold.java" />
+        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/gui/PromiscuousPackageWizard.java" />
+        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/manipulator/BlobRefatoringStrategy.java" />
+        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/manipulator/BlobRefatoringStrategy.java" />
+        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/SplitPackages.java" />
+        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/irEngine/ConfigLoader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/manipulator/PromiscuousPackageRefactoringStrategy.java" />
+        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/manipulator/PromiscuousPackageRefactoringStrategy.java" />
+        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/SplitClasses.java" />
+        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/manipulator/MethodMover.java" />
+        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/manipulator/MisplacedClassRefactoringStrategy.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/manipulator/FeatureEnvyRefactoringStrategy.java" />
+        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/manipulator/FeatureEnvyRefactoringStrategy.java" />
+        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/irEngine/VectorSpaceModel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/actions/SystemStart.java" />
+        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/actions/SystemStart.java" />
+        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/Utility.java" />
+        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/ClassByClassMatrixConstruction.java" />
+        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/MethodByMethodMatrixConstruction.java" />
+        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/parser/PsiParser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/parser/PsiParser.java" />
       </list>
     </option>
   </component>
@@ -414,8 +619,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="513" />
-    <option name="width" value="1414" />
+    <option name="x" value="-7" />
+    <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -429,17 +634,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <expand>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="ascetic" type="cbb8eebc:String" user="ascetic" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -471,32 +665,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="casper" type="462c0819:PsiDirectoryNode" />
-              <item name="actions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cASpER" type="b2602c69:ProjectViewProjectNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="casper" type="462c0819:PsiDirectoryNode" />
-              <item name="analysis" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cASpER" type="b2602c69:ProjectViewProjectNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="casper" type="462c0819:PsiDirectoryNode" />
-              <item name="analysis" type="462c0819:PsiDirectoryNode" />
-              <item name="code_smell_detection" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cASpER" type="b2602c69:ProjectViewProjectNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="casper" type="462c0819:PsiDirectoryNode" />
-              <item name="gui" type="462c0819:PsiDirectoryNode" />
+              <item name="parser" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cASpER" type="b2602c69:ProjectViewProjectNode" />
@@ -519,6 +688,58 @@
               <item name="cASpER" type="b2602c69:ProjectViewProjectNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="casper" type="462c0819:PsiDirectoryNode" />
+              <item name="refactor" type="462c0819:PsiDirectoryNode" />
+              <item name="splitting_algorithm" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cASpER" type="b2602c69:ProjectViewProjectNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="casper" type="462c0819:PsiDirectoryNode" />
+              <item name="refactor" type="462c0819:PsiDirectoryNode" />
+              <item name="splitting_algorithm" type="462c0819:PsiDirectoryNode" />
+              <item name="irEngine" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cASpER" type="b2602c69:ProjectViewProjectNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="casper" type="462c0819:PsiDirectoryNode" />
+              <item name="refactor" type="462c0819:PsiDirectoryNode" />
+              <item name="strategy" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cASpER" type="b2602c69:ProjectViewProjectNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="casper" type="462c0819:PsiDirectoryNode" />
+              <item name="beans" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cASpER" type="b2602c69:ProjectViewProjectNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="casper" type="462c0819:PsiDirectoryNode" />
+              <item name="structuralMetrics" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cASpER" type="b2602c69:ProjectViewProjectNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="casper" type="462c0819:PsiDirectoryNode" />
+              <item name="topic" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cASpER" type="b2602c69:ProjectViewProjectNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -536,8 +757,19 @@
         <subPane>
           <expand>
             <path>
-              <item name="ascetic" type="58d84e3e:PackageViewProjectNode" />
+              <item name="casper" type="58d84e3e:PackageViewProjectNode" />
               <item name="Code" type="616d4139:PackageViewModuleNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <expand>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="casper" type="cbb8eebc:String" user="casper" />
             </path>
           </expand>
           <select />
@@ -554,14 +786,14 @@
     <property name="database.console.LAST_STATE" value="false" />
     <property name="external.system.task.project.file.to.start" value="$PROJECT_DIR$" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Book-a-Book-master/Book-a-Book2" />
+    <property name="last_opened_file_path" value="D:/%lib%/openapi-7.0.3.jar!/" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.14705883" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="PsiViewer.ProjectComponent">
     <option name="HIGHLIGHT" value="false" />
@@ -573,8 +805,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="it.unisa.ascetic.analysis.code_smell_detection" />
-      <recent name="it.unisa.ascetic.actions" />
+      <recent name="it.unisa.casper.analysis.code_smell_detection" />
+      <recent name="it.unisa.casper.actions" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -589,7 +821,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.JUnitTestSuite">
+  <component name="RunManager" selected="Gradle.Code [buildPlugin]">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
@@ -654,12 +886,12 @@
       <module name="Code" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="it.unisa.ascetic.*" />
+          <option name="PATTERN" value="it.unisa.casper.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="it.unisa.ascetic" />
-      <option name="MAIN_CLASS_NAME" value="it.unisa.ascetic.JUnitTestSuite" />
+      <option name="PACKAGE_NAME" value="it.unisa.casper" />
+      <option name="MAIN_CLASS_NAME" value="it.unisa.casper.JUnitTestSuite" />
       <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
       <option name="PARAMETERS" value="" />
@@ -672,12 +904,12 @@
       <module name="Code" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="it.unisa.ascetic.*" />
+          <option name="PATTERN" value="it.unisa.casper.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="it.unisa.ascetic" />
-      <option name="MAIN_CLASS_NAME" value="it.unisa.ascetic.JUnitTestSuite" />
+      <option name="PACKAGE_NAME" value="it.unisa.casper" />
+      <option name="MAIN_CLASS_NAME" value="it.unisa.casper.JUnitTestSuite" />
       <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
       <option name="PARAMETERS" value="" />
@@ -690,12 +922,12 @@
       <module name="Code" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="it.unisa.ascetic.*" />
+          <option name="PATTERN" value="it.unisa.casper.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="it.unisa.ascetic" />
-      <option name="MAIN_CLASS_NAME" value="it.unisa.ascetic.JUnitTestSuite" />
+      <option name="PACKAGE_NAME" value="it.unisa.casper" />
+      <option name="MAIN_CLASS_NAME" value="it.unisa.casper.JUnitTestSuite" />
       <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
       <option name="PARAMETERS" value="" />
@@ -708,12 +940,12 @@
       <module name="Code" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="it.unisa.ascetic.*" />
+          <option name="PATTERN" value="it.unisa.casper.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="it.unisa.ascetic" />
-      <option name="MAIN_CLASS_NAME" value="it.unisa.ascetic.JUnitTestSuite" />
+      <option name="PACKAGE_NAME" value="it.unisa.casper" />
+      <option name="MAIN_CLASS_NAME" value="it.unisa.casper.JUnitTestSuite" />
       <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
       <option name="PARAMETERS" value="" />
@@ -843,6 +1075,8 @@
       <workItem from="1576060499000" duration="4008000" />
       <workItem from="1576079872571" duration="5094000" />
       <workItem from="1576087309567" duration="3065000" />
+      <workItem from="1576103715278" duration="5546000" />
+      <workItem from="1576109620925" duration="165000" />
     </task>
     <task id="LOCAL-00001" summary="Creato nuovo progetto aggiornato con la versione del 3 Febbraio 2019. Creato nuovo gitignore e configurato gradle">
       <created>1549209457945</created>
@@ -869,9 +1103,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="JUnitTestSuite - 2019.12.08 at 15h 59m 19s.xml">
-      <configuration name="JUnitTestSuite" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="JUnitTestSuite - 2019.12.08 at 16h 10m 08s.xml">
       <configuration name="JUnitTestSuite" configurationId="JUnit" />
     </history-entry>
@@ -899,9 +1130,12 @@
     <history-entry file="JUnitTestSuite - 2019.12.11 at 20h 04m 55s.xml">
       <configuration name="JUnitTestSuite" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="JUnitTestSuite - 2019.12.12 at 00h 48m 28s.xml">
+      <configuration name="JUnitTestSuite" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="275574000" />
+    <option name="totallyTimeSpent" value="281285000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -914,9 +1148,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17590618" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20735608" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -968,12 +1201,6 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/it/unisa/casper/gui/FeatureEnvyPage.java</url>
-          <line>137</line>
-          <properties />
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/promiscuous_package/StructuralPromiscuousPackageStrategyTest.java</url>
           <line>628</line>
           <properties />
@@ -1018,117 +1245,292 @@
     </buildFile>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/ascetic$Ascetic.ic" NAME="Ascetic Coverage Results" MODIFIED="1574294040175" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/ascetic$JUnitTestSuite.ic" NAME="JUnitTestSuite Coverage Results" MODIFIED="1575921719526" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/casper$JUnitTestSuite.ic" NAME="JUnitTestSuite Coverage Results" MODIFIED="1575921719526" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>it.unisa.casper.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/casper$cASpER.ic" NAME="cASpER Coverage Results" MODIFIED="1574294040175" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/misplaced_class/StructuralMisplacedClassStrategyTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/analysis/code_smell_detection/similarityComputation/CosineSimilarity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="20" column="8" lean-forward="true" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/analysis/code_smell_detection/smellynessMetricProcessing/SmellynessMetric.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/analysis/code_smell_detection/strategy/ClassSmellDetectionStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/analysis/code_smell_detection/strategy/CodeSmellDetectionStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/analysis/code_smell_detection/strategy/MethodSmellDetectionStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/analysis/code_smell_detection/strategy/PackageSmellDetectionStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/analysis/code_smell_detection/BeanDetection.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
-          <caret line="83" column="30" selection-start-line="83" selection-start-column="30" selection-end-line="83" selection-end-column="30" />
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/promiscuous_package/StructuralPromiscuousPackageStrategyTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9996">
-          <caret line="600" column="34" selection-start-line="522" selection-start-column="8" selection-end-line="600" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/blob/TextualBlobStrategyTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="126" column="25" selection-start-line="102" selection-start-column="16" selection-end-line="126" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/actions/CasperStartup.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/analysis/code_smell_detection/ComponentMutation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/analysis/code_smell/CodeSmell.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/gui/radarMap/RadarMapUtilsAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="48" column="30" lean-forward="true" selection-start-line="48" selection-start-column="30" selection-end-line="48" selection-end-column="30" />
+        <state relative-caret-position="-2112">
+          <caret line="18" column="3" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/Helper/CosineSimilarityStub.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/gui/radarMap/RadarMapUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="5" column="67" selection-start-line="5" selection-start-column="67" selection-end-line="5" selection-end-column="67" />
+          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/analysis/code_smell_detection/misplaced_class/TextualMisplacedClassStrategy.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/gui/BlobPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1139">
-          <caret line="106" column="148" selection-start-line="106" selection-start-column="148" selection-end-line="106" selection-end-column="148" />
+        <state relative-caret-position="-2248">
+          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/misplaced_class/TextualMisplacedClassStrategyTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/gui/BlobWizard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4641">
-          <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
+        <state relative-caret-position="-3268">
+          <caret line="338" column="107" selection-start-line="338" selection-start-column="107" selection-end-line="338" selection-end-column="107" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/storage/beans/InstanceVariableBean.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/gui/ConfigureThreshold.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        <state relative-caret-position="-885">
+          <caret line="393" column="97" selection-start-line="393" selection-start-column="97" selection-end-line="393" selection-end-column="97" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/storage/beans/ClassList.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/gui/CheckProjectPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        <state relative-caret-position="-480">
+          <caret line="775" column="26" selection-start-line="775" selection-start-column="26" selection-end-line="775" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/storage/beans/MethodBean.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/gui/FeatureEnvyPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-918">
-          <caret line="151" column="15" selection-start-line="151" selection-start-column="15" selection-end-line="151" selection-end-column="15" />
+        <state relative-caret-position="-1670">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/gui/FeatureEnvyWizard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2687">
+          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/gui/MisplacedClassPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1738">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/gui/MisplacedClassWizard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2673">
+          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/gui/PromiscuousPackagePage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2044">
+          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/storage/beans/PackageBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="88" column="27" selection-start-line="88" selection-start-column="27" selection-end-line="88" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/gui/PromiscuousPackageWizard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="328" column="55" selection-start-line="328" selection-start-column="50" selection-end-line="328" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/gui/StyleText.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1415">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/parser/Parser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/parser/ParsingException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/exceptions/BlobException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/exceptions/MisplacedClassException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/exceptions/FeatureEnvyException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/exceptions/PromiscuousPackageException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/exceptions/RefactorException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/manipulator/MethodMover.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="438">
+          <caret line="63" column="5" lean-forward="true" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/manipulator/BlobRefatoringStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="130" column="49" selection-start-line="130" selection-start-column="49" selection-end-line="130" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/manipulator/FeatureEnvyRefactoringStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="174" column="25" selection-start-line="174" selection-start-column="16" selection-end-line="174" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/manipulator/MisplacedClassRefactoringStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/manipulator/PsiUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/manipulator/PromiscuousPackageRefactoringStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1054">
+          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/irEngine/BaseConf.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="11" column="67" selection-start-line="11" selection-start-column="67" selection-end-line="11" selection-end-column="67" />
+        <state relative-caret-position="-766">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/irEngine/ConfigLoader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1037">
-          <caret line="65" selection-start-line="65" selection-end-line="65" />
+        <state relative-caret-position="-21">
+          <caret line="36" column="65" selection-start-line="36" selection-start-column="49" selection-end-line="36" selection-end-column="65" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/irEngine/Stemmer.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/PromiscuousPackageQualityChecker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding>
-            <element signature="initializer##0;class#Stemmer#0" />
-          </folding>
+        <state relative-caret-position="-1296">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/irEngine/VectorSpaceModel.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/SplitClasses.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2380">
-          <caret line="144" column="21" lean-forward="true" selection-start-line="144" selection-start-column="21" selection-end-line="144" selection-end-column="21" />
+        <state relative-caret-position="119">
+          <caret line="104" column="23" selection-start-line="104" selection-start-column="23" selection-end-line="104" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/SplitPackages.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3842">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1139,219 +1541,73 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/blob/StructuralBlobStrategyTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/strategy/RefactoringStrategy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="1809" selection-start-line="1809" selection-end-line="1809" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/actions/CommitFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="13" lean-forward="true" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="68">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/storage/beans/ClassBean.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="119" selection-start-line="119" selection-end-line="119" />
-          <folding>
-            <element signature="e#2521#2522#0" expanded="true" />
-            <element signature="e#2563#2564#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/analysis/code_smell_detection/BeanDetection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Code.iml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/.idea/misc.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/.idea/vcs.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/.idea/modules.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gradlew.bat">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/settings.gradle">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gradlew">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="34" column="14" selection-start-line="34" selection-start-column="14" selection-end-line="34" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/analysis/code_smell/BlobCodeSmell.java">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/ClassByClassMatrixConstruction.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/structuralMetrics/CKMetrics.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="611">
-          <caret line="52" column="67" selection-start-line="52" selection-start-column="67" selection-end-line="52" selection-end-column="67" />
+        <state relative-caret-position="-1122">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/MethodByMethodMatrixConstruction.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/topic/TopicExtracter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1525">
-          <caret line="101" selection-start-line="101" selection-end-line="101" />
+        <state relative-caret-position="-680">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/SplitClasses.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/irEngine/VectorSpaceModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="94" column="71" selection-start-line="94" selection-start-column="60" selection-end-line="94" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/gui/BlobPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="157" column="81" lean-forward="true" selection-start-line="157" selection-start-column="81" selection-end-line="157" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/java-impl.jar!/com/intellij/refactoring/extractclass/ExtractClassProcessor.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="135" column="197" selection-start-line="135" selection-start-column="197" selection-end-line="135" selection-end-column="197" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/parser/PsiParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1258">
-          <caret line="128" column="31" selection-start-line="128" selection-start-column="31" selection-end-line="128" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/analysis/code_smell_detection/feature_envy/StructuralFeatureEnvyStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="84" column="21" lean-forward="true" selection-start-line="84" selection-start-column="21" selection-end-line="84" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/analysis/code_smell_detection/misplaced_class/StructuralMisplacedClassStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="62" column="184" lean-forward="true" selection-start-line="62" selection-start-column="184" selection-end-line="62" selection-end-column="184" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/manipulator/BlobRefatoringStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="104" column="8" selection-start-line="104" selection-start-column="8" selection-end-line="104" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/manipulator/PromiscuousPackageRefactoringStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="116" column="42" selection-start-line="116" selection-start-column="29" selection-end-line="116" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/gui/BlobWizard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-259">
-          <caret line="89" column="40" selection-start-line="89" selection-start-column="40" selection-end-line="89" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/manipulator/PsiUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="40" column="144" selection-start-line="40" selection-start-column="41" selection-end-line="40" selection-end-column="144" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/analysis/code_smell_detection/feature_envy/TextualFeatureEnvyStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="102" column="148" lean-forward="true" selection-start-line="102" selection-start-column="12" selection-end-line="102" selection-end-column="148" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/lang/String.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="2237" column="18" selection-start-line="2237" selection-start-column="18" selection-end-line="2237" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/gui/CheckProjectPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="701" column="49" lean-forward="true" selection-start-line="701" selection-start-column="49" selection-end-line="701" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/gui/FeatureEnvyPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+        <state relative-caret-position="136">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/actions/SystemStart.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="569">
-          <caret line="121" selection-start-line="121" selection-end-line="121" />
+        <state relative-caret-position="422">
+          <caret line="58" column="24" lean-forward="true" selection-start-line="58" selection-start-column="24" selection-end-line="58" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/manipulator/MethodMover.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/Utility.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="54" column="45" selection-start-line="54" selection-start-column="45" selection-end-line="54" selection-end-column="45" />
+        <state relative-caret-position="199">
+          <caret line="44" column="41" selection-start-line="44" selection-start-column="23" selection-end-line="44" selection-end-column="41" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/manipulator/MisplacedClassRefactoringStrategy.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/ClassByClassMatrixConstruction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="62" column="108" selection-start-line="62" selection-start-column="95" selection-end-line="62" selection-end-column="108" />
+        <state relative-caret-position="527">
+          <caret line="38" column="26" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/manipulator/FeatureEnvyRefactoringStrategy.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/MethodByMethodMatrixConstruction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="131" column="21" selection-start-line="131" selection-start-column="21" selection-end-line="131" selection-end-column="21" />
+        <state relative-caret-position="331">
+          <caret line="111" column="53" lean-forward="true" selection-start-line="111" selection-start-column="53" selection-end-line="111" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/parser/PsiParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="274" column="42" lean-forward="true" selection-start-line="274" selection-start-column="42" selection-end-line="274" selection-end-column="42" />
         </state>
       </provider>
     </entry>
@@ -1361,7 +1617,7 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited>ascetic:jar</last-edited>
+          <last-edited>casper:jar</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1432,7 +1688,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>jcommon-1.0.23</last-edited>
+          <last-edited>openapi-7.0.3</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

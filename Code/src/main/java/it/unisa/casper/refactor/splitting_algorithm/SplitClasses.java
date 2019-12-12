@@ -3,8 +3,6 @@ package it.unisa.casper.refactor.splitting_algorithm;
 import it.unisa.casper.storage.beans.*;
 
 import java.util.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import java.util.regex.Pattern;
 
 
@@ -12,7 +10,6 @@ public class SplitClasses {
 
     private Vector<String> chains = new Vector<String>();
     private final Pattern splitPattern;
-    private static Logger logger = Logger.getLogger("global");
 
     public SplitClasses() {
         splitPattern = Pattern.compile("-");
@@ -28,7 +25,6 @@ public class SplitClasses {
      */
     public Collection<ClassBean> split(ClassBean pToSplit, double pThreshold) throws Exception {
 
-        logger.setLevel(Level.OFF);
         Collection<ClassBean> result = new Vector<>();
 
         Iterator<MethodBean> it = pToSplit.getMethodList().iterator();
@@ -90,7 +86,6 @@ public class SplitClasses {
         }
 
         String packageName = pToSplit.getFullQualifiedName().substring(0, pToSplit.getFullQualifiedName().lastIndexOf('.'));
-        logger.severe("DBG-> package name: " + packageName);
         for (int i = 0; i < newChains.size(); i++) {
             ClassBean tmpClass = createSplittedClassBean(i, packageName, newChains, vectorMethods, new Vector<>(pToSplit.getInstanceVariablesList()), pToSplit.getBelongingPackage());
             result.add(tmpClass);

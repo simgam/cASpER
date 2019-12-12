@@ -6,9 +6,6 @@ import com.intellij.psi.PsiClass;
 import com.intellij.psi.PsiElementFactory;
 import com.intellij.psi.PsiMethod;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 public class MethodMover {
     /**
      * Metodo che costruisce un metodo da un insieme di stringhe e controllo se ci sono caratteri anomali sostituendolo automaticamente
@@ -22,7 +19,6 @@ public class MethodMover {
      * @return stringa singola con tutto già settato
      */
     public static String buildMethod(String scope, String returnType, String nomeMetodo, String parameters, String throwsList, String body) {
-        Logger logger = Logger.getLogger("buildMethod of MthodMover");
         StringBuilder stringBuilder = new StringBuilder(scope);
 
         stringBuilder.append(" ").
@@ -33,9 +29,6 @@ public class MethodMover {
                 append(throwsList).
                 append(body.replaceAll("    ", "\t"));
         String s = stringBuilder.toString();
-        logger.setLevel(Level.OFF);
-        logger.severe("\n\n************************Metodo Generato***************************\n"
-                + s + "\n\n*****************************************************************");
         return s;
     }
 
@@ -48,18 +41,13 @@ public class MethodMover {
      * @param replace       settare true se si vuole sostituire, false per aggiungere da nuovo
      */
     public static void methodWriter(String methodToWrite, PsiMethod actualPsiMethod, PsiClass writePlace, Boolean replace, Project project) {
-        Logger logger = Logger.getLogger("methodWriter di MethodMover");
-        logger.setLevel(Level.OFF);
-
         PsiElementFactory elementFactory = JavaPsiFacade.getElementFactory(project);
         PsiMethod newMethod = elementFactory.createMethodFromText(methodToWrite, writePlace);
 
         if (replace) {
             actualPsiMethod.replace(newMethod);
-            logger.severe(newMethod.getName() + " sostituito correttamente in " + writePlace.getName());
         } else {
             writePlace.add(newMethod);
-            logger.severe(newMethod.getName() + " aggiunto correttamente in " + writePlace.getName());
         }
     }
 }

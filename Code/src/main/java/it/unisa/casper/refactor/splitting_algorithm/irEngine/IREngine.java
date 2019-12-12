@@ -5,8 +5,6 @@ import java.util.Collection;
 public interface IREngine {
 
     /**
-     *
-     *
      * @param documents Collection of document, this collection contains two data:
      *                  <p>
      *                  - [0] name of document

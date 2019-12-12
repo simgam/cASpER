@@ -7,8 +7,6 @@ import java.util.ArrayList;
 
 public class SmellynessMetric {
 
-    //apache.commons.math
-
     public double computeSmellyness(String pTestCase) throws IOException {
         CosineSimilarity cosineSimilarity = new CosineSimilarity();
         String[] blocks = pTestCase.split("_____");

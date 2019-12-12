@@ -300,7 +300,7 @@ public class TextualBlobStrategyTest {
         HashMap<String, ClassBean> hash = new HashMap<String, ClassBean>();
         hash.put("balance", new ClassBean.Builder("Double", "").build());
         metodo = new MethodBean.Builder("blob.package.BankAccount.BankAccount", "this.balance = balance;")
-                .setReturnType(new ClassBean.Builder("void","").build())
+                .setReturnType(new ClassBean.Builder("void", "").build())
                 .setInstanceVariableList(instances)
                 .setMethodsCalls(vuota)
                 .setParameters(hash)
@@ -344,7 +344,7 @@ public class TextualBlobStrategyTest {
         pack.addClassList(noSmelly);
 
         methods = new MethodList();
-        instances= new InstanceVariableList();
+        instances = new InstanceVariableList();
         instances.getList().add(new InstanceVariableBean("unformattedNumber", "String", "", "private final "));
         classe = new ClassBean.Builder("blob.package.Phone", "private final String unformattedNumber;\n" +
                 "   public Phone(String unformattedNumber) {\n" +
@@ -490,7 +490,7 @@ public class TextualBlobStrategyTest {
         hash.put("unformattedNumber", new ClassBean.Builder("String", "").build());
 
         metodo = new MethodBean.Builder("blob.package.Phone.Phone", "this.unformattedNumber = unformattedNumber;")
-                .setReturnType(new ClassBean.Builder("void","").build())
+                .setReturnType(new ClassBean.Builder("void", "").build())
                 .setInstanceVariableList(instances)
                 .setMethodsCalls(vuota)
                 .setParameters(hash)
@@ -624,7 +624,7 @@ public class TextualBlobStrategyTest {
         hash.put("età", new ClassBean.Builder("int", "").build());
         metodo = new MethodBean.Builder("blob.package.Cliente.Cliente", "this.name = name;\n" +
                 "\t\tthis.età = età;")
-                .setReturnType(new ClassBean.Builder("void","").build())
+                .setReturnType(new ClassBean.Builder("void", "").build())
                 .setInstanceVariableList(instances)
                 .setMethodsCalls(vuota)
                 .setParameters(hash)
@@ -735,7 +735,7 @@ public class TextualBlobStrategyTest {
         hash = new HashMap<String, ClassBean>();
         hash.put("nome_Ristorante", new ClassBean.Builder("String", "").build());
         metodo = new MethodBean.Builder("blob.package.Ristorante.Ristorante", "this.nome_Ristorante = nome_Ristorante;")
-                .setReturnType(new ClassBean.Builder("void","").build())
+                .setReturnType(new ClassBean.Builder("void", "").build())
                 .setInstanceVariableList(instances)
                 .setMethodsCalls(vuota)
                 .setParameters(hash)
@@ -777,7 +777,7 @@ public class TextualBlobStrategyTest {
         instances.getList().remove(new InstanceVariableBean("name", "String", "", "private "));
         instances.getList().add(new InstanceVariableBean("età", "int", "", "private "));
         metodo = new MethodBean.Builder("blob.package.Cliente.setNome_Ristorante", "this.nome_Ristorante = nome_Ristorante;")
-                .setReturnType(new ClassBean.Builder("void","").build())
+                .setReturnType(new ClassBean.Builder("void", "").build())
                 .setInstanceVariableList(instances)
                 .setMethodsCalls(vuota)
                 .setParameters(hash)
@@ -1140,7 +1140,7 @@ public class TextualBlobStrategyTest {
 
     @Test
     public void isSmellyNearThreshold() {
-        TextualBlobStrategy analisi = new TextualBlobStrategy(SmellynessMetricStub.computeSmellynessClass(smelly.getTextContent())-0.1);
+        TextualBlobStrategy analisi = new TextualBlobStrategy(SmellynessMetricStub.computeSmellynessClass(smelly.getTextContent()) - 0.1);
         BlobCodeSmell smell = new BlobCodeSmell(analisi, "Textual");
         boolean risultato = smelly.isAffected(smell);
         assertTrue(smelly.getAffectedSmell().contains(smell));

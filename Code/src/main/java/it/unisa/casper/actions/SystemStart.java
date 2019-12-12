@@ -5,7 +5,6 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
-import it.unisa.casper.analysis.code_smell.PromiscuousPackageCodeSmell;
 import it.unisa.casper.gui.CheckProjectPage;
 import it.unisa.casper.parser.ParsingException;
 import it.unisa.casper.parser.PsiParser;
@@ -17,12 +16,10 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-//import it.unisa.casper.storage.repository.*;
-
 public class SystemStart {
 
     boolean errorHappened;
-    private String algoritmo;
+    private String algoritmo, nameDir;
     private static ArrayList<String> smell;
     private double minC = 0.5;
     private ArrayList<Integer> sogliaStructural;
@@ -35,9 +32,13 @@ public class SystemStart {
         smell.add("Blob");
         smell.add("Promiscuous");
         sogliaStructural = new ArrayList<Integer>();
+        nameDir = System.getProperty("user.home") + File.separator + ".casper";
+        
+        File dir = new File(nameDir);
+        dir.mkdir();
 
         try {
-            FileReader f = new FileReader(System.getProperty("user.home") + File.separator + ".casper" + File.separator + "threshold.txt");
+            FileReader f = new FileReader(nameDir + File.separator + "threshold.txt");
             BufferedReader b = new BufferedReader(f);
 
             String[] list = null;
@@ -70,7 +71,7 @@ public class SystemStart {
             }
         } catch (Exception e) {
             try {
-                FileWriter f = new FileWriter(System.getProperty("user.home") + File.separator + ".casper" + File.separator + "threshold.txt");
+                FileWriter f = new FileWriter(nameDir + File.separator + "threshold.txt");
                 BufferedWriter out = new BufferedWriter(f);
                 out.write("00.0,00,All\n" +
                         "00.0,00,All\n" +
@@ -114,7 +115,7 @@ public class SystemStart {
                     packageList[0] = parser.parse();
                 } catch (ParsingException e) {
                     errorHappened = true;
-                    e.printStackTrace();
+
                 }
             });
 
@@ -126,7 +127,7 @@ public class SystemStart {
             frame.show();
 
         } else {
-            Messages.showMessageDialog(currentProject, "Sorry, an error has occurred. Prease try again or contact support", "OH ! No! ", Messages.getErrorIcon());
+            Messages.showMessageDialog(currentProject, "Sorry, an error has occurred. Please try again or contact support", "OH ! No! ", Messages.getErrorIcon());
         }
 
     }

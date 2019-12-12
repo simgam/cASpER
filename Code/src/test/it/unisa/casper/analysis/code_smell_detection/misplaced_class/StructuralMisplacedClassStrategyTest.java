@@ -95,7 +95,7 @@ public class StructuralMisplacedClassStrategyTest {
 
         metodo = new MethodBean.Builder("misplaced_class.package.Cliente.Cliente", "this.name = name;\n" +
                 "\t\tthis.età = età;")
-                .setReturnType(new ClassBean.Builder("void","").build())
+                .setReturnType(new ClassBean.Builder("void", "").build())
                 .setInstanceVariableList(instances)
                 .setMethodsCalls(vuoto)
                 .setParameters(hash)
@@ -243,7 +243,7 @@ public class StructuralMisplacedClassStrategyTest {
 
     @Test
     public void isSmellyNearThreshold() {
-        StructuralMisplacedClassStrategy analisi = new StructuralMisplacedClassStrategy(systemPackage, (int)CKMetricsStub.getNumberOfDependencies(smelly, smelly.getEnviedPackage())-1);
+        StructuralMisplacedClassStrategy analisi = new StructuralMisplacedClassStrategy(systemPackage, (int) CKMetricsStub.getNumberOfDependencies(smelly, smelly.getEnviedPackage()) - 1);
         MisplacedClassCodeSmell smell = new MisplacedClassCodeSmell(analisi, "Structural");
         boolean risultato = smelly.isAffected(smell);
         assertTrue(smelly.getAffectedSmell().contains(smell));
@@ -254,7 +254,7 @@ public class StructuralMisplacedClassStrategyTest {
 
     @Test
     public void isSmellyMinThreshold() {
-        StructuralMisplacedClassStrategy analisi = new StructuralMisplacedClassStrategy(systemPackage, (int)CKMetricsStub.getNumberOfDependencies(smelly, smelly.getEnviedPackage()));
+        StructuralMisplacedClassStrategy analisi = new StructuralMisplacedClassStrategy(systemPackage, (int) CKMetricsStub.getNumberOfDependencies(smelly, smelly.getEnviedPackage()));
         MisplacedClassCodeSmell smell = new MisplacedClassCodeSmell(analisi, "Structural");
         boolean risultato = smelly.isAffected(smell);
         assertFalse(smelly.getAffectedSmell().contains(smell));

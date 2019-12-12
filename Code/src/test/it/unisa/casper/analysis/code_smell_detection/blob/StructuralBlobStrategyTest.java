@@ -295,7 +295,7 @@ public class StructuralBlobStrategyTest {
         HashMap<String, ClassBean> hash = new HashMap<String, ClassBean>();
         hash.put("balance", new ClassBean.Builder("Double", "").build());
         metodo = new MethodBean.Builder("blob.package.BankAccount.BankAccount", "this.balance = balance;")
-                .setReturnType(new ClassBean.Builder("void","").build())
+                .setReturnType(new ClassBean.Builder("void", "").build())
                 .setInstanceVariableList(instances)
                 .setMethodsCalls(vuota)
                 .setParameters(hash)
@@ -339,7 +339,7 @@ public class StructuralBlobStrategyTest {
         pack.addClassList(noSmelly);
 
         methods = new MethodList();
-        instances= new InstanceVariableList();
+        instances = new InstanceVariableList();
         instances.getList().add(new InstanceVariableBean("unformattedNumber", "String", "", "private final "));
         classe = new ClassBean.Builder("blob.package.Phone", "private final String unformattedNumber;\n" +
                 "   public Phone(String unformattedNumber) {\n" +
@@ -485,7 +485,7 @@ public class StructuralBlobStrategyTest {
         hash.put("unformattedNumber", new ClassBean.Builder("String", "").build());
 
         metodo = new MethodBean.Builder("blob.package.Phone.Phone", "this.unformattedNumber = unformattedNumber;")
-                .setReturnType(new ClassBean.Builder("void","").build())
+                .setReturnType(new ClassBean.Builder("void", "").build())
                 .setInstanceVariableList(instances)
                 .setMethodsCalls(vuota)
                 .setParameters(hash)
@@ -734,7 +734,7 @@ public class StructuralBlobStrategyTest {
         hash.put("età", new ClassBean.Builder("int", "").build());
         metodo = new MethodBean.Builder("blob.package.Cliente.Cliente", "this.name = name;\n" +
                 "\t\tthis.età = età;")
-                .setReturnType(new ClassBean.Builder("void","").build())
+                .setReturnType(new ClassBean.Builder("void", "").build())
                 .setInstanceVariableList(instances)
                 .setMethodsCalls(vuota)
                 .setParameters(hash)
@@ -960,7 +960,7 @@ public class StructuralBlobStrategyTest {
         hash = new HashMap<String, ClassBean>();
         hash.put("nome_Ristorante", new ClassBean.Builder("String", "").build());
         metodo = new MethodBean.Builder("blob.package.Ristorante.Ristorante", "this.nome_Ristorante = nome_Ristorante;")
-                .setReturnType(new ClassBean.Builder("void","").build())
+                .setReturnType(new ClassBean.Builder("void", "").build())
                 .setInstanceVariableList(instances)
                 .setMethodsCalls(vuota)
                 .setParameters(hash)
@@ -1014,7 +1014,7 @@ public class StructuralBlobStrategyTest {
         instances.getList().remove(new InstanceVariableBean("name", "String", "", "private "));
         instances.getList().add(new InstanceVariableBean("età", "int", "", "private "));
         metodo = new MethodBean.Builder("blob.package.Cliente.setNome_Ristorante", "this.nome_Ristorante = nome_Ristorante;")
-                .setReturnType(new ClassBean.Builder("void","").build())
+                .setReturnType(new ClassBean.Builder("void", "").build())
                 .setInstanceVariableList(instances)
                 .setMethodsCalls(vuota)
                 .setParameters(hash)
@@ -1805,7 +1805,7 @@ public class StructuralBlobStrategyTest {
 
     @Test
     public void isSmellyNearThreshold() {
-        StructuralBlobStrategy analisi = new StructuralBlobStrategy(CKMetricsStub.getLCOM(smelly)-1,CKMetricsStub.getFeatureSum(smelly)-1,CKMetricsStub.getELOC(smelly)-1);
+        StructuralBlobStrategy analisi = new StructuralBlobStrategy(CKMetricsStub.getLCOM(smelly) - 1, CKMetricsStub.getFeatureSum(smelly) - 1, CKMetricsStub.getELOC(smelly) - 1);
         BlobCodeSmell smell = new BlobCodeSmell(analisi, "Structural");
         boolean risultato = smelly.isAffected(smell);
         assertTrue(smelly.getAffectedSmell().contains(smell));
@@ -1816,7 +1816,7 @@ public class StructuralBlobStrategyTest {
 
     @Test
     public void isSmellyMinThreshold() {
-        StructuralBlobStrategy analisi = new StructuralBlobStrategy(CKMetricsStub.getLCOM(smelly),CKMetricsStub.getFeatureSum(smelly),CKMetricsStub.getELOC(smelly));
+        StructuralBlobStrategy analisi = new StructuralBlobStrategy(CKMetricsStub.getLCOM(smelly), CKMetricsStub.getFeatureSum(smelly), CKMetricsStub.getELOC(smelly));
         BlobCodeSmell smell = new BlobCodeSmell(analisi, "Structural");
         boolean risultato = smelly.isAffected(smell);
         assertFalse(smelly.getAffectedSmell().contains(smell));

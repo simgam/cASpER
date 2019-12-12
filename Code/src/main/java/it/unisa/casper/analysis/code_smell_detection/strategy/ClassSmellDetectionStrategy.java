@@ -16,7 +16,7 @@ public interface ClassSmellDetectionStrategy extends CodeSmellDetectionStrategy<
      * @param aClass Classe da passare allo strategy per effettuare l'analisi
      * @return true se la classe è affetta da smell, false altrimenti
      */
-    public boolean isSmelly(ClassBean aClass);
+    boolean isSmelly(ClassBean aClass);
 
     /**
      * metodo che ritorna la lista di soglie individuate durante l'analisi

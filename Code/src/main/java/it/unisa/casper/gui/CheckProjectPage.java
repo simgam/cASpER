@@ -204,7 +204,7 @@ public class CheckProjectPage extends DialogWrapper {
             smellPanel.get(i).add(codeSmell.get(smellName.get(i)));
             algo.add(new JPanel());
             if (smellName.get(i).equalsIgnoreCase("blob") || smellName.get(i).equalsIgnoreCase("promiscuous package")) {
-                smellPanel.get(i).setBorder(new TitledBorder("*non utilizza le dipendenze"));
+                smellPanel.get(i).setBorder(new TitledBorder("* does not use dependencies"));
             }
             smellPanel.get(i).add(algo.get(i));
             algo.get(i).setLayout(new GridLayout(0, 1, 0, 0));
@@ -312,7 +312,7 @@ public class CheckProjectPage extends DialogWrapper {
                 } catch (NumberFormatException e) {
                     coseno.setValue((int) sogliaCoseno * 100);
                     valCoseno.setText(sogliaCoseno + "");
-                    JOptionPane.showMessageDialog(null, "Inserire valori decimali con \".\" [" + sogliaCoseno + ";1]", "Errore", JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Enter decimal values with \".\" [" + sogliaCoseno + ";1]", "Errore", JOptionPane.WARNING_MESSAGE);
                 }
             }
         });
@@ -345,7 +345,7 @@ public class CheckProjectPage extends DialogWrapper {
                     createTable();
                     table.repaint();
                 } catch (NumberFormatException e) {
-                    JOptionPane.showMessageDialog(null, "Inserire valori interi", "", JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Enter integer values", "", JOptionPane.WARNING_MESSAGE);
                 }
             }
         });
@@ -366,7 +366,7 @@ public class CheckProjectPage extends DialogWrapper {
                 } catch (NumberFormatException e) {
                     t.setText(sogliaDipendenze.get(0) + "");
                     valDipendenza.get(0).setText(sogliaDipendenze.get(0) + "");
-                    JOptionPane.showMessageDialog(null, "Soglia minima non rispettata");
+                    JOptionPane.showMessageDialog(null, "Minimum threshold not respected");
                 }
                 ;
             }
@@ -447,17 +447,17 @@ public class CheckProjectPage extends DialogWrapper {
                         if (ThresholdName.get(finalJ - 1).equalsIgnoreCase("inversemintrac") || ThresholdName.get(finalJ - 1).equalsIgnoreCase("minterc")) {
                             if (Double.parseDouble(f.getText()) < ((double) threshold.get(ThresholdName.get(finalJ - 1))) / 100) {
                                 f.setText(((double) threshold.get(ThresholdName.get(finalJ - 1))) / 100 + "");
-                                JOptionPane.showMessageDialog(null, "Soglia minima non rispettata");
+                                JOptionPane.showMessageDialog(null, "Minimum threshold not respected");
                             } else {
                                 if (Double.parseDouble(f.getText()) > 1.0) {
                                     f.setText("1");
-                                    JOptionPane.showMessageDialog(null, "Soglia minima non rispettata");
+                                    JOptionPane.showMessageDialog(null, "Minimum threshold not respected");
                                 }
                             }
                         } else {
                             if (Integer.parseInt(f.getText()) < threshold.get(ThresholdName.get(finalJ - 1))) {
                                 f.setText(threshold.get(ThresholdName.get(finalJ - 1)) + "");
-                                JOptionPane.showMessageDialog(null, "Soglia minima non rispettata");
+                                JOptionPane.showMessageDialog(null, "Minimum threshold not respected");
                             }
                         }
                     } catch (NumberFormatException e) {
@@ -466,7 +466,7 @@ public class CheckProjectPage extends DialogWrapper {
                         } else {
                             f.setText(threshold.get(ThresholdName.get(finalJ - 1)) + "");
                         }
-                        JOptionPane.showMessageDialog(null, "Formato non consentito");
+                        JOptionPane.showMessageDialog(null, "Format not allowed");
                     }
 
                     createTable();
@@ -481,9 +481,9 @@ public class CheckProjectPage extends DialogWrapper {
             livello.add(scritta);
             livello.add(valDipendenza.get(j + pos));
             if (ThresholdName.get(j - 1).equalsIgnoreCase("inversemintrac") || ThresholdName.get(j - 1).equalsIgnoreCase("minterc")) {
-                vincolo = new JLabel("valore in [" + ((double) threshold.get(ThresholdName.get(finalJ - 1))) / 100 + ";1]");
+                vincolo = new JLabel("value in [" + ((double) threshold.get(ThresholdName.get(finalJ - 1))) / 100 + ";1]");
             } else {
-                vincolo = new JLabel("valore min = " + threshold.get(ThresholdName.get(j - 1)));
+                vincolo = new JLabel("value min = " + threshold.get(ThresholdName.get(j - 1)));
             }
             vincolo.setHorizontalAlignment(SwingConstants.CENTER);
             livello.add(vincolo);
@@ -761,19 +761,19 @@ public class CheckProjectPage extends DialogWrapper {
     private String prioritySmell(boolean controllo, int complessita, boolean basso, int alto) {
 
         if (complessita <= 2 && !controllo && alto < 1) {
-            return "bassa";
+            return "low";
         } else {
             if (!basso) {
                 switch (alto) {
                     case 1:
-                        return "alto";
+                        return "high";
                     case 2:
-                        return "urgente";
+                        return "urgent";
                     default:
-                        return "media";
+                        return "medium";
                 }
             }
-            return "media";
+            return "medium";
         }
     }
 

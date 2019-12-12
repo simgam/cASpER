@@ -4,11 +4,8 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Vector;
-import java.util.logging.Logger;
 
 public class VectorSpaceModel implements IREngine {
-
-    private static Logger logger = Logger.getLogger("global");
 
     /* The documents name */
     Map<String, Map<Integer, Double>> documentsList;
@@ -58,22 +55,14 @@ public class VectorSpaceModel implements IREngine {
      */
     private Map<String, Integer> extractTerms(String[] document) {
         if (badWordsCollection == null) {
-            /*
-             * read bad word from config file
-             */
-            //String badWords = steamer
-            //.stemString(conf.getProperties("BadWords"));
 
             String badWords = conf.getProperties("BadWords");
             String[] badWordsArray = badWords.split(",");
 
             badWordsCollection = new Vector<String>();
-            /*
-             * transform the bad words in a collection
-             */
+
             for (String badWord : badWordsArray) {
                 badWordsCollection.add(badWord);
-                //logger.severe(badWord);
             }
         }
 
@@ -120,14 +109,10 @@ public class VectorSpaceModel implements IREngine {
              */
             terms = extractTerms(document);
 
-            //logger.severe("Termini Estratti!");
-
             /*
              * count the occurrence for everyone words in this document
              */
             occurrence = countOccurrence(terms, document[1]);
-
-            //logger.severe("Occorrenze Contate");
 
             /*
              * Insert the current document in to matrix

@@ -20,7 +20,7 @@ public class TextualFeatureEnvyStrategyTest {
     private InstanceVariableBeanList instances;
     private MethodBeanList methods, list;
     private MethodBean metodo, smelly, noSmelly;
-    private ClassBean classe,classeE;
+    private ClassBean classe, classeE;
     private ClassBeanList classes;
     private PackageBean pack;
     private List<PackageBean> listPackage = new ArrayList<PackageBean>();
@@ -192,7 +192,7 @@ public class TextualFeatureEnvyStrategyTest {
         hash.put("unformattedNumber", new ClassBean.Builder("String", "").build());
 
         metodo = new MethodBean.Builder("feature_envy.package.Phone.Phone", "this.unformattedNumber = unformattedNumber;")
-                .setReturnType(new ClassBean.Builder("void","").build())
+                .setReturnType(new ClassBean.Builder("void", "").build())
                 .setInstanceVariableList(instances)
                 .setMethodsCalls(vuota)
                 .setParameters(hash)
@@ -620,7 +620,7 @@ public class TextualFeatureEnvyStrategyTest {
                 .build();
 
         metodo = new MethodBean.Builder("feature_envy.package.Customer.Customer", "this.name=name;")
-                .setReturnType(new ClassBean.Builder("void","").build())
+                .setReturnType(new ClassBean.Builder("void", "").build())
                 .setInstanceVariableList(instances)
                 .setMethodsCalls(vuota)
                 .setParameters(nulla)
@@ -728,7 +728,7 @@ public class TextualFeatureEnvyStrategyTest {
         document2[0] = "class";
         document2[1] = smelly.getEnviedClass().getTextContent();
 
-        TextualFeatureEnvyStrategy analisi = new TextualFeatureEnvyStrategy(listPackage, CosineSimilarityStub.computeSimilarity(document1, document2)-0.1);
+        TextualFeatureEnvyStrategy analisi = new TextualFeatureEnvyStrategy(listPackage, CosineSimilarityStub.computeSimilarity(document1, document2) - 0.1);
         FeatureEnvyCodeSmell smell = new FeatureEnvyCodeSmell(analisi, "Textual");
         boolean risultato = smelly.isAffected(smell);
         assertTrue(smelly.getAffectedSmell().contains(smell));

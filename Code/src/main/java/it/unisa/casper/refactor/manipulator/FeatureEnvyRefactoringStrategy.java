@@ -11,8 +11,6 @@ import it.unisa.casper.storage.beans.MethodBean;
 
 import javax.swing.*;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * Feature Envy Refactor (FE Refactor) è la classe che si occupa del Refactor degli smells di tipo Feature Envy
@@ -28,7 +26,6 @@ import java.util.logging.Logger;
  **/
 
 public class FeatureEnvyRefactoringStrategy implements RefactoringStrategy {
-    Logger logger = Logger.getLogger("global");
     private MethodBean methodToMove;
     //PSI Section
     private PsiClass psiSourceClass, psiDestinationClass;
@@ -63,8 +60,6 @@ public class FeatureEnvyRefactoringStrategy implements RefactoringStrategy {
         parameters = psiMethod.getParameterList().getText();
         throwsList = psiMethod.getThrowsList().getText();
         body = psiMethod.getBody().getText();
-
-        logger.setLevel(Level.OFF);
     }
 
     /**
@@ -158,11 +153,9 @@ public class FeatureEnvyRefactoringStrategy implements RefactoringStrategy {
                     boolean y = psiMethod.getModifierList().getText().contains("static");
                     if ((x || y) && !(x && y))//questo è uno XOR, VERO se e solo se gli ingressi sono diversi tra di loro.
                     {
-                        logger.severe("selezionata la strategia NESSUNA");
                         return 0;
                     }
                     variabileDaTrasformare = field.getName();
-                    logger.severe("selezionata la strategia VARIABILE D'ISTANZA");
                     return 1;
                 }
             }
@@ -173,12 +166,10 @@ public class FeatureEnvyRefactoringStrategy implements RefactoringStrategy {
         for (PsiParameter parametro : parameters) {
             if (parametro.getType().getInternalCanonicalText().equals(psiDestinationClass.getQualifiedName())) {
                 variabileDaTrasformare = parametro.getName();
-                logger.severe("selezionata la strategia PARAMETRI");
                 return 2;
             }
         }
 
-        logger.severe("selezionata la strategia NESSUNA");
         return 0;
     }
 
@@ -246,7 +237,7 @@ public class FeatureEnvyRefactoringStrategy implements RefactoringStrategy {
 
             applySolutionBelonging(othervariables, s);
         } catch (Exception e) {
-            e.printStackTrace();
+
         }
     }
 

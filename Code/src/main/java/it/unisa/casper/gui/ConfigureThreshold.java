@@ -143,7 +143,7 @@ public class ConfigureThreshold extends DialogWrapper {
 
             primo.setLayout(new GridLayout(0, 2, 0, 0));
 
-            textual = new JLabel("Soglia algoritmo testuale:");
+            textual = new JLabel("Textual algorithm threshold:");
             textual.setHorizontalAlignment(SwingConstants.CENTER);
             primo.add(textual);
             app = new JPanel();
@@ -156,9 +156,9 @@ public class ConfigureThreshold extends DialogWrapper {
             secondo.setLayout(new GridLayout(0, 2, 0, 0));
 
             if (s.equalsIgnoreCase("feature envy") || s.equalsIgnoreCase("misplaced class")) {
-                structural = new JLabel("Soglia algoritmo strutturale:");
+                structural = new JLabel("Structural algorithm threshold:");
             } else {
-                structural = new JLabel("Soglie algoritmo strutturale:");
+                structural = new JLabel("Structural algorithm thresholds:");
             }
             structural.setHorizontalAlignment(SwingConstants.CENTER);
             secondo.add(structural);
@@ -167,7 +167,7 @@ public class ConfigureThreshold extends DialogWrapper {
 
             if (!s.equalsIgnoreCase("Blob")) {
                 if (!s.equalsIgnoreCase("Promiscuous package")) {
-                    app.add(new JLabel("Dipendenze ="));
+                    app.add(new JLabel("Dependences ="));
                 } else {
                     app.add(new JLabel("InverseMIntraC ="));
                 }
@@ -193,11 +193,11 @@ public class ConfigureThreshold extends DialogWrapper {
 
         JPanel scelta = new JPanel();
         app = new JPanel();
-        standard = new JCheckBox("Soglie di default");
+        standard = new JCheckBox("Default thresholds");
         standard.setHorizontalAlignment(SwingConstants.CENTER);
 
         filtro(algoritmi);
-        app.add(new JLabel("Tipo di algoritmo da usare:"));
+        app.add(new JLabel("Type of algorithm to use:"));
         app.add(algorith);
         algorith.setSelectedItem(algoritmi);
         scelta.add(app);
@@ -305,7 +305,7 @@ public class ConfigureThreshold extends DialogWrapper {
 
         coseno.get(name).setText(cos.get(name) + "");
         if (name.equalsIgnoreCase("misplaced class")) {
-            coseno.get(name).setToolTipText("Tale coseno verra' successivamente riportato nell'intervallo [0-1]");
+            coseno.get(name).setToolTipText("This cosine will then be reported in the interval [0-1]");
         }
         coseno.get(name).setColumns(10);
         app2.add(coseno.get(name));
@@ -325,7 +325,7 @@ public class ConfigureThreshold extends DialogWrapper {
             }
         });
 
-        coseno.get(name).setToolTipText("Inserire valore tra [0-1]");
+        coseno.get(name).setToolTipText("Enter value between range [0-1]");
         coseno.get(name).addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent c) {
                 try {
@@ -358,7 +358,7 @@ public class ConfigureThreshold extends DialogWrapper {
                         standard.setSelected(false);
                     }
                 } catch (NumberFormatException e) {
-                    JOptionPane.showMessageDialog(null, "Inserire valori decimali con \".\" [0-1]", "", JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Enter decimal values with \".\" [0-1]", "", JOptionPane.WARNING_MESSAGE);
                 }
             }
         });
@@ -367,10 +367,10 @@ public class ConfigureThreshold extends DialogWrapper {
     private void addFieldStructural(String name) {
         if (!name.contains("Promiscuous package")) {
             dipendenze.get(name).setText(dipendence.get(name) + "");
-            dipendenze.get(name).setToolTipText("Inserire valore maggiore o uguale di 0");
+            dipendenze.get(name).setToolTipText("Enter value greater than or equal to 0");
         } else {
             dipendenze.get(name).setText(((double) dipendence.get(name)) / 100 + "");
-            dipendenze.get(name).setToolTipText("Inserire valori compresi tra [0;1]");
+            dipendenze.get(name).setToolTipText("Enter values between [0;1]");
         }
         app.add(dipendenze.get(name));
         dipendenze.get(name).setColumns(10);
@@ -385,13 +385,13 @@ public class ConfigureThreshold extends DialogWrapper {
                 }
                 if (!corrente.contains("Promiscuous package")) {
                     if (Integer.parseInt(t.getText()) < 0) {
-                        JOptionPane.showMessageDialog(null, "Inserire valori intero >=0", "Errore", JOptionPane.WARNING_MESSAGE);
+                        JOptionPane.showMessageDialog(null, "Enter integer values >=0", "Error", JOptionPane.WARNING_MESSAGE);
                         dipendenze.get(corrente).setText("0");
                         dipendence.put(corrente, 0);
                     }
                 } else {
                     if (Double.parseDouble(t.getText()) < 0.0 || Double.parseDouble(t.getText()) > 1.0) {
-                        JOptionPane.showMessageDialog(null, "Inserire valori compresi tra [0;1]", "Errore", JOptionPane.WARNING_MESSAGE);
+                        JOptionPane.showMessageDialog(null, "Enter values between [0;1]", "Error", JOptionPane.WARNING_MESSAGE);
                         dipendenze.get(corrente).setText("0.5");
                         dipendence.put(corrente, 50);
                     }
@@ -439,7 +439,7 @@ public class ConfigureThreshold extends DialogWrapper {
                 out.newLine();
             }
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+
         } catch (IOException ex) {
             ex.printStackTrace();
         }

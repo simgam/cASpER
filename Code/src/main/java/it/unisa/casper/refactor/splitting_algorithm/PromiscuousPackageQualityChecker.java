@@ -6,7 +6,6 @@ import it.unisa.casper.storage.beans.MethodBean;
 import it.unisa.casper.storage.beans.PackageBean;
 
 import java.io.IOException;
-import java.util.Collection;
 
 
 public class PromiscuousPackageQualityChecker {
@@ -103,7 +102,7 @@ public class PromiscuousPackageQualityChecker {
             for (MethodBean call : methodBean.getMethodsCalls()) {
                 for (MethodBean methodBeanToCompare : pSecondClass.getMethodList()) {
                     if (call.getFullQualifiedName().equals(methodBeanToCompare.getFullQualifiedName())) {
-                         numberOfParameters += methodBeanToCompare.getParameters().size();
+                        numberOfParameters += methodBeanToCompare.getParameters().size();
                         dependencies++;
                     }
                 }

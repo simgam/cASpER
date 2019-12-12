@@ -147,7 +147,6 @@ public class MethodBean implements Comparable {
 
     /**
      * setter
-     *
      */
     public void setBelongingClass(ClassBean belongingClass) {
         this.belongingClass = belongingClass;

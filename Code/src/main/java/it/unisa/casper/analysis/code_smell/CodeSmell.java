@@ -87,7 +87,7 @@ public abstract class CodeSmell<T> {
     /**
      * setter
      *
-     * @param key String corrispondente all'indice da inserire
+     * @param key    String corrispondente all'indice da inserire
      * @param indice double corrispondente all'indice ottenute dall'algoritmo usato
      */
     public void addIndex(String key, double indice) {

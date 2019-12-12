@@ -93,7 +93,7 @@ public class TextualMisplacedClassStrategy implements ClassSmellDetectionStrateg
             CosineSimilarity cosineSimilarity = new CosineSimilarity();
             list.put("coseno", cosineSimilarity.computeSimilarity(document1, document2) - cosineSimilarity.computeSimilarity(document1, document3));
         } catch (IOException e) {
-            e.printStackTrace();
+
         }
         return list;
     }

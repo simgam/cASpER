@@ -1,21 +1,16 @@
 package it.unisa.casper.refactor.splitting_algorithm;
 
-import it.unisa.casper.analysis.code_smell_detection.similarityComputation.CosineSimilarity;
 import it.unisa.casper.storage.beans.ClassBean;
 import it.unisa.casper.storage.beans.ClassList;
 import it.unisa.casper.storage.beans.PackageBean;
 
-import java.io.IOException;
 import java.util.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import java.util.regex.Pattern;
 
 public class SplitPackages {
 
     private static Vector<String> chains = new Vector<String>();
     private final Pattern splitPattern;
-    private static Logger logger = Logger.getLogger("global");
 
     public SplitPackages() {
         splitPattern = Pattern.compile("-");
@@ -31,7 +26,6 @@ public class SplitPackages {
      */
     public Collection<PackageBean> split(PackageBean pToSplit, double pThreshold) throws Exception {
 
-        logger.setLevel(Level.OFF);
         Collection<PackageBean> result = new ArrayList<>();
         Iterator<ClassBean> it = pToSplit.getClassList().iterator();
         Vector<ClassBean> vectorClasses = new Vector<ClassBean>();

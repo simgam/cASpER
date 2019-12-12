@@ -187,7 +187,7 @@ public class MisplacedClassWizard extends DialogWrapper {
                 } catch (Exception e) {
                     errorOccurred = true;
                     message = e.getMessage();
-                    e.printStackTrace();
+
                 }
 
 
@@ -200,7 +200,7 @@ public class MisplacedClassWizard extends DialogWrapper {
                     try {
                         FileWriter f = new FileWriter(System.getProperty("user.home") + File.separator + ".casper" + File.separator + "refactoring.txt");
                     } catch (IOException e) {
-                        e.printStackTrace();
+
                     }
                 }
 

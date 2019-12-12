@@ -70,13 +70,6 @@ public class BlobWizard extends DialogWrapper {
                     RefactoringManager refactoringManager = new RefactoringManager(refactoringStrategy);
                     refactoringManager.executeRefactor();
 
-                    /*String[] name = blobClassBean.getFullQualifiedName().replace(".", "/").split("/");
-                    File file = new File(blobClassBean.getPathToFile() + "/" + name[name.length - 1] + ".java");
-
-                    if (!file.delete()) {
-                        Messages.showMessageDialog("Error during delete of original class, pleace delete it manually", "Attention", Messages.getInformationIcon());
-                    }*/
-
                     message = "Blob Corrected, check new classes generated name";
                     Messages.showMessageDialog(message, "Success !", Messages.getInformationIcon());
                     FileWriter f = new FileWriter(System.getProperty("user.home") + File.separator + ".casper" + File.separator + "refactoring.txt");
@@ -84,10 +77,10 @@ public class BlobWizard extends DialogWrapper {
                     out.write("success");
                     close(0);
                 } catch (IOException e) {
-                    e.printStackTrace();
+
                 } catch (Exception e) {
                     Messages.showMessageDialog("Error during refactoring", "Error", Messages.getErrorIcon());
-                    e.printStackTrace();
+
                 }
             }
         };
@@ -293,12 +286,12 @@ public class BlobWizard extends DialogWrapper {
                                 Messages.showMessageDialog(message, "Oh no", Messages.getErrorIcon());
                             }
                         } catch (ArrayIndexOutOfBoundsException ex) {
-                            String message = "Seleziona un elemento";
+                            String message = "Select an item";
                             Messages.showMessageDialog(message, "Warning", Messages.getWarningIcon());
                         }
                         ;
                     } else {
-                        String message = "Non puoi spostare un metodo nella classe in cui \u00E8 gi\u00E0 presente";
+                        String message = "You cannot move a method to the class where it is already present";
                         Messages.showMessageDialog(message, "Error", Messages.getErrorIcon());
                     }
                 }
@@ -338,12 +331,12 @@ public class BlobWizard extends DialogWrapper {
                             }
 
                         } catch (ArrayIndexOutOfBoundsException ex) {
-                            String message = "Seleziona un elemento";
+                            String message = "Select an item";
                             Messages.showMessageDialog(message, "Warning", Messages.getWarningIcon());
                         }
                         ;
                     } else {
-                        String message = "Non puoi spostare un metodo nella classe in cui \u00E8 gi\u00E0 presente";
+                        String message = "You cannot move a method to the class where it is already present";
                         Messages.showMessageDialog(message, "Error", Messages.getErrorIcon());
                     }
                 }

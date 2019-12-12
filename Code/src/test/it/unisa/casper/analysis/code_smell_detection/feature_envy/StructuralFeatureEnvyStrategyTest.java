@@ -19,7 +19,7 @@ public class StructuralFeatureEnvyStrategyTest {
     private InstanceVariableBeanList instances;
     private MethodBeanList methods;
     private MethodBean metodo, smelly, noSmelly;
-    private ClassBean classe,classeE;
+    private ClassBean classe, classeE;
     private ClassBeanList classes;
     private PackageBean pack;
     private List<PackageBean> listPackage = new ArrayList<PackageBean>();
@@ -142,7 +142,7 @@ public class StructuralFeatureEnvyStrategyTest {
         hash.put("unformattedNumber", new ClassBean.Builder("String", "").build());
 
         metodo = new MethodBean.Builder("feature_envy.package.Phone.Phone", "this.unformattedNumber = unformattedNumber;")
-                .setReturnType(new ClassBean.Builder("void","").build())
+                .setReturnType(new ClassBean.Builder("void", "").build())
                 .setInstanceVariableList(instances)
                 .setMethodsCalls(new MethodList())
                 .setParameters(hash)
@@ -323,7 +323,7 @@ public class StructuralFeatureEnvyStrategyTest {
                 .build();
 
         metodo = new MethodBean.Builder("feature_envy.package.Customer.Customer", "this.name=name;")
-                .setReturnType(new ClassBean.Builder("void","").build())
+                .setReturnType(new ClassBean.Builder("void", "").build())
                 .setInstanceVariableList(instances)
                 .setMethodsCalls(new MethodList())
                 .setParameters(new HashMap<String, ClassBean>())
@@ -465,7 +465,7 @@ public class StructuralFeatureEnvyStrategyTest {
 
     @Test
     public void isSmellyNearThreshold() {
-        StructuralFeatureEnvyStrategy analisi = new StructuralFeatureEnvyStrategy(listPackage, (int)CKMetricsStub.getNumberOfDependencies(smelly, smelly.getEnviedClass())-1);
+        StructuralFeatureEnvyStrategy analisi = new StructuralFeatureEnvyStrategy(listPackage, (int) CKMetricsStub.getNumberOfDependencies(smelly, smelly.getEnviedClass()) - 1);
         FeatureEnvyCodeSmell smell = new FeatureEnvyCodeSmell(analisi, "Structural");
         boolean risultato = smelly.isAffected(smell);
         assertTrue(smelly.getAffectedSmell().contains(smell));
@@ -476,7 +476,7 @@ public class StructuralFeatureEnvyStrategyTest {
 
     @Test
     public void isSmellyMinThreshold() {
-        StructuralFeatureEnvyStrategy analisi = new StructuralFeatureEnvyStrategy(listPackage, (int)CKMetricsStub.getNumberOfDependencies(smelly, smelly.getEnviedClass()));
+        StructuralFeatureEnvyStrategy analisi = new StructuralFeatureEnvyStrategy(listPackage, (int) CKMetricsStub.getNumberOfDependencies(smelly, smelly.getEnviedClass()));
         FeatureEnvyCodeSmell smell = new FeatureEnvyCodeSmell(analisi, "Structural");
         boolean risultato = smelly.isAffected(smell);
         assertFalse(smelly.getAffectedSmell().contains(smell));

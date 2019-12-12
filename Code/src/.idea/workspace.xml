@@ -13,7 +13,7 @@
       <change afterPath="$PROJECT_DIR$/../.idea/libraries/lucene_core_7_6_0.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../.idea/libraries/openapi_7_0_3.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/modules/ascetic.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/modules/casper.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.gradle/4.4/fileContent/annotation-processors.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/4.4/fileContent/annotation-processors.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.gradle/4.4/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/4.4/fileContent/fileContent.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.gradle/4.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/4.4/fileHashes/fileHashes.bin" afterDir="false" />
@@ -27,65 +27,65 @@
       <change beforePath="$PROJECT_DIR$/../.idea/gradle.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/analysis/code_smell_detection/BeanDetection.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/analysis/code_smell_detection/BeanDetection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/analysis/code_smell_detection/feature_envy/MisplacedComponentsUtilities.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/analysis/code_smell_detection/feature_envy/StructuralFeatureEnvyStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/analysis/code_smell_detection/feature_envy/StructuralFeatureEnvyStrategy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/analysis/code_smell_detection/feature_envy/TextualFeatureEnvyStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/analysis/code_smell_detection/feature_envy/TextualFeatureEnvyStrategy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/analysis/code_smell_detection/misplaced_class/StructuralMisplacedClassStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/analysis/code_smell_detection/misplaced_class/StructuralMisplacedClassStrategy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/analysis/code_smell_detection/promiscuous_package/StructuralPromiscuousPackageStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/analysis/code_smell_detection/promiscuous_package/StructuralPromiscuousPackageStrategy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/gui/BlobWizard$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/gui/BlobWizard$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/gui/BlobWizard$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/gui/BlobWizard$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/gui/BlobWizard$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/gui/BlobWizard$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/gui/BlobWizard$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/gui/BlobWizard$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/gui/BlobWizard$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/gui/BlobWizard$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/gui/BlobWizard.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/gui/BlobWizard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/gui/PromiscuousPackagePage$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/gui/PromiscuousPackagePage$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/gui/PromiscuousPackagePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/gui/PromiscuousPackagePage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/gui/PromiscuousPackageWizard$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/gui/PromiscuousPackageWizard$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/gui/PromiscuousPackageWizard$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/gui/PromiscuousPackageWizard$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/gui/PromiscuousPackageWizard$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/gui/PromiscuousPackageWizard$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/gui/PromiscuousPackageWizard$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/gui/PromiscuousPackageWizard$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/gui/PromiscuousPackageWizard$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/gui/PromiscuousPackageWizard$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/gui/PromiscuousPackageWizard.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/gui/PromiscuousPackageWizard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/refactor/manipulator/MisplacedClassRefactoringStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/refactor/manipulator/MisplacedClassRefactoringStrategy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/refactor/manipulator/PromiscuousPackageRefactoringStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/refactor/manipulator/PromiscuousPackageRefactoringStrategy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/refactor/splitting_algorithm/ClassByClassMatrixConstruction.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/refactor/splitting_algorithm/ClassByClassMatrixConstruction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/refactor/splitting_algorithm/MethodByMethodMatrixConstruction.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/refactor/splitting_algorithm/MethodByMethodMatrixConstruction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/refactor/splitting_algorithm/SplitClasses.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/refactor/splitting_algorithm/SplitClasses.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/refactor/splitting_algorithm/SplitPackages.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/refactor/splitting_algorithm/SplitPackages.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/storage/beans/PackageBean$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/storage/beans/PackageBean$Builder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/storage/beans/PackageBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/storage/beans/PackageBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/structuralMetrics/CKMetrics.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/ascetic/structuralMetrics/CKMetrics.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/analysis/code_smell_detection/BeanDetection.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/analysis/code_smell_detection/BeanDetection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/analysis/code_smell_detection/feature_envy/MisplacedComponentsUtilities.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/analysis/code_smell_detection/feature_envy/StructuralFeatureEnvyStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/analysis/code_smell_detection/feature_envy/StructuralFeatureEnvyStrategy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/analysis/code_smell_detection/feature_envy/TextualFeatureEnvyStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/analysis/code_smell_detection/feature_envy/TextualFeatureEnvyStrategy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/analysis/code_smell_detection/misplaced_class/StructuralMisplacedClassStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/analysis/code_smell_detection/misplaced_class/StructuralMisplacedClassStrategy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/analysis/code_smell_detection/promiscuous_package/StructuralPromiscuousPackageStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/analysis/code_smell_detection/promiscuous_package/StructuralPromiscuousPackageStrategy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/gui/BlobWizard$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/gui/BlobWizard$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/gui/BlobWizard$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/gui/BlobWizard$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/gui/BlobWizard$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/gui/BlobWizard$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/gui/BlobWizard$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/gui/BlobWizard$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/gui/BlobWizard$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/gui/BlobWizard$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/gui/BlobWizard.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/gui/BlobWizard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/gui/PromiscuousPackagePage$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/gui/PromiscuousPackagePage$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/gui/PromiscuousPackagePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/gui/PromiscuousPackagePage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/gui/PromiscuousPackageWizard$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/gui/PromiscuousPackageWizard$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/gui/PromiscuousPackageWizard$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/gui/PromiscuousPackageWizard$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/gui/PromiscuousPackageWizard$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/gui/PromiscuousPackageWizard$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/gui/PromiscuousPackageWizard$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/gui/PromiscuousPackageWizard$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/gui/PromiscuousPackageWizard$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/gui/PromiscuousPackageWizard$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/gui/PromiscuousPackageWizard.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/gui/PromiscuousPackageWizard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/refactor/manipulator/MisplacedClassRefactoringStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/refactor/manipulator/MisplacedClassRefactoringStrategy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/refactor/manipulator/PromiscuousPackageRefactoringStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/refactor/manipulator/PromiscuousPackageRefactoringStrategy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/refactor/splitting_algorithm/ClassByClassMatrixConstruction.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/refactor/splitting_algorithm/ClassByClassMatrixConstruction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/refactor/splitting_algorithm/MethodByMethodMatrixConstruction.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/refactor/splitting_algorithm/MethodByMethodMatrixConstruction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/refactor/splitting_algorithm/SplitClasses.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/refactor/splitting_algorithm/SplitClasses.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/refactor/splitting_algorithm/SplitPackages.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/refactor/splitting_algorithm/SplitPackages.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/storage/beans/PackageBean$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/storage/beans/PackageBean$Builder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/storage/beans/PackageBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/storage/beans/PackageBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/structuralMetrics/CKMetrics.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/ascetic/structuralMetrics/CKMetrics.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/distributions/ascetic-1.0-SNAPSHOT.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/casper/analysis/code_smell_detection/BeanDetection.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/casper/analysis/code_smell_detection/BeanDetection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/casper/analysis/code_smell_detection/feature_envy/MisplacedComponentsUtilities.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/casper/analysis/code_smell_detection/feature_envy/StructuralFeatureEnvyStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/casper/analysis/code_smell_detection/feature_envy/StructuralFeatureEnvyStrategy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/casper/analysis/code_smell_detection/feature_envy/TextualFeatureEnvyStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/casper/analysis/code_smell_detection/feature_envy/TextualFeatureEnvyStrategy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/casper/analysis/code_smell_detection/misplaced_class/StructuralMisplacedClassStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/casper/analysis/code_smell_detection/misplaced_class/StructuralMisplacedClassStrategy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/casper/analysis/code_smell_detection/promiscuous_package/StructuralPromiscuousPackageStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/casper/analysis/code_smell_detection/promiscuous_package/StructuralPromiscuousPackageStrategy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/casper/gui/BlobWizard$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/casper/gui/BlobWizard$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/casper/gui/BlobWizard$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/casper/gui/BlobWizard$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/casper/gui/BlobWizard$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/casper/gui/BlobWizard$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/casper/gui/BlobWizard$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/casper/gui/BlobWizard$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/casper/gui/BlobWizard$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/casper/gui/BlobWizard$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/casper/gui/BlobWizard.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/casper/gui/BlobWizard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/casper/gui/PromiscuousPackagePage$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/casper/gui/PromiscuousPackagePage$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/casper/gui/PromiscuousPackagePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/casper/gui/PromiscuousPackagePage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/casper/gui/PromiscuousPackageWizard$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/casper/gui/PromiscuousPackageWizard$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/casper/gui/PromiscuousPackageWizard$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/casper/gui/PromiscuousPackageWizard$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/casper/gui/PromiscuousPackageWizard$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/casper/gui/PromiscuousPackageWizard$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/casper/gui/PromiscuousPackageWizard$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/casper/gui/PromiscuousPackageWizard$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/casper/gui/PromiscuousPackageWizard$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/casper/gui/PromiscuousPackageWizard$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/casper/gui/PromiscuousPackageWizard.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/casper/gui/PromiscuousPackageWizard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/casper/refactor/manipulator/MisplacedClassRefactoringStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/casper/refactor/manipulator/MisplacedClassRefactoringStrategy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/casper/refactor/manipulator/PromiscuousPackageRefactoringStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/casper/refactor/manipulator/PromiscuousPackageRefactoringStrategy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/casper/refactor/splitting_algorithm/ClassByClassMatrixConstruction.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/casper/refactor/splitting_algorithm/ClassByClassMatrixConstruction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/casper/refactor/splitting_algorithm/MethodByMethodMatrixConstruction.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/casper/refactor/splitting_algorithm/MethodByMethodMatrixConstruction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/casper/refactor/splitting_algorithm/SplitClasses.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/casper/refactor/splitting_algorithm/SplitClasses.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/casper/refactor/splitting_algorithm/SplitPackages.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/casper/refactor/splitting_algorithm/SplitPackages.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/casper/storage/beans/PackageBean$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/casper/storage/beans/PackageBean$Builder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/casper/storage/beans/PackageBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/casper/storage/beans/PackageBean.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/casper/structuralMetrics/CKMetrics.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main-instrumented/it/unisa/casper/structuralMetrics/CKMetrics.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/casper/analysis/code_smell_detection/BeanDetection.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/casper/analysis/code_smell_detection/BeanDetection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/casper/analysis/code_smell_detection/feature_envy/MisplacedComponentsUtilities.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/casper/analysis/code_smell_detection/feature_envy/StructuralFeatureEnvyStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/casper/analysis/code_smell_detection/feature_envy/StructuralFeatureEnvyStrategy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/casper/analysis/code_smell_detection/feature_envy/TextualFeatureEnvyStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/casper/analysis/code_smell_detection/feature_envy/TextualFeatureEnvyStrategy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/casper/analysis/code_smell_detection/misplaced_class/StructuralMisplacedClassStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/casper/analysis/code_smell_detection/misplaced_class/StructuralMisplacedClassStrategy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/casper/analysis/code_smell_detection/promiscuous_package/StructuralPromiscuousPackageStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/casper/analysis/code_smell_detection/promiscuous_package/StructuralPromiscuousPackageStrategy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/casper/gui/BlobWizard$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/casper/gui/BlobWizard$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/casper/gui/BlobWizard$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/casper/gui/BlobWizard$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/casper/gui/BlobWizard$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/casper/gui/BlobWizard$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/casper/gui/BlobWizard$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/casper/gui/BlobWizard$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/casper/gui/BlobWizard$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/casper/gui/BlobWizard$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/casper/gui/BlobWizard.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/casper/gui/BlobWizard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/casper/gui/PromiscuousPackagePage$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/casper/gui/PromiscuousPackagePage$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/casper/gui/PromiscuousPackagePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/casper/gui/PromiscuousPackagePage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/casper/gui/PromiscuousPackageWizard$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/casper/gui/PromiscuousPackageWizard$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/casper/gui/PromiscuousPackageWizard$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/casper/gui/PromiscuousPackageWizard$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/casper/gui/PromiscuousPackageWizard$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/casper/gui/PromiscuousPackageWizard$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/casper/gui/PromiscuousPackageWizard$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/casper/gui/PromiscuousPackageWizard$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/casper/gui/PromiscuousPackageWizard$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/casper/gui/PromiscuousPackageWizard$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/casper/gui/PromiscuousPackageWizard.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/casper/gui/PromiscuousPackageWizard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/casper/refactor/manipulator/MisplacedClassRefactoringStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/casper/refactor/manipulator/MisplacedClassRefactoringStrategy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/casper/refactor/manipulator/PromiscuousPackageRefactoringStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/casper/refactor/manipulator/PromiscuousPackageRefactoringStrategy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/casper/refactor/splitting_algorithm/ClassByClassMatrixConstruction.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/casper/refactor/splitting_algorithm/ClassByClassMatrixConstruction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/casper/refactor/splitting_algorithm/MethodByMethodMatrixConstruction.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/casper/refactor/splitting_algorithm/MethodByMethodMatrixConstruction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/casper/refactor/splitting_algorithm/SplitClasses.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/casper/refactor/splitting_algorithm/SplitClasses.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/casper/refactor/splitting_algorithm/SplitPackages.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/casper/refactor/splitting_algorithm/SplitPackages.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/casper/storage/beans/PackageBean$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/casper/storage/beans/PackageBean$Builder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/casper/storage/beans/PackageBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/casper/storage/beans/PackageBean.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/casper/structuralMetrics/CKMetrics.class" beforeDir="false" afterPath="$PROJECT_DIR$/../build/classes/java/main/it/unisa/casper/structuralMetrics/CKMetrics.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/distributions/casper-1.0-SNAPSHOT.zip" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/config/disabled_plugins.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/config/options/colors.scheme.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/config/options/colors.scheme.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/config/options/debugger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/config/options/debugger.xml" afterDir="false" />
@@ -102,7 +102,7 @@
       <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/config/options/updates.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/config/options/updates.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/config/options/usage.statistics.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/config/options/usage.statistics.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/config/options/window.manager.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/config/options/window.manager.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/config/projectTemplates/Ascetic.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/config/projectTemplates/cASpER.zip" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/config/tasks/ProgettiTest.contexts.zip" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/config/tasks/ProgettiTest.contexts.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/config/tasks/ProgettiTest.tasks.zip" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/config/tasks/ProgettiTest.tasks.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/config/tasks/TestAscetic.contexts.zip" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/config/tasks/TestAscetic.contexts.zip" afterDir="false" />
@@ -111,13 +111,13 @@
       <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/config/tasks/test_per_algo.tasks.zip" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/config/terminal/history/history-" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/config/terminal/history/history-1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/plugins-test/ascetic/lib/ascetic-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/plugins-test/ascetic/lib/jcommon-1.0.17.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/plugins-test/ascetic/lib/jfreechart-1.5.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/plugins-test/ascetic/lib/jsoup-1.11.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/plugins-test/ascetic/lib/lucene-core-7.6.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/plugins-test/ascetic/lib/sqlite-jdbc-3.25.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/plugins/ascetic/lib/ascetic-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/plugins/ascetic/lib/ascetic-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/plugins-test/casper/lib/casper-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/plugins-test/casper/lib/jcommon-1.0.17.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/plugins-test/casper/lib/jfreechart-1.5.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/plugins-test/casper/lib/jsoup-1.11.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/plugins-test/casper/lib/lucene-core-7.6.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/plugins-test/casper/lib/sqlite-jdbc-3.25.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/plugins/casper/lib/casper-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/plugins/casper/lib/casper-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/LocalHistory/changes.storageData" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/LocalHistory/changes.storageData" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/LocalHistory/changes.storageRecordIndex" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/LocalHistory/changes.storageRecordIndex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/caches/attrib.dat.storageData" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/caches/attrib.dat.storageData" afterDir="false" />
@@ -777,7 +777,7 @@
       <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/workspace/app.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/workspace/app.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/workspace/progettitest.7f46cf18.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/workspace/progettitest.7f46cf18.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../build/idea-sandbox/system/workspace/testascetic.f0271f54.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../build/idea-sandbox/system/workspace/testascetic.f0271f54.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/libs/ascetic-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../build/libs/ascetic-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/libs/casper-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../build/libs/casper-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../build/libsSearchableOptions/lib/searchableOptions-1.0-SNAPSHOT.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../build/patchedPluginXmlFiles/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../build/patchedPluginXmlFiles/plugin.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../build/resources/main/META-INF/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../build/resources/main/META-INF/plugin.xml" afterDir="false" />
@@ -785,7 +785,7 @@
       <change beforePath="$PROJECT_DIR$/../build/searchableOptions/adt-ui.jar/search/adt-ui.jar.searchableOptions.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../build/searchableOptions/android.jar/search/android.jar.searchableOptions.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../build/searchableOptions/antIntegration.jar/search/antIntegration.jar.searchableOptions.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/searchableOptions/ascetic-1.0-SNAPSHOT.jar/search/ascetic-1.0-SNAPSHOT.jar.searchableOptions.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/searchableOptions/casper-1.0-SNAPSHOT.jar/search/casper-1.0-SNAPSHOT.jar.searchableOptions.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../build/searchableOptions/byteCodeViewer.jar/search/byteCodeViewer.jar.searchableOptions.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../build/searchableOptions/copyright.jar/search/copyright.jar.searchableOptions.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../build/searchableOptions/coverage.jar/search/coverage.jar.searchableOptions.xml" beforeDir="false" />
@@ -828,201 +828,201 @@
       <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/actions/AsceticStartup.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/actions/BeginAction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/actions/CommitFactory$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/actions/CommitFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/actions/ConfigureAction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/actions/FileChangeHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/actions/SystemStart.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/analysis/code_smell/BlobCodeSmell.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/analysis/code_smell/ClassLevelCodeSmell.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/analysis/code_smell/CodeSmell.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/analysis/code_smell/FeatureEnvyCodeSmell.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/analysis/code_smell/MethodLevelCodeSmell.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/analysis/code_smell/MisplacedClassCodeSmell.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/analysis/code_smell/PackageLevelCodeSmell.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/analysis/code_smell/PromiscuousPackageCodeSmell.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/analysis/code_smell_detection/BeanDetection.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/analysis/code_smell_detection/ComponentMutation.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/analysis/code_smell_detection/blob/StructuralBlobStrategy.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/analysis/code_smell_detection/blob/TextualBlobStrategy.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/analysis/code_smell_detection/comparator/BeanComparator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/analysis/code_smell_detection/comparator/ComparableBean.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/analysis/code_smell_detection/feature_envy/MisplacedComponentsUtilities.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/analysis/code_smell_detection/feature_envy/StructuralFeatureEnvyStrategy.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/analysis/code_smell_detection/feature_envy/TextualFeatureEnvyStrategy.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/analysis/code_smell_detection/fileUtilities/FileUtility$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/analysis/code_smell_detection/fileUtilities/FileUtility.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/analysis/code_smell_detection/misplaced_class/StructuralMisplacedClassStrategy.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/analysis/code_smell_detection/misplaced_class/TextualMisplacedClassStrategy.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/analysis/code_smell_detection/promiscuous_package/StructuralPromiscuousPackageStrategy.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/analysis/code_smell_detection/promiscuous_package/TextualPromiscuousPackageStrategy.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/analysis/code_smell_detection/similarityComputation/CosineSimilarity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/analysis/code_smell_detection/smellynessMetricProcessing/SmellynessMetric.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/analysis/code_smell_detection/strategy/ClassSmellDetectionStrategy.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/analysis/code_smell_detection/strategy/CodeSmellDetectionStrategy.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/analysis/code_smell_detection/strategy/MethodSmellDetectionStrategy.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/analysis/code_smell_detection/strategy/PackageSmellDetectionStrategy.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/gui/BlobPage$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/gui/BlobPage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/gui/BlobWizard$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/gui/BlobWizard$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/gui/BlobWizard$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/gui/BlobWizard$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/gui/BlobWizard$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/gui/BlobWizard.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/gui/CheckProjectPage$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/gui/CheckProjectPage$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/gui/CheckProjectPage$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/gui/CheckProjectPage$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/gui/CheckProjectPage$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/gui/CheckProjectPage$6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/gui/CheckProjectPage$7.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/gui/CheckProjectPage$8.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/gui/CheckProjectPage$9.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/gui/CheckProjectPage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/gui/ConfigureThreshold$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/gui/ConfigureThreshold$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/gui/ConfigureThreshold$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/gui/ConfigureThreshold$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/gui/ConfigureThreshold$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/gui/ConfigureThreshold$6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/gui/ConfigureThreshold$7.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/gui/ConfigureThreshold.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/gui/FeatureEnvyPage$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/gui/FeatureEnvyPage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/gui/FeatureEnvyWizard$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/gui/FeatureEnvyWizard.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/gui/MisplacedClassPage$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/gui/MisplacedClassPage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/gui/MisplacedClassWizard$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/gui/MisplacedClassWizard.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/gui/PromiscuousPackagePage$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/gui/PromiscuousPackagePage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/gui/PromiscuousPackageWizard$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/gui/PromiscuousPackageWizard$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/gui/PromiscuousPackageWizard$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/gui/PromiscuousPackageWizard$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/gui/PromiscuousPackageWizard$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/gui/PromiscuousPackageWizard.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/gui/radarMap/RadarMapUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/gui/radarMap/RadarMapUtilsAdapter$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/gui/radarMap/RadarMapUtilsAdapter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/parser/Parser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/parser/ParsingException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/parser/PsiParser$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/parser/PsiParser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/refactor/exceptions/BlobException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/refactor/exceptions/FeatureEnvyException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/refactor/exceptions/MisplacedClassException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/refactor/exceptions/PromiscuousPackageException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/refactor/exceptions/RefactorException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/refactor/manipulator/BlobRefatoringStrategy.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/refactor/manipulator/FeatureEnvyRefactoringStrategy.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/refactor/manipulator/MethodMover.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/refactor/manipulator/MisplacedClassRefactoringStrategy.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/refactor/manipulator/PromiscuousPackageRefactoringStrategy.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/refactor/manipulator/PsiUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/refactor/splitting_algorithm/ClassByClassMatrixConstruction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/refactor/splitting_algorithm/MethodByMethodMatrixConstruction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/refactor/splitting_algorithm/SplitClasses.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/refactor/splitting_algorithm/SplitPackages.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/refactor/splitting_algorithm/checkQuality/packageLevel/PromiscuousPackageQualityChecker.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/refactor/splitting_algorithm/checkQuality/packageLevel/Utility.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/refactor/splitting_algorithm/irEngine/BaseConf.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/refactor/splitting_algorithm/irEngine/ConfigLoader.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/refactor/splitting_algorithm/irEngine/IREngine.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/refactor/splitting_algorithm/irEngine/Stemmer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/refactor/splitting_algorithm/irEngine/VSMCached.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/refactor/splitting_algorithm/irEngine/VectorSpaceModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/refactor/strategy/RefactoringManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/refactor/strategy/RefactoringStrategy.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/storage/beans/CalledMethodsListProxy.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/storage/beans/ClassBean$Builder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/storage/beans/ClassBean.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/storage/beans/ClassBeanList.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/storage/beans/ClassList.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/storage/beans/ClassListProxy.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/storage/beans/InstanceVariableBean.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/storage/beans/InstanceVariableBeanList.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/storage/beans/InstanceVariableList.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/storage/beans/InstanceVariableListProxy.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/storage/beans/MethodBean$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/storage/beans/MethodBean$Builder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/storage/beans/MethodBean.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/storage/beans/MethodBeanList.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/storage/beans/MethodList.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/storage/beans/MethodListProxy.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/storage/beans/PackageBean$Builder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/storage/beans/PackageBean.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/storage/beans/UsedInstanceVariableListProxy.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/storage/repository/ClassBeanRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/storage/repository/ClassRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/storage/repository/Criterion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/storage/repository/DBCreation.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/storage/repository/InstanceVariableBeanRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/storage/repository/InstanceVariableRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/storage/repository/MethodBeanRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/storage/repository/MethodRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/storage/repository/PackageBeanRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/storage/repository/PackageRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/storage/repository/Repository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/storage/repository/RepositoryException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/storage/repository/SQLBlobSelection.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/storage/repository/SQLCalledMethodsSelection.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/storage/repository/SQLFeatureSelection.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/storage/repository/SQLMisplacedSelection.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/storage/repository/SQLPromiscuousSelection.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/storage/repository/SQLSelectionClass.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/storage/repository/SQLSelectionInstance.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/storage/repository/SQLSelectionInstanceVariableAll.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/storage/repository/SQLSelectionMethod.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/storage/repository/SQLSelectionPackage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/storage/repository/SQLUsedInstanceSelection.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/storage/repository/SQLiteCriterion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/storage/sqlite_jdbc_driver_connection/SQLiteConnector.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/structuralMetrics/CKMetrics.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/ascetic/topic/TopicExtracter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/src/main/java/it/unisa/ascetic/gui/StyleText.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/java/it/unisa/ascetic/analysis/code_smell_detection/BeanDetection.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/it/unisa/ascetic/analysis/code_smell_detection/BeanDetection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/java/it/unisa/ascetic/analysis/code_smell_detection/MisplacedComponentsUtilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/it/unisa/ascetic/analysis/code_smell_detection/MisplacedComponentsUtilities.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/java/it/unisa/ascetic/analysis/code_smell_detection/feature_envy/StructuralFeatureEnvyStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/it/unisa/ascetic/analysis/code_smell_detection/feature_envy/StructuralFeatureEnvyStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/java/it/unisa/ascetic/analysis/code_smell_detection/feature_envy/TextualFeatureEnvyStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/it/unisa/ascetic/analysis/code_smell_detection/feature_envy/TextualFeatureEnvyStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/java/it/unisa/ascetic/analysis/code_smell_detection/misplaced_class/StructuralMisplacedClassStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/it/unisa/ascetic/analysis/code_smell_detection/misplaced_class/StructuralMisplacedClassStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/java/it/unisa/ascetic/analysis/code_smell_detection/promiscuous_package/StructuralPromiscuousPackageStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/it/unisa/ascetic/analysis/code_smell_detection/promiscuous_package/StructuralPromiscuousPackageStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/java/it/unisa/ascetic/gui/BlobWizard.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/it/unisa/ascetic/gui/BlobWizard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/java/it/unisa/ascetic/gui/PromiscuousPackagePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/it/unisa/ascetic/gui/PromiscuousPackagePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/java/it/unisa/ascetic/gui/PromiscuousPackageWizard.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/it/unisa/ascetic/gui/PromiscuousPackageWizard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/java/it/unisa/ascetic/refactor/manipulator/MisplacedClassRefactoringStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/it/unisa/ascetic/refactor/manipulator/MisplacedClassRefactoringStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/java/it/unisa/ascetic/refactor/manipulator/PromiscuousPackageRefactoringStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/it/unisa/ascetic/refactor/manipulator/PromiscuousPackageRefactoringStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/java/it/unisa/ascetic/refactor/splitting_algorithm/ClassByClassMatrixConstruction.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/it/unisa/ascetic/refactor/splitting_algorithm/ClassByClassMatrixConstruction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/java/it/unisa/ascetic/refactor/splitting_algorithm/MethodByMethodMatrixConstruction.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/it/unisa/ascetic/refactor/splitting_algorithm/MethodByMethodMatrixConstruction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/java/it/unisa/ascetic/refactor/splitting_algorithm/SplitClasses.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/it/unisa/ascetic/refactor/splitting_algorithm/SplitClasses.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/java/it/unisa/ascetic/refactor/splitting_algorithm/SplitPackages.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/it/unisa/ascetic/refactor/splitting_algorithm/SplitPackages.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/java/it/unisa/ascetic/storage/beans/PackageBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/it/unisa/ascetic/storage/beans/PackageBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/java/it/unisa/ascetic/structuralMetrics/CKMetrics.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/it/unisa/ascetic/structuralMetrics/CKMetrics.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/test/it/unisa/ascetic/JUnitTestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/it/unisa/ascetic/JUnitTestSuite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/test/it/unisa/ascetic/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/it/unisa/ascetic/TestRunner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/test/it/unisa/ascetic/analysis/code_smell_detection/blob/StructuralBlobStrategyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/it/unisa/ascetic/analysis/code_smell_detection/blob/StructuralBlobStrategyTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/test/it/unisa/ascetic/analysis/code_smell_detection/blob/TextualBlobStrategyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/it/unisa/ascetic/analysis/code_smell_detection/blob/TextualBlobStrategyTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/test/it/unisa/ascetic/analysis/code_smell_detection/feature_envy/StructuralFeatureEnvyStrategyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/it/unisa/ascetic/analysis/code_smell_detection/feature_envy/StructuralFeatureEnvyStrategyTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/test/it/unisa/ascetic/analysis/code_smell_detection/feature_envy/TextualFeatureEnvyStrategyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/it/unisa/ascetic/analysis/code_smell_detection/feature_envy/TextualFeatureEnvyStrategyTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/test/it/unisa/ascetic/analysis/code_smell_detection/misplaced_class/StructuralMisplacedClassStrategyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/it/unisa/ascetic/analysis/code_smell_detection/misplaced_class/StructuralMisplacedClassStrategyTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/test/it/unisa/ascetic/analysis/code_smell_detection/misplaced_class/TextualMisplacedClassStrategyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/it/unisa/ascetic/analysis/code_smell_detection/misplaced_class/TextualMisplacedClassStrategyTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/test/it/unisa/ascetic/analysis/code_smell_detection/promiscuous_package/StructuralPromiscuousPackageStrategyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/it/unisa/ascetic/analysis/code_smell_detection/promiscuous_package/StructuralPromiscuousPackageStrategyTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/test/it/unisa/ascetic/analysis/code_smell_detection/promiscuous_package/TextualPromiscuousPackageStrategyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/it/unisa/ascetic/analysis/code_smell_detection/promiscuous_package/TextualPromiscuousPackageStrategyTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/test/it/unisa/ascetic/storage/beans/CalledMethodsListProxyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/it/unisa/ascetic/storage/beans/CalledMethodsListProxyTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/test/it/unisa/ascetic/storage/beans/ClassListProxyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/it/unisa/ascetic/storage/beans/ClassListProxyTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/test/it/unisa/ascetic/storage/beans/InstanceVariableListProxyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/it/unisa/ascetic/storage/beans/InstanceVariableListProxyTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/test/it/unisa/ascetic/storage/beans/MethodListProxyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/it/unisa/ascetic/storage/beans/MethodListProxyTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/test/it/unisa/ascetic/storage/beans/UsedInstanceVariableListProxyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/it/unisa/ascetic/storage/beans/UsedInstanceVariableListProxyTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/test/it/unisa/ascetic/storage/repository/ClassRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/it/unisa/ascetic/storage/repository/ClassRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/test/it/unisa/ascetic/storage/repository/DBCreationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/it/unisa/ascetic/storage/repository/DBCreationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/test/it/unisa/ascetic/storage/repository/InstanceVariableRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/it/unisa/ascetic/storage/repository/InstanceVariableRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/test/it/unisa/ascetic/storage/repository/MethodRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/it/unisa/ascetic/storage/repository/MethodRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/test/it/unisa/ascetic/storage/repository/PackageRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/it/unisa/ascetic/storage/repository/PackageRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/test/it/unisa/ascetic/storage/sqlite_jdbc_driver_connection/SQLiteConnectorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/it/unisa/ascetic/storage/sqlite_jdbc_driver_connection/SQLiteConnectorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/actions/AsceticStartup.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/actions/BeginAction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/actions/CommitFactory$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/actions/CommitFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/actions/ConfigureAction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/actions/FileChangeHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/actions/SystemStart.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/analysis/code_smell/BlobCodeSmell.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/analysis/code_smell/ClassLevelCodeSmell.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/analysis/code_smell/CodeSmell.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/analysis/code_smell/FeatureEnvyCodeSmell.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/analysis/code_smell/MethodLevelCodeSmell.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/analysis/code_smell/MisplacedClassCodeSmell.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/analysis/code_smell/PackageLevelCodeSmell.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/analysis/code_smell/PromiscuousPackageCodeSmell.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/analysis/code_smell_detection/BeanDetection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/analysis/code_smell_detection/ComponentMutation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/analysis/code_smell_detection/blob/StructuralBlobStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/analysis/code_smell_detection/blob/TextualBlobStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/analysis/code_smell_detection/comparator/BeanComparator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/analysis/code_smell_detection/comparator/ComparableBean.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/analysis/code_smell_detection/feature_envy/MisplacedComponentsUtilities.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/analysis/code_smell_detection/feature_envy/StructuralFeatureEnvyStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/analysis/code_smell_detection/feature_envy/TextualFeatureEnvyStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/analysis/code_smell_detection/fileUtilities/FileUtility$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/analysis/code_smell_detection/fileUtilities/FileUtility.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/analysis/code_smell_detection/misplaced_class/StructuralMisplacedClassStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/analysis/code_smell_detection/misplaced_class/TextualMisplacedClassStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/analysis/code_smell_detection/promiscuous_package/StructuralPromiscuousPackageStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/analysis/code_smell_detection/promiscuous_package/TextualPromiscuousPackageStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/analysis/code_smell_detection/similarityComputation/CosineSimilarity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/analysis/code_smell_detection/smellynessMetricProcessing/SmellynessMetric.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/analysis/code_smell_detection/strategy/ClassSmellDetectionStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/analysis/code_smell_detection/strategy/CodeSmellDetectionStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/analysis/code_smell_detection/strategy/MethodSmellDetectionStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/analysis/code_smell_detection/strategy/PackageSmellDetectionStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/gui/BlobPage$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/gui/BlobPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/gui/BlobWizard$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/gui/BlobWizard$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/gui/BlobWizard$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/gui/BlobWizard$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/gui/BlobWizard$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/gui/BlobWizard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/gui/CheckProjectPage$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/gui/CheckProjectPage$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/gui/CheckProjectPage$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/gui/CheckProjectPage$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/gui/CheckProjectPage$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/gui/CheckProjectPage$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/gui/CheckProjectPage$7.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/gui/CheckProjectPage$8.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/gui/CheckProjectPage$9.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/gui/CheckProjectPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/gui/ConfigureThreshold$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/gui/ConfigureThreshold$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/gui/ConfigureThreshold$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/gui/ConfigureThreshold$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/gui/ConfigureThreshold$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/gui/ConfigureThreshold$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/gui/ConfigureThreshold$7.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/gui/ConfigureThreshold.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/gui/FeatureEnvyPage$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/gui/FeatureEnvyPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/gui/FeatureEnvyWizard$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/gui/FeatureEnvyWizard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/gui/MisplacedClassPage$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/gui/MisplacedClassPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/gui/MisplacedClassWizard$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/gui/MisplacedClassWizard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/gui/PromiscuousPackagePage$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/gui/PromiscuousPackagePage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/gui/PromiscuousPackageWizard$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/gui/PromiscuousPackageWizard$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/gui/PromiscuousPackageWizard$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/gui/PromiscuousPackageWizard$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/gui/PromiscuousPackageWizard$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/gui/PromiscuousPackageWizard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/gui/radarMap/RadarMapUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/gui/radarMap/RadarMapUtilsAdapter$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/gui/radarMap/RadarMapUtilsAdapter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/parser/Parser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/parser/ParsingException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/parser/PsiParser$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/parser/PsiParser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/refactor/exceptions/BlobException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/refactor/exceptions/FeatureEnvyException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/refactor/exceptions/MisplacedClassException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/refactor/exceptions/PromiscuousPackageException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/refactor/exceptions/RefactorException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/refactor/manipulator/BlobRefatoringStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/refactor/manipulator/FeatureEnvyRefactoringStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/refactor/manipulator/MethodMover.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/refactor/manipulator/MisplacedClassRefactoringStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/refactor/manipulator/PromiscuousPackageRefactoringStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/refactor/manipulator/PsiUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/refactor/splitting_algorithm/ClassByClassMatrixConstruction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/refactor/splitting_algorithm/MethodByMethodMatrixConstruction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/refactor/splitting_algorithm/SplitClasses.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/refactor/splitting_algorithm/SplitPackages.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/refactor/splitting_algorithm/checkQuality/packageLevel/PromiscuousPackageQualityChecker.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/refactor/splitting_algorithm/checkQuality/packageLevel/Utility.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/refactor/splitting_algorithm/irEngine/BaseConf.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/refactor/splitting_algorithm/irEngine/ConfigLoader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/refactor/splitting_algorithm/irEngine/IREngine.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/refactor/splitting_algorithm/irEngine/Stemmer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/refactor/splitting_algorithm/irEngine/VSMCached.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/refactor/splitting_algorithm/irEngine/VectorSpaceModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/refactor/strategy/RefactoringManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/refactor/strategy/RefactoringStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/storage/beans/CalledMethodsListProxy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/storage/beans/ClassBean$Builder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/storage/beans/ClassBean.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/storage/beans/ClassBeanList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/storage/beans/ClassList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/storage/beans/ClassListProxy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/storage/beans/InstanceVariableBean.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/storage/beans/InstanceVariableBeanList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/storage/beans/InstanceVariableList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/storage/beans/InstanceVariableListProxy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/storage/beans/MethodBean$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/storage/beans/MethodBean$Builder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/storage/beans/MethodBean.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/storage/beans/MethodBeanList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/storage/beans/MethodList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/storage/beans/MethodListProxy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/storage/beans/PackageBean$Builder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/storage/beans/PackageBean.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/storage/beans/UsedInstanceVariableListProxy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/storage/repository/ClassBeanRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/storage/repository/ClassRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/storage/repository/Criterion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/storage/repository/DBCreation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/storage/repository/InstanceVariableBeanRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/storage/repository/InstanceVariableRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/storage/repository/MethodBeanRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/storage/repository/MethodRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/storage/repository/PackageBeanRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/storage/repository/PackageRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/storage/repository/Repository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/storage/repository/RepositoryException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/storage/repository/SQLBlobSelection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/storage/repository/SQLCalledMethodsSelection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/storage/repository/SQLFeatureSelection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/storage/repository/SQLMisplacedSelection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/storage/repository/SQLPromiscuousSelection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/storage/repository/SQLSelectionClass.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/storage/repository/SQLSelectionInstance.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/storage/repository/SQLSelectionInstanceVariableAll.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/storage/repository/SQLSelectionMethod.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/storage/repository/SQLSelectionPackage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/storage/repository/SQLUsedInstanceSelection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/storage/repository/SQLiteCriterion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/storage/sqlite_jdbc_driver_connection/SQLiteConnector.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/structuralMetrics/CKMetrics.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/it/unisa/casper/topic/TopicExtracter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../production/Ascetic3.0/src/main/java/it/unisa/casper/gui/StyleText.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/it/unisa/casper/analysis/code_smell_detection/BeanDetection.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/it/unisa/casper/analysis/code_smell_detection/BeanDetection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/it/unisa/casper/analysis/code_smell_detection/MisplacedComponentsUtilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/it/unisa/casper/analysis/code_smell_detection/MisplacedComponentsUtilities.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/it/unisa/casper/analysis/code_smell_detection/feature_envy/StructuralFeatureEnvyStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/it/unisa/casper/analysis/code_smell_detection/feature_envy/StructuralFeatureEnvyStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/it/unisa/casper/analysis/code_smell_detection/feature_envy/TextualFeatureEnvyStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/it/unisa/casper/analysis/code_smell_detection/feature_envy/TextualFeatureEnvyStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/it/unisa/casper/analysis/code_smell_detection/misplaced_class/StructuralMisplacedClassStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/it/unisa/casper/analysis/code_smell_detection/misplaced_class/StructuralMisplacedClassStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/it/unisa/casper/analysis/code_smell_detection/promiscuous_package/StructuralPromiscuousPackageStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/it/unisa/casper/analysis/code_smell_detection/promiscuous_package/StructuralPromiscuousPackageStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/it/unisa/casper/gui/BlobWizard.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/it/unisa/casper/gui/BlobWizard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/it/unisa/casper/gui/PromiscuousPackagePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/it/unisa/casper/gui/PromiscuousPackagePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/it/unisa/casper/gui/PromiscuousPackageWizard.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/it/unisa/casper/gui/PromiscuousPackageWizard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/it/unisa/casper/refactor/manipulator/MisplacedClassRefactoringStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/it/unisa/casper/refactor/manipulator/MisplacedClassRefactoringStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/it/unisa/casper/refactor/manipulator/PromiscuousPackageRefactoringStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/it/unisa/casper/refactor/manipulator/PromiscuousPackageRefactoringStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/it/unisa/casper/refactor/splitting_algorithm/ClassByClassMatrixConstruction.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/it/unisa/casper/refactor/splitting_algorithm/ClassByClassMatrixConstruction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/it/unisa/casper/refactor/splitting_algorithm/MethodByMethodMatrixConstruction.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/it/unisa/casper/refactor/splitting_algorithm/MethodByMethodMatrixConstruction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/it/unisa/casper/refactor/splitting_algorithm/SplitClasses.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/it/unisa/casper/refactor/splitting_algorithm/SplitClasses.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/it/unisa/casper/refactor/splitting_algorithm/SplitPackages.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/it/unisa/casper/refactor/splitting_algorithm/SplitPackages.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/it/unisa/casper/storage/beans/PackageBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/it/unisa/casper/storage/beans/PackageBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/it/unisa/casper/structuralMetrics/CKMetrics.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/it/unisa/casper/structuralMetrics/CKMetrics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/test/it/unisa/casper/JUnitTestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/it/unisa/casper/JUnitTestSuite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/test/it/unisa/casper/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/it/unisa/casper/TestRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/test/it/unisa/casper/analysis/code_smell_detection/blob/StructuralBlobStrategyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/it/unisa/casper/analysis/code_smell_detection/blob/StructuralBlobStrategyTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/test/it/unisa/casper/analysis/code_smell_detection/blob/TextualBlobStrategyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/it/unisa/casper/analysis/code_smell_detection/blob/TextualBlobStrategyTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/test/it/unisa/casper/analysis/code_smell_detection/feature_envy/StructuralFeatureEnvyStrategyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/it/unisa/casper/analysis/code_smell_detection/feature_envy/StructuralFeatureEnvyStrategyTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/test/it/unisa/casper/analysis/code_smell_detection/feature_envy/TextualFeatureEnvyStrategyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/it/unisa/casper/analysis/code_smell_detection/feature_envy/TextualFeatureEnvyStrategyTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/test/it/unisa/casper/analysis/code_smell_detection/misplaced_class/StructuralMisplacedClassStrategyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/it/unisa/casper/analysis/code_smell_detection/misplaced_class/StructuralMisplacedClassStrategyTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/test/it/unisa/casper/analysis/code_smell_detection/misplaced_class/TextualMisplacedClassStrategyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/it/unisa/casper/analysis/code_smell_detection/misplaced_class/TextualMisplacedClassStrategyTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/test/it/unisa/casper/analysis/code_smell_detection/promiscuous_package/StructuralPromiscuousPackageStrategyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/it/unisa/casper/analysis/code_smell_detection/promiscuous_package/StructuralPromiscuousPackageStrategyTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/test/it/unisa/casper/analysis/code_smell_detection/promiscuous_package/TextualPromiscuousPackageStrategyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/it/unisa/casper/analysis/code_smell_detection/promiscuous_package/TextualPromiscuousPackageStrategyTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/test/it/unisa/casper/storage/beans/CalledMethodsListProxyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/it/unisa/casper/storage/beans/CalledMethodsListProxyTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/test/it/unisa/casper/storage/beans/ClassListProxyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/it/unisa/casper/storage/beans/ClassListProxyTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/test/it/unisa/casper/storage/beans/InstanceVariableListProxyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/it/unisa/casper/storage/beans/InstanceVariableListProxyTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/test/it/unisa/casper/storage/beans/MethodListProxyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/it/unisa/casper/storage/beans/MethodListProxyTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/test/it/unisa/casper/storage/beans/UsedInstanceVariableListProxyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/it/unisa/casper/storage/beans/UsedInstanceVariableListProxyTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/test/it/unisa/casper/storage/repository/ClassRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/it/unisa/casper/storage/repository/ClassRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/test/it/unisa/casper/storage/repository/DBCreationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/it/unisa/casper/storage/repository/DBCreationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/test/it/unisa/casper/storage/repository/InstanceVariableRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/it/unisa/casper/storage/repository/InstanceVariableRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/test/it/unisa/casper/storage/repository/MethodRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/it/unisa/casper/storage/repository/MethodRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/test/it/unisa/casper/storage/repository/PackageRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/it/unisa/casper/storage/repository/PackageRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/test/it/unisa/casper/storage/sqlite_jdbc_driver_connection/SQLiteConnectorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/it/unisa/casper/storage/sqlite_jdbc_driver_connection/SQLiteConnectorTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/testData/ParserDataTest/bCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/testData/ParserDataTest/bCustomer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/testData/ParserDataTest/bPhone.java" beforeDir="false" afterPath="$PROJECT_DIR$/testData/ParserDataTest/bPhone.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/testData/TopicEmptyPackageTest/TopicClassTestBiometria.java" beforeDir="false" />
@@ -1064,27 +1064,27 @@
       <change beforePath="$PROJECT_DIR$/../test/Ascetic3.0/TopicPackageTest/TopicClassTestBiometria.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../test/Ascetic3.0/TopicPackageTest/TopicClassTestIride.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../test/Ascetic3.0/TopicPackageTest/TopicClassTestViso.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/Ascetic3.0/it/unisa/ascetic/JUnitTestSuite.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/Ascetic3.0/it/unisa/ascetic/TestRunner.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/Ascetic3.0/it/unisa/ascetic/analysis/code_smell_detection/blob/StructuralBlobStrategyTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/Ascetic3.0/it/unisa/ascetic/analysis/code_smell_detection/blob/TextualBlobStrategyTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/Ascetic3.0/it/unisa/ascetic/analysis/code_smell_detection/feature_envy/StructuralFeatureEnvyStrategyTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/Ascetic3.0/it/unisa/ascetic/analysis/code_smell_detection/feature_envy/TextualFeatureEnvyStrategyTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/Ascetic3.0/it/unisa/ascetic/analysis/code_smell_detection/misplaced_class/StructuralMisplacedClassStrategyTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/Ascetic3.0/it/unisa/ascetic/analysis/code_smell_detection/misplaced_class/TextualMisplacedClassStrategyTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/Ascetic3.0/it/unisa/ascetic/analysis/code_smell_detection/promiscuous_package/StructuralPromiscuousPackageStrategyTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/Ascetic3.0/it/unisa/ascetic/analysis/code_smell_detection/promiscuous_package/TextualPromiscuousPackageStrategyTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/Ascetic3.0/it/unisa/ascetic/storage/beans/CalledMethodsListProxyTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/Ascetic3.0/it/unisa/ascetic/storage/beans/ClassListProxyTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/Ascetic3.0/it/unisa/ascetic/storage/beans/InstanceVariableListProxyTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/Ascetic3.0/it/unisa/ascetic/storage/beans/MethodListProxyTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/Ascetic3.0/it/unisa/ascetic/storage/beans/UsedInstanceVariableListProxyTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/Ascetic3.0/it/unisa/ascetic/storage/repository/ClassRepositoryTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/Ascetic3.0/it/unisa/ascetic/storage/repository/DBCreationTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/Ascetic3.0/it/unisa/ascetic/storage/repository/InstanceVariableRepositoryTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/Ascetic3.0/it/unisa/ascetic/storage/repository/MethodRepositoryTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/Ascetic3.0/it/unisa/ascetic/storage/repository/PackageRepositoryTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/Ascetic3.0/it/unisa/ascetic/storage/sqlite_jdbc_driver_connection/SQLiteConnectorTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test/Ascetic3.0/it/unisa/casper/JUnitTestSuite.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test/Ascetic3.0/it/unisa/casper/TestRunner.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test/Ascetic3.0/it/unisa/casper/analysis/code_smell_detection/blob/StructuralBlobStrategyTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test/Ascetic3.0/it/unisa/casper/analysis/code_smell_detection/blob/TextualBlobStrategyTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test/Ascetic3.0/it/unisa/casper/analysis/code_smell_detection/feature_envy/StructuralFeatureEnvyStrategyTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test/Ascetic3.0/it/unisa/casper/analysis/code_smell_detection/feature_envy/TextualFeatureEnvyStrategyTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test/Ascetic3.0/it/unisa/casper/analysis/code_smell_detection/misplaced_class/StructuralMisplacedClassStrategyTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test/Ascetic3.0/it/unisa/casper/analysis/code_smell_detection/misplaced_class/TextualMisplacedClassStrategyTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test/Ascetic3.0/it/unisa/casper/analysis/code_smell_detection/promiscuous_package/StructuralPromiscuousPackageStrategyTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test/Ascetic3.0/it/unisa/casper/analysis/code_smell_detection/promiscuous_package/TextualPromiscuousPackageStrategyTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test/Ascetic3.0/it/unisa/casper/storage/beans/CalledMethodsListProxyTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test/Ascetic3.0/it/unisa/casper/storage/beans/ClassListProxyTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test/Ascetic3.0/it/unisa/casper/storage/beans/InstanceVariableListProxyTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test/Ascetic3.0/it/unisa/casper/storage/beans/MethodListProxyTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test/Ascetic3.0/it/unisa/casper/storage/beans/UsedInstanceVariableListProxyTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test/Ascetic3.0/it/unisa/casper/storage/repository/ClassRepositoryTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test/Ascetic3.0/it/unisa/casper/storage/repository/DBCreationTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test/Ascetic3.0/it/unisa/casper/storage/repository/InstanceVariableRepositoryTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test/Ascetic3.0/it/unisa/casper/storage/repository/MethodRepositoryTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test/Ascetic3.0/it/unisa/casper/storage/repository/PackageRepositoryTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test/Ascetic3.0/it/unisa/casper/storage/sqlite_jdbc_driver_connection/SQLiteConnectorTest.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../test/Ascetic3.0/moveClass/moveClass1/Customer.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../test/Ascetic3.0/moveClass/moveClass1/Licantropo.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../test/Ascetic3.0/moveClass/moveClass1/Phone.java" beforeDir="false" />
@@ -1254,7 +1254,7 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/main/test/it/unisa/ascetic/storage/JUnitTestSuite.java" />
+    <entry file="file://$PROJECT_DIR$/main/test/it/unisa/casper/storage/JUnitTestSuite.java" />
   </component>
   <component name="masterDetails">
     <states>

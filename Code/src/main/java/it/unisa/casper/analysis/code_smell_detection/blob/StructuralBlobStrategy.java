@@ -22,7 +22,8 @@ public class StructuralBlobStrategy implements ClassSmellDetectionStrategy {
 
     public boolean isSmelly(ClassBean pClass) {
         boolean bean = true;
-        for (MethodBean method : pClass.getMethodList()) { //se tutti dei metodi della classe rispecchiano un metodo di un bean, allora la classe viene ignorata mentre se almeno uno non è considerato tale, l'esecuzione prosegue
+        for (MethodBean method : pClass.getMethodList()) {
+            //se tutti dei metodi della classe rispecchiano un metodo di un bean, allora la classe viene ignorata mentre se almeno uno non è considerato tale, l'esecuzione prosegue
             if (!BeanDetection.detection(method)) {
                 bean = false;
             }
