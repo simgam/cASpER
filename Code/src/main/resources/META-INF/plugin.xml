@@ -1,12 +1,18 @@
 <idea-plugin>
-    <id>it.unisa.casper</id>
     <name>cASpER</name>
-    <vendor url="" email="">SESA Lab.</vendor>
+    <id>it.unisa.casper</id>
     <description><![CDATA[
     A Plug-in for Automated Code Smell Detection and Refactoring
     ]]>
     </description>
 
+    <change-notes><![CDATA[
+      Initial release of the plugin.
+      <a href="https://github.com/simgam/cASpER">View current version.</a>
+    ]]>
+    </change-notes>
+
+    <vendor url="sesa.unisa.it" email="seschool@unisa.it">SESA Lab.</vendor>
     <extensions defaultExtensionNs="com.intellij">
         <checkinHandlerFactory implementation="it.unisa.casper.actions.CommitFactory"/>
     </extensions>

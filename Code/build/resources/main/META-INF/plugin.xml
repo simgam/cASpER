@@ -1,16 +1,18 @@
 <idea-plugin>
   <version>1.0-SNAPSHOT</version>
-  <change-notes>
-      Add change notes here.&lt;br&gt;
-      &lt;em&gt;most HTML tags may be used&lt;/em&gt;</change-notes>
   <idea-version since-build="191.7479" until-build="191.*"/>
-  <id>it.unisa.casper</id>
   <name>cASpER</name>
-  <vendor url="" email="">SESA Lab.</vendor>
+  <id>it.unisa.casper</id>
   <description>
     A Plug-in for Automated Code Smell Detection and Refactoring
     
     </description>
+  <change-notes>
+      Initial release of the plugin.
+      &lt;a href="https://github.com/simgam/cASpER"&gt;View current version.&lt;/a&gt;
+    
+    </change-notes>
+  <vendor url="sesa.unisa.it" email="seschool@unisa.it">SESA Lab.</vendor>
   <extensions defaultExtensionNs="com.intellij">
     <checkinHandlerFactory implementation="it.unisa.casper.actions.CommitFactory"/>
   </extensions>

@@ -3,5 +3,5 @@
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="IntelliJ IDEA IU-191.7479.19" project-jdk-type="IDEA JDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_12" default="false" project-jdk-name="IntelliJ IDEA IU-191.8026.42" project-jdk-type="IDEA JDK" />
 </project>
