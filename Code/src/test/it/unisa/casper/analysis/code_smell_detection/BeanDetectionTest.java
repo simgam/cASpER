@@ -6,6 +6,7 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.logging.Logger;
 
 import static org.junit.Assert.assertTrue;
 
@@ -161,13 +162,15 @@ public class BeanDetectionTest {
     }
 
     @Test
-    public void isSmellyMinThreshold() {
-        boolean bean = true;
+    public void isBean() {
+        boolean risultato = true;
         for (MethodBean method : classe.getMethodList()) {
             if (!BeanDetection.detection(method)) {
-                bean = false;
+                risultato = false;
             }
         }
-        assertTrue(bean);
+        Logger log = Logger.getLogger(getClass().getName());
+        log.info("\n" + risultato);
+        assertTrue(risultato);
     }
 }

@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="47afe1f5-89a3-48a7-a848-fb15bcd093ed" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/Utility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/Utility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/misplaced_class/StructuralMisplacedClassStrategyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/misplaced_class/StructuralMisplacedClassStrategyTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/BeanDetectionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/BeanDetectionTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,12 +15,13 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
+  <component name="ExportTestResults" outputFolder="$PROJECT_DIR$/../.." userTempatePath="" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/ClassByClassMatrixConstruction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-85">
+            <state relative-caret-position="85">
               <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
             </state>
           </provider>
@@ -30,17 +30,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/SplitPackages.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3661">
+            <state relative-caret-position="68">
               <caret line="9" column="26" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="26" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/misplaced_class/StructuralMisplacedClassStrategyTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="578">
-              <caret line="250" column="25" selection-start-line="250" selection-start-column="25" selection-end-line="250" selection-end-column="25" />
+              <caret line="250" column="20" selection-start-line="250" selection-start-column="20" selection-end-line="250" selection-end-column="20" />
               <folding>
                 <element signature="method#setUp#0;class#StructuralMisplacedClassStrategyTest#0" />
               </folding>
@@ -48,7 +48,34 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/BeanDetectionTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="467">
+              <caret line="158" column="35" selection-start-line="158" selection-start-column="35" selection-end-line="158" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/promiscuous_package/TextualPromiscuousPackageStrategyTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="952">
+              <caret line="663" column="35" selection-start-line="662" selection-start-column="8" selection-end-line="663" selection-end-column="35" />
+              <folding>
+                <element signature="method#setUp#0;class#TextualPromiscuousPackageStrategyTest#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>System.out</find>
+      <find>log.info(</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -65,10 +92,11 @@
         <option value="$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/blob/TextualBlobStrategyTest.java" />
         <option value="$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/blob/StructuralBlobStrategyTest.java" />
         <option value="$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/misplaced_class/StructuralMisplacedClassStrategyTest.java" />
+        <option value="$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/BeanDetectionTest.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="871" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
@@ -329,7 +357,8 @@
       <option name="presentableId" value="Default" />
       <updated>1577551490110</updated>
       <workItem from="1577551502966" duration="1823000" />
-      <workItem from="1577645449351" duration="1068000" />
+      <workItem from="1577645449351" duration="3148000" />
+      <workItem from="1577659065499" duration="9000" />
     </task>
     <servers />
   </component>
@@ -340,15 +369,27 @@
     <history-entry file="JUnitTestSuite - 2019.12.28 at 18h 15m 03s.xml">
       <configuration name="JUnitTestSuite" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="JUnitTestSuite - 2019.12.29 at 21h 37m 20s.xml">
+      <configuration name="JUnitTestSuite" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="JUnitTestSuite - 2019.12.29 at 22h 25m 40s.xml">
+      <configuration name="JUnitTestSuite" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="JUnitTestSuite - 2019.12.29 at 23h 18m 22s.xml">
+      <configuration name="JUnitTestSuite" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="JUnitTestSuite - 2019.12.29 at 23h 19m 16s.xml">
+      <configuration name="JUnitTestSuite" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2916000" />
+    <option name="totallyTimeSpent" value="5005000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -473,16 +514,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/promiscuous_package/TextualPromiscuousPackageStrategyTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="655" selection-start-line="634" selection-start-column="4" selection-end-line="655" />
-          <folding>
-            <element signature="method#setUp#0;class#TextualPromiscuousPackageStrategyTest#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/promiscuous_package/StructuralPromiscuousPackageStrategyTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="782">
@@ -505,14 +536,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/ClassByClassMatrixConstruction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-85">
+        <state relative-caret-position="85">
           <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/SplitPackages.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3661">
+        <state relative-caret-position="68">
           <caret line="9" column="26" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="26" />
         </state>
       </provider>
@@ -520,10 +551,27 @@
     <entry file="file://$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/misplaced_class/StructuralMisplacedClassStrategyTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="578">
-          <caret line="250" column="25" selection-start-line="250" selection-start-column="25" selection-end-line="250" selection-end-column="25" />
+          <caret line="250" column="20" selection-start-line="250" selection-start-column="20" selection-end-line="250" selection-end-column="20" />
           <folding>
             <element signature="method#setUp#0;class#StructuralMisplacedClassStrategyTest#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/promiscuous_package/TextualPromiscuousPackageStrategyTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="952">
+          <caret line="663" column="35" selection-start-line="662" selection-start-column="8" selection-end-line="663" selection-end-column="35" />
+          <folding>
+            <element signature="method#setUp#0;class#TextualPromiscuousPackageStrategyTest#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/BeanDetectionTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="467">
+          <caret line="158" column="35" selection-start-line="158" selection-start-column="35" selection-end-line="158" selection-end-column="35" />
         </state>
       </provider>
     </entry>
