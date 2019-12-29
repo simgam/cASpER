@@ -6,41 +6,41 @@ import java.io.PrintWriter;
 
 public class Utility {
 
-    public static String clean(String toClean) {
-        toClean = toClean.replace("<", " ");
-        toClean = toClean.replace(">", " ");
-        toClean = toClean.replace("\"", " ");
-        toClean = toClean.replace("</", " ");
-        toClean = toClean.replace("/>", " ");
-        toClean = toClean.replace("+", " ");
-        toClean = toClean.replace("-", " ");
-        toClean = toClean.replace("/", " ");
-        toClean = toClean.replace("*", " ");
-        toClean = toClean.replace("=", " ");
-        toClean = toClean.replace("@", " ");
-        toClean = toClean.replace("\t", " ");
-        toClean = toClean.replace("_", " ");
-        toClean = toClean.replace("?", " ");
-        toClean = toClean.replace("{", " ");
-        toClean = toClean.replace("}", " ");
-        toClean = toClean.replace("(", " ");
-        toClean = toClean.replace(")", " ");
-        toClean = toClean.replace(";", " ");
-        toClean = toClean.replace("'", " ");
-        toClean = toClean.replace(".", " ");
-        toClean = toClean.replace("[", " ");
-        toClean = toClean.replace("]", " ");
-        toClean = toClean.replace("&", " ");
-        toClean = toClean.replace("|", " ");
-        toClean = toClean.replace("\n", " ");
-        toClean = toClean.replace(":", " ");
-        toClean = toClean.replace("#", " ");
-        toClean = toClean.replace("^", " ");
-        toClean = toClean.replace("!", " ");
-        toClean = toClean.replace("$", " ");
-        toClean = toClean.replaceAll(String.format("%s|%s|%s", "(?<=[A-Z])(?=[A-Z][a-z])", "(?<=[^A-Z])(?=[A-Z])", "(?<=[A-Za-z])(?=[^A-Za-z])"), " ");
-        return toClean;
-    }
+    // public static String clean(String toClean) {
+        // toClean = toClean.replace("<", " ");
+        // toClean = toClean.replace(">", " ");
+        // toClean = toClean.replace("\"", " ");
+        // toClean = toClean.replace("</", " ");
+        // toClean = toClean.replace("/>", " ");
+        // toClean = toClean.replace("+", " ");
+        // toClean = toClean.replace("-", " ");
+        // toClean = toClean.replace("/", " ");
+        // toClean = toClean.replace("*", " ");
+        // toClean = toClean.replace("=", " ");
+        // toClean = toClean.replace("@", " ");
+        // toClean = toClean.replace("\t", " ");
+        // toClean = toClean.replace("_", " ");
+        // toClean = toClean.replace("?", " ");
+        // toClean = toClean.replace("{", " ");
+        // toClean = toClean.replace("}", " ");
+        // toClean = toClean.replace("(", " ");
+        // toClean = toClean.replace(")", " ");
+        // toClean = toClean.replace(";", " ");
+        // toClean = toClean.replace("'", " ");
+        // toClean = toClean.replace(".", " ");
+        // toClean = toClean.replace("[", " ");
+        // toClean = toClean.replace("]", " ");
+        // toClean = toClean.replace("&", " ");
+        // toClean = toClean.replace("|", " ");
+        // toClean = toClean.replace("\n", " ");
+        // toClean = toClean.replace(":", " ");
+        // toClean = toClean.replace("#", " ");
+        // toClean = toClean.replace("^", " ");
+        // toClean = toClean.replace("!", " ");
+        // toClean = toClean.replace("$", " ");
+        // toClean = toClean.replaceAll(String.format("%s|%s|%s", "(?<=[A-Z])(?=[A-Z][a-z])", "(?<=[^A-Z])(?=[A-Z])", "(?<=[A-Za-z])(?=[^A-Za-z])"), " ");
+        // return toClean;
+    // }
 
     public static void createStopwordList(File stopwordList) throws IOException {
 

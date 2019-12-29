@@ -1,262 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/BeanDetectionTest.java" line="170" mnemonic="1" />
-    <bookmark url="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/manipulator/FeatureEnvyRefactoringStrategy.java" line="79" mnemonic="6" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="00a0e477-6dac-423e-898a-87a0f2ac6b60" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml" afterDir="false" />
+    <list default="true" id="47afe1f5-89a3-48a7-a848-fb15bcd093ed" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/Utility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/Utility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/misplaced_class/StructuralMisplacedClassStrategyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/misplaced_class/StructuralMisplacedClassStrategyTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
-    <ignored path="$PROJECT_DIR$/.gradle/" />
-    <ignored path="$PROJECT_DIR$/build/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="CoverageOptionsProvider">
-    <option name="myAddOrReplace" value="-1" />
-  </component>
-  <component name="CoverageViewManager">
-    <option name="myElementSize" value="149" />
-  </component>
-  <component name="DatabaseView">
-    <option name="SHOW_INTERMEDIATE" value="true" />
-    <option name="GROUP_DATA_SOURCES" value="true" />
-    <option name="GROUP_SCHEMA" value="true" />
-    <option name="GROUP_CONTENTS" value="false" />
-    <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <option name="HIDDEN_KINDS">
-      <set />
-    </option>
-    <expand>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="ProgettiTest.db" type="feb32156:DbDataSourceImpl" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="ProgettiTest.db" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="ProgettiTest.db" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="ProgettiTest.db" type="feb32156:DbDataSourceImpl" />
-        <item name="collations" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-    </expand>
-    <select />
-  </component>
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
-  <component name="ErrorTreeViewConfiguration">
-    <option name="autoscrollToSource" value="true" />
-    <option name="IS_AUTOSCROLL_TO_SOURCE" value="true" />
-  </component>
-  <component name="ExportTestResults" outputFolder="$PROJECT_DIR$/../.." userTempatePath="" />
-  <component name="ExternalProjectsData">
-    <projectState path="$PROJECT_DIR$">
-      <ProjectState />
-    </projectState>
-  </component>
-  <component name="ExternalProjectsManager">
-    <system id="GRADLE">
-      <state>
-        <task path="$PROJECT_DIR$">
-          <activation />
-        </task>
-        <projects_view>
-          <tree_state>
-            <expand>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="casper" type="f1a62948:ProjectNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="casper" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="casper" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="intellij" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="casper" type="f1a62948:ProjectNode" />
-                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
-              </path>
-            </expand>
-            <select />
-          </tree_state>
-        </projects_view>
-      </state>
-    </system>
-  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/ClassByClassMatrixConstruction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+            <state relative-caret-position="-85">
+              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/SplitPackages.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-3661">
+              <caret line="9" column="26" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/misplaced_class/StructuralMisplacedClassStrategyTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="578">
+              <caret line="250" column="25" selection-start-line="250" selection-start-column="25" selection-end-line="250" selection-end-column="25" />
+              <folding>
+                <element signature="method#setUp#0;class#StructuralMisplacedClassStrategyTest#0" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>OFF</find>
-      <find>cASpER</find>
-      <find>MIntraC</find>
-      <find>othervariables</find>
-      <find>isStaticMethod</find>
-      <find>newMethodBody</find>
-      <find>MIntra</find>
-      <find>InverceMIntraC</find>
-      <find>body</find>
-      <find>System.out.println(</find>
-      <find>setName</find>
-      <find>changes.csv</find>
-      <find>updateList</find>
-      <find>stopwordList</find>
-      <find>Errore</find>
-      <find>Error</find>
-      <find>bean</find>
-      <find>variabile</find>
-      <find>SSMmatrix</find>
-      <find>matrix</find>
-      <find>logger</find>
-      <find>log</find>
-      <find>System.getProperty(&quot;user.home&quot;) + File.separator + &quot;.casper&quot;</find>
-      <find>stopword</find>
-      <find>CDMmatrixFile</find>
-      <find>ICPmatrixFile</find>
-      <find>e.prin</find>
-      <find>e.printStackTrace();</find>
-      <find>ascetic</find>
-      <find>JvmNamedElement.getName()</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>CKMetrics.getFeatureSum(pClass)</replace>
-      <replace>BlobCodeSmell</replace>
-      <replace>FeatureEnvyCodeSmell</replace>
-      <replace>PromiscuousPackageCodeSmell</replace>
-      <replace>instances</replace>
-      <replace>.setReturnType(new ClassBean())</replace>
-      <replace>.setReturnType(new ClassBean.Builder(&quot;void&quot;,&quot;&quot;))</replace>
-      <replace>.setReturnType(new ClassBean.Builder(&quot;void&quot;,&quot;&quot;).build())</replace>
-      <replace>abcdefg</replace>
-      <replace>misplaced_class.package2</replace>
-      <replace>MisplacedClassCodeSmell</replace>
-      <replace>InverceMIntraC</replace>
-      <replace>InverseMIntraC</replace>
-      <replace>inversemintrac</replace>
-      <replace>Error</replace>
-      <replace>nameDir</replace>
-      <replace />
-      <replace>casper</replace>
-    </replaceStrings>
-    <dirStrings>
-      <dir>C:\Users\Simone\Desktop\cASpER3.0\Code\src\main\java</dir>
-      <dir>C:\Users\Simone\Desktop\cASpER3.0\Code\src\test</dir>
-      <dir>C:\Users\Simone\Desktop\cASpER3.0\Code\src</dir>
-      <dir>C:\Users\Simone\Desktop\cASpER\Code\src</dir>
-      <dir>C:\Users\Simone\Desktop\cASpER\Code\src\.idea</dir>
-    </dirStrings>
-  </component>
   <component name="Git.Settings">
-    <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml" />
+        <option value="$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/promiscuous_package/StructuralPromiscuousPackageStrategyTest.java" />
+        <option value="$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/promiscuous_package/TextualPromiscuousPackageStrategyTest.java" />
+        <option value="$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/misplaced_class/TextualMisplacedClassStrategyTest.java" />
+        <option value="$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/feature_envy/TextualFeatureEnvyStrategyTest.java" />
+        <option value="$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/feature_envy/StructuralFeatureEnvyStrategyTest.java" />
+        <option value="$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/blob/TextualBlobStrategyTest.java" />
         <option value="$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/blob/StructuralBlobStrategyTest.java" />
         <option value="$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/misplaced_class/StructuralMisplacedClassStrategyTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/analysis/code_smell_detection/MisplacedComponentsUtilities.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/analysis/code_smell_detection/similarityComputation/CosineSimilarity.java" />
-        <option value="$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/feature_envy/TextualFeatureEnvyStrategyTest.java" />
-        <option value="$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/Helper/CosineSimilarityStub.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/storage/beans/ClassBean.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/analysis/code_smell_detection/feature_envy/TextualFeatureEnvyStrategy.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/analysis/code_smell_detection/misplaced_class/TextualMisplacedClassStrategy.java" />
-        <option value="$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/blob/TextualBlobStrategyTest.java" />
-        <option value="$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/misplaced_class/TextualMisplacedClassStrategyTest.java" />
-        <option value="$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/Helper/CosineSimilarityStub.java" />
-        <option value="$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/misplaced_class/TextualMisplacedClassStrategyTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/storage/beans/ClassBean.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/storage/beans/MethodBean.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/irEngine/BaseConf.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/analysis/code_smell_detection/misplaced_class/TextualMisplacedClassStrategy.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/analysis/code_smell_detection/misplaced_class/StructuralMisplacedClassStrategy.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/analysis/code_smell_detection/feature_envy/StructuralFeatureEnvyStrategy.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/actions/CasperStartup.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/actions/CommitFactory.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/actions/BeginAction.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/analysis/code_smell_detection/blob/StructuralBlobStrategy.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/analysis/code_smell_detection/smellynessMetricProcessing/SmellynessMetric.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/analysis/code_smell_detection/strategy/ClassSmellDetectionStrategy.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/gui/BlobWizard.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/gui/CheckProjectPage.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/gui/CheckProjectPage.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/gui/ConfigureThreshold.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/gui/PromiscuousPackageWizard.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/manipulator/BlobRefatoringStrategy.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/manipulator/BlobRefatoringStrategy.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/SplitPackages.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/irEngine/ConfigLoader.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/manipulator/PromiscuousPackageRefactoringStrategy.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/manipulator/PromiscuousPackageRefactoringStrategy.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/SplitClasses.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/manipulator/MethodMover.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/manipulator/MisplacedClassRefactoringStrategy.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/manipulator/FeatureEnvyRefactoringStrategy.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/manipulator/FeatureEnvyRefactoringStrategy.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/irEngine/VectorSpaceModel.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/actions/SystemStart.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/actions/SystemStart.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/Utility.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/ClassByClassMatrixConstruction.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/MethodByMethodMatrixConstruction.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/parser/PsiParser.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/unisa/casper/parser/PsiParser.java" />
-        <option value="$PROJECT_DIR$/build.gradle" />
       </list>
     </option>
   </component>
-  <component name="MavenProjectNavigator">
-    <treeState>
-      <expand />
-      <select />
-    </treeState>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="953" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="871" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
@@ -271,23 +84,23 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="casper" type="58d84e3e:PackageViewProjectNode" />
-              <item name="Code" type="616d4139:PackageViewModuleNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="Scope">
         <subPane subId="Project Files">
           <expand>
             <path>
               <item name="Root" type="cbb8eebc:String" user="Root" />
               <item name="casper" type="cbb8eebc:String" user="casper" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="casper" type="58d84e3e:PackageViewProjectNode" />
+              <item name="Code" type="616d4139:PackageViewModuleNode" />
             </path>
           </expand>
           <select />
@@ -324,6 +137,31 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="casper" type="462c0819:PsiDirectoryNode" />
+              <item name="actions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cASpER" type="b2602c69:ProjectViewProjectNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="casper" type="462c0819:PsiDirectoryNode" />
+              <item name="analysis" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cASpER" type="b2602c69:ProjectViewProjectNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="casper" type="462c0819:PsiDirectoryNode" />
+              <item name="analysis" type="462c0819:PsiDirectoryNode" />
+              <item name="code_smell_detection" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cASpER" type="b2602c69:ProjectViewProjectNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="casper" type="462c0819:PsiDirectoryNode" />
               <item name="refactor" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -339,6 +177,34 @@
               <item name="cASpER" type="b2602c69:ProjectViewProjectNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="casper" type="462c0819:PsiDirectoryNode" />
+              <item name="refactor" type="462c0819:PsiDirectoryNode" />
+              <item name="splitting_algorithm" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cASpER" type="b2602c69:ProjectViewProjectNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="casper" type="462c0819:PsiDirectoryNode" />
+              <item name="refactor" type="462c0819:PsiDirectoryNode" />
+              <item name="splitting_algorithm" type="462c0819:PsiDirectoryNode" />
+              <item name="irEngine" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cASpER" type="b2602c69:ProjectViewProjectNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="casper" type="462c0819:PsiDirectoryNode" />
+              <item name="refactor" type="462c0819:PsiDirectoryNode" />
+              <item name="strategy" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cASpER" type="b2602c69:ProjectViewProjectNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -348,6 +214,56 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="META-INF" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="cASpER" type="b2602c69:ProjectViewProjectNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cASpER" type="b2602c69:ProjectViewProjectNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="casper" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cASpER" type="b2602c69:ProjectViewProjectNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="casper" type="462c0819:PsiDirectoryNode" />
+              <item name="code_smell_detection" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cASpER" type="b2602c69:ProjectViewProjectNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="casper" type="462c0819:PsiDirectoryNode" />
+              <item name="code_smell_detection" type="462c0819:PsiDirectoryNode" />
+              <item name="blob" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cASpER" type="b2602c69:ProjectViewProjectNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="casper" type="462c0819:PsiDirectoryNode" />
+              <item name="code_smell_detection" type="462c0819:PsiDirectoryNode" />
+              <item name="feature_envy" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cASpER" type="b2602c69:ProjectViewProjectNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="casper" type="462c0819:PsiDirectoryNode" />
+              <item name="code_smell_detection" type="462c0819:PsiDirectoryNode" />
+              <item name="misplaced_class" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cASpER" type="b2602c69:ProjectViewProjectNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="casper" type="462c0819:PsiDirectoryNode" />
+              <item name="code_smell_detection" type="462c0819:PsiDirectoryNode" />
+              <item name="promiscuous_package" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -355,23 +271,10 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="AnalyzeApkAction.lastApkPath" value="$PROJECT_DIR$" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549717169300" />
-    <property name="database.console.LAST_STATE" value="false" />
-    <property name="external.system.task.project.file.to.start" value="$PROJECT_DIR$" />
-    <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.14705883" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="PsiViewer.ProjectComponent">
     <option name="HIGHLIGHT" value="false" />
@@ -380,12 +283,6 @@
     <option name="SPLIT_DIVIDER_POSITION" value="300" />
     <option name="AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="AUTOSCROLL_FROM_SOURCE" value="false" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="it.unisa.casper.analysis.code_smell_detection" />
-      <recent name="it.unisa.casper.actions" />
-    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -399,51 +296,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.Code [buildPlugin]">
-    <configuration default="true" type="Application" factoryName="Application">
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Code [buildPlugin]" type="GradleRunConfiguration" factoryName="Gradle">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="buildPlugin" />
-          </list>
-        </option>
-        <option name="vmOptions" value="" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="cASpER" type="GradleRunConfiguration" factoryName="Gradle" singleton="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--stacktrace" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":runIde" />
-          </list>
-        </option>
-        <option name="vmOptions" value="" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
+  <component name="RunManager">
     <configuration name="JUnitTestSuite" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Code" />
       <extension name="coverage">
@@ -455,104 +308,10 @@
       <option name="PACKAGE_NAME" value="it.unisa.casper" />
       <option name="MAIN_CLASS_NAME" value="it.unisa.casper.JUnitTestSuite" />
       <option name="TEST_OBJECT" value="class" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JUnitTestSuite" type="JUnit" factoryName="JUnit" temporary="true">
-      <module name="Code" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="it.unisa.casper.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="it.unisa.casper" />
-      <option name="MAIN_CLASS_NAME" value="it.unisa.casper.JUnitTestSuite" />
-      <option name="METHOD_NAME" value="" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="JUnitTestSuite" type="JUnit" factoryName="JUnit" temporary="true">
-      <module name="Code" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="it.unisa.casper.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="it.unisa.casper" />
-      <option name="MAIN_CLASS_NAME" value="it.unisa.casper.JUnitTestSuite" />
-      <option name="METHOD_NAME" value="" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="JUnitTestSuite" type="JUnit" factoryName="JUnit" temporary="true">
-      <module name="Code" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="it.unisa.casper.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="it.unisa.casper" />
-      <option name="MAIN_CLASS_NAME" value="it.unisa.casper.JUnitTestSuite" />
-      <option name="METHOD_NAME" value="" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="JUnitTestSuite" type="JUnit" factoryName="JUnit" temporary="true">
-      <module name="Code" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="it.unisa.casper.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="it.unisa.casper" />
-      <option name="MAIN_CLASS_NAME" value="it.unisa.casper.JUnitTestSuite" />
-      <option name="METHOD_NAME" value="" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JUnit" factoryName="JUnit">
-      <option name="TEST_OBJECT" value="class" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="TestNG">
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <list>
-      <item itemvalue="Gradle.Code [buildPlugin]" />
-      <item itemvalue="Gradle.cASpER" />
-      <item itemvalue="JUnit.JUnitTestSuite" />
-    </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.JUnitTestSuite" />
@@ -564,175 +323,32 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="00a0e477-6dac-423e-898a-87a0f2ac6b60" name="Default" comment="" />
-      <created>1549196563710</created>
+      <changelist id="47afe1f5-89a3-48a7-a848-fb15bcd093ed" name="Default Changelist" comment="" />
+      <created>1577551490110</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1549196563710</updated>
-      <workItem from="1549196571359" duration="16010000" />
-      <workItem from="1549218212675" duration="103000" />
-      <workItem from="1549231098445" duration="1142000" />
-      <workItem from="1549273297263" duration="17074000" />
-      <workItem from="1549716857016" duration="313000" />
-      <workItem from="1550086733225" duration="100000" />
-      <workItem from="1563748520672" duration="1121000" />
-      <workItem from="1563749742775" duration="25000" />
-      <workItem from="1563749796448" duration="284000" />
-      <workItem from="1563750108776" duration="1013000" />
-      <workItem from="1563752882194" duration="949000" />
-      <workItem from="1563753859776" duration="20000" />
-      <workItem from="1563753899151" duration="10000" />
-      <workItem from="1564597461976" duration="693000" />
-      <workItem from="1564598600838" duration="1495000" />
-      <workItem from="1565099964102" duration="388000" />
-      <workItem from="1565634200680" duration="2917000" />
-      <workItem from="1565715006397" duration="7054000" />
-      <workItem from="1565783056550" duration="1434000" />
-      <workItem from="1565788977103" duration="1398000" />
-      <workItem from="1565800228190" duration="1343000" />
-      <workItem from="1567608146124" duration="76000" />
-      <workItem from="1568289740151" duration="491000" />
-      <workItem from="1568625853646" duration="393000" />
-      <workItem from="1571697147486" duration="359000" />
-      <workItem from="1571697522669" duration="26000" />
-      <workItem from="1571697608626" duration="40000" />
-      <workItem from="1571748303047" duration="165000" />
-      <workItem from="1571776326966" duration="26000" />
-      <workItem from="1571825139227" duration="305000" />
-      <workItem from="1573040790619" duration="54000" />
-      <workItem from="1573040861766" duration="322000" />
-      <workItem from="1573041200518" duration="582000" />
-      <workItem from="1573041970821" duration="233000" />
-      <workItem from="1573042256288" duration="105000" />
-      <workItem from="1573064776320" duration="905000" />
-      <workItem from="1573134119849" duration="703000" />
-      <workItem from="1573137198783" duration="1235000" />
-      <workItem from="1573150962767" duration="3258000" />
-      <workItem from="1573154316435" duration="280000" />
-      <workItem from="1573568588405" duration="2091000" />
-      <workItem from="1573985613872" duration="1206000" />
-      <workItem from="1574000454471" duration="947000" />
-      <workItem from="1574274790356" duration="16316000" />
-      <workItem from="1574325438254" duration="157000" />
-      <workItem from="1574411132582" duration="5107000" />
-      <workItem from="1574417568142" duration="161000" />
-      <workItem from="1574452019409" duration="7396000" />
-      <workItem from="1574524346343" duration="308000" />
-      <workItem from="1574524930340" duration="12333000" />
-      <workItem from="1574622298211" duration="5620000" />
-      <workItem from="1574755658225" duration="103000" />
-      <workItem from="1575146302941" duration="599000" />
-      <workItem from="1575167003491" duration="1249000" />
-      <workItem from="1575225576896" duration="21038000" />
-      <workItem from="1575271096811" duration="3034000" />
-      <workItem from="1575285053932" duration="3849000" />
-      <workItem from="1575307187115" duration="8284000" />
-      <workItem from="1575321595973" duration="398000" />
-      <workItem from="1575409919684" duration="12133000" />
-      <workItem from="1575459748899" duration="373000" />
-      <workItem from="1575460151016" duration="2204000" />
-      <workItem from="1575477606499" duration="24489000" />
-      <workItem from="1575574395415" duration="1623000" />
-      <workItem from="1575637848140" duration="590000" />
-      <workItem from="1575656428855" duration="19215000" />
-      <workItem from="1575723046978" duration="8942000" />
-      <workItem from="1575767303472" duration="1285000" />
-      <workItem from="1575802637297" duration="6492000" />
-      <workItem from="1575823926604" duration="1611000" />
-      <workItem from="1575826183224" duration="4785000" />
-      <workItem from="1575920364793" duration="346000" />
-      <workItem from="1575921437364" duration="269000" />
-      <workItem from="1575921826830" duration="148000" />
-      <workItem from="1575921989779" duration="156000" />
-      <workItem from="1575922187478" duration="351000" />
-      <workItem from="1575968999979" duration="444000" />
-      <workItem from="1575988423903" duration="509000" />
-      <workItem from="1575988994833" duration="211000" />
-      <workItem from="1575990666262" duration="22547000" />
-      <workItem from="1576014762078" duration="44000" />
-      <workItem from="1576060499000" duration="4008000" />
-      <workItem from="1576079872571" duration="5094000" />
-      <workItem from="1576087309567" duration="3065000" />
-      <workItem from="1576103715278" duration="5546000" />
-      <workItem from="1576109620925" duration="165000" />
-      <workItem from="1576150682335" duration="956000" />
-      <workItem from="1576153266768" duration="106000" />
-      <workItem from="1576153401308" duration="1051000" />
-      <workItem from="1576254526174" duration="3342000" />
-      <workItem from="1576261138978" duration="1643000" />
+      <updated>1577551490110</updated>
+      <workItem from="1577551502966" duration="1823000" />
+      <workItem from="1577645449351" duration="1068000" />
     </task>
-    <task id="LOCAL-00001" summary="Creato nuovo progetto aggiornato con la versione del 3 Febbraio 2019. Creato nuovo gitignore e configurato gradle">
-      <created>1549209457945</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1549209457945</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Aggiunti Blob Page e Promiscuous Package Page, con invocazioni ai wizard commentati.">
-      <created>1549211683169</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1549211683169</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Integrati wizard e pages per FE e MC, controllato tutto il processo dall'analisi al refactoring.">
-      <created>1549217408431</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1549217408431</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="JUnitTestSuite - 2019.12.08 at 16h 10m 08s.xml">
+    <history-entry file="JUnitTestSuite - 2019.12.28 at 18h 14m 20s.xml">
       <configuration name="JUnitTestSuite" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="JUnitTestSuite - 2019.12.08 at 16h 13m 33s.xml">
-      <configuration name="JUnitTestSuite" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="JUnitTestSuite - 2019.12.08 at 18h 19m 43s.xml">
-      <configuration name="JUnitTestSuite" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="JUnitTestSuite - 2019.12.08 at 19h 25m 25s.xml">
-      <configuration name="JUnitTestSuite" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="JUnitTestSuite - 2019.12.09 at 20h 41m 45s.xml">
-      <configuration name="JUnitTestSuite" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="JUnitTestSuite - 2019.12.10 at 18h 38m 26s.xml">
-      <configuration name="JUnitTestSuite" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="JUnitTestSuite - 2019.12.10 at 20h 03m 42s.xml">
-      <configuration name="JUnitTestSuite" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="JUnitTestSuite - 2019.12.10 at 22h 52m 57s.xml">
-      <configuration name="JUnitTestSuite" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="JUnitTestSuite - 2019.12.11 at 20h 04m 55s.xml">
-      <configuration name="JUnitTestSuite" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="JUnitTestSuite - 2019.12.12 at 00h 48m 28s.xml">
+    <history-entry file="JUnitTestSuite - 2019.12.28 at 18h 15m 03s.xml">
       <configuration name="JUnitTestSuite" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="288383000" />
-  </component>
-  <component name="TodoView" selected-index="1">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
+    <option name="totallyTimeSpent" value="2916000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14552239" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -741,7 +357,7 @@
       <window_info id="Image Layers" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49520257" weight="0.3261105" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49520257" weight="0.32502708" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.35536295" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -769,56 +385,11 @@
       <window_info anchor="right" id="Maven" order="11" weight="0.32995737" />
       <window_info anchor="right" id="Coverage" order="12" sideWeight="0.50080776" side_tool="true" visible="true" weight="0.22867803" />
       <window_info anchor="right" x="0" y="0" width="434" height="856" id="Documentation" order="13" side_tool="true" weight="0.32995737" />
+      <window_info anchor="right" id="Remote Host" order="14" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Creato nuovo progetto aggiornato con la versione del 3 Febbraio 2019. Creato nuovo gitignore e configurato gradle" />
-    <MESSAGE value="Aggiunti Blob Page e Promiscuous Package Page, con invocazioni ai wizard commentati." />
-    <MESSAGE value="Integrati wizard e pages per FE e MC, controllato tutto il processo dall'analisi al refactoring." />
-    <option name="LAST_COMMIT_MESSAGE" value="Integrati wizard e pages per FE e MC, controllato tutto il processo dall'analisi al refactoring." />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/promiscuous_package/StructuralPromiscuousPackageStrategyTest.java</url>
-          <line>628</line>
-          <properties />
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/it/unisa/casper/gui/radarMap/RadarMapUtilsAdapter.java</url>
-          <line>50</line>
-          <properties>
-            <option name="count-filter" value="1" />
-            <option name="count-filter-enabled" value="true" />
-          </properties>
-          <option name="timeStamp" value="45" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/blob/StructuralBlobStrategyTest.java</url>
-          <line>1809</line>
-          <properties />
-          <option name="timeStamp" value="46" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-    <watches-manager>
-      <configuration name="JUnit">
-        <watch expression="MIntraC" language="JAVA" />
-      </configuration>
-      <configuration name="Remote">
-        <watch expression="sogliaDipendenze" language="JAVA" />
-        <watch expression="sogliaDipendenze" language="JAVA" />
-        <watch expression="sogliaDipendenze" language="JAVA" />
-        <watch expression="firstRankedClass" />
-        <watch expression="firstRankedClass" />
-        <watch expression="packageBean" />
-      </configuration>
-    </watches-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -834,449 +405,127 @@
     <SUITE FILE_PATH="coverage/casper$cASpER.ic" NAME="cASpER Coverage Results" MODIFIED="1574294040175" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/analysis/code_smell_detection/BeanDetection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/analysis/code_smell_detection/ComponentMutation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/gui/radarMap/RadarMapUtilsAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2112">
-          <caret line="18" column="3" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/gui/radarMap/RadarMapUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/gui/BlobPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2248">
-          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/gui/BlobWizard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3268">
-          <caret line="338" column="107" selection-start-line="338" selection-start-column="107" selection-end-line="338" selection-end-column="107" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/gui/ConfigureThreshold.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-885">
-          <caret line="393" column="97" selection-start-line="393" selection-start-column="97" selection-end-line="393" selection-end-column="97" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/gui/CheckProjectPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-480">
-          <caret line="775" column="26" selection-start-line="775" selection-start-column="26" selection-end-line="775" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/gui/FeatureEnvyPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1670">
-          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/gui/FeatureEnvyWizard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2687">
-          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/gui/MisplacedClassPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1738">
-          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/gui/MisplacedClassWizard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2673">
-          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/gui/PromiscuousPackagePage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2044">
-          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/storage/beans/PackageBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="88" column="27" selection-start-line="88" selection-start-column="27" selection-end-line="88" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/gui/PromiscuousPackageWizard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="328" column="55" selection-start-line="328" selection-start-column="50" selection-end-line="328" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/gui/StyleText.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1415">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/parser/Parser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/parser/ParsingException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/exceptions/BlobException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/exceptions/MisplacedClassException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/exceptions/FeatureEnvyException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/exceptions/PromiscuousPackageException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/exceptions/RefactorException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/manipulator/MethodMover.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
-          <caret line="63" column="5" lean-forward="true" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/manipulator/BlobRefatoringStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="130" column="49" selection-start-line="130" selection-start-column="49" selection-end-line="130" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/manipulator/MisplacedClassRefactoringStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/manipulator/PsiUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/manipulator/PromiscuousPackageRefactoringStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1054">
-          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/irEngine/BaseConf.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-766">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/irEngine/ConfigLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-21">
-          <caret line="36" column="65" selection-start-line="36" selection-start-column="49" selection-end-line="36" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/PromiscuousPackageQualityChecker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1296">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/SplitClasses.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="104" column="23" selection-start-line="104" selection-start-column="23" selection-end-line="104" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/SplitPackages.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3842">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/strategy/RefactoringManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/strategy/RefactoringStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/storage/beans/ClassBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/structuralMetrics/CKMetrics.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1122">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/topic/TopicExtracter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-680">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/irEngine/VectorSpaceModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/actions/SystemStart.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="422">
-          <caret line="58" column="24" lean-forward="true" selection-start-line="58" selection-start-column="24" selection-end-line="58" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/Utility.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="44" column="41" selection-start-line="44" selection-start-column="23" selection-end-line="44" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/ClassByClassMatrixConstruction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="38" column="26" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/MethodByMethodMatrixConstruction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1734">
-          <caret line="111" column="53" selection-start-line="111" selection-start-column="53" selection-end-line="111" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Code.iml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/settings.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gradlew.bat">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gradlew">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="18" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/parser/PsiParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-136">
-          <caret line="12" column="57" selection-start-line="12" selection-start-column="57" selection-end-line="12" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/manipulator/FeatureEnvyRefactoringStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2788">
-          <caret line="174" lean-forward="true" selection-start-line="174" selection-end-line="174" />
+        <state>
+          <caret line="115" column="44" selection-start-line="115" selection-start-column="44" selection-end-line="115" selection-end-column="44" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        <state relative-caret-position="612">
+          <caret line="36" selection-start-line="36" selection-end-line="36" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <last-edited>casper:jar</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <last-edited>No facets are configured</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <last-edited>IntelliJ IDEA IU-191.8026.42</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>Code|ascetic</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectJDKs.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <last-edited>openapi-7.0.3</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
+    <entry file="file://$PROJECT_DIR$/src/test/it/unisa/casper/JUnitTestSuite.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/manipulator/BlobRefatoringStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/blob/TextualBlobStrategyTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="1160" column="5" selection-start-line="1140" selection-start-column="4" selection-end-line="1160" selection-end-column="5" />
+          <folding>
+            <element signature="method#setUp#0;class#TextualBlobStrategyTest#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/feature_envy/StructuralFeatureEnvyStrategyTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="485" column="5" selection-start-line="465" selection-start-column="4" selection-end-line="485" selection-end-column="5" />
+          <folding>
+            <element signature="method#setUp#0;class#StructuralFeatureEnvyStrategyTest#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/feature_envy/TextualFeatureEnvyStrategyTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1054">
+          <caret line="755" column="5" selection-start-line="721" selection-start-column="4" selection-end-line="755" selection-end-column="5" />
+          <folding>
+            <element signature="method#setUp#0;class#TextualFeatureEnvyStrategyTest#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/misplaced_class/TextualMisplacedClassStrategyTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1037">
+          <caret line="554" selection-start-line="519" selection-start-column="4" selection-end-line="554" />
+          <folding>
+            <element signature="method#setUp#0;class#TextualMisplacedClassStrategyTest#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/promiscuous_package/TextualPromiscuousPackageStrategyTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="655" selection-start-line="634" selection-start-column="4" selection-end-line="655" />
+          <folding>
+            <element signature="method#setUp#0;class#TextualPromiscuousPackageStrategyTest#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/promiscuous_package/StructuralPromiscuousPackageStrategyTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="634" column="5" selection-start-line="614" selection-start-column="4" selection-end-line="634" selection-end-column="5" />
+          <folding>
+            <element signature="method#setUp#0;class#StructuralPromiscuousPackageStrategyTest#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/blob/StructuralBlobStrategyTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="1824" column="31" selection-start-line="1824" selection-start-column="31" selection-end-line="1824" selection-end-column="31" />
+          <folding>
+            <element signature="method#setUp#0;class#StructuralBlobStrategyTest#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/ClassByClassMatrixConstruction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-85">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/unisa/casper/refactor/splitting_algorithm/SplitPackages.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3661">
+          <caret line="9" column="26" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/it/unisa/casper/analysis/code_smell_detection/misplaced_class/StructuralMisplacedClassStrategyTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="250" column="25" selection-start-line="250" selection-start-column="25" selection-end-line="250" selection-end-column="25" />
+          <folding>
+            <element signature="method#setUp#0;class#StructuralMisplacedClassStrategyTest#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>
