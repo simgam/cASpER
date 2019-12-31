@@ -1,4 +1,4 @@
-package it.unisa.casper.refactoring;
+package it.unisa.casper.refactor;
 
 import it.unisa.casper.refactor.splitting_algorithm.SplitPackages;
 import it.unisa.casper.storage.beans.*;
@@ -624,9 +624,10 @@ public class SplitPackagesTest {
             errorOccured = true;
             e.getMessage();
         }
-        assertTrue(splittedPackages.size() == 4);
         Logger log = Logger.getLogger(getClass().getName());
-        log.info("\n" + errorOccured);
+        log.info("\n" + (splittedPackages.size() == 4));
+        assertTrue(splittedPackages.size() == 4);
+        log.info("\nError occurred:" + errorOccured);
         assertTrue(!errorOccured);
     }
 
@@ -640,9 +641,10 @@ public class SplitPackagesTest {
             errorOccured = true;
             e.getMessage();
         }
-        assertTrue(splittedPackages.size() == 1);
         Logger log = Logger.getLogger(getClass().getName());
-        log.info("\n" + errorOccured);
+        log.info("\n" + (splittedPackages.size() == 1));
+        assertTrue(splittedPackages.size() == 1);
+        log.info("\nError occurred:" + errorOccured);
         assertTrue(!errorOccured);
     }
 }
