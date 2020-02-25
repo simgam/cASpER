@@ -7,11 +7,13 @@
     </description>
 
     <change-notes><![CDATA[
-      Initial release of the plugin.
+      Updated support for newer IntelliJ versions
       <a href="https://github.com/simgam/cASpER">View current version.</a>
+
     ]]>
     </change-notes>
 
+    <depends>com.intellij.java</depends>
     <depends>com.intellij.modules.java</depends>
 
     <vendor url="sesa.unisa.it" email="https://www.unisa.it/">SESA Lab.</vendor>
