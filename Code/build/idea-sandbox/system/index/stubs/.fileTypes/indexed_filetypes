@@ -1,13 +1,13 @@
-1583234635667
-kotlin_builtins￿binary stub builder:com.intellij.psi.impl.compiled.ClassFileStubBuilder,971098419￿1583234635666
-CLASS￿binary stub builder:com.intellij.psi.impl.compiled.ClassFileStubBuilder,971098419￿1583234635665
-DGM￿stub:com.intellij.lang.properties.parsing.PropertiesElementTypes$1,0￿1583234635664
-XML￿binary stub builder:com.intellij.util.xml.stubs.builder.DomStubBuilder,1804543724￿1583234635663
-HTML￿stub:com.intellij.psi.xml.HtmlFileElementType,3￿1583234635662
-Kotlin￿stub:org.jetbrains.kotlin.psi.stubs.elements.KtFileElementType,135￿1583234635661
-Markdown￿stub:com.intellij.psi.tree.IStubFileElementType,0￿1583234635660
-KJSM￿binary stub builder:com.intellij.psi.impl.compiled.ClassFileStubBuilder,971098419￿1583234635659
-KNM￿binary stub builder:com.intellij.psi.impl.compiled.ClassFileStubBuilder,971098419￿1583234635658
-Properties￿stub:com.intellij.lang.properties.parsing.PropertiesElementTypes$1,0￿1583234635657
-Groovy￿stub:org.jetbrains.plugins.groovy.lang.psi.stubs.elements.GrStubFileElementType,50￿1583234635656
-JAVA￿stub:com.intellij.psi.impl.source.JavaFileElementType,42￿1583234635655
+1583264334638
+JAVA￿stub:com.intellij.psi.impl.source.JavaFileElementType,42￿1583264334637
+Kotlin￿stub:org.jetbrains.kotlin.psi.stubs.elements.KtFileElementType,135￿1583264334636
+KJSM￿binary stub builder:com.intellij.psi.impl.compiled.ClassFileStubBuilder,971098419￿1583264334635
+CLASS￿binary stub builder:com.intellij.psi.impl.compiled.ClassFileStubBuilder,971098419￿1583264334634
+Properties￿stub:com.intellij.lang.properties.parsing.PropertiesElementTypes$1,0￿1583264334633
+kotlin_builtins￿binary stub builder:com.intellij.psi.impl.compiled.ClassFileStubBuilder,971098419￿1583264334632
+Groovy￿stub:org.jetbrains.plugins.groovy.lang.psi.stubs.elements.GrStubFileElementType,50￿1583264334631
+Markdown￿stub:com.intellij.psi.tree.IStubFileElementType,0￿1583264334630
+DGM￿stub:com.intellij.lang.properties.parsing.PropertiesElementTypes$1,0￿1583264334629
+KNM￿binary stub builder:com.intellij.psi.impl.compiled.ClassFileStubBuilder,971098419￿1583264334628
+HTML￿stub:com.intellij.psi.xml.HtmlFileElementType,3￿1583264334627
+XML￿binary stub builder:com.intellij.util.xml.stubs.builder.DomStubBuilder,1804543724￿1583264334626

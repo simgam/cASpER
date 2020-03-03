@@ -24,8 +24,6 @@ import java.io.FileReader;
 import java.util.*;
 import java.util.regex.Pattern;
 
-//import it.unisa.casper.storage.beans.*;
-
 public class PsiParser implements Parser {
     private Project project;
     private final List<PackageBean> projectPackages;
@@ -55,25 +53,22 @@ public class PsiParser implements Parser {
             smell.add("Misplaced");
             smell.add("Blob");
             smell.add("Promiscuous");
-            try {
-                FileReader f = new FileReader(System.getProperty("user.home") + File.separator + ".casper" + File.separator + "threshold.txt");
-                BufferedReader b = new BufferedReader(f);
 
-                String[] list = null;
-                for (String s : smell) {
-                    list = b.readLine().split(",");
-                    coseno.put("coseno" + s, Double.parseDouble(list[0]));
-                    dipendence.put("dip" + s, Integer.parseInt(list[1]));
-                    if (s.equalsIgnoreCase("promiscuous")) {
-                        dipendence.put("dip" + s + "2", Integer.parseInt(list[2]));
-                    }
-                    if (s.equalsIgnoreCase("blob")) {
-                        dipendence.put("dip" + s + "2", Integer.parseInt(list[2]));
-                        dipendence.put("dip" + s + "3", Integer.parseInt(list[3]));
-                    }
+            FileReader f = new FileReader(System.getProperty("user.home") + File.separator + ".casper" + File.separator + "threshold.txt");
+            BufferedReader b = new BufferedReader(f);
+
+            String[] list = null;
+            for (String s : smell) {
+                list = b.readLine().split(",");
+                coseno.put("coseno" + s, Double.parseDouble(list[0]));
+                dipendence.put("dip" + s, Integer.parseInt(list[1]));
+                if (s.equalsIgnoreCase("promiscuous")) {
+                    dipendence.put("dip" + s + "2", Integer.parseInt(list[2]));
                 }
-            } catch (Exception e) {
-
+                if (s.equalsIgnoreCase("blob")) {
+                    dipendence.put("dip" + s + "2", Integer.parseInt(list[2]));
+                    dipendence.put("dip" + s + "3", Integer.parseInt(list[3]));
+                }
             }
 
             for (PackageBean packageBean : projectPackages) {
@@ -300,7 +295,6 @@ public class PsiParser implements Parser {
         ClassBean returnTypeBean = new ClassBean.Builder(returnTypeName, "").build();
         builder.setReturnType(returnTypeBean);
         builder.setInstanceVariableList(instanceVariableList);
-
 
         //ClassBean Belonging Class
         ClassBean belongingClass = new ClassBean.Builder(psiMethod.getContainingClass().getQualifiedName(), textContent).build();
