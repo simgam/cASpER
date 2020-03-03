@@ -20,50 +20,9 @@
     <option name="files" path="ActionManager" hit="Find Files by XPath Expression" />
     <option name="find" path="ActionManager" hit="Find Files by XPath Expression" />
     <option name="xpath" path="ActionManager" hit="Find Files by XPath Expression" />
-    <option name="find" path="ActionManager" hit="Find Next / Move to Next Occurrence" />
-    <option name="move" path="ActionManager" hit="Find Next / Move to Next Occurrence" />
-    <option name="next" path="ActionManager" hit="Find Next / Move to Next Occurrence" />
-    <option name="occurrence" path="ActionManager" hit="Find Next / Move to Next Occurrence" />
-    <option name="to" path="ActionManager" hit="Find Next / Move to Next Occurrence" />
-    <option name="find" path="ActionManager" hit="Find Previous / Move to Previous Occurrence" />
-    <option name="move" path="ActionManager" hit="Find Previous / Move to Previous Occurrence" />
-    <option name="occurrence" path="ActionManager" hit="Find Previous / Move to Previous Occurrence" />
-    <option name="previous" path="ActionManager" hit="Find Previous / Move to Previous Occurrence" />
-    <option name="to" path="ActionManager" hit="Find Previous / Move to Previous Occurrence" />
     <option name="by" path="ActionManager" hit="Find by XPath..." />
     <option name="find" path="ActionManager" hit="Find by XPath..." />
     <option name="xpath" path="ActionManager" hit="Find by XPath..." />
-    <option name="direction" path="ActionManager" hit="Repeat the last Find/Replace operation in reverse direction, or moving to previous occurrence of selected text" />
-    <option name="find" path="ActionManager" hit="Repeat the last Find/Replace operation in reverse direction, or moving to previous occurrence of selected text" />
-    <option name="in" path="ActionManager" hit="Repeat the last Find/Replace operation in reverse direction, or moving to previous occurrence of selected text" />
-    <option name="last" path="ActionManager" hit="Repeat the last Find/Replace operation in reverse direction, or moving to previous occurrence of selected text" />
-    <option name="moving" path="ActionManager" hit="Repeat the last Find/Replace operation in reverse direction, or moving to previous occurrence of selected text" />
-    <option name="occurrence" path="ActionManager" hit="Repeat the last Find/Replace operation in reverse direction, or moving to previous occurrence of selected text" />
-    <option name="of" path="ActionManager" hit="Repeat the last Find/Replace operation in reverse direction, or moving to previous occurrence of selected text" />
-    <option name="operation" path="ActionManager" hit="Repeat the last Find/Replace operation in reverse direction, or moving to previous occurrence of selected text" />
-    <option name="or" path="ActionManager" hit="Repeat the last Find/Replace operation in reverse direction, or moving to previous occurrence of selected text" />
-    <option name="previous" path="ActionManager" hit="Repeat the last Find/Replace operation in reverse direction, or moving to previous occurrence of selected text" />
-    <option name="repeat" path="ActionManager" hit="Repeat the last Find/Replace operation in reverse direction, or moving to previous occurrence of selected text" />
-    <option name="replace" path="ActionManager" hit="Repeat the last Find/Replace operation in reverse direction, or moving to previous occurrence of selected text" />
-    <option name="reverse" path="ActionManager" hit="Repeat the last Find/Replace operation in reverse direction, or moving to previous occurrence of selected text" />
-    <option name="selected" path="ActionManager" hit="Repeat the last Find/Replace operation in reverse direction, or moving to previous occurrence of selected text" />
-    <option name="text" path="ActionManager" hit="Repeat the last Find/Replace operation in reverse direction, or moving to previous occurrence of selected text" />
-    <option name="the" path="ActionManager" hit="Repeat the last Find/Replace operation in reverse direction, or moving to previous occurrence of selected text" />
-    <option name="to" path="ActionManager" hit="Repeat the last Find/Replace operation in reverse direction, or moving to previous occurrence of selected text" />
-    <option name="find" path="ActionManager" hit="Repeat the last Find/Replace operation, or moving to next occurrence of selected text" />
-    <option name="last" path="ActionManager" hit="Repeat the last Find/Replace operation, or moving to next occurrence of selected text" />
-    <option name="moving" path="ActionManager" hit="Repeat the last Find/Replace operation, or moving to next occurrence of selected text" />
-    <option name="next" path="ActionManager" hit="Repeat the last Find/Replace operation, or moving to next occurrence of selected text" />
-    <option name="occurrence" path="ActionManager" hit="Repeat the last Find/Replace operation, or moving to next occurrence of selected text" />
-    <option name="of" path="ActionManager" hit="Repeat the last Find/Replace operation, or moving to next occurrence of selected text" />
-    <option name="operation" path="ActionManager" hit="Repeat the last Find/Replace operation, or moving to next occurrence of selected text" />
-    <option name="or" path="ActionManager" hit="Repeat the last Find/Replace operation, or moving to next occurrence of selected text" />
-    <option name="repeat" path="ActionManager" hit="Repeat the last Find/Replace operation, or moving to next occurrence of selected text" />
-    <option name="replace" path="ActionManager" hit="Repeat the last Find/Replace operation, or moving to next occurrence of selected text" />
-    <option name="selected" path="ActionManager" hit="Repeat the last Find/Replace operation, or moving to next occurrence of selected text" />
-    <option name="text" path="ActionManager" hit="Repeat the last Find/Replace operation, or moving to next occurrence of selected text" />
-    <option name="the" path="ActionManager" hit="Repeat the last Find/Replace operation, or moving to next occurrence of selected text" />
-    <option name="to" path="ActionManager" hit="Repeat the last Find/Replace operation, or moving to next occurrence of selected text" />
     <option name="current" path="ActionManager" hit="Show XPath expression that matches the current node" />
     <option name="expression" path="ActionManager" hit="Show XPath expression that matches the current node" />
     <option name="matches" path="ActionManager" hit="Show XPath expression that matches the current node" />

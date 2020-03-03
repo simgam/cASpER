@@ -8,8 +8,19 @@
     <option name="execute" path="ActionManager" hit="Execute Gradle Task" />
     <option name="gradle" path="ActionManager" hit="Execute Gradle Task" />
     <option name="task" path="ActionManager" hit="Execute Gradle Task" />
-    <option name="dependencies" path="ActionManager" hit="Refresh dependencies" />
-    <option name="refresh" path="ActionManager" hit="Refresh dependencies" />
+    <option name="gradle" path="ActionManager" hit="Import Gradle Project" />
+    <option name="import" path="ActionManager" hit="Import Gradle Project" />
+    <option name="project" path="ActionManager" hit="Import Gradle Project" />
+    <option name="by" path="ActionManager" hit="Import Gradle project described by this file" />
+    <option name="described" path="ActionManager" hit="Import Gradle project described by this file" />
+    <option name="file" path="ActionManager" hit="Import Gradle project described by this file" />
+    <option name="gradle" path="ActionManager" hit="Import Gradle project described by this file" />
+    <option name="import" path="ActionManager" hit="Import Gradle project described by this file" />
+    <option name="project" path="ActionManager" hit="Import Gradle project described by this file" />
+    <option name="this" path="ActionManager" hit="Import Gradle project described by this file" />
+    <option name="dependencies" path="ActionManager" hit="Refresh Gradle Dependencies" />
+    <option name="gradle" path="ActionManager" hit="Refresh Gradle Dependencies" />
+    <option name="refresh" path="ActionManager" hit="Refresh Gradle Dependencies" />
     <option name="--refresh-dependencies" path="ActionManager" hit="Refresh dependencies in the Gradle cache using --refresh-dependencies argument" />
     <option name="argument" path="ActionManager" hit="Refresh dependencies in the Gradle cache using --refresh-dependencies argument" />
     <option name="cache" path="ActionManager" hit="Refresh dependencies in the Gradle cache using --refresh-dependencies argument" />
@@ -33,46 +44,33 @@
     <option name="toggle" path="ActionManager" hit="Toggle offline mode for Gradle builds" />
   </configurable>
   <configurable id="reference.settingsdialog.project.gradle" configurable_name="Gradle">
-    <option name="global" hit="Global Gradle settings" />
-    <option name="gradle" hit="Global Gradle settings" />
-    <option name="settings" hit="Global Gradle settings" />
+    <option name="" hit=" Override the default location where Gradle stores downloaded files, e.g. to tune anti-virus software on Windows " />
+    <option name="anti-virus" hit=" Override the default location where Gradle stores downloaded files, e.g. to tune anti-virus software on Windows " />
+    <option name="default" hit=" Override the default location where Gradle stores downloaded files, e.g. to tune anti-virus software on Windows " />
+    <option name="downloaded" hit=" Override the default location where Gradle stores downloaded files, e.g. to tune anti-virus software on Windows " />
+    <option name="e" hit=" Override the default location where Gradle stores downloaded files, e.g. to tune anti-virus software on Windows " />
+    <option name="files" hit=" Override the default location where Gradle stores downloaded files, e.g. to tune anti-virus software on Windows " />
+    <option name="g" hit=" Override the default location where Gradle stores downloaded files, e.g. to tune anti-virus software on Windows " />
+    <option name="gradle" hit=" Override the default location where Gradle stores downloaded files, e.g. to tune anti-virus software on Windows " />
+    <option name="location" hit=" Override the default location where Gradle stores downloaded files, e.g. to tune anti-virus software on Windows " />
+    <option name="on" hit=" Override the default location where Gradle stores downloaded files, e.g. to tune anti-virus software on Windows " />
+    <option name="override" hit=" Override the default location where Gradle stores downloaded files, e.g. to tune anti-virus software on Windows " />
+    <option name="software" hit=" Override the default location where Gradle stores downloaded files, e.g. to tune anti-virus software on Windows " />
+    <option name="stores" hit=" Override the default location where Gradle stores downloaded files, e.g. to tune anti-virus software on Windows " />
+    <option name="the" hit=" Override the default location where Gradle stores downloaded files, e.g. to tune anti-virus software on Windows " />
+    <option name="to" hit=" Override the default location where Gradle stores downloaded files, e.g. to tune anti-virus software on Windows " />
+    <option name="tune" hit=" Override the default location where Gradle stores downloaded files, e.g. to tune anti-virus software on Windows " />
+    <option name="where" hit=" Override the default location where Gradle stores downloaded files, e.g. to tune anti-virus software on Windows " />
+    <option name="windows" hit=" Override the default location where Gradle stores downloaded files, e.g. to tune anti-virus software on Windows " />
+    <option name="general" hit="General settings" />
+    <option name="settings" hit="General settings" />
     <option name="gradle" hit="Gradle" />
     <option name="gradle" hit="Gradle VM options:" />
     <option name="options" hit="Gradle VM options:" />
     <option name="vm" hit="Gradle VM options:" />
-    <option name="gradle" hit="Linked Gradle projects" />
-    <option name="linked" hit="Linked Gradle projects" />
-    <option name="projects" hit="Linked Gradle projects" />
-    <option name="offline" hit="Offline work" />
-    <option name="work" hit="Offline work" />
-    <option name="project-level" hit="Project-level settings" />
-    <option name="settings" hit="Project-level settings" />
-    <option name="directory" hit="Service directory path:" />
-    <option name="path" hit="Service directory path:" />
-    <option name="service" hit="Service directory path:" />
-  </configurable>
-  <configurable id="reference.settings.project.gradle.running" configurable_name="Runner">
-    <option name="" hit=" Run tests using: " />
-    <option name="run" hit=" Run tests using: " />
-    <option name="tests" hit=" Run tests using: " />
-    <option name="using" hit=" Run tests using: " />
-    <option name="choose" hit="Choose per test" />
-    <option name="per" hit="Choose per test" />
-    <option name="test" hit="Choose per test" />
-    <option name="actions" hit="Delegate IDE build/run actions to Gradle" />
-    <option name="build" hit="Delegate IDE build/run actions to Gradle" />
-    <option name="delegate" hit="Delegate IDE build/run actions to Gradle" />
-    <option name="gradle" hit="Delegate IDE build/run actions to Gradle" />
-    <option name="ide" hit="Delegate IDE build/run actions to Gradle" />
-    <option name="run" hit="Delegate IDE build/run actions to Gradle" />
-    <option name="to" hit="Delegate IDE build/run actions to Gradle" />
-    <option name="gradle" hit="Gradle Test Runner" />
-    <option name="runner" hit="Gradle Test Runner" />
-    <option name="test" hit="Gradle Test Runner" />
-    <option name="platform" hit="Platform Test Runner" />
-    <option name="runner" hit="Platform Test Runner" />
-    <option name="test" hit="Platform Test Runner" />
-    <option name="runner" hit="Runner" />
+    <option name="gradle" hit="Gradle user home:" />
+    <option name="home" hit="Gradle user home:" />
+    <option name="user" hit="Gradle user home:" />
   </configurable>
 </options>
 

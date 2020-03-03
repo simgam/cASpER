@@ -2,15 +2,45 @@
 <options>
   <configurable id="preferences.keymap" configurable_name="Keymap">
     <option name="" path="ActionManager" hit="" />
+    <option name="abort" path="ActionManager" hit="Abort Cherry-Pick" />
+    <option name="cherry-pick" path="ActionManager" hit="Abort Cherry-Pick" />
+    <option name="abort" path="ActionManager" hit="Abort Merge" />
+    <option name="merge" path="ActionManager" hit="Abort Merge" />
     <option name="abort" path="ActionManager" hit="Abort Rebase" />
     <option name="rebase" path="ActionManager" hit="Abort Rebase" />
-    <option name="add" path="ActionManager" hit="Add" />
+    <option name="abort" path="ActionManager" hit="Abort Revert" />
+    <option name="revert" path="ActionManager" hit="Abort Revert" />
+    <option name="add" path="ActionManager" hit="Add selected files to .gitignore" />
+    <option name="files" path="ActionManager" hit="Add selected files to .gitignore" />
+    <option name="gitignore" path="ActionManager" hit="Add selected files to .gitignore" />
+    <option name="selected" path="ActionManager" hit="Add selected files to .gitignore" />
+    <option name="to" path="ActionManager" hit="Add selected files to .gitignore" />
+    <option name="add" path="ActionManager" hit="Add to .gitignore" />
+    <option name="gitignore" path="ActionManager" hit="Add to .gitignore" />
+    <option name="to" path="ActionManager" hit="Add to .gitignore" />
     <option name="branches" path="ActionManager" hit="Branches..." />
-    <option name="change" path="ActionManager" hit="Change commit message" />
-    <option name="commit" path="ActionManager" hit="Change commit message" />
-    <option name="message" path="ActionManager" hit="Change commit message" />
-    <option name="checkout" path="ActionManager" hit="Checkout Revision" />
-    <option name="revision" path="ActionManager" hit="Checkout Revision" />
+    <option name="amend" path="ActionManager" hit="Change commit message via reword option of git rebase or amend" />
+    <option name="change" path="ActionManager" hit="Change commit message via reword option of git rebase or amend" />
+    <option name="commit" path="ActionManager" hit="Change commit message via reword option of git rebase or amend" />
+    <option name="git" path="ActionManager" hit="Change commit message via reword option of git rebase or amend" />
+    <option name="message" path="ActionManager" hit="Change commit message via reword option of git rebase or amend" />
+    <option name="of" path="ActionManager" hit="Change commit message via reword option of git rebase or amend" />
+    <option name="option" path="ActionManager" hit="Change commit message via reword option of git rebase or amend" />
+    <option name="or" path="ActionManager" hit="Change commit message via reword option of git rebase or amend" />
+    <option name="rebase" path="ActionManager" hit="Change commit message via reword option of git rebase or amend" />
+    <option name="reword" path="ActionManager" hit="Change commit message via reword option of git rebase or amend" />
+    <option name="via" path="ActionManager" hit="Change commit message via reword option of git rebase or amend" />
+    <option name="checkout" path="ActionManager" hit="Checkout" />
+    <option name="a" path="ActionManager" hit="Checkout selected revision or a branch on selected commit" />
+    <option name="branch" path="ActionManager" hit="Checkout selected revision or a branch on selected commit" />
+    <option name="checkout" path="ActionManager" hit="Checkout selected revision or a branch on selected commit" />
+    <option name="commit" path="ActionManager" hit="Checkout selected revision or a branch on selected commit" />
+    <option name="on" path="ActionManager" hit="Checkout selected revision or a branch on selected commit" />
+    <option name="or" path="ActionManager" hit="Checkout selected revision or a branch on selected commit" />
+    <option name="revision" path="ActionManager" hit="Checkout selected revision or a branch on selected commit" />
+    <option name="selected" path="ActionManager" hit="Checkout selected revision or a branch on selected commit" />
+    <option name="branches" path="ActionManager" hit="Cleanup Branches" />
+    <option name="cleanup" path="ActionManager" hit="Cleanup Branches" />
     <option name="clone" path="ActionManager" hit="Clone..." />
     <option name="and" path="ActionManager" hit="Commit and Push..." />
     <option name="commit" path="ActionManager" hit="Commit and Push..." />
@@ -46,20 +76,23 @@
     <option name="tag" path="ActionManager" hit="Create new tag pointing to this commit" />
     <option name="this" path="ActionManager" hit="Create new tag pointing to this commit" />
     <option name="to" path="ActionManager" hit="Create new tag pointing to this commit" />
-    <option name="branch" path="ActionManager" hit="Dims those commits which have equivalent changes in the current branch" />
-    <option name="changes" path="ActionManager" hit="Dims those commits which have equivalent changes in the current branch" />
-    <option name="commits" path="ActionManager" hit="Dims those commits which have equivalent changes in the current branch" />
-    <option name="current" path="ActionManager" hit="Dims those commits which have equivalent changes in the current branch" />
-    <option name="dims" path="ActionManager" hit="Dims those commits which have equivalent changes in the current branch" />
-    <option name="equivalent" path="ActionManager" hit="Dims those commits which have equivalent changes in the current branch" />
-    <option name="have" path="ActionManager" hit="Dims those commits which have equivalent changes in the current branch" />
-    <option name="in" path="ActionManager" hit="Dims those commits which have equivalent changes in the current branch" />
-    <option name="the" path="ActionManager" hit="Dims those commits which have equivalent changes in the current branch" />
-    <option name="those" path="ActionManager" hit="Dims those commits which have equivalent changes in the current branch" />
-    <option name="which" path="ActionManager" hit="Dims those commits which have equivalent changes in the current branch" />
+    <option name="commit" path="ActionManager" hit="Edit Commit Message..." />
+    <option name="edit" path="ActionManager" hit="Edit Commit Message..." />
+    <option name="message" path="ActionManager" hit="Edit Commit Message..." />
     <option name="fetch" path="ActionManager" hit="Fetch" />
     <option name="fixup" path="ActionManager" hit="Fixup..." />
     <option name="git" path="ActionManager" hit="Git" />
+    <option name="been" path="ActionManager" hit="Highlights commits which have not been cherry-picked to the current branch" />
+    <option name="branch" path="ActionManager" hit="Highlights commits which have not been cherry-picked to the current branch" />
+    <option name="cherry-picked" path="ActionManager" hit="Highlights commits which have not been cherry-picked to the current branch" />
+    <option name="commits" path="ActionManager" hit="Highlights commits which have not been cherry-picked to the current branch" />
+    <option name="current" path="ActionManager" hit="Highlights commits which have not been cherry-picked to the current branch" />
+    <option name="have" path="ActionManager" hit="Highlights commits which have not been cherry-picked to the current branch" />
+    <option name="highlights" path="ActionManager" hit="Highlights commits which have not been cherry-picked to the current branch" />
+    <option name="not" path="ActionManager" hit="Highlights commits which have not been cherry-picked to the current branch" />
+    <option name="the" path="ActionManager" hit="Highlights commits which have not been cherry-picked to the current branch" />
+    <option name="to" path="ActionManager" hit="Highlights commits which have not been cherry-picked to the current branch" />
+    <option name="which" path="ActionManager" hit="Highlights commits which have not been cherry-picked to the current branch" />
     <option name="from" path="ActionManager" hit="Interactively Rebase from Here..." />
     <option name="here" path="ActionManager" hit="Interactively Rebase from Here..." />
     <option name="interactively" path="ActionManager" hit="Interactively Rebase from Here..." />
@@ -70,8 +103,19 @@
     <option name="new" path="ActionManager" hit="New Branch..." />
     <option name="new" path="ActionManager" hit="New Tag..." />
     <option name="tag" path="ActionManager" hit="New Tag..." />
-    <option name="commits" path="ActionManager" hit="Non-Picked Commits" />
-    <option name="non-picked" path="ActionManager" hit="Non-Picked Commits" />
+    <option name="cherry-picked" path="ActionManager" hit="Not Cherry-Picked Commits" />
+    <option name="commits" path="ActionManager" hit="Not Cherry-Picked Commits" />
+    <option name="not" path="ActionManager" hit="Not Cherry-Picked Commits" />
+    <option name="exclude" path="ActionManager" hit="Open .git/info/exclude" />
+    <option name="git" path="ActionManager" hit="Open .git/info/exclude" />
+    <option name="info" path="ActionManager" hit="Open .git/info/exclude" />
+    <option name="open" path="ActionManager" hit="Open .git/info/exclude" />
+    <option name="editor" path="ActionManager" hit="Open .git/info/exclude in editor" />
+    <option name="exclude" path="ActionManager" hit="Open .git/info/exclude in editor" />
+    <option name="git" path="ActionManager" hit="Open .git/info/exclude in editor" />
+    <option name="in" path="ActionManager" hit="Open .git/info/exclude in editor" />
+    <option name="info" path="ActionManager" hit="Open .git/info/exclude in editor" />
+    <option name="open" path="ActionManager" hit="Open .git/info/exclude in editor" />
     <option name="a" path="ActionManager" hit="Produce a new commit, which reverts the changes made in the original commit" />
     <option name="changes" path="ActionManager" hit="Produce a new commit, which reverts the changes made in the original commit" />
     <option name="commit" path="ActionManager" hit="Produce a new commit, which reverts the changes made in the original commit" />
@@ -97,7 +141,6 @@
     <option name="resolve" path="ActionManager" hit="Resolve Conflicts..." />
     <option name="commit" path="ActionManager" hit="Revert Commit" />
     <option name="revert" path="ActionManager" hit="Revert Commit" />
-    <option name="reword" path="ActionManager" hit="Reword..." />
     <option name="git" path="ActionManager" hit="Show Git Repository Log..." />
     <option name="log" path="ActionManager" hit="Show Git Repository Log..." />
     <option name="repository" path="ActionManager" hit="Show Git Repository Log..." />
@@ -133,6 +176,10 @@
     <option name="changes" path="ActionManager" hit="Stash Changes..." />
     <option name="stash" path="ActionManager" hit="Stash Changes..." />
     <option name="tag" path="ActionManager" hit="Tag..." />
+    <option name="dialog" path="ActionManager" hit="Test Git Login Dialog" />
+    <option name="git" path="ActionManager" hit="Test Git Login Dialog" />
+    <option name="login" path="ActionManager" hit="Test Git Login Dialog" />
+    <option name="test" path="ActionManager" hit="Test Git Login Dialog" />
     <option name="changes" path="ActionManager" hit="UnStash Changes..." />
     <option name="unstash" path="ActionManager" hit="UnStash Changes..." />
     <option name="commit" path="ActionManager" hit="Undo Commit..." />
@@ -149,17 +196,6 @@
     <option name="undo" path="ActionManager" hit="Undo last commit and put its changes into selected changelist" />
   </configurable>
   <configurable id="vcs.Git" configurable_name="Git">
-    <option name="" hit=" Refresh every " />
-    <option name="every" hit=" Refresh every " />
-    <option name="refresh" hit=" Refresh every " />
-    <option name="" hit=" Supported for Git 2.9+" />
-    <option name="2" hit=" Supported for Git 2.9+" />
-    <option name="9" hit=" Supported for Git 2.9+" />
-    <option name="for" hit=" Supported for Git 2.9+" />
-    <option name="git" hit=" Supported for Git 2.9+" />
-    <option name="supported" hit=" Supported for Git 2.9+" />
-    <option name="" hit=" minutes " />
-    <option name="minutes" hit=" minutes " />
     <option name="add" hit="Add the 'cherry-picked from  ' suffix when picking commits pushed to protected branches" />
     <option name="branches" hit="Add the 'cherry-picked from  ' suffix when picking commits pushed to protected branches" />
     <option name="cherry-picked" hit="Add the 'cherry-picked from  ' suffix when picking commits pushed to protected branches" />
@@ -172,6 +208,9 @@
     <option name="the" hit="Add the 'cherry-picked from  ' suffix when picking commits pushed to protected branches" />
     <option name="to" hit="Add the 'cherry-picked from  ' suffix when picking commits pushed to protected branches" />
     <option name="when" hit="Add the 'cherry-picked from  ' suffix when picking commits pushed to protected branches" />
+    <option name="all" hit="All" />
+    <option name="always" hit="Always" />
+    <option name="auto" hit="Auto" />
     <option name="auto-update" hit="Auto-update if push of the current branch was rejected" />
     <option name="branch" hit="Auto-update if push of the current branch was rejected" />
     <option name="current" hit="Auto-update if push of the current branch was rejected" />
@@ -181,8 +220,12 @@
     <option name="rejected" hit="Auto-update if push of the current branch was rejected" />
     <option name="the" hit="Auto-update if push of the current branch was rejected" />
     <option name="was" hit="Auto-update if push of the current branch was rejected" />
-    <option name="branch" hit="Branch default" />
-    <option name="default" hit="Branch default" />
+    <option name="branch" hit="Branch Default" />
+    <option name="default" hit="Branch Default" />
+    <option name="clean" hit="Clean working tree using:" />
+    <option name="tree" hit="Clean working tree using:" />
+    <option name="using" hit="Clean working tree using:" />
+    <option name="working" hit="Clean working tree using:" />
     <option name="automatically" hit="Commit automatically on cherry-pick" />
     <option name="cherry-pick" hit="Commit automatically on cherry-pick" />
     <option name="commit" hit="Commit automatically on cherry-pick" />
@@ -193,18 +236,22 @@
     <option name="on" hit="Execute branch operations on all roots" />
     <option name="operations" hit="Execute branch operations on all roots" />
     <option name="roots" hit="Execute branch operations on all roots" />
+    <option name="check" hit="Explicitly check for incoming commits on remotes: " />
+    <option name="commits" hit="Explicitly check for incoming commits on remotes: " />
+    <option name="explicitly" hit="Explicitly check for incoming commits on remotes: " />
+    <option name="for" hit="Explicitly check for incoming commits on remotes: " />
+    <option name="incoming" hit="Explicitly check for incoming commits on remotes: " />
+    <option name="on" hit="Explicitly check for incoming commits on remotes: " />
+    <option name="remotes" hit="Explicitly check for incoming commits on remotes: " />
+    <option name="by" hit="Filter Update Project information by paths: " />
+    <option name="filter" hit="Filter Update Project information by paths: " />
+    <option name="information" hit="Filter Update Project information by paths: " />
+    <option name="paths" hit="Filter Update Project information by paths: " />
+    <option name="project" hit="Filter Update Project information by paths: " />
+    <option name="update" hit="Filter Update Project information by paths: " />
     <option name="git" hit="Git" />
-    <option name="branches" hit="Mark branches that have incoming/outgoing commits in the Branches popup. " />
-    <option name="commits" hit="Mark branches that have incoming/outgoing commits in the Branches popup. " />
-    <option name="have" hit="Mark branches that have incoming/outgoing commits in the Branches popup. " />
-    <option name="in" hit="Mark branches that have incoming/outgoing commits in the Branches popup. " />
-    <option name="incoming" hit="Mark branches that have incoming/outgoing commits in the Branches popup. " />
-    <option name="mark" hit="Mark branches that have incoming/outgoing commits in the Branches popup. " />
-    <option name="outgoing" hit="Mark branches that have incoming/outgoing commits in the Branches popup. " />
-    <option name="popup" hit="Mark branches that have incoming/outgoing commits in the Branches popup. " />
-    <option name="that" hit="Mark branches that have incoming/outgoing commits in the Branches popup. " />
-    <option name="the" hit="Mark branches that have incoming/outgoing commits in the Branches popup. " />
     <option name="merge" hit="Merge" />
+    <option name="never" hit="Never" />
     <option name="executable" hit="Path to Git executable:" />
     <option name="git" hit="Path to Git executable:" />
     <option name="path" hit="Path to Git executable:" />
@@ -212,13 +259,15 @@
     <option name="branches" hit="Protected branches:" />
     <option name="protected" hit="Protected branches:" />
     <option name="rebase" hit="Rebase" />
-    <option name="current" hit="Set this path only for current project" />
-    <option name="for" hit="Set this path only for current project" />
-    <option name="only" hit="Set this path only for current project" />
-    <option name="path" hit="Set this path only for current project" />
-    <option name="project" hit="Set this path only for current project" />
-    <option name="set" hit="Set this path only for current project" />
-    <option name="this" hit="Set this path only for current project" />
+    <option name="current" hit="Set this path only for the current project" />
+    <option name="for" hit="Set this path only for the current project" />
+    <option name="only" hit="Set this path only for the current project" />
+    <option name="path" hit="Set this path only for the current project" />
+    <option name="project" hit="Set this path only for the current project" />
+    <option name="set" hit="Set this path only for the current project" />
+    <option name="the" hit="Set this path only for the current project" />
+    <option name="this" hit="Set this path only for the current project" />
+    <option name="shelve" hit="Shelve" />
     <option name="and" hit="Show Push dialog for Commit and Push" />
     <option name="commit" hit="Show Push dialog for Commit and Push" />
     <option name="dialog" hit="Show Push dialog for Commit and Push" />
@@ -234,9 +283,18 @@
     <option name="show" hit="Show Push dialog only when committing to protected branches" />
     <option name="to" hit="Show Push dialog only when committing to protected branches" />
     <option name="when" hit="Show Push dialog only when committing to protected branches" />
+    <option name="stash" hit="Stash" />
+    <option name="2" hit="Supported for Git 2.9+" />
+    <option name="9" hit="Supported for Git 2.9+" />
+    <option name="for" hit="Supported for Git 2.9+" />
+    <option name="git" hit="Supported for Git 2.9+" />
+    <option name="supported" hit="Supported for Git 2.9+" />
     <option name="test" hit="Test" />
     <option name="method" hit="Update method:" />
     <option name="update" hit="Update method:" />
+    <option name="credential" hit="Use credential helper" />
+    <option name="helper" hit="Use credential helper" />
+    <option name="use" hit="Use credential helper" />
     <option name="about" hit="Warn if CRLF line separators are about to be committed" />
     <option name="are" hit="Warn if CRLF line separators are about to be committed" />
     <option name="be" hit="Warn if CRLF line separators are about to be committed" />

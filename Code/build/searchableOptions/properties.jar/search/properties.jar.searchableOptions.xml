@@ -64,6 +64,7 @@
     <option name="valid" hit="Valid string escape" />
   </configurable>
   <configurable id="preferences.sourceCode.Properties" configurable_name="Properties">
+    <option name="disable" hit="Disable" />
     <option name="loading" hit="Loading..." />
     <option name="properties" hit="Properties" />
     <option name="scheme" hit="Scheme:" />

@@ -2,10 +2,12 @@
 <options>
   <configurable id="preferences.keymap" configurable_name="Keymap">
     <option name="" path="ActionManager" hit="" />
-    <option name="left" path="ActionManager" hit="Move Left" />
-    <option name="move" path="ActionManager" hit="Move Left" />
-    <option name="move" path="ActionManager" hit="Move Right" />
-    <option name="right" path="ActionManager" hit="Move Right" />
+    <option name="left" path="ActionManager" hit="Move Tab Left" />
+    <option name="move" path="ActionManager" hit="Move Tab Left" />
+    <option name="tab" path="ActionManager" hit="Move Tab Left" />
+    <option name="move" path="ActionManager" hit="Move Tab Right" />
+    <option name="right" path="ActionManager" hit="Move Tab Right" />
+    <option name="tab" path="ActionManager" hit="Move Tab Right" />
     <option name="editor" path="ActionManager" hit="Move to Editor" />
     <option name="move" path="ActionManager" hit="Move to Editor" />
     <option name="to" path="ActionManager" hit="Move to Editor" />
@@ -64,6 +66,9 @@
     <option name="shell" hit="Shell integration" />
     <option name="path" hit="Shell path" />
     <option name="shell" hit="Shell path" />
+    <option name="command" hit="Smart command handling" />
+    <option name="handling" hit="Smart command handling" />
+    <option name="smart" hit="Smart command handling" />
     <option name="directory" hit="Start directory" />
     <option name="start" hit="Start directory" />
     <option name="name" hit="Tab name" />

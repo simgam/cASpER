@@ -55,8 +55,8 @@
     <option name="include" hit="Include hostname into commit message" />
     <option name="into" hit="Include hostname into commit message" />
     <option name="message" hit="Include hostname into commit message" />
-    <option name="read-only" hit="Read-only Sources" />
-    <option name="sources" hit="Read-only Sources" />
+    <option name="read-only" hit="Read-only sources:" />
+    <option name="sources" hit="Read-only sources:" />
     <option name="repository" hit="Repository:" />
     <option name="repository" hit="Settings Repository" />
     <option name="settings" hit="Settings Repository" />

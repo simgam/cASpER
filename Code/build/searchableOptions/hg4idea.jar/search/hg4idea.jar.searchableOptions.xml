@@ -4,6 +4,14 @@
     <option name="" path="ActionManager" hit="" />
     <option name="abort" path="ActionManager" hit="Abort Rebasing" />
     <option name="rebasing" path="ActionManager" hit="Abort Rebasing" />
+    <option name="add" path="ActionManager" hit="Add selected files to .hgignore" />
+    <option name="files" path="ActionManager" hit="Add selected files to .hgignore" />
+    <option name="hgignore" path="ActionManager" hit="Add selected files to .hgignore" />
+    <option name="selected" path="ActionManager" hit="Add selected files to .hgignore" />
+    <option name="to" path="ActionManager" hit="Add selected files to .hgignore" />
+    <option name="add" path="ActionManager" hit="Add to .hgignore" />
+    <option name="hgignore" path="ActionManager" hit="Add to .hgignore" />
+    <option name="to" path="ActionManager" hit="Add to .hgignore" />
     <option name="apply" path="ActionManager" hit="Apply mq patches into repository history" />
     <option name="history" path="ActionManager" hit="Apply mq patches into repository history" />
     <option name="into" path="ActionManager" hit="Apply mq patches into repository history" />
@@ -166,9 +174,10 @@
     <option name="in" hit="Ignore  whitespace differences in annotations" />
     <option name="whitespace" hit="Ignore  whitespace differences in annotations" />
     <option name="mercurial" hit="Mercurial" />
-    <option name="executable" hit="Path to executable" />
-    <option name="path" hit="Path to executable" />
-    <option name="to" hit="Path to executable" />
+    <option name="executable" hit="Path to Mercurial executable:" />
+    <option name="mercurial" hit="Path to Mercurial executable:" />
+    <option name="path" hit="Path to Mercurial executable:" />
+    <option name="to" hit="Path to Mercurial executable:" />
     <option name="current" hit="Set this path only for the current project" />
     <option name="for" hit="Set this path only for the current project" />
     <option name="only" hit="Set this path only for the current project" />

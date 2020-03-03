@@ -53,6 +53,10 @@
     <option name="your" path="ActionManager" hit="Rebase your GitHub forked repository relative to the origin" />
     <option name="list" path="ActionManager" hit="Refresh List" />
     <option name="refresh" path="ActionManager" hit="Refresh List" />
+    <option name="comments" path="ActionManager" hit="Refresh Pull Request Comments" />
+    <option name="pull" path="ActionManager" hit="Refresh Pull Request Comments" />
+    <option name="refresh" path="ActionManager" hit="Refresh Pull Request Comments" />
+    <option name="request" path="ActionManager" hit="Refresh Pull Request Comments" />
     <option name="details" path="ActionManager" hit="Refresh Pull Request Details" />
     <option name="pull" path="ActionManager" hit="Refresh Pull Request Details" />
     <option name="refresh" path="ActionManager" hit="Refresh Pull Request Details" />

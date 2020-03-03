@@ -3774,3 +3774,185 @@ Max     duration: 0ms (it was 'null')
 2020-03-03 12:01:58,159 [  19891]   INFO - plication.impl.ApplicationImpl - Global instance threads created counter = 8; ProcessIOExecutorService threads: 0 
 2020-03-03 12:01:58,160 [  19892]   INFO -        #com.intellij.idea.Main - ------------------------------------------------------ IDE SHUTDOWN ------------------------------------------------------ 
 2020-03-03 12:01:58,161 [  19893]   INFO - org.jetbrains.io.BuiltInServer - web server stopped 
+2020-03-03 12:23:52,199 [      0]   INFO -        #com.intellij.idea.Main - ------------------------------------------------------ IDE STARTED ------------------------------------------------------ 
+2020-03-03 12:23:52,364 [    165]   INFO -        #com.intellij.idea.Main - IDE: IntelliJ IDEA (build #IC-193.5233.102, 28 Nov 2019 00:47) 
+2020-03-03 12:23:52,367 [    168]   INFO -        #com.intellij.idea.Main - OS: Windows 10 (10.0, amd64) 
+2020-03-03 12:23:52,367 [    168]   INFO -        #com.intellij.idea.Main - JRE: 11.0.4+10-b520.11 (JetBrains s.r.o) 
+2020-03-03 12:23:52,367 [    168]   INFO -        #com.intellij.idea.Main - JVM: 11.0.4+10-b520.11 (OpenJDK 64-Bit Server VM) 
+2020-03-03 12:23:52,368 [    169]   INFO -        #com.intellij.idea.Main - JVM Args: -Didea.classpath.index.enabled=false -Didea.config.path=C:\Users\Simone\Desktop\cASpER\Code\build\idea-sandbox\config -Didea.is.internal=true -Didea.platform.prefix=Idea -Didea.plugins.path=C:\Users\Simone\Desktop\cASpER\Code\build\idea-sandbox\plugins -Didea.required.plugins.id=it.unisa.casper -Didea.system.path=C:\Users\Simone\Desktop\cASpER\Code\build\idea-sandbox\system -Xms256m -Xmx512m -Dfile.encoding=windows-1252 -Duser.country=IT -Duser.language=it -Duser.variant -ea 
+2020-03-03 12:23:52,368 [    169]   INFO -        #com.intellij.idea.Main - charsets: JNU=Cp1252 file=windows-1252 
+2020-03-03 12:23:52,463 [    264]   INFO - ntellij.idea.ApplicationLoader - CPU cores: 8; ForkJoinPool.commonPool: java.util.concurrent.ForkJoinPool@6a8cf755[Running, parallelism = 8, size = 0, active = 0, running = 0, steals = 0, tasks = 0, submissions = 0]; factory: com.intellij.concurrency.IdeaForkJoinWorkerThreadFactory@159d5d1a 
+2020-03-03 12:23:53,151 [    952]   INFO -        #com.intellij.idea.Main - JNA library (64-bit) loaded in 900 ms 
+2020-03-03 12:23:53,207 [   1008]   INFO - llij.ide.plugins.PluginManager - Plugin "Groovy" misses optional descriptor duplicates-groovy.xml 
+2020-03-03 12:23:53,211 [   1012]   INFO - llij.ide.plugins.PluginManager - Plugin "Groovy" misses optional descriptor duplicates-detection-groovy.xml 
+2020-03-03 12:23:53,232 [   1033]   INFO - penapi.util.io.win32.IdeaWin32 - Native filesystem for Windows is operational 
+2020-03-03 12:23:53,354 [   1155]   INFO - llij.ide.plugins.PluginManager - Plugin "Java" misses optional descriptor profiler-java.xml 
+2020-03-03 12:23:53,547 [   1348]   INFO - llij.ide.plugins.PluginManager - Loaded bundled plugins: Android Support (10.3.5), Ant (193.5233.102), Bytecode Viewer (193.5233.102), ChangeReminder (193.5233.102), Configuration Script (193.5233.102), Copyright (193.5233.102), Coverage (193.5233.102), Eclipse Interoperability (193.5233.102), EditorConfig (193.5233.102), Git (193.5233.102), GitHub (193.5233.102), Gradle (193.5233.102), Gradle-Java (193.5233.102), Gradle-Maven (193.5233.102), Groovy (193.5233.102), IDEA CORE (193.5233.102), IntelliLang (193.5233.102), JUnit (193.5233.102), Java (193.5233.102), Java Bytecode Decompiler (193.5233.102), Java IDE Customization (193.5233.102), Java Internationalization (193.5233.102), Java Stream Debugger (193.5233.102), JavaFX (193.5233.102), Kotlin (1.3.60-release-IJ2019.3-1), Machine Learning Code Completion (193.5233.102), Markdown (193.5233.102), Maven (193.5233.102), Mercurial (193.5233.102), Plugin DevKit (193.5233.102), Properties (193.5233.102), Settings Repository (193.5233.102), Shell Script (193.5233.102), Smali Support (193.5233.102), Subversion (193.5233.102), Task Management (193.5233.102), Terminal (193.5233.102), TestNG (193.5233.102), TextMate bundles (193.5233.102), UI Designer (193.5233.102), XPathView + XSLT (193.5233.102), XSLT Debugger (193.5233.102), YAML (193.5233.102) 
+2020-03-03 12:23:53,547 [   1348]   INFO - llij.ide.plugins.PluginManager - Loaded custom plugins: cASpER (1.1.2) 
+2020-03-03 12:23:54,551 [   2352]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=492; buffer=10; max=492 
+2020-03-03 12:23:54,714 [   2515]   INFO - pi.util.registry.RegistryState - Registry values changed by user: java.completion.argument.hints.internal = false 
+2020-03-03 12:23:54,749 [   2550]   INFO - pi.util.registry.RegistryState - Experimental features enabled for user: wsl.close.process.input, wsl.p9.support, wsl.p9.show.roots.in.file.chooser, inline.browse.button, linux.native.menu, recent.and.edited.files.together, show.create.new.element.in.popup, copy.reference.popup, new.large.text.file.viewer, property.value.inplace.editing 
+2020-03-03 12:23:54,803 [   2604]   INFO - pl.local.NativeFileWatcherImpl - Native file watcher is disabled 
+2020-03-03 12:23:54,839 [   2640]   INFO - com.intellij.util.ui.JBUIScale - System scale factor: 1.0 (IDE-managed HiDPI) 
+2020-03-03 12:23:54,911 [   2712]   INFO - rains.ide.BuiltInServerManager - built-in server started, port 63343 
+2020-03-03 12:23:54,942 [   2743]   INFO - til.net.ssl.CertificateManager - Default SSL context initialized 
+2020-03-03 12:23:55,789 [   3590]   INFO - ij.psi.stubs.StubUpdatingIndex - Following new file types will be indexed:kotlin_builtins,CLASS,DGM,XML,HTML,Kotlin,Markdown,KJSM,KNM,Properties,Groovy,JAVA 
+2020-03-03 12:23:55,879 [   3680]   INFO - il.indexing.FileBasedIndexImpl - PersistentEnumerator storage corrupted C:\Users\Simone\Desktop\cASpER\Code\build\idea-sandbox\system\index\.persistent\trigram.index\values 
+com.intellij.util.io.PersistentEnumeratorBase$VersionUpdatedException: PersistentEnumerator storage corrupted C:\Users\Simone\Desktop\cASpER\Code\build\idea-sandbox\system\index\.persistent\trigram.index\values
+	at com.intellij.util.io.PersistentEnumeratorBase.<init>(PersistentEnumeratorBase.java:220)
+	at com.intellij.util.io.PersistentBTreeEnumerator.<init>(PersistentBTreeEnumerator.java:73)
+	at com.intellij.util.io.PersistentEnumeratorDelegate.<init>(PersistentEnumeratorDelegate.java:47)
+	at com.intellij.util.io.PersistentHashMap.<init>(PersistentHashMap.java:149)
+	at com.intellij.util.io.PersistentHashMap.<init>(PersistentHashMap.java:138)
+	at com.intellij.util.io.PersistentHashMap.<init>(PersistentHashMap.java:129)
+	at com.intellij.util.io.PersistentHashMap.<init>(PersistentHashMap.java:121)
+	at com.intellij.util.io.PersistentHashMap.<init>(PersistentHashMap.java:114)
+	at com.intellij.util.indexing.impl.forward.PersistentMapBasedForwardIndex.createMap(PersistentMapBasedForwardIndex.java:39)
+	at com.intellij.util.indexing.impl.forward.PersistentMapBasedForwardIndex.<init>(PersistentMapBasedForwardIndex.java:29)
+	at com.intellij.util.indexing.impl.forward.PersistentMapBasedForwardIndex.<init>(PersistentMapBasedForwardIndex.java:25)
+	at com.intellij.util.indexing.SnapshotInputMappings.createContentsIndex(SnapshotInputMappings.java:216)
+	at com.intellij.util.indexing.SnapshotInputMappings.<init>(SnapshotInputMappings.java:57)
+	at com.intellij.util.indexing.VfsAwareMapReduceIndex.<init>(VfsAwareMapReduceIndex.java:56)
+	at com.intellij.util.indexing.FileBasedIndexImpl.createIndex(FileBasedIndexImpl.java:493)
+	at com.intellij.util.indexing.FileBasedIndexImpl.initIndexStorage(FileBasedIndexImpl.java:409)
+	at com.intellij.util.indexing.FileBasedIndexImpl.registerIndexer(FileBasedIndexImpl.java:369)
+	at com.intellij.util.indexing.FileBasedIndexImpl.access$5300(FileBasedIndexImpl.java:107)
+	at com.intellij.util.indexing.FileBasedIndexImpl$FileIndexDataInitialization.lambda$initAssociatedDataForExtensions$0(FileBasedIndexImpl.java:2448)
+	at com.intellij.util.indexing.IndexInfrastructure$DataInitialization.executeNestedInitializationTask(IndexInfrastructure.java:173)
+	at com.intellij.util.indexing.IndexInfrastructure$DataInitialization.runParallelNestedInitializationTasks(IndexInfrastructure.java:161)
+	at com.intellij.util.indexing.IndexInfrastructure$DataInitialization.call(IndexInfrastructure.java:122)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at com.intellij.util.concurrency.BoundedTaskExecutor.doRun(BoundedTaskExecutor.java:222)
+	at com.intellij.util.concurrency.BoundedTaskExecutor.access$200(BoundedTaskExecutor.java:30)
+	at com.intellij.util.concurrency.BoundedTaskExecutor$1.execute(BoundedTaskExecutor.java:201)
+	at com.intellij.util.ConcurrencyUtil.runUnderThreadName(ConcurrencyUtil.java:221)
+	at com.intellij.util.concurrency.BoundedTaskExecutor$1.run(BoundedTaskExecutor.java:190)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-03-03 12:23:56,049 [   3850]   INFO - il.indexing.FileBasedIndexImpl - PersistentEnumerator storage corrupted C:\Users\Simone\Desktop\cASpER\Code\build\idea-sandbox\system\index\.persistent\bytecodeanalysis\values 
+com.intellij.util.io.PersistentEnumeratorBase$VersionUpdatedException: PersistentEnumerator storage corrupted C:\Users\Simone\Desktop\cASpER\Code\build\idea-sandbox\system\index\.persistent\bytecodeanalysis\values
+	at com.intellij.util.io.PersistentEnumeratorBase.<init>(PersistentEnumeratorBase.java:220)
+	at com.intellij.util.io.PersistentBTreeEnumerator.<init>(PersistentBTreeEnumerator.java:73)
+	at com.intellij.util.io.PersistentEnumeratorDelegate.<init>(PersistentEnumeratorDelegate.java:47)
+	at com.intellij.util.io.PersistentHashMap.<init>(PersistentHashMap.java:149)
+	at com.intellij.util.io.PersistentHashMap.<init>(PersistentHashMap.java:138)
+	at com.intellij.util.io.PersistentHashMap.<init>(PersistentHashMap.java:129)
+	at com.intellij.util.io.PersistentHashMap.<init>(PersistentHashMap.java:121)
+	at com.intellij.util.io.PersistentHashMap.<init>(PersistentHashMap.java:114)
+	at com.intellij.util.indexing.impl.forward.PersistentMapBasedForwardIndex.createMap(PersistentMapBasedForwardIndex.java:39)
+	at com.intellij.util.indexing.impl.forward.PersistentMapBasedForwardIndex.<init>(PersistentMapBasedForwardIndex.java:29)
+	at com.intellij.util.indexing.impl.forward.PersistentMapBasedForwardIndex.<init>(PersistentMapBasedForwardIndex.java:25)
+	at com.intellij.util.indexing.SnapshotInputMappings.createContentsIndex(SnapshotInputMappings.java:216)
+	at com.intellij.util.indexing.SnapshotInputMappings.<init>(SnapshotInputMappings.java:57)
+	at com.intellij.util.indexing.VfsAwareMapReduceIndex.<init>(VfsAwareMapReduceIndex.java:56)
+	at com.intellij.util.indexing.FileBasedIndexImpl.createIndex(FileBasedIndexImpl.java:493)
+	at com.intellij.util.indexing.FileBasedIndexImpl.initIndexStorage(FileBasedIndexImpl.java:409)
+	at com.intellij.util.indexing.FileBasedIndexImpl.registerIndexer(FileBasedIndexImpl.java:369)
+	at com.intellij.util.indexing.FileBasedIndexImpl.access$5300(FileBasedIndexImpl.java:107)
+	at com.intellij.util.indexing.FileBasedIndexImpl$FileIndexDataInitialization.lambda$initAssociatedDataForExtensions$0(FileBasedIndexImpl.java:2448)
+	at com.intellij.util.indexing.IndexInfrastructure$DataInitialization.executeNestedInitializationTask(IndexInfrastructure.java:173)
+	at com.intellij.util.indexing.IndexInfrastructure$DataInitialization.runParallelNestedInitializationTasks(IndexInfrastructure.java:161)
+	at com.intellij.util.indexing.IndexInfrastructure$DataInitialization.call(IndexInfrastructure.java:122)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at com.intellij.util.concurrency.BoundedTaskExecutor.doRun(BoundedTaskExecutor.java:222)
+	at com.intellij.util.concurrency.BoundedTaskExecutor.access$200(BoundedTaskExecutor.java:30)
+	at com.intellij.util.concurrency.BoundedTaskExecutor$1.execute(BoundedTaskExecutor.java:201)
+	at com.intellij.util.ConcurrencyUtil.runUnderThreadName(ConcurrencyUtil.java:221)
+	at com.intellij.util.concurrency.BoundedTaskExecutor$1.run(BoundedTaskExecutor.java:190)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-03-03 12:23:56,291 [   4092]   WARN - ConfigurableExtensionPointUtil - ignore deprecated groupId: language for id: preferences.language.Kotlin.scripting 
+2020-03-03 12:23:56,436 [   4237]   INFO - il.indexing.FileBasedIndexImpl - Indices to be rebuilt after version change:TodoIndex,IdIndex,filetypes,Stubs,fileIncludes,DomFileIndex,XmlNamespaces,java.simple.property,java.null.method.argument,java.fun.expression,java.binary.plus.expression,groovy.trait.methods 
+2020-03-03 12:23:56,436 [   4237]   INFO - il.indexing.FileBasedIndexImpl - Indices to be built:PluginIdModuleIndex,PluginIdDependenciesIndex,devkit.ExtensionPointIndex,DataBindingXmlIndex 
+2020-03-03 12:23:56,441 [   4242]   INFO - il.indexing.FileBasedIndexImpl - Dropping indices:jvm.hierarchy 
+2020-03-03 12:23:56,450 [   4251]   INFO - pl$FileIndexDataInitialization - Initialization done: 1884 
+2020-03-03 12:23:56,839 [   4640]   INFO - tellij.psi.stubs.StubIndexImpl - Following stub indices will be built:dom.namespaceKey,dom.elementClass,properties.index,gr.class.fqn,gr.script.fqn,gr.field.name,gr.method.name,gr.annot.method.name,gr.annot.members,gr.script.class,gr.class.super,gr.anonymous.class,org.jetbrains.kotlin.idea.stubindex.KotlinExactPackagesIndex,org.jetbrains.kotlin.idea.stubindex.KotlinTopLevelClassByPackageIndex,org.jetbrains.kotlin.idea.stubindex.KotlinTopLevelFunctionByPackageIndex,org.jetbrains.kotlin.idea.stubindex.KotlinTopLevelPropertyByPackageIndex,org.jetbrains.kotlin.idea.stubindex.KotlinTopLevelTypeAliasByPackageIndex,org.jetbrains.kotlin.idea.stubindex.KotlinClassShortNameIndex,org.jetbrains.kotlin.idea.stubindex.KotlinFullClassNameIndex,org.jetbrains.kotlin.idea.stubindex.KotlinPropertyShortNameIndex,org.jetbrains.kotlin.idea.stubindex.KotlinFunctionShortNameIndex,org.jetbrains.kotlin.idea.stubindex.KotlinTypeAliasShortNameIndex,org.jetbrains.kotlin.idea.stubindex.KotlinSuperClassIndex,org.jetbrains.kotlin.idea.stubindex.KotlinTopLevelFunctionFqnNameIndex,org.jetbrains.kotlin.idea.stubindex.KotlinTopLevelPropertyFqnNameIndex,org.jetbrains.kotlin.idea.stubindex.KotlinTopLevelTypeAliasFqNameIndex,org.jetbrains.kotlin.idea.stubindex.KotlinTopLevelExtensionsByReceiverTypeIndex,org.jetbrains.kotlin.idea.stubindex.KotlinAnnotationsIndex,org.jetbrains.kotlin.idea.stubindex.KotlinProbablyNothingFunctionShortNameIndex,org.jetbrains.kotlin.idea.stubindex.KotlinProbablyNothingPropertyShortNameIndex,org.jetbrains.kotlin.idea.stubindex.KotlinProbablyContractedFunctionShortNameIndex,org.jetbrains.kotlin.idea.stubindex.KotlinFileFacadeFqNameIndex,org.jetbrains.kotlin.idea.stubindex.KotlinFilePartClassIndex,org.jetbrains.kotlin.idea.stubindex.KotlinFileFacadeClassByPackageIndex,org.jetbrains.kotlin.idea.stubindex.KotlinFileFacadeShortNameIndex,org.jetbrains.kotlin.idea.stubindex.KotlinMultifileClassPartIndex,org.jetbrains.kotlin.idea.stubindex.KotlinScriptFqnIndex,org.jetbrains.kotlin.idea.stubindex.KotlinTypeAliasByExpansionShortNameIndex,org.jetbrains.kotlin.idea.stubindex.KotlinOverridableInternalMembersShortNameIndex,java.annotations,java.class.extlist,java.field.name,java.method.name,jvm.static.member.name,jvm.static.member.type,java.anonymous.baseref,java.method.parameter.types,java.class.shortname,java.class.fqn,java.module.name,markdown.header 
+2020-03-03 12:23:56,839 [   4640]   INFO - exImpl$StubIndexInitialization - Initialization done: 389 
+2020-03-03 12:23:57,957 [   5758]   INFO - CompilerWorkspaceConfiguration - Available processors: 8 
+2020-03-03 12:24:00,947 [   8748]   INFO - com.intellij.ide.ui.UISettings - Loaded: fontSize=13, fontScale=1.0; restored: fontSize=13, fontScale=1.0 
+2020-03-03 12:24:05,615 [  13416]   INFO - j.ide.plugins.RepositoryHelper - using cached plugin list (updated at 03/03/2020 12:23) 
+2020-03-03 12:24:05,619 [  13420]   INFO - j.ide.plugins.RepositoryHelper - using cached plugin list (updated at 03/03/2020 12:23) 
+2020-03-03 12:24:07,443 [  15244]   INFO - leScriptDefinitionsContributor - [kts] error loading gradle script templates: Project 'Default (Template) Project' isn't linked with Gradle 
+2020-03-03 12:24:07,455 [  15256]   INFO - leScriptDefinitionsContributor - [kts] error loading gradle script templates: Project 'Default (Template) Project' isn't linked with Gradle 
+2020-03-03 12:24:07,459 [  15260]   INFO - leScriptDefinitionsContributor - [kts] error loading gradle script templates: Project 'Default (Template) Project' isn't linked with Gradle 
+2020-03-03 12:24:10,397 [  18198]   INFO - Types.impl.FileTypeManagerImpl - 0 auto-detected files. Detection took 0 ms 
+2020-03-03 12:24:10,753 [  18554]   INFO - org.jetbrains.io.BuiltInServer - web server stopped 
+2020-03-03 12:24:10,754 [  18555]   INFO - il.indexing.FileBasedIndexImpl - START INDEX SHUTDOWN 
+2020-03-03 12:24:10,792 [  18593]   INFO - il.indexing.FileBasedIndexImpl - END INDEX SHUTDOWN 
+2020-03-03 12:24:10,793 [  18594]   INFO - newvfs.persistent.PersistentFS - VFS dispose started 
+2020-03-03 12:24:10,796 [  18597]   INFO - newvfs.persistent.PersistentFS - VFS dispose completed 
+2020-03-03 12:24:10,796 [  18597]   INFO - stubs.SerializationManagerImpl - START StubSerializationManager SHUTDOWN 
+2020-03-03 12:24:10,797 [  18598]   INFO - stubs.SerializationManagerImpl - END StubSerializationManager SHUTDOWN 
+2020-03-03 12:24:10,798 [  18599]   INFO - plication.impl.ApplicationImpl - Write action Statistics:
+Event number:     0
+Total time spent: 0ms
+Average duration: 0ms
+Median  duration: 0ms
+Max     duration: 0ms (it was 'null') 
+2020-03-03 12:24:10,798 [  18599]   INFO - plication.impl.ApplicationImpl - AnAction.update() Statistics:
+Event number:     0
+Total time spent: 0ms
+Average duration: 0ms
+Median  duration: 0ms
+Max     duration: 0ms (it was 'null') 
+2020-03-03 12:24:10,799 [  18600]   INFO - plication.impl.ApplicationImpl - Global instance threads created counter = 11; ProcessIOExecutorService threads: 0 
+2020-03-03 12:24:10,802 [  18603]   INFO -        #com.intellij.idea.Main - ------------------------------------------------------ IDE SHUTDOWN ------------------------------------------------------ 
+2020-03-03 12:24:10,808 [  18609]   INFO - org.jetbrains.io.BuiltInServer - web server stopped 
+2020-03-03 12:24:36,514 [      0]   INFO -        #com.intellij.idea.Main - ------------------------------------------------------ IDE STARTED ------------------------------------------------------ 
+2020-03-03 12:24:36,686 [    172]   INFO -        #com.intellij.idea.Main - IDE: IntelliJ IDEA (build #IC-193.5233.102, 28 Nov 2019 00:47) 
+2020-03-03 12:24:36,688 [    174]   INFO -        #com.intellij.idea.Main - OS: Windows 10 (10.0, amd64) 
+2020-03-03 12:24:36,688 [    174]   INFO -        #com.intellij.idea.Main - JRE: 11.0.4+10-b520.11 (JetBrains s.r.o) 
+2020-03-03 12:24:36,689 [    175]   INFO -        #com.intellij.idea.Main - JVM: 11.0.4+10-b520.11 (OpenJDK 64-Bit Server VM) 
+2020-03-03 12:24:36,689 [    175]   INFO -        #com.intellij.idea.Main - JVM Args: -Didea.classpath.index.enabled=false -Didea.config.path=C:\Users\Simone\Desktop\cASpER\Code\build\idea-sandbox\config -Didea.is.internal=true -Didea.platform.prefix=Idea -Didea.plugins.path=C:\Users\Simone\Desktop\cASpER\Code\build\idea-sandbox\plugins -Didea.required.plugins.id=it.unisa.casper -Didea.system.path=C:\Users\Simone\Desktop\cASpER\Code\build\idea-sandbox\system -Xms256m -Xmx512m -Dfile.encoding=windows-1252 -Duser.country=IT -Duser.language=it -Duser.variant -ea 
+2020-03-03 12:24:36,690 [    176]   INFO -        #com.intellij.idea.Main - charsets: JNU=Cp1252 file=windows-1252 
+2020-03-03 12:24:36,736 [    222]   INFO - ntellij.idea.ApplicationLoader - CPU cores: 8; ForkJoinPool.commonPool: java.util.concurrent.ForkJoinPool@15124ed[Running, parallelism = 8, size = 0, active = 0, running = 0, steals = 0, tasks = 0, submissions = 0]; factory: com.intellij.concurrency.IdeaForkJoinWorkerThreadFactory@31b7ce79 
+2020-03-03 12:24:37,067 [    553]   INFO -        #com.intellij.idea.Main - JNA library (64-bit) loaded in 510 ms 
+2020-03-03 12:24:37,076 [    562]   INFO - penapi.util.io.win32.IdeaWin32 - Native filesystem for Windows is operational 
+2020-03-03 12:24:37,700 [   1186]   INFO - llij.ide.plugins.PluginManager - Plugin "Groovy" misses optional descriptor duplicates-groovy.xml 
+2020-03-03 12:24:37,703 [   1189]   INFO - llij.ide.plugins.PluginManager - Plugin "Groovy" misses optional descriptor duplicates-detection-groovy.xml 
+2020-03-03 12:24:37,816 [   1302]   INFO - llij.ide.plugins.PluginManager - Plugin "Java" misses optional descriptor profiler-java.xml 
+2020-03-03 12:24:38,011 [   1497]   INFO - llij.ide.plugins.PluginManager - Loaded bundled plugins: Android Support (10.3.5), Ant (193.5233.102), Bytecode Viewer (193.5233.102), ChangeReminder (193.5233.102), Configuration Script (193.5233.102), Copyright (193.5233.102), Coverage (193.5233.102), Eclipse Interoperability (193.5233.102), EditorConfig (193.5233.102), Git (193.5233.102), GitHub (193.5233.102), Gradle (193.5233.102), Gradle-Java (193.5233.102), Gradle-Maven (193.5233.102), Groovy (193.5233.102), IDEA CORE (193.5233.102), IntelliLang (193.5233.102), JUnit (193.5233.102), Java (193.5233.102), Java Bytecode Decompiler (193.5233.102), Java IDE Customization (193.5233.102), Java Internationalization (193.5233.102), Java Stream Debugger (193.5233.102), JavaFX (193.5233.102), Kotlin (1.3.60-release-IJ2019.3-1), Machine Learning Code Completion (193.5233.102), Markdown (193.5233.102), Maven (193.5233.102), Mercurial (193.5233.102), Plugin DevKit (193.5233.102), Properties (193.5233.102), Settings Repository (193.5233.102), Shell Script (193.5233.102), Smali Support (193.5233.102), Subversion (193.5233.102), Task Management (193.5233.102), Terminal (193.5233.102), TestNG (193.5233.102), TextMate bundles (193.5233.102), UI Designer (193.5233.102), XPathView + XSLT (193.5233.102), XSLT Debugger (193.5233.102), YAML (193.5233.102) 
+2020-03-03 12:24:38,011 [   1497]   INFO - llij.ide.plugins.PluginManager - Loaded custom plugins: cASpER (1.1.2) 
+2020-03-03 12:24:39,002 [   2488]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=492; buffer=10; max=492 
+2020-03-03 12:24:39,089 [   2575]   INFO - com.intellij.util.ui.JBUIScale - System scale factor: 1.0 (IDE-managed HiDPI) 
+2020-03-03 12:24:39,174 [   2660]   INFO - pi.util.registry.RegistryState - Registry values changed by user: java.completion.argument.hints.internal = false 
+2020-03-03 12:24:39,231 [   2717]   INFO - rains.ide.BuiltInServerManager - built-in server started, port 63343 
+2020-03-03 12:24:39,254 [   2740]   INFO - pi.util.registry.RegistryState - Experimental features enabled for user: wsl.close.process.input, wsl.p9.support, wsl.p9.show.roots.in.file.chooser, inline.browse.button, linux.native.menu, recent.and.edited.files.together, show.create.new.element.in.popup, copy.reference.popup, new.large.text.file.viewer, property.value.inplace.editing 
+2020-03-03 12:24:39,342 [   2828]   INFO - pl.local.NativeFileWatcherImpl - Native file watcher is disabled 
+2020-03-03 12:24:39,410 [   2896]   INFO - til.net.ssl.CertificateManager - Default SSL context initialized 
+2020-03-03 12:24:40,100 [   3586]   WARN - ConfigurableExtensionPointUtil - ignore deprecated groupId: language for id: preferences.language.Kotlin.scripting 
+2020-03-03 12:24:40,184 [   3670]   INFO - pl$FileIndexDataInitialization - Initialization done: 1163 
+2020-03-03 12:24:40,436 [   3922]   INFO - exImpl$StubIndexInitialization - Initialization done: 253 
+2020-03-03 12:24:42,233 [   5719]   INFO - CompilerWorkspaceConfiguration - Available processors: 8 
+2020-03-03 12:24:45,995 [   9481]   INFO - com.intellij.ide.ui.UISettings - Loaded: fontSize=13, fontScale=1.0; restored: fontSize=13, fontScale=1.0 
+2020-03-03 12:24:50,914 [  14400]   INFO - j.ide.plugins.RepositoryHelper - using cached plugin list (updated at 03/03/2020 12:23) 
+2020-03-03 12:24:50,914 [  14400]   INFO - j.ide.plugins.RepositoryHelper - using cached plugin list (updated at 03/03/2020 12:23) 
+2020-03-03 12:24:52,341 [  15827]   INFO - leScriptDefinitionsContributor - [kts] error loading gradle script templates: Project 'Default (Template) Project' isn't linked with Gradle 
+2020-03-03 12:24:52,369 [  15855]   INFO - leScriptDefinitionsContributor - [kts] error loading gradle script templates: Project 'Default (Template) Project' isn't linked with Gradle 
+2020-03-03 12:24:52,370 [  15856]   INFO - leScriptDefinitionsContributor - [kts] error loading gradle script templates: Project 'Default (Template) Project' isn't linked with Gradle 
+2020-03-03 12:24:56,578 [  20064]   INFO - rationStore.ComponentStoreImpl - Saving appFileTypeManager took 15 ms 
+2020-03-03 12:24:56,709 [  20195]   INFO - Types.impl.FileTypeManagerImpl - 0 auto-detected files. Detection took 0 ms 
+2020-03-03 12:24:56,710 [  20196]   INFO - il.indexing.FileBasedIndexImpl - START INDEX SHUTDOWN 
+2020-03-03 12:24:56,776 [  20262]   INFO - il.indexing.FileBasedIndexImpl - END INDEX SHUTDOWN 
+2020-03-03 12:24:56,776 [  20262]   INFO - newvfs.persistent.PersistentFS - VFS dispose started 
+2020-03-03 12:24:56,782 [  20268]   INFO - newvfs.persistent.PersistentFS - VFS dispose completed 
+2020-03-03 12:24:56,783 [  20269]   INFO - org.jetbrains.io.BuiltInServer - web server stopped 
+2020-03-03 12:24:56,783 [  20269]   INFO - stubs.SerializationManagerImpl - START StubSerializationManager SHUTDOWN 
+2020-03-03 12:24:56,783 [  20269]   INFO - stubs.SerializationManagerImpl - END StubSerializationManager SHUTDOWN 
+2020-03-03 12:24:57,225 [  20711]   INFO - plication.impl.ApplicationImpl - Write action Statistics:
+Event number:     0
+Total time spent: 0ms
+Average duration: 0ms
+Median  duration: 0ms
+Max     duration: 0ms (it was 'null') 
+2020-03-03 12:24:57,225 [  20711]   INFO - plication.impl.ApplicationImpl - AnAction.update() Statistics:
+Event number:     0
+Total time spent: 0ms
+Average duration: 0ms
+Median  duration: 0ms
+Max     duration: 0ms (it was 'null') 
+2020-03-03 12:24:57,226 [  20712]   INFO - plication.impl.ApplicationImpl - Global instance threads created counter = 12; ProcessIOExecutorService threads: 0 
+2020-03-03 12:24:57,227 [  20713]   INFO -        #com.intellij.idea.Main - ------------------------------------------------------ IDE SHUTDOWN ------------------------------------------------------ 
+2020-03-03 12:24:57,229 [  20715]   INFO - org.jetbrains.io.BuiltInServer - web server stopped 

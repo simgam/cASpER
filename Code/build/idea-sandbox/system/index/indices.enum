@@ -95,3 +95,8 @@ java.method.parameter.types
 java.class.shortname
 java.class.fqn
 java.module.name
+PluginIdModuleIndex
+PluginIdDependenciesIndex
+devkit.ExtensionPointIndex
+DataBindingXmlIndex
+markdown.header

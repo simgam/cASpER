@@ -6,8 +6,5 @@
     <option name="edit" path="ActionManager" hit="Edit" />
     <option name="remove" path="ActionManager" hit="Remove" />
   </configurable>
-  <configurable id="reference.projectsettings.compiler.excludes" configurable_name="Excludes">
-    <option name="excludes" hit="Excludes" />
-  </configurable>
 </options>
 

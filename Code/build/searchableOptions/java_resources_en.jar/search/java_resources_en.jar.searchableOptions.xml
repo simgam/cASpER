@@ -25,7 +25,6 @@
     <option name="body" hit="Overridden Method Body" />
     <option name="method" hit="Overridden Method Body" />
     <option name="overridden" hit="Overridden Method Body" />
-    <option name="singleton" hit="Singleton" />
     <option name="branch" hit="Switch Default Branch" />
     <option name="default" hit="Switch Default Branch" />
     <option name="switch" hit="Switch Default Branch" />

@@ -1,34 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <options>
   <configurable id="http.proxy" configurable_name="HTTP Proxy">
-    <option name="" hit=" You have JVM property 'java.net.useSystemProxies' set to true. This will cause some network calls to go through operating system-defined proxy. If you didn't intend to use system-defined proxy, disable this property" />
-    <option name="calls" hit=" You have JVM property 'java.net.useSystemProxies' set to true. This will cause some network calls to go through operating system-defined proxy. If you didn't intend to use system-defined proxy, disable this property" />
-    <option name="cause" hit=" You have JVM property 'java.net.useSystemProxies' set to true. This will cause some network calls to go through operating system-defined proxy. If you didn't intend to use system-defined proxy, disable this property" />
-    <option name="didn" hit=" You have JVM property 'java.net.useSystemProxies' set to true. This will cause some network calls to go through operating system-defined proxy. If you didn't intend to use system-defined proxy, disable this property" />
-    <option name="disable" hit=" You have JVM property 'java.net.useSystemProxies' set to true. This will cause some network calls to go through operating system-defined proxy. If you didn't intend to use system-defined proxy, disable this property" />
-    <option name="go" hit=" You have JVM property 'java.net.useSystemProxies' set to true. This will cause some network calls to go through operating system-defined proxy. If you didn't intend to use system-defined proxy, disable this property" />
-    <option name="have" hit=" You have JVM property 'java.net.useSystemProxies' set to true. This will cause some network calls to go through operating system-defined proxy. If you didn't intend to use system-defined proxy, disable this property" />
-    <option name="if" hit=" You have JVM property 'java.net.useSystemProxies' set to true. This will cause some network calls to go through operating system-defined proxy. If you didn't intend to use system-defined proxy, disable this property" />
-    <option name="intend" hit=" You have JVM property 'java.net.useSystemProxies' set to true. This will cause some network calls to go through operating system-defined proxy. If you didn't intend to use system-defined proxy, disable this property" />
-    <option name="java" hit=" You have JVM property 'java.net.useSystemProxies' set to true. This will cause some network calls to go through operating system-defined proxy. If you didn't intend to use system-defined proxy, disable this property" />
-    <option name="jvm" hit=" You have JVM property 'java.net.useSystemProxies' set to true. This will cause some network calls to go through operating system-defined proxy. If you didn't intend to use system-defined proxy, disable this property" />
-    <option name="net" hit=" You have JVM property 'java.net.useSystemProxies' set to true. This will cause some network calls to go through operating system-defined proxy. If you didn't intend to use system-defined proxy, disable this property" />
-    <option name="network" hit=" You have JVM property 'java.net.useSystemProxies' set to true. This will cause some network calls to go through operating system-defined proxy. If you didn't intend to use system-defined proxy, disable this property" />
-    <option name="operating" hit=" You have JVM property 'java.net.useSystemProxies' set to true. This will cause some network calls to go through operating system-defined proxy. If you didn't intend to use system-defined proxy, disable this property" />
-    <option name="property" hit=" You have JVM property 'java.net.useSystemProxies' set to true. This will cause some network calls to go through operating system-defined proxy. If you didn't intend to use system-defined proxy, disable this property" />
-    <option name="proxy" hit=" You have JVM property 'java.net.useSystemProxies' set to true. This will cause some network calls to go through operating system-defined proxy. If you didn't intend to use system-defined proxy, disable this property" />
-    <option name="set" hit=" You have JVM property 'java.net.useSystemProxies' set to true. This will cause some network calls to go through operating system-defined proxy. If you didn't intend to use system-defined proxy, disable this property" />
-    <option name="some" hit=" You have JVM property 'java.net.useSystemProxies' set to true. This will cause some network calls to go through operating system-defined proxy. If you didn't intend to use system-defined proxy, disable this property" />
-    <option name="system-defined" hit=" You have JVM property 'java.net.useSystemProxies' set to true. This will cause some network calls to go through operating system-defined proxy. If you didn't intend to use system-defined proxy, disable this property" />
-    <option name="t" hit=" You have JVM property 'java.net.useSystemProxies' set to true. This will cause some network calls to go through operating system-defined proxy. If you didn't intend to use system-defined proxy, disable this property" />
-    <option name="this" hit=" You have JVM property 'java.net.useSystemProxies' set to true. This will cause some network calls to go through operating system-defined proxy. If you didn't intend to use system-defined proxy, disable this property" />
-    <option name="through" hit=" You have JVM property 'java.net.useSystemProxies' set to true. This will cause some network calls to go through operating system-defined proxy. If you didn't intend to use system-defined proxy, disable this property" />
-    <option name="to" hit=" You have JVM property 'java.net.useSystemProxies' set to true. This will cause some network calls to go through operating system-defined proxy. If you didn't intend to use system-defined proxy, disable this property" />
-    <option name="true" hit=" You have JVM property 'java.net.useSystemProxies' set to true. This will cause some network calls to go through operating system-defined proxy. If you didn't intend to use system-defined proxy, disable this property" />
-    <option name="use" hit=" You have JVM property 'java.net.useSystemProxies' set to true. This will cause some network calls to go through operating system-defined proxy. If you didn't intend to use system-defined proxy, disable this property" />
-    <option name="usesystemproxies" hit=" You have JVM property 'java.net.useSystemProxies' set to true. This will cause some network calls to go through operating system-defined proxy. If you didn't intend to use system-defined proxy, disable this property" />
-    <option name="will" hit=" You have JVM property 'java.net.useSystemProxies' set to true. This will cause some network calls to go through operating system-defined proxy. If you didn't intend to use system-defined proxy, disable this property" />
-    <option name="you" hit=" You have JVM property 'java.net.useSystemProxies' set to true. This will cause some network calls to go through operating system-defined proxy. If you didn't intend to use system-defined proxy, disable this property" />
+    <option name="" hit=" You have JVM property 'java.net.useSystemProxies' set to 'true'. This will cause some network calls to go through operating system-defined proxy. If you didn't intend to use system-defined proxy, please disable this property. " />
+    <option name="calls" hit=" You have JVM property 'java.net.useSystemProxies' set to 'true'. This will cause some network calls to go through operating system-defined proxy. If you didn't intend to use system-defined proxy, please disable this property. " />
+    <option name="cause" hit=" You have JVM property 'java.net.useSystemProxies' set to 'true'. This will cause some network calls to go through operating system-defined proxy. If you didn't intend to use system-defined proxy, please disable this property. " />
+    <option name="didn" hit=" You have JVM property 'java.net.useSystemProxies' set to 'true'. This will cause some network calls to go through operating system-defined proxy. If you didn't intend to use system-defined proxy, please disable this property. " />
+    <option name="disable" hit=" You have JVM property 'java.net.useSystemProxies' set to 'true'. This will cause some network calls to go through operating system-defined proxy. If you didn't intend to use system-defined proxy, please disable this property. " />
+    <option name="go" hit=" You have JVM property 'java.net.useSystemProxies' set to 'true'. This will cause some network calls to go through operating system-defined proxy. If you didn't intend to use system-defined proxy, please disable this property. " />
+    <option name="have" hit=" You have JVM property 'java.net.useSystemProxies' set to 'true'. This will cause some network calls to go through operating system-defined proxy. If you didn't intend to use system-defined proxy, please disable this property. " />
+    <option name="if" hit=" You have JVM property 'java.net.useSystemProxies' set to 'true'. This will cause some network calls to go through operating system-defined proxy. If you didn't intend to use system-defined proxy, please disable this property. " />
+    <option name="intend" hit=" You have JVM property 'java.net.useSystemProxies' set to 'true'. This will cause some network calls to go through operating system-defined proxy. If you didn't intend to use system-defined proxy, please disable this property. " />
+    <option name="java" hit=" You have JVM property 'java.net.useSystemProxies' set to 'true'. This will cause some network calls to go through operating system-defined proxy. If you didn't intend to use system-defined proxy, please disable this property. " />
+    <option name="jvm" hit=" You have JVM property 'java.net.useSystemProxies' set to 'true'. This will cause some network calls to go through operating system-defined proxy. If you didn't intend to use system-defined proxy, please disable this property. " />
+    <option name="net" hit=" You have JVM property 'java.net.useSystemProxies' set to 'true'. This will cause some network calls to go through operating system-defined proxy. If you didn't intend to use system-defined proxy, please disable this property. " />
+    <option name="network" hit=" You have JVM property 'java.net.useSystemProxies' set to 'true'. This will cause some network calls to go through operating system-defined proxy. If you didn't intend to use system-defined proxy, please disable this property. " />
+    <option name="operating" hit=" You have JVM property 'java.net.useSystemProxies' set to 'true'. This will cause some network calls to go through operating system-defined proxy. If you didn't intend to use system-defined proxy, please disable this property. " />
+    <option name="please" hit=" You have JVM property 'java.net.useSystemProxies' set to 'true'. This will cause some network calls to go through operating system-defined proxy. If you didn't intend to use system-defined proxy, please disable this property. " />
+    <option name="property" hit=" You have JVM property 'java.net.useSystemProxies' set to 'true'. This will cause some network calls to go through operating system-defined proxy. If you didn't intend to use system-defined proxy, please disable this property. " />
+    <option name="proxy" hit=" You have JVM property 'java.net.useSystemProxies' set to 'true'. This will cause some network calls to go through operating system-defined proxy. If you didn't intend to use system-defined proxy, please disable this property. " />
+    <option name="set" hit=" You have JVM property 'java.net.useSystemProxies' set to 'true'. This will cause some network calls to go through operating system-defined proxy. If you didn't intend to use system-defined proxy, please disable this property. " />
+    <option name="some" hit=" You have JVM property 'java.net.useSystemProxies' set to 'true'. This will cause some network calls to go through operating system-defined proxy. If you didn't intend to use system-defined proxy, please disable this property. " />
+    <option name="system-defined" hit=" You have JVM property 'java.net.useSystemProxies' set to 'true'. This will cause some network calls to go through operating system-defined proxy. If you didn't intend to use system-defined proxy, please disable this property. " />
+    <option name="t" hit=" You have JVM property 'java.net.useSystemProxies' set to 'true'. This will cause some network calls to go through operating system-defined proxy. If you didn't intend to use system-defined proxy, please disable this property. " />
+    <option name="this" hit=" You have JVM property 'java.net.useSystemProxies' set to 'true'. This will cause some network calls to go through operating system-defined proxy. If you didn't intend to use system-defined proxy, please disable this property. " />
+    <option name="through" hit=" You have JVM property 'java.net.useSystemProxies' set to 'true'. This will cause some network calls to go through operating system-defined proxy. If you didn't intend to use system-defined proxy, please disable this property. " />
+    <option name="to" hit=" You have JVM property 'java.net.useSystemProxies' set to 'true'. This will cause some network calls to go through operating system-defined proxy. If you didn't intend to use system-defined proxy, please disable this property. " />
+    <option name="true" hit=" You have JVM property 'java.net.useSystemProxies' set to 'true'. This will cause some network calls to go through operating system-defined proxy. If you didn't intend to use system-defined proxy, please disable this property. " />
+    <option name="use" hit=" You have JVM property 'java.net.useSystemProxies' set to 'true'. This will cause some network calls to go through operating system-defined proxy. If you didn't intend to use system-defined proxy, please disable this property. " />
+    <option name="usesystemproxies" hit=" You have JVM property 'java.net.useSystemProxies' set to 'true'. This will cause some network calls to go through operating system-defined proxy. If you didn't intend to use system-defined proxy, please disable this property. " />
+    <option name="will" hit=" You have JVM property 'java.net.useSystemProxies' set to 'true'. This will cause some network calls to go through operating system-defined proxy. If you didn't intend to use system-defined proxy, please disable this property. " />
+    <option name="you" hit=" You have JVM property 'java.net.useSystemProxies' set to 'true'. This will cause some network calls to go through operating system-defined proxy. If you didn't intend to use system-defined proxy, please disable this property. " />
     <option name="auto-detect" hit="Auto-detect proxy settings" />
     <option name="proxy" hit="Auto-detect proxy settings" />
     <option name="settings" hit="Auto-detect proxy settings" />
@@ -93,6 +94,7 @@
     <option name="java" path="ActionManager" hit="Analyze Java Menu" />
     <option name="menu" path="ActionManager" hit="Analyze Java Menu" />
     <option name="android" path="ActionManager" hit="Android" />
+    <option name="appearance" path="ActionManager" hit="Appearance" />
     <option name="append" path="ActionManager" hit="Append Left Side" />
     <option name="left" path="ActionManager" hit="Append Left Side" />
     <option name="side" path="ActionManager" hit="Append Left Side" />
@@ -130,9 +132,10 @@
     <option name="right" path="ActionManager" hit="Base and Right" />
     <option name="benchmark" path="ActionManager" hit="Benchmark completion" />
     <option name="completion" path="ActionManager" hit="Benchmark completion" />
-    <option name="bidi" path="ActionManager" hit="Bidi Text Direction" />
-    <option name="direction" path="ActionManager" hit="Bidi Text Direction" />
-    <option name="text" path="ActionManager" hit="Bidi Text Direction" />
+    <option name="base" path="ActionManager" hit="Bidi Text Base Direction" />
+    <option name="bidi" path="ActionManager" hit="Bidi Text Base Direction" />
+    <option name="direction" path="ActionManager" hit="Bidi Text Base Direction" />
+    <option name="text" path="ActionManager" hit="Bidi Text Base Direction" />
     <option name="bookmarks" path="ActionManager" hit="Bookmarks" />
     <option name="breadcrumbs" path="ActionManager" hit="Breadcrumbs" />
     <option name="actions" path="ActionManager" hit="Breakpoint Actions" />
@@ -143,9 +146,9 @@
     <option name="browse" path="ActionManager" hit="Browse console history" />
     <option name="console" path="ActionManager" hit="Browse console history" />
     <option name="history" path="ActionManager" hit="Browse console history" />
-    <option name="cached" path="ActionManager" hit="Cached value profiler" />
-    <option name="profiler" path="ActionManager" hit="Cached value profiler" />
-    <option name="value" path="ActionManager" hit="Cached value profiler" />
+    <option name="cached" path="ActionManager" hit="Cached Value Profiler" />
+    <option name="profiler" path="ActionManager" hit="Cached Value Profiler" />
+    <option name="value" path="ActionManager" hit="Cached Value Profiler" />
     <option name="actions" path="ActionManager" hit="Change Navigation Actions" />
     <option name="change" path="ActionManager" hit="Change Navigation Actions" />
     <option name="navigation" path="ActionManager" hit="Change Navigation Actions" />
@@ -223,32 +226,32 @@
     <option name="actions" path="ActionManager" hit="Debugger Step Actions" />
     <option name="debugger" path="ActionManager" hit="Debugger Step Actions" />
     <option name="step" path="ActionManager" hit="Debugger Step Actions" />
-    <option name="alt" path="ActionManager" hit="Debugger with Alt key" />
-    <option name="debugger" path="ActionManager" hit="Debugger with Alt key" />
-    <option name="key" path="ActionManager" hit="Debugger with Alt key" />
-    <option name="with" path="ActionManager" hit="Debugger with Alt key" />
+    <option name="alt" path="ActionManager" hit="Debugger with Alt Key" />
+    <option name="debugger" path="ActionManager" hit="Debugger with Alt Key" />
+    <option name="key" path="ActionManager" hit="Debugger with Alt Key" />
+    <option name="with" path="ActionManager" hit="Debugger with Alt Key" />
     <option name="default" path="ActionManager" hit="Default" />
-    <option name="alt" path="ActionManager" hit="Default with Alt key" />
-    <option name="default" path="ActionManager" hit="Default with Alt key" />
-    <option name="key" path="ActionManager" hit="Default with Alt key" />
-    <option name="with" path="ActionManager" hit="Default with Alt key" />
-    <option name="alt" path="ActionManager" hit="Default with Alt+Cmd key" />
-    <option name="cmd" path="ActionManager" hit="Default with Alt+Cmd key" />
-    <option name="default" path="ActionManager" hit="Default with Alt+Cmd key" />
-    <option name="key" path="ActionManager" hit="Default with Alt+Cmd key" />
-    <option name="with" path="ActionManager" hit="Default with Alt+Cmd key" />
-    <option name="cmd" path="ActionManager" hit="Default with Cmd key" />
-    <option name="default" path="ActionManager" hit="Default with Cmd key" />
-    <option name="key" path="ActionManager" hit="Default with Cmd key" />
-    <option name="with" path="ActionManager" hit="Default with Cmd key" />
-    <option name="ctrl" path="ActionManager" hit="Default with Ctrl key" />
-    <option name="default" path="ActionManager" hit="Default with Ctrl key" />
-    <option name="key" path="ActionManager" hit="Default with Ctrl key" />
-    <option name="with" path="ActionManager" hit="Default with Ctrl key" />
-    <option name="default" path="ActionManager" hit="Default with Shift key" />
-    <option name="key" path="ActionManager" hit="Default with Shift key" />
-    <option name="shift" path="ActionManager" hit="Default with Shift key" />
-    <option name="with" path="ActionManager" hit="Default with Shift key" />
+    <option name="alt" path="ActionManager" hit="Default with Alt Key" />
+    <option name="default" path="ActionManager" hit="Default with Alt Key" />
+    <option name="key" path="ActionManager" hit="Default with Alt Key" />
+    <option name="with" path="ActionManager" hit="Default with Alt Key" />
+    <option name="alt" path="ActionManager" hit="Default with Alt+Cmd Key" />
+    <option name="cmd" path="ActionManager" hit="Default with Alt+Cmd Key" />
+    <option name="default" path="ActionManager" hit="Default with Alt+Cmd Key" />
+    <option name="key" path="ActionManager" hit="Default with Alt+Cmd Key" />
+    <option name="with" path="ActionManager" hit="Default with Alt+Cmd Key" />
+    <option name="cmd" path="ActionManager" hit="Default with Cmd Key" />
+    <option name="default" path="ActionManager" hit="Default with Cmd Key" />
+    <option name="key" path="ActionManager" hit="Default with Cmd Key" />
+    <option name="with" path="ActionManager" hit="Default with Cmd Key" />
+    <option name="ctrl" path="ActionManager" hit="Default with Ctrl Key" />
+    <option name="default" path="ActionManager" hit="Default with Ctrl Key" />
+    <option name="key" path="ActionManager" hit="Default with Ctrl Key" />
+    <option name="with" path="ActionManager" hit="Default with Ctrl Key" />
+    <option name="default" path="ActionManager" hit="Default with Shift Key" />
+    <option name="key" path="ActionManager" hit="Default with Shift Key" />
+    <option name="shift" path="ActionManager" hit="Default with Shift Key" />
+    <option name="with" path="ActionManager" hit="Default with Shift Key" />
     <option name="delete" path="ActionManager" hit="Delete" />
     <option name="delete" path="ActionManager" hit="Delete selected patches" />
     <option name="patches" path="ActionManager" hit="Delete selected patches" />
@@ -305,10 +308,6 @@
     <option name="emmet" path="ActionManager" hit="Emmet" />
     <option name="exceptions" path="ActionManager" hit="Exceptions" />
     <option name="exclude" path="ActionManager" hit="Exclude" />
-    <option name="commit" path="ActionManager" hit="Exclude Lines from Commit" />
-    <option name="exclude" path="ActionManager" hit="Exclude Lines from Commit" />
-    <option name="from" path="ActionManager" hit="Exclude Lines from Commit" />
-    <option name="lines" path="ActionManager" hit="Exclude Lines from Commit" />
     <option name="exclude" path="ActionManager" hit="Exclude this usage(s) from processing" />
     <option name="from" path="ActionManager" hit="Exclude this usage(s) from processing" />
     <option name="processing" path="ActionManager" hit="Exclude this usage(s) from processing" />
@@ -396,6 +395,8 @@
     <option name="view" path="ActionManager" hit="Focus this view by default when UI is shown" />
     <option name="when" path="ActionManager" hit="Focus this view by default when UI is shown" />
     <option name="folding" path="ActionManager" hit="Folding" />
+    <option name="force" path="ActionManager" hit="Force Refresh" />
+    <option name="refresh" path="ActionManager" hit="Force Refresh" />
     <option name="generate" path="ActionManager" hit="Generate" />
     <option name="go" path="ActionManager" hit="Go To" />
     <option name="to" path="ActionManager" hit="Go To" />
@@ -421,6 +422,8 @@
     <option name="by" path="ActionManager" hit="Goto by Reference Actions" />
     <option name="goto" path="ActionManager" hit="Goto by Reference Actions" />
     <option name="reference" path="ActionManager" hit="Goto by Reference Actions" />
+    <option name="analysis" path="ActionManager" hit="Heap Analysis" />
+    <option name="heap" path="ActionManager" hit="Heap Analysis" />
     <option name="help" path="ActionManager" hit="Help" />
     <option name="actions" path="ActionManager" hit="Hierarchy Actions" />
     <option name="hierarchy" path="ActionManager" hit="Hierarchy Actions" />
@@ -433,7 +436,12 @@
     <option name="ignore" path="ActionManager" hit="Ignore Right Side" />
     <option name="right" path="ActionManager" hit="Ignore Right Side" />
     <option name="side" path="ActionManager" hit="Ignore Right Side" />
+    <option name="images" path="ActionManager" hit="Images" />
     <option name="include" path="ActionManager" hit="Include" />
+    <option name="commit" path="ActionManager" hit="Include Lines into Commit" />
+    <option name="include" path="ActionManager" hit="Include Lines into Commit" />
+    <option name="into" path="ActionManager" hit="Include Lines into Commit" />
+    <option name="lines" path="ActionManager" hit="Include Lines into Commit" />
     <option name="commit" path="ActionManager" hit="Include Only These Lines into Commit" />
     <option name="include" path="ActionManager" hit="Include Only These Lines into Commit" />
     <option name="into" path="ActionManager" hit="Include Only These Lines into Commit" />
@@ -459,6 +467,9 @@
     <option name="actions" path="ActionManager" hit="Kotlin Internal Actions" />
     <option name="internal" path="ActionManager" hit="Kotlin Internal Actions" />
     <option name="kotlin" path="ActionManager" hit="Kotlin Internal Actions" />
+    <option name="kotlin" path="ActionManager" hit="Kotlin refactoring testing" />
+    <option name="refactoring" path="ActionManager" hit="Kotlin refactoring testing" />
+    <option name="testing" path="ActionManager" hit="Kotlin refactoring testing" />
     <option name="layout" path="ActionManager" hit="Layout" />
     <option name="configuration" path="ActionManager" hit="Layout configuration" />
     <option name="layout" path="ActionManager" hit="Layout configuration" />
@@ -481,6 +492,13 @@
     <option name="toolbar" path="ActionManager" hit="Main Toolbar" />
     <option name="main" path="ActionManager" hit="Main menu" />
     <option name="menu" path="ActionManager" hit="Main menu" />
+    <option name="actions" path="ActionManager" hit="Markdown editor actions" />
+    <option name="editor" path="ActionManager" hit="Markdown editor actions" />
+    <option name="markdown" path="ActionManager" hit="Markdown editor actions" />
+    <option name="actions" path="ActionManager" hit="Markdown editor layout actions" />
+    <option name="editor" path="ActionManager" hit="Markdown editor layout actions" />
+    <option name="layout" path="ActionManager" hit="Markdown editor layout actions" />
+    <option name="markdown" path="ActionManager" hit="Markdown editor layout actions" />
     <option name="actions" path="ActionManager" hit="Method Navigation Actions" />
     <option name="method" path="ActionManager" hit="Method Navigation Actions" />
     <option name="navigation" path="ActionManager" hit="Method Navigation Actions" />
@@ -516,10 +534,6 @@
     <option name="bar" path="ActionManager" hit="Navigation Bar Actions" />
     <option name="navigation" path="ActionManager" hit="Navigation Bar Actions" />
     <option name="new" path="ActionManager" hit="New" />
-    <option name="actions" path="ActionManager" hit="New GUI Designer Actions" />
-    <option name="designer" path="ActionManager" hit="New GUI Designer Actions" />
-    <option name="gui" path="ActionManager" hit="New GUI Designer Actions" />
-    <option name="new" path="ActionManager" hit="New GUI Designer Actions" />
     <option name="1" path="ActionManager" hit="New Group (1)" />
     <option name="group" path="ActionManager" hit="New Group (1)" />
     <option name="new" path="ActionManager" hit="New Group (1)" />
@@ -777,6 +791,8 @@
     <option name="right" path="ActionManager" hit="Show New Files on Right Side" />
     <option name="show" path="ActionManager" hit="Show New Files on Right Side" />
     <option name="side" path="ActionManager" hit="Show New Files on Right Side" />
+    <option name="properties" path="ActionManager" hit="Show Properties" />
+    <option name="show" path="ActionManager" hit="Show Properties" />
     <option name="actions" path="ActionManager" hit="Show Quick Actions Popup" />
     <option name="popup" path="ActionManager" hit="Show Quick Actions Popup" />
     <option name="quick" path="ActionManager" hit="Show Quick Actions Popup" />
@@ -797,24 +813,24 @@
     <option name="properties" path="ActionManager" hit="Show differences in SVN properties" />
     <option name="show" path="ActionManager" hit="Show differences in SVN properties" />
     <option name="svn" path="ActionManager" hit="Show differences in SVN properties" />
-    <option name="properties" path="ActionManager" hit="Show properties" />
-    <option name="show" path="ActionManager" hit="Show properties" />
     <option name="line" path="ActionManager" hit="Split Line" />
     <option name="split" path="ActionManager" hit="Split Line" />
     <option name="actions" path="ActionManager" hit="Standard Macro Actions" />
     <option name="macro" path="ActionManager" hit="Standard Macro Actions" />
     <option name="standard" path="ActionManager" hit="Standard Macro Actions" />
+    <option name="designer" path="ActionManager" hit="Swing UI Designer" />
+    <option name="swing" path="ActionManager" hit="Swing UI Designer" />
+    <option name="ui" path="ActionManager" hit="Swing UI Designer" />
     <option name="settings" path="ActionManager" hit="Sync Settings" />
     <option name="sync" path="ActionManager" hit="Sync Settings" />
     <option name="all" path="ActionManager" hit="Synchronize All" />
     <option name="synchronize" path="ActionManager" hit="Synchronize All" />
     <option name="selected" path="ActionManager" hit="Synchronize Selected" />
     <option name="synchronize" path="ActionManager" hit="Synchronize Selected" />
+    <option name="todo" path="ActionManager" hit="TODO" />
     <option name="actions" path="ActionManager" hit="Table Actions" />
     <option name="table" path="ActionManager" hit="Table Actions" />
     <option name="tabs" path="ActionManager" hit="Tabs" />
-    <option name="placement" path="ActionManager" hit="Tabs Placement" />
-    <option name="tabs" path="ActionManager" hit="Tabs Placement" />
     <option name="tasks" path="ActionManager" hit="Tasks" />
     <option name="contexts" path="ActionManager" hit="Tasks &amp; Contexts" />
     <option name="tasks" path="ActionManager" hit="Tasks &amp; Contexts" />
@@ -844,7 +860,6 @@
     <option name="actions" path="ActionManager" hit="Toolbar Run Actions" />
     <option name="run" path="ActionManager" hit="Toolbar Run Actions" />
     <option name="toolbar" path="ActionManager" hit="Toolbar Run Actions" />
-    <option name="tools" path="ActionManager" hit="Tools" />
     <option name="basic" path="ActionManager" hit="Tools Basic Group" />
     <option name="group" path="ActionManager" hit="Tools Basic Group" />
     <option name="tools" path="ActionManager" hit="Tools Basic Group" />
@@ -896,8 +911,8 @@
     <option name="automatically" hit="Accept non-trusted certificates automatically" />
     <option name="certificates" hit="Accept non-trusted certificates automatically" />
     <option name="non-trusted" hit="Accept non-trusted certificates automatically" />
-    <option name="accepted" hit="Accepted certificates" />
-    <option name="certificates" hit="Accepted certificates" />
+    <option name="accepted" hit="Accepted certificates:" />
+    <option name="certificates" hit="Accepted certificates:" />
     <option name="certificate" hit="No certificate selected" />
     <option name="no" hit="No certificate selected" />
     <option name="selected" hit="No certificate selected" />

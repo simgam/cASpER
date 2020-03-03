@@ -1,6 +1,0 @@
-<application>
-  <component name="CodeInsightSettings">
-    <option name="SHOW_PARAMETER_NAME_HINTS_ON_COMPLETION" value="true" />
-    <option name="SHOW_SOURCE_INFERRED_ANNOTATIONS" value="false" />
-  </component>
-</application>

@@ -1,6 +1,6 @@
 <idea-plugin>
-  <version>1.0-SNAPSHOT</version>
-  <idea-version since-build="191.7479" until-build="191.*"/>
+  <version>1.1.2</version>
+  <idea-version since-build="193.5233" until-build="193.*"/>
   <name>cASpER</name>
   <id>it.unisa.casper</id>
   <description>
@@ -8,10 +8,12 @@
     
     </description>
   <change-notes>
-      Initial release of the plugin.
+      Updated support for newer IntelliJ versions
       &lt;a href="https://github.com/simgam/cASpER"&gt;View current version.&lt;/a&gt;
+
     
     </change-notes>
+  <depends>com.intellij.java</depends>
   <depends>com.intellij.modules.java</depends>
   <vendor url="https://www.unisa.it/" email="seschool@unisa.it">SESA Lab.</vendor>
   <extensions defaultExtensionNs="com.intellij">

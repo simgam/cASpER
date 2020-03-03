@@ -18,6 +18,12 @@
     <option name="junit3" hit="JUnit3 Test Method" />
     <option name="method" hit="JUnit3 Test Method" />
     <option name="test" hit="JUnit3 Test Method" />
+    <option name="afterclass" hit="JUnit4 AfterClass Method" />
+    <option name="junit4" hit="JUnit4 AfterClass Method" />
+    <option name="method" hit="JUnit4 AfterClass Method" />
+    <option name="beforeclass" hit="JUnit4 BeforeClass Method" />
+    <option name="junit4" hit="JUnit4 BeforeClass Method" />
+    <option name="method" hit="JUnit4 BeforeClass Method" />
     <option name="junit4" hit="JUnit4 Parameters Method" />
     <option name="method" hit="JUnit4 Parameters Method" />
     <option name="parameters" hit="JUnit4 Parameters Method" />
@@ -33,6 +39,12 @@
     <option name="junit4" hit="JUnit4 Test Method" />
     <option name="method" hit="JUnit4 Test Method" />
     <option name="test" hit="JUnit4 Test Method" />
+    <option name="afterall" hit="JUnit5 AfterAll Method" />
+    <option name="junit5" hit="JUnit5 AfterAll Method" />
+    <option name="method" hit="JUnit5 AfterAll Method" />
+    <option name="beforeall" hit="JUnit5 BeforeAll Method" />
+    <option name="junit5" hit="JUnit5 BeforeAll Method" />
+    <option name="method" hit="JUnit5 BeforeAll Method" />
     <option name="junit5" hit="JUnit5 SetUp Method" />
     <option name="method" hit="JUnit5 SetUp Method" />
     <option name="setup" hit="JUnit5 SetUp Method" />
@@ -58,6 +70,12 @@
     <option name="projectserviceclass" hit="ProjectServiceClass" />
     <option name="projectserviceimplementation" hit="ProjectServiceImplementation" />
     <option name="projectserviceinterface" hit="ProjectServiceInterface" />
+    <option name="afterclass" hit="TestNG AfterClass Method" />
+    <option name="method" hit="TestNG AfterClass Method" />
+    <option name="testng" hit="TestNG AfterClass Method" />
+    <option name="beforeclass" hit="TestNG BeforeClass Method" />
+    <option name="method" hit="TestNG BeforeClass Method" />
+    <option name="testng" hit="TestNG BeforeClass Method" />
     <option name="method" hit="TestNG Parameters Method" />
     <option name="parameters" hit="TestNG Parameters Method" />
     <option name="testng" hit="TestNG Parameters Method" />
