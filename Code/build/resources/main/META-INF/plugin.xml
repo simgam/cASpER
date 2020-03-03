@@ -13,7 +13,7 @@
     
     </change-notes>
   <depends>com.intellij.modules.java</depends>
-  <vendor url="sesa.unisa.it" email="https://www.unisa.it/">SESA Lab.</vendor>
+  <vendor url="https://www.unisa.it/" email="seschool@unisa.it">SESA Lab.</vendor>
   <extensions defaultExtensionNs="com.intellij">
     <checkinHandlerFactory implementation="it.unisa.casper.actions.CommitFactory"/>
   </extensions>

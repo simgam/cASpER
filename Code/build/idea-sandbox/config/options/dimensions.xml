@@ -1,13 +1,14 @@
 <application>
   <component name="DimensionService">
     <location key="FileChooserDialogImpl.0.0.1920.1080" x="751" y="191" />
-    <location key="WELCOME_SCREEN.0.0.1920.1080" x="963" y="437" />
+    <location key="WELCOME_SCREEN.0.0.1920.1080" x="962" y="437" />
     <location key="com.intellij.ide.util.TipDialog.0.0.1920.1080" x="614" y="346" />
     <location key="SettingsEditor.0.0.1920.1080" x="448" y="164" />
     <location key="IDE.errors.dialog.0.0.1920.1080" x="540" y="251" />
     <location key="NewModule_or_Project.wizard.0.0.1920.1080" x="610" y="201" />
     <location key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog.0.0.1920.1080" x="690" y="265" />
     <location key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes.0.0.1920.1080" x="756" y="403" />
+    <location key="new project wizard.0.0.1920.1080" x="600" y="57" />
     <size key="IDE.errors.dialog.0.0.1920.1080" width="840" height="655" />
     <size key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes.0.0.1920.1080" width="407" height="242" />
   </component>

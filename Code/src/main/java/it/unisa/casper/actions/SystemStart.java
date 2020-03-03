@@ -96,10 +96,6 @@ public class SystemStart {
     public void form(Project currentProject) {
 
         final List<PackageBean>[] packageList = new List[]{new ArrayList<>()};
-        List<PackageBean> promiscuousList = new ArrayList<>();
-        List<ClassBean> blobList = new ArrayList<>();
-        List<ClassBean> misplacedList = new ArrayList<>();
-        List<MethodBean> featureList = new ArrayList<>();
 
         PsiParser parser = new PsiParser(currentProject);
         errorHappened = false;

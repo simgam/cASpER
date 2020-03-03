@@ -78,43 +78,15 @@ public class PsiParser implements Parser {
 
             for (PackageBean packageBean : projectPackages) {
 
-                TextualPromiscuousPackageStrategy textualPromiscuousPackageStrategy = new TextualPromiscuousPackageStrategy(coseno.get("cosenoPromiscuous"));
-                PromiscuousPackageCodeSmell tPromiscuousPackagecodeSmell = new PromiscuousPackageCodeSmell(textualPromiscuousPackageStrategy, "Textual");
-                packageBean.isAffected(tPromiscuousPackagecodeSmell);
-                packageBean.setSimilarity(0);
-
-                StructuralPromiscuousPackageStrategy structuralPromiscuousPackageStrategy = new StructuralPromiscuousPackageStrategy(projectPackages, dipendence.get("dipPromiscuous") / 100, dipendence.get("dipPromiscuous2") / 100);
-                PromiscuousPackageCodeSmell sPromiscuousPackagecodeSmell = new PromiscuousPackageCodeSmell(structuralPromiscuousPackageStrategy, "Structural");
-                packageBean.isAffected(sPromiscuousPackagecodeSmell);
-                packageBean.setSimilarity(0);
+                packageAnalysis(coseno, dipendence, packageBean);
 
                 for (ClassBean classBean : packageBean.getClassList()) {
 
-                    TextualBlobStrategy textualBlobStrategy = new TextualBlobStrategy(coseno.get("cosenoBlob"));
-                    BlobCodeSmell tBlobCodeSmell = new BlobCodeSmell(textualBlobStrategy, "Textual");
-                    TextualMisplacedClassStrategy textualMisplacedClassStrategy = new TextualMisplacedClassStrategy(projectPackages, coseno.get("cosenoMisplaced"));
-                    MisplacedClassCodeSmell tMisplacedClassCodeSmell = new MisplacedClassCodeSmell(textualMisplacedClassStrategy, "Textual");
-                    classBean.isAffected(tBlobCodeSmell);
-                    classBean.isAffected(tMisplacedClassCodeSmell);
-                    classBean.setSimilarity(0);
-
-                    StructuralBlobStrategy structuralBlobStrategy = new StructuralBlobStrategy(dipendence.get("dipBlob"), dipendence.get("dipBlob2"), dipendence.get("dipBlob3"));
-                    BlobCodeSmell sBlobCodeSmell = new BlobCodeSmell(structuralBlobStrategy, "Structural");
-                    StructuralMisplacedClassStrategy structuralMisplacedClassStrategy = new StructuralMisplacedClassStrategy(projectPackages, dipendence.get("dipMisplaced"));
-                    MisplacedClassCodeSmell sMisplacedClassCodeSmell = new MisplacedClassCodeSmell(structuralMisplacedClassStrategy, "Structural");
-                    classBean.isAffected(sBlobCodeSmell);
-                    classBean.isAffected(sMisplacedClassCodeSmell);
-                    classBean.setSimilarity(0);
+                    classAnalysis(coseno, dipendence, classBean);
 
                     for (MethodBean methodBean : classBean.getMethodList()) {
 
-                        TextualFeatureEnvyStrategy textualFeatureEnvyStrategy = new TextualFeatureEnvyStrategy(projectPackages, coseno.get("cosenoFeature"));
-                        FeatureEnvyCodeSmell tFeatureEnvyCodeSmell = new FeatureEnvyCodeSmell(textualFeatureEnvyStrategy, "Textual");
-                        methodBean.isAffected(tFeatureEnvyCodeSmell);
-
-                        StructuralFeatureEnvyStrategy structuralFeatureEnvyStrategy = new StructuralFeatureEnvyStrategy(projectPackages, dipendence.get("dipFeature"));
-                        FeatureEnvyCodeSmell sFeatureEnvyCodeSmell = new FeatureEnvyCodeSmell(structuralFeatureEnvyStrategy, "Structural");
-                        methodBean.isAffected(sFeatureEnvyCodeSmell);
+                        methosAnalysis(coseno, dipendence, methodBean);
                     }
                 }
             }
@@ -122,6 +94,46 @@ public class PsiParser implements Parser {
         } catch (Exception e) {
             throw new ParsingException();
         }
+    }
+
+    private void methosAnalysis(HashMap<String, Double> coseno, HashMap<String, Integer> dipendence, MethodBean methodBean) {
+        TextualFeatureEnvyStrategy textualFeatureEnvyStrategy = new TextualFeatureEnvyStrategy(projectPackages, coseno.get("cosenoFeature"));
+        FeatureEnvyCodeSmell tFeatureEnvyCodeSmell = new FeatureEnvyCodeSmell(textualFeatureEnvyStrategy, "Textual");
+        methodBean.isAffected(tFeatureEnvyCodeSmell);
+
+        StructuralFeatureEnvyStrategy structuralFeatureEnvyStrategy = new StructuralFeatureEnvyStrategy(projectPackages, dipendence.get("dipFeature"));
+        FeatureEnvyCodeSmell sFeatureEnvyCodeSmell = new FeatureEnvyCodeSmell(structuralFeatureEnvyStrategy, "Structural");
+        methodBean.isAffected(sFeatureEnvyCodeSmell);
+    }
+
+    private void classAnalysis(HashMap<String, Double> coseno, HashMap<String, Integer> dipendence, ClassBean classBean) {
+        TextualBlobStrategy textualBlobStrategy = new TextualBlobStrategy(coseno.get("cosenoBlob"));
+        BlobCodeSmell tBlobCodeSmell = new BlobCodeSmell(textualBlobStrategy, "Textual");
+        TextualMisplacedClassStrategy textualMisplacedClassStrategy = new TextualMisplacedClassStrategy(projectPackages, coseno.get("cosenoMisplaced"));
+        MisplacedClassCodeSmell tMisplacedClassCodeSmell = new MisplacedClassCodeSmell(textualMisplacedClassStrategy, "Textual");
+        classBean.isAffected(tBlobCodeSmell);
+        classBean.isAffected(tMisplacedClassCodeSmell);
+        classBean.setSimilarity(0);
+
+        StructuralBlobStrategy structuralBlobStrategy = new StructuralBlobStrategy(dipendence.get("dipBlob"), dipendence.get("dipBlob2"), dipendence.get("dipBlob3"));
+        BlobCodeSmell sBlobCodeSmell = new BlobCodeSmell(structuralBlobStrategy, "Structural");
+        StructuralMisplacedClassStrategy structuralMisplacedClassStrategy = new StructuralMisplacedClassStrategy(projectPackages, dipendence.get("dipMisplaced"));
+        MisplacedClassCodeSmell sMisplacedClassCodeSmell = new MisplacedClassCodeSmell(structuralMisplacedClassStrategy, "Structural");
+        classBean.isAffected(sBlobCodeSmell);
+        classBean.isAffected(sMisplacedClassCodeSmell);
+        classBean.setSimilarity(0);
+    }
+
+    private void packageAnalysis(HashMap<String, Double> coseno, HashMap<String, Integer> dipendence, PackageBean packageBean) {
+        TextualPromiscuousPackageStrategy textualPromiscuousPackageStrategy = new TextualPromiscuousPackageStrategy(coseno.get("cosenoPromiscuous"));
+        PromiscuousPackageCodeSmell tPromiscuousPackagecodeSmell = new PromiscuousPackageCodeSmell(textualPromiscuousPackageStrategy, "Textual");
+        packageBean.isAffected(tPromiscuousPackagecodeSmell);
+        packageBean.setSimilarity(0);
+
+        StructuralPromiscuousPackageStrategy structuralPromiscuousPackageStrategy = new StructuralPromiscuousPackageStrategy(projectPackages, dipendence.get("dipPromiscuous") / 100, dipendence.get("dipPromiscuous2") / 100);
+        PromiscuousPackageCodeSmell sPromiscuousPackagecodeSmell = new PromiscuousPackageCodeSmell(structuralPromiscuousPackageStrategy, "Structural");
+        packageBean.isAffected(sPromiscuousPackagecodeSmell);
+        packageBean.setSimilarity(0);
     }
 
     /**

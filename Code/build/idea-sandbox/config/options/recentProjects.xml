@@ -2,17 +2,15 @@
   <component name="RecentProjectsManager">
     <option name="recentPaths">
       <list>
-        <option value="$USER_HOME$/Desktop/TestAscetic/ProgettiTest" />
         <option value="$USER_HOME$/Desktop/Book-a-Book2" />
-        <option value="$USER_HOME$/Desktop/Book-a-Book-master/Book-a-Book2" />
       </list>
     </option>
     <option name="openPaths">
       <list>
-        <option value="$USER_HOME$/Desktop/TestAscetic/ProgettiTest" />
+        <option value="$USER_HOME$/Desktop/Book-a-Book2" />
       </list>
     </option>
-    <option name="lastPath" value="$USER_HOME$/Desktop/TestAscetic/ProgettiTest" />
+    <option name="lastPath" value="$USER_HOME$/Desktop/Book-a-Book2" />
     <option name="pid" value="" />
     <option name="additionalInfo">
       <map>
@@ -33,8 +31,8 @@
               <option name="build" value="IC-191.7479.19" />
               <option name="productionCode" value="IC" />
               <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
-              <option name="projectOpenTimestamp" value="1576064460207" />
-              <option name="buildTimestamp" value="1559024631242" />
+              <option name="projectOpenTimestamp" value="1583233208874" />
+              <option name="buildTimestamp" value="1559024614215" />
             </RecentProjectMetaInfo>
           </value>
         </entry>
