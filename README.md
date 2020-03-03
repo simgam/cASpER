@@ -21,5 +21,5 @@ cASpER can be installed through the official store. As a first step you need to 
 To view the open source code, download the .zip file from this repository. Open the project by accessing the "Code" subfolder and selecting "java" as the source foulder.
 If not present, it is also necessary to define the startup configuration to compile the plugin. Then create a gradle run configuration and enter the following values in the appropriate fields:
 
-  1. :runIde in the "task" chapter
+  1. :runIde in the "task" field
   2. -stacktrace in the "arguments" field
