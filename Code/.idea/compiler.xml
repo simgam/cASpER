@@ -2,8 +2,11 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
+      <module name="casper" target="1.8" />
+      <module name="casper.main" target="1.8" />
       <module name="casper_main" target="1.8" />
       <module name="casper_test" target="1.8" />
+      <module name="it.unisa.casper.test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

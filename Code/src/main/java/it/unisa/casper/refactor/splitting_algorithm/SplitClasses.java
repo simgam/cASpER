@@ -1,12 +1,14 @@
 package it.unisa.casper.refactor.splitting_algorithm;
 
+import it.unisa.casper.refactor.exceptions.SplittingException;
+import it.unisa.casper.refactor.strategy.SplittingStrategy;
 import it.unisa.casper.storage.beans.*;
 
 import java.util.*;
 import java.util.regex.Pattern;
 
 
-public class SplitClasses {
+public class SplitClasses implements SplittingStrategy{
 
     private Vector<String> chains = new Vector<String>();
     private final Pattern splitPattern;

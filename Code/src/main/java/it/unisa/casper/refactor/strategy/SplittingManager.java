@@ -3,6 +3,9 @@ package it.unisa.casper.refactor.strategy;
 import it.unisa.casper.refactor.exceptions.SplittingException;
 import it.unisa.casper.storage.beans.ClassBean;
 
+import java.util.Collection;
+import java.util.List;
+
 public class SplittingManager {
 
     private SplittingStrategy splittingStrategy;
@@ -11,8 +14,8 @@ public class SplittingManager {
         this.splittingStrategy = splittingStrategy;
     }
 
-    public void excuteSplitting(ClassBean toSplit, double threshold) throws SplittingException,Exception
+    public Collection<ClassBean> excuteSplitting(ClassBean toSplit, double threshold) throws SplittingException,Exception
     {
-        splittingStrategy.split(toSplit, threshold);
+        return splittingStrategy.split(toSplit, threshold);
     }
 }

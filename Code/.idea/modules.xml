@@ -3,6 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/src/Code.iml" filepath="$PROJECT_DIR$/src/Code.iml" group="ascetic" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/casper.iml" filepath="$PROJECT_DIR$/.idea/modules/casper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/casper.main.iml" filepath="$PROJECT_DIR$/.idea/modules/casper.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/test/casper.test.iml" filepath="$PROJECT_DIR$/.idea/modules/test/casper.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/it.unisa.casper.test.iml" filepath="$PROJECT_DIR$/.idea/modules/it.unisa.casper.test.iml" />
     </modules>
   </component>
 </project>

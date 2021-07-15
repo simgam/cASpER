@@ -26,7 +26,7 @@ public class MethodByMethodMatrixConstruction {
         stopwordList = new File(casperDirectoryPath + "stopwordlist.txt");
     }
 
-    public double[][] buildMethodByMethodMatrix(double pWcdm, double pWssm, double pWcsm, ClassBean pToSplit) throws Exception {
+    public double[][] buildMethodByMethodMatrix(double pWcdm, double pWssm, double pWcsm, ClassBean pToSplit) throws Exception  {
 
         if (!stopwordList.exists()) {
             stopwordList.createNewFile();
@@ -100,9 +100,9 @@ public class MethodByMethodMatrixConstruction {
             }
         }
 
-        CDMmatrix = filterMatrix(CDMmatrix, pWcdm);
-        CSMmatrix = filterMatrix(CSMmatrix, pWcsm);
-        SSMmatrix = filterMatrix(SSMmatrix, pWssm);
+        //CDMmatrix = filterMatrix(CDMmatrix, pWcdm);
+        //CSMmatrix = filterMatrix(CSMmatrix, pWcsm);
+        //SSMmatrix = filterMatrix(SSMmatrix, pWssm);
 
         for (int i = 0; i < methodByMethodMatrix.length; i++) {
             for (int j = i; j < methodByMethodMatrix.length; j++) {

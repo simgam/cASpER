@@ -5,9 +5,9 @@ import it.unisa.casper.refactor.exceptions.SplittingException;
 import it.unisa.casper.refactor.splitting_algorithm.MethodByMethodMatrixConstruction;
 import it.unisa.casper.refactor.strategy.SplittingStrategy;
 import it.unisa.casper.storage.beans.*;
-//import org.jetbrains.annotations.NotNull;
-
+import org.jetbrains.annotations.NotNull;
 import java.util.*;
+
 
 /**
  classe per eseguire lo splitting delle classi tramite Game Theory,
@@ -15,133 +15,187 @@ import java.util.*;
  splitto una data classe in due classi per aumentare la coesione e diminuire l'accoppiamento
  @author Valentina Pascucci
  */
-
 public class GameTheorySplitClasses implements SplittingStrategy {
 
+    public static final double GREEK_MI = 0.5;
 
     public GameTheorySplitClasses() {
 
     }
+
+    Collection<ClassBean> classes = new Vector<>();
+    int numClasse=0;
 
     /**
      * il metodo che splitta la classa data in input in due nuove classi
      *
      * @param toSplit   la classe da splittare
      * @param threshold la soglia sotto la quale non considero certi valori
-     * @return restituisce le nuove classi ottenute tramite applicazione di algoritmo di teoria dei giochi
+     * @return restituisce le nuove classi ottenute tramite applicazione di algoritmo di teoria dei giochi azz
      * @throws SplittingException eccezione
      * @throws Exception          eccezione
      */
     @Override
     public Collection<ClassBean> split(ClassBean toSplit, double threshold) throws SplittingException, Exception {
 
-        //le classi splittate di Tom e Sally, l'output della funzione
         Collection<ClassBean> res = new Vector<>();
 
-        //la lista dei metodi (costruttore compreso) della classe toSplit
-        Collection<MethodBean> methodsClassToSplit = toSplit.getMethodList();
+        Collection<MethodBean> toSplitMethods = toSplit.getMethodList();
 
-        //lista riempita con i metodi della classe toSplit, costruttore escluso
         Vector<MethodBean> methods = new Vector<>();
-        for (MethodBean m : methodsClassToSplit) {
-            if (!m.getFullQualifiedName().equals(toSplit.getFullQualifiedName())) {
+        for (MethodBean m : toSplitMethods) {
+            if (!toSplit.getFullQualifiedName().contains(m.getFullQualifiedName())) {
                 methods.add(m);
             }
         }
 
-        //serve che gli indici della matrice utilità siano numeri che, però, corrispondono a metodi
-        //grazie alla variabile vectorOfMethods (uso anche methods), farò tale associazione
         Vector<MethodBean> vectorOfMethods = new Vector<>();
-        //riempiamo quindi vectorOfMethods
         for (MethodBean method : methods) {
             vectorOfMethods.add(method);
         }
 
-
         MethodByMethodMatrixConstruction matrixConstructor = new MethodByMethodMatrixConstruction();
-        //costruisco la matrice utilità Fcc
-        double[][] utilityMatrix = matrixConstructor.buildMethodByMethodMatrix(0.2, 0.1, 0.7, toSplit);
+        double[][] utilityMatrix = matrixConstructor.buildMethodByMethodMatrix(0.1, 0.8, 0.1, toSplit);
 
-
-        //conserva i metodi scelti da Sally
-        Vector<MethodBean> sallyMethods = new Vector<>();
-        //conserva i metodi scelti da Tom
-        Vector<MethodBean> tomMethods = new Vector<>();
-
-        //conserva i metodi e gli indici relativi per Sally
-        Collection<MethodAndIndex> sallyMethodsIndexes = new Vector<>();
-        //conserva i metodi e gli indici relativi per Tom
-        Collection<MethodAndIndex> tomMethodsIndexes = new Vector<>();
+        //conserva i metodi e gli indici relativi per Sally e Tom
+        HashMap<Integer, MethodBean> sallyMethodsIndexess = new HashMap<>();
+        HashMap<Integer, MethodBean> tomMethodsIndexess = new HashMap<>();
 
         //le scelte fatte ad ogni iterazione
         MethodBean sallyMethod, tomMethod;
-        MethodAndIndex sallyMethodIndex, tomMethodIndex;
 
         //riga e colonna da "eliminare" ad ogni iterazione, setto a (-1,-1) le loro entries nella payoff matrix
-        int chosenI, chosenJ;
+        int chosenI,chosenJ;
 
-        //primo step: i metodi con le similartià minori fanno iniziare il gioco
-        int[] chosenIndexes = minSimilarity(utilityMatrix);
-        chosenI = chosenIndexes[0];
-        chosenJ = chosenIndexes[1];
+        String packageName = toSplit.getFullQualifiedName().substring(0, toSplit.getFullQualifiedName().lastIndexOf('.'));
 
-        //aggiornamento dei metodi attuali di Sally e Tom
-        sallyMethod = vectorOfMethods.elementAt(chosenI); //ex: metodo in posizione 1
-        tomMethod = vectorOfMethods.elementAt(chosenJ);   //ex: metodo in posizione 6
-        sallyMethodIndex = new MethodAndIndex(sallyMethod, chosenI);  //ex: {(m1, 1)}
-        tomMethodIndex = new MethodAndIndex(tomMethod, chosenJ);      //ex: {(m6, 6)}
+        //se la classe data in input ha solo due metodi (ma devono esse proprio lunghi che blob sei sennò)
+        if(methods.size() == 2)
+        {
+            //se tali metodi non sono simili (da 0.21 in poi sono abbastanza simili)
+            if (utilityMatrix[0][1] <= threshold)
+            {
+                sallyMethod = vectorOfMethods.elementAt(0);
+                tomMethod = vectorOfMethods.elementAt(1);
 
-        sallyMethods.add(sallyMethod); //la classe di Sally,    ex: Cs = {m1}
-        tomMethods.add(tomMethod);     //la classe di Tom,      ex: Ct = {m6}
-        sallyMethodsIndexes.add(sallyMethodIndex);       //ex: Cs = {(m1,1)}
-        tomMethodsIndexes.add(tomMethodIndex);           //ex: Ct = {(m6,6)}
+                sallyMethodsIndexess.put(0,sallyMethod);
+                tomMethodsIndexess.put(1,tomMethod);
 
-        //uso METHODS per panoramica generale, eliminando ogni volta da methods i metodi selezionati dai players
-        //in modo da conservare in VECTOR_OF_METHODS sempre tutti i metodi e indici in cui sono posizionati
-        methods.remove(sallyMethod);
-        methods.remove(tomMethod);
-        //pensa che adesso methods ha già due metodi in meno
+                //creo le due classi e le aggiungo al res
+                ClassBean sallyClass = createSplittedClassBean(numClasse++, packageName, sallyMethodsIndexess, new Vector<>(toSplit.getInstanceVariablesList()), toSplit.getBelongingPackage());
+                ClassBean tomClass = createSplittedClassBean(numClasse++, packageName, tomMethodsIndexess, new Vector<>(toSplit.getInstanceVariablesList()), toSplit.getBelongingPackage());
 
-        //filtro la matrice utilità, ponendo a 0 i valori sotto la soglia 0.20 (non statisticamente utili)
-        double[][] filteredUtilityMatrix = matrixConstructor.filterMatrix(utilityMatrix, threshold);
+                classes.add(sallyClass);
+                classes.add(tomClass);
+            }
+            //i metodi si assomigliano e si pigliano, io non vi splitto cia cia ci sentiamo
+            else {
+                classes.add(toSplit);
+            }
+        }
 
-        //computo la payoff matrix per la prima volta, in base alle entries della Fcc matrix
-        PayoffPair[][] startingPayoffMatrix = computeStartingPayoffMatrix(filteredUtilityMatrix, chosenI, chosenJ);
-        //sulla payoff matrix ottenuta, i player faranno le loro prime mosse
-        letThemPlay(startingPayoffMatrix);
-        //la coppia corrispondente al Nash Equilibrium determinerà i metodi che saranno scelti da Sally e Tom
-        findNashEquilibrium(startingPayoffMatrix, sallyMethods, tomMethods, sallyMethodsIndexes, tomMethodsIndexes, vectorOfMethods, methods);
+        //da 3 metodi in poi
+        else if (methods.size() > 2)
+        {
+            //primo step: i metodi con le similartià minori fanno iniziare il gioco
+            int[] chosenIndexes = minSimilarity(utilityMatrix);
+            chosenI = chosenIndexes[0];
+            chosenJ = chosenIndexes[1];
 
-        //tutto termina quando tutti i metodi della classe toSplit sono stati assegnati alle due classi
-        while (!methods.isEmpty()) {
+            //se valore alto, si somigliona; se valore basso (sotto la soglia), splitto
+            if(utilityMatrix[chosenI][chosenJ] <= threshold){
+                //aggiornamento dei metodi attuali di Sally e Tom
+                sallyMethod = vectorOfMethods.elementAt(chosenI); //ex: metodo in posizione 1
+                tomMethod = vectorOfMethods.elementAt(chosenJ);   //ex: metodo in posizione 6
 
-            double[][] fccMatrix = computeFccMatrix(filteredUtilityMatrix, sallyMethodsIndexes, tomMethodsIndexes);
+                sallyMethodsIndexess.put(chosenI, sallyMethod);
+                tomMethodsIndexess.put(chosenJ, tomMethod);
 
-            PayoffPair[][] payoffMatrix = computePayoffMatrix(fccMatrix, startingPayoffMatrix);
-            startingPayoffMatrix = payoffMatrix;
+                //uso METHODS per panoramica generale, eliminando ogni volta da methods i metodi selezionati dai players
+                //in modo da conservare in VECTOR_OF_METHODS sempre tutti i metodi e indici in cui sono posizionati
+                methods.remove(sallyMethod);
+                methods.remove(tomMethod);
 
-            letThemPlay(payoffMatrix);
+                double[][] filteredUtilityMatrix = MethodByMethodMatrixConstruction.filterMatrix(utilityMatrix, threshold);
 
-            findNashEquilibrium(payoffMatrix, sallyMethods, tomMethods, sallyMethodsIndexes, tomMethodsIndexes, vectorOfMethods, methods);
+                PayoffPair[][] startingPayoffMatrix = computeStartingPayoffMatrix(filteredUtilityMatrix, chosenI, chosenJ);
+
+                letThemPlay(startingPayoffMatrix);
+                findNashEquilibrium(startingPayoffMatrix, sallyMethodsIndexess, tomMethodsIndexess, vectorOfMethods, methods);
+
+                //tutto termina quando tutti i metodi della classe toSplit sono stati assegnati alle due classi
+                //questo while parte se ho da 4 o 5 metodi in poi (sicuro 5, probabile 4, dipende da iterazione precedente)
+                while (!methods.isEmpty())
+                {
+                    double[][] fccMatrix = computeFccMatrix(filteredUtilityMatrix, sallyMethodsIndexess, tomMethodsIndexess);
+                    PayoffPair[][] payoffMatrix = computePayoffMatrix(fccMatrix, startingPayoffMatrix);
+                    startingPayoffMatrix = payoffMatrix;
+                    letThemPlay(payoffMatrix);
+                    findNashEquilibrium(payoffMatrix, sallyMethodsIndexess, tomMethodsIndexess, vectorOfMethods, methods);
+                }
+                ClassBean sallyClass = createSplittedClassBean(numClasse++, packageName, sallyMethodsIndexess,new Vector<>(toSplit.getInstanceVariablesList()), toSplit.getBelongingPackage());
+                ClassBean tomClass = createSplittedClassBean(numClasse++, packageName, tomMethodsIndexess, new Vector<>(toSplit.getInstanceVariablesList()),toSplit.getBelongingPackage());
+
+                //devo scoprire se posso splittare ancora
+
+                if (sallyMethodsIndexess.size() > 1){
+                    //controllare la matrice fcc per vedere le sim tra i metodi della classe di Sally
+                    //se trovo valori più bassi di 0.20, l'algoritmo riparte
+                    boolean goSplitting=false; //splittare o non splittare that's the problem
+                    for(Integer key1: sallyMethodsIndexess.keySet()){
+                        for(Integer key2: sallyMethodsIndexess.keySet()){
+                           if (filteredUtilityMatrix[key1][key2] <= threshold){
+                               goSplitting=true; //splitto
+                               numClasse--;
+                               split(sallyClass, threshold);
+                               break;
+                           }
+
+                        }
+                        break;
+                    }
+
+                    if(!goSplitting){ //non splitto
+                        classes.add(sallyClass);
+                    }
+
+                }
+                else {
+                    classes.add(sallyClass);
+                }
+
+                if (tomMethodsIndexess.size() > 1){
+                    boolean goSplitting = false;
+                    for(Integer key1: tomMethodsIndexess.keySet()){
+                        for(Integer key2: tomMethodsIndexess.keySet()){
+                            if (filteredUtilityMatrix[key1][key2] <= threshold){
+                                goSplitting = true;
+                                numClasse--;
+                                split(tomClass, threshold);
+                                break;
+                            }
+                        }
+                        break;
+                    }
+
+                    if(!goSplitting){
+                        classes.add(tomClass);
+                    }
+                }
+                else{
+                    classes.add(tomClass);
+                }
+
+            }
+            else{
+                classes.add(toSplit);
+            }
 
         }
 
-        /*
-         al termine del gioco, devo creare queste due classi nuove (a partire dalla classe splittata)
-         e devo mettere in ognuna di queste classi i metodi che sono stati selezionati per l'una e per l'altra
-        */
-        String packageName = toSplit.getFullQualifiedName().substring(0, toSplit.getFullQualifiedName().lastIndexOf('.'));
-
-        ClassBean sallyClass;
-        sallyClass = createSplittedClassBean(0, packageName, sallyMethods, toSplit.getBelongingPackage());
-
-        ClassBean tomClass;
-        tomClass = createSplittedClassBean(1, packageName, tomMethods, toSplit.getBelongingPackage());
-
-
-        res.add(sallyClass);
-        res.add(tomClass);
-
+        for(ClassBean c: classes){
+            res.add(c);
+        }
 
         return res;
     }
@@ -162,8 +216,8 @@ public class GameTheorySplitClasses implements SplittingStrategy {
 
         int[] chosenIndexes = new int[2];
 
-        for (int i = 0; i < utilityMatrix.length; i++) {
-            for (int j = 0; j < utilityMatrix.length; j++) {
+        for (int i = 0; i <= utilityMatrix.length-1; i++) {
+            for (int j = 0; j <= utilityMatrix.length-1; j++) {
 
                 if (utilityMatrix[i][j] < minSimilarity) {  //&& filteredUtilityMatrix[i][j] != 1.0
 
@@ -197,13 +251,13 @@ public class GameTheorySplitClasses implements SplittingStrategy {
                                                       int chosenI, int chosenJ) {
 
         //la matrice ha un rigo e una colonna in più, corrispondenti rispettivamente alle mosse null di Sally e Tom
-        PayoffPair[][] startingPayoffMatrix = new PayoffPair[filteredUtilityMatrix.length + 1][filteredUtilityMatrix.length + 1];
+        PayoffPair[][] startingPayoffMatrix = new PayoffPair[filteredUtilityMatrix.length+1][filteredUtilityMatrix.length+1];
 
-        double greekMiValue = 0.5; //mi permette di giocare la mossa null
+        //double greekMiValue = 0.5; //mi permette di giocare la mossa null
         double payoffI, payoffJ;
 
-        for (int i = 0; i < filteredUtilityMatrix.length; i++) {
-            for (int j = 0; j < filteredUtilityMatrix.length; j++) {
+        for (int i = 0; i <= filteredUtilityMatrix.length-1; i++) {
+            for (int j = 0; j <= filteredUtilityMatrix.length-1; j++) {
                 //le entries relative agli indici dei metodi già selezionati sono settate a (-1,-1)
                 if (i == chosenI || j == chosenJ || i == chosenJ || j == chosenI) {
                     startingPayoffMatrix[i][j] = new PayoffPair(-1.0, -1.0);
@@ -223,13 +277,13 @@ public class GameTheorySplitClasses implements SplittingStrategy {
         }
 
         //per riempire ultima riga e colonna
-        for (int i = 0; i < startingPayoffMatrix.length; i++) {
-            for (int j = 0; j < startingPayoffMatrix.length; j++) {
+        for (int i = 0; i <= startingPayoffMatrix.length-1; i++) {
+            for (int j = 0; j <= startingPayoffMatrix.length-1; j++) {
                 //se Sally fa mossa NULL
                 if (i == startingPayoffMatrix.length - 1 && j != startingPayoffMatrix.length - 1) {
                     if (j != chosenI && j != chosenJ) {
                         //mi-fcc(Cs,mj)
-                        payoffI = greekMiValue - filteredUtilityMatrix[chosenI][j];
+                        payoffI = GREEK_MI - filteredUtilityMatrix[chosenI][j];
                         //fcc(Ct,mj)
                         payoffJ = filteredUtilityMatrix[chosenJ][j];
                         startingPayoffMatrix[i][j] = new PayoffPair(payoffI, payoffJ);
@@ -245,7 +299,7 @@ public class GameTheorySplitClasses implements SplittingStrategy {
                         //fcc(Cs,mi)
                         payoffI = filteredUtilityMatrix[chosenI][i];
                         //mi - fcc(Ct,mi)
-                        payoffJ = greekMiValue - filteredUtilityMatrix[chosenJ][i];
+                        payoffJ = GREEK_MI - filteredUtilityMatrix[chosenJ][i];
                         startingPayoffMatrix[i][j] = new PayoffPair(payoffI, payoffJ);
                     } else //if(i==chosenI || i==chosenJ)
                     {
@@ -287,7 +341,7 @@ public class GameTheorySplitClasses implements SplittingStrategy {
 
         while (j != payoffMatrix.length) {
             //di colonna in colonna
-            for (i = 0; i < payoffMatrix.length; i++) {
+            for (i = 0; i <= payoffMatrix.length-1; i++) {
 
                 if (payoffMatrix[i][j].getPayoffI() > bestPayoffi) {
                     //valore massimo di payoffI in colonna j-sima
@@ -315,9 +369,9 @@ public class GameTheorySplitClasses implements SplittingStrategy {
         //GIOCA TOM
         double bestPayoffj = -1.0;
 
-        for (i = 0; i < payoffMatrix.length; i++) {
+        for (i = 0; i <= payoffMatrix.length-1; i++) {
 
-            for (j = 0; j < payoffMatrix.length; j++) {
+            for (j = 0; j <= payoffMatrix.length-1; j++) {
                 //di rigo in rigo
                 if (payoffMatrix[i][j].getPayoffJ() > bestPayoffj) {
                     //valore massimo di payoffJ in rigo i-simo
@@ -351,16 +405,13 @@ public class GameTheorySplitClasses implements SplittingStrategy {
      * trovato il nash equilibrium, i metodi corrispondenti saranno assegnati ed eliminati
      *
      * @param payoffMatrix      da esplorare
-     * @param sallyMethods      i metodi selezionati da Sally
-     * @param tomMethods        i metodi selezionati da Tom
      * @param sallyIndexMethods per mantenere la relazione indice-metodo di Sally
      * @param tomIndexMethods   per mantenere la relazione indice-metodo di Tom
      * @param vectorOfMethods   un vettore utile per la corrispondenza (indice matrice-metodo)
      * @param methods           vettore dei metodi da aggiornare, eliminando i metodi eventualmente scelti
      */
     public void findNashEquilibrium(PayoffPair[][] payoffMatrix,
-                                    Collection<MethodBean> sallyMethods, Collection<MethodBean> tomMethods,
-                                    Collection<MethodAndIndex> sallyIndexMethods, Collection<MethodAndIndex> tomIndexMethods,
+                                    HashMap<Integer, MethodBean> sallyIndexMethods, HashMap<Integer, MethodBean> tomIndexMethods,
                                     Vector<MethodBean> vectorOfMethods,
                                     Vector<MethodBean> methods) {
 
@@ -368,20 +419,18 @@ public class GameTheorySplitClasses implements SplittingStrategy {
 
         MethodBean sallyMethod, tomMethod;
 
-        MethodAndIndex sallyIndexMethod, tomIndexMethod;
-
         //ho sempre bisogno di loro, per le eliminazioni (annullamenti a (-1,-1))
-        int chosenI = -1;
-        int chosenJ = -1;
+        int chosenI = -10;
+        int chosenJ = -10;
 
-        for (int i = 0; i < payoffMatrix.length; i++) {
-            for (int j = 0; j < payoffMatrix.length; j++) {
+        for (int i = 0; i <= payoffMatrix.length-1; i++) {
+            for (int j = 0; j <= payoffMatrix.length-1; j++) {
                 //voglio solo le coppie dove entrambi i valori max sono settati a true
                 if (payoffMatrix[i][j].isMaximumSally() && payoffMatrix[i][j].isMaximumTom()) {
                     //posso trovare più equlibri in una matrice,
                     //voglio quello con la somma dei due payoff maggiore
                     if (payoffMatrix[i][j].getPayoffI() + payoffMatrix[i][j].getPayoffJ()
-                            >
+                                                    >
                             nashEquilibrium.getPayoffI() + nashEquilibrium.getPayoffJ()) {
 
                         if (i != payoffMatrix.length - 1 && j != payoffMatrix.length - 1) {
@@ -411,25 +460,36 @@ public class GameTheorySplitClasses implements SplittingStrategy {
         //aggiornamento, qualcuno avrà un nuovo metodo nella sua classe
         //tale eventuale metodo sarà eliminato dalla lista generica methods
 
-        if (chosenI != -1) {
+        //entrambi secelgono un metodo
+        if (chosenI!=-1     &&     chosenJ!=-1) {
             sallyMethod = vectorOfMethods.elementAt(chosenI);
-            sallyMethods.add(sallyMethod);
+            tomMethod = vectorOfMethods.elementAt(chosenJ);
 
-            sallyIndexMethod = new MethodAndIndex(sallyMethod, chosenI);
-            sallyIndexMethods.add(sallyIndexMethod);
+            sallyIndexMethods.put(chosenI, sallyMethod);
+            tomIndexMethods.put(chosenJ, tomMethod);
+
+            methods.remove(sallyMethod);
+            methods.remove(tomMethod);
+        }
+
+        //solo Sally sceglie, tom fa mossa null
+        else if (chosenI!=-1    &&     chosenJ==-1) {
+            sallyMethod = vectorOfMethods.elementAt(chosenI);
+
+            sallyIndexMethods.put(chosenI, sallyMethod);
 
             methods.remove(sallyMethod);
         }
 
-        if (chosenJ != -1) {
+        //solo Tom sceglie, Sally fa mossa null
+        else if(chosenI==-1     &&      chosenJ!=-1){
             tomMethod = vectorOfMethods.elementAt(chosenJ);
-            tomMethods.add(tomMethod);
 
-            tomIndexMethod = new MethodAndIndex(tomMethod, chosenJ);
-            tomIndexMethods.add(tomIndexMethod);
+            tomIndexMethods.put(chosenJ, tomMethod);
 
             methods.remove(tomMethod);
         }
+
 
         //dopo aver selezionato il Nash Equilibrium, devo annullare le colonne e righe corrispondenti a i,j
         //(ex: selezionare m2 ed m5 ha come conseguenza l'annullamento di: riga e colonna 2, riga e colonna 5)
@@ -461,8 +521,8 @@ public class GameTheorySplitClasses implements SplittingStrategy {
      * @return la fccMatrix
      */
     public double[][] computeFccMatrix(double[][] filteredUtilityMatrix,
-                                       Collection<MethodAndIndex> sallyMethodsIndexes,
-                                       Collection<MethodAndIndex> tomMethodsIndexes) {
+                                       HashMap<Integer, MethodBean> sallyMethodsIndexes,
+                                       HashMap<Integer, MethodBean> tomMethodsIndexes) {
 
         //1/N * sim(mi, mj) per tutti gli mi contenuti nella classe di Sally/Tom, scansione fatta su fcc utilità originale
 
@@ -478,16 +538,17 @@ public class GameTheorySplitClasses implements SplittingStrategy {
 
         //prendo gli indici (relativi ai metodi selezionati) di Sally
         Vector<Integer> sallyIndexes = new Vector<>();
-        for (MethodAndIndex m : sallyMethodsIndexes) {
-            sallyIndexes.add(m.getIndex());
-            usedIndexes.add(m.getIndex());
+        for(Integer key: sallyMethodsIndexes.keySet()){
+            sallyIndexes.add(key);
+            usedIndexes.add(key);
         }
+
 
         //prendo gli indici (relativi ai metodi selezionati) di Tom
         Vector<Integer> tomIndexes = new Vector<>();
-        for (MethodAndIndex m : tomMethodsIndexes) {
-            tomIndexes.add(m.getIndex());
-            usedIndexes.add(m.getIndex());
+        for(Integer key: tomMethodsIndexes.keySet()){
+            tomIndexes.add(key);
+            usedIndexes.add(key);
         }
 
         Vector<Integer> fccIndexes = new Vector<>();
@@ -495,7 +556,6 @@ public class GameTheorySplitClasses implements SplittingStrategy {
             fccIndexes.add(i);
         }
 
-        //Collections.sort(usedIndexes);
 
         double[][] newUtilityMatrix = new double[2][columnLength];
 
@@ -546,10 +606,10 @@ public class GameTheorySplitClasses implements SplittingStrategy {
     public PayoffPair[][] computePayoffMatrix(double[][] filteredUtilityMatrix,
                                               PayoffPair[][] payoffMatrix) {
         double payoffI, payoffJ;
-        double greekMi = 0.5;
+        //double greekMi = 0.5;
         //hai già settato a (-1,-1) le righe e le colonne corrispondenti ai metodi precedentemente selezionati dai players
-        for (int i = 0; i < payoffMatrix.length; i++) {
-            for (int j = 0; j < payoffMatrix.length; j++) {
+        for (int i = 0; i <= payoffMatrix.length-1; i++) {
+            for (int j = 0; j <= payoffMatrix.length-1; j++) {
                 if (payoffMatrix[i][j].getPayoffI() != -1.0 && payoffMatrix[i][j].getPayoffJ() != -1.0) {
                     if (i != payoffMatrix.length - 1 && j != payoffMatrix.length - 1) {
                         payoffI = filteredUtilityMatrix[0][i] - filteredUtilityMatrix[0][j];
@@ -558,14 +618,14 @@ public class GameTheorySplitClasses implements SplittingStrategy {
                     }
                     //Sally fa mossa NULL
                     else if (i == payoffMatrix.length - 1 && j != payoffMatrix.length - 1) {
-                        payoffI = greekMi - filteredUtilityMatrix[0][j];
+                        payoffI = GREEK_MI - filteredUtilityMatrix[0][j];
                         payoffJ = filteredUtilityMatrix[1][j];
                         payoffMatrix[i][j] = new PayoffPair(payoffI, payoffJ);
                     }
                     //Tom fa mossa NULL
                     else if (i != payoffMatrix.length - 1 && j == payoffMatrix.length - 1) {
                         payoffI = filteredUtilityMatrix[0][i];
-                        payoffJ = greekMi - filteredUtilityMatrix[1][i];
+                        payoffJ = GREEK_MI - filteredUtilityMatrix[1][i];
                         payoffMatrix[i][j] = new PayoffPair(payoffI, payoffJ);
                     }
                 }
@@ -578,13 +638,31 @@ public class GameTheorySplitClasses implements SplittingStrategy {
     /**
      * per creare la classe dopo lo splittaggio
      */
-    private ClassBean createSplittedClassBean(int index, String packageName, Vector<MethodBean> methods, PackageBean belongingPackage) {
+    public ClassBean createSplittedClassBean(int index, String packageName,
+                                             HashMap<Integer,MethodBean> methods,
+                                             Vector<InstanceVariableBean> instanceVariables,
+                                             PackageBean belongingPackage) {
         String classShortName = "Class_" + (index + 1);
         String tempName = packageName + "." + classShortName;
         List<MethodBean> methodsToAdd = new ArrayList<>();
 
-        for (MethodBean m : methods)
+        for (MethodBean m : methods.values())
             methodsToAdd.add(m);
+
+
+        Set<InstanceVariableBean> instanceVariableBeanSet = new HashSet<>();
+
+        for (InstanceVariableBean currentInstanceVariable : instanceVariables) {
+            for (MethodBean methodToInspect : methodsToAdd) {
+                if (methodToInspect.getInstanceVariableList().contains(currentInstanceVariable)) {
+                    instanceVariableBeanSet.add(currentInstanceVariable);
+                }
+            }
+
+        }
+        List<InstanceVariableBean> variableBeansToAdd = new ArrayList<>(instanceVariableBeanSet);
+        InstanceVariableList instanceVariableList = new InstanceVariableList();
+        instanceVariableList.setList(variableBeansToAdd);
 
         MethodList methodList = new MethodList();
         methodList.setList(methodsToAdd);
@@ -603,6 +681,7 @@ public class GameTheorySplitClasses implements SplittingStrategy {
         classTextContent.append("}");
 
         return new ClassBean.Builder(tempName, classTextContent.toString())
+                .setInstanceVariables(instanceVariableList)
                 .setMethods(methodList)
                 .setImports(new ArrayList<String>())
                 .setLOC(0)
@@ -613,32 +692,5 @@ public class GameTheorySplitClasses implements SplittingStrategy {
                 .build();
     }
 
-
-    //posso usare Map??????
-
-    /**
-     * classe per associazione metodo con indice
-     */
-    public static class MethodAndIndex {
-        private MethodBean methodBean;
-        private int index;
-
-        public MethodAndIndex(MethodBean methodBean, int index) {
-            this.methodBean = methodBean;
-            this.index = index;
-        }
-
-        public int getIndex() {
-            return index;
-        }
-
-        public MethodBean getMethodBean() {
-            return methodBean;
-        }
-
-        public void setMethodBean(MethodBean methodBean) {
-            this.methodBean = methodBean;
-        }
-    }
 }
 
