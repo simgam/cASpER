@@ -15,7 +15,7 @@
         </entry>
         <entry key="$USER_HOME$/Desktop/Book-a-Book2">
           <value>
-            <RecentProjectMetaInfo opened="true" projectWorkspaceId="1YdFKRnNMrhOiuC2u4P3yJgenwX">
+            <RecentProjectMetaInfo projectWorkspaceId="1YdFKRnNMrhOiuC2u4P3yJgenwX">
               <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
               <option name="build" value="IC-193.5233.102" />
               <option name="buildTimestamp" value="1574898433123" />
@@ -25,10 +25,88 @@
             </RecentProjectMetaInfo>
           </value>
         </entry>
+        <entry key="$USER_HOME$/Desktop/Tirocinio/ComputeMetrics 2">
+          <value>
+            <RecentProjectMetaInfo projectWorkspaceId="1phPPj69UsEi4HAVNnrkklW5EDY">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="IC-193.5233.102" />
+              <option name="buildTimestamp" value="1574898469928" />
+              <frame x="10" y="20" width="1346" height="688" />
+              <option name="productionCode" value="IC" />
+              <option name="projectOpenTimestamp" value="1618249024279" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/Desktop/Tirocinio/MinimaxGames">
+          <value>
+            <RecentProjectMetaInfo projectWorkspaceId="1r4xLPAvu0LSkyzq3qG8nypkwgU">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="IC-193.5233.102" />
+              <option name="buildTimestamp" value="1574898458269" />
+              <option name="productionCode" value="IC" />
+              <option name="projectOpenTimestamp" value="1618249364439" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/Desktop/esami dati/IS 2018/connessioneS">
+          <value>
+            <RecentProjectMetaInfo projectWorkspaceId="1r4yDl1AMCO5PlVUgnaM9uQu2yT">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="IC-193.5233.102" />
+              <option name="buildTimestamp" value="1574898426898" />
+              <frame x="10" y="20" width="1346" height="688" />
+              <option name="productionCode" value="IC" />
+              <option name="projectOpenTimestamp" value="1618251217032" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/Desktop/esami dati/MC 2018/PascucciValentina">
+          <value>
+            <RecentProjectMetaInfo projectWorkspaceId="1r524zVT7g9hmEcIuBDz2V2TUhc">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="IC-193.5233.102" />
+              <option name="buildTimestamp" value="1574898426898" />
+              <frame extendedState="6" />
+              <option name="productionCode" value="IC" />
+              <option name="projectOpenTimestamp" value="1618251444819" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/Desktop/esami dati/IS 2018/FINE_IS/MusiclandClient">
+          <value>
+            <RecentProjectMetaInfo projectWorkspaceId="1r52jic1dMXL0mWBF3ubWfmAgPt">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="IC-193.5233.102" />
+              <option name="buildTimestamp" value="1574898426898" />
+              <frame extendedState="7" />
+              <option name="productionCode" value="IC" />
+              <option name="projectOpenTimestamp" value="1618251780236" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/Desktop/Tirocinio/ProvaClasseDaSplittare">
+          <value>
+            <RecentProjectMetaInfo opened="true" projectWorkspaceId="1r6oCConSSpXkYQAxjTHjdBhGqB">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="IC-193.5233.102" />
+              <option name="buildTimestamp" value="1574898463946" />
+              <frame x="10" y="20" width="1346" height="688" />
+              <option name="productionCode" value="IC" />
+              <option name="projectOpenTimestamp" value="1623936797082" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
       </map>
     </option>
+    <option name="lastProjectLocation" value="$USER_HOME$/Desktop/Tirocinio" />
     <option name="recentPaths">
       <list>
+        <option value="$USER_HOME$/Desktop/Tirocinio/ProvaClasseDaSplittare" />
+        <option value="$USER_HOME$/Desktop/esami dati/IS 2018/FINE_IS/MusiclandClient" />
+        <option value="$USER_HOME$/Desktop/esami dati/MC 2018/PascucciValentina" />
+        <option value="$USER_HOME$/Desktop/esami dati/IS 2018/connessioneS" />
+        <option value="$USER_HOME$/Desktop/Tirocinio/MinimaxGames" />
+        <option value="$USER_HOME$/Desktop/Tirocinio/ComputeMetrics 2" />
         <option value="$USER_HOME$/Desktop/Book-a-Book2" />
         <option value="$USER_HOME$" />
       </list>

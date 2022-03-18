@@ -1,17 +1,22 @@
 <application>
   <component name="PropertiesComponent">
+    <property name="ExpandBeforeRunStepsPanel" value="true" />
+    <property name="ExpandRunDashboardTypesPanel" value="false" />
     <property name="FileTemplates.SelectedTemplate" value="HTML File" />
+    <property name="SettingsSearchHistory" value="Gradle JVM:" />
+    <property name="android-component-compatibility-check" value="1618251472678" />
+    <property name="build.toolwindow.Sync.selection.state" value="com.intellij.build.BuildTreeConsoleView" />
     <property name="defaultJdkConfigured" value="true" />
-    <property name="file.chooser.recent.files" value="$USER_HOME$/Desktop/Book-a-Book2&#10;C:/Users/Simone" />
-    <property name="file.gist.reindex.count" value="16" />
+    <property name="file.chooser.recent.files" value="$USER_HOME$/Desktop/Tirocinio/ProvaClasseDaSplittare&#10;C:/Users/Tramonto/Desktop/esami dati/IS 2018/FINE_IS/MusiclandClient&#10;C:/Users/Tramonto/Desktop/esami dati/MC 2018/PascucciValentina&#10;C:/Users/Tramonto/Desktop/esami dati/IS 2018/connessioneS&#10;C:/Users/Tramonto/Desktop/Tirocinio/MinimaxGames&#10;C:/Users/Tramonto/Desktop/Tirocinio/ComputeMetrics 2&#10;C:/Users/Tramonto/Desktop/Book-a-Book2&#10;C:/Users/Simone" />
+    <property name="file.gist.reindex.count" value="183" />
     <property name="ide.memory.adjusted" value="true" />
     <property name="installed.kotlin.plugin.version" value="1.3.60-release-IJ2019.3-1" />
     <property name="kotlin.lastUpdateCheck" value="1583264376922" />
     <property name="kotlin.plugin.releaseDate" value="1.3.60-release-IJ2019.3-1:2019-11-14" />
-    <property name="lastTip" value="1" />
+    <property name="lastTip" value="69" />
     <property name="packagesearch.endpoint.url.fulltext" value="https://package-search.services.jetbrains.com/api/search/idea/fulltext" />
     <property name="packagesearch.endpoint.url.suggest" value="https://package-search.services.jetbrains.com/api/search/idea/suggest" />
-    <property name="packagesearch.status.updated.ts" value="1583264480837" />
+    <property name="packagesearch.status.updated.ts" value="1623763857942" />
     <property name="tasks.pass.word.conversion.enforced" value="true" />
   </component>
 </application>

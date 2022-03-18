@@ -50,5 +50,301 @@
       </roots>
       <additional />
     </jdk>
+    <jdk version="2">
+      <name value="1.8.0_131" />
+      <type value="JavaSDK" />
+      <version value="java version &quot;1.8.0_131&quot;" />
+      <homePath value="C:/Program Files/Java/jdk1.8.0_131" />
+      <roots>
+        <annotationsPath>
+          <root type="composite">
+            <root url="jar://$APPLICATION_HOME_DIR$/plugins/java/lib/jdkAnnotations.jar!/" type="simple" />
+          </root>
+        </annotationsPath>
+        <classPath>
+          <root type="composite">
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_131/jre/lib/charsets.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_131/jre/lib/deploy.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_131/jre/lib/ext/access-bridge-64.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_131/jre/lib/ext/cldrdata.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_131/jre/lib/ext/dnsns.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_131/jre/lib/ext/jaccess.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_131/jre/lib/ext/jfxrt.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_131/jre/lib/ext/localedata.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_131/jre/lib/ext/nashorn.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_131/jre/lib/ext/sunec.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_131/jre/lib/ext/sunjce_provider.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_131/jre/lib/ext/sunmscapi.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_131/jre/lib/ext/sunpkcs11.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_131/jre/lib/ext/zipfs.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_131/jre/lib/javaws.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_131/jre/lib/jce.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_131/jre/lib/jfr.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_131/jre/lib/jfxswt.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_131/jre/lib/jsse.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_131/jre/lib/management-agent.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_131/jre/lib/plugin.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_131/jre/lib/resources.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_131/jre/lib/rt.jar!/" type="simple" />
+          </root>
+        </classPath>
+        <javadocPath>
+          <root type="composite" />
+        </javadocPath>
+        <sourcePath>
+          <root type="composite">
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_131/javafx-src.zip!/" type="simple" />
+          </root>
+        </sourcePath>
+      </roots>
+      <additional />
+    </jdk>
+    <jdk version="2">
+      <name value="1.8 (2)" />
+      <type value="JavaSDK" />
+      <version value="java version &quot;1.8.0_131&quot;" />
+      <homePath value="C:/Program Files/Java/jdk1.8.0_131" />
+      <roots>
+        <annotationsPath>
+          <root type="composite">
+            <root url="jar://$APPLICATION_HOME_DIR$/plugins/java/lib/jdkAnnotations.jar!/" type="simple" />
+          </root>
+        </annotationsPath>
+        <classPath>
+          <root type="composite">
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_131/jre/lib/charsets.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_131/jre/lib/deploy.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_131/jre/lib/ext/access-bridge-64.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_131/jre/lib/ext/cldrdata.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_131/jre/lib/ext/dnsns.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_131/jre/lib/ext/jaccess.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_131/jre/lib/ext/jfxrt.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_131/jre/lib/ext/localedata.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_131/jre/lib/ext/nashorn.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_131/jre/lib/ext/sunec.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_131/jre/lib/ext/sunjce_provider.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_131/jre/lib/ext/sunmscapi.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_131/jre/lib/ext/sunpkcs11.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_131/jre/lib/ext/zipfs.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_131/jre/lib/javaws.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_131/jre/lib/jce.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_131/jre/lib/jfr.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_131/jre/lib/jfxswt.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_131/jre/lib/jsse.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_131/jre/lib/management-agent.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_131/jre/lib/plugin.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_131/jre/lib/resources.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_131/jre/lib/rt.jar!/" type="simple" />
+          </root>
+        </classPath>
+        <javadocPath>
+          <root type="composite" />
+        </javadocPath>
+        <sourcePath>
+          <root type="composite">
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_131/javafx-src.zip!/" type="simple" />
+          </root>
+        </sourcePath>
+      </roots>
+      <additional />
+    </jdk>
+    <jdk version="2">
+      <name value="1.8 (3)" />
+      <type value="JavaSDK" />
+      <version value="java version &quot;1.8.0_102&quot;" />
+      <homePath value="C:/Program Files/Java/jdk1.8.0_102" />
+      <roots>
+        <annotationsPath>
+          <root type="composite">
+            <root url="jar://$APPLICATION_HOME_DIR$/plugins/java/lib/jdkAnnotations.jar!/" type="simple" />
+          </root>
+        </annotationsPath>
+        <classPath>
+          <root type="composite">
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_102/jre/lib/charsets.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_102/jre/lib/deploy.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_102/jre/lib/ext/access-bridge-64.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_102/jre/lib/ext/cldrdata.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_102/jre/lib/ext/dnsns.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_102/jre/lib/ext/jaccess.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_102/jre/lib/ext/jfxrt.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_102/jre/lib/ext/localedata.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_102/jre/lib/ext/nashorn.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_102/jre/lib/ext/sunec.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_102/jre/lib/ext/sunjce_provider.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_102/jre/lib/ext/sunmscapi.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_102/jre/lib/ext/sunpkcs11.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_102/jre/lib/ext/zipfs.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_102/jre/lib/javaws.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_102/jre/lib/jce.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_102/jre/lib/jfr.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_102/jre/lib/jfxswt.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_102/jre/lib/jsse.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_102/jre/lib/management-agent.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_102/jre/lib/plugin.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_102/jre/lib/resources.jar!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_102/jre/lib/rt.jar!/" type="simple" />
+          </root>
+        </classPath>
+        <javadocPath>
+          <root type="composite" />
+        </javadocPath>
+        <sourcePath>
+          <root type="composite">
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_102/src.zip!/" type="simple" />
+            <root url="jar://C:/Program Files/Java/jdk1.8.0_102/javafx-src.zip!/" type="simple" />
+          </root>
+        </sourcePath>
+      </roots>
+      <additional />
+    </jdk>
+    <jdk version="2">
+      <name value="11" />
+      <type value="JavaSDK" />
+      <version value="java version &quot;11.0.4&quot;" />
+      <homePath value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbr-11_0_4-windows-x64-b520.11/jbr" />
+      <roots>
+        <annotationsPath>
+          <root type="composite">
+            <root url="jar://$APPLICATION_HOME_DIR$/plugins/java/lib/jdkAnnotations.jar!/" type="simple" />
+          </root>
+        </annotationsPath>
+        <classPath>
+          <root type="composite">
+            <root url="jrt://C:/Users/Tramonto/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbr-11_0_4-windows-x64-b520.11/jbr!/java.base" type="simple" />
+            <root url="jrt://C:/Users/Tramonto/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbr-11_0_4-windows-x64-b520.11/jbr!/java.compiler" type="simple" />
+            <root url="jrt://C:/Users/Tramonto/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbr-11_0_4-windows-x64-b520.11/jbr!/java.datatransfer" type="simple" />
+            <root url="jrt://C:/Users/Tramonto/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbr-11_0_4-windows-x64-b520.11/jbr!/java.desktop" type="simple" />
+            <root url="jrt://C:/Users/Tramonto/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbr-11_0_4-windows-x64-b520.11/jbr!/java.instrument" type="simple" />
+            <root url="jrt://C:/Users/Tramonto/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbr-11_0_4-windows-x64-b520.11/jbr!/java.logging" type="simple" />
+            <root url="jrt://C:/Users/Tramonto/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbr-11_0_4-windows-x64-b520.11/jbr!/java.management" type="simple" />
+            <root url="jrt://C:/Users/Tramonto/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbr-11_0_4-windows-x64-b520.11/jbr!/java.management.rmi" type="simple" />
+            <root url="jrt://C:/Users/Tramonto/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbr-11_0_4-windows-x64-b520.11/jbr!/java.naming" type="simple" />
+            <root url="jrt://C:/Users/Tramonto/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbr-11_0_4-windows-x64-b520.11/jbr!/java.net.http" type="simple" />
+            <root url="jrt://C:/Users/Tramonto/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbr-11_0_4-windows-x64-b520.11/jbr!/java.prefs" type="simple" />
+            <root url="jrt://C:/Users/Tramonto/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbr-11_0_4-windows-x64-b520.11/jbr!/java.rmi" type="simple" />
+            <root url="jrt://C:/Users/Tramonto/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbr-11_0_4-windows-x64-b520.11/jbr!/java.scripting" type="simple" />
+            <root url="jrt://C:/Users/Tramonto/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbr-11_0_4-windows-x64-b520.11/jbr!/java.se" type="simple" />
+            <root url="jrt://C:/Users/Tramonto/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbr-11_0_4-windows-x64-b520.11/jbr!/java.security.jgss" type="simple" />
+            <root url="jrt://C:/Users/Tramonto/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbr-11_0_4-windows-x64-b520.11/jbr!/java.security.sasl" type="simple" />
+            <root url="jrt://C:/Users/Tramonto/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbr-11_0_4-windows-x64-b520.11/jbr!/java.smartcardio" type="simple" />
+            <root url="jrt://C:/Users/Tramonto/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbr-11_0_4-windows-x64-b520.11/jbr!/java.sql" type="simple" />
+            <root url="jrt://C:/Users/Tramonto/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbr-11_0_4-windows-x64-b520.11/jbr!/java.sql.rowset" type="simple" />
+            <root url="jrt://C:/Users/Tramonto/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbr-11_0_4-windows-x64-b520.11/jbr!/java.transaction.xa" type="simple" />
+            <root url="jrt://C:/Users/Tramonto/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbr-11_0_4-windows-x64-b520.11/jbr!/java.xml" type="simple" />
+            <root url="jrt://C:/Users/Tramonto/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbr-11_0_4-windows-x64-b520.11/jbr!/java.xml.crypto" type="simple" />
+            <root url="jrt://C:/Users/Tramonto/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbr-11_0_4-windows-x64-b520.11/jbr!/javafx.base" type="simple" />
+            <root url="jrt://C:/Users/Tramonto/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbr-11_0_4-windows-x64-b520.11/jbr!/javafx.controls" type="simple" />
+            <root url="jrt://C:/Users/Tramonto/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbr-11_0_4-windows-x64-b520.11/jbr!/javafx.fxml" type="simple" />
+            <root url="jrt://C:/Users/Tramonto/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbr-11_0_4-windows-x64-b520.11/jbr!/javafx.graphics" type="simple" />
+            <root url="jrt://C:/Users/Tramonto/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbr-11_0_4-windows-x64-b520.11/jbr!/javafx.media" type="simple" />
+            <root url="jrt://C:/Users/Tramonto/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbr-11_0_4-windows-x64-b520.11/jbr!/javafx.swing" type="simple" />
+            <root url="jrt://C:/Users/Tramonto/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbr-11_0_4-windows-x64-b520.11/jbr!/javafx.web" type="simple" />
+            <root url="jrt://C:/Users/Tramonto/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbr-11_0_4-windows-x64-b520.11/jbr!/jdk.accessibility" type="simple" />
+            <root url="jrt://C:/Users/Tramonto/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbr-11_0_4-windows-x64-b520.11/jbr!/jdk.aot" type="simple" />
+            <root url="jrt://C:/Users/Tramonto/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbr-11_0_4-windows-x64-b520.11/jbr!/jdk.attach" type="simple" />
+            <root url="jrt://C:/Users/Tramonto/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbr-11_0_4-windows-x64-b520.11/jbr!/jdk.charsets" type="simple" />
+            <root url="jrt://C:/Users/Tramonto/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbr-11_0_4-windows-x64-b520.11/jbr!/jdk.compiler" type="simple" />
+            <root url="jrt://C:/Users/Tramonto/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbr-11_0_4-windows-x64-b520.11/jbr!/jdk.crypto.cryptoki" type="simple" />
+            <root url="jrt://C:/Users/Tramonto/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbr-11_0_4-windows-x64-b520.11/jbr!/jdk.crypto.ec" type="simple" />
+            <root url="jrt://C:/Users/Tramonto/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbr-11_0_4-windows-x64-b520.11/jbr!/jdk.dynalink" type="simple" />
+            <root url="jrt://C:/Users/Tramonto/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbr-11_0_4-windows-x64-b520.11/jbr!/jdk.httpserver" type="simple" />
+            <root url="jrt://C:/Users/Tramonto/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbr-11_0_4-windows-x64-b520.11/jbr!/jdk.internal.ed" type="simple" />
+            <root url="jrt://C:/Users/Tramonto/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbr-11_0_4-windows-x64-b520.11/jbr!/jdk.internal.jvmstat" type="simple" />
+            <root url="jrt://C:/Users/Tramonto/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbr-11_0_4-windows-x64-b520.11/jbr!/jdk.internal.le" type="simple" />
+            <root url="jrt://C:/Users/Tramonto/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbr-11_0_4-windows-x64-b520.11/jbr!/jdk.internal.vm.ci" type="simple" />
+            <root url="jrt://C:/Users/Tramonto/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbr-11_0_4-windows-x64-b520.11/jbr!/jdk.internal.vm.compiler" type="simple" />
+            <root url="jrt://C:/Users/Tramonto/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbr-11_0_4-windows-x64-b520.11/jbr!/jdk.internal.vm.compiler.management" type="simple" />
+            <root url="jrt://C:/Users/Tramonto/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbr-11_0_4-windows-x64-b520.11/jbr!/jdk.jdi" type="simple" />
+            <root url="jrt://C:/Users/Tramonto/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbr-11_0_4-windows-x64-b520.11/jbr!/jdk.jdwp.agent" type="simple" />
+            <root url="jrt://C:/Users/Tramonto/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbr-11_0_4-windows-x64-b520.11/jbr!/jdk.jfr" type="simple" />
+            <root url="jrt://C:/Users/Tramonto/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbr-11_0_4-windows-x64-b520.11/jbr!/jdk.jsobject" type="simple" />
+            <root url="jrt://C:/Users/Tramonto/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbr-11_0_4-windows-x64-b520.11/jbr!/jdk.localedata" type="simple" />
+            <root url="jrt://C:/Users/Tramonto/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbr-11_0_4-windows-x64-b520.11/jbr!/jdk.management" type="simple" />
+            <root url="jrt://C:/Users/Tramonto/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbr-11_0_4-windows-x64-b520.11/jbr!/jdk.management.agent" type="simple" />
+            <root url="jrt://C:/Users/Tramonto/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbr-11_0_4-windows-x64-b520.11/jbr!/jdk.management.jfr" type="simple" />
+            <root url="jrt://C:/Users/Tramonto/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbr-11_0_4-windows-x64-b520.11/jbr!/jdk.naming.dns" type="simple" />
+            <root url="jrt://C:/Users/Tramonto/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbr-11_0_4-windows-x64-b520.11/jbr!/jdk.naming.rmi" type="simple" />
+            <root url="jrt://C:/Users/Tramonto/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbr-11_0_4-windows-x64-b520.11/jbr!/jdk.net" type="simple" />
+            <root url="jrt://C:/Users/Tramonto/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbr-11_0_4-windows-x64-b520.11/jbr!/jdk.pack" type="simple" />
+            <root url="jrt://C:/Users/Tramonto/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbr-11_0_4-windows-x64-b520.11/jbr!/jdk.scripting.nashorn" type="simple" />
+            <root url="jrt://C:/Users/Tramonto/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbr-11_0_4-windows-x64-b520.11/jbr!/jdk.scripting.nashorn.shell" type="simple" />
+            <root url="jrt://C:/Users/Tramonto/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbr-11_0_4-windows-x64-b520.11/jbr!/jdk.sctp" type="simple" />
+            <root url="jrt://C:/Users/Tramonto/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbr-11_0_4-windows-x64-b520.11/jbr!/jdk.security.auth" type="simple" />
+            <root url="jrt://C:/Users/Tramonto/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbr-11_0_4-windows-x64-b520.11/jbr!/jdk.security.jgss" type="simple" />
+            <root url="jrt://C:/Users/Tramonto/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbr-11_0_4-windows-x64-b520.11/jbr!/jdk.unsupported" type="simple" />
+            <root url="jrt://C:/Users/Tramonto/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbr-11_0_4-windows-x64-b520.11/jbr!/jdk.xml.dom" type="simple" />
+            <root url="jrt://C:/Users/Tramonto/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbr-11_0_4-windows-x64-b520.11/jbr!/jdk.zipfs" type="simple" />
+          </root>
+        </classPath>
+        <javadocPath>
+          <root type="composite">
+            <root url="https://docs.oracle.com/en/java/javase/11/docs/api/" type="simple" />
+          </root>
+        </javadocPath>
+        <sourcePath>
+          <root type="composite" />
+        </sourcePath>
+      </roots>
+      <additional />
+    </jdk>
+    <jdk version="2">
+      <name value="Android API 22 Platform" />
+      <type value="Android SDK" />
+      <version value="java version &quot;11.0.4&quot;" />
+      <homePath value="C:\Users\Tramonto\AppData\Local\Android\Sdk" />
+      <roots>
+        <annotationsPath>
+          <root type="composite">
+            <root url="jar://$APPLICATION_HOME_DIR$/plugins/android/lib/androidAnnotations.jar!/" type="simple" />
+          </root>
+        </annotationsPath>
+        <classPath>
+          <root type="composite">
+            <root url="jar://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-22/android.jar!/" type="simple" />
+            <root url="file://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-22/data/res" type="simple" />
+          </root>
+        </classPath>
+        <javadocPath>
+          <root type="composite">
+            <root url="http://developer.android.com/reference/" type="simple" />
+          </root>
+        </javadocPath>
+        <sourcePath>
+          <root type="composite" />
+        </sourcePath>
+      </roots>
+      <additional jdk="11" sdk="android-22" />
+    </jdk>
+    <jdk version="2">
+      <name value="Android API 28 Platform" />
+      <type value="Android SDK" />
+      <version value="java version &quot;11.0.4&quot;" />
+      <homePath value="C:\Users\Tramonto\AppData\Local\Android\Sdk" />
+      <roots>
+        <annotationsPath>
+          <root type="composite">
+            <root url="jar://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-28/data/annotations.zip!/" type="simple" />
+          </root>
+        </annotationsPath>
+        <classPath>
+          <root type="composite">
+            <root url="jar://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-28/android.jar!/" type="simple" />
+            <root url="file://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-28/data/res" type="simple" />
+          </root>
+        </classPath>
+        <javadocPath>
+          <root type="composite" />
+        </javadocPath>
+        <sourcePath>
+          <root type="composite">
+            <root url="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-28" type="simple" />
+          </root>
+        </sourcePath>
+      </roots>
+      <additional jdk="11" sdk="android-28" />
+    </jdk>
   </component>
 </application>

@@ -1,13 +1,13 @@
-1583264334638
-JAVA￿stub:com.intellij.psi.impl.source.JavaFileElementType,42￿1583264334637
-Kotlin￿stub:org.jetbrains.kotlin.psi.stubs.elements.KtFileElementType,135￿1583264334636
-KJSM￿binary stub builder:com.intellij.psi.impl.compiled.ClassFileStubBuilder,971098419￿1583264334635
-CLASS￿binary stub builder:com.intellij.psi.impl.compiled.ClassFileStubBuilder,971098419￿1583264334634
-Properties￿stub:com.intellij.lang.properties.parsing.PropertiesElementTypes$1,0￿1583264334633
-kotlin_builtins￿binary stub builder:com.intellij.psi.impl.compiled.ClassFileStubBuilder,971098419￿1583264334632
-Groovy￿stub:org.jetbrains.plugins.groovy.lang.psi.stubs.elements.GrStubFileElementType,50￿1583264334631
-Markdown￿stub:com.intellij.psi.tree.IStubFileElementType,0￿1583264334630
-DGM￿stub:com.intellij.lang.properties.parsing.PropertiesElementTypes$1,0￿1583264334629
-KNM￿binary stub builder:com.intellij.psi.impl.compiled.ClassFileStubBuilder,971098419￿1583264334628
-HTML￿stub:com.intellij.psi.xml.HtmlFileElementType,3￿1583264334627
-XML￿binary stub builder:com.intellij.util.xml.stubs.builder.DomStubBuilder,1804543724￿1583264334626
+1618248333079
+Markdown￿stub:com.intellij.psi.tree.IStubFileElementType,0￿1618248333078
+HTML￿stub:com.intellij.psi.xml.HtmlFileElementType,3￿1618248333077
+Properties￿stub:com.intellij.lang.properties.parsing.PropertiesElementTypes$1,0￿1618248333076
+Kotlin￿stub:org.jetbrains.kotlin.psi.stubs.elements.KtFileElementType,135￿1618248333075
+CLASS￿binary stub builder:com.intellij.psi.impl.compiled.ClassFileStubBuilder,971098419￿1618248333074
+KNM￿binary stub builder:com.intellij.psi.impl.compiled.ClassFileStubBuilder,971098419￿1618248333073
+JAVA￿stub:com.intellij.psi.impl.source.JavaFileElementType,42￿1618248333072
+Groovy￿stub:org.jetbrains.plugins.groovy.lang.psi.stubs.elements.GrStubFileElementType,50￿1618248333071
+DGM￿stub:com.intellij.lang.properties.parsing.PropertiesElementTypes$1,0￿1618248333070
+kotlin_builtins￿binary stub builder:com.intellij.psi.impl.compiled.ClassFileStubBuilder,971098419￿1618248333069
+XML￿binary stub builder:com.intellij.util.xml.stubs.builder.DomStubBuilder,1804543724￿1618248333068
+KJSM￿binary stub builder:com.intellij.psi.impl.compiled.ClassFileStubBuilder,971098419￿1618248333067

@@ -8,7 +8,10 @@ import com.intellij.ui.components.JBScrollPane;
 import com.intellij.ui.table.JBTable;
 import it.unisa.casper.gui.radarMap.RadarMapUtils;
 import it.unisa.casper.gui.radarMap.RadarMapUtilsAdapter;
+import it.unisa.casper.refactor.splitting_algorithm.GameTheorySplitClasses;
 import it.unisa.casper.refactor.splitting_algorithm.SplitClasses;
+import it.unisa.casper.refactor.strategy.SplittingManager;
+import it.unisa.casper.refactor.strategy.SplittingStrategy;
 import it.unisa.casper.storage.beans.ClassBean;
 import it.unisa.casper.structuralMetrics.CKMetrics;
 import org.jetbrains.annotations.NotNull;
@@ -20,6 +23,7 @@ import javax.swing.border.TitledBorder;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.util.Collection;
 import java.util.List;
 import java.util.Vector;
 
@@ -40,6 +44,9 @@ public class BlobPage extends DialogWrapper {
     private JPanel panelEast;                   //panel che raggruppa gli elementi a destra
     private JPanel panelGrid2;                  //panel inserito nella seconda cella del gridLayout
     private JBTable table;                      //tabella dove sono visualizzati i codeSmell
+
+    private JRadioButton sceltaMarkov;
+    private JRadioButton sceltaGameTheory;
 
     private boolean errorOccured;               //serve per determinare se qualcosa è andato storto
 
@@ -145,18 +152,48 @@ public class BlobPage extends DialogWrapper {
     @NotNull
     @Override
     protected Action[] createActions() {
-        Action okAction = new DialogWrapperAction("FIND SOLUTION") {
 
+        sceltaMarkov = new JRadioButton("Markov Chains");
+        sceltaGameTheory = new JRadioButton("Game Theory");
+        ButtonGroup scelteGroup = new ButtonGroup();
+        scelteGroup.add(sceltaMarkov);
+        scelteGroup.add(sceltaGameTheory);
+        sceltaMarkov.setSelected(true);
+
+        JPanel appari = new JPanel(new FlowLayout());
+        appari.add(sceltaMarkov);
+        appari.add(sceltaGameTheory);
+
+
+        Action okAction = new DialogWrapperAction("FIND SOLUTION") {
             String message;
 
             @Override
             protected void doAction(ActionEvent actionEvent) {
+                JOptionPane.showMessageDialog(contentPanel, appari,"Choose the splitting technique:", JOptionPane.DEFAULT_OPTION);
 
                 message = "Something went wrong in computing solution";
+
                 ProgressManager.getInstance().runProcessWithProgressSynchronously(() -> {
                     try {
-                        splittedClasses = (List<ClassBean>) new SplitClasses().split(classBeanBlob, 0.09);
 
+                        SplittingStrategy splittingStrategy;
+                        //mettere un if a seconda di quello che ha scelto il client (tipo premendo un bottone che gli fa scegliere)
+
+                        if(sceltaGameTheory.isSelected()) {
+                            splittingStrategy = new GameTheorySplitClasses();
+                            SplittingManager splittingManager = new SplittingManager(splittingStrategy);
+                            splittedClasses = (List<ClassBean>) splittingManager.excuteSplitting(classBeanBlob, 0.02);
+
+                        }else if(sceltaMarkov.isSelected()){
+                            splittingStrategy = new SplitClasses();
+                            SplittingManager splittingManager = new SplittingManager(splittingStrategy);
+                            splittedClasses = (List<ClassBean>) splittingManager.excuteSplitting(classBeanBlob, 0.09);
+                        }
+
+
+                        //splittedClasses = (List<ClassBean>) new SplitClasses().split(classBeanBlob, 0.09);
+                        //splittedClasses = (List<ClassBean>) new GameTheorySplitClasses().split(classBeanBlob, 0.02);
                         if (splittedClasses.size() == 1) {
                             message += "\nIt is not possible to split the class without introducing new smell";
                             errorOccured = true;
